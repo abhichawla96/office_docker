@@ -1,0 +1,19 @@
+<labelconf project="ProducerOne">
+ <label deltaind="M" labeldesc="Approve" labelkey="agencyListPublicSubmitNInvitationEdit_approvebyassigneelabel"/>
+ <label deltaind="I" labeldesc="How did you learn about Sample Insurance Company" labelkey="learn_about_label"/>
+ <label deltaind="I" labelkey="interest_for_appointment_label" labeldesc="Why are you interested in Sample Insurance Company appointment?"/>
+ <label deltaind="M" labeldesc="Years in Business" labelkey="years_in_business_label"/>
+ <label deltaind="I" labelkey="addendum_to_agency_desc_label" labeldesc="By the agreement below, Agent and the Sample Insurance Companies agree to amend the Agency Agreement between them as follows:"/>
+ <label deltaind="I" labelkey="addendum_to_agency_q1_label" labeldesc="1. Agent understands and agrees that Agent does not have the authority to place business with Sample Insurance Companies which would violate any provisions of any contract between the Agent and the insurance company, agency or previous employer entered in the box below."/>
+ <label deltaind="I" labelkey="addendum_to_agency_q2_label" labeldesc="2. Agent agrees to indemnify and hold the Sample Insurance Companies harmless from any claims, losses, damages, costs or expense, including without limitation reasonable attorney fees, it may incur arising out of Agent's breach or alleged breach of any non-complete agreement to which he/she is a party."/>
+ <label deltaind="M" labeldesc="Account Type Usage" labelkey="ss_bank_account_type_trust_operating_label"/>
+ <label deltaind="M" labelkey="checkIsShowDocumentInsuranceTab_menulabel" labeldesc="E&amp;O"></label>
+ <label deltaind="M" labeldesc="License Verification" labelkey="nipr_appointment_bucket_label"/>
+ <label deltaind="M" labeldesc="Pending License Verification" labelkey="onboard_pending_appointment_label"/>
+ <label deltaind="M" labeldesc="Proceed to License Verification" labelkey="entitybackgroundlist_proceedtoappointmentslabel"/>
+ <label deltaind="M" labeldesc="Received" labelkey="pending_bg_check_label"/>
+ <label deltaind="M" labeldesc="Licenses Verified" labelkey="onboard_appointed_with_nipr_label"/>
+ <label deltaind="M" labeldesc="License Verification Failed" labelkey="onboard_failed_appointment_label"/>
+ <label deltaind="M" labeldesc="Agency Setup Checklist" labelkey="pending_legacy_setup_label"/>
+ <label deltaind="M" labeldesc="E&amp;O" labelkey="insurancelabel"/>
+</labelconf>

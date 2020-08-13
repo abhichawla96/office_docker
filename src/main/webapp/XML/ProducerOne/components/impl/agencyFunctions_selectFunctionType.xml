@@ -1,0 +1,11 @@
+<projectcomponents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/components_XSD.xsd">
+	<component metaobject="agency_function" name="agencyFunctions_selectFunctionType" stackdisplayname="agencyFunctions_selectFunctionType_stackDisplayName_label"
+		displayname="Agency Functions Selection">
+   	    <action deltaind="M" name="save">
+			<actionparam deltaind="M" executionsequence="0" form="Y" name="showdeleteconfirmation" paramid="showdeleteconfirmation" pre="Y" val="Y" viewparam="Y" eval="ProducerOneRule.isAgencyFunctionRequestSSIdEmpty"/>
+   	    	<validatefield deltaind="D" name="validateAttachedDocumentListSize" eval="AgencyFunctionsRule.isShowAgencyFunctionsTypeCloseAgencyCode">
+   	    		<function deltaind="D" name="validateAttachedDocumentListSize" eval="AgencyFunctionsRule.checkIsUploadDocumentListEmpty" expression="isEqual(1,1)"></function>
+   	    	</validatefield>
+	  	</action>
+	</component>
+ </projectcomponents>

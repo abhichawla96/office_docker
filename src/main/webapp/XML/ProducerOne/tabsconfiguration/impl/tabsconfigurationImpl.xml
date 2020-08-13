@@ -1,0 +1,20 @@
+<tabsconfiguration project="Producer">
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show entityGeneralDetailsForSelfServiceApproval_agency_DEC_address_security" name="entityGeneralDetailsForSelfServiceApproval_agency_DEC_address_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" name="isShowAgencyAdminTaskDashBoard"/>
+<tabsconfigurationresource deltaind="I" accesslevel="0" name="agencyadmin_pendingesignrequestcount_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="esign_email_address_self_service_security" name="esign_email_address_self_service_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="selfservice_generateLetter_link_security" name="selfservice_generateLetter_link_security"/>
+<tabsconfigurationresource deltaind="I" accesslevel="0" name="agentGeneralDetailsForSelfServiceApproval_distributiongroup_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="addNewCyberLiabilityForSelfService_group_buttons_security" name="addNewCyberLiabilityForSelfService_group_buttons_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" name="homeActionAgencyAuditDashboardHideShow"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="homeActionCyberLiabilityDashboardHideShow" name="homeActionCyberLiabilityDashboardHideShow"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="social_media_site_security_tab" name="social_media_site_security_tab"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show Relationship actual vs plan" name="relationaship_mngmnt_ActualVsPlan_tab_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show Relationship bulletin" name="relationaship_mngmnt_Bulletin_tab_security"/>  
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show Relationship annual plan" name="relationaship_mngmnt_annualplan_tab_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" name="carrierTabs_cyberliabilitytab" description="hide/show carrierTabs_cyberliabilitytab on menus" />
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="expire_renew_date_product_validation_security" name="productValidationDetail_expire_renew_date_product_validation_security"/>
+  
+</tabsconfiguration>
+  
+  
