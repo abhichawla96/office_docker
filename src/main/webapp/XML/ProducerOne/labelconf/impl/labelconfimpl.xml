@@ -16,4 +16,13 @@
  <label deltaind="M" labeldesc="License Verification Failed" labelkey="onboard_failed_appointment_label"/>
  <label deltaind="M" labeldesc="Agency Setup Checklist" labelkey="pending_legacy_setup_label"/>
  <label deltaind="M" labeldesc="E&amp;O" labelkey="insurancelabel"/>
+ <!-- Onboarding dashboard -->
+ <label deltaind="M" labeldesc="Received" labelkey="pending_bg_check_label"/>
+   <label deltaind="M" labeldesc="License Verification" labelkey="nipr_appointment_bucket_label"/>
+   <label deltaind="M" labeldesc="Pending License Verification" labelkey="onboard_pending_appointment_label"/>
+   <label deltaind="M" labeldesc="Licenses Verified" labelkey="onboard_appointed_with_nipr_label"/>
+   <label deltaind="M" labeldesc="License Verification Failed" labelkey="onboard_failed_appointment_label"/>
+   <label deltaind="M" labeldesc="Agency Setup Checklist" labelkey="pending_legacy_setup_label"/>
+   <label deltaind="M" labeldesc="Agency Status" labelkey="agentstatus_label"/>
+ 
 </labelconf>

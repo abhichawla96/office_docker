@@ -12,4 +12,9 @@
   <field deltaind="M" id="bankInformationForSelfServiceApproval_bank_agency_id" screen="carrier/bankInformationForSelfServiceApproval.html" name="bank_agency_id" isrequired="N" labelkey="isAddingNewBankInformationSelfserviceApproval_label" tabsconfigurationresourcename="bank_agency_id_security" protectedresourceuniquename="bank_agency_id_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
     <validation deltaind="D" name="checkBankAgencyIdEmpty" expression="if(andCondition(isEqual(:bank_agency_id_security,Y),isEmpty(:bank_agency_id))=&gt;call_rule(bankInformationForSelfServiceApprovalRule.checkBankAgencyIdEmpty1)-&gt;isEqual(1,1))" message="selectAgencyNameErrorKey" ruleid="bankInformationForSelfServiceApprovalRule.checkBankAgencyIdEmpty" executionsequence="0" />
   </field>
+  
+  
+  <!-- send invitation step 1 -->
+  <field deltaind="M" id="sendOnboardingInvitationStep1_comments" screen="carrier/sendOnboardingInvitationStep1.html" name="comments" isrequired="N" requiredeval="invitationStep1_comments_manadatory_security" labelkey="invitationStep1_comments_label" tabsconfigurationresourcename="invitationStep1_comments_security" protectedresourceuniquename="invitationStep1_comments_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
+ 
 </fields>

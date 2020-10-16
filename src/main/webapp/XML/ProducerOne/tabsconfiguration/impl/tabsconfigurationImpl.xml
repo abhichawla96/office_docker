@@ -14,6 +14,21 @@
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show Relationship annual plan" name="relationaship_mngmnt_annualplan_tab_security"/>
 <tabsconfigurationresource deltaind="M" accesslevel="1" name="carrierTabs_cyberliabilitytab" description="hide/show carrierTabs_cyberliabilitytab on menus" />
 <tabsconfigurationresource deltaind="M" accesslevel="1" description="expire_renew_date_product_validation_security" name="productValidationDetail_expire_renew_date_product_validation_security"/>
+ <!-- Agency Onboarding - Send Invitation  -->
+
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="invitationStep1_commission_type_security" name="invitationStep1_commission_type_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="invitationStep1_entity_type_general_Detail_security" name="invitationStep1_entity_type_general_Detail_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="invitationStep1_any_rollover_potential_security" name="invitationStep1_any_rollover_potential_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="invitationStep1_commission_to_be_paid_security" name="invitationStep1_commission_to_be_paid_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="show validation to attcah eo document" name="validation_eo_document_security"/>
+ 
+ <!--Sprint 1 : Onboarding Dashboard_Bucket -->
+
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show homeAction_pendingReview_security on homeAction page" name="homeAction_pendingReview_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="pending_approval_security" name="pending_approval_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="pending_approval_appointment_security" name="pending_approval_appointment_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="submitted_appointment_security" name="submitted_appointment_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="contracts_pending_review_security" name="contracts_pending_review_security"/>
   
 </tabsconfiguration>
   
