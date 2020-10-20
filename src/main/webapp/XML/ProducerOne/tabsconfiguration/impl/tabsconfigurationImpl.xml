@@ -29,7 +29,47 @@
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="pending_approval_appointment_security" name="pending_approval_appointment_security"/>
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="submitted_appointment_security" name="submitted_appointment_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="contracts_pending_review_security" name="contracts_pending_review_security"/>
+ <!-- Review Application -->
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Any Rollover Potential" name="agencyListEdit_general_any_rollover_potential_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show agency license number on agency summary page" name="agencyListEdit_agencylicensenumber_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="agencyListEdit_agency_review_security" name="agencyListEdit_agency_review_security"/> -->
   
+  <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/Show date of organisation on agency summary page" name="agencyListEdit_DateOfOrigin_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="agencyListEdit_general_Entity_Type_General_Detail_security" name="agencyListEdit_general_Entity_Type_General_Detail_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="agencyListEdit_general_agency_association_security" name="agencyListEdit_general_agency_association_checkbox_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="business_fax_agency_address_security" name="business_fax_agency_address_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="business_alt_phone_ext_agency_address_security" name="business_alt_phone_ext_agency_address_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="business_alt_ext_agency_address_security" name="business_alt_ext_agency_address_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="w9_legal_name_address_security" name="w9_legal_name_address_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="w9_agency_taxpayer_short_nm_agency_address_security" name="w9_agency_taxpayer_short_nm_agency_address_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" name="w9_irs_tax_nm_1_agency_address_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="w9_irs_tax_nm_2_agency_address_security" name="w9_irs_tax_nm_2_agency_address_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="w9_phone_ext_agency_address_security" name="w9_phone_ext_agency_address_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="w9_ext_agency_address_security" name="w9_ext_agency_address_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="w9_alt_phone_ext_agency_address_security" name="w9_alt_phone_ext_agency_address_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="w9_alt_ext_agency_address_security" name="w9_alt_ext_agency_address_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="w9_fax_agency_address_security" name="w9_fax_agency_address_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="w9_email_id_agency_address_security" name="w9_email_id_agency_address_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="mailing_phone_ext_agency_address_security" name="mailing_phone_ext_agency_address_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="mailing_fax_agency_address_security" name="mailing_fax_agency_address_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="mailing_email_id_agency_address_security" name="mailing_email_id_agency_address_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="mailing_alt_phone_ext_agency_address_security" name="mailing_alt_phone_ext_agency_address_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide\Show additional_location_address_section In agencyListPublicSubmitNInvitationEdit" name="agencyListPublicSubmitNInvitationEdit_additional_location_address_section_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyListEdit_personal_references_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyListEdit_agency_current_operations_security"/>
+  <tabsconfigurationresource deltaind="I" accesslevel="0" name="prospect_market_new_business_per_month_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyListEdit_bank_address_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyListEdit_bank_phone_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyListEdit_account_type_trust_operating_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyListEdit_accountopen_date_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyListEdit_bank_commission_amt_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyListEdit_average_balance_security"/>
+   
+ 
+ <!-- Agency Review  -->
+
+ <tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyListEdit_production_information_security"/>
+   
 </tabsconfiguration>
   
   
