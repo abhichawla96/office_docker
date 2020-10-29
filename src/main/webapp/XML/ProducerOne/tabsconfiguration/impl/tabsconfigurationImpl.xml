@@ -70,6 +70,30 @@
 
  <tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyListEdit_production_information_security"/>
    
+    
+   
+<!-- Agency Setup -->
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="agency_sales_tax_certificate_nr_securityHeader" name="agency_sales_tax_certificate_nr_securityHeader"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="agencyestablished_date_securityHeader" name="agencyestablished_date_securityHeader"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="entityGeneralDetails_years_in_business_securityHeader" name="entityGeneralDetails_years_in_business_securityHeader"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Entity_Type_General_Detail_securityHeader" name="Entity_Type_General_Detail_securityHeader"/>
+<tabsconfigurationresource deltaind="I" accesslevel="0" description="product_agency_License_Number_security" name="product_agency_License_Number_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowAgencyAssociationCheckbox" name="isShowAgencyAssociationCheckbox"/> 
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="business_phone_ext_agency_address_security" name="business_phone_ext_agency_address_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="w9_type_id_agency_address_security" name="w9_type_id_agency_address_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide\Show Entity general details  Lexis Nexis" name="entityGeneralDetails_lexis_nexis_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="social_media_site_security" name="entityGeneralDetails_social_media_site_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="1" description="hide show number of csr from agency page/readonly page" name="isShowNumberofCSR"/>
+ <!--Sprint 1 : Contract  -->
+  
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowContractMinimumPremium" name="isShowContractMinimumPremium"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowContractDayStatementIsMailed" name="isShowContractDayStatementIsMailed"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowContractEOPolicyAmount" name="isShowContractEOPolicyAmount"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="doc_contract_type_security" name="doc_contract_type_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowContractTerminationNoticePeriod" name="isShowContractTerminationNoticePeriod"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowContractNoticeChangeAmountCommission" name="isShowContractNoticeChangeAmountCommission"/>
+
+
 </tabsconfiguration>
   
   

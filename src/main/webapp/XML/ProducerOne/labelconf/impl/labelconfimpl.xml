@@ -51,4 +51,13 @@
   <label deltaind="M" labeldesc="I understand that I am required to carry at least $1,000,000 of coverage. If I have less than $1,000,000 of coverage, I agree to increase it to $1,000,000." labelkey="agencyListEdit_eoClaimsDeclaration__label"/>
   <label deltaind="M" labeldesc="Line Of Business" labelkey="agency_lob_label"/>
  
+ <!-- Agency Setup -->
+ 
+  <label deltaind="M" labeldesc="Agency Name" labelkey="agencyOfficeNamelabel"/>
+  <label deltaind="M" labeldesc="W-9 Legal Name" labelkey="taxpayer_name_label"/>
+   <label deltaind="M" labeldesc="Agency Web Address" labelkey="url_label"/>
+  <label deltaind="M" labeldesc="Please Verify Address" labelkey="verify_business_address_label"/>
+  <label deltaind="M" labeldesc="Street Address #1" labelkey="streetAddress1_mailingaddress_FieldLabel"/>
+  <label deltaind="M" labeldesc="Please Verify Address" labelkey="verify_mailing_address_label"/>
+  <label deltaind="M" labeldesc="Street Address #1" labelkey="streetAddress1_w9address_FieldLabel"/>
 </labelconf>
