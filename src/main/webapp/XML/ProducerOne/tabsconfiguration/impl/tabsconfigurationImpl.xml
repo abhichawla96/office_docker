@@ -28,7 +28,7 @@
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="pending_approval_security" name="pending_approval_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="pending_approval_appointment_security" name="pending_approval_appointment_security"/>
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="submitted_appointment_security" name="submitted_appointment_security"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="1" description="contracts_pending_review_security" name="contracts_pending_review_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="contracts_pending_review_security" name="contracts_pending_review_security"/>
  <!-- Review Application -->
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Any Rollover Potential" name="agencyListEdit_general_any_rollover_potential_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show agency license number on agency summary page" name="agencyListEdit_agencylicensenumber_security"/>

@@ -40,4 +40,58 @@
       <roleaccesslevel accesstype="0"/>
     </businessrole>
     </protectedresource>
+    
+    
+    <!--  Agency Setup -->
+ <protectedresource deltaind="M" defaultaccesstype="0" description="isShowAgencyAssociationCheckbox_entityGeneralDetailsForSelfServiceApproval" uniquename="isShowAgencyAssociationCheckbox">
+    <userdefined executionsequence="0" ruleid="ProducerOneRule.isShowAgencyAssociationCheckbox">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+  </protectedresource>
+  <!--  User roles and security matrix -->
+    <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show approve button for assignee on summary page" uniquename="agencyListPublicSubmitNInvitationEdit_approvebyassignee">
+    <businessrole deltaind="I" roleid="CarrierAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+       <businessrole deltaind="M" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <userdefined executionsequence="0" ruleid="WorkflowRule.isShowSendForApprovalButtonPublicSubmission">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+  </protectedresource>
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show send for approval button on summary page" operator="and" uniquename="agencyListPublicSubmitNInvitationEdit_sendForApproval">
+    <businessrole deltaind="I" roleid="SalesDirector">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole roleid="PrimaryMarketingAssistant">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
+    <businessrole roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
+    <userdefined executionsequence="0" ruleid="WorkflowRule.isShowSendForApprovalButtonPublicSubmission">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+  </protectedresource>
+  
+   <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show decline button on summary page" operator="and" uniquename="agencyListPublicSubmitNInvitationEdit_decline">
+    <businessrole deltaind="I" roleid="SalesDirector">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
+    <userdefined executionsequence="0" ruleid="WorkflowRule.isShowApproveDisApproveOnholdButtonPublicSubmission">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+  </protectedresource>
+  
+  <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show decline button on summary page" uniquename="agencyListPublicSubmitNInvitationEdit_onhold">
+    <businessrole roleid="SalesDirector">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
+    </protectedresource>
+  
+  
   </security>  
