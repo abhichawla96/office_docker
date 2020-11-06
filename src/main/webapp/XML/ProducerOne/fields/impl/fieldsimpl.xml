@@ -31,5 +31,5 @@
   
     <field deltaind="M" id="addNewDocContract_contract_state_id" screen="carrier/addNewDocContract.html" name="contract_state_id" isrequired="Y" labelkey="contract_state_id_label" tabsconfigurationresourcename="doc_contract_contact_state_security" protectedresourceuniquename="doc_contract_contact_state_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
     <field deltaind="I" id="contract_state_id" screen="carrier/addNewDocContract.html" name="contract_state_id" isrequired="Y" labelkey="contract_state_id_label" tabsconfigurationresourcename="doc_contract_contact_state_security" protectedresourceuniquename="doc_contract_contact_state_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
-  <!-- git test   -->
+  <!-- git test       -->
 </fields>
