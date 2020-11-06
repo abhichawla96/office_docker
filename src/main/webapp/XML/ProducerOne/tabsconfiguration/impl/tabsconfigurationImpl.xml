@@ -93,7 +93,12 @@
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowContractTerminationNoticePeriod" name="isShowContractTerminationNoticePeriod"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowContractNoticeChangeAmountCommission" name="isShowContractNoticeChangeAmountCommission"/>
 
-
+  <tabsconfigurationresource deltaind="M" description="atleatst1DocumentMandatoryWhileSendInvitation" name="atleatst1DocumentMandatoryWhileSendInvitation" value="N"/>
+<!-- BUG ID : 0044 -->
+ 
+ <tabsconfigurationresource deltaind="M" description="Show/Hide agencyListPublicSubmitNInvitationEdit_agency_location_system_security" name="agencyListPublicSubmitNInvitationEdit_agency_location_system_security" accesslevel="0"/>
+ 
+ 
 </tabsconfiguration>
   
   

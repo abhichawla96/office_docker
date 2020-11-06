@@ -60,4 +60,8 @@
   <label deltaind="M" labeldesc="Street Address #1" labelkey="streetAddress1_mailingaddress_FieldLabel"/>
   <label deltaind="M" labeldesc="Please Verify Address" labelkey="verify_mailing_address_label"/>
   <label deltaind="M" labeldesc="Street Address #1" labelkey="streetAddress1_w9address_FieldLabel"/>
+  
+   <!-- BUG ID : 0050 -->
+  <label deltaind="M" labeldesc="Line of Business" labelkey="invitationStep1_agency_lob_label"/>
+
 </labelconf>

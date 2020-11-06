@@ -92,6 +92,12 @@
       <roleaccesslevel accesstype="1"/>
     </businessrole>
     </protectedresource>
-  
+   <!-- BUG ID : 0041  -->
+    
+    <protectedresource deltaind="M" description="Hide/Show Buttons on AddNewProducerApplication" uniquename="addAgencyTaskDetails.hideSaveModifyRelationshipTask">
+    <businessrole deltaind="M" roleid="MarketingRep">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
+    </protectedresource>
   
   </security>  
