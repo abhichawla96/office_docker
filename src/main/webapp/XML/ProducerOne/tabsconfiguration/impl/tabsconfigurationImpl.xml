@@ -32,7 +32,7 @@
  <!-- Review Application -->
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Any Rollover Potential" name="agencyListEdit_general_any_rollover_potential_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show agency license number on agency summary page" name="agencyListEdit_agencylicensenumber_security"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" description="agencyListEdit_agency_review_security" name="agencyListEdit_agency_review_security"/> -->
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="agencyListEdit_agency_review_security" name="agencyListEdit_agency_review_security"/> 
   
   <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/Show date of organisation on agency summary page" name="agencyListEdit_DateOfOrigin_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="agencyListEdit_general_Entity_Type_General_Detail_security" name="agencyListEdit_general_Entity_Type_General_Detail_security"/>
