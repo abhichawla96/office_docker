@@ -100,4 +100,282 @@
     </businessrole>
     </protectedresource>
   
+	<!-- Producer Review Screen -->
+	<protectedresource deltaind="M" accesstype="1"
+		description="Hide/Show id dba registered on agency list public edit page"
+		uniquename="agencyListEdit_general_isdbaregistered_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+
+	<protectedresource deltaind="M" accesstype="1"
+		description="Hide/Show legal form on agency list public edit page"
+		uniquename="agencyListEdit_general_legal_form_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+
+	<protectedresource deltaind="M" accesstype="1"
+		description="Hide/Show dba on agency list public edit page"
+		uniquename="agencyListEdit_general_DBA_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+	<protectedresource deltaind="M" accesstype="1"
+		description="Hide/Show agency name on agency list public edit page"
+		uniquename="agencyListEdit_general_entity_name_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+
+	<protectedresource deltaind="M" accesstype="1"
+		description="Hide/Show taxid on agency list public edit page"
+		uniquename="agencyListEdit_general_aar_taxid_security">
+		<userdefined deltaind="M" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+
+	<protectedresource deltaind="M" accesstype="1"
+		description="Hide/Show tax payer name on agency list public edit page"
+		uniquename="agencyListEdit_general_taxpayer_name_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+	<protectedresource deltaind="M" accesstype="1"
+		description="Hide/Show npn on agency list public edit page"
+		uniquename="agencyListEdit_general_npn_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+	<protectedresource deltaind="M" accesstype="1"
+		description="Hide/Show web address on agency list public edit page"
+		uniquename="agencyListEdit_general_aar_webaddress_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+
+	</protectedresource>
+
+
+
+	<protectedresource deltaind="M" accesstype="1"
+		description="Hide/Show exp in years on agency list public edit page"
+		uniquename="agencyListEdit_general_aar_expinyears_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+
+
+	<protectedresource deltaind="M" accesstype="1"
+		description="Hide/Show no of licensed producers on agency list public edit page"
+		uniquename="agencyListEdit_general_aar_nooflicproducers_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+
+
+	<protectedresource deltaind="M" accesstype="1"
+		description="Hide/Show no of staff on agency list public edit page"
+		uniquename="agencyListEdit_general_no_of_staff_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+
+	<protectedresource deltaind="I" accesstype="1"
+		description="Hide/Show no of staff on agency list public edit page"
+		uniquename="agencyListEdit_agency_management_System_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+
+
+
+	<protectedresource deltaind="M" accesstype="1"
+		defaultaccesstype="2" description="ReadOnly agencyListEdit_domicileState_security"
+		uniquename="agencyListEdit_domicileState_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+
+	<protectedresource deltaind="M" defaultaccesstype="2"
+		description="ReadOnly agencyListEdit_isMasterAssociatedAgency_security"
+		uniquename="agencyListEdit_isMasterAssociatedAgency_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+	<protectedresource deltaind="M" defaultaccesstype="1"
+		description="Hide/Show comparative rater checkbox on agency list public edit page"
+		uniquename="agencyListEdit_general_chk_agency_comparativerate_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+	<protectedresource deltaind="M" defaultaccesstype="2"
+		description="Read Only Lob Checkboxes on agencyListPublicSubmitNInvitationEdit"
+		uniquename="agencyListPublicSubmitNInvitationEdit_isShowAgencyLobCheckbox_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+
+	<protectedresource deltaind="I" defaultaccesstype="1"
+		description="Read Only Lob Checkboxes on agencyListPublicSubmitNInvitationEdit"
+		uniquename="agency_business_address_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+
+	<protectedresource deltaind="I" defaultaccesstype="1"
+		description="Read Only Lob Checkboxes on agencyListPublicSubmitNInvitationEdit"
+		uniquename="agency_mailing_address_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+	<protectedresource deltaind="I" defaultaccesstype="1"
+		description="Read Only Lob Checkboxes on agencyListPublicSubmitNInvitationEdit"
+		uniquename="agencyListPublicSubmitNInvitationEdit_agency_w9_address_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+
+	<protectedresource deltaind="M" defaultaccesstype="1"
+		description="Hide/Show states in which agent seeking appointments on agency list public edit page"
+		uniquename="isShowStatesInOnboarding">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+	<protectedresource deltaind="M" defaultaccesstype="1"
+		description="Hide/Show bank reference on agency list public edit page"
+		uniquename="isShowBankInfoInOnboarding">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+	<protectedresource deltaind="I" defaultaccesstype="1"
+		description="Hide/Show bank reference on agency list public edit page"
+		uniquename="marketInformation_fieldSet2_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+	<protectedresource deltaind="I" defaultaccesstype="1"
+		description="Hide/Show bank reference on agency list public edit page"
+		uniquename="mix_of_business_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+
+	<protectedresource deltaind="M" defaultaccesstype="1"
+		description="Hide/Show premium committed to sample block on agency list public edit page"
+		uniquename="agencyListEdit_premium_volume_commitment_to_sample_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+
+	<protectedresource deltaind="M" defaultaccesstype="1"
+		description="Hide/Show top companies block on agency list public edit page"
+		uniquename="agencyListEdit_top_companies_appointed_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+	<protectedresource deltaind="M" defaultaccesstype="1"
+		description="Hide/Show source to generate business block on agency list public edit page"
+		uniquename="agencyListEdit_source_to_generate_new_business_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+
+	<protectedresource deltaind="M" defaultaccesstype="1"
+		description="Hide/Show companies terminated block on agency list public edit page"
+		uniquename="agencyListEdit_companies_terminated_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+	<protectedresource deltaind="M" defaultaccesstype="1"
+		description="Hide/Show mergers block on agency list public edit page"
+		uniquename="agencyListEdit_mergers_and_acquisitions_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+	<protectedresource deltaind="I" defaultaccesstype="1"
+		description="Hide/Show mergers block on agency list public edit page"
+		uniquename="agencyListEdit_final_questions_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+
+	<protectedresource deltaind="M" defaultaccesstype="2"
+		description="Hide/Show agent block on agency list public edit page"
+		override="Y" uniquename="agencyListEdit_agency_review_security">
+		<userdefined deltaind="I" executionsequence="1"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+		<userdefined executionsequence="0"
+			ruleid="ProducerOneRule.isAgencyReviewSectionEditableInPublicSubmissionAgencyDetailsScreen">
+			<userdefinedaccesslevel accesstype="1" />
+		</userdefined>
+	</protectedresource>
+
+	<protectedresource deltaind="M" defaultaccesstype="1"
+		description="Hide/Show ENO block on agency list public edit page"
+		uniquename="agencyListEdit_EandOForm_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
   </security>  
