@@ -1,0 +1,14 @@
+<evalrules project="ProducerOne">
+	<ruleset name="ProducerOneRule">
+		<rule id="isRegistrationTypeProducerRegistrationAgencyDetailScreen"
+			expression="isEqual(:registration_type_code,PRERG);" obj="ruleobjs.ProducerOneRule"
+			method="isRegistrationTypeProducerRegistration" />
+		<rule id="isRegistrationTypePrimaryAgencyAgencyDetailScreen"
+			expression="isEqual(:registration_type_code,SCAG);" obj="ruleobjs.ProducerOneRule"
+			method="isRegistrationTypeSecondaryAgency" />
+		<rule id="isRegistrationTypeSecondaryAgencyAgencyDetailScreen"
+			expression="isEqual(:registration_type_code,PRAG);" obj="ruleobjs.ProducerOneRule"
+			method="isRegistrationTypePrimaryAgency" />
+	</ruleset>
+</evalrules>	
+	
