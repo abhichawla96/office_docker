@@ -99,6 +99,20 @@
  <tabsconfigurationresource deltaind="M" description="Show/Hide agencyListPublicSubmitNInvitationEdit_agency_location_system_security" name="agencyListPublicSubmitNInvitationEdit_agency_location_system_security" accesslevel="0"/>
  
  
+ <!-- Email Template -->
+ <tabsconfigurationresource deltaind="I" name="sendInvitationForLicensedProducer_carrierHeaderInclude" value="N" />
+    <tabsconfigurationresource deltaind="I" name="sendInvitationForLicensedProducer_carrierTabs1Include" value="N" />
+    <tabsconfigurationresource deltaind="I" name="sendInvitationForLicensedProducer_carrierTabs2Include" value="N" />
+    <tabsconfigurationresource deltaind="I" name="sendInvitationForLicensedProducer_adminFooterInclude" value="N" />
+ 
+ <!-- lob auto selected -->
+ <tabsconfigurationresource deltaind="I" description="invitationStep1_agency_lob_mendatory_security" name="invitationStep1_agency_lob_mendatory_security" value="Y"/>
+ 
+ 	
+ <!-- Bug id : 0076 -->
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="agencyListEdit_general_chk_agency_comparativerate_security" name="agencyListEdit_general_chk_agency_comparativerate_security"/>
+ 
+ 
 </tabsconfiguration>
   
   

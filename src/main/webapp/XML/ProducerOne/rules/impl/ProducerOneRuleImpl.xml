@@ -1,0 +1,10 @@
+<evalrules project="ProducerOne">
+<ruleset name="ProducerOneRule">
+	<rule deltaind="I" id="isRegistrationTypeProducerRegistrationForSendInvitation"
+			expression="isEqual(:selected_agency_registration_type_desc,Producer Registration);"
+			obj="ruleobjs.ProducerOneRule" method="isRegistrationTypeProducerRegistrationForSendInvitation" />
+		<rule deltaind="I" id="isRegistrationTypePrimaryAgencyForSendInvitation"
+			expression="orCondition(isEqual(:selected_agency_registration_type_desc,Primary Agency),isEqual(:selected_agency_registration_type_desc,Secondary Agency));"
+			obj="ruleobjs.ProducerOneRule" method="isRegistrationTypePrimaryAgencyForSendInvitation" />
+	</ruleset>
+</evalrules>
