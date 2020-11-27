@@ -77,10 +77,13 @@
 			ruleid="WorkflowRule.isShowSendForApprovalButtonPublicSubmission">
 			<userdefinedaccesslevel accesstype="1" />
 		</userdefined>
+		<businessrole roleid="MarketingGroup">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
 	</protectedresource>
 	<protectedresource deltaind="M" defaultaccesstype="0"
 		description="Hide/Show send for approval button on summary page"
-		operator="and" uniquename="agencyListPublicSubmitNInvitationEdit_sendForApproval">
+		uniquename="agencyListPublicSubmitNInvitationEdit_sendForApproval">
 		<businessrole deltaind="I" roleid="SalesDirector">
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
@@ -90,10 +93,14 @@
 		<businessrole roleid="MarketingAssistant">
 			<roleaccesslevel accesstype="1" />
 		</businessrole>
+		<businessrole roleid="MarketingGroup">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
 		<userdefined executionsequence="0"
 			ruleid="WorkflowRule.isShowSendForApprovalButtonPublicSubmission">
 			<userdefinedaccesslevel accesstype="1" />
 		</userdefined>
+		
 	</protectedresource>
 
 	<protectedresource deltaind="M" defaultaccesstype="0"
@@ -109,15 +116,18 @@
 			ruleid="WorkflowRule.isShowApproveDisApproveOnholdButtonPublicSubmission">
 			<userdefinedaccesslevel accesstype="1" />
 		</userdefined>
+		<businessrole roleid="MarketingGroup">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
 	</protectedresource>
-    
-    
+
+
 	<protectedresource deltaind="M" defaultaccesstype="0"
 		description="Hide/Show decline button on summary page" uniquename="agencyListPublicSubmitNInvitationEdit_onhold">
 		<businessrole roleid="SalesDirector">
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
-		
+
 		<businessrole deltaind="I" roleid="MarketingAssistant">
 			<roleaccesslevel accesstype="1" />
 		</businessrole>
@@ -411,87 +421,98 @@
 		</userdefined>
 	</protectedresource>
 
-  <!-- Marketing group  -->
-     <protectedresource description="send_invite_page_level_paradigm" uniquename="send_invite_page_level_paradigm">
-    <businessrole roleid="MarketingGroup">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-    </protectedresource>
-    <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show send for decline button on summary page" operator="and" uniquename="agencyListPublicSubmitNInvitationEdit_decline">
-    <businessrole roleid="MarketingGroup">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-  </protectedresource>
-  <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show approve/disapprove button on summary page" operator="and" uniquename="agencyListPublicSubmitNInvitationEdit_approvebyassignee">
-    <businessrole roleid="MarketingGroup">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-  </protectedresource>
-    <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show send for approval button on summary page" operator="and" uniquename="agencyListPublicSubmitNInvitationEdit_sendForApproval">
-    <businessrole roleid="MarketingGroup">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-  </protectedresource>
-  <protectedresource defaultaccesstype="0" description="agencyListPublicSubmitNInvitationEdit_modify" operator="AND" uniquename="agencyListPublicSubmitNInvitationEdit_modify">
-    <businessrole roleid="MarketingGroup">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-    </protectedresource>
-     <protectedresource defaultaccesstype="0" description="Hide/Show verify with NIPR button on bulkentityAppointNew page" operator="OR" uniquename="bulkEntityAppointNew_verifywithnipr">
-    <businessrole roleid="MarketingGroup">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-    </protectedresource>
-    <protectedresource defaultaccesstype="0" description="Hide/Show decline button on NIPR appoint authorize page" operator="and" uniquename="bulkentityappointNew_decline">
-    <businessrole roleid="MarketingGroup">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-    </protectedresource>
-    <protectedresource defaultaccesstype="0" description="Hide/Show add new location button on agency details page" operator="OR" uniquename="addNewLocation_entityGeneralDetail_security">
-    <businessrole roleid="MarketingGroup">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-    </protectedresource>
-     <protectedresource defaultaccesstype="0" description="Hide/show send invitation button on banner search page" uniquename="advanceSearchEntityResult_send_invite_page_level_paradigm">
-    <businessrole roleid="MarketingGroup">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-    </protectedresource>
-    <protectedresource defaultaccesstype="0" description="Hide/show add new agency button on banner search page" uniquename="isAddNewAgencyPage">
-    <businessrole roleid="MarketingGroup">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-    </protectedresource>
-    <protectedresource defaultaccesstype="0" description="Hide/Show add new contact button on agency details page" operator="OR" uniquename="addNewContact_entityGeneralDetail_security">
-    <businessrole roleid="MarketingGroup">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-    </protectedresource>
-    <protectedresource defaultaccesstype="0" description="Hide/Show modify button on agency details page" operator="OR" uniquename="entityGeneralDetails_modify">
-    <businessrole roleid="MarketingGroup">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-    </protectedresource>
-     <protectedresource defaultaccesstype="0" description="Hide/Show sign button on contract page" operator="and" uniquename="docContractDetails_sign">
-    <businessrole roleid="MarketingGroup">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-    </protectedresource>
-     <protectedresource defaultaccesstype="0" description="Hide/Show add new license button on bulkentityAppointNew page" operator="OR" uniquename="bulkEntityAppointNew_addnewlicense">
-    <businessrole roleid="MarketingGroup">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-    </protectedresource>
-     <protectedresource defaultaccesstype="0" description="Hide/Show appoint authorize button on bulkentityAppointNew page" operator="OR" uniquename="bulkEntityAppointNew_appointauthorize">
-    <businessrole roleid="MarketingGroup">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-    </protectedresource>
-     <protectedresource defaultaccesstype="0" description="check Un Subscribe Button Hide Show" uniquename="checkNPNUnSubscribe">
-    <businessrole roleid="MarketingGroup">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-  </protectedresource>
-
+	<!-- Marketing group -->
+	<protectedresource description="send_invite_page_level_paradigm"
+		uniquename="send_invite_page_level_paradigm">
+		<businessrole roleid="MarketingGroup">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
 	
+
+	<protectedresource defaultaccesstype="0"
+		description="agencyListPublicSubmitNInvitationEdit_modify" operator="AND"
+		uniquename="agencyListPublicSubmitNInvitationEdit_modify">
+		<businessrole roleid="MarketingGroup">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+	<protectedresource defaultaccesstype="0"
+		description="Hide/Show verify with NIPR button on bulkentityAppointNew page"
+		operator="OR" uniquename="bulkEntityAppointNew_verifywithnipr">
+		<businessrole roleid="MarketingGroup">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+	<protectedresource defaultaccesstype="0"
+		description="Hide/Show decline button on NIPR appoint authorize page"
+		operator="and" uniquename="bulkentityappointNew_decline">
+		<businessrole roleid="MarketingGroup">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+	<protectedresource defaultaccesstype="0"
+		description="Hide/Show add new location button on agency details page"
+		operator="OR" uniquename="addNewLocation_entityGeneralDetail_security">
+		<businessrole roleid="MarketingGroup">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+	<protectedresource defaultaccesstype="0"
+		description="Hide/show send invitation button on banner search page"
+		uniquename="advanceSearchEntityResult_send_invite_page_level_paradigm">
+		<businessrole roleid="MarketingGroup">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+	<protectedresource defaultaccesstype="0"
+		description="Hide/show add new agency button on banner search page"
+		uniquename="isAddNewAgencyPage">
+		<businessrole roleid="MarketingGroup">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+	<protectedresource defaultaccesstype="0"
+		description="Hide/Show add new contact button on agency details page"
+		operator="OR" uniquename="addNewContact_entityGeneralDetail_security">
+		<businessrole roleid="MarketingGroup">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+	<protectedresource defaultaccesstype="0"
+		description="Hide/Show modify button on agency details page" operator="OR"
+		uniquename="entityGeneralDetails_modify">
+		<businessrole roleid="MarketingGroup">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+	<protectedresource defaultaccesstype="0"
+		description="Hide/Show sign button on contract page" operator="and"
+		uniquename="docContractDetails_sign">
+		<businessrole roleid="MarketingGroup">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+	<protectedresource defaultaccesstype="0"
+		description="Hide/Show add new license button on bulkentityAppointNew page"
+		operator="OR" uniquename="bulkEntityAppointNew_addnewlicense">
+		<businessrole roleid="MarketingGroup">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+	<protectedresource defaultaccesstype="0"
+		description="Hide/Show appoint authorize button on bulkentityAppointNew page"
+		operator="OR" uniquename="bulkEntityAppointNew_appointauthorize">
+		<businessrole roleid="MarketingGroup">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+	<protectedresource defaultaccesstype="0"
+		description="check Un Subscribe Button Hide Show" uniquename="checkNPNUnSubscribe">
+		<businessrole roleid="MarketingGroup">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+
+
 </security>  
