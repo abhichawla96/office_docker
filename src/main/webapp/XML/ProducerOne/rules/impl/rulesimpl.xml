@@ -9,6 +9,9 @@
 		<rule deltaind="I" id="isRegistrationTypeSecondaryAgencyAgencyDetailScreen"
 			expression="isEqual(:registration_type_code,PRAG);" obj="ruleobjs.ProducerOneRule"
 			method="isRegistrationTypePrimaryAgency" />
+
+ <rule deltaind="M" id="showNiprAppointments" expression="isEqual(N,Y);" obj="ruleobjs.ProducerOneRule" method="showNiprAppointments" />
+   
 	</ruleset>
 </evalrules>	
 	

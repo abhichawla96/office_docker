@@ -112,7 +112,71 @@
  <!-- Bug id : 0076 -->
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="agencyListEdit_general_chk_agency_comparativerate_security" name="agencyListEdit_general_chk_agency_comparativerate_security"/>
  
+ <!-- Sprint 3 : Agency and Agent Demographics- General- (Dashboard) -->
+  
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show pending esignature bucket for self service bank request" name="allpendingesignaturecombinedrequests_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isCommissionManagementDashboardHideShow" name="isCommissionManagementDashboardHideShow"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowDashboardCCBStatmentHideShow" name="isShowDashboardCCBStatmentHideShow"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show Dashboard Profit Sharing Statment  security" name="isShowDashboardProfitSharingStatmentHideShow"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show Agency Profile Dashboard" name="isAgencyProfileDashboardHideShow"/>
+  
+<!-- Sprint 3 : Agency and Agent Demographics- General (Add new Agency) -->
+  
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="addNewAgencyPage_po_box_business_security" name="addNewAgencyPage_po_box_business_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="addNewAgencyPage_fax_business_security" name="addNewAgencyPage_fax_business_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show addNewAgency_producer_type_security" name="addNewAgency_producer_type_security"/>
+  <!-- Sprint 3 : Agency and Agent Demographics- General (Agency - Background Questions) -->
+  
+  <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide\Show Entity general details  agencyBackgroundQuestionCarrierTab_modify" name="agencyBackgroundQuestionCarrierTab_modify"/>
+
+<!-- Sprint 3 : Agency and Agent Demographics- General (Agency - Awards and Recognition) -->
+
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowAwardNRecognitionTab" name="isShowAwardNRecognitionTab"/>
+
+<!-- Sprint 3 : Agency and Agent Demographics- General (Add Secondary_Branch Agency) -->
+
+  <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide\Show Entity general details  product_agency_License_Number_security" name="product_agency_License_Number_security"/>
+  
+  
+ <!-- Sprint 3 - Advanced Search -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="advance_contactDetails_is_mailing_security" name="advance_contactDetails_is_mailing_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show advanceSearch is_affiliated_advanceSearch checkbox" name="is_affiliated_advanceSearch_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show advanceSearch distributiongroup_security checkbox group" name="distributiongroup_security"/>
  
+ <!-- Sprint 3 - Banner Search -->
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Show/Hide advanceSearchResult_surplus_lines_indicator_security" name="advanceSearchResult_surplus_lines_indicator_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" name="advance_producer_search_no_eo_req_security"/>
+ 
+ <!-- Sprint 3 - Creation & maintenance of loc (Add secondary_branch_agency) -->
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide\Show Entity general details  Lexis Nexis" name="entityGeneralDetails_lexis_nexis_security"/>
+ 
+<!--Sprint 3 - Creation=on & maintenance of contact  -->
+  <tabsconfigurationresource deltaind="I" name="non_compete_agreement_security" accesslevel="0" description="Hide/Show Add_new_contact non_compete_agreement_security" />
+  <tabsconfigurationresource deltaind="I" name="does_intend_writing_business_security" accesslevel="0" description="Hide/Show Add_new_contact does_intend_writing_business_security" />
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="agent_mailing_address_security" name="agent_mailing_address_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="contact_producer_type_security" name="contact_producer_type_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowBackgrndReqforContact" name="isShowBackgrndReqforContact"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show agent_hire_date_security security" name="agent_hire_date_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" name="agentGeneralDetails_system_code_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show excluded_from_emails_security" name="excluded_from_emails_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="license_number_security" name="license_number_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show agent_gender_id_security security" name="agent_gender_id_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="checkbox for distribution group security" name="checkbox_for_distributiongroup_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide\Show StateCheckboxes in agentGenralDetails" name="agentGenralDetails_StateCheckboxes_security"/>  
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="business_fax_agent_address_security" name="business_fax_agent_address_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="w9_fax_agent_address_security" name="w9_fax_agent_address_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" name="common.hidePersonalInfoTab"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" name="contact_agentBeneficiaryInfo_security"/>
+	
+ <!-- Bug id : 0076 -->
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="agencyListEdit_general_chk_agency_comparativerate_security" name="agencyListEdit_general_chk_agency_comparativerate_security"/>
+ 
+ 
+ <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide show agencyListPublicSubmitNInvitationEdit_narrative_info_section_security in agencyListPublicSubmitNInvitationEdit.html" name="agencyListPublicSubmitNInvitationEdit_narrative_info_section_security"/>
+ 
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="agency_bulk_license_states_security" name="bulkEntityAppointNew_agency_bulk_license_states_security"/>
+ 
+
 </tabsconfiguration>
   
   
