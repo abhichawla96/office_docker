@@ -176,7 +176,52 @@
  
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="agency_bulk_license_states_security" name="bulkEntityAppointNew_agency_bulk_license_states_security"/>
  
+ <!-- Banner search  -->
+ <tabsconfigurationresource deltaind="M" accesslevel="1" name="advanceSearchResult_name_NIPR_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="1" name="advanceSearchResult_feintaxid_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="1" name="advanceSearchResult_producer_termination_date_security" description="hide/show advanceSearchResult_producer_termination_date_security on advanceSearchEntityResult.html" />   
+ <tabsconfigurationresource deltaind="M" accesslevel="0" name="advance_contact_search_producer_type_security"/>
+  
+ <!-- Sprint 3 - Agency Code Association -->
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show producerAssociationContact_section_security" name="producerAssociationContact_section_security"/>
+   <tabsconfigurationresource deltaind="M" accesslevel="0" description="awardsNRecognitions_security" name="awardsNRecognitions_security"/>
+  
+   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show producerAssociationContact_contact_type_security" name="producerAssociationContact_contact_type_security"/>
+   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show producerAssociationContact_login_id_security" name="producerAssociationContact_login_id_security"/>
+  
+  <!-- Sprint 3 : Agency and Agent Demographics- General (creation&main of Agency code) -->
+  
+  <tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyCodeList_block_surplus_lines_indicator_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowIsCommissionable" name="isShowIsCommissionable"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowProdNumSubAgencyCodeTrue" name="isShowProdNumSubAgencyCodeTrue"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="eo_insurance_required_security" name="eo_insurance_required_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowPolicyFeeApplicable" name="isShowPolicyFeeApplicable"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowAL3Applicable" name="isShowAL3Applicable"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowFixedCommissionPlan" name="isShowFixedCommissionPlan"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowCCBOverriddenCheckBox" name="isShowCCBOverriddenCheckBox"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowIsBonusApplicableCheckBox" name="isShowIsBonusApplicableCheckBox"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowProdNumDBA" name="isShowProdNumDBA"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="producerDetail_distribution_type_id_security" name="producerDetail_distribution_type_id_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show segmentation_security in producerDetails.html" name="producerDetails_segmentation_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowProdNumVendorTrue" name="isShowProdNumVendorTrue"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowProdNumProbationTrue" name="isShowProdNumProbationTrue"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="producerDetail_isShowProdNumZoneMarketRepDivTrue" name="producerDetail_isShowProdNumZoneMarketRepDivTrue"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="producerDetail_isShowProdNumUnderWriterDivTrue" name="producerDetail_isShowProdNumUnderWriterDivTrue"/>
+  <tabsconfigurationresource deltaind="I" accesslevel="0" description="is_commissionableDiv" name="is_commissionableDiv"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show state_id_prodOrgMapping security" name="state_id_prodOrgMapping_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="position_type_prodOrgMapping_security" name="position_type_prodOrgMapping_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="position_prodOrgMapping_security" name="position_prodOrgMapping_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="position_manager_id_prodOrgMapping_security" name="position_manager_id_prodOrgMapping_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="lob_id_prodOrgMapping_security" name="lob_id_prodOrgMapping_security"/>
+ 
 
+
+<!-- Contract Filters : Bud Id: 64-->
+
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="docContractDetails_isShowDocumentFilterSectionTrue" name="docContractDetails_isShowDocumentFilterSectionTrue"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="docContractDetails_isShowCancellationDate" name="docContractDetails_isShowCancellationDate"/>
+
+
+
+  
 </tabsconfiguration>
-  
-  

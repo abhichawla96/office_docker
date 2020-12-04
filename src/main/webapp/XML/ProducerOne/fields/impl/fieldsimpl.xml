@@ -62,5 +62,15 @@
  <!-- Sprint 3 - creation & maintenance of contact -->
  <field deltaind="M" id="agentGeneralDetails_LOGIN_ID" screen="carrier/agentGeneralDetails.html" name="LOGIN_ID" isrequired="N" labelkey="login_id_label" tabsconfigurationresourcename="contact_details_login_id_security" protectedresourceuniquename="contact_details_login_id_security" />
    
-  
-</fields>
+   <!-- Sprint 3 - Agency Code Association -->
+  <field deltaind="M" id="selectedContacttype_producerAssociationContact" screen="carrier/producerAssociationContact.html" name="selectedContacttype" isrequired="N" labelkey="producerAssociationContact_contact_type_label" tabsconfigurationresourcename="producerAssociationContact_contact_type_security" protectedresourceuniquename="producerAssociationContact_contact_type_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
+   </field>
+	<field deltaind="M" id="agentGeneralDetails_country_code_w9" screen="carrier/agentGeneralDetails.html" name="country_code_w9" isrequired="N" requiredeval="AddressRule.checkW9CountryCode" lookupobjectmetaobject="country_lku" lookupobjectprocedure="getcountrylist_p" displayfield="country_name" valuefield="country_code" labelkey="country_residence_field_label" tabsconfigurationresourcename="w9_country_agent_address_security" protectedresourceuniquename="w9_country_agent_address_security" isextendedfield="N" executionsequence="0" isencrypt="N" lookupobjecttype="procedure" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
+	    <validation name="checkAgencyCountryCodeW9Empty" expression="if(andCondition(isNot(isEmpty(:zip_w9)),isEmpty(:country_code_w9))=&gt;populateError(context,country_code_w9,countryCodeSelectErrorKey)-&gt;isEqual(1,1))" message="countryCodeSelectErrorKey" ruleid="EntityGeneralDetailsRule.checkAgencyCountryCodeW9Empty" executionsequence="3" />
+	    <event id="javascriptCall0" name="onclick" actiontype="other" screen="carrier/agentGeneralDetails.html" action="javascript:showagentaddressdetails();" executionsequence="0" />
+	    <event id="javascriptCall1" name="onclick" actiontype="other" screen="carrier/agentGeneralDetails.html" action="javascript:loadagentGeneralDetail();" executionsequence="1" />
+	    <event id="onchangeCall" name="onchange" actiontype="ajaxpageblocklink" screen="carrier/agentGeneralDetails.html" action="refreshState_w9" actiontypeid="agent_w9_address_div#w9_zip_code_agent_address_security" executionsequence="2">
+	      <forward id="carrier/agentGeneralDetails.html" screen="carrier/agentGeneralDetails.html" executionsequence="0" />
+	    </event>
+  </field>
+ </fields>

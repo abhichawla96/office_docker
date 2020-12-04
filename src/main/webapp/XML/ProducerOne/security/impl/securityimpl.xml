@@ -422,7 +422,7 @@
 	</protectedresource>
 
 	<!-- Marketing group -->
-	<protectedresource description="send_invite_page_level_paradigm"
+	<protectedresource deltaind="I" description="send_invite_page_level_paradigm"
 		uniquename="send_invite_page_level_paradigm">
 		<businessrole roleid="MarketingGroup">
 			<roleaccesslevel accesstype="0" />
@@ -430,89 +430,122 @@
 	</protectedresource>
 	
 
-	<protectedresource defaultaccesstype="0"
+	<protectedresource deltaind="I" defaultaccesstype="0"
 		description="agencyListPublicSubmitNInvitationEdit_modify" operator="AND"
 		uniquename="agencyListPublicSubmitNInvitationEdit_modify">
 		<businessrole roleid="MarketingGroup">
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
 	</protectedresource>
-	<protectedresource defaultaccesstype="0"
+	<protectedresource deltaind="I" defaultaccesstype="0"
 		description="Hide/Show verify with NIPR button on bulkentityAppointNew page"
 		operator="OR" uniquename="bulkEntityAppointNew_verifywithnipr">
 		<businessrole roleid="MarketingGroup">
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
 	</protectedresource>
-	<protectedresource defaultaccesstype="0"
+	<protectedresource deltaind="I" defaultaccesstype="0"
 		description="Hide/Show decline button on NIPR appoint authorize page"
 		operator="and" uniquename="bulkentityappointNew_decline">
 		<businessrole roleid="MarketingGroup">
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
 	</protectedresource>
-	<protectedresource defaultaccesstype="0"
+	<protectedresource deltaind="I" defaultaccesstype="0"
 		description="Hide/Show add new location button on agency details page"
 		operator="OR" uniquename="addNewLocation_entityGeneralDetail_security">
 		<businessrole roleid="MarketingGroup">
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
 	</protectedresource>
-	<protectedresource defaultaccesstype="0"
+	<protectedresource deltaind="I" defaultaccesstype="0"
 		description="Hide/show send invitation button on banner search page"
 		uniquename="advanceSearchEntityResult_send_invite_page_level_paradigm">
 		<businessrole roleid="MarketingGroup">
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
 	</protectedresource>
-	<protectedresource defaultaccesstype="0"
+	<protectedresource deltaind="I" defaultaccesstype="0"
 		description="Hide/show add new agency button on banner search page"
 		uniquename="isAddNewAgencyPage">
 		<businessrole roleid="MarketingGroup">
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
 	</protectedresource>
-	<protectedresource defaultaccesstype="0"
+	<protectedresource deltaind="I" defaultaccesstype="0"
 		description="Hide/Show add new contact button on agency details page"
 		operator="OR" uniquename="addNewContact_entityGeneralDetail_security">
 		<businessrole roleid="MarketingGroup">
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
 	</protectedresource>
-	<protectedresource defaultaccesstype="0"
+	<protectedresource deltaind="I" defaultaccesstype="0"
 		description="Hide/Show modify button on agency details page" operator="OR"
 		uniquename="entityGeneralDetails_modify">
 		<businessrole roleid="MarketingGroup">
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
 	</protectedresource>
-	<protectedresource defaultaccesstype="0"
+	<protectedresource deltaind="I" defaultaccesstype="0"
 		description="Hide/Show sign button on contract page" operator="and"
 		uniquename="docContractDetails_sign">
 		<businessrole roleid="MarketingGroup">
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
 	</protectedresource>
-	<protectedresource defaultaccesstype="0"
+	<protectedresource deltaind="I" defaultaccesstype="0"
 		description="Hide/Show add new license button on bulkentityAppointNew page"
 		operator="OR" uniquename="bulkEntityAppointNew_addnewlicense">
 		<businessrole roleid="MarketingGroup">
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
 	</protectedresource>
-	<protectedresource defaultaccesstype="0"
+	<protectedresource deltaind="I" defaultaccesstype="0"
 		description="Hide/Show appoint authorize button on bulkentityAppointNew page"
 		operator="OR" uniquename="bulkEntityAppointNew_appointauthorize">
 		<businessrole roleid="MarketingGroup">
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
 	</protectedresource>
-	<protectedresource defaultaccesstype="0"
+	<protectedresource deltaind="I" defaultaccesstype="0"
 		description="check Un Subscribe Button Hide Show" uniquename="checkNPNUnSubscribe">
 		<businessrole roleid="MarketingGroup">
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
 	</protectedresource>
 
+<!-- Banner search -->
+	<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show dba on banner producer search page" uniquename="advance_producer_search_dba_security">
+     <userdefined executionsequence="0" ruleid="ProducerOneRule.showSearchGridFieldForDba">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    </protectedresource>
+    
+	<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show dba on banner producer search page" uniquename="advanceSearchResult_name_NIPR_security">
+     <userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.showSearchGridFieldForDba">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+    </protectedresource>
+    
+    <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show fein/tax id on banner agency search page" uniquename="advanceSearchResult_feintaxid_security">
+  	<businessrole datatype="decrypt" roleid="CarrierAdmin">
+  		<roleaccesslevel accesstype="1"/>
+  	</businessrole>
+  	<businessrole datatype="encrypt" roleid="MarketingAssistant">
+  		<roleaccesslevel accesstype="1"/>
+  	</businessrole>
+  	 <userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.showSearchGridFieldForDba">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+  </protectedresource>
+  
+  <!--Sprint 3 : Agency and Agent Demographics- General (creation&main of Agency code -->
+  
+<protectedresource deltaind="M" defaultaccesstype="0" description="Show/Hide Affinity Group Section security on producer detail page" uniquename="producerDetail_affinity_group_section_security">
+	   <userdefined deltaind="M" executionsequence="1"  ruleid="ProducerDetailRule.isProducerNumberExistForAffinityGroup">
+           <userdefinedaccesslevel accesstype="0"/>
+        </userdefined>
+	</protectedresource>
+  
 
 </security>  
