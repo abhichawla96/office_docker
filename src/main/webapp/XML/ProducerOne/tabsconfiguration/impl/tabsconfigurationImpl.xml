@@ -222,6 +222,13 @@
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="docContractDetails_isShowDocumentFilterSectionTrue" name="docContractDetails_isShowDocumentFilterSectionTrue"/>
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="docContractDetails_isShowCancellationDate" name="docContractDetails_isShowCancellationDate"/>
 
+ <!-- Sugandha's Bug sheet - 0135 -->
+  <tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyListEdit_isShowDirectDepositCheckBox"/>
+  
+  <!-- US - OB-GEN-013-001 -->
+    <tabsconfigurationresource deltaind="M" accesslevel="0" name="checkIsShowProducerBillingTermTab"/>
+  <!--US - OB-GEN-014-001 -->
+     <tabsconfigurationresource deltaind="M" accesslevel="0" name="isShowProdNumBankInformationTab"/>
 
 
   
