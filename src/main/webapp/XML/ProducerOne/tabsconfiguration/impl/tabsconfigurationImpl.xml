@@ -211,9 +211,10 @@
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show state_id_prodOrgMapping security" name="state_id_prodOrgMapping_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="position_type_prodOrgMapping_security" name="position_type_prodOrgMapping_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="position_prodOrgMapping_security" name="position_prodOrgMapping_security"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" description="position_manager_id_prodOrgMapping_security" name="position_manager_id_prodOrgMapping_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="position_manager_id_prodOrgMapping_security" name="position_manager_id_prodOrgMapping_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="lob_id_prodOrgMapping_security" name="lob_id_prodOrgMapping_security"/>
- 
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Show Active,Closed,Pending in Agency code status dropdown on Agency Code Detail Page" name="all_producer_status_cde_security"/>
+
 
 
 <!-- Contract Filters : Bud Id: 64-->

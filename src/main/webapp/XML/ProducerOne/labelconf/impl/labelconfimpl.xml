@@ -83,4 +83,9 @@
   <label deltaind="M" labeldesc="Designations" labelkey="principal_keyContact_position_label"/> 
 
   
+<!-- Sprint 3 : Agency and Agent Demographics- General (creation&main of Agency code) -->  
+  
+  <label deltaind="M" labeldesc="Position Manager" labelkey="position_manager_id_prodOrgMapping_label"/>
+  <label deltaind="I" labeldesc="County" labelkey="county_id_prodOrgMapping_label"/>
+
 </labelconf>
