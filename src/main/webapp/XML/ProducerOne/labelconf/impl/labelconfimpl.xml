@@ -100,6 +100,10 @@
   <label deltaind="I" labeldesc="I understand it&apos;s required to obtain and maintain a policy or policies of cyber liability insurance coverage with limits of liability of at least $500,000.Please attach a copy of your current declaration page in the Additional Documants section at the end of the application. Click the box to agree to these terms." labelkey="add_new_cyber_liability_eo_claims_declaration_label"/>
   
 
+<!-- Sprint 3:Agency Profile -->
+<label deltaind="M" labeldesc="Email" labelkey="profile_BA_e_mail_label"/>
+<label deltaind="M" labeldesc="E&O Contact" labelkey="agencyProfile_doc_insurance_block_person_name_label"/>
+  
 
 
 </labelconf>

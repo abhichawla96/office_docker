@@ -273,6 +273,26 @@
   <tabsconfigurationresource deltaind="M" name="doc_cyberLiability_aggregate_limit_security" accesslevel="0" description="hide/show doc_cyberLiability_aggregate_limit_security on docCyberLiability.html" />
   <tabsconfigurationresource deltaind="M" name="doc_cyberLiability_deductible_security" accesslevel="0" description="hide/show doc_cyberLiability_deductible_security on docCyberLiability.html" />
 
+<!-- CSR Field -->
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="num_csr_securityHeader" name="num_csr_securityHeader"/>
+  
+  
+  <!-- Sprint 3: E&O Dashboard -->
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="entity_insurance_expiration_producer_number_security" name="entity_insurance_expiration_producer_number_security"/>
+ <!-- Sprint 3:Agency Profile -->
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="profile_BA_fax_security" name="profile_BA_fax_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowAttachedCommissionScheduleInSummary" name="isShowAttachedCommissionScheduleInSummary"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show of doc_insurance_block_producer_number_id Column in agencyProfile_insurance_certificate_id_security.html" name="agencyProfile_doc_insurance_block_producer_number_id_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/Show of agencyProfile_doc_insurance_block_producer_name_security Column in agencyProfile_insurance_certificate_id_security.html" name="agencyProfile_doc_insurance_block_producer_name_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show of doc_insurance_block_operating_dvision Column in agencyProfile_insurance_certificate_id_security.html" name="agencyProfie_doc_insurance_block_operating_dvision_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show of Com_Rep Section Column in agencyProfile.html" name="agencyProfile_organization_role_id_prodOrgMapping_desc_security"/>
+<tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/Show of agencyProfile_effective_date_prodOrgMapping_security Section Column in agencyProfile.html" name="agencyProfile_effective_date_prodOrgMapping_security"/>
+<tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/Show of agencyProfile_effective_date_prodOrgMapping_security Section Column in agencyProfile.html" name="agencyProfile_expiration_date_prodOrgMapping_security"/>
+
+<tabsconfigurationresource deltaind="M" name="agencyProfile_state_id_prodOrgMapping_desc_security" accesslevel="1" description="Hide/Show agencyProfile_state_id_prodOrgMapping_desc_security " />
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show of position_prodOrgMapping Column in agencyProfile.html" name="agencyProfile_position_prodOrgMapping_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show of position_manager_id_prodOrgMapping Column in agencyProfile.html" name="agencyProfile_position_manager_id_prodOrgMapping_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show of prodOrgMapping_desc Column in agencyProfile.html" name="agencyProfile_position_prodOrgMapping_desc_security"/>
 
 
 
