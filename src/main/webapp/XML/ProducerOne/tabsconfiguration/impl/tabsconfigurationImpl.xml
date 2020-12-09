@@ -230,6 +230,8 @@
   <!--US - OB-GEN-014-001 -->
      <tabsconfigurationresource deltaind="M" accesslevel="0" name="isShowProdNumBankInformationTab"/>
 
-
+<!--OB-GEN-015-3-->
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="doc_contract_contact_state_security" name="doc_contract_contact_state_security"/>
+ 
   
 </tabsconfiguration>

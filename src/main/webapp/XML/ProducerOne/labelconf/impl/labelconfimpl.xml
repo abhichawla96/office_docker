@@ -88,4 +88,9 @@
   <label deltaind="M" labeldesc="Position Manager" labelkey="position_manager_id_prodOrgMapping_label"/>
   <label deltaind="I" labeldesc="County" labelkey="county_id_prodOrgMapping_label"/>
 
+<!-- OB-GEN-015-2 -->
+   <label deltaind="M" labeldesc="Contact" labelkey="doc_contract_principal_contact_label"/>
+
+
+
 </labelconf>
