@@ -233,5 +233,47 @@
 <!--OB-GEN-015-3-->
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="doc_contract_contact_state_security" name="doc_contract_contact_state_security"/>
  
+
+<!-- Sprint 3 : Agency and Agent Demographics- General (Documents - E&O ) -->
+
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="doc_insurance_block_producer_number_id_security" name="doc_insurance_block_producer_number_id_security"/>
+  <tabsconfigurationresource deltaind="I" accesslevel="0" description="doc_insurance_block_producer_number_id_security" name="doc_insurance_block_producer_name_security"/>
+ 
+<!-- Sprint 3 : Agency and Agent Demographics- General (Documents - E&O ) --> 
   
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="add_new_note_type_security" name="add_new_note_type_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="entity_notepad_Producer_number_security" name="entity_notepad_Producer_number_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="doc_insurance_producer_number_id_security" name="doc_insurance_producer_number_id_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="doc_insurance_expiration_date_from_security" name="doc_insurance_expiration_date_from_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="addNewInsuranceDetail_isShowCancellationDate" name="addNewInsuranceDetail_isShowCancellationDate"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="doc_insurance_review_status_security" name="doc_insurance_review_status_security"/>
+  <tabsconfigurationresource deltaind="M" name="add_new_insurance_details_eo_claims_declaration_security" accesslevel="1" description="add_new_insurance_details_for_self_service_eo_claims_declaration_security hide/show" />
+
+  
+<!-- Sprint 3 : Agency and Agent Demographics- General (Outofscope changes ) -->
+
+  <tabsconfigurationresource deltaind="M" accesslevel="0" name="relationaship_mngmnt_tab_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" name="checkIsShowCompensationMgmtTab"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show external system tab for agency" name="isShowAgencyExternalSystemTabTrue"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" name="checkIsShowRequestTab"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyClaimPolicy_tab_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show Commission Hierarchy Tab" name="commission_hierarchy_new_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" name="isShowIncentiveHierarchyTab"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show Profit Sharing Hierarchy Tab" name="isShowProfitSharingHierarchyTab"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show activities tab at agent level" name="agent_activities_security"/>
+ 
+ <!-- Add Cyber LIability Button -->
+ 
+  <tabsconfigurationresource deltaind="M" name="addNewCyberLiability_full_page_security" accesslevel="1" description="hide/show addNewCyberLiability_full_page_security on docCyberLiability.html" />
+  <tabsconfigurationresource deltaind="M" name="ajax_cyber_liability_security" accesslevel="1" description="hide/show ajax_cyber_liability_security on docCyberLiability.html" />
+
+  <tabsconfigurationresource deltaind="M" name="doc_CyberLiability_block_producer_number_id_security" accesslevel="0" description="hide/show doc_CyberLiability_block_producer_number_id_security on docCyberLiability.html" />
+  <tabsconfigurationresource deltaind="M" name="doc_CyberLiability_block_producer_name_security" accesslevel="0" description="hide/show doc_CyberLiability_block_producer_name_security on docCyberLiability.html" />
+  <tabsconfigurationresource deltaind="M" name="doc_CyberLiability_producer_number_id_security" accesslevel="0" description="hide/show doc_CyberLiability_producer_number_id_security on docCyberLiability.html" />
+  <tabsconfigurationresource deltaind="M" name="doc_cyberLiability_aggregate_limit_security" accesslevel="0" description="hide/show doc_cyberLiability_aggregate_limit_security on docCyberLiability.html" />
+  <tabsconfigurationresource deltaind="M" name="doc_cyberLiability_deductible_security" accesslevel="0" description="hide/show doc_cyberLiability_deductible_security on docCyberLiability.html" />
+
+
+
+
 </tabsconfiguration>

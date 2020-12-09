@@ -90,6 +90,15 @@
 
 <!-- OB-GEN-015-2 -->
    <label deltaind="M" labeldesc="Contact" labelkey="doc_contract_principal_contact_label"/>
+<!-- Sprint 3 : Agency and Agent Demographics- General (Documents - E&O ) -->  
+  
+  <label deltaind="M" labeldesc="E&amp;O Contact" labelkey="doc_insurance_block_person_name_label"/>
+  <label deltaind="M" labeldesc="E&amp;O Contact" labelkey="doc_insurance_insurance_contact_label"/>
+  <label deltaind="M" labeldesc="Producer W-9 Name" labelkey="doc_w9_list_agency_w9_label"/>
+  
+  
+  <label deltaind="I" labeldesc="I understand it&apos;s required to obtain and maintain a policy or policies of cyber liability insurance coverage with limits of liability of at least $500,000.Please attach a copy of your current declaration page in the Additional Documants section at the end of the application. Click the box to agree to these terms." labelkey="add_new_cyber_liability_eo_claims_declaration_label"/>
+  
 
 
 
