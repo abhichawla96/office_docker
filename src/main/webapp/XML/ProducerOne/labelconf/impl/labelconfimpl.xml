@@ -9,7 +9,6 @@
  <label deltaind="M" labeldesc="Account Type Usage" labelkey="ss_bank_account_type_trust_operating_label"/>
  <label deltaind="M" labelkey="checkIsShowDocumentInsuranceTab_menulabel" labeldesc="E&amp;O"></label>
  <label deltaind="M" labeldesc="License Verification" labelkey="nipr_appointment_bucket_label"/>
- <label deltaind="M" labeldesc="Pending License Verification" labelkey="onboard_pending_appointment_label"/>
  <label deltaind="M" labeldesc="Proceed to License Verification" labelkey="entitybackgroundlist_proceedtoappointmentslabel"/>
  <label deltaind="M" labeldesc="Received" labelkey="pending_bg_check_label"/>
  <label deltaind="M" labeldesc="Licenses Verified" labelkey="onboard_appointed_with_nipr_label"/>
@@ -17,12 +16,8 @@
  <label deltaind="M" labeldesc="Agency Setup Checklist" labelkey="pending_legacy_setup_label"/>
  <label deltaind="M" labeldesc="E&amp;O" labelkey="insurancelabel"/>
  <!-- Onboarding dashboard -->
- <label deltaind="M" labeldesc="Received" labelkey="pending_bg_check_label"/>
-   <label deltaind="M" labeldesc="License Verification" labelkey="nipr_appointment_bucket_label"/>
+ 
    <label deltaind="M" labeldesc="Pending License Verification" labelkey="onboard_pending_appointment_label"/>
-   <label deltaind="M" labeldesc="Licenses Verified" labelkey="onboard_appointed_with_nipr_label"/>
-   <label deltaind="M" labeldesc="License Verification Failed" labelkey="onboard_failed_appointment_label"/>
-   <label deltaind="M" labeldesc="Agency Setup Checklist" labelkey="pending_legacy_setup_label"/>
    <label deltaind="M" labeldesc="Agency Status" labelkey="agentstatus_label"/>
    
 <!--Sprint 1 : Bug Id : 0002 -->
@@ -79,10 +74,8 @@
   <label deltaind="M" labeldesc="W-9 Legal Name" labelkey="taxpayer_name_label"/>
   <label deltaind="M" labeldesc=" Please Verify W9 Address" labelkey="verify_w9_address_label"/>
   
-  <!-- Anshika's Observation -->
-  <label deltaind="M" labeldesc="Designations" labelkey="principal_keyContact_position_label"/> 
+ 
 
-  
 <!-- Sprint 3 : Agency and Agent Demographics- General (creation&main of Agency code) -->  
   
   <label deltaind="M" labeldesc="Position Manager" labelkey="position_manager_id_prodOrgMapping_label"/>
@@ -102,7 +95,7 @@
 
 <!-- Sprint 3:Agency Profile -->
 <label deltaind="M" labeldesc="Email" labelkey="profile_BA_e_mail_label"/>
-<label deltaind="M" labeldesc="E&O Contact" labelkey="agencyProfile_doc_insurance_block_person_name_label"/>
+<label deltaind="M" labeldesc="E&amp;O Contact" labelkey="agencyProfile_doc_insurance_block_person_name_label"/>
   
  <label deltaind="M" labeldesc="Total Agency Volume" labelkey="total_annual_revenue_label"/>
  

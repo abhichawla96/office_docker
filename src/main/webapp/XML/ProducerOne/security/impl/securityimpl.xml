@@ -422,7 +422,7 @@
 	</protectedresource>
 
 	<!-- Marketing group -->
-	<protectedresource deltaind="I" description="send_invite_page_level_paradigm"
+	<!-- <protectedresource deltaind="M" description="send_invite_page_level_paradigm"
 		uniquename="send_invite_page_level_paradigm">
 		<businessrole roleid="MarketingGroup">
 			<roleaccesslevel accesstype="0" />
@@ -548,4 +548,14 @@
 	</protectedresource>
   
 
+<!-- CSR Field -->
+ <protectedresource deltaind="M" defaultaccesstype="1" description="num_csr_securityHeader" uniquename="num_csr_securityHeader">
+    <userdefined deltaind="M" executionsequence="0" ruleid="ProducerOneRule.isOrganizationTypeCompanyNotAgency">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+  </protectedresource>
+  
+ <protectedresource deltaind="I" defaultaccesstype="1" description="dashboard_Cyber_Liability_Records_security" uniquename="dashboard_Cyber_Liability_Records_security">
+   
+  </protectedresource>
 </security>  
