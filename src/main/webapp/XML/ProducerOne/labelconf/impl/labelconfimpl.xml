@@ -104,6 +104,7 @@
 <label deltaind="M" labeldesc="Email" labelkey="profile_BA_e_mail_label"/>
 <label deltaind="M" labeldesc="E&O Contact" labelkey="agencyProfile_doc_insurance_block_person_name_label"/>
   
-
+ <label deltaind="M" labeldesc="Total Agency Volume" labelkey="total_annual_revenue_label"/>
+ 
 
 </labelconf>
