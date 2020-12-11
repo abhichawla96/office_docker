@@ -576,5 +576,22 @@
     </userdefined>
   </protectedresource>
   
+  <!-- Sprint 3 : Agency and Agent Demographics- General (Documents - E&O ) --> 	
+	
+<protectedresource deltaind="M" defaultaccesstype="1" description="doc_insurance_review_status_security" uniquename="doc_insurance_review_status_security">
+    <businessrole roleid="CarrierAdmin">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
+  </protectedresource>
+  
+<protectedresource deltaind="M" defaultaccesstype="1" description="doc_insurance_expiration_date_from_security" uniquename="doc_insurance_expiration_date_from_security">
+    <businessrole roleid="CarrierAdmin">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
+  </protectedresource>
+  
+<protectedresource deltaind="M" defaultaccesstype="1" description="doc_insurance_policy_number_security" uniquename="doc_insurance_policy_number_security">
+    <businessrole roleid="CarrierAdmin">
+      <roleaccesslevel accesstype="1"/>
    
 </security>  

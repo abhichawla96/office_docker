@@ -81,8 +81,7 @@
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowAgencyAssociationCheckbox" name="isShowAgencyAssociationCheckbox"/> 
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="business_phone_ext_agency_address_security" name="business_phone_ext_agency_address_security"/>
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="w9_type_id_agency_address_security" name="w9_type_id_agency_address_security"/>
- <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide\Show Entity general details  Lexis Nexis" name="entityGeneralDetails_lexis_nexis_security"/>
- <tabsconfigurationresource deltaind="M" accesslevel="0" description="social_media_site_security" name="entityGeneralDetails_social_media_site_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="social_media_site_security" name="entityGeneralDetails_social_media_site_security"/>
  <tabsconfigurationresource deltaind="M" accesslevel="1" description="hide show number of csr from agency page/readonly page" name="isShowNumberofCSR"/>
  <!--Sprint 1 : Contract  -->
   
@@ -214,6 +213,7 @@
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="position_manager_id_prodOrgMapping_security" name="position_manager_id_prodOrgMapping_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="lob_id_prodOrgMapping_security" name="lob_id_prodOrgMapping_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Show Active,Closed,Pending in Agency code status dropdown on Agency Code Detail Page" name="all_producer_status_cde_security"/>
+<tabsconfigurationresource description="Show/Hide Affinity group section security on producer detail page" name="producerDetail_affinity_group_section_security" accesslevel="0"/> <!-- added on 12/11/20 by Aashutosh -->
 
 
 
@@ -315,5 +315,32 @@
 <tabsconfigurationresource deltaind="I" accesslevel="0" description="spinn_user_detailss_Security" name="spinn_user_detailss_Security"/>
 <tabsconfigurationresource deltaind="M" accesslevel="1" description="spinn_userDetails_grid_security" name="spinn_userDetails_grid_security"/>
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="spinn_userRoleList_security" name="spinn_userRoleList_security"/>
+<!-- Sprint 3 : Agency and Agent Demographics- General (Bank Information) -->
+
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="bankInformationListing_bank_account_type_usage_security" name="bankInformationListing_bank_account_type_usage_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="bankInformationListing_pre_note_reason_security" name="bankInformationListing_pre_note_reason_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="bankInformationListing_bank_average_balance_security" name="bankInformationListing_bank_average_balance_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="bankInformationListing_bank_account_use_code_security" name="bankInformationListing_bank_account_use_code_security"/>
+  
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="account_type_trust_operating_security" name="account_type_trust_operating_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_average_balance_security" name="bank_average_balance_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_address1_security" name="bank_address1_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_address2_security" name="bank_address2_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_account_use_code_security" name="bank_account_use_code_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_zipcode_security" name="bank_zipcode_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_country_code_security" name="bank_country_code_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_state_id_security" name="bank_state_id_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_city_security" name="bank_city_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_limit_amt_security" name="bank_limit_amt_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_limit_percentage_security" name="bank_limit_percentage_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="percentage_amt_flag_security" name="percentage_amt_flag_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="percentage_amt_value_security" name="percentage_amt_value_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="prenote_indicator_security" name="prenote_indicator_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_phone_security" name="bank_phone_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_altphone_security" name="bank_altphone_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_account_priority_order_security" name="bank_account_priority_order_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_effective_date_security" name="bank_effective_date_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_expiration_date_security" name="bank_expiration_date_security"/>
+  
     
 </tabsconfiguration>

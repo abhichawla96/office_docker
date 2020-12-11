@@ -73,4 +73,18 @@
 	      <forward id="carrier/agentGeneralDetails.html" screen="carrier/agentGeneralDetails.html" executionsequence="0" />
 	    </event>
   </field>
+
+<!-- Sprint 3 : Agency and Agent Demographics- General (Documents - E&O ) : Extended Field --> 
+  	
+  <field deltaind="I" isextendedfield="Y" name="eno_question" screen="carrier/addNewInsuranceDetail.html" objectcolumn="insurance_certificate_id" section="docInsuranceDetail_freeform_contextdata_1" displaytype="radio" 
+	isrequired="N" labelkey="eno_question_label" labeldesc="Have any E &amp; O claims been made during the past five years against the agency, agency partners, officers, or any members of the staff?" accesslevel="1" tabsconfigurationresourcename="eno_question_security" 
+	protectedresourceuniquename="eno_question_security" id="eno_question" position="#comments_before#" mappedto="f24">	 
+  </field>
+	
+<!-- Sprint 3 : Agency and Agent Demographics- General (Bank Information ) : Extended Field --> 
+	
+	<field deltaind="I" isextendedfield="Y" name="commision_contact" screen="carrier/addNewBankInformation.html" objectcolumn="bank_information" section="add_bank_info_grid_security" displaytype="text" 
+	isrequired="N" labelkey="commision_contact_label" labeldesc="Commision Contact" accesslevel="1" tabsconfigurationresourcename="commision_contact_security" 
+	protectedresourceuniquename="commision_contact_security" id="commision_contact" position="#bank_routing_number_security_before#" mappedto="f25">
+	</field>
  </fields>
