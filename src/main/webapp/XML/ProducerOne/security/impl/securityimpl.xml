@@ -558,4 +558,23 @@
  <protectedresource deltaind="I" defaultaccesstype="1" description="dashboard_Cyber_Liability_Records_security" uniquename="dashboard_Cyber_Liability_Records_security">
    
   </protectedresource>
+  
+  
+  <!-- Hide product menu -->
+   <protectedresource deltaind="M" defaultaccesstype="0" description="product_validation_tab_agencyLevel_security" operator="or" uniquename="product_validation_tab_agencyLevel_security">
+    <businessrole roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole roleid="Agent">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <userdefined executionsequence="1" ruleid="WorkflowRule.isOnboardingFlowFound">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+    <userdefined executionsequence="0" ruleid="ProducerOneRule.isAddNewLocationFlagTrue">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+  </protectedresource>
+  
+   
 </security>  

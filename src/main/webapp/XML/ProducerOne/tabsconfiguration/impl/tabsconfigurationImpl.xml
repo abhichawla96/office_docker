@@ -309,5 +309,11 @@
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="interest_in_any_other_business_outside_security" name="interest_in_any_other_business_outside_security"/>
  
 
-
+<!-- Sprint 3 -user details -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="checkUserIsAgencyAdmin" name="checkUserIsAgencyAdmin"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="dashboard_Cyber_Liability_Records_security" name="dashboard_Cyber_Liability_Records_security"/>
+<tabsconfigurationresource deltaind="I" accesslevel="0" description="spinn_user_detailss_Security" name="spinn_user_detailss_Security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="spinn_userDetails_grid_security" name="spinn_userDetails_grid_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="spinn_userRoleList_security" name="spinn_userRoleList_security"/>
+    
 </tabsconfiguration>

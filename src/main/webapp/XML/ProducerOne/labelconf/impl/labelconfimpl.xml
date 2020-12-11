@@ -100,4 +100,5 @@
  <label deltaind="M" labeldesc="Total Agency Volume" labelkey="total_annual_revenue_label"/>
  
 
+  <label deltaind="M" labeldesc="Producer Privileges" labelkey="spinn_privileges_label"/>
 </labelconf>
