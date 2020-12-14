@@ -635,9 +635,9 @@
       <userdefinedaccesslevel accesstype="1"/>
     </userdefined>
   </protectedresource>
-   <protectedresource deltaind="M" defaultaccesstype="1" uniquename="isHideProdNumProbationTrue">
+   <protectedresource deltaind="M" defaultaccesstype="0" uniquename="isHideProdNumProbationTrue">
     <userdefined executionsequence="0" ruleid="ProducerOneRule.isHideProdNumProbationTrue">
-      <userdefinedaccesslevel accesstype="1"/>
+      <userdefinedaccesslevel accesstype="0"/>
     </userdefined>
   </protectedresource>
   
@@ -667,5 +667,6 @@
       <userdefinedaccesslevel accesstype="1"/>
     </userdefined>
   </protectedresource>
+  
 </security>  
 
