@@ -87,4 +87,70 @@
 	isrequired="N" labelkey="commision_contact_label" labeldesc="Commision Contact" accesslevel="1" tabsconfigurationresourcename="commision_contact_security" 
 	protectedresourceuniquename="commision_contact_security" id="commision_contact" position="#bank_routing_number_security_before#" mappedto="f25">
 	</field>
+	
+	 
+  <!-- dividend distribution -->
+	
+	
+	<field deltaind="I"  isextendedfield="Y" id="dividend_distribution" name="dividend_distribution" objectcolumn="aar_requestid"  section="adminBrokerstep1_freeform_contextdata_1" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" isrequired="Y" accesslevel="1"
+	  	tabsconfigurationresourcename="adminBrokerstep1_freeform_contextdata_1" displaytype="multiradio"
+	  	protectedresourceuniquename="adminBrokerstep1_freeform_contextdata_1" position="#distDistiShow_after#"
+		lookupobjectname="dividend_dist_lku" lookupobjecttype="mastertable"
+	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f28">
+		</field> 
+		
+		<!-- Policyholder Copies -->
+		
+		<field deltaind="I"  isextendedfield="Y" id="policyholder_copies" name="policyholder_copies" objectcolumn="aar_requestid"  section="adminBrokerstep1_freeform_contextdata_2" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" isrequired="Y" accesslevel="1"
+	  	tabsconfigurationresourcename="adminBrokerstep1_freeform_contextdata_2" displaytype="multiradio"
+	  	protectedresourceuniquename="adminBrokerstep1_freeform_contextdata_2" position="#policyholdercopies_after#"
+		lookupobjectname="policyholder_copies_lku" lookupobjecttype="mastertable"
+	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f27">
+		</field>
+		
+		
+		<!-- CBIA Field -->
+  	<field deltaind="I" isextendedfield="Y" name="cbia_designation" screen="agentGeneralDetails" objectcolumn="person_id" section="entityPersonDetails_freeform_contextdata_2" displaytype="radio" 
+	isrequired="Y" labelkey="cbia_designation_label" labeldesc="CBIA Designation" accesslevel="1" tabsconfigurationresourcename="public3_cbia_security" mappedto="f26"
+	protectedresourceuniquename="public3_cbia_security" id="cbia_designation" position="#contact_highest_ranking_principal_after#">
+	
+	<event id="onchange" name="onchange" screen="public/agentGeneralDetails.html" actiontype="ajaxpageblocklink" action="refreshAddendumQuestions" actiontypeid="entityPersonDetails_freeform_contextdata_2" executionsequence="0">
+	  	<forward id="public/agentGeneralDetails.html" screen="public/agentGeneralDetails.html" />
+	 </event>
+	 
+	</field>
+	
+	<field deltaind="I" isextendedfield="Y" name="year_recieved" screen="agentGeneralDetails" objectcolumn="person_id" section="entityPersonDetails_freeform_contextdata_2" displaytype="text" 
+	isrequired="Y" labelkey="year_recieved_label" labeldesc="Year Received" accesslevel="1" tabsconfigurationresourcename="year_recieved_security" mappedto="f25"
+	protectedresourceuniquename="year_recieved_security" id="year_recieved" position="#cbia_designation_after#">
+	</field>
+	
+	
+<!--   <field deltaind="M" id="agentGeneralDetails_Contact Type" screen="carrier/agentGeneralDetails.html" name="Contact Type" isrequired="Y" labelkey="contact_type_label" tabsconfigurationresourcename="checkbox_for_contacttype_security" protectedresourceuniquename="checkbox_for_contacttype_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" >
+  <event id="onclick" name="onclick" screen="public/agentGeneralDetails.html" actiontype="ajaxpageblocklink" action="refreshAddendumQuestions" actiontypeid="entityPersonDetails_freeform_contextdata_2" executionsequence="0">
+	  	<forward id="public/agentGeneralDetails.html" screen="public/agentGeneralDetails.html" />
+	 </event>
+  </field> -->
+	
+	
+	
+	<!-- dividend distribution -->
+	
+	
+	<field deltaind="I"  isextendedfield="Y" id="dividend_distribution" name="dividend_distribution" objectcolumn="agency_id"  section="adminBrokerstep1_freeform_contextdata_1" screen="entityGeneralDetails" isrequired="Y" accesslevel="1"
+	  	tabsconfigurationresourcename="adminBrokerstep1_freeform_contextdata_1" displaytype="multiradio"
+	  	protectedresourceuniquename="adminBrokerstep1_freeform_contextdata_1" position="#distDistiShow_after#"
+		lookupobjectname="dividend_dist_lku" lookupobjecttype="mastertable"
+	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f28">
+		</field> 
+		
+		<!-- Policyholder Copies -->
+		
+		<field deltaind="I"  isextendedfield="Y" id="policyholder_copies" name="policyholder_copies" objectcolumn="agency_id"  section="adminBrokerstep1_freeform_contextdata_2" screen="entityGeneralDetails" isrequired="Y" accesslevel="1"
+	  	tabsconfigurationresourcename="adminBrokerstep1_freeform_contextdata_2" displaytype="multiradio"
+	  	protectedresourceuniquename="adminBrokerstep1_freeform_contextdata_2" position="#policyholdercopies_after#"
+		lookupobjectname="policyholder_copies_lku" lookupobjecttype="mastertable"
+	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f27">
+		</field>
+
  </fields>

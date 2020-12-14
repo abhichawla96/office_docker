@@ -343,4 +343,13 @@
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_expiration_date_security" name="bank_expiration_date_security"/>
   
     
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="top_companies_written_premium_security" name="top_companies_written_premium_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show agency established date on agency summary page" name="agencyListEdit_agencyestablisheddate_security"/>
+<tabsconfigurationresource deltaind="M" description="Segment security on Entity General Details page" name="entityGeneralDetails_segment_security" accesslevel="1"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="Show few Agency code status dropdown on Agency Code Detail Page on edit event" name="few_producer_status_cde_security"/>
+<tabsconfigurationresource deltaind="I" accesslevel="1" description="bq_group_buttons_security" name="bq_group_buttons_security"/>
+
+
+
+    
 </tabsconfiguration>

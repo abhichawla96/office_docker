@@ -51,9 +51,9 @@
   <label deltaind="M" labeldesc="Agency Name" labelkey="agencyOfficeNamelabel"/>
   <label deltaind="M" labeldesc="W-9 Legal Name" labelkey="taxpayer_name_label"/>
    <label deltaind="M" labeldesc="Agency Web Address" labelkey="url_label"/>
-  <label deltaind="M" labeldesc="Please Verify Address" labelkey="verify_business_address_label"/>
+  <label deltaind="M" labeldesc="Please Verify Business Address" labelkey="verify_business_address_label"/>
   <label deltaind="M" labeldesc="Street Address #1" labelkey="streetAddress1_mailingaddress_FieldLabel"/>
-  <label deltaind="M" labeldesc="Please Verify Address" labelkey="verify_mailing_address_label"/>
+  <label deltaind="M" labeldesc="Please Verify Mailing Address" labelkey="verify_mailing_address_label"/>
   <label deltaind="M" labeldesc="Street Address #1" labelkey="streetAddress1_w9address_FieldLabel"/>
   
    <!-- BUG ID : 0050 -->
@@ -101,4 +101,7 @@
  
 
   <label deltaind="M" labeldesc="Producer Privileges" labelkey="spinn_privileges_label"/>
+  <label deltaind="M" labeldesc="Premium Volume and Production Information" labelkey="premium_volume_by_lob_label"/>
+ 
+<label deltaind="M" labelkey="entityGeneralDetails_segment_label" labeldesc="Tier" />
 </labelconf>

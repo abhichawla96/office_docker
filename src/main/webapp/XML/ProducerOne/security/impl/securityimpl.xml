@@ -577,6 +577,16 @@
   </protectedresource>
   
   <!-- Sprint 3 : Agency and Agent Demographics- General (Documents - E&O ) --> 	
+  <!-- CBIA Field -->
+   
+	<protectedresource deltaind="I" defaultaccesstype="0"
+		description="Hide/Show year field"
+		uniquename="year_recieved_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isCBIAYesNo">
+			<userdefinedaccesslevel accesstype="1" />
+		</userdefined>
+	</protectedresource>
 	
 <protectedresource deltaind="M" defaultaccesstype="1" description="doc_insurance_review_status_security" uniquename="doc_insurance_review_status_security">
     <businessrole roleid="CarrierAdmin">
@@ -594,4 +604,68 @@
     <businessrole roleid="CarrierAdmin">
       <roleaccesslevel accesstype="1"/>
    
+   
+   	<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show verify w9 address button on agency details page" operator="OR" uniquename="verify_w9_address_security">
+    <businessrole roleid="CarrierAdmin">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
+    <businessrole roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
+    <userdefined deltaind="M" executionsequence="0" ruleid="WorkflowRule.isOnboardingDeclinedStatusFound">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    <userdefined executionsequence="2" ruleid="WorkflowRule.isOnboardingFlowNotFound">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    <userdefined executionsequence="1" ruleid="WorkflowRule.isOnboardingFlowUserFound">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+  </protectedresource>
+	
+	
+	<!-- <protectedresource deltaind="I" defaultaccesstype="2"
+		description="disable producer code field"
+		uniquename="subProducerAssociation_sub_producer_security"/> -->
+		
+		
+		
+  <protectedresource deltaind="M" defaultaccesstype="1" uniquename="isValidationClosedRequiredBeforeClosingAgencyCode">
+    <userdefined executionsequence="0" ruleid="ProducerOneRule.isValidationClosedRequiredBeforeClosingAgencyCode">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+  </protectedresource>
+   <protectedresource deltaind="M" defaultaccesstype="1" uniquename="isHideProdNumProbationTrue">
+    <userdefined executionsequence="0" ruleid="ProducerOneRule.isHideProdNumProbationTrue">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+  </protectedresource>
+  
+  
+  
+  <!-- modify button  -->
+    <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show modify button on agentBackgroundQuestionCarrierTab page" operator="OR" uniquename="agentBackgroundQuestionCarrierTab_modify">
+    <businessrole roleid="CarrierAdmin">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <userdefined executionsequence="1" ruleid="WorkflowRule.isOnboardingDeclinedStatusFound">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+    <userdefined executionsequence="0" ruleid="ProducerOneRule.isAddNewPersonDetails">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+    <userdefined executionsequence="3" ruleid="WorkflowRule.isOnboardingFlowNotFound">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    <userdefined executionsequence="2" ruleid="WorkflowRule.isOnboardingFlowUserFound">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    <userdefined executionsequence="4" ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+  </protectedresource>
 </security>  
+

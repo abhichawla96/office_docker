@@ -1,0 +1,8 @@
+<functionsdef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/functions_XSD.xsd">
+ 
+  
+ <functiondefinition deltaind="I" classname="com.userbo.common.impl.ProducerOneUtilsImpl" method="getCustomizedProducerCode" name="getCustomizedProducerCode" returntype="V">
+    <argument datatype="com.util.Context" name="context" seq="0"/>
+  </functiondefinition>
+  
+</functionsdef>

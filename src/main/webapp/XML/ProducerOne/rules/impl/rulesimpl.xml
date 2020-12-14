@@ -12,6 +12,10 @@
 
  <rule deltaind="M" id="showNiprAppointments" expression="isEqual(N,Y);" obj="ruleobjs.ProducerOneRule" method="showNiprAppointments" />
    
+   
+   <rule deltaind="I" id="isCBIAYesNo" expression="isEqual(:cbia_designation,Y);"></rule>
+  <rule deltaind="I" id="isPrincipalContType" expression="isEqual(:cbia_designation,'Principal');"></rule>
+   
 	</ruleset>
 </evalrules>	
 	
