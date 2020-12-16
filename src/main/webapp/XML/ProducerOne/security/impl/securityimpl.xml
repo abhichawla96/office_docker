@@ -603,6 +603,9 @@
 <protectedresource deltaind="M" defaultaccesstype="1" description="doc_insurance_policy_number_security" uniquename="doc_insurance_policy_number_security">
     <businessrole roleid="CarrierAdmin">
       <roleaccesslevel accesstype="1"/>
+     </businessrole>
+    </protectedresource>
+      
    
    
    	<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show verify w9 address button on agency details page" operator="OR" uniquename="verify_w9_address_security">
@@ -667,6 +670,41 @@
       <userdefinedaccesslevel accesstype="1"/>
     </userdefined>
   </protectedresource>
+     
+     <protectedresource deltaind="I" accesstype="1"
+		description="Hide/Show id dividend distribution on producer review screen"
+		uniquename="secDividendDist">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+	<protectedresource deltaind="I" accesstype="1"
+		description="Hide/Show id policy holder copies on producer review page"
+		uniquename="policyHolderSection">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+	<protectedresource deltaind="I" accesstype="1"
+		description="Hide/Show id Year in business on producer review page"
+		uniquename="agencyListEdit_agencyestablisheddate_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+     <protectedresource deltaind="I" accesstype="0"
+		description="Hide/Show id agency details page"
+		uniquename="few_producer_status_cde_security_2">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isNewAgencyCode">
+			<userdefinedaccesslevel accesstype="1" />
+		</userdefined>
+	</protectedresource>
+     
+     
   
 </security>  
 

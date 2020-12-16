@@ -1,5 +1,5 @@
 <projectcomponents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/components_XSD.xsd">
-  <component metaobject="country_lku;producertype_lku;business_segment;w9_type_lku;person;agencyListPublicSubmitNInvitationEdit;entityGeneralDetailsAddress" name="agencyListPublicSubmitNInvitationEdit" 
+  <component deltaind="M" metaobject="country_lku;producertype_lku;business_segment;w9_type_lku;person;agencyListPublicSubmitNInvitationEdit;entityGeneralDetailsAddress" name="agencyListPublicSubmitNInvitationEdit" 
   	stackdisplayname="entitytablabel General Detail" displayname="Agency Clearance Details" objectcolumn="aar_requestid" objecttype="Onboarding">
   	<html path="carrier/agencyListPublicSubmitNInvitationEdit.html">
   	<block id="social_media_list_listfreeform_1" name="social_media_list_listfreeform_1" labelkey="social_media_info_label" securitykey="agencyListPublicSubmitNInvitationEdit_social_media_site_security" type="listfreeform" >
@@ -400,11 +400,11 @@
 		sqlstmt="Select Cast((ROW_NUMBER() OVER(ORDER BY questionid ))as varchar) +'.' AS Row,* from (select a.questionid,bg.question,a.response,a.comment,bg.comment_decision from tbl_agencyquestions a,backgroundcheckquestions_lku bg         where a.questionid=bg.questionid and a.aar_requestid=#aar_requestid# union        select questionid,question,null as response,null as comment,bg.comment_decision from backgroundcheckquestions_lku bg        where bg.questionid not in(select questionid from tbl_agencyquestions where aar_requestid=#aar_requestid#) and bg_question_type=0)t1"
 		viewid="agencyListPublicSubmitNInvitationEdit_list_3" />
     <databaseoperation deltaind="M"  eval="ProducerOneRule.isRegistrationTypePrimaryAgencyAgencyDetailScreen" executionsequence="6" metaobject="person"
-		name="getAgencyBackGroundsQuestions" operation="5"
+		name="getAgencyBackGroundsQuestions1" operation="5"
 		sqlstmt="Select Cast((ROW_NUMBER() OVER(ORDER BY questionid ))as varchar) +'.' AS Row,* from (select a.questionid,bg.question,a.response,a.comment,bg.comment_decision from tbl_agencyquestions a,backgroundcheckquestions_lku bg         where a.questionid=bg.questionid and a.aar_requestid=#aar_requestid# union        select questionid,question,null as response,null as comment,bg.comment_decision from backgroundcheckquestions_lku bg        where bg.questionid not in(select questionid from tbl_agencyquestions where aar_requestid=#aar_requestid#) and bg_question_type=1)t1"
 		viewid="agencyListPublicSubmitNInvitationEdit_list_3" />
     <databaseoperation deltaind="M"  eval="ProducerOneRule.isRegistrationTypeSecondaryAgencyAgencyDetailScreen" executionsequence="6" metaobject="person"
-		name="getAgencyBackGroundsQuestions" operation="5"
+		name="getAgencyBackGroundsQuestions2" operation="5"
 		sqlstmt="Select Cast((ROW_NUMBER() OVER(ORDER BY questionid ))as varchar) +'.' AS Row,* from (select a.questionid,bg.question,a.response,a.comment,bg.comment_decision from tbl_agencyquestions a,backgroundcheckquestions_lku bg         where a.questionid=bg.questionid and a.aar_requestid=#aar_requestid# union        select questionid,question,null as response,null as comment,bg.comment_decision from backgroundcheckquestions_lku bg        where bg.questionid not in(select questionid from tbl_agencyquestions where aar_requestid=#aar_requestid#) and bg_question_type=1)t1"
 		viewid="agencyListPublicSubmitNInvitationEdit_list_3" />
         <databaseoperation eval="ProducerOneRule.isShowAgencyCodeInHeader" executionsequence="23" metaobject="agency_master" name="getAgencyCodeforHeader" operation="3" sqlstmt="select top 1 case when producer_number is null or producer_number='' then '' else '(' end + producer_number + case when producer_number is null or producer_number='' then '' else ')' end as headerproducer_number from producer_number where agency_id= #agency_id# and producer_status_cde=1"/>

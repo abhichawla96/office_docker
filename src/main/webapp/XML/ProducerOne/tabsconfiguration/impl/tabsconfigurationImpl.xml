@@ -350,6 +350,8 @@
 <tabsconfigurationresource deltaind="I" accesslevel="1" description="bq_group_buttons_security" name="bq_group_buttons_security"/>
 
 
+<!-- agency code status -->
+<tabsconfigurationresource deltaind="I" accesslevel="0" description="few_producer_status_cde_security_2" name="few_producer_status_cde_security_2"/>
 
     
 </tabsconfiguration>

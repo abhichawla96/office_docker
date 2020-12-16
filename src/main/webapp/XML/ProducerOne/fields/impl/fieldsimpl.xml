@@ -138,7 +138,7 @@
 	
 	
 	<field deltaind="I"  isextendedfield="Y" id="dividend_distribution" name="dividend_distribution" objectcolumn="agency_id"  section="adminBrokerstep1_freeform_contextdata_1" screen="entityGeneralDetails" isrequired="Y" accesslevel="1"
-	  	tabsconfigurationresourcename="adminBrokerstep1_freeform_contextdata_1" displaytype="multiradio"
+	  	tabsconfigurationresourcename="adminBrokerstep1_freeform_contextdata_1" displaytype="multiradio" css="exteded_new_radio_seciton"
 	  	protectedresourceuniquename="adminBrokerstep1_freeform_contextdata_1" position="#distDistiShow_after#"
 		lookupobjectname="dividend_dist_lku" lookupobjecttype="mastertable"
 	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f28">
@@ -147,10 +147,28 @@
 		<!-- Policyholder Copies -->
 		
 		<field deltaind="I"  isextendedfield="Y" id="policyholder_copies" name="policyholder_copies" objectcolumn="agency_id"  section="adminBrokerstep1_freeform_contextdata_2" screen="entityGeneralDetails" isrequired="Y" accesslevel="1"
-	  	tabsconfigurationresourcename="adminBrokerstep1_freeform_contextdata_2" displaytype="multiradio"
+	  	tabsconfigurationresourcename="adminBrokerstep1_freeform_contextdata_2" displaytype="multiradio" css="exteded_new_radio_seciton"
 	  	protectedresourceuniquename="adminBrokerstep1_freeform_contextdata_2" position="#policyholdercopies_after#"
 		lookupobjectname="policyholder_copies_lku" lookupobjecttype="mastertable"
 	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f27">
 		</field>
-
+		
+	<!-- dividend distribution agency review page -->
+	
+	<field deltaind="I"  isextendedfield="Y" id="dividend_distribution_review_screen" name="dividend_distribution_review_screen" objectcolumn="agency_id"  section="adminBrokerstep1_freeform_contextdata_1" screen="agencyListPublicSubmitNInvitationEdit" isrequired="Y" accesslevel="1"
+	  	tabsconfigurationresourcename="adminBrokerstep1_freeform_contextdata_1" displaytype="multiradio" css="exteded_new_radio_seciton"
+	  	protectedresourceuniquename="adminBrokerstep1_freeform_contextdata_1" position="#distDistiShow_after#"
+		lookupobjectname="dividend_dist_lku" lookupobjecttype="mastertable"
+	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f28">
+		</field> 
+		
+		<!-- Policyholder Copies -->
+		
+		<field deltaind="I"  isextendedfield="Y" id="policyholder_copies_review_screen" name="policyholder_copies_review_screen" objectcolumn="agency_id"  section="adminBrokerstep1_freeform_contextdata_2" screen="agencyListPublicSubmitNInvitationEdit" isrequired="Y" accesslevel="1"
+	  	tabsconfigurationresourcename="adminBrokerstep1_freeform_contextdata_2" displaytype="multiradio" css="exteded_new_radio_seciton"
+	  	protectedresourceuniquename="adminBrokerstep1_freeform_contextdata_2" position="#policyholdercopies_after#"
+		lookupobjectname="policyholder_copies_lku" lookupobjecttype="mastertable"
+	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f27">
+		</field>
+		
  </fields>
