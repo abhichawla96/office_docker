@@ -70,8 +70,7 @@
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
 		<businessrole deltaind="M" roleid="MarketingAssistant">
-			<roleaccesslevel accesstype="1" /><!-- temp show for sprint 
-				1 demo -->
+			<roleaccesslevel accesstype="0" />
 		</businessrole>
 		<userdefined executionsequence="0"
 			ruleid="WorkflowRule.isShowSendForApprovalButtonPublicSubmission">

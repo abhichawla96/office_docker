@@ -170,5 +170,11 @@
 		lookupobjectname="policyholder_copies_lku" lookupobjecttype="mastertable"
 	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f27">
 		</field>
-		
+	<!-- BUG ID : 0177 -->
+  	
+  <field deltaind="M" id="entityOtherInformation_total_annual_revenue" screen="carrier/entityOtherInformation.html" name="total_annual_revenue" isrequired="N" labelkey="total_annual_revenue_label" tabsconfigurationresourcename="total_annual_revenue_security" protectedresourceuniquename="total_annual_revenue_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" format="amount"/>
+ 
+  
+  
+	
  </fields>
