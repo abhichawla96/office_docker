@@ -174,7 +174,7 @@
   	
   <field deltaind="M" id="entityOtherInformation_total_annual_revenue" screen="carrier/entityOtherInformation.html" name="total_annual_revenue" isrequired="N" labelkey="total_annual_revenue_label" tabsconfigurationresourcename="total_annual_revenue_security" protectedresourceuniquename="total_annual_revenue_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" format="amount"/>
  
-  
-  
-	
+  <!-- Production commitment -->
+   <field deltaind="M" id="production_commitment_first_year_entityOtherInformation" screen="carrier/entityOtherInformation.html" name="production_commitment_first_year" isrequired="N" labelkey="market_information_production_commitment_first_year_label" tabsconfigurationresourcename="market_information_production_commitment_first_year_security" protectedresourceuniquename="market_information_production_commitment_first_year_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
+ 
  </fields>

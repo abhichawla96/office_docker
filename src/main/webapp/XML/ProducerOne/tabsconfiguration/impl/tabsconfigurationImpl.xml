@@ -353,5 +353,12 @@
 <!-- agency code status -->
 <tabsconfigurationresource deltaind="I" accesslevel="0" description="few_producer_status_cde_security_2" name="few_producer_status_cde_security_2"/>
 
+<!-- Production Commitment -->
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="market_information_total_volume_commitment_security in market information screen" name="market_information_total_volume_commitment_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="market_information_production_commitment_first_year_security in market information screen" name="market_information_production_commitment_first_year_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="market_information_production_commitment_second_year_security in market information screen" name="market_information_production_commitment_second_year_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="market_information_production_commitment_third_year_security in market information screen" name="market_information_production_commitment_third_year_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="market_information_production_commitment_achieve_volume_security in market information screen" name="market_information_production_commitment_achieve_volume_security"/>
+
     
 </tabsconfiguration>
