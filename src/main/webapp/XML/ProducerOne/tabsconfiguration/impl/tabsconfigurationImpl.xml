@@ -142,6 +142,14 @@
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show advanceSearch is_affiliated_advanceSearch checkbox" name="is_affiliated_advanceSearch_security"/>
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show advanceSearch distributiongroup_security checkbox group" name="distributiongroup_security"/>
  
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="adv_Entity_Type_General_Detail_securityHeader" name="adv_Entity_Type_General_Detail_securityHeader"/>
+     <tabsconfigurationresource deltaind="M" accesslevel="0" description="social_media_site_header_security" name="social_media_site_header_security"/>
+ 	 <tabsconfigurationresource deltaind="M" accesslevel="0" description="social_media_user_id_security" name="social_media_user_id_security"/>
+ 	 <tabsconfigurationresource deltaind="M" accesslevel="0" description="advance_agencyCode_is_bonus_applicable_security" name="advance_agencyCode_is_bonus_applicable_security"/>
+ 	<tabsconfigurationresource deltaind="M" accesslevel="0" description="advance_agencyCode_is_ccb_overridden_security" name="advance_agencyCode_is_ccb_overridden_security"/>
+ 	 <tabsconfigurationresource deltaind="M" accesslevel="0" description="advance_agencyCode_probation_reason_id_security" name="advance_agencyCode_probation_reason_id_security"/>
+ 	 <tabsconfigurationresource deltaind="M" accesslevel="0" description="advance_agencyCode_producersearch_dates_security" name="advance_agencyCode_producersearch_dates_security"/>
+ 	 
  <!-- Sprint 3 - Banner Search -->
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Show/Hide advanceSearchResult_surplus_lines_indicator_security" name="advanceSearchResult_surplus_lines_indicator_security"/>
  <tabsconfigurationresource deltaind="M" accesslevel="0" name="advance_producer_search_no_eo_req_security"/>

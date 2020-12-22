@@ -104,4 +104,8 @@
   <label deltaind="M" labeldesc="Premium Volume and Production Information" labelkey="premium_volume_by_lob_label"/>
  
 <label deltaind="M" labelkey="entityGeneralDetails_segment_label" labeldesc="Tier" />
+
+<!-- Bug id : 0113 -->
+
+  <label deltaind="M" labelkey="total_annual_revenue_label" labeldesc="Total Agency Volume" />
 </labelconf>
