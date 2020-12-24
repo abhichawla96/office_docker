@@ -368,5 +368,29 @@
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="market_information_production_commitment_third_year_security in market information screen" name="market_information_production_commitment_third_year_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="market_information_production_commitment_achieve_volume_security in market information screen" name="market_information_production_commitment_achieve_volume_security"/>
 
-    
-</tabsconfiguration>
+
+<!-- Sprint 4 -->
+  <tabsconfigurationresource deltaind="I" accesslevel="0" description="agencyFunctionListing_closingBusinessForOpenMarkets_mco_security" name="agencyFunctionListing_closingBusinessForOpenMarkets_mco_security"/>
+  <tabsconfigurationresource deltaind="I" accesslevel="0" description="Indicates whether Commissions movement exists in MNA or not" name="isMNACommissionsExists"/>
+  <tabsconfigurationresource deltaind="M" name="assignUserFromUserTable" description="Need to assign request users from table" value="Y"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide\Show CSR In Product Validation " name="isShowCSRInProductValidation"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show dashboard invitation buckets" name="isShowBusinessSegmentInProductValidation"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="MCO Security" name="massChange_mco_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="massChange_carrier_group_security" name="massChange_carrier_group_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="massChange_lau_id_security" name="massChange_lau_id_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="massChange_ppr_id_security" name="massChange_ppr_id_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show Contract Notice Date in Agency Termination" name="isShowContractNoticeDateInAgencyTermination"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show isDepartmentInformed field on agencyTerminationStep1 page" name="agencyTerminationStep1_isDepartmentInformed_security"/>
+  <tabsconfigurationresource deltaind="M" name="agencyTerminationStep1_seller_city_security" accesslevel="1" description="Hide/Show of agencyTerminationStep1_seller_producer_code_security in agencyTerminationStep1.html" />
+  <tabsconfigurationresource deltaind="M" name="agencyTerminationStep1_seller_state_security" accesslevel="1" description="Hide/Show of agencyTerminationStep1_seller_producer_code_security in agencyTerminationStep1.html" />
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show manage sso tab" name="isShowManageSSOTab"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" name="adminTabs2_transfer_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" name="adminTabs2_bobtransfers_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show mass hierachy tab in admin" name="massHierarchyListing_security"/>
+  <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/show mass hierachy tab in admin" name="adminTabs_accountstab"/>
+  <tabsconfigurationresource deltaind="I" accesslevel="0" description="AdminTabs Car" name="renewal_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="AdminTabs Car" name="massReassign_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="AdminTabs Car" name="adminTabs_car"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show commission_rate_hierarchy_security" name="commission_rate_hierarchy_security"/>
+ 
+ </tabsconfiguration>

@@ -1,7 +1,7 @@
 <labelconf project="ProducerOne">
  <label deltaind="M" labeldesc="Approve" labelkey="agencyListPublicSubmitNInvitationEdit_approvebyassigneelabel"/>
- <label deltaind="I" labeldesc="How did you learn about Sample Insurance Company" labelkey="learn_about_label"/>
- <label deltaind="I" labelkey="interest_for_appointment_label" labeldesc="Why are you interested in Sample Insurance Company appointment?"/>
+ <!-- <label deltaind="I" labeldesc="How did you learn about Sample Insurance Company" labelkey="learn_about_label"/>
+  --><label deltaind="I" labelkey="interest_for_appointment_label" labeldesc="Why are you interested in Sample Insurance Company appointment?"/>
  <label deltaind="M" labeldesc="Years in Business" labelkey="years_in_business_label"/>
  <label deltaind="I" labelkey="addendum_to_agency_desc_label" labeldesc="By the agreement below, Agent and the Sample Insurance Companies agree to amend the Agency Agreement between them as follows:"/>
  <label deltaind="I" labelkey="addendum_to_agency_q1_label" labeldesc="1. Agent understands and agrees that Agent does not have the authority to place business with Sample Insurance Companies which would violate any provisions of any contract between the Agent and the insurance company, agency or previous employer entered in the box below."/>
@@ -108,4 +108,14 @@
 <!-- Bug id : 0113 -->
 
   <label deltaind="M" labelkey="total_annual_revenue_label" labeldesc="Total Agency Volume" />
+
+ <!-- BUG id : 0194  -->
+ <label deltaind="M" labeldesc="How did you hear about Company?" labelkey="agencyListEdit_comments_hear_about_label"/>
+  <label deltaind="M" labeldesc="Explain any interest in any other business or occupation outside of this agency" labelkey="agencyListEdit_comments_interest_outside_label"/>
+ 
+
+<!-- Sprint 4 -->
+<label deltaind="M" labeldesc="LOB" labelkey="agencyFunctionListing_closingBusinessForOpenMarkets_market_label"/>
+<label deltaind="M" labeldesc="Close Location Reason Other" labelkey="agencyFunctions_selectFunctionType_termination_reason_other_label"/>
+<label deltaind="M" labeldesc="Termination Notice Date" labelkey="agencyTerminationNoticeDateLabel"/>
 </labelconf>

@@ -16,6 +16,7 @@
    <rule deltaind="I" id="isCBIAYesNo" expression="isEqual(:cbia_designation,Y);"></rule>
   <rule deltaind="I" id="isPrincipalContType" expression="isEqual(:cbia_designation,'Principal');"></rule>
    <rule deltaind="I" id="isNewAgencyCode" expression="isEqual(:producer_number,null);"></rule>
+  <rule deltaind="I" id="isSuspensionReasonCustom" expression="isEqual(:suspension_reason,'7');"></rule>
    
 	</ruleset>
 </evalrules>	

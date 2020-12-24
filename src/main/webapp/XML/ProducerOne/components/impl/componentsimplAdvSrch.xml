@@ -775,7 +775,7 @@
         <storedprocedureoperation dbspname="GetAdvSearchAgencyAssociation_p" executionsequence="0" id="GetAdvSearchAgencyAssociation_p" metaobject="agency_master" name="GetAdvSearchAgencyAssociation_p" operation="5" viewid="agency_association_list_1">
           <resultsetoperation indexno="0" mappingclass="java.util.HashMap" seq="0"/>
         </storedprocedureoperation>
-         <databaseoperation deltaind="M" executionsequence="1" metaobject="lob_lku" name="getAgencyLobMasterDetailAdvanceSearch" operation="5" sqlstmt="		select lob_id as agency_lob_id ,lob_code as agency_lob_code,description as agency_lob_desc from lob_lku where lob_code=9 order by description" viewid="agency_lob_list_mom_1"/> 
+         <databaseoperation deltaind="M" executionsequence="1" metaobject="lob_lku" name="getAgencyLobMasterDetailAdvanceSearch" operation="5" sqlstmt="select lob_id as agency_lob_id ,lob_code as agency_lob_code,description as agency_lob_desc from lob_lku where description='Commercial Lines' order by description" viewid="agency_lob_list_mom_1"/> 
       	<databaseoperation executionsequence="2" metaobject="agency_master" name="getSelectedAgencyLobMasterDetail" operation="3" sqlstmt="select agency_lob from agency_master where agency_id=#agency_id#"/>
       </workflow>
       <workflow name="distributionGroup" seq="3"> 

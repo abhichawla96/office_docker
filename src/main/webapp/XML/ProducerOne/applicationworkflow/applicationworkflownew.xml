@@ -44,7 +44,7 @@
 		</event>				
 	</workflow>
 		
-	<workflow name="onboardingDashboard">
+	<workflow deltaind="M" name="onboardingDashboard">
 		<event name="test">
 			<status name="test" workflowstatus="test">
 				<email name="test" eventname="test" ischeckfortemplates="Y"></email>
@@ -72,7 +72,7 @@
 				statuscomment="Signed" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding">
 			</status>
 		</event>
-		<event name="sendInvitationToApproval">
+		<event deltaind="M" name="sendInvitationToApproval">
 			<status name="sendInvitationToApproval" workflowstatus="Pending Review" workflowfunction="Public Submission" executionsequence="1"
 				statuscomment="comment" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding"
 				approver="workflow_user">
@@ -85,7 +85,7 @@
 			<approver name="approver2" approverrole="SalesDirector" executionsequence="1"></approver> 
 			<approver name="approver3" approverrole="CarrierAdmin" executionsequence="2"></approver> -->
 			<approver name="approver1" approverrole="MarketingRep,SalesDirector" executionsequence="0"></approver>
-			<approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver> 
+			<!-- <approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver> --> 
 		</event>
 		<event name="approveInvitation" assigneerole="MarketingAssistant" parentevent="sendInvitationToApproval">
 																																	 
@@ -597,7 +597,7 @@
 			 forward="agencyTerminationList">
 			</status>
 		</event>
-		<event name="sendForApproval" approverrole="CarrierAdmin">
+		<event deltaind="M" name="sendForApproval" approverrole="vpmarketing">
 			<status name="sendForApproval" workflowstatus="Pending Review" workflowfunction="Agency Termination" executionsequence="1"
 				statuscomment="comment" usergroup="MarketingAssistant" statusgroup="Agency Termination" objectid="termination_log_id" objecttype="Agency Termination"
 				approver="workflow_user" forward="agencyTerminationList">
@@ -605,7 +605,7 @@
 					attachmentcontent="attachmentContent" executionsequence="0"></email>
 			</status>
 																								 
-	      <approver name="approver1" approverrole="CarrierAdmin" executionsequence="1"></approver> 										   
+	      <approver deltaind="M" name="approver1" approverrole="vpmarketing" executionsequence="1"></approver> 										   
 		</event>
 		<event name="approved" assigneerole="MarketingAssistant" parentevent="sendForApproval">
 
@@ -651,14 +651,14 @@
 			</event>
 	</workflow>
 	
-	<workflow name="agencyFunctions">
-		<event name="sendForApprovalAgencyFunctionAS" approverrole="SalesDirector">
-			<status name="sendForApprovalAgencyFunctionAS" workflowstatus="Pending Review" workflowfunction="Agency Function" executionsequence="1"
-				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
+	<workflow deltaind="M" name="agencyFunctions">
+		<event deltaind="M" name="sendForApprovalAgencyFunctionAS" approverrole="vpmarketing">
+			<status deltaind="M" name="sendForApprovalAgencyFunctionAS" workflowstatus="Pending Review" workflowfunction="Agency Function" executionsequence="1"
+				statuscomment="comment" usergroup="vpmarketing" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				approver="workflow_user" forward="agencyFunctions">
 			</status>
-			<approver name="approver1" approverrole="MarketingRep,SalesDirector" executionsequence="0"></approver>
-			<approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver> 
+			<approver deltaind="M" name="approver1" approverrole="vpmarketing" executionsequence="0"></approver>
+			<!-- <approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver> --> 
 		</event>
 		<event name="saveApprovalAgencyFunctionAS" approverrole="SalesDirector">
 			<status name="saveApprovalAgencyFunctionAS" workflowstatus="Pending Review" workflowfunction="Agency Function" executionsequence="1"
@@ -696,14 +696,13 @@
 				forward="agencyFunctions" isapproval="Y">
 			</status>
 		</event>
-		<event name="sendForApprovalAgencyFunctionRS" approverrole="SalesDirector">
+		<event deltaind="M" name="sendForApprovalAgencyFunctionRS" approverrole="vpmarketing">
 			<status name="sendForApprovalAgencyFunction" workflowstatus="Pending Review" workflowfunction="Agency Function" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				approver="workflow_user" forward="agencyFunctions">
 			</status>
-			<approver name="approver1" approverrole="MarketingRep,SalesDirector" executionsequence="0"></approver>
-			<approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver> 
-		</event>
+			<approver deltaind="M" name="approver1" approverrole="vpmarketing" executionsequence="0"></approver>
+			</event>
 		<event name="saveApprovalAgencyFunctionRS" approverrole="SalesDirector">
 			<status name="saveApprovalAgencyFunctionRS" workflowstatus="Pending Review" workflowfunction="Agency Function" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
@@ -740,7 +739,7 @@
 				forward="agencyFunctions" isapproval="Y">
 			</status>
 		</event>
-		<event name="sendForApprovalAgencyFunctionCL" approverrole="SalesDirector">
+		<event deltaind="M" name="sendForApprovalAgencyFunctionCL" approverrole="vpmarketing">
 			<status name="sendForApprovalAgencyFunction" workflowstatus="Pending Review" workflowfunction="Agency Function" executionsequence="1" eval="ProducerOneRule.isAgencyAdminNotLoggedIn"
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				approver="workflow_user" forward="agencyFunctions">
@@ -749,9 +748,8 @@
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				approver="workflow_user" forward="agencyAdminDashboard">
 			</status>
-			<approver name="approver1" approverrole="MarketingRep,SalesDirector" executionsequence="0"></approver>
-			<approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver> 
-		</event>
+			<approver deltaind="M" name="approver1" approverrole="vpmarketing" executionsequence="0"></approver>
+			</event>
 		<event name="saveApprovalAgencyFunctionCL" approverrole="SalesDirector">
 			<status name="saveApprovalAgencyFunctionCL" workflowstatus="Pending Review" workflowfunction="Agency Function" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
@@ -789,7 +787,7 @@
 			</status>
 		</event>
 		
-		<event name="sendForApprovalAgencyFunctionCAC" approverrole="SalesDirector">
+		<event deltaind="M" name="sendForApprovalAgencyFunctionCAC" approverrole="vpmarketing">
 			<status name="sendForApprovalAgencyFunction" workflowstatus="Pending Review" workflowfunction="Agency Function" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function" eval="ProducerOneRule.isAgencyAdminNotLoggedIn"
 				approver="workflow_user" forward="agencyFunctions">
@@ -798,8 +796,7 @@
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				approver="workflow_user" forward="agencyAdminDashboard">
 			</status>
-			<approver name="approver1" approverrole="MarketingRep,SalesDirector" executionsequence="0"></approver>
-			<approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver> 
+			<approver deltaind="M" name="approver1" approverrole="vpmarketing" executionsequence="0"></approver>
 		</event>
 		<event name="saveApprovalAgencyFunctionCAC" approverrole="SalesDirector">
 			<status name="saveApprovalAgencyFunctionCAC" workflowstatus="Pending Review" workflowfunction="Agency Function" executionsequence="1"
@@ -844,7 +841,7 @@
 				approver="user_id" forward="agencyFunctions">
 			</status>
 		</event>
-		<event name="sendForApprovalAgencyFunctionDC" approverrole="SalesDirector">
+		<event deltaind="M" name="sendForApprovalAgencyFunctionDC" approverrole="vpmarketing">
 			<status name="sendForApprovalAgencyFunction" workflowstatus="Pending Review" workflowfunction="Agency Function" executionsequence="1" eval="ProducerOneRule.isAgencyAdminNotLoggedIn"
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				approver="workflow_user" forward="agencyFunctions">
@@ -853,8 +850,8 @@
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				approver="workflow_user" forward="agencyAdminDashboard">
 			</status>
-			<!-- <approver name="approver1" approverrole="MarketingRep,SalesDirector" executionsequence="0"></approver>
-			<approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver> -->
+			<approver deltaind="M" name="approver1" approverrole="vpmarketing" executionsequence="0"></approver>
+			<!-- <approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver> -->
 		</event>
 		<event name="approveAgencyFunctionDC" parentevent="sendForApprovalAgencyFunctionDC" type="approve">
 			<status name="approveAgencyFunction" workflowstatus="Approved" workflowfunction="Agency Function" executionsequence="1"
