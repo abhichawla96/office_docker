@@ -799,5 +799,10 @@
     </businessrole>
   </protectedresource>
   <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show admin car tab" uniquename="adminTabs_car"/>
+<protectedresource defaultaccesstype="0" deltaind="M" description="Hide/show admin mass change tab" uniquename="mass_change_security">
+     <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
+  </protectedresource>
 </security>  
 
