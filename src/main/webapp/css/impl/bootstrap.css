@@ -3343,7 +3343,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
 
 .btn-default {
 	color: #333;
-	background-color: #fff;
+	background-color: #C92A39;
 	border-color: #ccc;
 }
 
@@ -3825,7 +3825,7 @@ tbody.collapse.in {
 .dropdown-menu li a:hover, .dropdown-menu li a:focus {
 	color: #262626;
 	text-decoration: none;
-	background-color: #f5f5f5;
+	background-color: #C92A39;
 }
 
 .dropdown-menu .active a, .dropdown-menu .active a:hover, .dropdown-menu .active a:focus
