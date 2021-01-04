@@ -14,6 +14,7 @@
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show Relationship annual plan" name="relationaship_mngmnt_annualplan_tab_security"/>
 <tabsconfigurationresource deltaind="M" accesslevel="1" name="carrierTabs_cyberliabilitytab" description="hide/show carrierTabs_cyberliabilitytab on menus" />
 <tabsconfigurationresource deltaind="M" accesslevel="1" description="expire_renew_date_product_validation_security" name="productValidationDetail_expire_renew_date_product_validation_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show adminTabs_agencylimitation" name="adminTabs_agencylimitation"/>
  <!-- Agency Onboarding - Send Invitation  -->
 
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="invitationStep1_commission_type_security" name="invitationStep1_commission_type_security"/>
@@ -368,7 +369,9 @@
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="market_information_production_commitment_third_year_security in market information screen" name="market_information_production_commitment_third_year_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="market_information_production_commitment_achieve_volume_security in market information screen" name="market_information_production_commitment_achieve_volume_security"/>
 
-
+ <!-- BUG ID : 216 -->
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="agencyFunctions_commission_reduction_rate_security" name="agencyFunctions_commission_reduction_rate_security"/>
+ 
 <!-- Sprint 4 -->
   <tabsconfigurationresource deltaind="I" accesslevel="0" description="agencyFunctionListing_closingBusinessForOpenMarkets_mco_security" name="agencyFunctionListing_closingBusinessForOpenMarkets_mco_security"/>
   <tabsconfigurationresource deltaind="I" accesslevel="0" description="Indicates whether Commissions movement exists in MNA or not" name="isMNACommissionsExists"/>
@@ -392,5 +395,38 @@
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="AdminTabs Car" name="massReassign_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="AdminTabs Car" name="adminTabs_car"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show commission_rate_hierarchy_security" name="commission_rate_hierarchy_security"/>
- 
+  <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/show adminTabs_compensationmgt" name="adminTabs_compensationmgt"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show custom events tab" name="isShowCustomEventsTab"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="1" description="Hide/Show custom events tab" name="agencyFunctionListing_closingBusinessForOpenMarkets_product_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show Product validation Filters" name="productValidationDetails_filter_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show Carrier Group Product validation Filters" name="productValidationDetails_carrier_group_id_filter_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CSR Product validation Filters" name="productValidationDetails_csr_id_filter_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show business_segment_name Product validation Filters" name="productValidationDetails_business_segment_name_filter_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="1" description="productValidationDetails_is_include_close_product_validations_in_listing_filter_security" name="productValidationDetails_is_include_close_product_validations_in_listing_filter_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="csr_product_validation_security" name="csr_product_validation_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="1" description="business_segment_product_validation_security" name="business_segment_product_validation_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="csr_product_validation_security" name="productValidationDetail_csr_product_validation_security"/>
+ <!-- Bug no. : 174 -->
+    <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowContractState" name="isShowContractState"/>
+    
+    <!-- Bug no. : 165 -->
+     <tabsconfigurationresource deltaind="M" accesslevel="0" description="agencyCodeList_block_eo_insurance_required_security" name="agencyCodeList_block_eo_insurance_required_security"/>
+   
+   <!-- Bug no. : 162 -->
+   
+     <tabsconfigurationresource deltaind="I" accesslevel="0" description="bq_group_buttons_security" name="bq_group_buttons_security"/>
+   
+   <!-- Bug no. : 158 -->
+    
+     <tabsconfigurationresource deltaind="M" accesslevel="0" description="former_name_security" name="former_name_security"/>
+   
+    <!-- Bug no. : 156 -->  
+     
+     <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show of isAgencyTerminationDashboardApplicable in homeAction.html" name="isAgencyTerminationDashboardApplicable"/>
+    
+    <!-- Bug no. : 148 --> 
+    
+     <tabsconfigurationresource deltaind="M" accesslevel="0" name="entityGeneralDetails_new_business_term_date_security"/>
+     <tabsconfigurationresource deltaind="M" accesslevel="0" description="agency_comparativerate_securityHeader" name="agency_comparativerate_securityHeader"/>
+     
  </tabsconfiguration>

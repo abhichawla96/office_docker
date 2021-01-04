@@ -118,4 +118,21 @@
 <label deltaind="M" labeldesc="LOB" labelkey="agencyFunctionListing_closingBusinessForOpenMarkets_market_label"/>
 <label deltaind="M" labeldesc="Close Location Reason Other" labelkey="agencyFunctions_selectFunctionType_termination_reason_other_label"/>
 <label deltaind="M" labeldesc="Termination Notice Date" labelkey="agencyTerminationNoticeDateLabel"/>
+<label deltaind="I" labeldesc="Product" labelkey="agencyFunctionListing_closingBusinessForOpenMarkets_product_label"/>
+
+<!-- prod validation -->
+
+<label deltaind="M" labeldesc="LOB" labelkey="productValidationDetails_lob_id_Filter_label"/>
+
+<label deltaind="I" labeldesc="Product" labelkey="prod_validation_product_fieldLabel"/>
+
+<!-- Bug id : 0172 -->
+
+    <label deltaind="M" labeldesc="Social Security Number" labelkey="agent_ssn_field_label"/>
+  
+  <!-- Bug id : 0161 -->
+  
+  <label deltaind="M" labeldesc="Designation" labelkey="positionTitlelabelkey"/>
+
+
 </labelconf>
