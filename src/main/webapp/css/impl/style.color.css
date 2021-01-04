@@ -100,7 +100,7 @@ a.ovalbutton:hover span {color: #ffffff;}
 	background: -webkit-linear-gradient(bottom, #187dd1, #115995); 
 	background: -moz-linear-gradient(bottom, #187dd1, #115995);
 	background: -o-linear-gradient(bottom, #187dd1, #115995); 
-	background: linear-gradient(to bottom, #187dd1, #115995);}
+	background: linear-gradient(to bottom, #C92A39, #C92A39);}
 .content .btn-primary:active:hover, .content .btn-primary.active:hover, 
 .content .open>.dropdown-toggle.btn-primary:hover, .content .btn-primary:active:focus, 
 .content .btn-primary.active:focus, .content .open>.dropdown-toggle.btn-primary:focus, 
