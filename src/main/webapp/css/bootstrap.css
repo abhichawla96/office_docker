@@ -9,7 +9,7 @@ html, body {
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup,
-	main, menu, nav, section, summary {
+	main, menu, nav, section, summary { 
 	display: block;
 }
 .freeFormLabelWidth_205 {
