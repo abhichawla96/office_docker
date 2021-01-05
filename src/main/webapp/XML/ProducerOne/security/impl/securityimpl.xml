@@ -709,8 +709,8 @@
 		</userdefined>
 	</protectedresource>
      
-     <!-- Sprint 4 -->
-     <protectedresource deltaind="I" accesstype="0"
+     <!-- Sprint 4 --><!-- modified for bug fix -->
+     <protectedresource deltaind="I" defaultaccesstype="0"
 		description="Hide/Show id suspension reason other"
 		uniquename="Suspension_Reason_Other_security">
 		<userdefined deltaind="I" executionsequence="0"

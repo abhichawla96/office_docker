@@ -428,5 +428,7 @@
     
      <tabsconfigurationresource deltaind="M" accesslevel="0" name="entityGeneralDetails_new_business_term_date_security"/>
      <tabsconfigurationresource deltaind="M" accesslevel="0" description="agency_comparativerate_securityHeader" name="agency_comparativerate_securityHeader"/>
-     
+     <!-- sprint 4 - other reason -->
+     <tabsconfigurationresource deltaind="I" accesslevel="0" description="Suspension_Reason_Other_security" name="Suspension_Reason_Other_security"/>
+ 
  </tabsconfiguration>
