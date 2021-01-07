@@ -446,5 +446,7 @@
     <tabsconfigurationresource deltaind="M" description="Show/Hide agencyListPublicSubmitNInvitationEdit_narrative_question_2_security" name="agencyListPublicSubmitNInvitationEdit_narrative_question_2_security" accesslevel="1"/>
     <tabsconfigurationresource deltaind="M" description="Show/Hide agencyListPublicSubmitNInvitationEdit_narrative_question_3_security" name="agencyListPublicSubmitNInvitationEdit_narrative_question_3_security" accesslevel="1"/>
 	<tabsconfigurationresource deltaind="M" description="Show/Hide agencyListPublicSubmitNInvitationEdit_narrative_question_4_security" name="agencyListPublicSubmitNInvitationEdit_narrative_question_4_security" accesslevel="1"/>
+     <!-- VP role approval -->
+     <tabsconfigurationresource deltaind="M" description="isDocuSignFlowSequential" name="isDocuSignFlowSequential" value="Y"/>
      
  </tabsconfiguration>

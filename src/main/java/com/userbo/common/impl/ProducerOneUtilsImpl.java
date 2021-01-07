@@ -14,7 +14,7 @@ public class ProducerOneUtilsImpl {
 	public static String DATE_PATTERN = "MM-dd-YYYY hh:mm";
 	private static InetLogger logger = InetLogger.getInetLogger("ProducerOneUtils");
 	private static final String rownum = "rownum";
-	private static String tempProdCode="";
+	private static String tempProdCode=null;
 	public static String getCustomizedProducerCode(Context ctx) {
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -43,9 +43,15 @@ public class ProducerOneUtilsImpl {
 				System.out.println(rs.getInt("sub_producer"));
 				subProducerNumber = String.valueOf(rs.getString("sub_producer"));
 			}
-
+			
 			int temp = 0;
-			if (subProducerNumber != null & !subProducerNumber.equals("")) { 
+			if ((subProducerNumber != null & !subProducerNumber.equals("")) ||tempProdCode!=null ) {
+				if(tempProdCode==null){
+					tempProdCode=subProducerNumber;
+				}else{
+					subProducerNumber=tempProdCode;
+				}
+				
 				if (StringUtils.isNumeric(subProducerNumber)) {
 					temp = Integer.parseInt(subProducerNumber) + 1;
 					if (temp > 98) {
@@ -67,9 +73,9 @@ public class ProducerOneUtilsImpl {
 					}
 				}
 			} else {
-				generatedSubProducerNumber = "1";
+				generatedSubProducerNumber = "1";				
 			}
-
+			tempProdCode=generatedSubProducerNumber;
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println(e.getMessage());

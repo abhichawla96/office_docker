@@ -72,7 +72,7 @@
 				statuscomment="Signed" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding">
 			</status>
 		</event>
-		<event deltaind="M" name="sendInvitationToApproval">
+		<event deltaind="M" name="sendInvitationToApproval" approverrole="SalesDirector">
 			<status name="sendInvitationToApproval" workflowstatus="Pending Review" workflowfunction="Public Submission" executionsequence="1"
 				statuscomment="comment" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding"
 				approver="workflow_user">
@@ -84,7 +84,7 @@
 			<!-- <approver name="approver1" approverrole="MarketingRep" executionsequence="0"></approver>
 			<approver name="approver2" approverrole="SalesDirector" executionsequence="1"></approver> 
 			<approver name="approver3" approverrole="CarrierAdmin" executionsequence="2"></approver> -->
-			<approver name="approver1" approverrole="MarketingRep,SalesDirector" executionsequence="0"></approver>
+			<approver deltaind="M" name="approver1" approverrole="SalesDirector" executionsequence="0"></approver>
 			<!-- <approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver> --> 
 		</event>
 		<event name="approveInvitation" assigneerole="MarketingAssistant" parentevent="sendInvitationToApproval">
