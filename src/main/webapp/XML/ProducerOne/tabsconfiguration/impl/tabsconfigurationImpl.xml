@@ -429,6 +429,22 @@
      <tabsconfigurationresource deltaind="M" accesslevel="0" name="entityGeneralDetails_new_business_term_date_security"/>
      <tabsconfigurationresource deltaind="M" accesslevel="0" description="agency_comparativerate_securityHeader" name="agency_comparativerate_securityHeader"/>
      <!-- sprint 4 - other reason -->
-     <tabsconfigurationresource deltaind="I" accesslevel="0" description="Suspension_Reason_Other_security" name="Suspension_Reason_Other_security"/>
+  <!--    <tabsconfigurationresource deltaind="I" accesslevel="0" description="Suspension_Reason_Other_security" name="Suspension_Reason_Other_security"/>
+  --><!-- New Req sent by Preeti -->
+ <tabsconfigurationresource deltaind="I" accesslevel="0" name="agencyListPublicSubmit_license_num_security"/>
  
+ <!-- Bug Id : 149 -->
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="w9_phone_ext_agency_address_security" name="w9_phone_ext_agency_address_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="w9_ext_agency_address_security" name="w9_ext_agency_address_security"/>
+ 
+ <!-- Bug Id : 77  -->
+ <tabsconfigurationresource deltaind="M" accesslevel="1" description="business_phone_ext_agency_address_security" name="business_phone_ext_agency_address_security"/>
+ 
+ <!-- Bug no. : 130 --> 
+     
+    <tabsconfigurationresource deltaind="M" description="Show/Hide agencyListPublicSubmitNInvitationEdit_narrative_question_1_security" name="agencyListPublicSubmitNInvitationEdit_narrative_question_1_security" accesslevel="1"/>
+    <tabsconfigurationresource deltaind="M" description="Show/Hide agencyListPublicSubmitNInvitationEdit_narrative_question_2_security" name="agencyListPublicSubmitNInvitationEdit_narrative_question_2_security" accesslevel="1"/>
+    <tabsconfigurationresource deltaind="M" description="Show/Hide agencyListPublicSubmitNInvitationEdit_narrative_question_3_security" name="agencyListPublicSubmitNInvitationEdit_narrative_question_3_security" accesslevel="1"/>
+	<tabsconfigurationresource deltaind="M" description="Show/Hide agencyListPublicSubmitNInvitationEdit_narrative_question_4_security" name="agencyListPublicSubmitNInvitationEdit_narrative_question_4_security" accesslevel="1"/>
+     
  </tabsconfiguration>
