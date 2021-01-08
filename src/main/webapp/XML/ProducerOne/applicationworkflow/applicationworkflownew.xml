@@ -409,15 +409,28 @@
 				</email>
 			</status>
 		</event>
-		<event name="sendToAgent">
+		<!-- <event name="sendToAgent">
             <status name="sendToPrimaryAgent" eval="addNewDocContractRule.isContractGeneratedForPrimary" workflowstatus="Sent for ESignature" workflowfunction="Contract" executionsequence="0"
             	statuscomment="comment" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="agency_id" objecttype="Contract" assignee="user_id">
             </status>
             <status name="sendToSecondaryAgent" eval="addNewDocContractRule.isContractGeneratedForPhysical" workflowstatus="Pending Agency Setup" workflowfunction="Agency Setup" executionsequence="1"
             	statuscomment="comment" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="agency_id" objecttype="Agency Setup" assignee="user_id">
             </status>
+        </event> -->
+		<event name="sendToAgent" >
+            <status name="sendToPrimaryAgent" eval="addNewDocContractRule.isContractGeneratedForPrimary" workflowstatus="Sent for ESignature" workflowfunction="Contract" executionsequence="0"
+            	statuscomment="comment" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="agency_id" objecttype="Contract" assignee="user_id">
+            	<statusworkflow  name="sendInvitationToApproval" executionsequence="0">
+				<businessobject name="SendDocForESign" obj="com.userbo.integration.SendDocForESign"/>
+				</statusworkflow>
+            </status>
+            <status name="sendToSecondaryAgent" eval="addNewDocContractRule.isContractGeneratedForPhysical" workflowstatus="Pending Agency Setup" workflowfunction="Agency Setup" executionsequence="1"
+            	statuscomment="comment" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="agency_id" objecttype="Agency Setup" assignee="user_id">
+            <statusworkflow  name="sendInvitationToApproval" executionsequence="0">
+			<businessobject name="SendDocForESign" obj="com.userbo.integration.SendDocForESign"/>
+			</statusworkflow>
+            </status>
         </event>
-		
   
 		<event name="approveContracts" assigneerole="MarketingAssistant" parentevent="sendForReviewContracts">
 			
