@@ -6,5 +6,8 @@
 		<rule deltaind="I" id="isRegistrationTypePrimaryAgencyForSendInvitation"
 			expression="orCondition(isEqual(:selected_agency_registration_type_desc,Primary Agency),isEqual(:selected_agency_registration_type_desc,Secondary Agency));"
 			obj="ruleobjs.ProducerOneRule" method="isRegistrationTypePrimaryAgencyForSendInvitation" />
+	<!-- this rule was missing in the base file on git -->
+	 <rule deltaind="I" id="isRegistrationTypeProducerRegistration" expression="isEqual(:registration_type_desc,PRERG);" obj="ruleobjs.ProducerOneRule" method="isRegistrationTypeProducerRegistration" />
+   
 	</ruleset>
 </evalrules>
