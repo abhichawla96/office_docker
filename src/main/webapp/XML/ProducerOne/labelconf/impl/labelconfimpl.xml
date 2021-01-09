@@ -134,5 +134,8 @@
   
   <label deltaind="M" labeldesc="Designation" labelkey="positionTitlelabelkey"/>
 
+<!-- Bug id : 0131 -->
 
+  <label deltaind="M" labeldesc="Explain any interest in any other business or occupation outside of this agency" labelkey="agencyListEdit_comments_interest_outside_label"/>
+<label deltaind="M" labeldesc="Number of CSR&apos;s" labelkey="num_csr_label"/>
 </labelconf>

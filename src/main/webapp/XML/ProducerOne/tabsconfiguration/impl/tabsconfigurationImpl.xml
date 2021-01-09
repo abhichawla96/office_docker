@@ -222,7 +222,7 @@
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="position_manager_id_prodOrgMapping_security" name="position_manager_id_prodOrgMapping_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="lob_id_prodOrgMapping_security" name="lob_id_prodOrgMapping_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Show Active,Closed,Pending in Agency code status dropdown on Agency Code Detail Page" name="all_producer_status_cde_security"/>
-<tabsconfigurationresource description="Show/Hide Affinity group section security on producer detail page" name="producerDetail_affinity_group_section_security" accesslevel="0"/> <!-- added on 12/11/20 by Aashutosh -->
+  <tabsconfigurationresource deltaind="M" description="Show/Hide Affinity group section security on producer detail page" name="producerDetail_affinity_group_section_security" accesslevel="0"/> <!-- added on 12/11/20 by Aashutosh --> <!-- bug no 235: deltaind was missed  -->
 
 
 
@@ -448,5 +448,30 @@
 	<tabsconfigurationresource deltaind="M" description="Show/Hide agencyListPublicSubmitNInvitationEdit_narrative_question_4_security" name="agencyListPublicSubmitNInvitationEdit_narrative_question_4_security" accesslevel="1"/>
      <!-- VP role approval -->
      <tabsconfigurationresource deltaind="M" description="isDocuSignFlowSequential" name="isDocuSignFlowSequential" value="Y"/>
+     
+     <!-- Bug no. : 247 --> 
+    <tabsconfigurationresource deltaind="M" accesslevel="0" name="agencypdbalerts_tab_security"/>
+    
+     <!-- Bug no. : 254 -->
+     <tabsconfigurationresource deltaind="M" accesslevel="0" name="product_validation_tab_agencyLevel_security"/>
+     
+     <!-- Bug no. : 250 -->
+     <tabsconfigurationresource deltaind="M" accesslevel="0" name="1producerAssociation_edit_rowLink_security"/>
+     
+      <!-- Bug no. : 248 -->
+      
+     <tabsconfigurationresource deltaind="M" accesslevel="0" name="county_id_prodOrgMapping_security"/>
+     
+     <!-- Bug no. : 246 -->
+     
+     <tabsconfigurationresource deltaind="M" name="isShowOrderStampSelfService_security" accesslevel="0" description="Hide/Show addNewOrderStamp_numberofstamps_security in homeAction.html Dashboard Count" />
+     <tabsconfigurationresource deltaind="M" name="isRemoveAgencyFromClusterForSelfService_security" accesslevel="0" description="isRemoveAgencyFromClusterForSelfService_security" />
+     <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show homeAction_floodInsuranceSelfService_security" name="homeAction_floodInsuranceSelfService_security"/>
+     
+     <!-- Bug no. : 240 -->
+     
+     <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowProdNumCommissionReductionDate" name="isShowProdNumCommissionReductionDate"/>
+     
+     
      
  </tabsconfiguration>

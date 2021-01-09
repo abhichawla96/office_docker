@@ -193,5 +193,50 @@
  <field deltaind="M" id="addAgencyTaskDetails_producer_number" screen="carrier/addAgencyTaskDetails.html" name="producer_number" isrequired="N" labelkey="addAgencyTaskDetails_producer_number_label" tabsconfigurationresourcename="addAgencyTaskDetails_producer_number_security" protectedresourceuniquename="addAgencyTaskDetails_producer_number_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
   
   <field deltaind="M" id="addAgencyTaskDetails_status" screen="carrier/addAgencyTaskDetails.html" name="status" isrequired="Y" labelkey="task_status_label" tabsconfigurationresourcename="task_status_security" protectedresourceuniquename="task_status_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
+  <!-- entity general details agent copies field -->
+	<field deltaind="I"  isextendedfield="Y" id="agent_copies" name="agent_copies" objectcolumn="agency_id"  section="adminBrokerstep1_freeform_contextdata_3" screen="entityGeneralDetails" isrequired="Y" accesslevel="1"
+	  	tabsconfigurationresourcename="adminBrokerstep1_freeform_contextdata_3" displaytype="multiradio" css="exteded_new_radio_seciton"
+	  	protectedresourceuniquename="adminBrokerstep1_freeform_contextdata_3" position="#agentCopies_after#"
+		lookupobjectname="agent_copies_lku" lookupobjecttype="mastertable"
+	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f21">
+		</field>
+	
+	<!-- Agency general details hba field -->
+	<field deltaind="I" isextendedfield="Y" name="member_of_hba" screen="entityGeneralDetails" objectcolumn="agency_id" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="radio" 
+	isrequired="Y" labelkey="entityGeneralDeetails_member_of_hba_label" labeldesc="Are you a member of an HBA?" accesslevel="1" tabsconfigurationresourcename="entityGeneralDeetails_hba_que_security" 
+	protectedresourceuniquename="entityGeneralDeetails_hba_que_security" id="member_of_hba" position="#segment_before#" mappedto="f29">
+	<event id="onchange" name="onchange" screen="carrier/entityGeneralDetails.html" actiontype="ajaxpageblocklink" action="refreshCounty" actiontypeid="hbaOnChangeFieldSecurity" executionsequence="0">
+	  	<forward id="carrier/entityGeneralDetails.html" screen="carrier/entityGeneralDetails.html" />
+	 </event>	 
+	</field>
+	
+	<field deltaind="I" isextendedfield="Y" name="entity_gen_det_hba_dropdown" screen="entityGeneralDetails" objectcolumn="agency_id" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="select" 
+	isrequired="Y" labelkey="hba_dropdown_label" labeldesc="If Yes, please select the HBA Chapter you are a member of " accesslevel="1" tabsconfigurationresourcename="entityGeneralDeetails_hba_dropdown_security" 
+	protectedresourceuniquename="entityGeneralDeetails_hba_dropdown_security" id="entity_gen_det_hba_dropdown" position="#segment_before#" style="width=250px;"
+	lookupobjectname="hba_chapter_lku" lookupobjecttype="mastertable"
+	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f30" > 
+	</field>
+	
+	<!-- Bug id : 234 -->
+
+ <field deltaind="M" id="entiytGeneralDetails_segment" screen="carrier/entityGeneralDetails.html" name="segment_id" isrequired="Y" lookupobjectmetaobject="agency_master" lookupobjectprocedure="getAgencySegmetListForDropDown_p" displayfield="master_lookup_data_desc" valuefield="master_lookup_data_id" labelkey="entityGeneralDetails_segment_label" tabsconfigurationresourcename="entityGeneralDetails_segment_security" protectedresourceuniquename="entityGeneralDetails_segment_security" isextendedfield="N" executionsequence="0" isencrypt="N" lookupobjecttype="procedure" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
+    <event id="onChangeCallforSubSegment" name="onchange" actiontype="ajaxpageblocklink" screen="carrier/entityGeneralDetails.html" action="refrestSubSegments" actiontypeid="entityGeneralDetails_sub_segment_security" executionsequence="1">
+      <forward id="carrier/entityGeneralDetails.html" screen="carrier/entityGeneralDetails.html" executionsequence="0" />
+    </event>
+  </field>	
   
+  <!-- Bug id : 228 -->
+  
+  <field deltaind="M" id="sendOnboardingInvitationStep1_primary_agency_name_forInvitation" screen="carrier/sendOnboardingInvitationStep1.html" name="primary_agency_name_forInvitation" isrequired="Y" labelkey="primary_agency_name_forInvitation_label" tabsconfigurationresourcename="primary_agency_name_forInvitation_security" protectedresourceuniquename="primary_agency_name_forInvitation_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
+    <validation name="checkPrimaryAgencyNameMandatory" expression="if(andCondition(isEmpty(:primary_agency_id_forInvitation),isEqual(:invitationStep1_primary_agency_name_mandatory_security,Y))=&gt;isEqual(1,2)-&gt;isEqual(1,1))" message="primaryAgencyNameEmptyErrorKey" executionsequence="0" />
+  </field>
+	
+	<!-- Bug id : 160 -->
+	
+  <field deltaind="M" id="agentGeneralDetails_LOGIN_ID" screen="carrier/agentGeneralDetails.html" name="LOGIN_ID" isrequired="N" requiredeval="ProducerOneRule.checkLoginIdMandatoryAstrisk" labelkey="login_id_label" tabsconfigurationresourcename="contact_details_login_id_security" protectedresourceuniquename="contact_details_login_id_security" tooltip="Login id of the contact" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" isdisplayonhistory="Y">
+    <validation deltaind="M" isskip="Y" name="checkLoginIdMandatory" expression="if(andCondition(isEqual(:agent_loginid_mandatory,Y),isEmpty(:LOGIN_ID))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="loginIdEmptyErrorkey" ruleid="ProducerOneRule.checkLoginIdMandatory" executionsequence="0" />
+  </field>
+  
+  
+ 
  </fields>
