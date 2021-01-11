@@ -391,9 +391,11 @@
   <tabsconfigurationresource deltaind="M" accesslevel="0" name="adminTabs2_bobtransfers_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show mass hierachy tab in admin" name="massHierarchyListing_security"/>
   <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/show mass hierachy tab in admin" name="adminTabs_accountstab"/>
-  <tabsconfigurationresource deltaind="I" accesslevel="0" description="AdminTabs Car" name="renewal_security"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" description="AdminTabs Car" name="massReassign_security"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" description="AdminTabs Car" name="adminTabs_car"/>
+ <!-- mass changes outof scope change -->
+  <tabsconfigurationresource deltaind="I" accesslevel="1" description="AdminTabs Car" name="renewal_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="AdminTabs Car" name="massReassign_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="AdminTabs Car" name="adminTabs_car"/>
+
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show commission_rate_hierarchy_security" name="commission_rate_hierarchy_security"/>
   <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/show adminTabs_compensationmgt" name="adminTabs_compensationmgt"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show custom events tab" name="isShowCustomEventsTab"/>
@@ -456,11 +458,11 @@
      <tabsconfigurationresource deltaind="M" accesslevel="0" name="product_validation_tab_agencyLevel_security"/>
      
      <!-- Bug no. : 250 -->
-     <tabsconfigurationresource deltaind="M" accesslevel="0" name="1producerAssociation_edit_rowLink_security"/>
+     <tabsconfigurationresource deltaind="I" accesslevel="0" name="1producerAssociation_edit_rowLink_security"/> <!-- deltaind I is added -->
      
       <!-- Bug no. : 248 -->
       
-     <tabsconfigurationresource deltaind="M" accesslevel="0" name="county_id_prodOrgMapping_security"/>
+     <tabsconfigurationresource deltaind="I" accesslevel="0" name="county_id_prodOrgMapping_security"/> <!-- deltaind I is added -->
      
      <!-- Bug no. : 246 -->
      
@@ -471,7 +473,12 @@
      <!-- Bug no. : 240 -->
      
      <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowProdNumCommissionReductionDate" name="isShowProdNumCommissionReductionDate"/>
+     <tabsconfigurationresource deltaind="M" accesslevel="0" description="entityGeneralDetail_commission_reduction_date_security" name="entityGeneralDetail_commission_reduction_date_security"/>
      
      
+     <!-- Bug no. : 154 -->
      
- </tabsconfiguration>
+     <tabsconfigurationresource deltaind="I" accesslevel="0" description="isShowProdNumCommissionReductionDate" name="agencyListPublicSubmit_license_num_security"/>
+     
+     
+</tabsconfiguration>

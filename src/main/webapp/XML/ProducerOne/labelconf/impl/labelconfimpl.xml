@@ -138,4 +138,8 @@
 
   <label deltaind="M" labeldesc="Explain any interest in any other business or occupation outside of this agency" labelkey="agencyListEdit_comments_interest_outside_label"/>
 <label deltaind="M" labeldesc="Number of CSR&apos;s" labelkey="num_csr_label"/>
+ <!-- Bug id : 177-->
+ 
+ <label deltaind="M" labelkey="agencyListPublicSubmitNInvitationEdit_narrative_question_3_label" labeldesc="Comment on neighboring Builders Mutual Insurance Agencies and with this appointment"/>
+ 
 </labelconf>

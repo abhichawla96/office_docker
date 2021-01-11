@@ -87,25 +87,18 @@
 			<approver deltaind="M" name="approver1" approverrole="SalesDirector" executionsequence="0"></approver>
 			<!-- <approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver> --> 
 		</event>
-		<event name="approveInvitation" assigneerole="MarketingAssistant" parentevent="sendInvitationToApproval">
-																																	 
-																																	
-							 
-																																			 
-																						
-																						 
-			
-			
-			<status name="approveInvitation" workflowstatus="Approved" workflowfunction="Public Submission" executionsequence="1"
+		<event deltaind="M" name="approveInvitation" assigneerole="MarketingAssistant" parentevent="sendInvitationToApproval">
+																																 
+		<status name="approveInvitation" workflowstatus="Approved" workflowfunction="Public Submission" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding"
 				assignee="workflow_user" forward="homeAction">
 				<email name="PublicSubmissonApproved" eventname="PublicSubmissonApproved" objectid="aar_requestid" objecttype="Onboarding">
 					<parameter name="System_Name" value="clientName" executionsequence="0"></parameter>
 					<parameter name="Entity_Name" value="Entity_Name" executionsequence="1"></parameter>
 				</email>
-			</status>
-																								 
-																						   
+			</status>																			 
+				<approver deltaind="M" name="approver1" approverrole="MarketingAssistant" executionsequence="1"></approver> 										   
+																				   
 		</event>
 		<event name="disapprove" assigneerole="MarketingAssistant" parentevent="sendInvitationToApproval">
 																																	 

@@ -238,5 +238,13 @@
   </field>
   
   
- 
+  <!-- Bug id : 58 -->
+    <field deltaind="M" id="addAgencyTaskDetails_status" screen="carrier/addAgencyTaskDetails.html" name="status" isrequired="N" labelkey="task_status_label" tabsconfigurationresourcename="task_status_security" protectedresourceuniquename="task_status_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
+  
+
+	
+  
+  <field deltaind="I" id="prospectAgencyDetails_agency_lob" screen="carrier/prospectAgencyDetails.html" name="agency_lob" isrequired="MA" labelkey="prospectDetails_agency_lob_label" tabsconfigurationresourcename="isShowAgencyLobCheckboxProspectDetails" protectedresourceuniquename="isShowAgencyLobCheckboxProspectDetails" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
+    <validation name="validateAgencyLob" expression="if(andCondition(isEmpty(:agency_lob),isEqual(:isShowAgencyLobCheckboxProspectDetails,Y))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="prospectAgencyDetails_agency_lobErrorKey" executionsequence="0" />
+  </field>
  </fields>
