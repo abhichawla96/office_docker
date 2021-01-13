@@ -73,7 +73,10 @@ public class ProducerOneUtilsImpl {
 					}
 				}
 			} else {
-				generatedSubProducerNumber = "1";				
+				generatedSubProducerNumber = "01";
+			}
+			if (generatedSubProducerNumber != null && generatedSubProducerNumber.length() < 2) {
+				generatedSubProducerNumber = "0" + generatedSubProducerNumber;
 			}
 			tempProdCode=generatedSubProducerNumber;
 		} catch (Exception e) {
@@ -90,8 +93,54 @@ public class ProducerOneUtilsImpl {
 			}
 		}
 		ctx.put("sub_producer", generatedSubProducerNumber);
-		System.out.println(ctx.get("sub_producer"));
+	
 		return generatedSubProducerNumber;
 
 	}
+	
+	public static String getSevenDigitAgencyCode(Context ctx) 
+	{		
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		PreparedStatement ps1 = null;
+		ResultSet rs1 = null;
+		String sqlstmt="select format(case when len(producer_number) < 7 then 2425 when len(producer_number) >= 7 then (convert(int,producer_number)+1)  end,'0000000') as producer_number from producer_number  where producer_number_id  in (select max(producer_number_id)  from producer_number)";
+		String sqlAgencyName="select  name from agency_master where   agency_id ='"+ctx.get("agency_id").toString()+"'";
+		String sevenDigitAgencyCode = "";
+		String agencyName="";
+		try {
+			Class.forName("net.sourceforge.jtds.jdbc.Driver");
+			con = DriverManager.getConnection("jdbc:jtds:sqlserver://10.10.106.253:1433/PRODUCERONE_SECURE_BUILDER",
+					"sudhirj", "Sudhirj@2020");
+			ps = con.prepareStatement(sqlstmt);
+			
+			rs = ps.executeQuery();
+			while (rs != null && rs.next()) {
+				sevenDigitAgencyCode = String.valueOf(rs.getString("producer_number"));
+			}
+			ps1 = con.prepareStatement(sqlAgencyName);
+			rs1 = ps1.executeQuery();
+			while (rs1 != null && rs1.next()) {
+				agencyName = String.valueOf(rs1.getString("name"));
+			}	
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		} finally {
+			try {
+				con.close();
+				rs.close();
+				ps.close();
+			} catch (Exception e) {
+				// TODO: handle exception
+				System.out.println(e.getMessage());
+			}
+		}
+		ctx.put("producer_number", sevenDigitAgencyCode);
+		ctx.put("producer_name", agencyName);
+		return sevenDigitAgencyCode;
+	}
+		
+	
 }

@@ -93,18 +93,18 @@
   <!-- dividend distribution -->
 	
 	
-	<field deltaind="I"  isextendedfield="Y" id="dividend_distribution" name="dividend_distribution" objectcolumn="aar_requestid"  section="adminBrokerstep1_freeform_contextdata_1" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" isrequired="Y" accesslevel="1"
-	  	tabsconfigurationresourcename="adminBrokerstep1_freeform_contextdata_1" displaytype="multiradio"
-	  	protectedresourceuniquename="adminBrokerstep1_freeform_contextdata_1" position="#distDistiShow_after#"
+	<field deltaind="I"  isextendedfield="Y" id="review_dividend_distribution" name="review_dividend_distribution" objectcolumn="aar_requestid"  section="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_3232" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" isrequired="Y" accesslevel="1"
+	  	tabsconfigurationresourcename="secDividendDist" displaytype="multiradio" css="exteded_new_radio_seciton"
+	  	protectedresourceuniquename="secDividendDist" position="#distDistiShow_after#"
 		lookupobjectname="dividend_dist_lku" lookupobjecttype="mastertable"
 	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f28">
 		</field> 
 		
 		<!-- Policyholder Copies -->
 		
-		<field deltaind="I"  isextendedfield="Y" id="policyholder_copies" name="policyholder_copies" objectcolumn="aar_requestid"  section="adminBrokerstep1_freeform_contextdata_2" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" isrequired="Y" accesslevel="1"
-	  	tabsconfigurationresourcename="adminBrokerstep1_freeform_contextdata_2" displaytype="multiradio"
-	  	protectedresourceuniquename="adminBrokerstep1_freeform_contextdata_2" position="#policyholdercopies_after#"
+		<field deltaind="I"  isextendedfield="Y" id="review_policyholder_copies" name="review_policyholder_copies" objectcolumn="aar_requestid"  section="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_3233" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" isrequired="Y" accesslevel="1"
+	  	tabsconfigurationresourcename="policyHolderSection" displaytype="multiradio" css="exteded_new_radio_seciton"
+	  	protectedresourceuniquename="policyHolderSection" position="#policyholdercopies_after#"
 		lookupobjectname="policyholder_copies_lku" lookupobjecttype="mastertable"
 	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f27">
 		</field>
@@ -135,27 +135,26 @@
 	
 	
 	
-	<!-- dividend distribution -->
+	<!-- dividend distribution agency general details -->
 	
-	
-	<field deltaind="I"  isextendedfield="Y" id="dividend_distribution" name="dividend_distribution" objectcolumn="agency_id"  section="adminBrokerstep1_freeform_contextdata_1" screen="entityGeneralDetails" isrequired="Y" accesslevel="1"
-	  	tabsconfigurationresourcename="adminBrokerstep1_freeform_contextdata_1" displaytype="multiradio" css="exteded_new_radio_seciton"
-	  	protectedresourceuniquename="adminBrokerstep1_freeform_contextdata_1" position="#distDistiShow_after#"
+	<field deltaind="I"  isextendedfield="Y" id="dividend_distribution" name="dividend_distribution" objectcolumn="agency_id"  section="entityGeneralDetails_freeform_contextdata_3234" screen="entityGeneralDetails" isrequired="Y" accesslevel="1"
+	  	tabsconfigurationresourcename="divDividendDist" displaytype="multiradio" css="exteded_new_radio_seciton"
+	  	protectedresourceuniquename="divDividendDist" position="#distDistiShow_after#"
 		lookupobjectname="dividend_dist_lku" lookupobjecttype="mastertable"
 	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f28">
 		</field> 
 		
 		<!-- Policyholder Copies -->
 		
-		<field deltaind="I"  isextendedfield="Y" id="policyholder_copies" name="policyholder_copies" objectcolumn="agency_id"  section="adminBrokerstep1_freeform_contextdata_2" screen="entityGeneralDetails" isrequired="Y" accesslevel="1"
-	  	tabsconfigurationresourcename="adminBrokerstep1_freeform_contextdata_2" displaytype="multiradio" css="exteded_new_radio_seciton"
-	  	protectedresourceuniquename="adminBrokerstep1_freeform_contextdata_2" position="#policyholdercopies_after#"
+		<field deltaind="I"  isextendedfield="Y" id="policyholder_copies" name="policyholder_copies" objectcolumn="agency_id"  section="entityGeneralDetails_freeform_contextdata_3235" screen="entityGeneralDetails" isrequired="Y" accesslevel="1"
+	  	tabsconfigurationresourcename="divPolicyHolder" displaytype="multiradio" css="exteded_new_radio_seciton"
+	  	protectedresourceuniquename="divPolicyHolder" position="#policyholdercopies_after#"
 		lookupobjectname="policyholder_copies_lku" lookupobjecttype="mastertable"
 	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f27">
 		</field>
 		
-	<!-- dividend distribution agency review page -->
-	
+ 	<!-- dividend distribution agency review page -->
+	<!--
 	<field deltaind="I"  isextendedfield="Y" id="dividend_distribution_review_screen" name="dividend_distribution_review_screen" objectcolumn="agency_id"  section="adminBrokerstep1_freeform_contextdata_1" screen="agencyListPublicSubmitNInvitationEdit" isrequired="Y" accesslevel="1"
 	  	tabsconfigurationresourcename="adminBrokerstep1_freeform_contextdata_1" displaytype="multiradio" css="exteded_new_radio_seciton"
 	  	protectedresourceuniquename="adminBrokerstep1_freeform_contextdata_1" position="#distDistiShow_after#"
@@ -163,14 +162,14 @@
 	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f28">
 		</field> 
 		
-		<!-- Policyholder Copies -->
+		Policyholder Copies
 		
 		<field deltaind="I"  isextendedfield="Y" id="policyholder_copies_review_screen" name="policyholder_copies_review_screen" objectcolumn="agency_id"  section="adminBrokerstep1_freeform_contextdata_2" screen="agencyListPublicSubmitNInvitationEdit" isrequired="Y" accesslevel="1"
 	  	tabsconfigurationresourcename="adminBrokerstep1_freeform_contextdata_2" displaytype="multiradio" css="exteded_new_radio_seciton"
 	  	protectedresourceuniquename="adminBrokerstep1_freeform_contextdata_2" position="#policyholdercopies_after#"
 		lookupobjectname="policyholder_copies_lku" lookupobjecttype="mastertable"
 	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f27">
-		</field>
+		</field> -->
 	<!-- BUG ID : 0177 -->
   	
   <field deltaind="M" id="entityOtherInformation_total_annual_revenue" screen="carrier/entityOtherInformation.html" name="total_annual_revenue" isrequired="N" labelkey="total_annual_revenue_label" tabsconfigurationresourcename="total_annual_revenue_security" protectedresourceuniquename="total_annual_revenue_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" format="amount"/>
@@ -194,9 +193,9 @@
   
   <field deltaind="M" id="addAgencyTaskDetails_status" screen="carrier/addAgencyTaskDetails.html" name="status" isrequired="Y" labelkey="task_status_label" tabsconfigurationresourcename="task_status_security" protectedresourceuniquename="task_status_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
   <!-- entity general details agent copies field -->
-	<field deltaind="I"  isextendedfield="Y" id="agent_copies" name="agent_copies" objectcolumn="agency_id"  section="adminBrokerstep1_freeform_contextdata_3" screen="entityGeneralDetails" isrequired="Y" accesslevel="1"
-	  	tabsconfigurationresourcename="adminBrokerstep1_freeform_contextdata_3" displaytype="multiradio" css="exteded_new_radio_seciton"
-	  	protectedresourceuniquename="adminBrokerstep1_freeform_contextdata_3" position="#agentCopies_after#"
+	<field deltaind="I"  isextendedfield="Y" id="agent_copies" name="agent_copies" objectcolumn="agency_id"  section="entityGeneralDetails_freeform_contextdata_3236" screen="entityGeneralDetails" isrequired="Y" accesslevel="1"
+	  	tabsconfigurationresourcename="divAgentCopies" displaytype="multiradio" css="exteded_new_radio_seciton"
+	  	protectedresourceuniquename="divAgentCopies" position="#agentCopies_after#"
 		lookupobjectname="agent_copies_lku" lookupobjecttype="mastertable"
 	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f21">
 		</field>
@@ -204,8 +203,8 @@
 	<!-- Agency general details hba field -->
 	<field deltaind="I" isextendedfield="Y" name="member_of_hba" screen="entityGeneralDetails" objectcolumn="agency_id" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="radio" 
 	isrequired="Y" labelkey="entityGeneralDeetails_member_of_hba_label" labeldesc="Are you a member of an HBA?" accesslevel="1" tabsconfigurationresourcename="entityGeneralDeetails_hba_que_security" 
-	protectedresourceuniquename="entityGeneralDeetails_hba_que_security" id="member_of_hba" position="#segment_before#" mappedto="f29">
-	<event id="onchange" name="onchange" screen="carrier/entityGeneralDetails.html" actiontype="ajaxpageblocklink" action="refreshCounty" actiontypeid="hbaOnChangeFieldSecurity" executionsequence="0">
+	protectedresourceuniquename="entityGeneralDeetails_hba_que_security" id="member_of_hba" position="#is_employee_after#" mappedto="f29">
+	<event id="onchange" name="onchange" screen="carrier/entityGeneralDetails.html" actiontype="ajaxpageblocklink" action="refreshState_w9" actiontypeid="entityGeneralDeetails_hba_label_security#entityGeneralDeetails_hba_dropdown_security" executionsequence="0">
 	  	<forward id="carrier/entityGeneralDetails.html" screen="carrier/entityGeneralDetails.html" />
 	 </event>	 
 	</field>
@@ -213,6 +212,22 @@
 	<field deltaind="I" isextendedfield="Y" name="entity_gen_det_hba_dropdown" screen="entityGeneralDetails" objectcolumn="agency_id" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="select" 
 	isrequired="Y" labelkey="hba_dropdown_label" labeldesc="If Yes, please select the HBA Chapter you are a member of " accesslevel="1" tabsconfigurationresourcename="entityGeneralDeetails_hba_dropdown_security" 
 	protectedresourceuniquename="entityGeneralDeetails_hba_dropdown_security" id="entity_gen_det_hba_dropdown" position="#segment_before#" style="width=250px;"
+	lookupobjectname="hba_chapter_lku" lookupobjecttype="mastertable"
+	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f30" > 
+	</field>
+	
+	<!-- esignature/review screen hba field -->
+	<field deltaind="I" isextendedfield="Y" name="review_member_of_hba" screen="agencyListPublicSubmitNInvitationEdit" objectcolumn="aar_requestid" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="radio" 
+	isrequired="Y" labelkey="agencyListPublicSubmitNInvitationEdit_member_of_hba_label" labeldesc="Are you a member of an HBA?" accesslevel="1" tabsconfigurationresourcename="agencyListPublicSubmitNInvitationEdit_hba_que_security" 
+	protectedresourceuniquename="agencyListPublicSubmitNInvitationEdit_hba_que_security" id="review_member_of_hba" position="#is_employee_after#" mappedto="f29">
+	<event id="onchange" name="onchange" screen="carrier/entityGeneralDetails.html" actiontype="ajaxpageblocklink" action="refreshState_w9" actiontypeid="agencyListPublicSubmitNInvitationEdit_hba_label_security#agencyListPublicSubmitNInvitationEdit_hba_dropdown_security" executionsequence="0">
+	  	<forward id="carrier/agencyListPublicSubmitNInvitationEdit.html" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" />
+	 </event>	 
+	</field>
+	
+	<field deltaind="I" isextendedfield="Y" name="review_det_hba_dropdown" screen="entityGeneralDetails" objectcolumn="aar_requestid" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="select" 
+	isrequired="Y" labelkey="hba_dropdown_label" labeldesc="If Yes, please select the HBA Chapter you are a member of " accesslevel="1" tabsconfigurationresourcename="agencyListPublicSubmitNInvitationEdit_hba_dropdown_security" 
+	protectedresourceuniquename="agencyListPublicSubmitNInvitationEdit_hba_dropdown_security" id="review_det_hba_dropdown" position="#segment_before#" style="width=250px;"
 	lookupobjectname="hba_chapter_lku" lookupobjecttype="mastertable"
 	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f30" > 
 	</field>
@@ -247,4 +262,11 @@
   <field deltaind="I" id="prospectAgencyDetails_agency_lob" screen="carrier/prospectAgencyDetails.html" name="agency_lob" isrequired="MA" labelkey="prospectDetails_agency_lob_label" tabsconfigurationresourcename="isShowAgencyLobCheckboxProspectDetails" protectedresourceuniquename="isShowAgencyLobCheckboxProspectDetails" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
     <validation name="validateAgencyLob" expression="if(andCondition(isEmpty(:agency_lob),isEqual(:isShowAgencyLobCheckboxProspectDetails,Y))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="prospectAgencyDetails_agency_lobErrorKey" executionsequence="0" />
   </field>
+  
+  
+  <field deltaind="I" id="producerDetail_producer_number" screen="carrier/producerDetail.html" name="producer_number" isrequired="N" labelkey="producer_number_label" tabsconfigurationresourcename="producer_number_security" protectedresourceuniquename="producer_number_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" isdisplayonhistory="Y">
+  <!--   <validation deltaind="D" isskip="Y" name="checkProducerNumberForPrdcrNumberDetail" expression="isNot(andCondition(isEqual(:inet_page,producerDetail),andCondition(isEmpty(:producer_number),isEqual(:producer_number_mandatory_security,Y))))" message="ProducerNumberErrorKey" ruleid="ProducerOneRule.checkProducerNumberForPrdcrNumberDetail" executionsequence="0" /> -->
+  </field>
+  
+  
  </fields>

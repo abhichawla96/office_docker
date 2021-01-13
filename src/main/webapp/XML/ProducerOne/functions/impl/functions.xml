@@ -3,6 +3,9 @@
   
  <functiondefinition deltaind="I" classname="com.userbo.common.impl.ProducerOneUtilsImpl" method="getCustomizedProducerCode" name="getCustomizedProducerCode" returntype="V">
     <argument datatype="com.util.Context" name="context" seq="0"/>
-  </functiondefinition>
+  </functiondefinition> 
+ <functiondefinition deltaind="I" classname="com.userbo.common.impl.ProducerOneUtilsImpl" method="getSevenDigitAgencyCode" name="getSevenDigitAgencyCode" returntype="V">
+    <argument datatype="com.util.Context" name="context" seq="0"/>
+  </functiondefinition> 
   
 </functionsdef>

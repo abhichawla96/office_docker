@@ -467,7 +467,7 @@
      <!-- Bug no. : 246 -->
      
      <tabsconfigurationresource deltaind="M" name="isShowOrderStampSelfService_security" accesslevel="0" description="Hide/Show addNewOrderStamp_numberofstamps_security in homeAction.html Dashboard Count" />
-     <tabsconfigurationresource deltaind="M" name="isRemoveAgencyFromClusterForSelfService_security" accesslevel="0" description="isRemoveAgencyFromClusterForSelfService_security" />
+     <tabsconfigurationresource deltaind="I" name="isRemoveAgencyFromClusterForSelfService_security" accesslevel="0" description="isRemoveAgencyFromClusterForSelfService_security" />
      <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show homeAction_floodInsuranceSelfService_security" name="homeAction_floodInsuranceSelfService_security"/>
      
      <!-- Bug no. : 240 -->
@@ -479,6 +479,7 @@
      <!-- Bug no. : 154 -->
      
      <tabsconfigurationresource deltaind="I" accesslevel="0" description="isShowProdNumCommissionReductionDate" name="agencyListPublicSubmit_license_num_security"/>
-     
+      
+      <tabsconfigurationresource deltaind="M" accesslevel="0" name="agentpdbalerts_tab_security"/>
      
 </tabsconfiguration>
