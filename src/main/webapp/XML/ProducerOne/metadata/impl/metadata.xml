@@ -20964,12 +20964,12 @@
 		
 		</propertyversion>
 	</metaobject>
-	<metaobject  metadata="M" active="Y" name="sub_producer_association" persistent="Y" seq="0">
+	<metaobject deltaind="M" active="Y" name="sub_producer_association" persistent="Y" seq="0">
 		<propertyversion seq="0" versionname="0">
 			<property autoincrement="IDENTITY" contextfield="N" deleteind="N" field="sub_producer_association_id" formdisplay="Y" initcap="N" isEncrypt="N" isrequired="N" keyconstraint="PRIMARY KEY" length="0" listdisplay="Y" persistent="Y" propertylength="0" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="1" viewlength="0"/>
-			<property metadata="M" autoincrement="NOT NULL" contextfield="N" deleteind="N" displayname="subProducerAssociation_sub_producer_label" field="sub_producer" formdisplay="Y" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="Y" persistent="Y" propertylength="0" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="2" viewlength="0">
-					<!-- 		<propvalidation executionseq="0" expression="ProducerOneRule.checkProducerAssociationSubProducerCodeMandatory" message="subProducerAssociationSubProducerErrorKey" name="checkProducerAssociationSubProducerCodeMandatory"/>
-		 -->	</property>
+			<property deltaind="M" autoincrement="NOT NULL" contextfield="N" deleteind="N" displayname="subProducerAssociation_sub_producer_label" field="sub_producer" formdisplay="Y" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="Y" persistent="Y" propertylength="0" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="2" viewlength="0">
+							<propvalidation deltaind="D" executionseq="0" expression="ProducerOneRule.checkProducerAssociationSubProducerCodeMandatory" message="subProducerAssociationSubProducerErrorKey" name="checkProducerAssociationSubProducerCodeMandatory"/>
+			</property>
 			<property autoincrement="NOT NULL" contextfield="N" deleteind="N" displayname="subProducerAssociation_effective_date_label" field="effective_date" formdisplay="Y" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="Y" persistent="Y" propertylength="0" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="2" viewlength="0">
 				<propvalidation executionseq="0" expression="ProducerOneRule.checkProducerAssociationEffectiveMandatory" message="DocInsuranceEffectiveDateErrorKey" name="checkProducerAssociationEffectiveMandatory"/>
 			</property>
