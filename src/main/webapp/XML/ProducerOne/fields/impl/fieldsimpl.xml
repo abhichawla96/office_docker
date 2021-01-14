@@ -217,7 +217,7 @@
 	</field>
 	
 	<!-- esignature/review screen hba field -->
-	<field deltaind="I" isextendedfield="Y" name="review_member_of_hba" screen="agencyListPublicSubmitNInvitationEdit" objectcolumn="aar_requestid" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="radio" 
+<!-- 	<field deltaind="I" isextendedfield="Y" name="review_member_of_hba" screen="agencyListPublicSubmitNInvitationEdit" objectcolumn="aar_requestid" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="radio" 
 	isrequired="Y" labelkey="agencyListPublicSubmitNInvitationEdit_member_of_hba_label" labeldesc="Are you a member of an HBA?" accesslevel="1" tabsconfigurationresourcename="agencyListPublicSubmitNInvitationEdit_hba_que_security" 
 	protectedresourceuniquename="agencyListPublicSubmitNInvitationEdit_hba_que_security" id="review_member_of_hba" position="#is_employee_after#" mappedto="f29">
 	<event id="onchange" name="onchange" screen="carrier/entityGeneralDetails.html" actiontype="ajaxpageblocklink" action="refreshState_w9" actiontypeid="agencyListPublicSubmitNInvitationEdit_hba_label_security#agencyListPublicSubmitNInvitationEdit_hba_dropdown_security" executionsequence="0">
@@ -231,7 +231,7 @@
 	lookupobjectname="hba_chapter_lku" lookupobjecttype="mastertable"
 	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f30" > 
 	</field>
-	
+	 -->
 	<!-- Bug id : 234 -->
 
  <field deltaind="M" id="entiytGeneralDetails_segment" screen="carrier/entityGeneralDetails.html" name="segment_id" isrequired="Y" lookupobjectmetaobject="agency_master" lookupobjectprocedure="getAgencySegmetListForDropDown_p" displayfield="master_lookup_data_desc" valuefield="master_lookup_data_id" labelkey="entityGeneralDetails_segment_label" tabsconfigurationresourcename="entityGeneralDetails_segment_security" protectedresourceuniquename="entityGeneralDetails_segment_security" isextendedfield="N" executionsequence="0" isencrypt="N" lookupobjecttype="procedure" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
