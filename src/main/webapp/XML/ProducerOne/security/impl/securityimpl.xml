@@ -730,7 +730,11 @@
     </userdefined>
   </protectedresource>
   
-  
+    <protectedresource deltaind="I" defaultaccesstype="0" description="entityGeneralDeetails_hba_dropdown_security" uniquename="showOnAdd">
+   <userdefined deltaind="I" ruleid="ProducerOneRule.showOnAdd"  executionsequence="0">
+      <userdefinedaccesslevel accesstype="1" />
+    </userdefined>
+  </protectedresource>
   
   
 </security>  
