@@ -9,7 +9,7 @@ html, body {
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup,
-	main, menu, nav, section, summary { 
+	main, menu, nav, section, summary {
 	display: block;
 }
 .freeFormLabelWidth_205 {
@@ -3343,7 +3343,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
 
 .btn-default {
 	color: #333;
-	background-color: #C92A39;
+	background-color: #D6D6D2;
 	border-color: #ccc;
 }
 
