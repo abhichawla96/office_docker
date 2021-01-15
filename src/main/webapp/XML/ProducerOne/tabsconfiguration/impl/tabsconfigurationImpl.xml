@@ -481,5 +481,5 @@
      <tabsconfigurationresource deltaind="I" accesslevel="0" description="isShowProdNumCommissionReductionDate" name="agencyListPublicSubmit_license_num_security"/>
       
       <tabsconfigurationresource deltaind="M" accesslevel="0" name="agentpdbalerts_tab_security"/>
-     
+     <tabsconfigurationresource deltaind="I" accesslevel="1" description="check whether producer number mandatory or not on producerdetail page" name="producer_number_mandatory_security" value="N"/>
 </tabsconfiguration>
