@@ -3,7 +3,8 @@
 		<menu name="adminmore_security" deltaind="M" securitykey="adminmore_security" tablabelkey="adminmore_security_tablabel" menulabelkey="adminmore_security_menulabel" activeon="isMoreTabSelected" executionsequence="10"
 			tabcssclass="contacttab" istab="Y" activeonclass="active1" screen="admin/adminTabs.html" action="massChange"
 			href="javascript:submitform('admin/massChange.html','adminTabs.massChange','','');">
-			<forward id="admin/massChange.html" screen="admin/massChange.html" executionsequence="0"/>
+			<forward id="admin/massChange.html" deltaind="M" screen="admin/massChange.html" executionsequence="0"/>
+			
 			<submenu name="adminTabs_massContractGeneration" securitykey="adminTabs_massContractGeneration" tablabelkey="massContractGenerationLabel" menulabelkey="adminTabs_massContractGeneration_menulabel"
 				activeon="isNextPageMassContractGeneration" executionsequence="1" tabcssclass="contacttab" istab="Y" activeonclass="active1"
 				screen="admin/adminTabs.html" action="massContractGenerationListing" moduleid="administration"
