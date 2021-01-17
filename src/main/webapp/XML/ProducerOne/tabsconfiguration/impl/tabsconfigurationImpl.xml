@@ -482,4 +482,7 @@
       
       <tabsconfigurationresource deltaind="M" accesslevel="0" name="agentpdbalerts_tab_security"/>
      <tabsconfigurationresource deltaind="I" accesslevel="1" description="check whether producer number mandatory or not on producerdetail page" name="producer_number_mandatory_security" value="N"/>
+	    <!-- Sample insurance to BMIC -->
+      <tabsconfigurationresource deltaind="M" name="clientName" value="Builders Mutual Insurance Company"/>
+   
 </tabsconfiguration>

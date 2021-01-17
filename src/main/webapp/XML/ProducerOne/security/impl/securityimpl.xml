@@ -712,17 +712,13 @@
     </businessrole>
   </protectedresource>
   
-  <!--  <protectedresource deltaind="M" defaultaccesstype="2" description="producer_number_security" uniquename="producer_number_security">
+    <protectedresource deltaind="M" defaultaccesstype="2" description="producer_number_security" uniquename="producer_number_security">
    <userdefined ruleid="ProducerDetailRule.checkProducerNumberNotEmpty"  executionsequence="0">
       <userdefinedaccesslevel accesstype="2" />
     </userdefined>
-  </protectedresource> -->
-  
-   <protectedresource deltaind="I" defaultaccesstype="0" description="entityGeneralDeetails_hba_label_security" uniquename="entityGeneralDeetails_hba_label_security">
-   <userdefined deltaind="I" ruleid="ProducerOneRule.isHBAYesNO"  executionsequence="0">
-      <userdefinedaccesslevel accesstype="1" />
-    </userdefined>
   </protectedresource>
+  
+  
   
    <protectedresource deltaind="I" defaultaccesstype="0" description="entityGeneralDeetails_hba_dropdown_security" uniquename="entityGeneralDeetails_hba_dropdown_security">
    <userdefined deltaind="I" ruleid="ProducerOneRule.isHBAYesNO"  executionsequence="0">
