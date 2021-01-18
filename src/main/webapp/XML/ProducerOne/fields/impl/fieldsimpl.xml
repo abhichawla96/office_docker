@@ -268,5 +268,11 @@
   <!--   <validation deltaind="D" isskip="Y" name="checkProducerNumberForPrdcrNumberDetail" expression="isNot(andCondition(isEqual(:inet_page,producerDetail),andCondition(isEmpty(:producer_number),isEqual(:producer_number_mandatory_security,Y))))" message="ProducerNumberErrorKey" ruleid="ProducerOneRule.checkProducerNumberForPrdcrNumberDetail" executionsequence="0" /> -->
   </field>
   
+  <!-- agency termination page -->
+  <field deltaind="M" id="agencyTerminationStep1_reason_id" screen="admin/agencyTerminationStep1.html" name="reason_id" isrequired="Y" lookupobjectsql="select master_lookup_data_id, master_lookup_data_desc from master_lookup_data_lku where master_lookup_detail_id in(select master_lookup_detail_id from master_lookup_detail_lku where lookup_table_name='agency_termination_reason_lku')  " displayfield="master_lookup_data_desc" valuefield="master_lookup_data_id" labelkey="termination_reason_label" tabsconfigurationresourcename="agencyTerminationStep1_reason_id_security" protectedresourceuniquename="agencyTerminationStep1_reason_id_security" isextendedfield="N" executionsequence="0" isencrypt="N" lookupobjecttype="sql" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
+    <event id="onchange" name="onchange" actiontype="ajaxpageblocklink" screen="admin/agencyTerminationStep1.html" action="showHideTerminationOtherReasonField" actiontypeid="agencyTerminationStep1_terminationReasonOther_security" executionsequence="0">
+      <forward id="admin/agencyTerminationStep1.html" screen="admin/agencyTerminationStep1.html" executionsequence="0" />
+    </event>
+  </field>
   
  </fields>
