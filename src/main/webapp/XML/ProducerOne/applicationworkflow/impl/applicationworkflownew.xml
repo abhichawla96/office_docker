@@ -612,6 +612,9 @@
 			<status deltaind="M" name="approved" workflowstatus="Approved" workflowfunction="Agency Termination" executionsequence="1"
 				usergroup="SalesDirector" approver="workflow_user" statusgroup="Agency Termination" objectid="termination_log_id" objecttype="Agency Termination"
 				forward="agencyTerminationList" isapproval="Y">
+				<statusworkflow name="approved">
+					<businessobject name="SendDocForESign" obj="com.userbo.integration.SendDocForESign" objectid="termination_log_id" doccategory="39"></businessobject>					
+				</statusworkflow> 
 			</status>
 			<approver name="approver1" status="approved" executionsequence="0"></approver> 				   
 <approver deltaind="D" name="approver2" status="approved" executionsequence="1"></approver> 				   

@@ -18,10 +18,8 @@
    <rule deltaind="I" id="isNewAgencyCode" expression="isEqual(:producer_number,null);"></rule>
   <rule deltaind="I" id="isSuspensionReasonCustom" expression="isEqual(:suspension_reason,'7');"></rule>
    
-   
-   
-   
    <rule deltaind="I" id="isHBAYesNO" expression="isEqual(:member_of_hba,Y);"></rule>
+   <rule deltaind="I" id="isAgencyInOnboardingStatus" expression="isNot(call_rule(ProducerOneRule));" />
 	</ruleset>
 </evalrules>	
 	
