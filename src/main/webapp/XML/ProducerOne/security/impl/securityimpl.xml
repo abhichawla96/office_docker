@@ -860,7 +860,23 @@
 	</protectedresource>
 	
 	
-	
+	<protectedresource deltaind="I" defaultaccesstype="0" description="entityGeneralDeetails_hba_dropdown_security" uniquename="showOnAddAgencySetUp">
+   <userdefined deltaind="I" ruleid="ProducerOneRule.showOnAddAgencySetUp"  executionsequence="0">
+      <userdefinedaccesslevel accesstype="1" />
+    </userdefined>
+  </protectedresource>
+  
+   <protectedresource deltaind="I" defaultaccesstype="0" description="entityGeneralDeetails_hba_dropdown_security" uniquename="showOnAddAgencyBgCheck">
+   <userdefined deltaind="I" ruleid="ProducerOneRule.showOnAddAgencyBgCheck"  executionsequence="0">
+      <userdefinedaccesslevel accesstype="1" />
+    </userdefined>
+  </protectedresource>
+  
+   <protectedresource deltaind="I" defaultaccesstype="0" description="entityGeneralDeetails_hba_dropdown_security" uniquename="showOnAddAgencySentForEsign">
+   <userdefined deltaind="I" ruleid="ProducerOneRule.showOnAddAgencySentForEsign"  executionsequence="0">
+      <userdefinedaccesslevel accesstype="1" />
+    </userdefined>
+  </protectedresource>
   
   
 </security>  

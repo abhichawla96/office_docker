@@ -9,5 +9,8 @@
 	<!-- this rule was missing in the base file on git -->
 	 <rule deltaind="I" id="isRegistrationTypeProducerRegistration" expression="isEqual(:registration_type_desc,PRERG);" obj="ruleobjs.ProducerOneRule" method="isRegistrationTypeProducerRegistration" />
    <rule deltaind="I" id="showOnAdd" expression="andCondition(isEqual(:showOnAdd,Y),isEqual(:aar_statusid_desc,Pending Contract Generation));" obj="ruleobjs.ProducerOneRule" method="showOnAdd" />
+	<rule deltaind="I" id="showOnAddAgencySetUp" expression="andCondition(isEqual(:showOnAdd,Y),isEqual(:aar_statusid_desc,Pending Agency Setup));" obj="ruleobjs.ProducerOneRule" method="showOnAdd" />
+	<rule deltaind="I" id="showOnAddAgencySentForEsign" expression="andCondition(isEqual(:showOnAdd,Y),isEqual(:aar_statusid_desc,Sent for ESignature));" obj="ruleobjs.ProducerOneRule" method="showOnAdd" />
+	<rule deltaind="I" id="showOnAddAgencyBgCheck" expression="andCondition(isEqual(:showOnAdd,Y),isEqual(:aar_statusid_desc,BG Check Submitted));" obj="ruleobjs.ProducerOneRule" method="showOnAdd" />
 	</ruleset>
 </evalrules>
