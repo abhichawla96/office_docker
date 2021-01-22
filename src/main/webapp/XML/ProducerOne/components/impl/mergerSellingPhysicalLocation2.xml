@@ -1,0 +1,50 @@
+<projectcomponents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/components_XSD.xsd">
+	<component deltaind="M" metaobject="f_Policy_Transaction"
+		name="mergerSellingPhysicalLocation2" stackdisplayname="eval:ProducerOneRule.getMergerAcquistionsStep2StackName"
+		displayname="Mergers &amp; Acquisitions Step 2">
+
+		<action deltaind="M" name="view">
+			<workflow deltaind="I" eval="agencymergernaquisition_letterTemplateList_security"
+				name="getTemplateListForLetterGenerationMnA" seq="50">
+					<storedprocedureoperation deltaind="I" dbspname="getTemplateListForAgencyFunctionMnA_p"
+					eval="agencymergernaquisition_letterTemplateList_security"
+					executionsequence="0" id="getTemplateListForAgencyFunctionMnA_p"
+					metaobject="master_lookup_data_lku" name="getTemplateListForAgencyFunctionMnA_p"
+					operation="5" viewid="agencymna_letterTemplate_list_1">
+					
+					<resultsetoperation indexno="1" mappingclass="java.util.HashMap"
+						seq="0" />
+				</storedprocedureoperation>
+				</workflow>
+		</action>
+		
+		
+		<action name="generateLetter" deltaind="I">
+	    	<actionparam executionsequence="0" form="Y" name="getDataForSummaryFromDb" paramid="getDataForSummaryFromDb" viewparam="Y"/>
+	  		<actionparam executionsequence="1" form="Y" name="IS_SHOW_EDIT_PDF_TEMPLATE" paramid="IS_SHOW_EDIT_PDF_TEMPLATE" pre="Y" val="Y"/>
+	  		<actionparam executionsequence="2" form="Y" name="inDocCategory" paramid="inDocCategory" pre="Y" val="41"/>
+	    	<actionparam eval="AgencyFunctionsRule.isShowAgencyFunctionsTypeAgencySuspension" executionsequence="3" form="Y" name="outDocCategory" paramid="outDocCategoryAS" pre="Y" val="47"/>
+	    	<actionparam eval="AgencyFunctionsRule.isShowAgencyFunctionsTypeCloseLocation" executionsequence="4" form="Y" name="outDocCategory" paramid="outDocCategoryCL" pre="Y" val="49"/>
+	    	<actionparam eval="AgencyFunctionsRule.isShowAgencyFunctionsTypeRemoveSuspension" executionsequence="5" form="Y" name="outDocCategory" paramid="outDocCategoryRS" pre="Y" val="48"/>
+	    	<actionparam eval="AgencyFunctionsRule.isShowAgencyFunctionsTypeCloseAgencyCode" executionsequence="6" form="Y" name="outDocCategory" paramid="outDocCategoryCAC" pre="Y" val="50"/>
+	    	<actionparam eval="AgencyFunctionsRule.isShowAgencyFunctionsTypeDeactivateContact" executionsequence="13" form="Y" name="document_category" paramid="document_category_DeactivateContact" pre="Y" val="51"/>
+	    	<actionparam executionsequence="7" form="Y" name="fieldsList" paramid="fieldsList" pre="Y" val="termination_reason_other,selectFunctionType_id,toBeProcessed_agency_name,toBeProcessed_agency_id,getDataForSummaryFromDb,suspension_date,suspension_reason,selectFunctionType_code,toBeProcessed_producer_number_id,toBeProcessed_producer_number,toBeProcessed_agent_id,toBeProcessed_agent_name,request_ss_id,selectedTemplateXml,effective_date,commission_reduction_rate,deactivateAgents_csv,is_real_time"/>
+	    	<actionparam eval="AgencyFunctionsRule.setDataForAgencySuspension" executionsequence="8" form="Y" name="setDataForAgencySuspension" paramid="setDataForAgencySuspension" pre="Y"/>
+	    	<actionparam eval="AgencyFunctionsRule.setDataForCloseLocation" executionsequence="9" form="Y" name="setDataForCloseLocation" paramid="setDataForCloseLocation" pre="Y"/>
+	    	<actionparam eval="AgencyFunctionsRule.setDataForCloseAgencyCode" executionsequence="10" form="Y" name="setDataForCloseAgencyCode" paramid="setDataForCloseAgencyCode" pre="Y"/>
+	    	<actionparam eval="AgencyFunctionsRule.setDataForRemoveSuspension" executionsequence="11" form="Y" name="setDataForRemoveSuspension" paramid="setDataForRemoveSuspension" pre="Y"/>
+	    	<actionparam executionsequence="12" form="Y" name="xmlfieldsList" paramid="xmlfieldsList" pre="Y" val="object_id,object_type_v,AgencyAddresType,AgentAddresType,user_id,suspension_date,effective_date,commission_reduction_rate"/>
+	    	<workflow name="generateLetter" seq="0">
+	    		<function executionsequence="0" functionid="generateLetterFromTemplate" name="generateLetterFromTemplate" parameters="context,selectedTemplateType,uploadPopup_list_1,inDocCategory,outDocCategory,currentcontext"/>
+	    		<function executionsequence="1" functionid="generateRequestXml" name="generateRequestXml" parameters="context,:fieldsList,PAGEDATAXML"/>
+	    			</workflow>
+	    	<actionparam executionsequence="2" form="Y" name="uploadPopup_list_1" paramid="uploadPopup_list_1" post="Y" session="Y"/>
+	    	<actionparam executionsequence="3" form="Y" name="EDIT_PDF_TEMPLATE_LIST" paramid="EDIT_PDF_TEMPLATE_LIST" post="Y" val="uploadPopup_list_1"/>
+	    	<actionparam executionsequence="4" form="Y" name="selectedTemplateType" paramid="selectedTemplateType" post="Y" session="Y"/>
+	    	<actionparam executionsequence="0" form="Y" name="inet_eventid" paramid="inet_eventid" viewparam="Y"/>
+	    </action>
+
+
+	</component>
+</projectcomponents>
