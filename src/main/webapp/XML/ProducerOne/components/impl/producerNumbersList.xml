@@ -1,0 +1,10 @@
+<projectcomponents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/components_XSD.xsd">
+	<component breadcrumbsessionparams="agency_id,workflow_function,aar_statusid_desc,workflow_user" name="producerNumbersList" 
+		stackdisplayname="producerNumbersList_breadcrumb_label" displayname="Agency Codes Listing">
+
+		<action name="addnew">
+    		<actionparam deltaind="I" executionsequence="0" form="Y" name="showOnAdd" paramid="showOnAdd" pre="Y"  val="Y"/>
+      	</action>
+		
+		</component>
+		</projectcomponents>

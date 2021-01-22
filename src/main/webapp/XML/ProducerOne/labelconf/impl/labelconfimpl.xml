@@ -1,7 +1,7 @@
 <labelconf project="ProducerOne">
  <label deltaind="M" labeldesc="Approve" labelkey="agencyListPublicSubmitNInvitationEdit_approvebyassigneelabel"/>
- <label deltaind="I" labeldesc="How did you learn about Sample Insurance Company" labelkey="learn_about_label"/>
- <label deltaind="I" labelkey="interest_for_appointment_label" labeldesc="Why are you interested in Sample Insurance Company appointment?"/>
+ <!-- <label deltaind="I" labeldesc="How did you learn about Sample Insurance Company" labelkey="learn_about_label"/>
+  --><label deltaind="I" labelkey="interest_for_appointment_label" labeldesc="Why are you interested in Sample Insurance Company appointment?"/>
  <label deltaind="M" labeldesc="Years in Business" labelkey="years_in_business_label"/>
  <label deltaind="I" labelkey="addendum_to_agency_desc_label" labeldesc="By the agreement below, Agent and the Sample Insurance Companies agree to amend the Agency Agreement between them as follows:"/>
  <label deltaind="I" labelkey="addendum_to_agency_q1_label" labeldesc="1. Agent understands and agrees that Agent does not have the authority to place business with Sample Insurance Companies which would violate any provisions of any contract between the Agent and the insurance company, agency or previous employer entered in the box below."/>
@@ -9,7 +9,6 @@
  <label deltaind="M" labeldesc="Account Type Usage" labelkey="ss_bank_account_type_trust_operating_label"/>
  <label deltaind="M" labelkey="checkIsShowDocumentInsuranceTab_menulabel" labeldesc="E&amp;O"></label>
  <label deltaind="M" labeldesc="License Verification" labelkey="nipr_appointment_bucket_label"/>
- <label deltaind="M" labeldesc="Pending License Verification" labelkey="onboard_pending_appointment_label"/>
  <label deltaind="M" labeldesc="Proceed to License Verification" labelkey="entitybackgroundlist_proceedtoappointmentslabel"/>
  <label deltaind="M" labeldesc="Received" labelkey="pending_bg_check_label"/>
  <label deltaind="M" labeldesc="Licenses Verified" labelkey="onboard_appointed_with_nipr_label"/>
@@ -17,12 +16,8 @@
  <label deltaind="M" labeldesc="Agency Setup Checklist" labelkey="pending_legacy_setup_label"/>
  <label deltaind="M" labeldesc="E&amp;O" labelkey="insurancelabel"/>
  <!-- Onboarding dashboard -->
- <label deltaind="M" labeldesc="Received" labelkey="pending_bg_check_label"/>
-   <label deltaind="M" labeldesc="License Verification" labelkey="nipr_appointment_bucket_label"/>
+ 
    <label deltaind="M" labeldesc="Pending License Verification" labelkey="onboard_pending_appointment_label"/>
-   <label deltaind="M" labeldesc="Licenses Verified" labelkey="onboard_appointed_with_nipr_label"/>
-   <label deltaind="M" labeldesc="License Verification Failed" labelkey="onboard_failed_appointment_label"/>
-   <label deltaind="M" labeldesc="Agency Setup Checklist" labelkey="pending_legacy_setup_label"/>
    <label deltaind="M" labeldesc="Agency Status" labelkey="agentstatus_label"/>
    
 <!--Sprint 1 : Bug Id : 0002 -->
@@ -56,12 +51,95 @@
   <label deltaind="M" labeldesc="Agency Name" labelkey="agencyOfficeNamelabel"/>
   <label deltaind="M" labeldesc="W-9 Legal Name" labelkey="taxpayer_name_label"/>
    <label deltaind="M" labeldesc="Agency Web Address" labelkey="url_label"/>
-  <label deltaind="M" labeldesc="Please Verify Address" labelkey="verify_business_address_label"/>
+  <label deltaind="M" labeldesc="Please Verify Business Address" labelkey="verify_business_address_label"/>
   <label deltaind="M" labeldesc="Street Address #1" labelkey="streetAddress1_mailingaddress_FieldLabel"/>
-  <label deltaind="M" labeldesc="Please Verify Address" labelkey="verify_mailing_address_label"/>
+  <label deltaind="M" labeldesc="Please Verify Mailing Address" labelkey="verify_mailing_address_label"/>
   <label deltaind="M" labeldesc="Street Address #1" labelkey="streetAddress1_w9address_FieldLabel"/>
   
    <!-- BUG ID : 0050 -->
   <label deltaind="M" labeldesc="Line of Business" labelkey="invitationStep1_agency_lob_label"/>
 
+  <!-- US: OB-OB-004-17 -->
+  <label deltaind="M" labeldesc="Please select the states you are currently licensed. Builders Mutual Insurance states are in bold. You will be appointed in the Builders Mutual states you are licensed." labelkey="isShowStatesInOnboarding_label"/>
+ 
+  
+<!-- Sprint 3 : Agency and Agent Demographics- General (Add new Agency) -->
+
+  <label deltaind="M" labeldesc="Agency Name" labelkey="addNewAgencyPage_legal_company_label"/>
+  <label deltaind="M" labeldesc="Email" labelkey="addNewAgencyPage_e_mail_business_label"/>
+  <label deltaind="M" labeldesc="Legal Form" labelkey="addNewAgency_legal_form_label"/>
+
+<!-- Sprint 3 : Agency and Agent Demographics- General (Add Secondary_Branch Agency) --> 
+
+  <label deltaind="M" labeldesc="W-9 Legal Name" labelkey="taxpayer_name_label"/>
+  <label deltaind="M" labeldesc=" Please Verify W9 Address" labelkey="verify_w9_address_label"/>
+  
+ 
+
+<!-- Sprint 3 : Agency and Agent Demographics- General (creation&main of Agency code) -->  
+  
+  <label deltaind="M" labeldesc="Position Manager" labelkey="position_manager_id_prodOrgMapping_label"/>
+  <label deltaind="I" labeldesc="County" labelkey="county_id_prodOrgMapping_label"/>
+
+<!-- OB-GEN-015-2 -->
+   <label deltaind="M" labeldesc="Contact" labelkey="doc_contract_principal_contact_label"/>
+<!-- Sprint 3 : Agency and Agent Demographics- General (Documents - E&O ) -->  
+  
+  <label deltaind="M" labeldesc="E&amp;O Contact" labelkey="doc_insurance_block_person_name_label"/>
+  <label deltaind="M" labeldesc="E&amp;O Contact" labelkey="doc_insurance_insurance_contact_label"/>
+  <label deltaind="M" labeldesc="Producer W-9 Name" labelkey="doc_w9_list_agency_w9_label"/>
+  
+  
+  <label deltaind="I" labeldesc="I understand it&apos;s required to obtain and maintain a policy or policies of cyber liability insurance coverage with limits of liability of at least $500,000.Please attach a copy of your current declaration page in the Additional Documants section at the end of the application. Click the box to agree to these terms." labelkey="add_new_cyber_liability_eo_claims_declaration_label"/>
+  
+
+<!-- Sprint 3:Agency Profile -->
+<label deltaind="M" labeldesc="Email" labelkey="profile_BA_e_mail_label"/>
+<label deltaind="M" labeldesc="E&amp;O Contact" labelkey="agencyProfile_doc_insurance_block_person_name_label"/>
+  
+ <label deltaind="M" labeldesc="Total Agency Volume" labelkey="total_annual_revenue_label"/>
+ 
+
+  <label deltaind="M" labeldesc="Producer Privileges" labelkey="spinn_privileges_label"/>
+  <label deltaind="M" labeldesc="Premium Volume and Production Information" labelkey="premium_volume_by_lob_label"/>
+ 
+<label deltaind="M" labelkey="entityGeneralDetails_segment_label" labeldesc="Tier" />
+
+<!-- Bug id : 0113 -->
+
+  <label deltaind="M" labelkey="total_annual_revenue_label" labeldesc="Total Agency Volume" />
+
+ <!-- BUG id : 0194  -->
+ <label deltaind="M" labeldesc="How did you hear about Company?" labelkey="agencyListEdit_comments_hear_about_label"/>
+  <label deltaind="M" labeldesc="Explain any interest in any other business or occupation outside of this agency" labelkey="agencyListEdit_comments_interest_outside_label"/>
+ 
+
+<!-- Sprint 4 -->
+<label deltaind="M" labeldesc="LOB" labelkey="agencyFunctionListing_closingBusinessForOpenMarkets_market_label"/>
+<label deltaind="M" labeldesc="Close Location Reason Other" labelkey="agencyFunctions_selectFunctionType_termination_reason_other_label"/>
+<label deltaind="M" labeldesc="Termination Notice Date" labelkey="agencyTerminationNoticeDateLabel"/>
+<label deltaind="I" labeldesc="Product" labelkey="agencyFunctionListing_closingBusinessForOpenMarkets_product_label"/>
+
+<!-- prod validation -->
+
+<label deltaind="M" labeldesc="LOB" labelkey="productValidationDetails_lob_id_Filter_label"/>
+
+<label deltaind="I" labeldesc="Product" labelkey="prod_validation_product_fieldLabel"/>
+
+<!-- Bug id : 0172 -->
+
+    <label deltaind="M" labeldesc="Social Security Number" labelkey="agent_ssn_field_label"/>
+  
+  <!-- Bug id : 0161 -->
+  
+  <label deltaind="M" labeldesc="Designation" labelkey="positionTitlelabelkey"/>
+
+<!-- Bug id : 0131 -->
+
+  <label deltaind="M" labeldesc="Explain any interest in any other business or occupation outside of this agency" labelkey="agencyListEdit_comments_interest_outside_label"/>
+<label deltaind="M" labeldesc="Number of CSR&apos;s" labelkey="num_csr_label"/>
+ <!-- Bug id : 177-->
+ 
+ <label deltaind="M" labelkey="agencyListPublicSubmitNInvitationEdit_narrative_question_3_label" labeldesc="Comment on neighboring Builders Mutual Insurance Agencies and with this appointment"/>
+ 
 </labelconf>

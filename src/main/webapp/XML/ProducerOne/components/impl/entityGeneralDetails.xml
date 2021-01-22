@@ -696,12 +696,17 @@
         <businessobject name="OnboardingBO" obj="com.userbo.onboarding.OnboardingBO" executionsequence="1" />
       </workflow> -->
     </action>
-    <action name="view">
+    <action deltaind="M" name="view">
       <actionparam executionsequence="27" form="Y" name="session_agency_nipr_id" paramid="session_agency_nipr_id" pre="Y" remove="Y" session="Y"/>
       <actionparam executionsequence="100" form="Y" name="headercity" paramid="headercity" post="Y" session="Y"/>
       <actionparam eval="ProducerOneRule.isAgencyOtherLocationActive" executionsequence="39" form="Y" name="hierarchy_type_code_filter" paramid="hierarchy_type_code_filter" pre="Y" val="LOCH"/>
       <actionparam executionsequence="30" form="Y" name="is_agency_onboarding" paramid="is_agency_onboarding" pre="Y"/>
-     <!--  <actionparam pre="Y" name="is_active" paramid="is_active12"  val="1" viewparam="Y"  eval="ProducerOneRule.isOnboardingStatusCompleted" form="Y" executionsequence="15" /> -->
+      
+      <actionparam deltaind="I" eval="ProducerOneRule.isAgencyInOnboardingStatus" post="Y" name="is_active" paramid="is_active12"  val="3" viewparam="Y"   form="Y" executionsequence="15" />
+      <actionparam deltaind="I" eval="ProducerOneRule.isAgencyInOnboardingStatus" pre="Y" name="pendingAppointmentStatus" paramid="pendingAppointmentStatus"  val="Y" viewparam="Y"   form="Y" executionsequence="1" />
+      <actionparam deltaind="I" eval="ProducerOneRule.isAgencyInOnboardingStatus" pre="Y" name="allAgencyStatus" paramid="allAgencyStatus"   viewparam="Y" val="N" form="Y" executionsequence="2" />
+      <actionparam deltaind="I" eval="ProducerOneRule.isAgencyInOnboardingStatus" pre="Y" name="pendingStatusOnly" paramid="pendingStatusOnly"  val="Y" viewparam="Y"   form="Y" executionsequence="3" />
+      
       
       <actionparam eval="ProducerOneRule.AssignIsEmployeeValue" executionsequence="38" form="Y" name="is_employee" paramid="is_employee" post="Y"/>
       <actionparam executionsequence="33" form="Y" name="getNIPRQuickReport_list_1" paramid="getNIPRQuickReport_list_1" pre="Y" remove="Y" session="Y"/>

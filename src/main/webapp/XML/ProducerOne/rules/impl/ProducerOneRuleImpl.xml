@@ -1,0 +1,16 @@
+<evalrules project="ProducerOne">
+<ruleset name="ProducerOneRule">
+	<rule deltaind="I" id="isRegistrationTypeProducerRegistrationForSendInvitation"
+			expression="isEqual(:selected_agency_registration_type_desc,Producer Registration);"
+			obj="ruleobjs.ProducerOneRule" method="isRegistrationTypeProducerRegistrationForSendInvitation" />
+		<rule deltaind="I" id="isRegistrationTypePrimaryAgencyForSendInvitation"
+			expression="orCondition(isEqual(:selected_agency_registration_type_desc,Primary Agency),isEqual(:selected_agency_registration_type_desc,Secondary Agency));"
+			obj="ruleobjs.ProducerOneRule" method="isRegistrationTypePrimaryAgencyForSendInvitation" />
+	<!-- this rule was missing in the base file on git -->
+	 <rule deltaind="I" id="isRegistrationTypeProducerRegistration" expression="isEqual(:registration_type_desc,PRERG);" obj="ruleobjs.ProducerOneRule" method="isRegistrationTypeProducerRegistration" />
+   <rule deltaind="I" id="showOnAdd" expression="andCondition(isEqual(:showOnAdd,Y),isEqual(:aar_statusid_desc,Pending Contract Generation));" obj="ruleobjs.ProducerOneRule" method="showOnAdd" />
+	<rule deltaind="I" id="showOnAddAgencySetUp" expression="andCondition(isEqual(:showOnAdd,Y),isEqual(:aar_statusid_desc,Pending Agency Setup));" obj="ruleobjs.ProducerOneRule" method="showOnAdd" />
+	<rule deltaind="I" id="showOnAddAgencySentForEsign" expression="andCondition(isEqual(:showOnAdd,Y),isEqual(:aar_statusid_desc,Sent for ESignature));" obj="ruleobjs.ProducerOneRule" method="showOnAdd" />
+	<rule deltaind="I" id="showOnAddAgencyBgCheck" expression="andCondition(isEqual(:showOnAdd,Y),isEqual(:aar_statusid_desc,BG Check Submitted));" obj="ruleobjs.ProducerOneRule" method="showOnAdd" />
+	</ruleset>
+</evalrules>

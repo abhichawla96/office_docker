@@ -1,0 +1,28 @@
+<evalrules project="ProducerOne">
+	<ruleset name="ProducerOneRule">
+		<rule deltaind="I" id="isRegistrationTypeProducerRegistrationAgencyDetailScreen"
+			expression="isEqual(:registration_type_code,PRERG);" obj="ruleobjs.ProducerOneRule"
+			method="isRegistrationTypeProducerRegistrationAgencyDetailScreen" />
+		<rule deltaind="I" id="isRegistrationTypePrimaryAgencyAgencyDetailScreen"
+			expression="isEqual(:registration_type_code,PRAG);" obj="ruleobjs.ProducerOneRule"
+			method="isRegistrationTypePrimaryAgencyAgencyDetailScreen" />
+		<rule deltaind="I" id="isRegistrationTypeSecondaryAgencyAgencyDetailScreen"
+			expression="isEqual(:registration_type_code,SCAG);" obj="ruleobjs.ProducerOneRule"
+			method="isRegistrationTypeSecondaryAgencyAgencyDetailScreen" />
+
+ <rule deltaind="M" id="showNiprAppointments" expression="isEqual(N,Y);" obj="ruleobjs.ProducerOneRule" method="showNiprAppointments" />
+   
+   
+   <rule deltaind="I" id="isCBIAYesNo" expression="isEqual(:cbia_designation,Y);"></rule>
+  <rule deltaind="I" id="isPrincipalContType" expression="isEqual(:cbia_designation,'Principal');"></rule>
+   <rule deltaind="I" id="isNewAgencyCode" expression="isEqual(:producer_number,null);"></rule>
+  <rule deltaind="I" id="isSuspensionReasonCustom" expression="isEqual(:suspension_reason,'7');"></rule>
+   
+   <rule deltaind="I" id="isHBAYesNO" expression="isEqual(:member_of_hba,Y);"></rule>
+   <rule deltaind="I" id="isAgencyInOnboardingStatus" expression="isEqual(:aar_statusid_desc,BG Check Pass);" />
+  <rule deltaind="I" id="isHbaYesReviewScreen" expression="isEqual(:review_member_of_hba,Y);"></rule>
+ 
+ 
+	</ruleset>
+</evalrules>	
+	
