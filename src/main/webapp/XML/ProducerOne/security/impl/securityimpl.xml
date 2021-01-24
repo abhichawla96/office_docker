@@ -892,5 +892,26 @@
 			<roleaccesslevel accesstype="1" />
 		</businessrole>
     </protectedresource>
+    
+    <!-- Bug Id : 0030 : Rajshree-->
+<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show send For Review button on contract page" operator="AND" uniquename="addNewDocContract_sendForReview">
+    <businessrole deltaind="M" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <userdefined deltaind="M" executionsequence="0" ruleid="events.editEvent">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+    <userdefined deltaind="M" executionsequence="1" ruleid="WorkflowRule.isOnboardingDeclinedAndActiveWorkflowStatusNotFound">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+    <userdefined deltaind="M" executionsequence="2" ruleid="WorkflowRule.isShowSendForReviewButtonConracts">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+    <userdefined deltaind="M" executionsequence="3" ruleid="ProducerOneRule.checkContractWithSameagency">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+  </protectedresource>
+
+    
 </security>  
 
