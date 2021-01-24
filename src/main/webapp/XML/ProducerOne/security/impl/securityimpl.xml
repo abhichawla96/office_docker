@@ -878,6 +878,19 @@
     </userdefined>
   </protectedresource>
   
-  
+  	<!-- approve termination  -->
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show approve button on agencyTerminationStep2 page" uniquename="agencyTerminationStep2_approve_security">
+  	<businessrole roleid="MarketingRep" accesstype="1"></businessrole>
+  	<businessrole roleid="SalesDirector" accesstype="1"></businessrole>
+  	<businessrole roleid="CarrierAdmin" accesstype="1"></businessrole>
+  	<businessrole roleid="MarketingAssistant" accesstype="1"></businessrole>
+   <userdefined executionsequence="0" ruleid="WorkflowRule.isShowApproveButtonOnAgencyTermination">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    
+    <businessrole deltaind="M" roleid="vpmarketing">
+			<roleaccesslevel accesstype="1" />
+		</businessrole>
+    </protectedresource>
 </security>  
 

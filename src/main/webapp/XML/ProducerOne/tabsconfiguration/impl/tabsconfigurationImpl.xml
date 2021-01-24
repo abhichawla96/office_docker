@@ -485,4 +485,27 @@
 	    <!-- Sample insurance to BMIC -->
       <tabsconfigurationresource deltaind="M" name="clientName" value="Builders Mutual Insurance Company"/>
    	 <tabsconfigurationresource deltaind="M" description="agentEmailTypeForDocusignInContract" name="agentEmailTypeForDocusignInContract" value="PreferredEmail"/>
+    <!-- customization sprint 4  -->
+       <tabsconfigurationresource deltaind="I" accesslevel="1" name="agencymergernaquisition_letterTemplateList_security"/>
+  	   <!-- agency review screen  -->
+<tabsconfigurationresource deltaind="M" description="Show/Hide agencyListEdit_foreign_languages_spoken_in_agency_security" name="agencyListEdit_foreign_languages_spoken_in_agency_security" accesslevel="1"/>
+<tabsconfigurationresource deltaind="M" description="Show/Hide agencyListEdit_current_advertising_methods_security" name="agencyListEdit_current_advertising_methods_security" accesslevel="1"/>
+ <tabsconfigurationresource deltaind="M" description="Show/Hide agencyListEdit_primary_company_usage_security" name="agencyListEdit_primary_company_usage_security" accesslevel="1"/>
+ 
+ <tabsconfigurationresource deltaind="M" accesslevel="1" description="business_segment_product_validation_security" name="productValidationDetail_business_segment_product_validation_security"/>
+	    <!-- Hide Benefit Enrollment link  -->
+	     <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show navigation_link_security" name="navigation_link_security"/>
+	  
+    <!-- Narrative Section -->
+      
+      <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide show agencyListPublicSubmitNInvitationEdit_narrative_loc_quality_security in agencyListPublicSubmitNInvitationEdit.html" name="agencyListPublicSubmitNInvitationEdit_narrative_loc_quality_security"/>
+      <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide show agencyListPublicSubmitNInvitationEdit_narrative_agent_skills_security in agencyListPublicSubmitNInvitationEdit.html" name="agencyListPublicSubmitNInvitationEdit_narrative_agent_skills_security"/>
+      <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide show agencyListPublicSubmitNInvitationEdit_narrative_is_company_contacted_security in agencyListPublicSubmitNInvitationEdit.html" name="agencyListPublicSubmitNInvitationEdit_narrative_is_company_contacted_security"/>
+      <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide show agencyListPublicSubmitNInvitationEdit_narrative_agent_commission_level_label in agencyListPublicSubmitNInvitationEdit.html" name="agencyListPublicSubmitNInvitationEdit_narrative_agent_commission_level_security"/>
+      <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide show agencyListPublicSubmitNInvitationEdit_narrative_kits_quantity_security in agencyListPublicSubmitNInvitationEdit.html" name="agencyListPublicSubmitNInvitationEdit_narrative_kits_quantity_security"/>
+	  <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide show agencyListPublicSubmitNInvitationEdit_narrative_kit_delivery_security in agencyListPublicSubmitNInvitationEdit.html" name="agencyListPublicSubmitNInvitationEdit_narrative_kit_delivery_security"/>
+
+      <!-- Bug Id : 196 -->
+ <tabsconfigurationresource deltaind="M" accesslevel="1" description="agencyListEdit_CyberLiability_section_security" name="agencyListEdit_CyberLiability_section_security"/>
+
 </tabsconfiguration>

@@ -15,7 +15,6 @@
 			<field displaytype="label" executionsequence="7" id="block_field_business_segment_name" labelkey="business_segment_product_validation_label" name="business_segment_name" securitykey="productValidationDetail_business_segment_product_validation_security"/>
 			<field displaytype="label" executionsequence="8" id="block_field_tier_info_desc" labelkey="tier_info_product_validation_label" name="tier_info_desc" securitykey="productValidationDetail_tier_info_product_validation_security"/>
 			<field displaytype="label" executionsequence="9" id="block_field_team_description" labelkey="team_product_validation_label" name="team_description" securitykey="productValidationDetail_team_product_validation_security"/>
-			<field deltaind="M" displaytype="label" executionsequence="27" id="block_field_product" labelkey="prod_validation_product_fieldLabel" name="prod_valid_prouct_name" securitykey="productValidationDetail_product_product_validation_security"/>
 			<field displaytype="label" executionsequence="10" id="block_field_csr_name" labelkey="CSRfieldLabel" name="csr_name" securitykey="productValidationDetail_csr_product_validation_security"/>
 			<field displaytype="label" executionsequence="11" id="block_field_ppr_name" labelkey="ppr_product_validation_label" name="ppr_name" securitykey="productValidationDetail_ppr_product_validation_security"/>
 			<field displaytype="label" executionsequence="12" id="block_field_LAU_name" labelkey="lau_product_validation_label" name="LAU_name" securitykey="productValidationDetail_lau_product_validation_security"/>

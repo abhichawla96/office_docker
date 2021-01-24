@@ -19,7 +19,8 @@
   <rule deltaind="I" id="isSuspensionReasonCustom" expression="isEqual(:suspension_reason,'7');"></rule>
    
    <rule deltaind="I" id="isHBAYesNO" expression="isEqual(:member_of_hba,Y);"></rule>
-   <rule deltaind="I" id="isAgencyInOnboardingStatus" expression="isEqual(:aar_statusid_desc,BG Check Pass);" />
+   <rule deltaind="I" id="isAgencyInOnboardingStatus" expression="orCondition(isEqual(:aar_statusid_desc,BG Check Pass),isEqual(:aar_statusid_desc,Pending Agency Setup));" />
+   <!-- BG Check Submitted -->
   <rule deltaind="I" id="isHbaYesReviewScreen" expression="isEqual(:review_member_of_hba,Y);"></rule>
  
  
