@@ -93,7 +93,7 @@
   <!-- dividend distribution -->
 	
 	
-	<field deltaind="I"  isextendedfield="Y" id="review_dividend_distribution" name="review_dividend_distribution" objectcolumn="aar_requestid"  section="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_3232" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" isrequired="Y" accesslevel="1"
+	<field deltaind="I"  isextendedfield="Y" id="review_dividend_distribution" labelkey="Dividend_label" name="review_dividend_distribution" objectcolumn="aar_requestid"  section="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_3232" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" isrequired="Y" accesslevel="1"
 	  	tabsconfigurationresourcename="secDividendDist" displaytype="multiradio" css="exteded_new_radio_seciton"
 	  	protectedresourceuniquename="secDividendDist" position="#distDistiShow_after#"
 		lookupobjectname="dividend_dist_lku" lookupobjecttype="mastertable"
@@ -102,7 +102,7 @@
 		
 		<!-- Policyholder Copies -->
 		
-		<field deltaind="I"  isextendedfield="Y" id="review_policyholder_copies" name="review_policyholder_copies" objectcolumn="aar_requestid"  section="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_3233" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" isrequired="Y" accesslevel="1"
+		<field deltaind="I"  isextendedfield="Y" id="review_policyholder_copies" labelkey="Policy_label" name="review_policyholder_copies" objectcolumn="aar_requestid"  section="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_3233" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" isrequired="Y" accesslevel="1"
 	  	tabsconfigurationresourcename="policyHolderSection" displaytype="multiradio" css="exteded_new_radio_seciton"
 	  	protectedresourceuniquename="policyHolderSection" position="#policyholdercopies_after#"
 		lookupobjectname="policyholder_copies_lku" lookupobjecttype="mastertable"
