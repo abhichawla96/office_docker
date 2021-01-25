@@ -24,6 +24,10 @@
   <rule deltaind="I" id="isHbaYesReviewScreen" expression="isEqual(:review_member_of_hba,Y);"></rule>
  
  
+ <!-- Mask NPN -->
+ <rule deltaind="I" id="isShownpn" expression="isEqual(:npn_check,npn_flag);" />
+ <rule deltaind="I" id="isShowfein" expression=" isEmpty(:npn_check);" />
+ 
 	</ruleset>
 </evalrules>	
 	
