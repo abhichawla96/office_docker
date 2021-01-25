@@ -142,4 +142,6 @@
  
  <label deltaind="M" labelkey="agencyListPublicSubmitNInvitationEdit_narrative_question_3_label" labeldesc="Comment on neighboring Builders Mutual Insurance Agencies and with this appointment"/>
  
+ <label deltaind="I" labeldesc="" labelkey="Dividend_label"/>
+<label deltaind="I" labeldesc="" labelkey="Policy_label"/>
 </labelconf>
