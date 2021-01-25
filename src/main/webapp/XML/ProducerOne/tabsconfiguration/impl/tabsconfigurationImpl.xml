@@ -508,4 +508,9 @@
       <!-- Bug Id : 196 -->
  <tabsconfigurationresource deltaind="M" accesslevel="1" description="agencyListEdit_CyberLiability_section_security" name="agencyListEdit_CyberLiability_section_security"/>
 
+<!-- Bug Id : 0099 -->
+	 <tabsconfigurationresource deltaind="M" accesslevel="0" description="agency_profile_general_information_general_detail_security" name="agency_profile_general_information_general_detail_security"/>
+ 
+ 
+
 </tabsconfiguration>
