@@ -3,14 +3,7 @@
   
   <!-- Mask SSN -->
   
-   <protectedresource deltaind="I" defaultaccesstype="0"
-		description="Hide/Show Npn popup"
-		 uniquename="npn_popup_securityHeader">
-		<userdefined deltaind="I" executionsequence="0"
-			ruleid="ProducerOneRule.isShownpn">
-			<userdefinedaccesslevel accesstype="1" />
-		</userdefined>
-	</protectedresource>
+
 	
 	 <protectedresource deltaind="I" defaultaccesstype="0"
 		description="Hide/Show Tax id/FEIN popup"
@@ -32,7 +25,16 @@
 		</userdefined>
 	</protectedresource>
 	
-
+ <!-- Mask SSN -->
+  
+   <protectedresource deltaind="I" defaultaccesstype="0"
+		description="Hide/Show Npn popup"
+		 uniquename="ssn_popup_securityHeader">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isShownpn">
+			<userdefinedaccesslevel accesstype="1" />
+		</userdefined>
+	</protectedresource>
    
    
 </security>  

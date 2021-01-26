@@ -19,7 +19,9 @@
 									<span id="showtaxidsecurity"> 
 										<span id="feinFieldLabel">FEIN/TaxID#</span>
 									</span>
-										<span id="npn_popup_securityHeader">NPN#</span> <!-- Added by Aashutosh to mask SSN -->
+										<!-- <span id="npn_popup_securityHeader">NPN#</span> --> <!-- Added by Aashutosh to mask SSN -->
+									</span>
+										<span id="ssn_popup_securityHeader">SSN#</span> <!-- Added by Aashutosh to mask SSN -->
 								</h4>
 							</div>
 							<div class="modal-body">
@@ -50,13 +52,26 @@
 												</div>
 												</div>
 												<!-- Added by Aashutosh to mask SSN -->
-												<div class="freeFormListTr" id="npn_popup_securityHeader">
+												<!-- <div class="freeFormListTr" id="npn_popup_securityHeader">
 													<div
 														class="freeFormListTd text-nowrap labelAlign">
 														<span id="feinFieldLabel1">NPN</span> :
 													</div>
 													<div class="freeFormListTd tdInput">
 														<input name="npn_popup" id="ajax_field_tax_id_popup" type="text"
+															maxlength="10" readonly="readonly"
+															class="xform-control form-control-50" />
+													</div>
+												</div> -->
+													<!-- End -->
+												<!-- Added by Aashutosh to mask SSN -->
+												<div class="freeFormListTr" id="ssn_popup_securityHeader">
+													<div
+														class="freeFormListTd text-nowrap labelAlign">
+														<span id="feinFieldLabel1">SSN</span> :
+													</div>
+													<div class="freeFormListTd tdInput">
+														<input name="ssn_popup" id="ajax_field_tax_id_popup" type="text"
 															maxlength="10" readonly="readonly"
 															class="xform-control form-control-50" />
 													</div>
