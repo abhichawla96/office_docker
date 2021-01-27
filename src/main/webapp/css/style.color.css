@@ -83,7 +83,7 @@ a.ovalbutton:hover {
 	background: -webkit-linear-gradient(bottom, #187dd1, #115995); 
 	background: -moz-linear-gradient(bottom, #187dd1, #115995);
 	background: -o-linear-gradient(bottom, #187dd1, #115995); 
-	background: linear-gradient(to bottom, #187dd1, #115995);}
+	background: linear-gradient(to bottom, #C92A39, #C92A39);}
 a.ovalbutton:hover span {color: #ffffff;}
 .content .btn.btn-primary, .content .btn.btn-default, .modal_popup .btn.btn-primary, .modal_popup .btn.btn-default{
 	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#1886e1), to(#1266ab)); 

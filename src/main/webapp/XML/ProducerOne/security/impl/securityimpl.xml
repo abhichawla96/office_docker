@@ -913,6 +913,30 @@
       <userdefinedaccesslevel accesstype="0"/>
     </userdefined>
   </protectedresource>
+ 
+<!-- agency code page close date field - bug id 0065 -->
+ <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show producer_pn_closed_date_security" uniquename="producer_pn_closed_date_security">
+ <userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerDetailRule.isAgencyCodeStatusClosed">
+			<userdefinedaccesslevel accesstype="1" />
+		</userdefined>
+ </protectedresource>
+ 
+
+
+ 
+ <protectedresource deltaind="M" defaultaccesstype="0" operator="or" uniquename="agencyFunctions_toBeProcessed_agent_name_security">
+ 
+ <businessrole deltaind="I" roleid="vpmarketing">
+      <roleaccesslevel accesstype="2"/>
+    </businessrole>
+ </protectedresource>
+ 
+ <protectedresource deltaind="M" defaultaccesstype="0" operator="or" uniquename="agencyFunctions_toBeProcessed_agency_name_security">
+ <businessrole deltaind="I" roleid="vpmarketing">
+      <roleaccesslevel accesstype="2"/>
+    </businessrole>
+ </protectedresource>
 
     
 </security>  

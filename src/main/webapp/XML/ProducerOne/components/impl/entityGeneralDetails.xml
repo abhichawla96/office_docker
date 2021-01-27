@@ -17,7 +17,7 @@
 				displayfield="agency_lob_desc" valuefield="agency_lob_id">
 			</field> -->
 			
-			<field id="agency_lob" name="agency_lob" displaytype="multicheckbox" executionsequence="0" isrequired="N" labelkey="agency_lob_label"
+			<field deltaind="M" id="agency_lob" name="agency_lob" displaytype="multicheckbox" executionsequence="0" isrequired="Y" labelkey="agency_lob_label"
 				lookupobjecttype="procedure" lookupobjectmetaobject="agency_master" lookupobjectprocedure="getAgencyLob_P" lookupobjectprocedureparameters="agency_id"
 				displayfield="agency_lob_desc" valuefield="agency_lob_id">
 			</field>

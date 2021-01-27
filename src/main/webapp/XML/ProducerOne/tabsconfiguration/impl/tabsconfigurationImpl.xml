@@ -392,9 +392,11 @@
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show mass hierachy tab in admin" name="massHierarchyListing_security"/>
   <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/show mass hierachy tab in admin" name="adminTabs_accountstab"/>
  <!-- mass changes outof scope change -->
-  <tabsconfigurationresource deltaind="I" accesslevel="1" description="AdminTabs Car" name="renewal_security"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="1" description="AdminTabs Car" name="massReassign_security"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="1" description="AdminTabs Car" name="adminTabs_car"/>
+  <tabsconfigurationresource deltaind="I" accesslevel="0" description="AdminTabs Car" name="renewal_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="AdminTabs Car" name="massReassign_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="AdminTabs Car" name="adminTabs_car"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="hide/show Car Report Matching Security" name="matching_car_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="hide/show Car Report Non Matching Security" name="non_matching_car_security"/>
 
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show commission_rate_hierarchy_security" name="commission_rate_hierarchy_security"/>
   <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/show adminTabs_compensationmgt" name="adminTabs_compensationmgt"/>

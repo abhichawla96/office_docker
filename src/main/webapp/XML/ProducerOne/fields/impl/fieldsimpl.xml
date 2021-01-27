@@ -293,5 +293,8 @@
    <!--  bug 0096-->
   <field deltaind="M" id="agencyFunctions_selectFunctionType_agencyFunctions_toBeProcessed_agent_name" screen="admin/agencyFunctions_selectFunctionType.html" name="toBeProcessed_agent_name" isrequired="Y" requiredeval="agencyFunctions_toBeProcessed_agent_name_manadatory_security" labelkey="toBeProcessed_agent_name_label" tabsconfigurationresourcename="agencyFunctions_toBeProcessed_agent_name_security" protectedresourceuniquename="agencyFunctions_toBeProcessed_agent_name_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
 
+  <!-- bug id 100 -->
+  <field deltaind="I" id="agencyFunctions_selectFunctionType_effective_date" screen="admin/agencyFunctions_selectFunctionType.html" name="effective_date" isrequired="Y" labelkey="agencyFunction_effective_date_label" tabsconfigurationresourcename="agencyFunctions_effective_date_security" protectedresourceuniquename="agencyFunctions_effective_date_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">    
+  </field>
   
  </fields>
