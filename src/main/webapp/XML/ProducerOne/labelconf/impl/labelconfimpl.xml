@@ -144,4 +144,12 @@
  
  <label deltaind="I" labeldesc="" labelkey="Dividend_label"/>
 <label deltaind="I" labeldesc="" labelkey="Policy_label"/>
+	  <!-- Extended fields -->
+ <label deltaind="I" labelkey="review_dividend_distribution_label" labeldesc=""/>
+ <label deltaind="I" labelkey="review_policyholder_copies_label" labeldesc=""/>
+ <label deltaind="I" labelkey="agent_copies_label" labeldesc=""/>
+ <label deltaind="I" labelkey="policyholder_copies_label" labeldesc=""/>
+ <label deltaind="I" labelkey="dividend_distribution_label" labeldesc=""/>
+ 
+ 
 </labelconf>

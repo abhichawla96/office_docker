@@ -93,20 +93,23 @@
   <!-- dividend distribution -->
 	
 	
-	<field deltaind="I"  isextendedfield="Y" id="review_dividend_distribution" labelkey="Dividend_label" name="review_dividend_distribution" objectcolumn="aar_requestid"  section="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_3232" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" isrequired="Y" accesslevel="1"
-	  	tabsconfigurationresourcename="secDividendDist" displaytype="multiradio" css="exteded_new_radio_seciton"
+	<field deltaind="I"  isextendedfield="Y" id="review_dividend_distribution" name="review_dividend_distribution" objectcolumn="aar_requestid"  section="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_3232" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" isrequired="MA" accesslevel="1"
+	  	tabsconfigurationresourcename="secDividendDist" displaytype="multiradio" css="exteded_new_radio_seciton" labelkey="review_dividend_distribution_label"
 	  	protectedresourceuniquename="secDividendDist" position="#distDistiShow_after#"
 		lookupobjectname="dividend_dist_lku" lookupobjecttype="mastertable"
 	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f28">
+	  	<validation deltaind="I" name="isDividendDistributionSelected" expression="if(isEmpty(:review_dividend_distribution)=&gt;isEqual(1,2)-&gt;isEqual(1,1))" message="DividendDistributionErrorKey" executionsequence="0" />
 		</field> 
 		
 		<!-- Policyholder Copies -->
 		
-		<field deltaind="I"  isextendedfield="Y" id="review_policyholder_copies" labelkey="Policy_label" name="review_policyholder_copies" objectcolumn="aar_requestid"  section="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_3233" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" isrequired="Y" accesslevel="1"
-	  	tabsconfigurationresourcename="policyHolderSection" displaytype="multiradio" css="exteded_new_radio_seciton"
+		<field deltaind="I"  isextendedfield="Y" id="review_policyholder_copies" name="review_policyholder_copies" objectcolumn="aar_requestid"  section="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_3233" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" isrequired="MA" accesslevel="1"
+	  	tabsconfigurationresourcename="policyHolderSection" displaytype="multiradio" css="exteded_new_radio_seciton" labelkey="review_policyholder_copies_label"
 	  	protectedresourceuniquename="policyHolderSection" position="#policyholdercopies_after#"
 		lookupobjectname="policyholder_copies_lku" lookupobjecttype="mastertable"
 	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f27">
+		 	<validation deltaind="I" name="isPolicyHolderSelected" expression="if(isEmpty(:review_policyholder_copies)=&gt;isEqual(1,2)-&gt;isEqual(1,1))" message="PolicyHolderCopiesErrorKey" executionsequence="0" />
+		
 		</field>
 		
 		
@@ -137,20 +140,22 @@
 	
 	<!-- dividend distribution agency general details -->
 	
-	<field deltaind="I"  isextendedfield="Y" id="dividend_distribution" name="dividend_distribution" objectcolumn="agency_id"  section="entityGeneralDetails_freeform_contextdata_3234" screen="entityGeneralDetails" isrequired="Y" accesslevel="1"
-	  	tabsconfigurationresourcename="divDividendDist" displaytype="multiradio" css="exteded_new_radio_seciton"
+	<field deltaind="I"  isextendedfield="Y" id="dividend_distribution" name="dividend_distribution" objectcolumn="agency_id"  section="entityGeneralDetails_freeform_contextdata_3234" screen="entityGeneralDetails" isrequired="MA" accesslevel="1"
+	  	tabsconfigurationresourcename="divDividendDist" displaytype="multiradio" css="exteded_new_radio_seciton" labelkey="dividend_distribution_label"
 	  	protectedresourceuniquename="divDividendDist" position="#distDistiShow_after#"
 		lookupobjectname="dividend_dist_lku" lookupobjecttype="mastertable"
 	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f28">
+			<validation deltaind="I" name="isDividendDistribution1Selected" expression="if(isEmpty(:dividend_distribution)=&gt;isEqual(1,2)-&gt;isEqual(1,1))" message="DividendDistributionErrorKey" executionsequence="0" />
 		</field> 
 		
 		<!-- Policyholder Copies -->
 		
-		<field deltaind="I"  isextendedfield="Y" id="policyholder_copies" name="policyholder_copies" objectcolumn="agency_id"  section="entityGeneralDetails_freeform_contextdata_3235" screen="entityGeneralDetails" isrequired="Y" accesslevel="1"
-	  	tabsconfigurationresourcename="divPolicyHolder" displaytype="multiradio" css="exteded_new_radio_seciton"
+		<field deltaind="I"  isextendedfield="Y" id="policyholder_copies" name="policyholder_copies" objectcolumn="agency_id"  section="entityGeneralDetails_freeform_contextdata_3235" screen="entityGeneralDetails" isrequired="MA" accesslevel="1"
+	  	tabsconfigurationresourcename="divPolicyHolder" displaytype="multiradio" css="exteded_new_radio_seciton" labelkey="policyholder_copies_label"
 	  	protectedresourceuniquename="divPolicyHolder" position="#policyholdercopies_after#"
 		lookupobjectname="policyholder_copies_lku" lookupobjecttype="mastertable"
 	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f27">
+			<validation deltaind="I" name="isPolicyholder_copies1Selected" expression="if(isEmpty(:dividend_distribution)=&gt;isEqual(1,2)-&gt;isEqual(1,1))" message="PolicyHolderCopiesErrorKey" executionsequence="0" />
 		</field>
 		
  	<!-- dividend distribution agency review page -->
@@ -193,11 +198,13 @@
   
   <field deltaind="M" id="addAgencyTaskDetails_status" screen="carrier/addAgencyTaskDetails.html" name="status" isrequired="Y" labelkey="task_status_label" tabsconfigurationresourcename="task_status_security" protectedresourceuniquename="task_status_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
   <!-- entity general details agent copies field -->
-	<field deltaind="I"  isextendedfield="Y" id="agent_copies" name="agent_copies" objectcolumn="agency_id"  section="entityGeneralDetails_freeform_contextdata_3236" screen="entityGeneralDetails" isrequired="Y" accesslevel="1"
+	<field deltaind="I"  isextendedfield="Y" id="agent_copies" labelkey="agent_copies_label" name="agent_copies" objectcolumn="agency_id"  section="entityGeneralDetails_freeform_contextdata_3236" screen="entityGeneralDetails" isrequired="MA" accesslevel="1"
 	  	tabsconfigurationresourcename="divAgentCopies" displaytype="multiradio" css="exteded_new_radio_seciton"
 	  	protectedresourceuniquename="divAgentCopies" position="#agentCopies_after#"
 		lookupobjectname="agent_copies_lku" lookupobjecttype="mastertable"
 	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f21">
+	  	<validation deltaind="I" name="isAgentcopiesSelected" expression="if(isEmpty(:agent_copies)=&gt;isEqual(1,2)-&gt;isEqual(1,1))" message="AgentCopiesErrorKey" executionsequence="0" />
+	
 		</field>
 	
 	<!-- Agency general details hba field -->
@@ -283,6 +290,8 @@
   		<field deltaind="M" id="agencyListPublicSubmitNInvitationEdit_narrative_question_2_security" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" name="narrative_question_2" isrequired="N" requiredeval="agencyListPublicSubmitNInvitationEditRule.isNSMSectionMendatory" labelkey="agencyListPublicSubmitNInvitationEdit_narrative_question_2_label" tabsconfigurationresourcename="agencyListPublicSubmitNInvitationEdit_narrative_question_2_security" protectedresourceuniquename="agencyListPublicSubmitNInvitationEdit_narrative_question_2_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
   		 <field deltaind="M" id="agencyListPublicSubmitNInvitationEdit_narrative_question_3_security" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" name="narrative_question_3" isrequired="N" requiredeval="agencyListPublicSubmitNInvitationEditRule.isNSMSectionMendatory" labelkey="agencyListPublicSubmitNInvitationEdit_narrative_question_3_label" tabsconfigurationresourcename="agencyListPublicSubmitNInvitationEdit_narrative_question_3_security" protectedresourceuniquename="agencyListPublicSubmitNInvitationEdit_narrative_question_3_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
  <field deltaind="M" id="agencyListPublicSubmitNInvitationEdit_narrative_question_4_security" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" name="narrative_question_4" isrequired="N" requiredeval="agencyListPublicSubmitNInvitationEditRule.isNSMSectionMendatory" labelkey="agencyListPublicSubmitNInvitationEdit_narrative_question_4_label" tabsconfigurationresourcename="agencyListPublicSubmitNInvitationEdit_narrative_question_4_security" protectedresourceuniquename="agencyListPublicSubmitNInvitationEdit_narrative_question_4_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
+   <!--  bug 0096-->
+  <field deltaind="M" id="agencyFunctions_selectFunctionType_agencyFunctions_toBeProcessed_agent_name" screen="admin/agencyFunctions_selectFunctionType.html" name="toBeProcessed_agent_name" isrequired="Y" requiredeval="agencyFunctions_toBeProcessed_agent_name_manadatory_security" labelkey="toBeProcessed_agent_name_label" tabsconfigurationresourcename="agencyFunctions_toBeProcessed_agent_name_security" protectedresourceuniquename="agencyFunctions_toBeProcessed_agent_name_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
 
   
  </fields>

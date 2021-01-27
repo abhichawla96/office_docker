@@ -511,6 +511,9 @@
 <!-- Bug Id : 0099 -->
 	 <tabsconfigurationresource deltaind="M" accesslevel="0" description="agency_profile_general_information_general_detail_security" name="agency_profile_general_information_general_detail_security"/>
  
- 
+      <!--bug id 0031  -->
+      <tabsconfigurationresource deltaind="M" accesslevel="1" description="entityCyberLiabilityExpirationListing_category_name_security" name="entityCyberLiabilityExpirationListing_category_name_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="isShowEMailonEntityCyberLiabilityExpireList" name="isShowEMailonEntityCyberLiabilityExpireList"/>
+
 
 </tabsconfiguration>
