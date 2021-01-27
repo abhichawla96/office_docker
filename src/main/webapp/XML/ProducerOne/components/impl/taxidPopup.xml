@@ -1,8 +1,9 @@
 <projectcomponents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/components_XSD.xsd">
-  <component name="taxidPopup">
-    <action name="view">
+  <component name="taxidPopup" metaobject="tbl_agencyprincipal">
+    <action deltaind="M"  name="view">
     	
-    	    	
+    	    	<actionparam deltaind="I" executionsequence="7" pre="Y" form="Y" name="npn_check" paramid="npn_check"/>  <!-- Added by Aashutosh -->
+   
     	
     </action>
     <action name="submit">
