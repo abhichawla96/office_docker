@@ -114,9 +114,9 @@
 		
 		
 		<!-- CBIA Field -->
-  	<field deltaind="I" isextendedfield="Y" name="cbia_designation" screen="agentGeneralDetails" objectcolumn="person_id" section="entityPersonDetails_freeform_contextdata_2" displaytype="radio" 
+  	<field deltaind="I" isextendedfield="Y" name="review_cbia_designation" screen="carrier/agentGeneralDetails.html" objectcolumn="person_id" section="entityPersonDetails_freeform_contextdata_2" displaytype="radio" 
 	isrequired="Y" labelkey="cbia_designation_label" labeldesc="CBIA Designation" accesslevel="1" tabsconfigurationresourcename="public3_cbia_security" mappedto="f26"
-	protectedresourceuniquename="public3_cbia_security" id="cbia_designation" position="#contact_highest_ranking_principal_after#">
+	protectedresourceuniquename="public3_cbia_security" id="review_cbia_designation" position="#contact_highest_ranking_principal_after#">
 	
 	<event id="onchange" name="onchange" screen="public/agentGeneralDetails.html" actiontype="ajaxpageblocklink" action="refreshAddendumQuestions" actiontypeid="entityPersonDetails_freeform_contextdata_2" executionsequence="0">
 	  	<forward id="public/agentGeneralDetails.html" screen="public/agentGeneralDetails.html" />
@@ -124,9 +124,9 @@
 	 
 	</field>
 	
-	<field deltaind="I" isextendedfield="Y" name="year_recieved" screen="agentGeneralDetails" objectcolumn="person_id" section="entityPersonDetails_freeform_contextdata_2" displaytype="text" 
+	<field deltaind="I" isextendedfield="Y" name="review_year_recieved" screen="carrier/agentGeneralDetails.html" objectcolumn="person_id" section="entityPersonDetails_freeform_contextdata_2" displaytype="text" 
 	isrequired="Y" labelkey="year_recieved_label" labeldesc="Year Received" accesslevel="1" tabsconfigurationresourcename="year_recieved_security" mappedto="f25"
-	protectedresourceuniquename="year_recieved_security" id="year_recieved" position="#cbia_designation_after#">
+	protectedresourceuniquename="year_recieved_security" id="review_year_recieved" position="#cbia_designation_after#">
 	</field>
 	
 	
@@ -208,15 +208,15 @@
 		</field>
 	
 	<!-- Agency general details hba field -->
-	<field deltaind="I" isextendedfield="Y" name="member_of_hba" screen="entityGeneralDetails" objectcolumn="agency_id" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="radio" 
+	<field deltaind="I" isextendedfield="Y" name="review_member_of_hba_entityGeneralDetails" screen="carrier/entityGeneralDetails.html" objectcolumn="agency_id" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="radio" 
 	isrequired="Y" labelkey="entityGeneralDeetails_member_of_hba_label" labeldesc="Are you a member of an HBA?" accesslevel="1" tabsconfigurationresourcename="entityGeneralDeetails_hba_que_security" 
-	protectedresourceuniquename="entityGeneralDeetails_hba_que_security" id="member_of_hba" position="#is_employee_after#" mappedto="f29">
+	protectedresourceuniquename="entityGeneralDeetails_hba_que_security" id="review_member_of_hba_entityGeneralDetails" position="#is_employee_after#" mappedto="f29">
 	<event id="onchange" name="onchange" screen="carrier/entityGeneralDetails.html" actiontype="ajaxpageblocklink" action="refreshState_w9" actiontypeid="entityGeneralDeetails_hba_label_security#entityGeneralDeetails_hba_dropdown_security" executionsequence="0">
 	  	<forward id="carrier/entityGeneralDetails.html" screen="carrier/entityGeneralDetails.html" />
 	 </event>	 
 	</field>
 	
-	<field deltaind="I" isextendedfield="Y" name="entity_gen_det_hba_dropdown" screen="entityGeneralDetails" objectcolumn="agency_id" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="select" 
+	<field deltaind="I" isextendedfield="Y" name="entity_gen_det_hba_dropdown" screen="carrier/entityGeneralDetails.html" objectcolumn="agency_id" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="select" 
 	isrequired="Y" labelkey="hba_dropdown_label" labeldesc="If Yes, please select the HBA Chapter you are a member of " accesslevel="1" tabsconfigurationresourcename="entityGeneralDeetails_hba_dropdown_security" 
 	protectedresourceuniquename="entityGeneralDeetails_hba_dropdown_security" id="entity_gen_det_hba_dropdown" position="#segment_before#" style="width=250px;"
 	lookupobjectname="hba_chapter_lku" lookupobjecttype="mastertable"
@@ -224,15 +224,15 @@
 	</field>
 	
 	<!-- esignature/review screen hba field -->
- 	<field deltaind="I" isextendedfield="Y" name="review_member_of_hba" screen="agencyListPublicSubmitNInvitationEdit" objectcolumn="aar_requestid" section="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_1" displaytype="radio" 
+ 	<field deltaind="I" isextendedfield="Y" name="review_member_of_hba_agencyListPublicSubmitNInvitationEdit" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" objectcolumn="aar_requestid" section="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_1" displaytype="radio" 
 	isrequired="Y" labelkey="agencyListPublicSubmitNInvitationEdit_member_of_hba_label" labeldesc="Are you a member of an HBA?" accesslevel="1" tabsconfigurationresourcename="agencyListPublicSubmitNInvitationEdit_hba_que_security" 
-	protectedresourceuniquename="agencyListPublicSubmitNInvitationEdit_hba_que_security" id="review_member_of_hba" position="#no_of_staff_after#" mappedto="f29">
+	protectedresourceuniquename="agencyListPublicSubmitNInvitationEdit_hba_que_security" id="review_member_of_hba_agencyListPublicSubmitNInvitationEdit" position="#no_of_staff_after#" mappedto="f29">
 	<event id="onchange" name="onchange" screen="carrier/entityGeneralDetails.html" actiontype="ajaxpageblocklink" action="refreshState_w9" actiontypeid="agencyListPublicSubmitNInvitationEdit_hba_dropdown_security" executionsequence="0">
 	  	<forward id="carrier/agencyListPublicSubmitNInvitationEdit.html" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" />
 	 </event>	 
 	</field>
 	
-	<field deltaind="I" isextendedfield="Y" name="review_det_hba_dropdown" screen="agencyListPublicSubmitNInvitationEdit" objectcolumn="aar_requestid" section="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_1" displaytype="select" 
+	<field deltaind="I" isextendedfield="Y" name="review_det_hba_dropdown" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" objectcolumn="aar_requestid" section="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_1" displaytype="select" 
 	isrequired="Y" labelkey="hba_dropdown_label" labeldesc="If Yes, please select the HBA Chapter you are a member of " accesslevel="1" tabsconfigurationresourcename="agencyListPublicSubmitNInvitationEdit_hba_dropdown_security" 
 	protectedresourceuniquename="agencyListPublicSubmitNInvitationEdit_hba_dropdown_security" id="review_det_hba_dropdown" position="#domicile_state_after#" style="width=250px;"
 	lookupobjectname="hba_chapter_lku" lookupobjecttype="mastertable"
