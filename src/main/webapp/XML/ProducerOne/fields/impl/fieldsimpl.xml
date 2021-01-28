@@ -208,9 +208,9 @@
 		</field>
 	
 	<!-- Agency general details hba field -->
-	<field deltaind="I" isextendedfield="Y" name="review_member_of_hba_entityGeneralDetails" screen="carrier/entityGeneralDetails.html" objectcolumn="agency_id" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="radio" 
+	<field deltaind="I" isextendedfield="Y" name="member_of_hba" screen="carrier/entityGeneralDetails.html" objectcolumn="agency_id" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="radio" 
 	isrequired="Y" labelkey="entityGeneralDeetails_member_of_hba_label" labeldesc="Are you a member of an HBA?" accesslevel="1" tabsconfigurationresourcename="entityGeneralDeetails_hba_que_security" 
-	protectedresourceuniquename="entityGeneralDeetails_hba_que_security" id="review_member_of_hba_entityGeneralDetails" position="#is_employee_after#" mappedto="f29">
+	protectedresourceuniquename="entityGeneralDeetails_hba_que_security" id="member_of_hba" position="#is_employee_after#" mappedto="f29">
 	<event id="onchange" name="onchange" screen="carrier/entityGeneralDetails.html" actiontype="ajaxpageblocklink" action="refreshCounty_business" actiontypeid="entityGeneralDeetails_hba_dropdown_security" executionsequence="0">
 	  	<forward id="carrier/entityGeneralDetails.html" screen="carrier/entityGeneralDetails.html" />
 	 </event>	 
@@ -224,9 +224,9 @@
 	</field>
 	
 	<!-- esignature/review screen hba field -->
- 	<field deltaind="I" isextendedfield="Y" name="review_member_of_hba_agencyListPublicSubmitNInvitationEdit" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" objectcolumn="aar_requestid" section="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_1" displaytype="radio" 
+ 	<field deltaind="I" isextendedfield="Y" name="review_member_of_hba" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" objectcolumn="aar_requestid" section="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_1" displaytype="radio" 
 	isrequired="Y" labelkey="agencyListPublicSubmitNInvitationEdit_member_of_hba_label" labeldesc="Are you a member of an HBA?" accesslevel="1" tabsconfigurationresourcename="agencyListPublicSubmitNInvitationEdit_hba_que_security" 
-	protectedresourceuniquename="agencyListPublicSubmitNInvitationEdit_hba_que_security" id="review_member_of_hba_agencyListPublicSubmitNInvitationEdit" position="#no_of_staff_after#" mappedto="f29">
+	protectedresourceuniquename="agencyListPublicSubmitNInvitationEdit_hba_que_security" id="review_member_of_hba" position="#no_of_staff_after#" mappedto="f29">
 	<event id="onchange" name="onchange" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" actiontype="ajaxpageblocklink" action="refreshState_w9" actiontypeid="agencyListPublicSubmitNInvitationEdit_hba_dropdown_security" executionsequence="0">
 	  	<forward id="carrier/agencyListPublicSubmitNInvitationEdit.html" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" />
 	 </event>	 
