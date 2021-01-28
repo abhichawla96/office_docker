@@ -832,6 +832,11 @@
 			ruleid="ProducerOneRule.isHbaYesReviewScreen">
 			<userdefinedaccesslevel accesstype="1" />
 		</userdefined>
+		
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
 	</protectedresource>
 	
 	
@@ -843,7 +848,7 @@
 			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
 			<userdefinedaccesslevel accesstype="0" />
 		</userdefined>
-	</protectedresource>
+	</protectedresource><!-- 
 	<protectedresource deltaind="I" accesstype="1"
 		description="Hide/Show id dba registered on agency list public edit page"
 		uniquename="agencyListPublicSubmitNInvitationEdit_hba_dropdown_security">
@@ -851,7 +856,7 @@
 			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
 			<userdefinedaccesslevel accesstype="0" />
 		</userdefined>
-	</protectedresource>
+	</protectedresource> -->
 	<protectedresource deltaind="M" accesstype="1"
 		description="Hide/Show id dba registered on agency list public edit page"
 		uniquename="agencyListPublicSubmitNInvitationEdit_hba_que_security">
