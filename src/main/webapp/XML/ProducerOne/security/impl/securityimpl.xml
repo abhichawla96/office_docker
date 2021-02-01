@@ -979,6 +979,14 @@
 			<userdefinedaccesslevel accesstype="0" />
 		</userdefined>
   </protectedresource>
+  <protectedresource deltaind="I" uniquename="agencyListPublicSubmitNInvitationEdit_narrative_kit_delivery_security" defaultaccesstype="1" description="Read only CyberLiability Form on agencyListPublicSubmitNInvitationEdit.html">
+    <userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+  </protectedresource>
+  
+  
     
 </security>  
 
