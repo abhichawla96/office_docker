@@ -524,6 +524,20 @@
 	<!-- bug id : 58  -->
 	 <tabsconfigurationresource deltaind="M" name="insurance_contact_security" value="E&amp;O Cyber Liability Contact" description="Mention here the contact types you want to display in SelfService dropdown,you can pass comma seperated contact type or single values here eg principal,agency admin or hrp" />
  
+  <!-- Bug no. : 154 : Missing Section in Market Information -->
+	  
+	  <tabsconfigurationresource deltaind="M" description="Show/Hide entityOtherInformation_narrative_question_1_security" name="entityOtherInformation_narrative_question_1_security" accesslevel="1"/>
+	  <tabsconfigurationresource deltaind="M" description="Show/Hide entityOtherInformation_narrative_question_2_security" name="entityOtherInformation_narrative_question_2_security" accesslevel="1"/>
+	  <tabsconfigurationresource deltaind="M" description="Show/Hide entityOtherInformation_narrative_question_3_security" name="entityOtherInformation_narrative_question_3_security" accesslevel="1"/>
+	  <tabsconfigurationresource deltaind="M" description="Show/Hide entityOtherInformation_narrative_question_4_security" name="entityOtherInformation_narrative_question_4_security" accesslevel="1"/>
+	    
+	    <tabsconfigurationresource deltaind="M" accesslevel="0" description="addAgencyTaskDetails_agent_name_security" name="addAgencyTaskDetails_agent_name_security"/>
+	  
+	  <!-- Hide Benefit Enrollment link  -->
+	     <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show navigation_link_security" name="navigation_link_security"/>
+	  
+	   <!-- Show Agency Codes Hierarchy in M&A step 1  -->
+	  <tabsconfigurationresource deltaind="I" description="Show/Hide isMNAProducerNumberHierarchyNotEmpty" name="isMNAProducerNumberHierarchyNotEmpty" accesslevel="1"/>
 
 
 </tabsconfiguration>
