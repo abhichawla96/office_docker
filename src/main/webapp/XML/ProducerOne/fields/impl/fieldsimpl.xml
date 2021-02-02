@@ -297,4 +297,11 @@
   <field deltaind="I" id="agencyFunctions_selectFunctionType_effective_date" screen="admin/agencyFunctions_selectFunctionType.html" name="effective_date" isrequired="Y" labelkey="agencyFunction_effective_date_label" tabsconfigurationresourcename="agencyFunctions_effective_date_security" protectedresourceuniquename="agencyFunctions_effective_date_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">    
   </field>
   
+  <!-- new field -->
+  
+	<field deltaind="I" isextendedfield="Y" name="Agency_in_business_since" screen="carrier/entityGeneralDetails.html" objectcolumn="person_id" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="text" 
+	isrequired="N" labelkey="Agency_in_business_since_label" labeldesc="Agency in business since" accesslevel="1" tabsconfigurationresourcename="Agency_in_business_since_security" mappedto="f20"
+	protectedresourceuniquename="Agency_in_business_since_security" id="Agency_in_business_since" position="#url_after#">
+  </field>
+  
  </fields>
