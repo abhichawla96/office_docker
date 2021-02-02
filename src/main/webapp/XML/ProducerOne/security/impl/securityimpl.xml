@@ -985,6 +985,12 @@
 			<userdefinedaccesslevel accesstype="0" />
 		</userdefined>
   </protectedresource>
+  <protectedresource deltaind="I" uniquename="Agency_in_business_since_security" defaultaccesstype="1" description="Read only CyberLiability Form on Agency_in_business_since_security">
+    <userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+  </protectedresource>
   
   
     
