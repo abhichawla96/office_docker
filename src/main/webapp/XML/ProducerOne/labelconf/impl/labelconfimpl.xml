@@ -151,5 +151,8 @@
  <label deltaind="I" labelkey="policyholder_copies_label" labeldesc=""/>
  <label deltaind="I" labelkey="dividend_distribution_label" labeldesc=""/>
  
+ <!-- for Market Information -->
+ <label deltaind="M" labelkey="entityOtherInformation_narrative_question_3_label" labeldesc="Comment on neighboring Builders Mutual Insurance Agencies and with this appointment"/>
+
  
 </labelconf>
