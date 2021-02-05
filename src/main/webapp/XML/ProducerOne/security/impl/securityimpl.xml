@@ -993,19 +993,20 @@
   </protectedresource>
   
   
-  <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show agent_contact_npn_security" uniquename="agentGeneralDetails_divnpn_security">
-    <userdefined deltaind="I" ruleid="ProducerOneRule.checkAgenctContactTypeLicensedProducer"   executionsequence="0">
-      <userdefinedaccesslevel accesstype="0" />
+<!-- NPN,DOB,SSN -->
+   <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/show agent_date_of_birth_security" uniquename="agent_date_of_birth_security">   
+	    <userdefined deltaind="I" ruleid="ProducerOneRule.checkAgenctContactTypeLicensedProducer">
+  			<userdefinedaccesslevel accesstype="1"/>
     </userdefined>
   </protectedresource>
-  <protectedresource deltaind="M" defaultaccesstype="2" datatype="masking" description="Hide/show ssn field on agent general details page" uniquename="agent_contact_ssn_security">
-	    <userdefined deltaind="I" ruleid="ProducerOneRule.checkAgenctContactTypeLicensedProducer">
-  			<userdefinedaccesslevel accesstype="0"/>
+  <protectedresource deltaind="I"  defaultaccesstype="0" uniquename="agentGeneralDetails_divnpn_ls_security">
+    <userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.checkAgenctContactTypeLicensedProducer">
+      <userdefinedaccesslevel accesstype="1"/>
   		</userdefined>
   	</protectedresource>
-   <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show agent_date_of_birth_security" uniquename="agent_date_of_birth_security">   
-	    <userdefined deltaind="I" ruleid="ProducerOneRule.checkAgenctContactTypeLicensedProducer">
-  			<userdefinedaccesslevel accesstype="0"/>
+  <protectedresource deltaind="I"  defaultaccesstype="0" uniquename="agent_contact_ssn_ls_security">
+    <userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.checkAgenctContactTypeLicensedProducer">
+      <userdefinedaccesslevel accesstype="1"/>
   		</userdefined>
    </protectedresource>
   
