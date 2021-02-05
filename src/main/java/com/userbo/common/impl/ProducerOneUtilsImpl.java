@@ -143,4 +143,40 @@ public class ProducerOneUtilsImpl {
 	}
 		
 	
+	
+
+public static String checkContains(Context ctx){
+    
+	String stringFound = "true";
+    String inputString=null;
+    String stringToCampare="5";
+    
+    if(ctx.get("contacttypid")!=null || !"".equals(ctx.get("contacttypid").toString())){
+    	inputString=ctx.get("contacttypid").toString();
+    }
+    
+    if(inputString == null || "".equals(inputString)){
+        return stringFound;
+    }else{
+        StringTokenizer tokens = new StringTokenizer(inputString, ",");
+        
+        if(tokens.countTokens() > 0){
+            while (tokens.hasMoreTokens()) {
+                String tokenValue = tokens.nextToken();
+                if (tokenValue != null && !HtmlConstants.EMPTY.equals(tokenValue)) {
+                    if (tokenValue.equals(stringToCampare)) {
+                        stringFound = "false";
+                        break;
+                    }
+                }
+                
+            }
+              
+        }
+        
+    }
+    ctx.put("EqualsFlag", stringFound);
+    return stringFound;
+}
+	
 }

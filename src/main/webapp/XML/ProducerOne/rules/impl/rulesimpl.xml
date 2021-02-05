@@ -27,7 +27,8 @@
  <!-- Mask NPN -->
  <rule deltaind="I" id="isShownpn" expression="isEqual(:npn_check,npn_flag);" />
  <rule deltaind="I" id="isShowfein" expression=" isEmpty(:npn_check);" />
- 
+ <rule deltaind="I" id="checkAgenctContactTypeLicensedProducer" expression="isEqual(:EqualsFlag,false);" />
+
 	</ruleset>
 </evalrules>	
 	

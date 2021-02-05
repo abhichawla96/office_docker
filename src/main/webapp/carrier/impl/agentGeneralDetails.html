@@ -1576,8 +1576,8 @@ Location</span>
 												<div id="mom_child_data">
 													<span id="contactType_checkBox_security" width="10">
 	                                                     <span id="block_field_ispersoncontact">
-	                                                      <input type="checkbox" id="ispersoncontact" name="ispersoncontact" value="Y" onchange="javascript:getOtherContactTypeDiv();" />
-	                                                    </span>
+	                                                   <!-- modified imput- sudhir BMIC req -->		<input type="checkbox" id="ispersoncontact" name="ispersoncontact" value="Y" onchange="javascript:getOtherContactTypeDiv();javascript:ajaxpageblocklink('carrier/agentGeneralDetails.html','agentGeneralDetails.refreshNonLicensedFields','','','agent_contact_ssn_security#agentGeneralDetails_divnpn_security#agent_date_of_birth_security');"/>
+													  </span>
 	                                                  </span>
 	                                                  <span id="block_field_contact_typ_desc" />
 	                                                  <span id="block_field_contact_typ_id" width="1">
