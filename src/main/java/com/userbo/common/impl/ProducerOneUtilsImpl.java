@@ -155,7 +155,7 @@ public class ProducerOneUtilsImpl {
 
 public static String checkContains(Context ctx){
     
-	String stringFound = "true";
+	String stringFound = "false";
     String inputString=null;
     String stringToCampare="5";
     
@@ -173,7 +173,7 @@ public static String checkContains(Context ctx){
                 String tokenValue = tokens.nextToken();
                 if (tokenValue != null && !HtmlConstants.EMPTY.equals(tokenValue)) {
                     if (tokenValue.equals(stringToCampare)) {
-                        stringFound = "false";
+                        stringFound = "true";
                         break;
                     }
                 }
