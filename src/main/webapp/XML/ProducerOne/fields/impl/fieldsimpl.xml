@@ -304,4 +304,66 @@
 	protectedresourceuniquename="Agency_in_business_since_security" id="Agency_in_business_since" position="#url_after#">
   </field>
   
+  
+  
+  <!-- Market info new section -->
+  <field deltaind="I" isextendedfield="Y" name="co_op_ad_dollar_spent" screen="carrier/entityOtherInformation.html" objectcolumn="agency_id" section="entityOtherInformation_co_op_ad_freeform_contextdata_1" displaytype="text" 
+	isrequired="N" labelkey="co_op_ad_dollar_spent_label" labeldesc="Co-Op Advertising dollar amount spent YTD" accesslevel="1" tabsconfigurationresourcename="co_op_ad_dollar_spent_security" mappedto="f10"
+	protectedresourceuniquename="co_op_ad_dollar_spent_security" id="co_op_ad_dollar_spent" position="#co_op_ad_dollar_spent_security_before#">
+	</field>	                     
+					
+	<field deltaind="I" isextendedfield="Y" name="co_op_ad_event_type_1" screen="carrier/entityOtherInformation.html" objectcolumn="agency_id" section="entityOtherInformation_co_op_ad_freeform_contextdata_1" displaytype="text" 
+	isrequired="N" labelkey="co_op_ad_event_type_1_label" labeldesc="Event Type 1" accesslevel="1" tabsconfigurationresourcename="co_op_ad_event_type_1_security" mappedto="f11"
+	protectedresourceuniquename="co_op_ad_event_type_1_security" id="co_op_ad_event_type_1" position="#co_op_ad_event_type_1_security_before#">
+	</field>
+	
+	<field deltaind="I" isextendedfield="Y" name="co_op_ad_acc_bal_ytd" screen="carrier/entityOtherInformation.html" objectcolumn="agency_id" section="entityOtherInformation_co_op_ad_freeform_contextdata_1" displaytype="text" 
+	isrequired="N" labelkey="co_op_ad_acc_bal_ytd_label" labeldesc="Co-op Account balance YTD" accesslevel="1" tabsconfigurationresourcename="co_op_ad_acc_bal_ytd_security" mappedto="f12"
+	protectedresourceuniquename="co_op_ad_acc_bal_ytd_security" id="co_op_ad_acc_bal_ytd" position="#co_op_ad_acc_bal_ytd_security_before#">
+	</field>
+	
+	<field deltaind="I" isextendedfield="Y" name="co_op_ad_event_1" screen="carrier/entityOtherInformation.html" objectcolumn="agency_id" section="entityOtherInformation_co_op_ad_freeform_contextdata_1" displaytype="text" 
+	isrequired="N" labelkey="co_op_ad_event_1_label" labeldesc="Event 1" accesslevel="1" tabsconfigurationresourcename="co_op_ad_event_1_security" mappedto="f13"
+	protectedresourceuniquename="co_op_ad_event_1_security" id="co_op_ad_event_1" position="#co_op_ad_event_1_security_before#">
+	</field>
+	
+	<field deltaind="I" isextendedfield="Y" name="co_op_ad_brand_ambassador" screen="carrier/entityOtherInformation.html" objectcolumn="agency_id" section="entityOtherInformation_co_op_ad_freeform_contextdata_1" displaytype="text" 
+	isrequired="N" labelkey="co_op_ad_brand_ambassador_label" labeldesc="Brand Ambassador Kit Distribution Date" accesslevel="1" tabsconfigurationresourcename="co_op_ad_brand_ambassador_security" mappedto="f14"
+	protectedresourceuniquename="co_op_ad_brand_ambassador_security" id="co_op_ad_brand_ambassador" position="#co_op_ad_brand_ambassador_security_before#">
+	</field>
+	
+	
+	
+	<field deltaind="I" isextendedfield="Y" name="co_op_ad_event_coop_comment" screen="carrier/entityOtherInformation.html" objectcolumn="agency_id" section="entityOtherInformation_co_op_ad_freeform_contextdata_1" displaytype="text" 
+	isrequired="N" labelkey="co_op_ad_event_coop_comment_label" labeldesc="   Event 1  Co-op comments" accesslevel="1" tabsconfigurationresourcename="co_op_ad_event_coop_comment_security" mappedto="f15"
+	protectedresourceuniquename="co_op_ad_event_coop_comment_security" id="co_op_ad_event_coop_comment" position="#co_op_ad_event_coop_comment_security_before#">
+	</field>
+	
+	
+	
+	<field deltaind="I" isextendedfield="Y" name="co_op_ad_event_type_2" screen="carrier/entityOtherInformation.html" objectcolumn="agency_id" section="entityOtherInformation_co_op_ad_freeform_contextdata_1" displaytype="text" 
+	isrequired="N" labelkey="co_op_ad_event_type_2_label" labeldesc="Event Type 2" accesslevel="1" tabsconfigurationresourcename="co_op_ad_event_type_2_security" mappedto="f16"
+	protectedresourceuniquename="co_op_ad_event_type_2_security" id="co_op_ad_event_type_2" position="#co_op_ad_event_type_2_security_before#">
+	</field>
+	
+	
+	<field deltaind="I" isextendedfield="Y" name="co_op_ad_event_2" screen="carrier/entityOtherInformation.html" objectcolumn="agency_id" section="entityOtherInformation_co_op_ad_freeform_contextdata_1" displaytype="text" 
+	isrequired="N" labelkey="co_op_ad_event_2_label" labeldesc="Event 2" accesslevel="1" tabsconfigurationresourcename="co_op_ad_event_2_security" mappedto="f17"
+	protectedresourceuniquename="co_op_ad_event_2_security" id="co_op_ad_event_2" position="#co_op_ad_event_2_security_before#">
+	</field>
+	
+	<field deltaind="I" isextendedfield="Y" name="co_op_ad_brand_ambassador_tm" screen="carrier/entityOtherInformation.html" objectcolumn="agency_id" section="entityOtherInformation_co_op_ad_freeform_contextdata_1" displaytype="text" 
+	isrequired="N" labelkey="co_op_ad_brand_ambassador_tm_label" labeldesc="Brand Ambassador TM Notes" accesslevel="1" tabsconfigurationresourcename="co_op_ad_brand_ambassador_tm_security" mappedto="f18"
+	protectedresourceuniquename="co_op_ad_brand_ambassador_tm_security" id="co_op_ad_brand_ambassador_tm" position="#co_op_ad_brand_ambassador_tm_security_before#">
+	</field>
+	
+	<field deltaind="I" isextendedfield="Y" name="co_op_ad_event2_coop_comment" screen="carrier/entityOtherInformation.html" objectcolumn="agency_id" section="entityOtherInformation_co_op_ad_freeform_contextdata_1" displaytype="text" 
+	isrequired="N" labelkey="co_op_ad_event2_coop_comment_label" labeldesc="Event 2 Co-op comments" accesslevel="1" tabsconfigurationresourcename="co_op_ad_event2_coop_comment_security" mappedto="f19"
+	protectedresourceuniquename="co_op_ad_event2_coop_comment_security" id="co_op_ad_event2_coop_comment" position="#co_op_ad_event2_coop_comment_security_before#">
+	</field>
+	
+	
+	  <!-- Market info new section -->
+  
+  
  </fields>
