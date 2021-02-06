@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -23,6 +24,8 @@ public class ProducerOneUtilsImpl {
 	private static InetLogger logger = InetLogger.getInetLogger("ProducerOneUtils");
 	private static final String rownum = "rownum";
 	private static String tempProdCode=null;
+	private static String agencyCode = null;
+	
 	public static String getCustomizedProducerCode(Context ctx) {
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -30,30 +33,26 @@ public class ProducerOneUtilsImpl {
 		String generatedSubProducerNumber = "";
 		try {
 			// call procedure
-			int agencyId = Integer.parseInt(ctx.get("agency_id").toString());
+			
 			int producerNumberId = Integer.parseInt(ctx.get("producer_number_id").toString());
-			int personId = Integer.parseInt(ctx.get("person_id").toString());
-
-			Class.forName("net.sourceforge.jtds.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:jtds:sqlserver://10.10.106.253:1433/PRODUCERONE_SECURE_BUILDER",
-					"sudhirj", "Sudhirj@2020");
-
-			String sql = "EXEC getSubProducerAssociations_data_p ?,?,?,?,?";
-			ps = con.prepareStatement(sql);
-			ps.setInt(1, personId);
-			ps.setInt(2, producerNumberId);
-			ps.setInt(3, 0);
-			ps.setString(4, null);
-			ps.setString(5, null);
-			rs = ps.executeQuery();
+			String agencyCodeTemp=ctx.get("agency_id").toString();
+			ctx.put("producer_number_id",producerNumberId);
+			List prodCode = (List) SqlResources.getSqlMapProcessor(ctx).select("person.getSubProducerAssociations_data_p",ctx);
+			System.out.println(prodCode);
 			String subProducerNumber = "";
-			while (rs != null && rs.next()) {
-				System.out.println(rs.getInt("sub_producer"));
-				subProducerNumber = String.valueOf(rs.getString("sub_producer"));
+			
+			if(prodCode!=null && prodCode.size()!=0){
+				HashMap<String, String> map=(HashMap<String, String>)prodCode.get(prodCode.size()-1);
+				subProducerNumber=map.get("sub_producer");
+			}
+			
+			if(agencyCodeTemp==null || !agencyCodeTemp.equals(agencyCode)){
+				tempProdCode=null;
+				agencyCode=agencyCodeTemp;
 			}
 			
 			int temp = 0;
-			if ((subProducerNumber != null & !subProducerNumber.equals("")) ||tempProdCode!=null ) {
+			if ((subProducerNumber != null && !subProducerNumber.equals("")) || tempProdCode != null) {
 				if(tempProdCode==null){
 					tempProdCode=subProducerNumber;
 				}else{
@@ -89,7 +88,7 @@ public class ProducerOneUtilsImpl {
 			tempProdCode=generatedSubProducerNumber;
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println(e.getMessage());
+			logger.info(e.getMessage());
 		} finally {
 			try {
 				con.close();
@@ -97,11 +96,11 @@ public class ProducerOneUtilsImpl {
 				ps.close();
 			} catch (Exception e) {
 				// TODO: handle exception
-				System.out.println(e.getMessage());
+				logger.info(e.getMessage());
 			}
 		}
 		ctx.put("sub_producer", generatedSubProducerNumber);
-	
+		logger.debug(ctx, "Su_producer number");;
 		return generatedSubProducerNumber;
 
 	}
