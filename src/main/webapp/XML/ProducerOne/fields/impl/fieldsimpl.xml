@@ -362,7 +362,9 @@
 	protectedresourceuniquename="co_op_ad_event2_coop_comment_security" id="co_op_ad_event2_coop_comment" position="#co_op_ad_event2_coop_comment_security_before#">
 	</field>
 	
-	
+	<field id="addNewDocContract_start_date" deltaind="M" screen="carrier/addNewDocContract.html" name="start_date" isrequired="Y" requiredeval="is_start_date_mendatory_security" labelkey="doc_contract_effective_date_label" tabsconfigurationresourcename="start_date_security" protectedresourceuniquename="start_date_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
+    <validation deltaind="D" name="checkAddNewDocContractStartDate" expression="if(andCondition(andCondition(isNot(isEmpty(:start_date)),isDateBefore(:start_date,getTodaysDateWithFormat(MM/dd/yyyy))),isNotEqual(:inet_eventid,edit))=&gt;populateError(context,start_date,contractStartDateErrorKey);isEqual(1,1);-&gt;isEqual(1,1););" message="contractStartDateErrorKey" ruleid="ProducerOneRule.checkAddNewDocContractStartDate" executionsequence="0" />
+  </field>
 	  <!-- Market info new section -->
   
   
