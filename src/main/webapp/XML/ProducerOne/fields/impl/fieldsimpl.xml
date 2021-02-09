@@ -118,7 +118,7 @@
 	isrequired="Y" labelkey="cbia_designation_label" labeldesc="CBIA Designation" accesslevel="1" tabsconfigurationresourcename="public3_cbia_security" mappedto="f26"
 	protectedresourceuniquename="public3_cbia_security" id="review_cbia_designation" position="#contact_highest_ranking_principal_after#">
 	
-	<event id="onchange" name="onchange" screen="public/agentGeneralDetails.html" actiontype="ajaxpageblocklink" action="refreshAddendumQuestions" actiontypeid="entityPersonDetails_freeform_contextdata_2" executionsequence="0">
+	<event id="onchange" name="onchange" screen="public/agentGeneralDetails.html" actiontype="ajaxpageblocklink" action="refreshAddendumQuestions" actiontypeid="year_recieved_security" executionsequence="0">
 	  	<forward id="public/agentGeneralDetails.html" screen="public/agentGeneralDetails.html" />
 	 </event>
 	 
