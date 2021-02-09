@@ -72,6 +72,13 @@
 				statuscomment="Signed" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding">
 			</status>
 		</event>
+		<!-- Approved after sign for Producer Registration for BMIC -new event added -->
+		<event name="signInvitationProducer" deltaind="I">
+			<status deltaind="I" name="signInvitationProducer" workflowstatus="Approved" workflowfunction="Public Submission" executionsequence="1"
+				statuscomment="Signed" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding">
+			</status>
+		</event>
+		
 		<event deltaind="M" name="sendInvitationToApproval" approverrole="SalesDirector">
 			<status name="sendInvitationToApproval" workflowstatus="Pending Review" workflowfunction="Public Submission" executionsequence="1"
 				statuscomment="comment" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding"

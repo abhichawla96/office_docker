@@ -28,6 +28,13 @@
  <rule deltaind="I" id="isShownpn" expression="isEqual(:npn_check,npn_flag);" />
  <rule deltaind="I" id="isShowfein" expression=" isEmpty(:npn_check);" />
  <rule deltaind="I" id="checkAgenctContactTypeLicensedProducer" expression="isEqual(:EqualsFlag,true);" />
+ 		 
+<rule deltaind="I" id="otherThanProducerRegTypeEsign" expression="andCondition(call_rule(ProducerOneRule.isInetErrorListEmpty),call_rule(ProducerOneRule.isRegistrationTypeOtherThanProducerRegistration))" />
+<rule deltaind="I" id="producerRegTypeEsign" expression="andCondition(call_rule(ProducerOneRule.isInetErrorListEmpty),call_rule(ProducerOneRule.isRegistrationTypeProducerRegistration))" />
+
+
+
+
 
 	</ruleset>
 </evalrules>	
