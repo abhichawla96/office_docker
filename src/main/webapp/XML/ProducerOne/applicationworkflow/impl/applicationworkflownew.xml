@@ -771,8 +771,12 @@
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				approver="workflow_user" forward="agencyFunctions">
 			</status>
-			<status name="approveAgencyFunction" workflowstatus="Approved" workflowfunction="Agency Function" executionsequence="1"
+			<status deltaind="D" name="approveAgencyFunction" workflowstatus="Approved" workflowfunction="Agency Function" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function" assignee="user_id"
+				forward="agencyFunctions" isapproval="Y">
+			</status>
+			<status deltaind="I" name="approveAgencyFunction1" workflowstatus="Approved" workflowfunction="Agency Function" executionsequence="1"
+				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				forward="agencyFunctions" isapproval="Y">
 			</status>
 			<approver deltaind="D" name="approver1" status="sendForApprovalAgencyFunction" executionsequence="0"></approver>
