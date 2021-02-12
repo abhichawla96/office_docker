@@ -859,12 +859,12 @@
     	
     	<workflowevent ajaxcontainerid="divComplete" event="sendInvitationToApproval" isgetuser="Y" name="sendInvitationToApproval" userfield="workflow_user" workflow="onboardingDashboard"/>
     </action>
-    <action name="signPublicSubmission">
+    <action name="signPublicSubmission" deltaind="M">
     	<actionparam executionsequence="0" name="inet_skip_validation" paramid="inet_skip_validation" val="N" viewparam="Y"/>
     	<actionparam eval="ProducerOneRule.savePrincipalKeyContactProducerInformationEmail" executionsequence="1" form="Y" name="a" paramid="a" pre="Y"/>
       <actionparam executionsequence="0" name="commingFromModifyEmail" paramid="commingFromModifyEmail" val="Y" viewparam="Y"/>
-    	
-    	<workflowevent eval="ProducerOneRule.isInetErrorListEmpty" event="signInvitation" isexecuteonsuccess="Y" name="signInvitation" workflow="onboardingDashboard"/>
+    	<workflowevent deltaind="M" eval="ProducerOneRule.producerRegTypeEsign" event="signInvitationProducer" isexecuteonsuccess="Y" name="signInvitationProducer" workflow="onboardingDashboard"/>
+    	<workflowevent deltaind="M" eval="ProducerOneRule.otherThanProducerRegTypeEsign" event="signInvitation" isexecuteonsuccess="Y" name="signInvitation" workflow="onboardingDashboard"/>
     </action>
    <!-- <action name="approvePublicSubmission">
     	<actionparam viewparam="Y" name="assignee" paramid="assignee12" form="Y" executionsequence="1" />

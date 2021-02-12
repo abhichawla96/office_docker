@@ -208,7 +208,8 @@
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowFixedCommissionPlan" name="isShowFixedCommissionPlan"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowCCBOverriddenCheckBox" name="isShowCCBOverriddenCheckBox"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowIsBonusApplicableCheckBox" name="isShowIsBonusApplicableCheckBox"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowProdNumDBA" name="isShowProdNumDBA"/>
+ <!--  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowProdNumDBA" name="isShowProdNumDBA"/> change request 14 -->
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="isShowProdNumDBA" name="isShowProdNumDBA"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="producerDetail_distribution_type_id_security" name="producerDetail_distribution_type_id_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show segmentation_security in producerDetails.html" name="producerDetails_segmentation_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowProdNumVendorTrue" name="isShowProdNumVendorTrue"/>
