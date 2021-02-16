@@ -17,6 +17,41 @@
       <div id="cover" />
       <div id="contextLinks" />
 
+		<div id="deleteDocument">
+        <!-- Modal -->
+        <div class="modal fade modal_popup">
+          <div class="modal-dialog modal-dialog-width_350">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">
+                  <a id="docother_close1" href="#" class="close" onclick="closePopUp('deleteDocument')">
+                    <img src="images/close.png" />
+                  </a>
+                  Delete Document
+                </h4>
+              </div>
+              <div class="modal-body">
+                <div class="modal-body-scroll popup_small_height">
+                  <span class="delete_ico icons">#space#</span>
+                  Are you sure you want to delete this item?
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div class="buttonwrapper">
+                  <a id="docother_yes1" onclick="closePopUp('deleteDocument');" href="javascript:callAjaxDelete('attachmentDiv');" class="btn btn-primary">
+                    <span>Yes</span>
+                  </a>
+                  <a id="docother_no1" href="#" onclick="clean();closePopUp('deleteDocument');" class="btn btn-default">
+                    <span>No</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal End -->
+      </div>
+
       <div id="deleteConfirmation" style="position: absolute; width:400px">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
@@ -4561,6 +4596,9 @@ fullid="page(page.page).mergerselectionlocation2_cancel11.mergerselling_cancel8_
         <input type="hidden" name="jsessionid" id="jsessionid" />
         <input type="hidden" name="isCommissionStatementsMoving" id="isCommissionStatementsMoving" />
         <input type="hidden" name="selectedSellingProducerNumberIds" id="selectedSellingProducerNumberIds" />
+        <input type="hidden" name="selectedTemplateType" id="ajax_field_selectedTemplateType" />
+		<input type="hidden" name="templateTypeListSize" id="ajax_field_templateTypeListSize" />
+		
       </div>
     </form>
   </body>

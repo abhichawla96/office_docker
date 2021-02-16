@@ -6,11 +6,13 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.StringTokenizer;
 
 import com.ormapping.ibatis.SqlResources;
@@ -185,5 +187,32 @@ public static String checkContains(Context ctx){
     ctx.put("EqualsFlag", stringFound);
     return stringFound;
 }
+public static String generateMovingLocationLetter(Context ctx)
+{
+	try
+	{
+	List list= (List)ctx.get("uploadDocument_list_1");
+	List newList=new ArrayList();
+	Map<String,String> map1=new HashMap<String,String>();
+	String fileName="";
+	if (!list.isEmpty()) 
+	{
+		for (int i = 0; i < list.size(); i++) 
+		{
+			Map map = (Map) list.get(i);
+			fileName=map.get("document_name").toString();
+			map.put("file_name", fileName);
+			map.put("document_type_id", "7");
+			list.clear();
+			list.add(map);
+			ctx.put("uploadPopup_list_1", list);
+		}
+	}
+	}
+	catch (Exception e) {
+		e.printStackTrace();
+	}
 	
+	return "";
+}
 }
