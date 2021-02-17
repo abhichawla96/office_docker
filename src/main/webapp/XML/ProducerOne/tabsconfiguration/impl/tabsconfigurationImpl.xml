@@ -539,6 +539,9 @@
 	  
 	   <!-- Show Agency Codes Hierarchy in M&A step 1  -->
 	  <tabsconfigurationresource deltaind="I" description="Show/Hide isMNAProducerNumberHierarchyNotEmpty" name="isMNAProducerNumberHierarchyNotEmpty" accesslevel="1"/>
-
+<tabsconfigurationresource deltaind="I" name="mergerSellingPhysicalLocation2_generateLetter_carrierHeaderInclude" value="N"/>
+<tabsconfigurationresource deltaind="I" name="mergerSellingPhysicalLocation2_generateLetter_carrierTabs1Include" value="N"/>
+<tabsconfigurationresource deltaind="I" name="mergerSellingPhysicalLocation2_generateLetter_carrierTabs2Include" value="N"/>
+<tabsconfigurationresource deltaind="I" name="mergerSellingPhysicalLocation2_generateLetter_adminFooterInclude" value="N"/>
 
 </tabsconfiguration>

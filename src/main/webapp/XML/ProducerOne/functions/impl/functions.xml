@@ -10,4 +10,8 @@
   <functiondefinition deltaind="I" classname="com.userbo.common.impl.ProducerOneUtilsImpl" method="checkContains" name="checkContains" returntype="V" >
      <argument datatype="com.util.Context" name="context" seq="0"/>
   </functiondefinition>
+  
+   <functiondefinition deltaind="I" classname="com.userbo.common.impl.ProducerOneUtilsImpl" method="generateMovingLocationLetter" name="generateMovingLocationLetter" returntype="V">
+    <argument datatype="com.util.Context" name="context" seq="0"/>
+  </functiondefinition>
 </functionsdef>
