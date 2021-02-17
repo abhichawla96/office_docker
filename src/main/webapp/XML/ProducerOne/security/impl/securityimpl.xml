@@ -1017,8 +1017,12 @@
    </protectedresource>
   
   <!-- change request -->
-   <protectedresource deltaind="I" defaultaccesstype="0" description="agencyFunctions_selectFunctionType_complete_transaction_security" uniquename="agencyFunctions_selectFunctionType_complete_transaction_security">
+   <protectedresource deltaind="I" defaultaccesstype="0" operator="AND" description="agencyFunctions_selectFunctionType_complete_transaction_security" uniquename="agencyFunctions_selectFunctionType_complete_transaction_security">
     	<userdefined  ruleid="ProducerOneRule.isFunctionDC" executionsequence="0">
+			<userdefinedaccesslevel accesstype="1" />
+		</userdefined>
+		<userdefined executionsequence="1"
+			ruleid="AgencyFunctionsRule.isRequestStatusNotCompleted">
 			<userdefinedaccesslevel accesstype="1" />
 		</userdefined>
   </protectedresource>
