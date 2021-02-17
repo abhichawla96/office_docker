@@ -31,6 +31,7 @@
  		 
 <rule deltaind="I" id="otherThanProducerRegTypeEsign" expression="andCondition(call_rule(ProducerOneRule.isInetErrorListEmpty),call_rule(ProducerOneRule.isRegistrationTypeOtherThanProducerRegistration))" />
 <rule deltaind="I" id="producerRegTypeEsign" expression="andCondition(call_rule(ProducerOneRule.isInetErrorListEmpty),call_rule(ProducerOneRule.isRegistrationTypeProducerRegistration))" />
+<rule deltaind="I" id="isFunctionDC" expression="isEqual(:selectFunctionType_code,functionDC)" />
 
 
 
