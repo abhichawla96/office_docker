@@ -36,7 +36,17 @@
     				templateoutput="uploadPopup_list_1" indoccategory="41" outdoccategory="39" data="context" objectid="from_object_id" objecttype="Agency Termination" executionsequence="0"/> -->	
 	    	</workflow>
 	  	</action>
-	  	
+	  	<action deltaind="I" name="completeTransactionDeactivateContact">
+   	    	<workflow eval="ProducerOneRule.isInetErrorListEmpty" name="completeDeactivateContact" seq="0">
+	        	<storedprocedureoperation dbspname="completeTransactionDeactivateContact_p" executionsequence="1" id="completeTransactionDeactivateContact_p" metaobject="person" name="completeTransactionDeactivateContact_p" operation="4">
+          			<parameteroperation indexno="1" mode="IN" property="toBeProcessed_agent_id" seq="1"/>
+		  			<parameteroperation indexno="2" mode="IN" property="user_id" seq="2"/>
+		  			<parameteroperation indexno="3" mode="IN" property="suspension_date" seq="3"/>
+		  			<parameteroperation indexno="4" mode="IN" property="toBeProcessed_agency_id" seq="4"/>
+		  			
+          		</storedprocedureoperation>
+      		</workflow>
+	  	</action>
  	
 	</component>
  </projectcomponents>

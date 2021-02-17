@@ -2,14 +2,20 @@
 	<protectedresource deltaind="M" defaultaccesstype="0"
 		description="Hide/Show send for approval button on agency functions page"
 		operator="OR" uniquename="agencyFunctions_selectFunctionType_sendforapproval_security">
-		<userdefined deltaind="I" executionsequence="0"
+		<!-- change request -->
+		<userdefined deltaind="I" 
+			ruleid="ProducerOneRule.isFunctionDC" executionsequence="0">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+		
+		<userdefined deltaind="I" executionsequence="1"
 			ruleid="AgencyFunctionsRule.isRequestStatusNotCompleted">
 			<userdefinedaccesslevel accesstype="1" />
 		</userdefined>
-		<businessrole deltaind="I" roleid="vpmarketing">
+		<businessrole deltaind="I" roleid="vpmarketing" executionsequence="2">
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
-		<businessrole deltaind="I" roleid="MarketingAssistant">
+		<businessrole deltaind="I" roleid="MarketingAssistant" executionsequence="3">
 			<roleaccesslevel accesstype="1" />
 		</businessrole>
 	</protectedresource>
@@ -1010,6 +1016,11 @@
   		</userdefined>
    </protectedresource>
   
-    
+  <!-- change request -->
+   <protectedresource deltaind="I" defaultaccesstype="0" description="agencyFunctions_selectFunctionType_complete_transaction_security" uniquename="agencyFunctions_selectFunctionType_complete_transaction_security">
+    	<userdefined  ruleid="ProducerOneRule.isFunctionDC" executionsequence="0">
+			<userdefinedaccesslevel accesstype="1" />
+		</userdefined>
+  </protectedresource>
 </security>  
 
