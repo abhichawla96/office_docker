@@ -10,5 +10,11 @@
 	  	<function deltaind="I" executionsequence="0" functionid="checkContains" name="checkContains" parameters="context"/> 
 	  </workflow>
      </action>		
+     
+      <action name="view" deltaind="M">
+       <workflow deltaind="I" name="checkContains" seq="17">
+	  	<function deltaind="I" executionsequence="0" functionid="checkContains" name="checkContains" parameters="context"/> 
+	  </workflow>
+      </action>		
   </component>
 </projectcomponents>

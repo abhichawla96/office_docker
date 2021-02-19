@@ -160,10 +160,13 @@ public static String checkContains(Context ctx){
     String inputString=null;
     String stringToCampare="5";
     
-    if(ctx.get("contacttypid")!=null || !"".equals(ctx.get("contacttypid").toString())){
+    if(ctx.containsKey("contacttypid") && ctx.get("contacttypid")!=null && !"".equals(ctx.get("contacttypid").toString())){
     	inputString=ctx.get("contacttypid").toString();
     }
-    
+    /* else condition to check contact type on view action */
+    else if(ctx.containsKey("contacttype") && ctx.get("contacttype")!=null && !"".equals(ctx.get("contacttype").toString())){
+    	inputString=ctx.get("contacttype").toString();
+    }
     if(inputString == null || "".equals(inputString)){
         return stringFound;
     }else{
