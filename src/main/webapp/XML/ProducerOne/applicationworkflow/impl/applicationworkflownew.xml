@@ -417,7 +417,7 @@
 				<businessobject deltaind="I" name="SendDocForESign" obj="com.userbo.integration.SendDocForESign"/>
 				</statusworkflow>
             </status>
-            <status deltaind="M" name="sendToSecondaryAgent" eval="addNewDocContractRule.isContractGeneratedForPhysical" workflowstatus="Pending Agency Setup" workflowfunction="Agency Setup" executionsequence="1"
+            <status deltaind="M" name="sendToSecondaryAgent" eval="addNewDocContractRule.isContractGeneratedForPhysical" workflowstatus="Sent for ESignature" workflowfunction="Contract" executionsequence="1"
             	statuscomment="comment" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="agency_id" objecttype="Agency Setup" assignee="user_id">
             <statusworkflow deltaind="I" name="sendInvitationToApproval" executionsequence="0">
 			<businessobject deltaind="I" name="SendDocForESign" obj="com.userbo.integration.SendDocForESign"/>
