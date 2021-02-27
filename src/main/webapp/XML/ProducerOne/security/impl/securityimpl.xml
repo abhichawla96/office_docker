@@ -1026,5 +1026,13 @@
 			<userdefinedaccesslevel accesstype="1" />
 		</userdefined>
   </protectedresource>
+  
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" uniquename="agencyListPublicSubmitNInvitation_resend_invitation_security">
+    <userdefined executionsequence="0" ruleid="agencyListPublicSubmitNInvitationRule.isRowLevelResentInvitationLinkShow">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+  </protectedresource>
+  
 </security>  
 
