@@ -9,7 +9,40 @@
 		 	 <email deltaind="D" attachmentcontent="primaryAttachmentContent" eval="addNewDocContractRule.isPrimaryAttachmentContentNotEmpty" eventname="sendContractToAgent" executionsequence="2" ischeckfortemplates="N" mailto="primaryMailTo" name="sendToPrimaryAgent" objectid="agency_id" objecttype="Other"/>
 			<email deltaind="D" attachmentcontent="secondaryAttachmentContent" eval="addNewDocContractRule.isSecondaryAttachmentContentNotEmpty" eventname="sendContractToAgent" executionsequence="3" ischeckfortemplates="N" mailto="secondaryMailTo" name="sendToSecondaryAgent" objectid="agency_id" objecttype="Other"/> 
 		 </workflow>
-    </action>        
+    </action>  
+    
+    
+    <!-- New code for email event --> 
+    
+    <action deltaind="M" name="sendToAgent">
+		<actionparam executionsequence="0" name="inet_skip_validation" paramid="inet_skip_validation" val="Y" viewparam="Y"/>
+		<actionparam executionsequence="1" form="Y" name="contract_id" paramid="contract_id" viewparam="Y"/>
+		<actionparam executionsequence="2" form="Y" name="contractGeneratedFor" paramid="contractGeneratedFor" viewparam="Y"/>
+		<!-- <actionparam pre="Y" name="aar_statusid_description" paramid="aar_statusid_description" val="Approved" form="Y" executionsequence="2" />
+        <actionparam pre="Y" name="user_id" paramid="user_id" form="Y" populatename="workflow_user" executionsequence="3" /> -->
+        <workflow eval="addNewDocContractRule.isContractGeneratedForPhysical" name="sendToAgent" seq="0">
+        	<storedprocedureoperation dbspname="addDefaultCompanyRepToProducerNumber_p" eval="OnboardingRule.checkIsAssignDefaultCompanyRepOnChangingContractStatusToActive" executionsequence="0" id="addDefaultCompanyRepToProducerNumber_p" metaobject="agency_contracts" name="addDefaultCompanyRepToProducerNumber_p" operation="4">
+	        	<parameteroperation indexno="0" mode="IN" property="contract_id" seq="1"/>
+        	 	<parameteroperation indexno="1" mode="IN" property="agency_id" seq="2"/>
+	        	<parameteroperation indexno="2" mode="IN" property="user_id" seq="3"/>
+	          	<resultsetoperation indexno="0" mappingclass="java.util.HashMap" seq="0"/>
+	        </storedprocedureoperation>
+        </workflow>
+        
+		<workflow deltaind="M" name="sendToAgent1" seq="1">
+			<!-- <storedprocedureoperation name="UpdateContractStatusForApproval_p" id="UpdateContractStatusForApproval_p" dbspname="UpdateContractStatusForApproval_p"  
+				metaobject="agency_contracts" operation="4" executionsequence="0">
+	        	<parameteroperation property="aar_statusid_description" mode="IN" indexno="2" seq="3" />
+	          	<parameteroperation property="agency_id" mode="IN" indexno="0" seq="1" />
+	          	<parameteroperation property="workflow_user" mode="IN" indexno="1" seq="2" />
+	         	<resultsetoperation indexno="0" mappingclass="java.util.HashMap" seq="0" />
+	        </storedprocedureoperation> -->
+	        <function eval="addNewDocContractRule.isContractGeneratedForPrimary" executionsequence="0" functionid="resendESignature" name="resendESignature" parameters="context"/>
+			<function executionsequence="1" functionid="generateAttachmentContentForAgent" name="generateAttachmentContentForAgent" parameters="context"/>
+			<email deltaind="D" attachmentcontent="primaryAttachmentContent" eval="addNewDocContractRule.isPrimaryAttachmentContentNotEmpty" eventname="sendContractToAgent" executionsequence="2" ischeckfortemplates="N" mailto="primaryMailTo" name="sendToPrimaryAgent" objectid="agency_id" objecttype="Other"/>
+			<email deltaind="D" attachmentcontent="secondaryAttachmentContent" eval="addNewDocContractRule.isSecondaryAttachmentContentNotEmpty" eventname="sendContractToAgent" executionsequence="3" ischeckfortemplates="N" mailto="secondaryMailTo" name="sendToSecondaryAgent" objectid="agency_id" objecttype="Other"/>
+		</workflow>
+		     
   </component>
 </projectcomponents>
   
