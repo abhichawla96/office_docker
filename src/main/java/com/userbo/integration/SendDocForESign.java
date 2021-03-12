@@ -52,7 +52,9 @@ public class SendDocForESign extends Businessobject {
 		return false;
 	}
 
-	public Object execute(IContext ctx) throws Exception {
+	public Object execute(IContext ctx)  {
+		try{
+		logger.debug("Inside execute of SendDocForEsign.");
 		if((ctx.get(HtmlConstants.INET_METHOD) != null && ctx.get(HtmlConstants.INET_METHOD).toString().equals("submit")) &&
 				(ctx.get(Constants.INET_PAGE) != null && ctx.get(Constants.INET_PAGE).toString().equals("sendForReviewPopup"))){
 			if(ctx.get("workflow_user") == null || ctx.get("workflow_user").toString().equals(HtmlConstants.EMPTY)){
@@ -69,6 +71,9 @@ public class SendDocForESign extends Businessobject {
 		}
 		
 		String esign_provider = ctx.get("esign_provider") != null ? ctx.get("esign_provider").toString() : null;
+		logger.debug("esign_provider  " +esign_provider);
+		logger.debug("workflow_event_name_context  " +ctx.get("workflow_event_name_context"));
+		logger.debug("inet_method  " +ctx.get("inet_method"));
 		if(esign_provider != null){
 			if(esign_provider.equalsIgnoreCase("AssureEsign")){
 				sendForAssureSign(ctx, new ByteArrayOutputStream(), HtmlConstants.EMPTY, HtmlConstants.EMPTY);
@@ -81,15 +86,21 @@ public class SendDocForESign extends Businessobject {
 					setDataForDocuESignDirect(ctx);
 				}
 				//else if(ctx.get("inet_page").toString().equals("bankInformationForSelfServiceApproval") && ctx.get("inet_method").toString().endsWith("submit")){
-				/*else if((ctx.get("workflow_event_name_context").toString().equals("sendForApprovalBankRequestSelfService") || ctx.get("workflow_event_name_context").toString().equals("sendForApprovalSelfService")) && ctx.get("inet_method").toString().endsWith("submit")){
+			
+				else if((ctx.get("workflow_event_name_context")!=null && ctx.get("workflow_event_name_context").toString().equals("sendForApprovalBankRequestSelfService") || ctx.get("workflow_event_name_context").toString().equals("sendForApprovalSelfService")) && (ctx.get("inet_method")!=null && ctx.get("inet_method").toString().endsWith("submit"))){
 					setDataForDocuESignDirectForSelfService(ctx);
 				}else if(ctx.get("workflow_name_context") != null && ctx.get("workflow_name_context").toString().equals("agencyTermination") && 
-						((ctx.get("workflow_disapproved_status_event_name_context") != null && ctx.get("workflow_disapproved_status_event_name_context").toString().equals("approved")) || 
+						((ctx.get("workflow_disapproved_status_event_name_context") != null && ctx.get(
+						"workflow_disapproved_status_event_name_context").toString().equals("approved")) || 
 						(ctx.get("workflow_event_name_context") != null && ctx.get("workflow_event_name_context").toString().equals("approved"))) 
-						&& ctx.get("inet_method").toString().endsWith("submit")){
+						&& ctx.get("inet_method").toString().endsWith("submit"))
+						{
 					sendApplicationWorkflowDocuESign((Context)ctx);
-				}*/else{
+					logger.debug("sendApplicationWorkflowDocuESign called ");
+				}else{
+					
 					setDataForDocuESignDirectForContract(ctx);
+					logger.debug("setDataForDocuESignDirectForContract called ");
 				}
 				
 				return null;
@@ -100,7 +111,11 @@ public class SendDocForESign extends Businessobject {
 		//updating request data in database
 		updateAppointmentRequestDataInDB(ctx);
 		*/
-		
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 		return null;
 	}
 	
@@ -1201,7 +1216,7 @@ public class SendDocForESign extends Businessobject {
 						agentEmail = ctx.get("esign_email_address") != null ? ctx.get("esign_email_address").toString() : null;
 						personName = ctx.get("bank_contact_name") != null ? ctx.get("bank_contact_name").toString() : null;
 						ctx.remove("bank_contact_name");
-						ctx.put("document_category", "25");
+						ctx.put("document_category", "59");
 					}
 					
 					
