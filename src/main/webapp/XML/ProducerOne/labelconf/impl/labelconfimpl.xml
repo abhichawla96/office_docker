@@ -154,5 +154,8 @@
  <!-- for Market Information -->
  <label deltaind="M" labelkey="entityOtherInformation_narrative_question_3_label" labeldesc="Comment on neighboring Builders Mutual Insurance Agencies and with this appointment"/>
 
+ <label deltaind="M" labeldesc="How will Builders Mutual Insurance Company meet the needs of your agency and how will you meet your minimum production requirement?" labelkey="agencyListEdit_comments_min_prod_req_label"/>
+
+ <label deltaind="I" labeldesc="Total volume commitment with Builders Mutual Insurance Company Used for " labelkey="adminBrokerageStep6_marketinformation_lob_production_commitment_sectionHeading_label"/>
  
 </labelconf>
