@@ -141,7 +141,7 @@
 	
 	<!-- dividend distribution agency general details -->
 	
-	<field deltaind="I"  isextendedfield="Y" id="dividend_distribution" name="dividend_distribution" objectcolumn="agency_id"  section="entityGeneralDetails_freeform_contextdata_3234" screen="entityGeneralDetails" isrequired="MA" accesslevel="1"
+	<field deltaind="I"  isextendedfield="Y" id="dividend_distribution" name="dividend_distribution" objectcolumn="agency_id"  section="entityGeneralDetails_freeform_contextdata_3234" screen="carrier/entityGeneralDetails.html" isrequired="MA" accesslevel="1"
 	  	tabsconfigurationresourcename="divDividendDist" displaytype="multiradio" css="exteded_new_radio_seciton" labelkey="dividend_distribution_label"
 	  	protectedresourceuniquename="divDividendDist" position="#distDistiShow_after#"
 		lookupobjectname="dividend_dist_lku" lookupobjecttype="mastertable"
@@ -151,7 +151,7 @@
 		
 		<!-- Policyholder Copies -->
 		
-		<field deltaind="I"  isextendedfield="Y" id="policyholder_copies" name="policyholder_copies" objectcolumn="agency_id"  section="entityGeneralDetails_freeform_contextdata_3235" screen="entityGeneralDetails" isrequired="MA" accesslevel="1"
+		<field deltaind="I"  isextendedfield="Y" id="policyholder_copies" name="policyholder_copies" objectcolumn="agency_id"  section="entityGeneralDetails_freeform_contextdata_3235" screen="carrier/entityGeneralDetails.html" isrequired="MA" accesslevel="1"
 	  	tabsconfigurationresourcename="divPolicyHolder" displaytype="multiradio" css="exteded_new_radio_seciton" labelkey="policyholder_copies_label"
 	  	protectedresourceuniquename="divPolicyHolder" position="#policyholdercopies_after#"
 		lookupobjectname="policyholder_copies_lku" lookupobjecttype="mastertable"
@@ -199,7 +199,7 @@
   
   <field deltaind="M" id="addAgencyTaskDetails_status" screen="carrier/addAgencyTaskDetails.html" name="status" isrequired="Y" labelkey="task_status_label" tabsconfigurationresourcename="task_status_security" protectedresourceuniquename="task_status_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
   <!-- entity general details agent copies field -->
-	<field deltaind="I"  isextendedfield="Y" id="agent_copies" labelkey="agent_copies_label" name="agent_copies" objectcolumn="agency_id"  section="entityGeneralDetails_freeform_contextdata_3236" screen="entityGeneralDetails" isrequired="MA" accesslevel="1"
+	<field deltaind="I"  isextendedfield="Y" id="agent_copies" labelkey="agent_copies_label" name="agent_copies" objectcolumn="agency_id"  section="entityGeneralDetails_freeform_contextdata_3236" screen="carrier/entityGeneralDetails.html" isrequired="MA" accesslevel="1"
 	  	tabsconfigurationresourcename="divAgentCopies" displaytype="multiradio" css="exteded_new_radio_seciton"
 	  	protectedresourceuniquename="divAgentCopies" position="#agentCopies_after#"
 		lookupobjectname="agent_copies_lku" lookupobjecttype="mastertable"
