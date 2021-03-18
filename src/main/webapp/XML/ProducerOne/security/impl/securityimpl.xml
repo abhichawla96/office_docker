@@ -502,7 +502,7 @@
 		description="Hide/Show year field"
 		uniquename="year_recieved_security">
 		<userdefined deltaind="I" executionsequence="0"
-			ruleid="ProducerOneRule.isCBIAYesNo">
+			ruleid="ProducerOneRule.isCBIAYesNoAgentScreen">
 			<userdefinedaccesslevel accesstype="1" />
 		</userdefined>
 	</protectedresource>

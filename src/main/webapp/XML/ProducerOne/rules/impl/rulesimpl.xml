@@ -36,6 +36,9 @@
 
 
 
+ <rule deltaind="I" id="isCBIAYesNoAgentScreen" expression="isEqual(:review_cbia_designation,Y);"></rule>
+ 
+
 
 	</ruleset>
 </evalrules>	

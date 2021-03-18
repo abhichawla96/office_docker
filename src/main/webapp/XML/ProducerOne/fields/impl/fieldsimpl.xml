@@ -119,15 +119,15 @@
 	isrequired="Y" labelkey="cbia_designation_label" labeldesc="CBIA Designation" accesslevel="1" tabsconfigurationresourcename="public3_cbia_security" mappedto="f26"
 	protectedresourceuniquename="public3_cbia_security" id="review_cbia_designation" position="#contact_highest_ranking_principal_after#">
 	
-	<event id="onchange" name="onchange" screen="public/agentGeneralDetails.html" actiontype="ajaxpageblocklink" action="refreshAddendumQuestions" actiontypeid="year_recieved_security" executionsequence="0">
-	  	<forward id="public/agentGeneralDetails.html" screen="public/agentGeneralDetails.html" />
+	<event id="onchange" name="onchange" screen="carrier/agentGeneralDetails.html" actiontype="ajaxpageblocklink" action="refreshAddendumQuestions" actiontypeid="year_recieved_security" executionsequence="0">
+	  	<forward id="carrier/agentGeneralDetails.html" screen="carrier/agentGeneralDetails.html" />
 	 </event>
 	 
 	</field>
 	
 	<field deltaind="I" isextendedfield="Y" name="review_year_recieved" screen="carrier/agentGeneralDetails.html" objectcolumn="person_id" section="entityPersonDetails_freeform_contextdata_2" displaytype="text" 
 	isrequired="Y" labelkey="year_recieved_label" labeldesc="Year Received" accesslevel="1" tabsconfigurationresourcename="year_recieved_security" mappedto="f25"
-	protectedresourceuniquename="year_recieved_security" id="review_year_recieved" position="#cbia_designation_after#">
+	protectedresourceuniquename="year_recieved_security" id="review_year_recieved" position="#review_cbia_designation_after#">
 	</field>
 	
 	
