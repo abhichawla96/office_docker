@@ -142,4 +142,20 @@
  
  <label deltaind="M" labelkey="agencyListPublicSubmitNInvitationEdit_narrative_question_3_label" labeldesc="Comment on neighboring Builders Mutual Insurance Agencies and with this appointment"/>
  
+ <label deltaind="I" labeldesc="" labelkey="Dividend_label"/>
+<label deltaind="I" labeldesc="" labelkey="Policy_label"/>
+	  <!-- Extended fields -->
+ <label deltaind="I" labelkey="review_dividend_distribution_label" labeldesc=""/>
+ <label deltaind="I" labelkey="review_policyholder_copies_label" labeldesc=""/>
+ <label deltaind="I" labelkey="agent_copies_label" labeldesc=""/>
+ <label deltaind="I" labelkey="policyholder_copies_label" labeldesc=""/>
+ <label deltaind="I" labelkey="dividend_distribution_label" labeldesc=""/>
+ 
+ <!-- for Market Information -->
+ <label deltaind="M" labelkey="entityOtherInformation_narrative_question_3_label" labeldesc="Comment on neighboring Builders Mutual Insurance Agencies and with this appointment"/>
+
+ <label deltaind="M" labeldesc="How will Builders Mutual Insurance Company meet the needs of your agency and how will you meet your minimum production requirement?" labelkey="agencyListEdit_comments_min_prod_req_label"/>
+
+ <label deltaind="I" labeldesc="Total volume commitment with Builders Mutual Insurance Company Used for " labelkey="adminBrokerageStep6_marketinformation_lob_production_commitment_sectionHeading_label"/>
+ 
 </labelconf>

@@ -208,7 +208,8 @@
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowFixedCommissionPlan" name="isShowFixedCommissionPlan"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowCCBOverriddenCheckBox" name="isShowCCBOverriddenCheckBox"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowIsBonusApplicableCheckBox" name="isShowIsBonusApplicableCheckBox"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowProdNumDBA" name="isShowProdNumDBA"/>
+ <!--  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowProdNumDBA" name="isShowProdNumDBA"/> change request 14 -->
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="isShowProdNumDBA" name="isShowProdNumDBA"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="producerDetail_distribution_type_id_security" name="producerDetail_distribution_type_id_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show segmentation_security in producerDetails.html" name="producerDetails_segmentation_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowProdNumVendorTrue" name="isShowProdNumVendorTrue"/>
@@ -392,9 +393,11 @@
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show mass hierachy tab in admin" name="massHierarchyListing_security"/>
   <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/show mass hierachy tab in admin" name="adminTabs_accountstab"/>
  <!-- mass changes outof scope change -->
-  <tabsconfigurationresource deltaind="I" accesslevel="1" description="AdminTabs Car" name="renewal_security"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="1" description="AdminTabs Car" name="massReassign_security"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="1" description="AdminTabs Car" name="adminTabs_car"/>
+  <tabsconfigurationresource deltaind="I" accesslevel="0" description="AdminTabs Car" name="renewal_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="AdminTabs Car" name="massReassign_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="AdminTabs Car" name="adminTabs_car"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="hide/show Car Report Matching Security" name="matching_car_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="hide/show Car Report Non Matching Security" name="non_matching_car_security"/>
 
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show commission_rate_hierarchy_security" name="commission_rate_hierarchy_security"/>
   <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/show adminTabs_compensationmgt" name="adminTabs_compensationmgt"/>
@@ -485,4 +488,61 @@
 	    <!-- Sample insurance to BMIC -->
       <tabsconfigurationresource deltaind="M" name="clientName" value="Builders Mutual Insurance Company"/>
    	 <tabsconfigurationresource deltaind="M" description="agentEmailTypeForDocusignInContract" name="agentEmailTypeForDocusignInContract" value="PreferredEmail"/>
+    <!-- customization sprint 4  -->
+       <tabsconfigurationresource deltaind="I" accesslevel="1" name="agencymergernaquisition_letterTemplateList_security"/>
+  	   <!-- agency review screen  -->
+<tabsconfigurationresource deltaind="M" description="Show/Hide agencyListEdit_foreign_languages_spoken_in_agency_security" name="agencyListEdit_foreign_languages_spoken_in_agency_security" accesslevel="1"/>
+<tabsconfigurationresource deltaind="M" description="Show/Hide agencyListEdit_current_advertising_methods_security" name="agencyListEdit_current_advertising_methods_security" accesslevel="1"/>
+ <tabsconfigurationresource deltaind="M" description="Show/Hide agencyListEdit_primary_company_usage_security" name="agencyListEdit_primary_company_usage_security" accesslevel="1"/>
+ 
+ <tabsconfigurationresource deltaind="M" accesslevel="1" description="business_segment_product_validation_security" name="productValidationDetail_business_segment_product_validation_security"/>
+	    <!-- Hide Benefit Enrollment link  -->
+	     <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show navigation_link_security" name="navigation_link_security"/>
+	  
+    <!-- Narrative Section -->
+      
+      <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide show agencyListPublicSubmitNInvitationEdit_narrative_loc_quality_security in agencyListPublicSubmitNInvitationEdit.html" name="agencyListPublicSubmitNInvitationEdit_narrative_loc_quality_security"/>
+      <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide show agencyListPublicSubmitNInvitationEdit_narrative_agent_skills_security in agencyListPublicSubmitNInvitationEdit.html" name="agencyListPublicSubmitNInvitationEdit_narrative_agent_skills_security"/>
+      <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide show agencyListPublicSubmitNInvitationEdit_narrative_is_company_contacted_security in agencyListPublicSubmitNInvitationEdit.html" name="agencyListPublicSubmitNInvitationEdit_narrative_is_company_contacted_security"/>
+      <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide show agencyListPublicSubmitNInvitationEdit_narrative_agent_commission_level_label in agencyListPublicSubmitNInvitationEdit.html" name="agencyListPublicSubmitNInvitationEdit_narrative_agent_commission_level_security"/>
+      <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide show agencyListPublicSubmitNInvitationEdit_narrative_kits_quantity_security in agencyListPublicSubmitNInvitationEdit.html" name="agencyListPublicSubmitNInvitationEdit_narrative_kits_quantity_security"/>
+	  <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide show agencyListPublicSubmitNInvitationEdit_narrative_kit_delivery_security in agencyListPublicSubmitNInvitationEdit.html" name="agencyListPublicSubmitNInvitationEdit_narrative_kit_delivery_security"/>
+
+      <!-- Bug Id : 196 -->
+ <tabsconfigurationresource deltaind="M" accesslevel="1" description="agencyListEdit_CyberLiability_section_security" name="agencyListEdit_CyberLiability_section_security"/>
+
+<!-- Bug Id : 0099 -->
+	 <tabsconfigurationresource deltaind="M" accesslevel="0" description="agency_profile_general_information_general_detail_security" name="agency_profile_general_information_general_detail_security"/>
+ 
+      <!--bug id 0031  -->
+      <tabsconfigurationresource deltaind="M" accesslevel="1" description="entityCyberLiabilityExpirationListing_category_name_security" name="entityCyberLiabilityExpirationListing_category_name_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="isShowEMailonEntityCyberLiabilityExpireList" name="isShowEMailonEntityCyberLiabilityExpireList"/>
+
+
+<!-- bug id : 57 --> 
+<tabsconfigurationresource deltaind="M" name="cyberLiability_contact_security" value="E&amp;O Cyber Liability Contact" description="Mention here the contact types you want to display in dropdown,you can pass comma seperated contact type or single values here eg principal,agency admin or hrp else All for all records" />
+	
+	<!-- bug id : 58  -->
+	 <tabsconfigurationresource deltaind="M" name="insurance_contact_security" value="E&amp;O Cyber Liability Contact" description="Mention here the contact types you want to display in SelfService dropdown,you can pass comma seperated contact type or single values here eg principal,agency admin or hrp" />
+ 
+  <!-- Bug no. : 154 : Missing Section in Market Information -->
+	  
+	  <tabsconfigurationresource deltaind="M" description="Show/Hide entityOtherInformation_narrative_question_1_security" name="entityOtherInformation_narrative_question_1_security" accesslevel="1"/>
+	  <tabsconfigurationresource deltaind="M" description="Show/Hide entityOtherInformation_narrative_question_2_security" name="entityOtherInformation_narrative_question_2_security" accesslevel="1"/>
+	  <tabsconfigurationresource deltaind="M" description="Show/Hide entityOtherInformation_narrative_question_3_security" name="entityOtherInformation_narrative_question_3_security" accesslevel="1"/>
+	  <tabsconfigurationresource deltaind="M" description="Show/Hide entityOtherInformation_narrative_question_4_security" name="entityOtherInformation_narrative_question_4_security" accesslevel="1"/>
+	    
+	    <tabsconfigurationresource deltaind="M" accesslevel="0" description="addAgencyTaskDetails_agent_name_security" name="addAgencyTaskDetails_agent_name_security"/>
+	  
+	  <!-- Hide Benefit Enrollment link  -->
+	     <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show navigation_link_security" name="navigation_link_security"/>
+	  
+	   <!-- Show Agency Codes Hierarchy in M&A step 1  -->
+	  <tabsconfigurationresource deltaind="I" description="Show/Hide isMNAProducerNumberHierarchyNotEmpty" name="isMNAProducerNumberHierarchyNotEmpty" accesslevel="1"/>
+<tabsconfigurationresource deltaind="I" name="mergerSellingPhysicalLocation2_generateLetter_carrierHeaderInclude" value="N"/>
+<tabsconfigurationresource deltaind="I" name="mergerSellingPhysicalLocation2_generateLetter_carrierTabs1Include" value="N"/>
+<tabsconfigurationresource deltaind="I" name="mergerSellingPhysicalLocation2_generateLetter_carrierTabs2Include" value="N"/>
+<tabsconfigurationresource deltaind="I" name="mergerSellingPhysicalLocation2_generateLetter_adminFooterInclude" value="N"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" name="agencyListPublicSubmitNInvitation_resend_invitation_security" description="agencyListPublicSubmitNInvitation_resend_invitation_security"/>
+
 </tabsconfiguration>

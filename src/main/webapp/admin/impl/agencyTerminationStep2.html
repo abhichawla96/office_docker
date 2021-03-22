@@ -1,0 +1,834 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta name="generator" content="HTML Tidy, see www.w3.org" />
+<meta http-equiv="X-UA-Compatible" content="IE=10" />
+<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+<!-- tag for resolution change -->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<title>ProducerOne - Producer Management Center</title>
+<!-- css -->
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<!-- Scripts -->
+<script type="text/javascript" src="js/all_files.js" />
+</head>
+<body id="divComplete"  onload="javascript:setGetMultiCheckboxValues('contract_Template_Type_code','ajax_field_selected_producer_number_ids','set');showPopUpList('popupworkflowPopup','workflowPopup');setGetMultiCheckboxValues('ajax_field_person_id','ajax_field_personids_csv','set');checkSelectAllCheckBoxOnLoad('ajax_field_select_all','person_id_');setGetMultiCheckboxValues('person_user_detail_id','ajax_field_personUserDetailsId_csv','set');">
+	<form enctype="multipart/form-data">
+		<div id="progressBarDiv" />
+		<div id="cover"></div>
+		<div id="contextLinks"></div>
+		
+		<div id="transferDiv" style="width: 500px;">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td valign="top" class="popupBg">
+						<table cellpadding="0" cellspacing="0" width="100%" border="0">
+							<tr>
+								<td class="popupHeader">Transaction Confirmation</td>
+							</tr>
+							<tr>
+								<td>
+									<table cellpadding="4" cellspacing="0" width="100%">
+										<tr>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td style="text-align: center; height: 50px;"><b>Are
+													you sure you want to complete this transaction?</b></td>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="popupFooter">
+									<table cellpadding="0" cellspacing="0" align="right">
+										<tr>
+											<td colspan="2">
+												<div class="buttonwrapper">
+													<a
+														href="javascript:submitform('admin/agencyTerminationList.html','agencyTerminationStep2.submit','','');"
+														onclick="closePopUp('transferDiv');" class="ovalbutton"><span>OK</span>
+													</a> <a href="#" onclick="closePopUp('transferDiv');"
+														class="ovalbutton"><span>Cancel</span> </a>
+												</div>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td width="27px" valign="top" style="background-color: none;">
+						<a href="#" onclick="closePopUp('transferDiv')"> <img
+							src="images/close.png" />
+					</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div id="popupApproved" style="width: 500px;">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td valign="top" class="popupBg">
+						<table cellpadding="0" cellspacing="0" width="100%" border="0">
+							<tr>
+								<td class="popupHeader">Approve Transaction Confirmation</td>
+							</tr>
+							<tr>
+								<td>
+									<table cellpadding="4" cellspacing="0" width="100%">
+										<tr>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td style="text-align: center; height: 50px;"><b>Are
+													you sure you want to approve this transaction?</b></td>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="popupFooter">
+									<table cellpadding="0" cellspacing="0" align="right">
+										<tr>
+											<td colspan="2">
+												<div class="buttonwrapper">
+													<a
+														href="javascript:submitform('admin/agencyTerminationList.html','agencyTerminationStep2.approved','','');"
+														onclick="closePopUp('popupApproved');" class="ovalbutton"><span>OK</span>
+													</a> <a href="#" onclick="closePopUp('popupApproved');"
+														class="ovalbutton"><span>Cancel</span> </a>
+												</div>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td width="27px" valign="top" style="background-color: none;">
+						<a href="#" onclick="closePopUp('transferDiv')"> <img
+							src="images/close.png" />
+					</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div id="popupDisapproved" style="width: 500px;">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td valign="top" class="popupBg">
+						<table cellpadding="0" cellspacing="0" width="100%" border="0">
+							<tr>
+								<td class="popupHeader">Disapprove Transaction Confirmation</td>
+							</tr>
+							<tr>
+								<td>
+									<table cellpadding="4" cellspacing="0" width="100%">
+										<tr>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td style="text-align: center; height: 50px;"><b>Are
+													you sure you want to disapprove this transaction?</b></td>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="popupFooter">
+									<table cellpadding="0" cellspacing="0" align="right">
+										<tr>
+											<td colspan="2">
+												<div class="buttonwrapper">
+													<a
+														href="javascript:submitform('admin/agencyTerminationList.html','agencyTerminationStep2.disapproved','','');"
+														onclick="closePopUp('popupDisapproved');" class="ovalbutton"><span>OK</span>
+													</a> <a href="#" onclick="closePopUp('popupDisapproved');"
+														class="ovalbutton"><span>Cancel</span> </a>
+												</div>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td width="27px" valign="top" style="background-color: none;">
+						<a href="#" onclick="closePopUp('transferDiv')"> <img
+							src="images/close.png" />
+					</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="deleteDocument">
+			<!-- Modal -->
+			<div class="modal fade modal_popup">
+				<div class="modal-dialog modal-dialog-width_350">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">
+								<a id="agencyTerminationStep1_close" href="#" class="close"
+									onclick="closePopUp('deleteDocument')"> <img
+									src="images/close.png" />
+								</a> Delete Document
+							</h4>
+						</div>
+						<div class="modal-body">
+							<div class="modal-body-scroll popup_small_height">
+								<span class="delete_ico icons">#space#</span> Are you sure you
+								want to delete this item?
+							</div>
+						</div>
+						<div class="modal-footer">
+							<div class="buttonwrapper">
+								<a onclick="closePopUp('deleteDocument');" id="agencyTerminationStep1_yes"
+									href="javascript:callAjaxDelete('attachmentDiv');"
+									class="ovalbutton"><span>Yes</span> </a> <a href="#"  id="agencyTerminationStep1_no"
+									onclick="clean();closePopUp('deleteDocument');"
+									class="ovalbutton"><span>No</span> </a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Modal End -->
+			
+		</div>
+		<div class="container-fluid bootstrap-node-1">
+			<div class="tableWidth">
+				<!---------Header Start---------->
+				<header>
+					<span id="#Include:carrier/carrierHeader.html#"></span>
+				</header>
+				<!---------Header End---------->
+
+				<div class="bgmain">
+					<!---------Menu Level 1 Start---------->
+					<nav class="menu-level-1 tab">
+						<span id="#Include:admin/adminTabs.html#"></span>
+					</nav>
+					<!---------Menu Level 1 End---------->
+
+					<!---------Menu Level 2 Start---------->
+					<nav class="menu-level-2">
+						<span id="#Include:admin/adminTabs2.html#"></span>
+					</nav>
+					<!---------Menu Level 2 End---------->
+
+					<article class="content sidebar-content">
+						<!---------Sidebar Start---------->
+						<div id="sidebar_left_security_admin" class="sideBar_admin">
+							<span id="#Include:admin/adminSideBar.html#"></span>
+						</div>
+						<!---------Sidebar End---------->
+
+						<!---------Body content Start---------->
+						<div class="panel-body-wraper" id="tdContent">
+							<!---------page Level msg Start---------->
+							<div class="errorMsgAlign clear-both">
+									<div id="error_pageError" class="error"></div>
+									<div id="ajax_error_pageError" class="error"></div>
+							</div>
+							<div class="ConfirmationAlign clear-both"></div>
+							<!---------page Level msg End---------->
+							<table cellpadding="0" cellspacing="0" width="100%"
+								align="center">
+								<tr>
+									<td align="center">
+										<div id="error_terminationError" class="error"></div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<table cellpadding="0" cellspacing="0" width="100%">
+											<tr>
+												<td>
+													<table width="100%" border="0" cellpadding="0"
+														cellspacing="0">
+														<tr>
+															<td>
+																<fieldset class="fieldset_Level_1">
+																	<legend>
+																		<span id="agencyterminationlabel">Agency
+																			Termination</span>
+																	</legend>
+																	<table cellpadding="0" cellspacing="0" width="100%">
+																		<tr>
+																			<td>
+																				<table width="100%" border="0" cellpadding="0"
+																					cellspacing="0">
+																					<tr>
+																						<td>&nbsp;</td>
+																					</tr>
+																					<tr>
+																						<td><span>The following <span
+																								id="locationBartablabel"></span>(s) will be
+																								terminated :
+																						</span></td>
+																					</tr>
+																					<tr>
+																						<td class="spacerTd5">&nbsp;</td>
+																					</tr>
+																					<tr>
+																						<td>
+																							<div>
+																								<div id="ajax_sorting">
+																									<table cellpadding="0" cellspacing="0"
+																										width="100%"
+																										id="agencyTerminationStep2_list_1_0">
+																										<tr>
+																											<td>
+																												<table cellpadding="0" cellspacing="0"
+																													width="100%" class="gridTable">
+																													<tr
+																														id="agencyTerminationStep2_list_header_1_0">
+																														<td id="block_field_name"
+																															class="HeaderStyle" width="20%"><span
+																															id="entitytablabel">Agency Name</span>
+																															Name</td>
+																														<td id="block_field_Status"
+																															class="HeaderStyle" width="20%"><span
+																															id="entitytablabel">Agency</span> Status
+																														</td>
+																														<td id="agencyTerminationStep2_producer_code_security"
+																															class="HeaderStyle" width="20%">
+																															<span id="block_field_producer_code">
+																																<span
+																																	id="agencyTerminationStep2_producer_code_label">System
+																																	Code</span></span>
+																														</td>
+																														
+																														<td id="agencyTerminationStep2_obj_code_security"
+																															class="HeaderStyle" width="20%">
+																															<span id="block_field_obj_code">
+																																<span
+																																	id="agencyTerminationStep2_obj_code_label">National Code</span></span>
+																														</td>
+																														
+																														<td id="agencyTerminationStep2_city_security"
+																															class="HeaderStyle" width="20%">
+																															<span id="block_field_city">
+																																<span id="agencyTerminationStep2_city_label">City</span></span>
+																														</td>
+																														
+																														
+																														<td id="agencyTerminationStep2_state_security"
+																															class="HeaderStyle" width="20%">
+																															<span id="block_field_state">
+																																<span
+																																	id="agencyTerminationStep2_state_label">State</span></span>
+																														</td>
+																														
+																														<td id="agencyTerminationStep2_agency_code_security"
+																															class="HeaderStyle" width="20%">
+																															<span id="block_field_producer_number">
+																																<span
+																																	id="agencyTerminationStep2_agency_code_label">Agency
+																																	Code</span>
+																															</span>		
+																														</td>		
+																													</tr>
+																													<tr
+																														id="agencyTerminationStep2_list_data_1_0">
+																														<td id="block_field_name"></td>
+																														<td id="block_field_Status"></td>
+																														<td id="agencyTerminationStep2_producer_code_security">
+																															<span id="block_field_producer_code"/>
+																														</td>
+																														
+																														<td id="agencyTerminationStep2_obj_code_security">
+																															<span id="block_field_obj_code">
+																														</td>
+																														
+																														<td id="agencyTerminationStep2_city_security">
+																															<span id="block_field_city"></span>
+																														</td>
+																														<td id="agencyTerminationStep2_state_security">
+																															<span id="block_field_state"></span>
+																														</td>
+																														<td id="agencyTerminationStep2_agency_code_security">
+																															<span id="block_field_producer_number"/>
+																														</td>
+																													</tr>
+																												</table>
+																											</td>
+																										</tr>
+																										<tr>
+																											<td width="5%"></td>
+																										</tr>
+																										<tr>
+																											<td width="5%"></td>
+																										</tr>
+																									</table>
+																								</div>
+																							</div>
+																						</td>
+																					</tr>
+																					<tr id="agencyTerminationStep2_persons_grid_security">
+																						<td>&nbsp;</td>
+																					</tr>
+																					<tr id="agencyTerminationStep2_persons_grid_security">
+																						<td><span>The following <span
+																								id="individualfieldlabel">Contact</span>(s) will
+																								be terminated :
+																						</span></td>
+																					</tr>
+																					<tr id="agencyTerminationStep2_persons_grid_security">
+																						<td class="spacerTd5">&nbsp;</td>
+																					</tr>
+																					<tr id="agencyTerminationStep2_persons_grid_security">
+																						<td>
+																							<div>
+																								<table cellpadding="0" cellspacing="0"
+																									width="100%"
+																									id="agencyTerminationStep2_list_1_2">
+																									<tr>
+																										<td>
+																											<table cellpadding="0" cellspacing="0"
+																												width="100%" class="gridTable">
+																												<tr
+																													id="agencyTerminationStep2_list_header_1_2">
+																													<td class="HeaderStyle" width="3%" id="saveEvent">
+																														<span id="block_field_person_id" class="nonMandatory"> 
+																															<input type="checkbox" name="select_all" id="ajax_field_select_all" onclick="javascript:selectAllPersons('');javascript:ajaxpageblocklink('admin/agencyTerminationStep2.html','agencyTerminationStep2.refreshDivBasedOnSelectedContact','','','userAccessRefreshDiv');" /> 
+																														</span>
+																													</td>
+																													<td id="block_field_prdcr_last_name"
+																														class="HeaderStyle" width="10%">Last
+																														Name</td>
+																													<td id="block_field_prdcr_first_name"
+																														class="HeaderStyle" width="10%">
+																														First Name</td>
+																													<td id="block_field_contacttype"
+																														class="HeaderStyle" width="25%"><span
+																														id="contact_type_label">Contact
+																															Type</span></td>
+																													<td id="block_field_Status"
+																														class="HeaderStyle" width="10%"><span
+																														id="individualfieldlabel">Contact</span>
+																														Status</td>
+																													<td id="block_field_e_mail"
+																														class="HeaderStyle"><span id="email_businessaddress_label">Business Email</span></td>
+																													<td id="block_field_phone"
+																														class="HeaderStyle">Residence Phone</td>
+																													<td id="block_field_extn"
+																														class="HeaderStyle">Extn</td>
+																												</tr>
+																												<tr id="agencyTerminationStep2_list_mom_data_1_2">
+																												     <td id="saveEvent">
+																														<span id="block_field_person_id">
+																															<input type="checkbox" id="ajax_field_person_id" name="person_id" 
+																																onclick="javascript:setGetMultiCheckboxValues('person_id','ajax_field_personids_csv','get');selectAllPersons(this);javascript:ajaxpageblocklink('admin/agencyTerminationStep2.html','agencyTerminationStep2.refreshDivBasedOnSelectedContact','','','userAccessRefreshDiv');"/>
+																																
+																														</span>
+																														
+																														
+																														
+																														
+																														
+																													</td>
+																													<td id="block_field_prdcr_last_name">
+																													</td>
+																													<td id="block_field_prdcr_first_name"></td>
+																													<td id="block_field_contacttype"></td>
+																													<td id="block_field_Status"></td>
+																													<td id="block_field_e_mail"></td>
+																													<td id="block_field_phone"></td>
+																													<td id="block_field_extn"></td>
+																												</tr>
+																											</table>
+																										</td>
+																									</tr>
+																									<tr>
+																										<td width="5%"></td>
+																									</tr>
+																									<tr>
+																										<td width="5%"></td>
+																									</tr>
+																								</table>
+																							</div>
+																						</td>
+																					</tr>
+																					<tr id="agencyTerminationStep2_agencycodes_grid_security">
+																						<td>&nbsp;</td>
+																					</tr>
+																					<tr id="agencyTerminationStep2_agencycodes_grid_security">
+																						<td><span>The following <span
+																								id="producernumberfieldlabel"></span>(s) will be
+																								terminated :
+																						</span></td>
+																					</tr>
+																					<tr id="agencyTerminationStep2_agencycodes_grid_security">
+																						<td class="spacerTd5">&nbsp;</td>
+																					</tr>
+																					<tr id="agencyTerminationStep2_agencycodes_grid_security">
+																						<td>
+																							<div>
+																								<table cellpadding="0" cellspacing="0"
+																									width="100%"
+																									id="agencyTerminationStep2_list_1_1">
+																									<tr>
+																										<td>
+																											<table cellpadding="0" cellspacing="0"
+																												width="100%" class="gridTable">
+																												<tr 
+																													id="agencyTerminationStep2_list_header_1_1">
+																													<td id="block_field_producer_number"
+																														class="HeaderStyle" width="20%"><span
+																														id="producernumberfieldlabel">Producer
+																															Code</span></td>
+																													<td id="block_field_producer_name"
+																														class="HeaderStyle" width="20%"><span
+																														id="producernumberfieldlabel">Producer
+																															Code</span> Description</td>
+																													<td id="block_field_Status"
+																														class="HeaderStyle" width="20%"><span
+																														id="producernumberfieldlabel">Producer
+																															Code</span> Status</td>
+																													<td id="block_field_producer_code"
+																														class="HeaderStyle" width="20%"><span
+																														id="agencyTerminationStep2_producer_code_label">System
+																															Code</span></td>
+
+																												<td id="agencyTerminationStep2_list_1_1_city_security" class="HeaderStyle" width="20%">
+																													<span id="block_field_city">
+																													 <span id="agencyTerminationStep2_list_1_1_city_label">City</span>
+																													</span>
+																												</td>
+
+																												<td id="agencyTerminationStep2_list_1_1_state_security" class="HeaderStyle" width="20%">
+																															<span id="block_field_state">
+																																<span id="agencyTerminationStep2_list_1_1_state_label">State</span>
+																															</span>
+																												</td>
+																														
+																														
+																														
+																												</tr>
+																												<tr
+																													id="agencyTerminationStep2_list_data_1_1">
+																													<td id="block_field_producer_number">
+																													</td>
+																													<td id="block_field_producer_name"></td>
+																													<td id="block_field_Status"></td>
+																													<td id="block_field_producer_code"></td>
+      																												<td id="agencyTerminationStep2_list_1_1_city_security">
+																													  <span id="block_field_city"></span>
+																												    </td>
+                                                                                                                    <td id="agencyTerminationStep2_list_1_1_state_security">
+																													<span id="block_field_state"></span>
+																												    </td>
+
+																											</tr>
+																											</table>
+																										</td>
+																									</tr>
+																									<tr>
+																										<td width="5%"></td>
+																									</tr>
+																									<tr>
+																										<td width="5%"></td>
+																									</tr>
+																								</table>
+																							</div>
+																						</td>
+																					</tr>
+
+																					<tr
+																						id="agencyTerminationStep2_users_grid_security">
+																						<td>&nbsp;</td>
+																					</tr>
+																					<tr
+																						id="agencyTerminationStep2_users_grid_security">
+																						<td><span>The following User(s) will
+																								be terminated : </span></td>
+																					</tr>
+																					<tr
+																						id="agencyTerminationStep2_users_grid_security">
+																						<td class="spacerTd5">&nbsp;</td>
+																					</tr>
+																					<tr
+																						id="agencyTerminationStep2_users_grid_security">
+																						<td>
+																							<div id="userAccessRefreshDiv">
+																								<table cellpadding="0" cellspacing="0"
+																									width="100%"
+																									id="agencyTerminationStep2_list_1_3">
+																									<tr>
+																										<td>
+																											<table cellpadding="0" cellspacing="0"
+																												width="100%" class="gridTable">
+																												<tr
+																													id="agencyTerminationStep2_list_header_1_3">
+																													<td class="HeaderStyle" width="3%" >
+																														<span id="block_field_person_user_detail_id" class="nonMandatory">
+																															<input type="checkbox" name="select_all_person_user" id="ajax_field_select_all_person_user" onclick="javascript:selectAllListItems('ajax_field_select_all_person_user','ajax_field_person_user_detail_id',this);" /> 
+																														</span>
+																													</td>
+																													<td id="block_field_name"
+																														class="HeaderStyle" width="25%">
+																														Contact Name</td>
+																													<td id="block_field_LOGIN_ID"
+																														class="HeaderStyle" width="10%">
+																														Login ID</td>
+																													<td id="block_field_e_mail"
+																														class="HeaderStyle"><span id="additional_email_address_label">Email Address</span></td>
+																													<td id="block_field_producer_number"
+																														class="HeaderStyle"><span
+																														id="producerlabel">Producer Code</span></td>
+																													<td id="block_field_delegate"
+																														class="HeaderStyle">Delegate</td>
+																													<td id="block_field_reason"
+																														class="HeaderStyle">Reason</td>
+																												</tr>
+																												<tr
+																													id="agencyTerminationStep2_list_data_1_3">
+																													<td id="block_field_person_user_detail_id">
+																														<span id="block_field_person_user_detail_id">
+																															<input type="checkbox" id="ajax_field_person_user_detail_id" name="person_user_detail_id" 
+																																onclick="javascript:setGetMultiCheckboxValues('person_user_detail_id','ajax_field_personUserDetailsId_csv','get');"/>
+																																
+																														</span>
+																													</td>
+																													<td id="block_field_name"></td>
+																													<td id="block_field_LOGIN_ID"></td>
+																													<td id="block_field_e_mail"></td>
+																													<td id="block_field_producer_number"></td>
+																													<td id="block_field_delegate"></td>
+																													<td id="block_field_reason"></td>
+																												</tr>
+																											</table>
+																										</td>
+																									</tr>
+																								</table>
+																							</div>
+																						</td>
+																					</tr>
+																					<tr id="agencyTerminationStep2_terminationletter_security">
+																						<td>&nbsp;</td>
+																					</tr>
+																					<tr id="agencyTerminationStep2_terminationletter_security">
+																						<td align="center">
+																							<div id="ajax_error_selectedTemplateType" class="error" />
+																							<div id="error_selectedTemplateType" class="error" />
+																						</td>
+																					</tr>	
+																					<tr id="agencyTerminationStep2_terminationletter_security" class="mendatoryInput">
+																						<td>
+																							<!-- <span id="agencyTerminationStep2_terminationletter_label">Termination Letter Template</span> -->
+																							<div class="mendatoryInput" style="width: 1000px;">
+														                                     	<ul class="div_checkbox div_checkbox3" id="agencyTerminationStep2_list_mom_1" style="padding-left: 1px;">
+																									<li id="agencyTerminationStep2_list_header_mom_1" style="display: none">
+																										<span class="tableinfoheader" id="block_field_contract_Template_Type_code" />
+															                                            <span class="tableinfoheader" id="block_field_contract_Template_Type_description" width="69" />
+																									</li>
+																									<li id="agencyTerminationStep2_list_mom_data_1">
+																										<div id="mom_child_data">
+																											<span id="agencyTerminationStep2_contract_Template_Type_code_security">
+																												<span id="block_field_contract_Template_Type_code">
+															                                                      <input type="checkbox" id="contract_Template_Type_code" name="contract_Template_Type_code"/>
+															                                                  	</span>
+																											</span>
+																											<span id="block_field_contract_Template_Type_description" />
+																										</div>
+																									</li>
+																								</ul>										
+														                                      </div>
+																						</td>
+																					</tr>
+																				</table>
+																				<section id="attachment_security">
+																					<div id="attachmentDivContentStart"></div>
+																					<div id="attachmentDiv">
+																						<span
+																							id="#Include:carrier/uploadDocument.html#"></span>
+																					</div>
+																					<div id="attachmentDivContentEnd"></div>
+																				</section>
+																			</td>
+																		</tr>
+																	</table>
+																</fieldset>
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="buttonwrapper0">
+											<a id="sendfor_esign_button_security"
+											fullid="page(page.page).sendfor_esign_button_security.sendfor_esign_button_label.sendfor_esign_button_security"
+												href="javascript:submitform('admin/agencyTerminationStep2.html','agencyTerminationStep2.agencyTerminationList3','','');"
+												class="ovalbutton"><span id="sendfor_esign_button_label">SEND FOR E-Signature</span> </a>
+											<a id="generate_ag_form_button_security"
+											fullid="page(page.page).generate_ag_form_button_security.generate_ag_form_button_label.generate_ag_form_button_security"
+												href="javascript:submitform('admin/agencyTerminationStep2.html','agencyTerminationStep2.agencyTerminationList4','','');"
+												class="ovalbutton"><span id="generate_ag_form_button_label">Generate AG-28 FORM</span> </a>
+											<a id="sendfor_esign_back_security"
+											fullid="page(page.page).sendfor_esign_back_security.sendfor_esign_back_label.sendfor_esign_back_security"
+												href="javascript:submitform('admin/agencyTerminationStep1.html','agencyTerminationStep2.agencyTerminationStep1','','');"
+												class="ovalbutton"><span id="sendfor_esign_back_label">Back</span> </a> 
+											<a id="agencyTerminationStep2_save_security"
+											fullid="page(page.page).agencyTerminationStep2_save_security.agencyTermination_save_label.agencyTerminationStep2_save_security"
+												href="javascript:submitform('admin/agencyTerminationList.html','agencyTerminationStep2.save','','');"
+												onclick="setGetMultiCheckboxValues('person_user_detail_id','ajax_field_personUserDetailsId_csv','get');"
+												class="ovalbutton"><span id="agencyTermination_save_label">Save</span> </a> 
+											<a id="agencyTerminationStep2_modify_security"
+											fullid="page(page.page).agencyTerminationStep2_modify_security.agencyTermination_modify_label.agencyTerminationStep2_modify_security"
+												href="javascript:submitform('admin/agencyTerminationList.html','agencyTerminationStep2.updateTerminationRecord','','');"
+												onclick="setGetMultiCheckboxValues('person_user_detail_id','ajax_field_personUserDetailsId_csv','get');"
+												class="ovalbutton"><span id="agencyTermination_modify_label">Modify</span> </a> 
+											<a id="agencyTerminationStep2_generateletter_security"
+												fullid="page(page.page).agencyTerminationStep2_generateletter_security.agencyTerminationStep2_generateletter_label.agencyTerminationStep2_generateletter_security"
+												onclick="setGetMultiCheckboxValues('contract_Template_Type_code','ajax_field_selected_producer_number_ids','get');"
+												href="javascript:submitform('admin/agencyTerminationStep2.html','agencyTerminationStep2.generateLetter','','');"
+												class="ovalbutton"><span id="agencyTerminationStep2_generateletter_label">Generate Letter</span> </a>
+											<a
+												id="agencyTerminationStep2_submit_security" href="#"
+												fullid="page(page.page).agencyTerminationStep2_submit_security.agencyTerminationStep2_submit_label.agencyTerminationStep2_submit_security"
+												onclick="javascript:showPopUp('transferDiv',400,300);"
+												class="ovalbutton"><span id="agencyTerminationStep2_submit_label">Submit</span> </a>
+											<a id="agencyTerminationStep2_sendforapproval_security" class="ovalbutton"
+												fullid="page(page.page).agencyTerminationStep2_sendforapproval_security.agencyTerminationStep2_sendforapproval_label.agencyTerminationStep2_sendforapproval_security"
+												onclick="javascript:setGetMultiCheckboxValues('contract_Template_Type_code','ajax_field_selected_producer_number_ids','get');setGetMultiCheckboxValues('person_user_detail_id','ajax_field_personUserDetailsId_csv','get');"
+												href="javascript:submitform('admin/agencyTerminationList.html','agencyTerminationStep2.sendForApproval','','');">
+					                        	<span id="agencyTerminationStep2_sendforapproval_label">Send For Approval</span>
+					                        </a>
+					                        <a id="agencyTerminationStep2_approve_security"
+											fullid="page(page.page).agencyTerminationStep2_approve_security.agencyTerminationStep2_save_label.agencyTerminationStep2_approve_security"
+												href="javascript:submitform('carrier/homeAction.html','agencyTerminationStep2.approved','','');"
+												class="ovalbutton"><span id="agencyTerminationStep2_save_label">Approve</span> </a> 
+											<a id="agencyTerminationStep2_disapprove_security"
+												fullid="page(page.page).agencyTerminationStep2_disapprove_security.agencyTerminationStep2_modify_label.agencyTerminationStep2_disapprove_security"
+												href="javascript:submitform('carrier/homeAction.html','agencyTerminationStep2.disapproved','','');"
+												class="ovalbutton"><span id="agencyTerminationStep2_modify_label">Disapprove</span> </a>
+											<a id="agencyTerminationStep2_decline_security"
+												fullid="page(page.page).agencyTerminationStep2_decline_security.agencyTerminationStep2_decline_label.agencyTerminationStep2_decline_security"
+												href="javascript:submitform('carrier/homeAction.html','agencyTerminationStep2.declined','','');"
+												class="ovalbutton"><span id="agencyTerminationStep2_decline_label">Decline</span> </a>
+												
+					                        <!-- <a id="agencyTerminationStep2_approve_security" class="ovalbutton"
+					                        	onclick="javascript:showPopUp('popupApproved',400,300);">
+					                        	<span id="agencyTerminationStep2_approve_label">Approve</span>
+					                        </a>
+					                        <a id="agencyTerminationStep2_disapprove_security" class="ovalbutton"
+												onclick="javascript:showPopUp('popupDisapproved',400,300);">
+					                        	<span id="agencyTerminationStep2_disapprove_label">Disapprove</span>
+					                        </a> -->	
+											<!-- <a
+																						id="showAgencyTerminationApprovedButton"
+																						href="javascript:submitform('carrier/homeAction.html','agencyTerminationStep2.approved','','');"
+																						class="ovalbutton"><span>Approved</span> </a> <a
+																						id="showAgencyTerminationDisapprovedButton"
+																						href="javascript:submitform('carrier/homeAction.html','agencyTerminationStep2.disapproved','','');"
+																						class="ovalbutton"><span>Disapproved</span> </a> <a
+																						id="showAgencyTerminationSendForApprovalButton"
+																						href="#"
+																						onclick="javascript:showPopUp('assignToDiv',400,300);"
+																						class="ovalbutton"><span>Send for
+																							Approval</span> </a> -->
+											<a id="sendfor_esign_cancel_security"
+											fullid="page(page.page).sendfor_esign_cancel_security.sendfor_esign_cancel_label.sendfor_esign_cancel_security"
+												href="javascript:submitform('admin/agencyTerminationList.html','agencyTerminationStep2.agencyTerminationList','','');"
+												class="ovalbutton"><span id="sendfor_esign_cancel_label">Cancel</span> </a>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<!---------Body content End---------->
+
+						<!---------Sidebar Start---------->
+						<div id="sidebar_right_security_admin" class="sideBar_admin">
+							<span id="#Include:admin/adminSideBarRight.html#"></span>
+						</div>
+						<!---------Sidebar End---------->
+
+					</article>
+				</div>
+				<!---------Footer Start---------->
+				<footer>
+					<span id="#Include:admin/adminFooter.html#"></span>
+				</footer>
+				<!---------Footer End---------->
+			</div>
+		</div>
+
+
+		<div class="calendar_widget" id="calendar_widget">
+			<iframe id="calendar_widget_iframe" name="calendar_widget_iframe"
+				src="calendar_widget.html" frameborder="0" />
+			</iframe>
+		</div>
+		<table id="agencyTerminationList_freeform_contextdata_999"
+			cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+					<input type="hidden" name="jsessionid" 
+					fullid="agencyTerminationList_freeform_contextdata_999(jsessionid_security.jsessionid_label).jsessionid_security.jsessionid_label.jsessionid"
+					id="ajax_field_jsessionid" /> 
+					<!-- <input type="hidden" name="Status" id="Status" /> 
+					<input type="hidden" name="workflow_user" id="workflow_user" /> -->
+					<input type="hidden" name="agencyTerminationQuestionsInputXml" 
+					fullid="agencyTerminationList_freeform_contextdata_999(agencyTerminationQuestionsInputXml_security.agencyTerminationQuestionsInputXml_label).agencyTerminationQuestionsInputXml_security.agencyTerminationQuestionsInputXml_label.agencyTerminationQuestionsInputXml"
+					id="ajax_field_agencyTerminationQuestionsInputXml" />
+					<input type="hidden" name="selected_producer_number_ids" 
+					fullid="agencyTerminationList_freeform_contextdata_999(selected_producer_number_ids_security.selected_producer_number_ids_label).selected_producer_number_ids_security.selected_producer_number_ids_label.selected_producer_number_ids"
+					id="ajax_field_selected_producer_number_ids" />
+					<input type="hidden" name="htmlSource" 
+					fullid="agencyTerminationList_freeform_contextdata_999(htmlSource_security.htmlSource_label).htmlSource_security.htmlSource_label.htmlSource"
+					id="htmlSource" />
+					<input type="hidden" name="from_object_id" 
+					fullid="agencyTerminationList_freeform_contextdata_999(from_object_id_security.from_object_id_label).from_object_id_security.from_object_id_label.from_object_id"
+					id="ajax_field_from_object_id" />
+					<input type="hidden" name="termination_log_id" 
+					fullid="agencyTerminationList_freeform_contextdata_999(termination_log_id_security.termination_log_id_label).termination_log_id_security.termination_log_id_label.termination_log_id"
+					id="ajax_field_termination_log_id" />
+					<input type="hidden" name="inet_eventid" 
+					fullid="agencyTerminationList_freeform_contextdata_999(inet_eventid_security.inet_eventid_label).inet_eventid_security.inet_eventid_label.inet_eventid"
+					id="ajax_field_inet_eventid" />
+					<input type="hidden" name="terminationStatus" 
+					fullid="agencyTerminationList_freeform_contextdata_999(terminationStatus_security.terminationStatus_label).terminationStatus_security.terminationStatus_label.terminationStatus"
+					id="ajax_field_terminationStatus" />
+					<input type="hidden" name="personids_csv" 
+					fullid="agencyTerminationList_freeform_contextdata_999(personids_csv_security.personids_csv_label).personids_csv_security.personids_csv_label.personids_csv"
+					id="ajax_field_personids_csv" />
+					<input type="hidden" name="personUserDetailsId_csv" 
+					fullid="agencyTerminationList_freeform_contextdata_999(personids_csv_security.personids_csv_label).personids_csv_security.personids_csv_label.personids_csv"
+					id="ajax_field_personUserDetailsId_csv" />
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

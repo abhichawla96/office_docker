@@ -92,12 +92,12 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 									<outputDirectory>${basedir}/src/main/webapp</outputDirectory>
 									<destFileName>Product.war</destFileName>
 									<includes>**</includes>
-									<excludes>temp.xml,css/**,images/**,js/impl/**,create.txt,WEB-INF/*,htmltoxmllog/keepme,**/ibatis/**,**/processflow.xml,XML/ProducerOne/*/impl,XML/ProducerOne/ibatis/maps/*,ProducerOneClient/*,XML/ProducerOneClient/ibatis/maps/*,XML/ProducerOne/applicationworkflow/*,foxsl/*,**/userbo/*/*,WEB-INF/classes/com/processor/TabsConfiguration.class</excludes>
+									<excludes>temp.xml,css/**,images/**,js/impl/**,create.txt,WEB-INF/*,htmltoxmllog/keepme,**/ibatis/**,**/processflow.xml,XML/ProducerOne/*/impl,XML/ProducerOne/ibatis/maps/*,ProducerOneClient/*,XML/ProducerOneClient/ibatis/maps/*,XML/ProducerOne/applicationworkflow/*,foxsl/*,emailTemplate.html,**/userbo/*/*,WEB-INF/classes/com/processor/TabsConfiguration.class</excludes>
 								</artifactItem>
 							</artifactItems>
 						</configuration>
 					</execution>
-				</executions>
+				</executions> 
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>

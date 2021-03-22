@@ -72,6 +72,13 @@
 				statuscomment="Signed" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding">
 			</status>
 		</event>
+		<!-- Approved after sign for Producer Registration for BMIC -new event added -->
+		<event name="signInvitationProducer" deltaind="I">
+			<status deltaind="I" name="signInvitationProducer" workflowstatus="Approved" workflowfunction="Public Submission" executionsequence="1"
+				statuscomment="Signed" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding">
+			</status>
+		</event>
+		
 		<event deltaind="M" name="sendInvitationToApproval" approverrole="SalesDirector">
 			<status name="sendInvitationToApproval" workflowstatus="Pending Review" workflowfunction="Public Submission" executionsequence="1"
 				statuscomment="comment" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding"
@@ -410,8 +417,8 @@
 				<businessobject deltaind="I" name="SendDocForESign" obj="com.userbo.integration.SendDocForESign"/>
 				</statusworkflow>
             </status>
-            <status deltaind="M" name="sendToSecondaryAgent" eval="addNewDocContractRule.isContractGeneratedForPhysical" workflowstatus="Pending Agency Setup" workflowfunction="Agency Setup" executionsequence="1"
-            	statuscomment="comment" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="agency_id" objecttype="Agency Setup" assignee="user_id">
+            <status deltaind="M" name="sendToSecondaryAgent" eval="addNewDocContractRule.isContractGeneratedForPhysical" workflowstatus="Sent for ESignature" workflowfunction="Contract" executionsequence="1"
+            	statuscomment="comment" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="agency_id" objecttype="Contract" assignee="user_id">
             <statusworkflow deltaind="I" name="sendInvitationToApproval" executionsequence="0">
 			<businessobject deltaind="I" name="SendDocForESign" obj="com.userbo.integration.SendDocForESign"/>
 			</statusworkflow>
@@ -764,8 +771,12 @@
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				approver="workflow_user" forward="agencyFunctions">
 			</status>
-			<status name="approveAgencyFunction" workflowstatus="Approved" workflowfunction="Agency Function" executionsequence="1"
+			<status deltaind="D" name="approveAgencyFunction" workflowstatus="Approved" workflowfunction="Agency Function" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function" assignee="user_id"
+				forward="agencyFunctions" isapproval="Y">
+			</status>
+			<status deltaind="I" name="approveAgencyFunction1" workflowstatus="Approved" workflowfunction="Agency Function" executionsequence="1"
+				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				forward="agencyFunctions" isapproval="Y">
 			</status>
 			<approver deltaind="D" name="approver1" status="sendForApprovalAgencyFunction" executionsequence="0"></approver>
