@@ -545,4 +545,6 @@
 <tabsconfigurationresource deltaind="I" name="mergerSellingPhysicalLocation2_generateLetter_adminFooterInclude" value="N"/>
 <tabsconfigurationresource deltaind="M" accesslevel="1" name="agencyListPublicSubmitNInvitation_resend_invitation_security" description="agencyListPublicSubmitNInvitation_resend_invitation_security"/>
 
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="hide_show_prospect_section_security" name="hide_show_prospect_section_security"/>
+ 
 </tabsconfiguration>
