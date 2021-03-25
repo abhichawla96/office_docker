@@ -786,8 +786,8 @@
 			<userdefinedaccesslevel accesstype="0" />
 		</userdefined>
 	</protectedresource>
-	
-<protectedresource deltaind="M" defaultaccesstype="1" description="agencyListPublicSubmitNInvitationEdit_narrative_info_section_security" override="Y" uniquename="agencyListPublicSubmitNInvitationEdit_narrative_info_section_security">
+	<!--  change request-->
+<protectedresource deltaind="M" defaultaccesstype="0" description="agencyListPublicSubmitNInvitationEdit_narrative_info_section_security" override="Y" uniquename="agencyListPublicSubmitNInvitationEdit_narrative_info_section_security">
 <userdefined deltaind="I" executionsequence="0"
 			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
 			<userdefinedaccesslevel accesstype="0" />

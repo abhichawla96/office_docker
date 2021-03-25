@@ -179,8 +179,8 @@
  <!-- Bug id : 0076 -->
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="agencyListEdit_general_chk_agency_comparativerate_security" name="agencyListEdit_general_chk_agency_comparativerate_security"/>
  
- 
- <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide show agencyListPublicSubmitNInvitationEdit_narrative_info_section_security in agencyListPublicSubmitNInvitationEdit.html" name="agencyListPublicSubmitNInvitationEdit_narrative_info_section_security"/>
+ <!--  change request-->
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide show agencyListPublicSubmitNInvitationEdit_narrative_info_section_security in agencyListPublicSubmitNInvitationEdit.html" name="agencyListPublicSubmitNInvitationEdit_narrative_info_section_security"/>
  
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="agency_bulk_license_states_security" name="bulkEntityAppointNew_agency_bulk_license_states_security"/>
  
