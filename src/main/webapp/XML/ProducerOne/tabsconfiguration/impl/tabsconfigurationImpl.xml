@@ -311,7 +311,7 @@
    <tabsconfigurationresource deltaind="M" description="Show/Hide entityOtherInformation_primary_company_usage_security" name="entityOtherInformation_primary_company_usage_security" accesslevel="1"/>
  <tabsconfigurationresource deltaind="M" description="Show/Hide entityOtherInformation_current_advertising_methods_security" name="entityOtherInformation_current_advertising_methods_security" accesslevel="1"/>
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="market_information_commercial_lines_security in market information screen" name="market_information_commercial_lines_security"/>
- <tabsconfigurationresource deltaind="M" description="Show/Hide entityOtherInformation_narrative_info_section_security" name="entityOtherInformation_narrative_info_section_security" accesslevel="1"/>
+ <tabsconfigurationresource deltaind="M" description="Show/Hide entityOtherInformation_narrative_info_section_security" name="entityOtherInformation_narrative_info_section_security" accesslevel="0"/><!-- change request -->
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="market_information_production_commitment_security information screen" name="market_information_production_commitment_security"/>
  <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show entityOtherInformation_life_volume_security" name="entityOtherInformation_life_volume_security"/>
  <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show entityOtherInformation_pl_volume_security" name="entityOtherInformation_pl_volume_security"/>
