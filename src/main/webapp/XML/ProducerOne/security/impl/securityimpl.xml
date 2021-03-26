@@ -1043,5 +1043,54 @@
     </businessrole>
   </protectedresource>
   
+  
+  <!-- hide background check buttons -->
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show under review button on entity bg inquiry page" operator="and" uniquename="entitybackgroundlist_underreview">
+    <businessrole deltaind="M" roleid="PrimaryMarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <userdefined deltaind="M" executionsequence="0" ruleid="WorkflowRule.isShowReviewButtonBackgroundCheck">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+     <userdefined deltaind="M" executionsequence="1" ruleid="WorkflowRule.isShowBgCheckReviewButton">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+  </protectedresource>
+  
+  
+    <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show pass button on entity bg inquiry page" operator="and" uniquename="entitybackgroundlist_pass">
+    <businessrole deltaind="M" roleid="PrimaryMarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <userdefined deltaind="M" executionsequence="0" ruleid="WorkflowRule.isShowPassFailButtonBackgroundCheck">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+    <userdefined deltaind="M" executionsequence="1" ruleid="WorkflowRule.isShowBgCheckPassButton">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+  </protectedresource>
+  
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show fail button on entity bg inquiry page" operator="and" uniquename="entitybackgroundlist_fail">
+    <businessrole deltaind="M" roleid="PrimaryMarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <userdefined deltaind="M" executionsequence="0" ruleid="WorkflowRule.isShowPassFailButtonBackgroundCheck">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+    <userdefined deltaind="M" executionsequence="1" ruleid="WorkflowRule.isShowBgCheckFailButton">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+  </protectedresource>
+  
 </security>  
 
