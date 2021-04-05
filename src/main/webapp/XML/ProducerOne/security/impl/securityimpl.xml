@@ -1092,5 +1092,113 @@
     </userdefined>
   </protectedresource>
   
+  <!-- Territory Manager Role Configuration -->
+  <protectedresource description="send_invite_page_level_paradigm" uniquename="send_invite_page_level_paradigm">    
+    <businessrole deltaind="M" roleid="MarketingRep">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>   
+  </protectedresource>
+  
+  <!--Territory Manager Agency Code Association  -->
+  
+  <protectedresource defaultaccesstype="0" description="Hide Producer Code assoication Tab" operator="AND" uniquename="producer_code_association_security">
+    <businessrole deltaind="M" roleid="MarketingRep">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>   
+  </protectedresource>
+  
+  <!-- Territory Manager Associated Agency -->
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide Agent associated agencies Tab for AgencyAdmin and Agent roles" operator="AND" uniquename="hidePersonAssociatedAgencyTab">
+    <businessrole deltaind="M" roleid="MarketingRep">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>  
+</protectedresource>
+  
+  <!-- Product Validation Link for Territory Manager -->
+  
+  <protectedresource defaultaccesstype="0" description="Hide/Show producer number validations sub tab" operator="AND" uniquename="isShowProducerValidationTab">
+    <businessrole deltaind="M" roleid="MarketingRep">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>  
+  </protectedresource>
+  
+  <!-- Hiding Profile Tab for Territory Manager -->
+  
+  <protectedresource defaultaccesstype="0" description="Hide/Show profile tab" operator="OR" uniquename="agency_profile_tab_security">
+    <businessrole deltaind="M" roleid="MarketingRep">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+  <!-- User Details Link Read only for Territory Manager -->
+  
+  <protectedresource defaultaccesstype="1" description="contact_spinn_security" operator="AND" uniquename="contact_spinn_security">
+    <businessrole deltaind="M" roleid="MarketingRep">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+  <!-- Hiding Gateway Transactions for Territory Manager -->
+  
+  <protectedresource defaultaccesstype="0" description="Hide/show admin gateway transactions tab" uniquename="adminTabs_gatewaytransactions"> 
+    <businessrole deltaind="M" roleid="MarketingRep">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+  <!-- Pass Fail Button in BG Check -->
+
+<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show fail button on agent bg inquiry page" operator="and" uniquename="agentbackgroundlist_fail">
+	    <businessrole deltaind="M" roleid="PrimaryMarketingAssistant">
+	      <roleaccesslevel accesstype="0"/>
+	    </businessrole>
+	    <businessrole deltaind="M" roleid="MarketingAssistant">
+	      <roleaccesslevel accesstype="0"/>
+	    </businessrole>
+	    <userdefined deltaind="M" executionsequence="0" ruleid="WorkflowRule.isShowPassFailButtonBackgroundCheck">
+	      <userdefinedaccesslevel accesstype="0"/>
+	    </userdefined>
+	    <userdefined deltaind="M" executionsequence="1" ruleid="WorkflowRule.isShowBgCheckFailButton">
+	      <userdefinedaccesslevel accesstype="0"/>
+	    </userdefined>
+	</protectedresource>
+	
+	
+<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show pass button on agent bg inquiry page" operator="and" uniquename="agentbackgroundlist_pass">
+    <businessrole deltaind="M" roleid="PrimaryMarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <userdefined deltaind="M" executionsequence="0" ruleid="WorkflowRule.isShowPassFailButtonBackgroundCheck">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+    <userdefined deltaind="M" executionsequence="1" ruleid="WorkflowRule.isShowBgCheckPassButton">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+  </protectedresource>
+  
+<!-- Hide Add Cyber Liability Button -->
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide/Show Add Cyber Liability Button" uniquename="1CyberLiability_add_CyberLiability_security">
+    <businessrole roleid="MarketingRep">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+ </protectedresource>
+ 
+<!-- Hide Add New Contact Quick Link -->
+ <protectedresource deltaind="I" defaultaccesstype="1" description="Hide/Show Add New Contact Quick Link" uniquename="addNewContact_quicklink_security">
+    <businessrole roleid="MarketingRep">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+ </protectedresource>
+ 
+ <!-- Hide Initiate New Agency Function Button -->
+ <protectedresource deltaind="I" defaultaccesstype="1" description="Hide/Show Initiate New Agency Function Button" uniquename="initiate_agency_functions_security">
+    <businessrole roleid="MarketingRep">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+ </protectedresource>
 </security>  
 
