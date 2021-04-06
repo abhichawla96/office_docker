@@ -369,4 +369,7 @@
 	  <!-- Market info new section -->
   
   
+  <!-- blocker issue- review screen  -->  
+  <field deltaind="M" id="agencyListPublicSubmitNInvitationEdit_narrative_kit_delivery" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" name="kit_delivery" isrequired="N" labelkey="agencyListPublicSubmitNInvitationEdit_narrative_kit_delivery_security" tabsconfigurationresourcename="agencyListPublicSubmitNInvitationEdit_narrative_kit_delivery_security" protectedresourceuniquename="agencyListPublicSubmitNInvitationEdit_narrative_kit_delivery_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
+  
  </fields>
