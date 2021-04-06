@@ -547,4 +547,11 @@
 
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="hide_show_prospect_section_security" name="hide_show_prospect_section_security"/>
  
+ <!-- Show Cyber Liability Carrier Name -->
+ <tabsconfigurationresource deltaind="M" accesslevel="1" description="Agency_declarationCyberLiability_security" name="Agency_declarationCyberLiability_security"/>
+ 
+ <!-- Hiding Comment and Question -->
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="agencyListEdit_cyber_liability_eo_claims_security" name="agencyListEdit_cyber_liability_eo_claims_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="cyber_liability_eo_claims_idDiv" name="cyber_liability_eo_claims_idDiv"/>
+ 
 </tabsconfiguration>
