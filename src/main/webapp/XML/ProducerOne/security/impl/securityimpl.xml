@@ -1237,5 +1237,18 @@
     </userdefined>
   </protectedresource>
   
+    <!-- Changes to make optional for DC  -->
+  <protectedresource deltaind="I" defaultaccesstype="1" description="agencyFunctions_selectlettermandatory_security" uniquename="selectlettermandatory_security">
+    	<userdefined  ruleid="ProducerOneRule.isFunctionDC" executionsequence="0">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+  </protectedresource>
+  
+  <protectedresource deltaind="I" defaultaccesstype="0" description="agencyFunctions_selectletternonmandatory_security" uniquename="selectletternonmandatory_security">
+    	<userdefined  ruleid="ProducerOneRule.isFunctionDC" executionsequence="0">
+			<userdefinedaccesslevel accesstype="1" />
+		</userdefined>
+  </protectedresource>
+  
 </security>  
 

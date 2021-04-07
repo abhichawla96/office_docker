@@ -1,0 +1,10 @@
+<evalrules project="ProducerOne">
+  <ruleset name="AgencyFunctionsRule">
+  <!-- Changes display generate letter section for DC  -->
+    <rule id="isShowGenerateLetterButtonOnAgencyFunction" deltaind="M" expression="orCondition(isEqual(:selectFunctionType_code,functionAS),orCondition(isEqual(:selectFunctionType_code,functionRS),orCondition(isEqual(:selectFunctionType_code,functionCAC),orCondition(isEqual(:selectFunctionType_code,functionCL),isEqual(:selectFunctionType_code,functionDC)))));"  
+ method="isShowGenerateLetterButtonOnAgencyFunction" />
+ 
+ <rule id="isShowTemplateAndDocumentForAgencyFunction" deltaind="M" expression="andCondition(call_rule(AgencyFunctionsRule.isShowGenrateLetterForAgencyAdmin),orCondition(isEqual(:selectFunctionType_code,functionCAC),orCondition(isEqual(:selectFunctionType_code,functionCL),isEqual(:selectFunctionType_code,functionDC))));"
+method="isShowTemplateAndDocumentForAgencyFunction" />
+  </ruleset>
+</evalrules>

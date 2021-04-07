@@ -30,6 +30,12 @@
 	  		</workflow>
 	  		
 	  		<workflow deltaind="M" name="generateLetter" seq="1">
+	  		<!-- Store Procedure for DC change request -->
+	  		<storedprocedureoperation deltaind="I" dbspname="getDataForDeactivateContact_p"  executionsequence="0" id="getDataForDeactivateContact_p" metaobject="person" name="getDataForDeactivateContact_p" operation="3">
+             <parameteroperation indexno="0" mode="IN" property="toBeProcessed_agent_id" seq="0"/>
+             <resultsetoperation indexno="1" mappingclass="java.util.HashMap" seq="0"/>
+            </storedprocedureoperation>
+                        
 	    		<function executionsequence="0" functionid="generateLetterFromTemplate" name="generateLetterFromTemplate" parameters="context,selectedTemplateType,uploadPopup_list_1,inDocCategory,outDocCategory,currentcontext"/>
 	    		<function executionsequence="1" functionid="generateRequestXml" name="generateRequestXml" parameters="context,:fieldsList,PAGEDATAXML"/>
 	    		<!-- <document name="generateLetterFromTemplate" method="generatetolist" templateinput="selected_producer_number_ids" datafields="AgencyAddresType,AgentAddresType,reason_id,person_id,user_id,termination_date"
