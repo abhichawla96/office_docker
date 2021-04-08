@@ -620,6 +620,13 @@
           <resultsetoperation indexno="1" mappingclass="java.util.HashMap"/>
         </storedprocedureoperation>
       </workflow>
+      
+      <workflow deltaind="I" name="autoGenerateSubProdCodes" seq="14">
+        <storedprocedureoperation dbspname="insert_sub_producer_code_p" eval="ProducerOneRule.isInetErrorListEmpty" executionsequence="0" id="insert_sub_producer_code_p" metaobject="sub_producer_association" name="insert_sub_producer_code_p" operation="1">
+          <parameteroperation indexno="1" mode="IN" property="producer_number_id" seq="1"/>
+		  <resultsetoperation indexno="1" mappingclass="java.util.HashMap"/>
+        </storedprocedureoperation>
+      </workflow>
 
     </action>
     <action name="refreshState">
