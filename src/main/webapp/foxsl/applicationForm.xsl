@@ -5827,7 +5827,7 @@
 		</fo:block>
 
 		<xsl:if test="response/signature_acceptance_security='Y'">
-			<fo:block margin-top="15mm">
+			<fo:block margin-top="160mm">
 				<fo:table border="0.0pt solid black">
 					<fo:table-column />
 					<fo:table-column />
@@ -5848,7 +5848,7 @@
 									best of my knowledge.
 									I understand that my appointment with
 									<xsl:value-of select="response/clientName"></xsl:value-of>
-									Insurance Group is based upon the accuracy of this information
+									is based upon the accuracy of this information
 									and the results of a background report.
 								</fo:block>
 							</fo:table-cell>
@@ -5883,7 +5883,7 @@
 						</fo:table-row>
 						<fo:table-row>
 							<fo:table-cell number-columns-spanned="4">
-								<fo:block font-size="10px" margin-top="2mm">
+								<fo:block font-size="10px" margin-top="8mm">
 								</fo:block>
 							</fo:table-cell>
 						</fo:table-row>
