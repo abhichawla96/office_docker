@@ -1317,5 +1317,164 @@
     </businessrole>
   </protectedresource>
   
+  <!-- New Changes 14-4-2021 -->
+  
+  <!-- Hierarchy Location -->
+   <protectedresource defaultaccesstype="0" description="hide/Show location hierarchy tab" operator="OR" uniquename="location_hierarchy_old_security">
+    <userdefined deltaind="M" executionsequence="3" ruleid="WorkflowRule.isOnboardingFlowFound">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    <userdefined deltaind="M" executionsequence="1" ruleid="ProducerOneRule.isAddNewLocationFlagTrue">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    <userdefined deltaind="M" executionsequence="0" ruleid="ProducerOneRule.checkIsAgencyIdEmpty">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+  </protectedresource>
+  
+  <!-- Hierarchy Network -->
+  <protectedresource description="Hide Show Cluster Hierarchy based on Agency Cluster Value" uniquename="cluster_hierarchy_security">
+    <userdefined deltaind="M" executionsequence="0" ruleid="ProducerOneRule.checkAgencyClusterValueNot">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+  </protectedresource>
+  
+  <!-- Hierarchy Compliance -->
+  <protectedresource uniquename="compliance_hierarchy_security" operator="OR" description="Hide/show Compliance Hierarchy tab">
+    <userdefined deltaind="M" ruleid="ProducerOneRule.isAddNewLocationFlagTrue" executionsequence="1">
+      <userdefinedaccesslevel accesstype="1" />
+    </userdefined>
+    <userdefined deltaind="M" ruleid="ProducerOneRule.checkIsAgencyIdEmpty" isencrypt="N" executionsequence="0">
+      <userdefinedaccesslevel accesstype="1" />
+    </userdefined>
+  </protectedresource>
+  
+  <!-- Compensation Links -->
+  <protectedresource defaultaccesstype="0" description="Hide/show commission schedule sub tab in admin" uniquename="adminTabs2_commissionSchedule_security">
+    <businessrole deltaind="M" roleid="accountantadmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="compensationanalyst">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="CarrierAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="accountinganalyst">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="MarketingRep">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show ccb schedule sub tab in admin" uniquename="adminTabs2_incentive_schedule_security"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show adminTabs2_campaign_schedule_security" uniquename="adminTabs2_campaign_schedule_security"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show adminTabs2_move_schedule_security" uniquename="adminTabs2_move_schedule_security"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show adminTabs2_change_incentive_eligibility_security" uniquename="adminTabs2_change_incentive_eligibility_security"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show adminTabs2_change_attachSchedule_security" uniquename="adminTabs2_change_attachSchedule_security"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show adminTabs2_change_whatifAnalysis_security" uniquename="adminTabs2_change_whatifAnalysis_security"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show commission acra schedule sub tab in admin" uniquename="adminTabs2_acrascheduletab">
+  </protectedresource>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show commission acra outout sub tab in admin" uniquename="adminTabs2_acrasoutputtab">
+  </protectedresource>
+  
+  <protectedresource defaultaccesstype="0" description="Hide/show commission release statements sub tab in admin" uniquename="adminTabs2_releasestatementtab">
+    <businessrole deltaind="M" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+  <!-- Dashboard Request List -->
+  <protectedresource deltaind="M" defaultaccesstype="0" description="show/hide requests tab on home action" uniquename="homeAction_requests_security"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show Agency Termination request link on dashboard" uniquename="dashboard_agencytermination_security"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceAgencyApplicable"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceProducerApplicable"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceENOApplicable_security"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceDocW9Applicable_security"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show request individual transfer link on dashboard" uniquename="isDashboardRequestIndividualTransfer"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show request wholesale transfer link on dashboard" uniquename="isDashboardRequestWholesaleTransfer"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show Add Bank Information request link on dashboard" uniquename="isAddUpdateSelfServiceBankInformationApplicable"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceAgentApplicable"/>
+  
+  <!-- Test -->
+  <protectedresource deltaind="I" defaultaccesstype="0" description="show/hide Add Existing Agency to Cluster" uniquename="isAddExistingAgencyToClusterForSelfService_security"/>
+  
+  <!-- Hiding Report from Producer Compliance -->
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show general_recruitmentDataLog_report_security" uniquename="general_recruitmentDataLog_report_security"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show general_actual_plan_security" uniquename="general_actual_plan_security"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show general_isShowUnderWritersReportLink" uniquename="general_isShowUnderWritersReportLink"/> 
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show general_diaryConversationListingReportLink" uniquename="general_diaryConversationListingReportLink"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show general_isShowExternalSystemReportLink" uniquename="general_isShowExternalSystemReportLink"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show general_isShowContactExternalSystemReportLink" uniquename="general_isShowContactExternalSystemReportLink"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show general_AgenciesWithBillingDetailsReportGeneral_security" uniquename="general_AgenciesWithBillingDetailsReportGeneral_security"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show general_billing_distribution_report_security" uniquename="general_billing_distribution_report_security"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show general_showAgencyValidationReport" uniquename="general_showAgencyValidationReport"/> 
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show general_lexisNexis_notices_report_security" uniquename="general_lexisNexis_notices_report_security"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show general_lexi_nexis_notices_report_security" uniquename="general_lexi_nexis_notices_report_security"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show general_marketing_call_report_security" uniquename="general_marketing_call_report_security"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show general_premium_tax_information_report_listing_report_security" uniquename="general_premium_tax_information_report_listing_report_security"/> 
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show general_agency_codes_on_probation_report_security" uniquename="general_agency_codes_on_probation_report_security"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show general_list_of_transfers_report_security" uniquename="general_list_of_transfers_report_security"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show general_state_appointments_with_no_validation_report_security" uniquename="general_state_appointments_with_no_validation_report_security"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show general_isShowAgencieByTerritoryReportLink" uniquename="general_isShowAgencieByTerritoryReportLink"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show general_isPolicyAppointmentListingTrue" uniquename="general_isPolicyAppointmentListingTrue"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show general_list_of_underwriters_report_security" uniquename="general_list_of_underwriters_report_security"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show general_list_all_agency_codes_report_security" uniquename="general_list_all_agency_codes_report_security"/>
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show general_ContactsWithNoBackgroundCheckReport_security" uniquename="general_ContactsWithNoBackgroundCheckReport_security"/>
+  
+  
+  <!-- Hiding Payment tab -->
+  <protectedresource defaultaccesstype="0" description="Hide/show admin payment tab" uniquename="adminTabs_paymenttab">
+    <businessrole deltaind="M" roleid="CarrierAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  	<businessrole deltaind="M" roleid="accountinganalyst">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="acturial">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
 </security>  
 

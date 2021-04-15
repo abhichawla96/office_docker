@@ -554,4 +554,21 @@
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="agencyListEdit_cyber_liability_eo_claims_security" name="agencyListEdit_cyber_liability_eo_claims_security"/>
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="cyber_liability_eo_claims_idDiv" name="cyber_liability_eo_claims_idDiv"/>
  
+ <!-- Hiding Report from Producer Compliance 14/04/2021 -->
+ <tabsconfigurationresource deltaind="M" accesslevel="0" name="isShowReportsOnAgencyAdminDashboard"/>
+ 
+ <!-- Hiding Other Report Tabs -->
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide Show Adhoc report" name="showAdhocReport"/>
+ 
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide Show WhatifAnalysis report" name="showWhatifAnalysisReport"/>
+ 
+ <!-- Test -->
+ <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide Show Plas report" name="plasreports_tab_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide Show Compensation report" name="compensationreports_tab_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide Show Relationship report" name="relationshipreports_tab_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide Show Performance report" name="performancereports_tab_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide Show Audit report" name="auditreports_tab_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide Show Bonus report" name="ccbreports_tab_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide Show Commission report" name="commissionreports_tab_security"/>
+ 
 </tabsconfiguration>
