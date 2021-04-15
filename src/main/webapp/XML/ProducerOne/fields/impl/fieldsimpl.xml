@@ -309,7 +309,7 @@
   
   <!-- Market info new section -->
   <field deltaind="I" isextendedfield="Y" name="co_op_ad_dollar_spent" screen="carrier/entityOtherInformation.html" objectcolumn="agency_id" section="entityOtherInformation_co_op_ad_freeform_contextdata_1" displaytype="text" 
-	isrequired="N" labelkey="co_op_ad_dollar_spent_label" labeldesc="Co-Op Advertising dollar amount spent YTD" accesslevel="1" tabsconfigurationresourcename="co_op_ad_dollar_spent_security" mappedto="f10"
+	isrequired="N" labelkey="co_op_ad_dollar_spent_label" labeldesc="Co-Op Advertising dollar amount spent YTD" accesslevel="1" tabsconfigurationresourcename="co_op_ad_dollar_spent_security" mappedto="f10" format="amount"
 	protectedresourceuniquename="co_op_ad_dollar_spent_security" id="co_op_ad_dollar_spent" position="#co_op_ad_dollar_spent_security_before#">
 	</field>	                     
 					

@@ -66,6 +66,14 @@
 		<!-- <workflow deltaind="I"  name="uploadDocumentData" seq="0">
 		<function deltaind="I"  executionsequence="1" functionid="generateMovingLocationLetter" name="generateMovingLocationLetter" parameters="context"/> 
 		</workflow> -->
+		
+		<workflow deltaind="I" name="updateSubProducerCode" seq="2">      		
+      	<storedprocedureoperation dbspname="update_sub_producer_code_p" executionsequence="0" id="update_sub_producer_code_p" metaobject="person" name="update_sub_producer_code_p" operation="1">
+          <parameteroperation indexno="1" mode="IN" property="to_object_name" seq="1"/>
+          <parameteroperation indexno="2" mode="IN" property="from_object_id" seq="2"/>
+          <resultsetoperation indexno="1" mappingclass="java.util.HashMap" seq="1"/>
+        </storedprocedureoperation>
+      </workflow> 
 		</action>
 
 	</component>

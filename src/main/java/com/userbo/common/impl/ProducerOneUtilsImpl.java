@@ -25,84 +25,89 @@ public class ProducerOneUtilsImpl {
 	public static String DATE_PATTERN = "MM-dd-YYYY hh:mm";
 	private static InetLogger logger = InetLogger.getInetLogger("ProducerOneUtils");
 	private static final String rownum = "rownum";
-	private static String tempProdCode=null;
-	private static String agencyCode = null;
+	private static String tempProdCode = null;
+	private static String prodNumId = null;
 	
 	public static String getCustomizedProducerCode(Context ctx) {
-		Connection con = null;
-		PreparedStatement ps = null;
-		ResultSet rs = null;
+
 		String generatedSubProducerNumber = "";
+		String outputParam="";
 		try {
 			// call procedure
-			
-			int producerNumberId = Integer.parseInt(ctx.get("producer_number_id").toString());
-			String agencyCodeTemp=ctx.get("agency_id").toString();
-			ctx.put("producer_number_id",producerNumberId);
-			List prodCode = (List) SqlResources.getSqlMapProcessor(ctx).select("person.getSubProducerAssociations_data_p",ctx);
-			System.out.println(prodCode);
-			String subProducerNumber = "";
-			
-			if(prodCode!=null && prodCode.size()!=0){
-				HashMap<String, String> map=(HashMap<String, String>)prodCode.get(prodCode.size()-1);
-				subProducerNumber=map.get("sub_producer");
-			}
-			
-			if(agencyCodeTemp==null || !agencyCodeTemp.equals(agencyCode)){
-				tempProdCode=null;
-				agencyCode=agencyCodeTemp;
-			}
-			
-			int temp = 0;
-			if ((subProducerNumber != null && !subProducerNumber.equals("")) || tempProdCode != null) {
-				if(tempProdCode==null){
-					tempProdCode=subProducerNumber;
-				}else{
-					subProducerNumber=tempProdCode;
-				}
-				
-				if (StringUtils.isNumeric(subProducerNumber)) {
-					temp = Integer.parseInt(subProducerNumber) + 1;
-					if (temp > 98) {
-						generatedSubProducerNumber = "1A";
-					} else {
-						generatedSubProducerNumber = String.valueOf(temp);
-					}
-				} else {
-					String digit = String.valueOf(subProducerNumber.charAt(0));
-					temp = Integer.parseInt(digit);
-					char character = subProducerNumber.charAt(1);
-					if (character == 'Z' || character == 'z') {
-						temp += 1;
-						generatedSubProducerNumber = String.valueOf(temp) + "A";
-					} else {
-						character += 1;
-						generatedSubProducerNumber = String.valueOf(temp) + character;
 
+			int producerNumberId = Integer.parseInt(ctx.get("producer_number_id").toString());
+			String prodNumIdTemp = ctx.get("producer_number_id").toString();
+			ctx.put("producer_number_id", producerNumberId);
+			ctx.put("output", outputParam);
+			
+			List subProdCodeDB = (List) SqlResources.getSqlMapProcessor(ctx).select("person.getLatestSubProducerCode_p",
+					ctx);
+			
+			System.out.println(subProdCodeDB);
+			String prevSubProducerCode = "";
+
+			if (subProdCodeDB != null && subProdCodeDB.size() != 0) {
+				HashMap<String, String> map = (HashMap<String, String>) subProdCodeDB.get(subProdCodeDB.size() - 1);
+				prevSubProducerCode = map.get("sub_producer");
+			}
+
+			if (prodNumIdTemp == null || !prodNumIdTemp.equals(prodNumId)) {
+				tempProdCode = null;
+				prodNumId = prodNumIdTemp;
+			}
+
+			int temp = 0;
+			if ((prevSubProducerCode != null && !prevSubProducerCode.equals("")) || tempProdCode != null) {
+				if (tempProdCode == null) {
+					tempProdCode = prevSubProducerCode;
+				} else {
+					prevSubProducerCode = tempProdCode;
+				}
+				/**/
+				if (StringUtils.isNumeric(prevSubProducerCode)) {
+					int intPrevSubProducerCode = Integer.parseInt(prevSubProducerCode);
+					if (intPrevSubProducerCode == 98)
+						generatedSubProducerNumber = "1A";
+					else
+						generatedSubProducerNumber = String.valueOf(intPrevSubProducerCode + 1);
+				} else {
+
+					if (prevSubProducerCode.charAt(0) == '1') {
+						if (prevSubProducerCode.equals("1Z")) {
+							generatedSubProducerNumber = "AA";
+						} else {
+							char c = prevSubProducerCode.charAt(1);
+							c += 1;
+							generatedSubProducerNumber = String.valueOf(prevSubProducerCode.charAt(0))
+									+ String.valueOf(c);
+						}
+					} else {
+						char c1 = prevSubProducerCode.charAt(0);
+						char c2 = prevSubProducerCode.charAt(1);
+						if (c2 == 'Z') {
+							c1++;
+							c2 = 'A';
+						} else {
+							c2++;
+						}
+						generatedSubProducerNumber = String.valueOf(c1) + String.valueOf(c2);
 					}
 				}
 			} else {
 				generatedSubProducerNumber = "01";
 			}
+
 			if (generatedSubProducerNumber != null && generatedSubProducerNumber.length() < 2) {
 				generatedSubProducerNumber = "0" + generatedSubProducerNumber;
 			}
-			tempProdCode=generatedSubProducerNumber;
+			tempProdCode = generatedSubProducerNumber;
 		} catch (Exception e) {
 			// TODO: handle exception
 			logger.info(e.getMessage());
-		} finally {
-			try {
-				con.close();
-				rs.close();
-				ps.close();
-			} catch (Exception e) {
-				// TODO: handle exception
-				logger.info(e.getMessage());
-			}
 		}
 		ctx.put("sub_producer", generatedSubProducerNumber);
-		logger.debug(ctx, "Su_producer number");;
+		logger.debug(ctx, "Su_producer number");
+		
 		return generatedSubProducerNumber;
 
 	}
