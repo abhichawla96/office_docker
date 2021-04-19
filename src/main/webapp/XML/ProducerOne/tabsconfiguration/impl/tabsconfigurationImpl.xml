@@ -571,4 +571,10 @@
  <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide Show Bonus report" name="ccbreports_tab_security"/>
  <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide Show Commission report" name="commissionreports_tab_security"/>
  
+ <!-- Observations -->
+ <tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyListEdit_top_companies_appointmentdate_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="1" description="agencyListEdit_general_other_office_location_security" name="agencyListEdit_general_other_office_location_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="1" description="agencyListPublicSubmitN_freeform_contextdata_1123" name="agencyListPublicSubmitN_freeform_contextdata_1123"/>
+ 
+ 
 </tabsconfiguration>

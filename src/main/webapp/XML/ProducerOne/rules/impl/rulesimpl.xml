@@ -41,5 +41,13 @@
 
 
 	</ruleset>
+	
+	
+	
+ <!-- Agency funtions rules - deactivate date CR -->
+  <ruleset name="AgencyFunctionsRule">
+  <rule deltaind="M" id="isDateBeforeCurrentDate" expression="if(andCondition(isNotEqual(:selectFunctionType_code,functionDC),andCondition(isNot(isEmpty(:suspension_date)),isDateBefore(:suspension_date,convertDateToString(getTodayDate(),MM/dd/yyyy))))=>populateError(context,suspension_date,invalidAgencyFucntionDateErrorKey););" />
+     
+ </ruleset>
 </evalrules>	
 	
