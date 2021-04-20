@@ -1476,5 +1476,54 @@
     </businessrole>
   </protectedresource>
   
+  <!-- 16/04/21 Hiding Submenu in Hierarchy Menu -->
+  <protectedresource defaultaccesstype="0" description="hide/Show complete hierarchy tab" operator="OR" uniquename="complete_hierarchy_security">
+    <businessrole deltaind="M" roleid="accountantadmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="compensationanalyst">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="it">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="CarrierAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="vpmarketing">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="aiminquiry">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="accountinganalyst">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="MarketingRep">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="SalesDirector">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="treasury">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="acturial">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <userdefined deltaind="M" executionsequence="2" ruleid="WorkflowRule.isOnboardingFlowNotFound">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+  </protectedresource>
+  
+  <protectedresource uniquename="reporting_hierarchy_security" operator="OR" description="Hide/show Reporting Hierarchy tab">
+  	<userdefined deltaind="M" ruleid="WorkflowRule.isOnboardingFlowNotFound" executionsequence="2">
+      <userdefinedaccesslevel accesstype="0" />
+    </userdefined>
+  </protectedresource>
+  
 </security>  
 
