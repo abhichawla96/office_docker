@@ -8,6 +8,8 @@
 	xmlns:java="java">
 	
 	<xsl:template match="/">
+	<xsl:variable name="p1Logo" select="response/p1LogoPath"></xsl:variable>
+	
 		<fo:root>
 			<fo:layout-master-set>
 				<fo:simple-page-master master-name="master0"
@@ -19,19 +21,19 @@
             </fo:simple-page-master>
 			</fo:layout-master-set>	
 			<fo:page-sequence master-reference="master0">			
-				<fo:static-content flow-name="xsl-region-before">
-					<fo:block text-align="left" color="white">				  	
-				  		<fo:external-graphic src="images/bmicLogo3.jpg" content-height="30px" content-width="340px"/>            	
+				<!-- <fo:static-content flow-name="xsl-region-before">
+					<fo:block margin-left="43px" color="white" >				  	
+				  		<fo:external-graphic src="{$p1Logo}/bmicLogo2.jpg" content-height="90px" content-width="280px" />           	
 				  	</fo:block>	
-				</fo:static-content>
+				</fo:static-content> -->
 				<fo:flow flow-name="xsl-region-body">
 					<fo:block  margin-top="0.1in">
 						<fo:table>
 							<fo:table-column/>
 							<fo:table-body>
 								<fo:table-row>
-									<fo:table-cell>
-										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+									<fo:table-cell >
+										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;" padding-top="35px">
 										<fo:inline padding-left="15mm">Date:  <xsl:value-of select="response/curr_date"/>
 										</fo:inline></fo:block>
 									</fo:table-cell>
@@ -232,7 +234,7 @@
 					            <fo:table-row>
 					              <fo:table-cell border-after-width="4px" padding-left="15mm">
                                       <fo:block>
-                                      <fo:external-graphic src="images/bmicLogo2.jpg" content-height="60px" content-width="80px"/>
+                                      <fo:external-graphic src="{$p1Logo}/bmicLogo2.jpg" content-height="60px" content-width="80px"/>
                                    </fo:block>
                                   </fo:table-cell>
                                   
