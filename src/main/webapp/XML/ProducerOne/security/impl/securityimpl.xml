@@ -1519,11 +1519,11 @@
     </userdefined>
   </protectedresource>
   
-  <protectedresource uniquename="reporting_hierarchy_security" operator="OR" description="Hide/show Reporting Hierarchy tab">
+  <!-- <protectedresource uniquename="reporting_hierarchy_security" operator="OR" description="Hide/show Reporting Hierarchy tab">
   	<userdefined deltaind="M" ruleid="WorkflowRule.isOnboardingFlowNotFound" executionsequence="2">
       <userdefinedaccesslevel accesstype="0" />
     </userdefined>
-  </protectedresource>
+  </protectedresource> -->
   
     <!-- Send Email Button display -->
   <!-- <protectedresource deltaind="I" defaultaccesstype="0" description="contact_welcomeEmailEvent_security" uniquename="contact_welcomeEmailEvent_security">

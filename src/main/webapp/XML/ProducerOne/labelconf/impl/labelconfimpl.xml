@@ -160,4 +160,8 @@
  
   <label deltaind="M" labeldesc="Verify Residence Address" labelkey="verify_person_w9_address_label"/>
   
+  <!-- Test Change in Cyber Liability Declaration Form -->
+  <label deltaind="I" labeldesc=" I understand it’s required to obtain and maintain a policy or policies of cyber liability insurance coverage with limits of liability of at least $500,000. Please attach a copy of your current declaration page in the Additional Documents section at the end of the application. Click the box to agree to these terms." labelkey="cyber_liability_eo_claims_declaration_label"/>
+  
+  
 </labelconf>
