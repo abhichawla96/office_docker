@@ -10,7 +10,7 @@
       <actionparam deltaind="I" pre="Y" name="BulkAppointmentMode" paramid="BulkAppointmentMode" viewparam="Y" form="Y" session="Y" executionsequence="0" />
       <actionparam deltaind="I" pre="Y" name="method" paramid="method" val="downloadBulkAppointmentLetter" viewparam="Y" form="Y" executionsequence="0" />
       <workflow name="sendEmail" seq="0" deltaind="I">
-      <databaseoperation deltaind="I" executionsequence="0" metaobject="person" name="getPreferredMail" operation="3" sqlstmt="select top 1 aae.email_id as email_id,(p.prdcr_first_name+' '+p.prdcr_mid_name+' '+prdcr_last_name) as name from additional_address_emails aae,person p,master_lookup_data_lku lku where p.person_id=aae.object_id and p.is_highest_ranking_principal=1 and aae.object_id=#person_id# and lku.master_lookup_detail_id=(select master_lookup_detail_id from master_lookup_detail_lku where lookup_table_name='email_category_lku') and master_lookup_data_desc='Preferred Email'"></databaseoperation>
+      <databaseoperation deltaind="I" executionsequence="0" metaobject="person" name="getPreferredMail" operation="3" sqlstmt="select top 1 aae.email_id as email_id,p.prdcr_first_name as name from additional_address_emails aae,person p,master_lookup_data_lku lku where p.person_id=aae.object_id and aae.object_id=#person_id# and lku.master_lookup_detail_id=(select master_lookup_detail_id from master_lookup_detail_lku where lookup_table_name='email_category_lku') and master_lookup_data_desc='Preferred Email'"></databaseoperation>
 	 <function deltaind="I" executionsequence="1" functionid="attachAndSendEmail" name="attachAndSendEmail" parameters="context"/>
       </workflow>
     </action>
