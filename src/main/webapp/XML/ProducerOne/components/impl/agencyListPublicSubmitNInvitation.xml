@@ -597,17 +597,39 @@
       	<email  attachmentcontent="attachmentcontent" cc="mailcc" eventname="event_name" executionsequence="0" mailto="mailto" msgstring="bodyContent" name="resend" objectid="objectid" objecttype="objecttype" templatename="template_name"/>
       </workflow> -->
     </action>
-    <action name="sendEmail">
-    <actionparam executionsequence="0" form="Y" name="email" paramid="email" viewparam="Y"/>
-      <actionparam executionsequence="0" name="inet_skip_validation" paramid="inet_skip_validation" val="Y" viewparam="Y"/>
-      <actionparam executionsequence="1" form="Y" name="aar_requestid" paramid="aar_requestid" viewparam="Y"/>
-      <actionparam executionsequence="10" form="Y" name="aar_requestid" paramid="aar_requestId" populatename="objectid" pre="Y"/>
-       <actionparam eval="ProducerOneRule.assignInvitationLink" executionsequence="4" form="Y" name="invitation_link" paramid="invitation_link" pre="Y"/>
-	   <actionparam executionsequence="5" form="Y" name="invitation_link" paramid="invitation_link1" populatename="URL_LINK" pre="Y"/>
-      <workflow isexecuteonsuccess="Y" name="sendOnboardingEmail" seq="0">
-          <email eventname="sendOnboardingEmail" executionsequence="2" ischeckfortemplates="Y" name="sendOnboardingEmail" objectid="aar_requestid" objecttype="onboarding"
+    <!-- Email Event Action -->
+       <action deltaind="M" name="sendEmail">
+      
+       <actionparam deltaind="I" executionsequence="0" form="Y" name="person_id" paramid="person_id" viewparam="Y"/>
+       <actionparam deltaind="I" executionsequence="1" form="Y" name="agency_id" paramid="agency_id" viewparam="Y"/> 
+       <actionparam deltaind="I"  executionsequence="2" form="Y" name="Status" paramid="Status" pre="Y" val="Completed"/>
+       <actionparam deltaind="I"  executionsequence="3" form="Y" name="registration_type" paramid="registration_type" viewparam="Y"/>
+       
+      
+       <workflow name="emaildetails" deltaind="I"  seq="0"> 
+             
+         <storedprocedureoperation deltaind="I" eval="agencyListPublicSubmitNInvitationRule.isSendProducerEmail" dbspname="getDataForNewProducerAppoiment_p" executionsequence="4" id="getDataForNewProducerAppoiment_p" metaobject="person" name="getDataForNewProducerAppoiment_p" operation="3">
+             <parameteroperation indexno="0" mode="IN" property="person_id" seq="0"/>
+             <resultsetoperation indexno="1" mappingclass="java.util.HashMap" seq="0"/>
+         </storedprocedureoperation>
+             
+        <storedprocedureoperation deltaind="I" eval="agencyListPublicSubmitNInvitationRule.isSendAgencyEmail" dbspname="GetAppointmentTerminationLetterAddress_p" executionsequence="5" id="GetAppointmentTerminationLetterAddress_p" metaobject="person" name="GetAppointmentTerminationLetterAddress_p" operation="3">
+            <parameteroperation indexno="1" mode="IN" property="agency_id" seq="1"/>
+            <parameteroperation indexno="2" mode="IN" property="AgencyAddresType" seq="2"/>
+            <parameteroperation indexno="3" mode="IN" property="AgentAddresType" seq="3"/>
+            <parameteroperation indexno="4" mode="IN" property="isShowAgencyBusinessAddress" seq="4"/>
+            <parameteroperation indexno="5" mode="IN" property="type" seq="5"/>
+           <resultsetoperation indexno="1" mappingclass="java.util.HashMap" seq="0"/>
+         </storedprocedureoperation>
+       
+       </workflow>
+       
+      <workflow deltaind="M" name="sendOnboardingEmail" seq="1">
+           <email deltaind="M" eval="agencyListPublicSubmitNInvitationRule.isSendProducerEmail" eventname="NewProducerAppointment" executionsequence="1" ischeckfortemplates="Y" name="sendOnboardingEmail" objectid="aar_requestid" objecttype="onboarding"
+           mailto="email"/>
+          <email deltaind="I" eval="agencyListPublicSubmitNInvitationRule.isSendAgencyEmail"  eventname="NewAgencyAppointment" executionsequence="2" ischeckfortemplates="Y" name="sendOnboardingEmail1" objectid="aar_requestid" objecttype="onboarding"
           mailto="email"/>
-     </workflow>
+      </workflow>
     </action> 
     
   </component>

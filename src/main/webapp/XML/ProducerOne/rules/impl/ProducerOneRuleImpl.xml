@@ -12,5 +12,6 @@
 	<rule deltaind="I" id="showOnAddAgencySetUp" expression="andCondition(isEqual(:showOnAdd,Y),isEqual(:aar_statusid_desc,Pending Agency Setup));" obj="ruleobjs.ProducerOneRule" method="showOnAdd" />
 	<rule deltaind="I" id="showOnAddAgencySentForEsign" expression="andCondition(isEqual(:showOnAdd,Y),isEqual(:aar_statusid_desc,Sent for ESignature));" obj="ruleobjs.ProducerOneRule" method="showOnAdd" />
 	<rule deltaind="I" id="showOnAddAgencyBgCheck" expression="andCondition(isEqual(:showOnAdd,Y),isEqual(:aar_statusid_desc,BG Check Submitted));" obj="ruleobjs.ProducerOneRule" method="showOnAdd" />
+	<rule deltaind="I" id="isWelcomeEmailSentMsg" expression="if(isEmpty(:inet_errors_list)=>assign(:pageMsg,getMessage(context,WelcomeemailSentSuccessfullyErrorKey)););" obj="ruleobjs.ProducerOneRule" method="isWelcomeEmailSentMsg" />
 	</ruleset>
 </evalrules>

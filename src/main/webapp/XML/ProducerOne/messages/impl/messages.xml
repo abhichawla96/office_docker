@@ -3,5 +3,6 @@
  <message deltaind="I" message="Please select dividend distribution" msgkey="DividendDistributionErrorKey" msglevel="W"/>
  <message deltaind="I" message="Please select policyholder copies" msgkey="PolicyHolderCopiesErrorKey" msglevel="W"/>
  <message deltaind="I" message="Please select Agent copies" msgkey="AgentCopiesErrorKey" msglevel="W"/>
+ <message deltaind="I" message="Welcome email has been sent successfully." msgkey="WelcomeemailSentSuccessfullyErrorKey" msglevel="W "/>
   
  </messages>

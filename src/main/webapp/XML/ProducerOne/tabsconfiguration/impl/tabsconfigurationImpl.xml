@@ -575,6 +575,8 @@
  <tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyListEdit_top_companies_appointmentdate_security"/>
  <tabsconfigurationresource deltaind="M" accesslevel="1" description="agencyListEdit_general_other_office_location_security" name="agencyListEdit_general_other_office_location_security"/>
  <tabsconfigurationresource deltaind="I" accesslevel="1" description="agencyListPublicSubmitN_freeform_contextdata_1123" name="agencyListPublicSubmitN_freeform_contextdata_1123"/>
- 
- 
+
+ <!-- Email Event -->
+ <tabsconfigurationresource deltaind="M" name="agencyListPublicSubmitNInvitation_send_email_security" accesslevel="1" description="Set this flag's accesslevel 1 to enable the resend invitation email functionality in Send Invitation Bucket" />
+
 </tabsconfiguration>
