@@ -14,5 +14,11 @@
 	 <function deltaind="I" executionsequence="1" functionid="attachAndSendEmail" name="attachAndSendEmail" parameters="context"/>
       </workflow>
     </action>
+    
+     <action deltaind="M" name="downloadAppointmentLetter" metaobject="bulkLetterMoObject">
+     <workflow deltaind="M" name="downloadAppointmentLetter" seq="0">
+      <databaseoperation deltaind="I" executionsequence="2" metaobject="sendInvitation" name="existingAgencyLetterId" operation="3" sqlstmt="select person_id as personID from person where person_id=#person_id#" viewid="existingAgencyLetter_List_01"></databaseoperation>
+      </workflow>
+    </action>
   </component>
 </projectcomponents>

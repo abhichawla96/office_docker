@@ -20,24 +20,33 @@
 			</fo:layout-master-set>	
 			<fo:page-sequence master-reference="master0">			
 				<fo:static-content flow-name="xsl-region-before">
-					<fo:block text-align="left" color="white">				  	
-				  		<fo:external-graphic src="images/bmicLogo3.jpg" content-height="30px" content-width="340px"/>            	
+					<fo:block text-align="left" color="white">
+							<xsl:if test="not(response/personID)">	  	
+				  		<fo:external-graphic src="images/bmicLogo2.jpg" content-height="80px" content-width="380px"/>            	
+				  </xsl:if>
 				  	</fo:block>	
 				</fo:static-content>
 				<fo:flow flow-name="xsl-region-body">
-					<fo:block  margin-top="0.1in">
+					<fo:block  margin-top="0.5in">
 						<fo:table>
 							<fo:table-column/>
 							<fo:table-body>
-								<fo:table-row>
+							<!-- <xsl:for-each select="response/existingAgencyLetter_List_01/data/record_reason_code_session">
+								 --><fo:table-row>
 									<fo:table-cell>
+									
 										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+									
+									
 										<fo:inline padding-left="15mm">Date:  <xsl:value-of select="response/curr_date"/>
-										</fo:inline></fo:block>
+										</fo:inline>
+									   
+										</fo:block>
+										
 									</fo:table-cell>
 								</fo:table-row>
 							
-								
+								<!-- </xsl:for-each> -->
 							 	<!--<fo:table-row>
 									<fo:table-cell>
 										<fo:block font-size="11px"><xsl:value-of select="response/Agent_Name"/></fo:block>
@@ -54,11 +63,25 @@
 								<fo:table-row>
 									<fo:table-cell>
 										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+										<xsl:if test="not(response/personID)">
+										<fo:inline padding-left="15mm">Attn:  <xsl:value-of select="response/hrp_fullname"/> 
+										</fo:inline>
+										</xsl:if>
+										<!-- <xsl:else >
 										<fo:inline padding-left="15mm">Appointee: <xsl:value-of select="response/Agent_Name"/>
-										</fo:inline></fo:block>
+										</fo:inline>
+										</xsl:else> --></fo:block>
 									</fo:table-cell>
 								</fo:table-row>
-								
+								<fo:table-row>
+									<fo:table-cell>
+										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+									 <xsl:if test="response/personID !='null' ">
+										<fo:inline padding-left="15mm">Appointee: <xsl:value-of select="response/Agent_Name"/>
+										</fo:inline>
+										</xsl:if></fo:block>
+									</fo:table-cell>
+								</fo:table-row>
 								<fo:table-row>
 									<fo:table-cell>
 										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
@@ -78,7 +101,7 @@
 								<fo:table-row>
 									<fo:table-cell>
 										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-										<fo:inline padding-left="15mm"><xsl:value-of select="response/Agent_City"/>,<xsl:value-of select="response/Agent_State"/>,<xsl:value-of select="response/Agent_Zip"/>
+										<fo:inline padding-left="15mm"><xsl:value-of select="response/Agent_City"/>,<xsl:value-of select="response/state_code"/> <xsl:value-of select="response/Agent_Zip"/>
 										</fo:inline></fo:block>
 									</fo:table-cell>
 								</fo:table-row>
@@ -104,7 +127,7 @@
 							</fo:table-body>	
 						</fo:table>
 					</fo:block>
-					<fo:block margin-top="10px">
+					<fo:block margin-top="12px">
 						<fo:table>
 							<fo:table-column/>
 							<fo:table-body>
@@ -126,9 +149,13 @@
 								<fo:table-row>
 									<fo:table-cell  padding-left="15mm">
 										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-										
+										<xsl:if test="not(response/personID)">
+										The Appointment(s) for  <xsl:value-of select="response/Entity_Name"/>,#<xsl:value-of select="response/agency_code"/> have been sent to the following states listed below.
+										</xsl:if></fo:block>
+										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+										<xsl:if test="response/personID !='null' ">
 										We’ve received and processed your appointment request with <xsl:value-of select="response/Entity_Name"/>,#<xsl:value-of select="response/agency_code"/>. The Appointment(s)\Authorization(s) for <xsl:value-of select="response/Agent_Name"/> have been sent to the following states listed below.
-										</fo:block>
+										</xsl:if></fo:block>
 									</fo:table-cell>
 								</fo:table-row>
 							</fo:table-body>	
@@ -136,7 +163,66 @@
 					</fo:block>
 					
 					<fo:block margin-top="20px" margin-left="15mm">
-					
+					<xsl:if test="not(response/personID)">
+							
+						<fo:table border="0.1pt solid black" width="100%">
+							<fo:table-column></fo:table-column>	    		         
+							<fo:table-column></fo:table-column>
+							<fo:table-column></fo:table-column>
+							<fo:table-column></fo:table-column>
+							
+						 	<fo:table-body>
+						 		<fo:table-row border="0.1pt solid black">
+									<fo:table-cell border="0.1pt solid black">
+										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;" font-weight="bold" padding-start="5px" padding-top="3px" padding-bottom="3px" margin-right="15mm" text-align="center">Company</fo:block>
+									</fo:table-cell>
+									<fo:table-cell border="0.1pt solid black">
+										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;" font-weight="bold" padding-start="5px" padding-top="3px" padding-bottom="3px" margin-right="15mm" text-align="center">State</fo:block>
+									</fo:table-cell>
+									
+									
+									
+									
+									
+									<fo:table-cell border="0.1pt solid black">
+										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;" font-weight="bold" padding-start="5px" padding-top="3px" padding-bottom="3px" margin-right="15mm" text-align="center">License #</fo:block>
+									</fo:table-cell>
+									
+									<fo:table-cell border="0.1pt solid black">
+										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;" font-weight="bold" padding-start="5px" padding-top="3px" padding-bottom="3px" margin-right="15mm" text-align="center">Effective Date</fo:block>
+									</fo:table-cell>
+								</fo:table-row>
+								<xsl:for-each select="response/appointment_letter_list_01/data">
+									<fo:table-row border="0.1pt solid black">
+										<fo:table-cell border="0.1pt solid black">
+											<fo:block font-size="11px" margin-left="-12mm">
+											<xsl:value-of select="company"/>
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell border="0.1pt solid black">
+											<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;" padding-start="5px" padding-top="3px" padding-bottom="3px" margin-right="15mm" text-align="center">
+												<xsl:value-of select="abbreviation"/>
+											</fo:block>
+										</fo:table-cell>
+										
+										<fo:table-cell border="0.1pt solid black">
+											<fo:block font-size="11px" margin-left="-12mm">
+											<xsl:value-of select="description"/>
+											</fo:block>
+										</fo:table-cell>
+										
+										
+										<fo:table-cell border="0.1pt solid black">
+											<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;" padding-start="5px" padding-top="3px" padding-bottom="3px" margin-right="15mm" text-align="center">
+												<xsl:value-of select="effective_date"/>
+											</fo:block>
+										</fo:table-cell>
+									</fo:table-row>
+								</xsl:for-each>
+						 	</fo:table-body>
+						</fo:table>
+						</xsl:if>
+						<xsl:if test="response/personID !='null' ">
 						<fo:table border="0.1pt solid black" width="100%">
 							<fo:table-column></fo:table-column>	    		         
 							<fo:table-column></fo:table-column>
@@ -207,6 +293,7 @@
 								</xsl:for-each>
 						 	</fo:table-body>
 						</fo:table>
+						</xsl:if>
 					</fo:block>
 					
 					<fo:block margin-top="55px">
@@ -237,9 +324,9 @@
                                   </fo:table-cell>
                                   
 									<fo:table-cell padding-left="-60mm">
+										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">Sales Support</fo:block>
 										
 										<fo:block font-size="9px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;" text-decoration="underline" color="blue">salessupport@bmico.com</fo:block>
-										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">Sales Support</fo:block>
 										<fo:block margin-top="15px" font-size="9px" font-weight="bold" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;" color="red">CONTACT CENTER</fo:block>
 										<fo:block font-size="9px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">800-809-4859, M-F 8am-6pm ET</fo:block>
 										<fo:block font-size="9px" font-weight="bold" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">buildersmutual.com</fo:block>
@@ -366,5 +453,5 @@
 			</fo:page-sequence>
 		</fo:root>
 	</xsl:template>			
-	
+
 </xsl:stylesheet>	
