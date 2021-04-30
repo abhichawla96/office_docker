@@ -532,7 +532,10 @@
 	  <tabsconfigurationresource deltaind="M" description="Show/Hide entityOtherInformation_narrative_question_3_security" name="entityOtherInformation_narrative_question_3_security" accesslevel="1"/>
 	  <tabsconfigurationresource deltaind="M" description="Show/Hide entityOtherInformation_narrative_question_4_security" name="entityOtherInformation_narrative_question_4_security" accesslevel="1"/>
 	    
-	    <tabsconfigurationresource deltaind="M" accesslevel="0" description="addAgencyTaskDetails_agent_name_security" name="addAgencyTaskDetails_agent_name_security"/>
+	  <!-- production issue  -->
+     <!--    <tabsconfigurationresource deltaind="M" accesslevel="0" description="addAgencyTaskDetails_agent_name_security" name="addAgencyTaskDetails_agent_name_security"/> -->
+     <tabsconfigurationresource deltaind="M" accesslevel="1" description="addAgencyTaskDetails_agent_name_security" name="addAgencyTaskDetails_agent_name_security"/>
+	  
 	  
 	  <!-- Hide Benefit Enrollment link  -->
 	     <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show navigation_link_security" name="navigation_link_security"/>
