@@ -576,5 +576,9 @@
  <tabsconfigurationresource deltaind="M" accesslevel="1" description="agencyListEdit_general_other_office_location_security" name="agencyListEdit_general_other_office_location_security"/>
  <tabsconfigurationresource deltaind="I" accesslevel="1" description="agencyListPublicSubmitN_freeform_contextdata_1123" name="agencyListPublicSubmitN_freeform_contextdata_1123"/>
  
+ <!-- 30/04.2021 Copy Business Address to W9 Address -->
+ <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show entityGeneralDetails_copy_business_to_w9_security" name="entityGeneralDetails_copy_business_to_w9_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show entityGeneralDetails_copy_mailing_to_w9_security" name="entityGeneralDetails_copy_mailing_to_w9_security"/>
+ 
  
 </tabsconfiguration>
