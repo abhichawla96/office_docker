@@ -1501,6 +1501,11 @@
         </storedprocedureoperation>
       </workflow>
       <actionparam executionsequence="0" form="Y" name="maintab" paramid="maintab" post="Y" session="Y" val="agencycode"/>
+      
+      <!-- new CR -->
+       <workflow deltaind="I" name="producer_name" seq="24">
+	        	<databaseoperation executionsequence="0" metaobject="agency_master" name="producer_name" operation="3" sqlstmt="select name as producer_name from agency_master where agency_id = #agency_id# "/>
+	      </workflow>
     </action>
     <action name="refreshZoneLob">
       <actionparam executionsequence="0" form="Y" name="object_type_v" paramid="object_type_v" val="ProducerNumber" viewparam="Y"/>
