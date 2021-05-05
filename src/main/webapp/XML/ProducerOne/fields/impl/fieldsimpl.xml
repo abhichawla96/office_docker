@@ -380,4 +380,10 @@
 	protectedresourceuniquename="co_op_ad_brand_ambassador_recipient_security" id="co_op_ad_brand_ambassador_recipient" position="#co_op_ad_brand_ambassador_recipient_security_before#">
 	</field>
 	
+	<!--Earlier : bug id 100 -->
+	<!-- Now : Effective Date Not Mandatory 23/04/2021-->
+  
+  	<field deltaind="I" id="agencyFunctions_selectFunctionType_effective_date" screen="admin/agencyFunctions_selectFunctionType.html" name="effective_date" isrequired="N" labelkey="agencyFunction_effective_date_label" tabsconfigurationresourcename="agencyFunctions_effective_date_security" protectedresourceuniquename="agencyFunctions_effective_date_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">    
+  	</field>
+	
  </fields>
