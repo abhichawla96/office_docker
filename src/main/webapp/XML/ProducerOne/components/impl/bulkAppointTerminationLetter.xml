@@ -39,7 +39,8 @@
       <actionparam deltaind="I" executionsequence="10" form="Y" name="agency_licenses_appointment_id" paramid="agency_licenses_appointment_id" pre="Y"/>
 	  
 	  <workflow deltaind="I" name="sendEmailProcedure" seq="2">
-	      <storedprocedureoperation deltaind="I" eval="agencyListPublicSubmitNInvitationRule.isSendProducerEmail" dbspname="getDataForNewProducerAppoiment_p" executionsequence="3" id="getDataForNewProducerAppoiment_p" metaobject="person" name="getDataForNewProducerAppoiment_p" operation="3">
+	  <!-- eval="agencyListPublicSubmitNInvitationRule.isSendProducerEmail"  -->
+	      <storedprocedureoperation deltaind="I" dbspname="getDataForNewProducerAppoiment_p" executionsequence="3" id="getDataForNewProducerAppoiment_p" metaobject="person" name="getDataForNewProducerAppoiment_p" operation="3">
              <parameteroperation indexno="0" mode="IN" property="person_id" seq="0"/>
              <resultsetoperation indexno="1" mappingclass="java.util.HashMap" seq="0"/>
           </storedprocedureoperation>
