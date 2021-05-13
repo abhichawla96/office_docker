@@ -18,4 +18,12 @@
   <functiondefinition deltaind="I" classname="com.userbo.common.impl.ProducerOneUtilsImpl" method="attachAndSendEmail" name="attachAndSendEmail" returntype="V">
     <argument datatype="com.util.Context" name="context" seq="0"/>
   </functiondefinition>
+  
+  <!-- Existing Agency Appointed to New Location - Dynamic Row Function - Start -->
+  
+  <functiondefinition deltaind="I" classname="com.userbo.common.impl.ProducerOneUtilsImpl" method="sendEmailtoExistingAgency" name="sendEmailtoExistingAgency" returntype="V">
+    <argument datatype="com.util.Context" name="context" seq="0"/>
+  </functiondefinition>
+  
+  <!-- Existing Agency Appointed to New Location - Dynamic Row Function - End -->
 </functionsdef>

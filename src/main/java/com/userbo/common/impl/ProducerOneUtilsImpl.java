@@ -581,5 +581,140 @@ public static String attachAndSendEmail (Context ctx)
 			e.printStackTrace();
 		}
 	}
+	
+	/* Existing Agency Appointed to New Location - Dynamic Row Function - Start*/
+	
+	public static String sendEmailtoExistingAgency (Context ctx)
+	{
+		
+		sendEmailWithTable(ctx);
+		return "Function Called";
+	}
+	
+	public static void sendEmailWithTable(Context ctx)
+	{
+		try
+		{
+			MailSender mailSender=new MailSender();
+			String body="";
+			Map cmap=null;
+			Integer id=0;
+			String commaSeparatedIds=new String();
+			List selectedIds = new ArrayList();
+			List arrAppointmentLicensesList=(List)ctx.get("getBulkAppointTerminationLetter_mom_list_01");
+			for( int c=0;c<arrAppointmentLicensesList.size();c++)
+			{
+				cmap=null;
+				cmap=(HashMap) arrAppointmentLicensesList.get(c);
+				if(cmap!=null)
+				{
+					if(ctx.get("BulkAppointmentMode").equals("Y") && ctx.get("isApppointPage").equals("entityAppoint"))
+					{
+						id=(Integer) cmap.get("agency_licenses_appointment_id");
+					}
+					String ctxID=(String)ctx.get("ajax_field_chkLetter_"+c);
+					if(ctxID!=null )
+					{
+						if(ctxID.equals("Y") && cmap.get("termination_transaction_id")!=null && Integer.parseInt(cmap.get("termination_transaction_id").toString())==0)
+						{
+							//selectedIds.add(arrAppointmentLicensesList.get(c));
+							Map map=(Map)arrAppointmentLicensesList.get(c);
+							if(commaSeparatedIds.equals(""))
+							{
+								commaSeparatedIds=commaSeparatedIds.concat(String.valueOf(map.get("agency_licenses_appointment_id")));
+							}
+							else
+							{
+								commaSeparatedIds=commaSeparatedIds.concat(",");
+								commaSeparatedIds=commaSeparatedIds.concat(String.valueOf(map.get("agency_licenses_appointment_id")));
+							}
+						}
+					}
+				}
+			}
+			
+			StringBuilder buf = new StringBuilder();
+			buf.append("<html> \n"+
+					"<body> \n"+
+					" <img src=\"https://builderuat.rscube.com/BuilderClient/images/bmicLogo2.jpg\" width=\"90\" height=\"90\">\n "+
+					"<p>&nbsp </p> \n"+
+					"<p>Date: ").append(ctx.get("curr_date")).append("</p> \n")
 
+			.append("<p style=\"margin: 0;\">").append(ctx.get("agency_name")).append(", #").append(ctx.get("agency_code")).append("</p>")  
+			.append("<p style=\"margin: 0;\">Attn: ").append(ctx.get("name")).append("</p> \n")  
+			.append("<p style=\"margin: 0;\">").append(ctx.get("addressline1")).append("</p> \n")  
+			.append("<p style=\"margin: 0;\">").append(ctx.get("city")).append(", ").append(ctx.get("abbreviation")).append(" ").append(ctx.get("zip")).append("</p> \n")  
+			.append("<p>&nbsp</p> \n")    
+			.append("<p>Appointment Date: ").append(ctx.get("curr_date")).append("</p> \n")
+
+			.append("<p>Re: Appointment\\Authorization with Builders Mutual Insurance Company</p> \n")
+  
+			.append("<p>The Appointment(s) for ").append(ctx.get("agency_name")).append(", #").append(ctx.get("agency_code")).append(" have been sent to the following states listed below.</p> \n")  
+			.append("<p>&nbsp </p> \n")
+			.append("<table style=\"border: black 1px solid; border-collapse: collapse; width: 45%;\"> \n")
+			.append("<tr> \n")
+			.append("<th style=\"border: black 1px solid; border-collapse: collapse;\">Company</th> \n")
+			.append("<th style=\"border: black 1px solid; border-collapse: collapse;\">State</th> \n")
+			.append("<th style=\"border: black 1px solid; border-collapse: collapse;\">LOA</th> \n")
+			.append("<th style=\"border: black 1px solid; border-collapse: collapse;\">Effective Date</th> \n")
+			.append("</tr> \n");
+			
+			ctx.put("commaseperatedAppointedID", commaSeparatedIds);
+			ctx.put("agency_id", 0);
+			new SetParametersForStoredProcedures().setParametersInContext(ctx,"commaseperatedAppointedID,agency_id");
+			List appointmentLetterList = SqlResources.getSqlMapProcessor(ctx).select("person.GetAgencyAppointmentRecords_p", ctx);
+			for(int i=0; i<appointmentLetterList.size();i++)
+			{
+				Map map = (Map) appointmentLetterList.get(i);
+				buf.append("<tr> \n")
+				.append("<td style=\"border: black 1px solid; border-collapse: collapse;\">").append(map.get("company")).append("</td> \n")
+				.append("<td style=\"border: black 1px solid; border-collapse: collapse;\">").append(map.get("abbreviation")).append("</td> \n")
+				.append("<td style=\"border: black 1px solid; border-collapse: collapse;\">").append(map.get("description")).append("</td> \n")
+				.append("<td style=\"border: black 1px solid; border-collapse: collapse;\">").append(map.get("effective_date")).append("</td> \n")
+				.append("</tr> \n");
+			};
+                  
+        buf.append("</table> \n")
+        	.append("<p>Sincerely,</p> \n")
+        	.append("<div style=\"float: left; height: 130px; width: 120px;\"> \n")
+        	.append("<img src=\"https://builderuat.rscube.com/BuilderClient/images/bmicLogo2.jpg\" width=\"90\" height=\"90\"> \n")    
+        	.append("</div> \n")
+
+        	.append("<p style=\"margin: 0;\">Sales Support </p> \n")
+        	.append("<p style=\"margin-top: 0;\"><a href=\"mailto:salessupport@bmico.com\">salessupport@bmico.com</a></p> \n")
+				
+        	.append("<p style=\"margin-bottom: 0;\"><span style=\"color: red;\">CONTACT CENTER</p> \n")
+        	.append("<p style=\"margin: 0;\"> 800-809-4859, M-F 8am-6pm ET </p> \n")
+			.append("<p style=\"margin: 0;\"><strong>buildersmutual.com</strong></p> \n")
+			.append("<p style=\"margin: 0;\"><a href=\"https://www.facebook.com/buildersmutual\">Facebook</a> | <a href=\"https://www.linkedin.com/company/builders-mutual-insurance-company\">LinkedIn</a> | <a href=\"https://www.youtube.com/user/BuildersMutual/videos\">YouTube</a></p> \n")
+			.append("<p style=\"font-size: smaller;\">Nothing in this email shall commit BMIC to any purchase, sale, contract or other course of action.</p> \n")
+                
+			.append("<p style=\"float: left;\"><em>This document shall be retained while your appointment is in effect and for at least 5 years after the termination of your appointment</em></p> \n")
+			.append("</body> \n") 
+			.append("</html>");
+        
+        	body = buf.toString();
+        	
+			List to = new ArrayList<String>();
+			
+			String toEmail=ctx.get("email_id")!=null?ctx.get("email_id").toString():"";
+			to.add(toEmail);
+			mailSender.setContenttype("text/html");
+			mailSender.setFrom(SystemProperties.getInstance().getString("mail.from")); 	/*SystemProperties.getInstance().getString("mail.from")*/
+			mailSender.setSubject("Appointment\\Authorization with Builders Mutual Insurance Company"); /*SystemProperties.getInstance().getString("mail.subject")*/
+			mailSender.setToAddList(to);
+			mailSender.setBody(body);
+			
+			if (toEmail!=null)
+			{
+				mailSender.sendMail(ctx);
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/* Existing Agency Appointed to New Location - Dynamic Row Function - End*/
+	
 }
