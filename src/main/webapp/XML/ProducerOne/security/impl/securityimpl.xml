@@ -1532,6 +1532,14 @@
     </userdefined>
   </protectedresource>
   
+  <!-- Welcome Button display -->
+  
+ <protectedresource deltaind="I" defaultaccesstype="0" uniquename="welcomeagencyletter_generateletter">
+    <userdefined  ruleid="agencyListPublicSubmitNInvitationRule.isAgencySetupWorkflowFoundInCompelete" executionsequence="0">
+			<userdefinedaccesslevel accesstype="1" />
+		</userdefined>
+  </protectedresource>
+  
   
 </security>  
 
