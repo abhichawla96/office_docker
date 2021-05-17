@@ -101,7 +101,7 @@
 								<fo:table-row>
 									<fo:table-cell>
 										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-										<fo:inline padding-left="15mm"><xsl:value-of select="response/Agent_City"/>,<xsl:value-of select="response/state_code"/> <xsl:value-of select="response/Agent_Zip"/>
+										<fo:inline padding-left="15mm"><xsl:value-of select="response/Agent_City"/>,<xsl:value-of select="response/state_code"/> &#160;<xsl:value-of select="response/Agent_Zip"/>
 										</fo:inline></fo:block>
 									</fo:table-cell>
 								</fo:table-row>
@@ -185,7 +185,7 @@
 									
 									
 									<fo:table-cell border="0.1pt solid black">
-										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;" font-weight="bold" padding-start="5px" padding-top="3px" padding-bottom="3px" margin-right="15mm" text-align="center">License #</fo:block>
+										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;" font-weight="bold" padding-start="5px" padding-top="3px" padding-bottom="3px" margin-right="15mm" text-align="center">LOA #</fo:block>
 									</fo:table-cell>
 									
 									<fo:table-cell border="0.1pt solid black">
