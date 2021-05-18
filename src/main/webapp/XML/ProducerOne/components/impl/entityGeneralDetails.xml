@@ -347,7 +347,7 @@
       <!-- <actionparam viewparam="Y" name="EXECUTECOMPONENTNAME" paramid="EXECUTECOMPONENTNAME" val="entityGeneralDetails" form="Y"></actionparam>
       <actionparam viewparam="Y" name="EXECUTEACTIONNAME" paramid="EXECUTEACTIONNAME" val="updateAgencyDetails" form="Y"></actionparam> -->
       <actionparam form="Y" name="workflow_forward" paramid="workflow_forward" val="entityGeneralDetails" viewparam="Y"/>
-      
+      <actionparam deltaind="I"  executionsequence="21" form="Y" name="Status" paramid="Status" pre="Y" val="Completed"/>
       <workflow eval="EntityGeneralDetailsRule.validateNPNChangedWithActiveAppointments" name="npnChangedWithActiveAppointments" seq="0">
       	<function eval="ProducerOneRule.isInetErrorListEmpty" executionsequence="1" functionid="validateNPNChangedWithActiveAppointments" name="validateNPNChangedWithActiveAppointments" parameters="context"/>		
       </workflow>
@@ -2561,6 +2561,7 @@
    		<!-- New Agency App Letter -->
    					<action deltaind="I" name="downloadWelcomeLetter" >
         <actionparam deltaind="I" executionsequence="0" form="Y" name="agency_id" paramid="agency_id" viewparam="Y"/>
+        <actionparam deltaind="I"  executionsequence="1" form="Y" name="Status" paramid="Status" pre="Y" val="Completed"/>
       <workflow deltaind="I" name="downloadAppointmentLetter" seq="0">
         <businessobject deltaind="I" name="getAppointmentLetterData" obj="com.userbo.compliance.AppointmentLetterBO" executionsequence="1" />
         <function deltaind="I" executionsequence="2" functionid="getAppointmentIdForAppointmentTerminationLetter" name="getAppointmentIdForAppointmentTerminationLetter" parameters="context"/>
