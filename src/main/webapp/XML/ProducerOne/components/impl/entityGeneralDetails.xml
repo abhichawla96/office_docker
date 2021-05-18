@@ -2565,7 +2565,7 @@
         <businessobject deltaind="I" name="getAppointmentLetterData" obj="com.userbo.compliance.AppointmentLetterBO" executionsequence="1" />
         <function deltaind="I" executionsequence="2" functionid="getAppointmentIdForAppointmentTerminationLetter" name="getAppointmentIdForAppointmentTerminationLetter" parameters="context"/>
         
-        <storedprocedureoperation deltaind="I" dbspname="GetAppointmentTerminationLetterAddress_p" executionsequence="3" id="GetAppointmentTerminationLetterAddress_p" metaobject="person" name="GetAppointmentTerminationLetterAddress_p" operation="3">
+        <storedprocedureoperation deltaind="I" dbspname="GetAppointmentTerminationLetterAddress_p" executionsequence="3" id="GetAppointmentTerminationLetterAddress_p" metaobject="agency_master" name="GetAppointmentTerminationLetterAddress_p" operation="3">
 <parameteroperation indexno="1" mode="IN" property="agency_id" seq="1"/>
 <parameteroperation indexno="2" mode="IN" property="AgencyAddresType" seq="2"/>
 <parameteroperation indexno="3" mode="IN" property="AgentAddresType" seq="3"/>
