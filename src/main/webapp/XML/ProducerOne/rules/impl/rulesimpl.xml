@@ -1,53 +1,59 @@
 <evalrules project="ProducerOne">
 	<ruleset name="ProducerOneRule">
-		<rule deltaind="I" id="isRegistrationTypeProducerRegistrationAgencyDetailScreen"
+		<rule deltaind="I"
+			id="isRegistrationTypeProducerRegistrationAgencyDetailScreen"
 			expression="isEqual(:registration_type_code,PRERG);" obj="ruleobjs.ProducerOneRule"
 			method="isRegistrationTypeProducerRegistrationAgencyDetailScreen" />
-		<rule deltaind="I" id="isRegistrationTypePrimaryAgencyAgencyDetailScreen"
-			expression="isEqual(:registration_type_code,PRAG);" obj="ruleobjs.ProducerOneRule"
-			method="isRegistrationTypePrimaryAgencyAgencyDetailScreen" />
-		<rule deltaind="I" id="isRegistrationTypeSecondaryAgencyAgencyDetailScreen"
-			expression="isEqual(:registration_type_code,SCAG);" obj="ruleobjs.ProducerOneRule"
-			method="isRegistrationTypeSecondaryAgencyAgencyDetailScreen" />
+		<rule deltaind="I"
+			id="isRegistrationTypePrimaryAgencyAgencyDetailScreen" expression="isEqual(:registration_type_code,PRAG);"
+			obj="ruleobjs.ProducerOneRule" method="isRegistrationTypePrimaryAgencyAgencyDetailScreen" />
+		<rule deltaind="I"
+			id="isRegistrationTypeSecondaryAgencyAgencyDetailScreen" expression="isEqual(:registration_type_code,SCAG);"
+			obj="ruleobjs.ProducerOneRule" method="isRegistrationTypeSecondaryAgencyAgencyDetailScreen" />
 
- <rule deltaind="M" id="showNiprAppointments" expression="isEqual(N,Y);" obj="ruleobjs.ProducerOneRule" method="showNiprAppointments" />
-   
-   
-   <rule deltaind="I" id="isCBIAYesNo" expression="isEqual(:cbia_designation,Y);"></rule>
-  <rule deltaind="I" id="isPrincipalContType" expression="isEqual(:cbia_designation,'Principal');"></rule>
-   <rule deltaind="I" id="isNewAgencyCode" expression="isEqual(:producer_number,null);"></rule>
-  <rule deltaind="I" id="isSuspensionReasonCustom" expression="isEqual(:suspension_reason,'7');"></rule>
-   
-   <rule deltaind="I" id="isHBAYesNO" expression="isEqual(:member_of_hba,Y);"></rule>
-   <rule deltaind="I" id="isAgencyInOnboardingStatus" expression="orCondition(orCondition(isEqual(:aar_statusid_desc,BG Check Pass),isEqual(:aar_statusid_desc,Pending Agency Setup)),isEqual(:aar_statusid_desc,BG Check Submitted));" />
-   <!-- BG Check Submitted -->
-  <rule deltaind="I" id="isHbaYesReviewScreen" expression="isEqual(:review_member_of_hba,Y);"></rule>
- 
- 
- <!-- Mask NPN -->
- <rule deltaind="I" id="isShownpn" expression="isEqual(:npn_check,npn_flag);" />
- <rule deltaind="I" id="isShowfein" expression=" isEmpty(:npn_check);" />
- <rule deltaind="I" id="checkAgenctContactTypeLicensedProducer" expression="isEqual(:EqualsFlag,true);" />
- 		 
-<rule deltaind="I" id="otherThanProducerRegTypeEsign" expression="andCondition(call_rule(ProducerOneRule.isInetErrorListEmpty),call_rule(ProducerOneRule.isRegistrationTypeOtherThanProducerRegistration))" />
-<rule deltaind="I" id="producerRegTypeEsign" expression="andCondition(call_rule(ProducerOneRule.isInetErrorListEmpty),call_rule(ProducerOneRule.isRegistrationTypeProducerRegistration))" />
-<rule deltaind="I" id="isFunctionDC" expression="isEqual(:selectFunctionType_code,functionDC)" />
+		<rule deltaind="M" id="showNiprAppointments" expression="isEqual(N,Y);"
+			obj="ruleobjs.ProducerOneRule" method="showNiprAppointments" />
 
 
+		<rule deltaind="I" id="isCBIAYesNo" expression="isEqual(:cbia_designation,Y);"></rule>
+		<rule deltaind="I" id="isPrincipalContType" expression="isEqual(:cbia_designation,'Principal');"></rule>
+		<rule deltaind="I" id="isNewAgencyCode" expression="isEqual(:producer_number,null);"></rule>
+		<rule deltaind="I" id="isSuspensionReasonCustom" expression="isEqual(:suspension_reason,'7');"></rule>
+
+		<rule deltaind="I" id="isHBAYesNO" expression="isEqual(:member_of_hba,Y);"></rule>
+		<rule deltaind="I" id="isAgencyInOnboardingStatus"
+			expression="orCondition(orCondition(isEqual(:aar_statusid_desc,BG Check Pass),isEqual(:aar_statusid_desc,Pending Agency Setup)),isEqual(:aar_statusid_desc,BG Check Submitted));" />
+		<!-- BG Check Submitted -->
+		<rule deltaind="I" id="isHbaYesReviewScreen" expression="isEqual(:review_member_of_hba,Y);"></rule>
 
 
- <rule deltaind="I" id="isCBIAYesNoAgentScreen" expression="isEqual(:review_cbia_designation,Y);"></rule>
- 
+		<!-- Mask NPN -->
+		<rule deltaind="I" id="isShownpn" expression="isEqual(:npn_check,npn_flag);" />
+		<rule deltaind="I" id="isShowfein" expression=" isEmpty(:npn_check);" />
+		<rule deltaind="I" id="checkAgenctContactTypeLicensedProducer"
+			expression="isEqual(:EqualsFlag,true);" />
 
+		<rule deltaind="I" id="otherThanProducerRegTypeEsign"
+			expression="andCondition(call_rule(ProducerOneRule.isInetErrorListEmpty),call_rule(ProducerOneRule.isRegistrationTypeOtherThanProducerRegistration))" />
+		<rule deltaind="I" id="producerRegTypeEsign"
+			expression="andCondition(call_rule(ProducerOneRule.isInetErrorListEmpty),call_rule(ProducerOneRule.isRegistrationTypeProducerRegistration))" />
+		<rule deltaind="I" id="isFunctionDC"
+			expression="isEqual(:selectFunctionType_code,functionDC)" />
+		<rule deltaind="I" id="isCBIAYesNoAgentScreen" expression="isEqual(:review_cbia_designation,Y);"></rule>
+
+		<rule deltaind="I" id="decryptssn_popup"
+			expression="if(isNot(isEmpty(:ssn_popup))=>assign(:decrypted_ssn_num,decryptString(:ssn_popup,SSD,context));assign(:decrypted_ssn_num,addhyphentostring(:decrypted_ssn_num,aaa-aa-aaaa)));"
+			obj="ruleobjs.ProducerOneRule" method="decryptssn_num" />
 
 	</ruleset>
-	
-	
-	
- <!-- Agency funtions rules - deactivate date CR -->
-  <ruleset name="AgencyFunctionsRule">
-  <rule deltaind="M" id="isDateBeforeCurrentDate" expression="if(andCondition(isNotEqual(:selectFunctionType_code,functionDC),andCondition(isNot(isEmpty(:suspension_date)),isDateBefore(:suspension_date,convertDateToString(getTodayDate(),MM/dd/yyyy))))=>populateError(context,suspension_date,invalidAgencyFucntionDateErrorKey););" />
-     
- </ruleset>
+
+
+
+	<!-- Agency funtions rules - deactivate date CR -->
+	<ruleset name="AgencyFunctionsRule">
+		<rule deltaind="M" id="isDateBeforeCurrentDate"
+			expression="if(andCondition(isNotEqual(:selectFunctionType_code,functionDC),andCondition(isNot(isEmpty(:suspension_date)),isDateBefore(:suspension_date,convertDateToString(getTodayDate(),MM/dd/yyyy))))=>populateError(context,suspension_date,invalidAgencyFucntionDateErrorKey););" />
+
+	</ruleset>
 </evalrules>	
 	

@@ -385,5 +385,7 @@
   
   	<field deltaind="I" id="agencyFunctions_selectFunctionType_effective_date" screen="admin/agencyFunctions_selectFunctionType.html" name="effective_date" isrequired="N" labelkey="agencyFunction_effective_date_label" tabsconfigurationresourcename="agencyFunctions_effective_date_security" protectedresourceuniquename="agencyFunctions_effective_date_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">    
   	</field>
-	
+	<!-- ssn production issue -->
+	 <field deltaind="I" id="ssn_tax_id_popup" screen="carrier/taxidPopup.html" name="ssn_num" isrequired="Y" labelkey="feinFieldLabel1" tabsconfigurationresourcename="ssn_popup_securityHeader" protectedresourceuniquename="ssn_popup_securityHeader" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
+  </field>
  </fields>

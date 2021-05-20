@@ -2140,14 +2140,14 @@
     	<!-- <actionparam pre="Y" name="isShowTaxIdPopup" paramid="isShowTaxIdPopup" val="Y" form="Y" session="Y" executionsequence="1" /> -->
     	<!-- <actionparam executionsequence="2" form="Y" name="tax_id" paramid="tax_id" populatename="tax_id_popup" pre="Y"/> -->
     	<actionparam executionsequence="2" form="Y" name="tax_id_isencryptvalue" paramid="tax_id_isencryptvalue" populatename="tax_id_popup" pre="Y"/>
-		<workflow eval="ProducerOneRule.isShownpn" deltaind="I" name="view20" seq="1">
-			
-				 <databaseoperation deltaind="I" name="ssn_popup" metaobject="tbl_agencyprincipal" operation="3"
+		<workflow eval="ProducerOneRule.isShownpn" deltaind="I" name="view20" seq="1">			
+				 <databaseoperation deltaind="I" name="ssn_num_popup" metaobject="tbl_agencyprincipal" operation="3"
 					executionsequence="0"
-					sqlstmt="select ssn_num as ssn_popup from tbl_agencyprincipal where request_id = #aar_requestid# ;">
-				</databaseoperation> <!--  Added by Aashutosh -->
-					
+					sqlstmt="select ssn_num from tbl_agencyprincipal where request_id = #aar_requestid# ;">
+				</databaseoperation> <!--  Added by Aashutosh -->					
 			</workflow>
+		<actionparam deltaind="I" eval="ProducerOneRule.decryptssn_popup" executionsequence="10" form="Y" name="decrypted_ssn_num" paramid="decrypted_ssn_num" populatename="ssn_num" post="Y"/>
+    
     </action>
     <action name="submitTaxIdPopup">
     	<actionparam executionsequence="0" form="Y" name="inet_skip_validation" paramid="inet_skip_validation" val="Y" viewparam="Y"/>
