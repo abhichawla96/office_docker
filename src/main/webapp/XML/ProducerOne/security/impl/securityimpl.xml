@@ -1539,7 +1539,15 @@
 			<userdefinedaccesslevel accesstype="1" />
 		</userdefined>
   </protectedresource>
-  
+    <!-- display delete icon -->
+  <protectedresource deltaind="I" defaultaccesstype="0" operator="and" uniquename="deleteApplication_security">
+   <businessrole roleid="CarrierAdmin">
+			<roleaccesslevel accesstype="1" />
+	</businessrole>
+    <userdefined executionsequence="0" ruleid="agencyListPublicSubmitNInvitationRule.isRowLevelResentInvitationLinkShow">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>    
+  </protectedresource>
   
 </security>  
 

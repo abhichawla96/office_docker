@@ -632,6 +632,53 @@
       </workflow>
     </action> 
     
+    
+		<!-- Customizaiton for BMIC- delete icon -->
+		<action deltaind="I" name="deleteAgencyApplication">
+
+			<actionparam executionsequence="0" form="Y" name="aar_requestid"
+				paramid="aar_requestid" viewparam="Y" />
+				
+			<workflow name="deleteAddress" seq="0">
+				<databaseoperation executionsequence="0"
+					metaobject="tbl_address" name="deleteAddress" operation="2"
+					sqlstmt="delete from tbl_address where aar_requestid=#aar_requestid#" />
+				<databaseoperation executionsequence="1"
+					metaobject="tbl_agency_document_attachments" name="deleteDocAttachment"
+					operation="2"
+					sqlstmt="delete from tbl_agency_document_attachments where object_id in (select document_Id from tbl_agency_documents where aar_requestid =#aar_requestid#)" />
+
+				<databaseoperation executionsequence="2"
+					metaobject="tbl_agency_documents" name="deleteDocument" operation="2"
+					sqlstmt="delete from tbl_agency_documents where aar_requestid=#aar_requestid#" />
+
+				<databaseoperation executionsequence="3"
+					metaobject="tbl_agencyprincipal" name="deleteContact" operation="2"
+					sqlstmt="delete from tbl_agencyprincipal where request_id=#aar_requestid#" />
+
+				<databaseoperation executionsequence="4"
+					metaobject="tbl_signature_acceptance" name="deleteSignatureDet"
+					operation="2"
+					sqlstmt="delete from tbl_signature_acceptance where aar_requestid=#aar_requestid#" />
+
+				<databaseoperation executionsequence="5"
+					metaobject="tbl_agencybankinformation" name="deleteBankInfo"
+					operation="2"
+					sqlstmt="delete from tbl_agencybankinformation where aar_requestid=#aar_requestid#" />
+
+				<databaseoperation executionsequence="6"
+					metaobject="tbl_agencyappointmentrequest" name="deleteApplicaton"
+					operation="2"
+					sqlstmt="delete from tbl_agencyappointmentrequest where aar_requestid=#aar_requestid#" />
+
+			</workflow>
+			
+			<actionparam eval="ProducerOneRule.isDeleteInvitation"
+				executionsequence="1" form="Y" name="pageMsg" paramid="pageMsg123"
+				post="Y" />
+
+		</action>
+    
   </component>
 </projectcomponents>
 
