@@ -626,7 +626,7 @@
      <!-- Sprint 4 --><!-- modified for bug fix -->
      <protectedresource deltaind="I" defaultaccesstype="0"
 		description="Hide/Show id suspension reason other"
-		uniquename="Suspension_Reason_Other_security">
+		uniquename="agencyFunctions_selectFunctionType_agencySus_security">
 		<userdefined deltaind="I" executionsequence="0"
 			ruleid="ProducerOneRule.isSuspensionReasonCustom">
 			<userdefinedaccesslevel accesstype="1" />

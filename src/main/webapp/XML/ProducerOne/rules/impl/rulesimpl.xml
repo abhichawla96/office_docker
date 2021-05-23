@@ -18,7 +18,7 @@
 		<rule deltaind="I" id="isCBIAYesNo" expression="isEqual(:cbia_designation,Y);"></rule>
 		<rule deltaind="I" id="isPrincipalContType" expression="isEqual(:cbia_designation,'Principal');"></rule>
 		<rule deltaind="I" id="isNewAgencyCode" expression="isEqual(:producer_number,null);"></rule>
-		<rule deltaind="I" id="isSuspensionReasonCustom" expression="isEqual(:suspension_reason,'7');"></rule>
+		<rule deltaind="I" id="isSuspensionReasonCustom" expression="isEqual(:termination_reason_code,7);"></rule>
 
 		<rule deltaind="I" id="isHBAYesNO" expression="isEqual(:member_of_hba,Y);"></rule>
 		<rule deltaind="I" id="isAgencyInOnboardingStatus"
@@ -44,6 +44,11 @@
 		<rule deltaind="I" id="decryptssn_popup"
 			expression="if(isNot(isEmpty(:ssn_popup))=>assign(:decrypted_ssn_num,decryptString(:ssn_popup,SSD,context));assign(:decrypted_ssn_num,addhyphentostring(:decrypted_ssn_num,aaa-aa-aaaa)));"
 			obj="ruleobjs.ProducerOneRule" method="decryptssn_num" />
+
+
+		<rule deltaind="I"
+			id="isRegistrationTypePrimarySecondary" expression="orCondition(isEqual(:registration_type_code,SCAG),isEqual(:registration_type_code,PRAG));"/>
+		
 
 	</ruleset>
 
