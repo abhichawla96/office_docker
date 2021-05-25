@@ -95,7 +95,7 @@
 								<fo:table-row>
 									<fo:table-cell>
 										<fo:block font-size="10px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-										<fo:inline padding-left="15mm"><xsl:value-of select="response/Agent_City"/>,<xsl:value-of select="response/state_code"/><xsl:value-of select="response/Agent_Zip"/>
+										<fo:inline padding-left="15mm"><xsl:value-of select="response/Agent_City"/>,<xsl:value-of select="response/state_code"/>  <xsl:value-of select="response/Agent_Zip"/>
 										</fo:inline></fo:block>
 									</fo:table-cell>
 								</fo:table-row>
@@ -158,7 +158,7 @@
 								<fo:table-row>
 									<fo:table-cell  padding-left="15mm">
 										<fo:block font-size="10px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-										Welcome to Builders Mutual.  We provide insurance coverage exclusively to the construction industry.  It’s not just our specialty – it’s all that we do.  Headquartered in North Carolina, our market now includes the Mid-Atlantic and Southeast.  We have a history with the North Carolina Home Builders Association, and maintain strong partnerships with various industry associations.  A.M. Best consistently awards Builders Mutual with an “A” (Excellent) rating, so you can be assured that you are partnering with the best.
+										Welcome to Builders Mutual. We provide insurance coverage exclusively to the construction industry.  It’s not just our specialty – it’s all that we do.  Headquartered in North Carolina, our market now includes the Mid-Atlantic and Southeast.  We have a history with the North Carolina Home Builders Association, and maintain strong partnerships with various industry associations.  A.M. Best consistently awards Builders Mutual with an “A” (Excellent) rating, so you can be assured that you are partnering with the best.
 										</fo:block>
 									</fo:table-cell>
 								</fo:table-row>
@@ -197,7 +197,7 @@
 									<fo:table-cell  padding-left="15mm">
 										<fo:block font-size="10px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
 										Now that you are appointed with Builders Mutual, please encourage the licensed producers in your agency to visit buildersmutual.com and register for access to the agent section.  Once you’ve gained access to 
-										<fo:inline font-weight="bold">Builders Online Business</fo:inline>, you can rate, quote, and issue policies online as well as process electronic payments for all lines of business and view policy documents.  You can also service your accounts easily by accessing policy, billing and claims information.  A variety of reports are available including an Agency Snapshot to review your Builders Mutual portfolio and a Claims Snapshot to review your agency’s claims history.  
+										<fo:inline font-weight="bold">Builders Online Business,</fo:inline> you can rate, quote, and issue policies online as well as process electronic payments for all lines of business and view policy documents.  You can also service your accounts easily by accessing policy, billing and claims information.  A variety of reports are available including an Agency Snapshot to review your Builders Mutual portfolio and a Claims Snapshot to review your agency’s claims history.  
 										
 										</fo:block>
 									</fo:table-cell>
