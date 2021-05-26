@@ -55,8 +55,7 @@
 							 	<fo:table-row >
 									<fo:table-cell >
 										<fo:block margin-top="5mm" font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-										<fo:inline padding-left="15mm"><xsl:value-of select="response/Entity_Name"/>,
-										#<xsl:value-of select="response/agency_code"/>
+										<fo:inline padding-left="15mm"><xsl:value-of select="concat(normalize-space(response/Entity_Name), ',',' ', '#', normalize-space(response/agency_code))"/>
 										</fo:inline></fo:block>
 									</fo:table-cell>
 								</fo:table-row>
@@ -101,7 +100,7 @@
 								<fo:table-row>
 									<fo:table-cell>
 										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-										<fo:inline padding-left="15mm"><xsl:value-of select="response/Agent_City"/>,<xsl:value-of select="response/state_code"/> &#160;<xsl:value-of select="response/Agent_Zip"/>
+										<fo:inline padding-left="15mm"><xsl:value-of select="concat(normalize-space(response/Agent_City), ',', ' ', normalize-space(response/state_code), ' ', normalize-space(response/Agent_Zip))"/>
 										</fo:inline></fo:block>
 									</fo:table-cell>
 								</fo:table-row>
@@ -134,7 +133,7 @@
 								<fo:table-row>
 									<fo:table-cell>
 										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-										<fo:inline padding-left="15mm">Re : Appointment\Authorization with Builders Mutual Insurance Company
+										<fo:inline padding-left="15mm">Re: Appointment\Authorization with Builders Mutual Insurance Company
 										</fo:inline></fo:block>
 									</fo:table-cell>
 								</fo:table-row>
@@ -150,7 +149,7 @@
 									<fo:table-cell  padding-left="15mm">
 										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
 										<xsl:if test="not(response/personID)">
-										The Appointment(s) for  <xsl:value-of select="response/Entity_Name"/>,#<xsl:value-of select="response/agency_code"/> have been sent to the following states listed below.
+										The Appointment(s) for  <xsl:value-of select="concat(normalize-space(response/Entity_Name), ',', ' ' ,'#', normalize-space(response/agency_code))"/> have been sent to the following states listed below.
 										</xsl:if></fo:block>
 										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
 										<xsl:if test="response/personID !='null' ">
