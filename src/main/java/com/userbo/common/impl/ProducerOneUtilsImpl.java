@@ -636,8 +636,6 @@ public static String attachAndSendEmail (Context ctx)
 			StringBuilder buf = new StringBuilder();
 			buf.append("<html> \n"+
 					"<body> \n"+
-					" <img src=\"https://builderuat.rscube.com/BuilderClient/images/bmicLogo2.jpg\" width=\"90\" height=\"90\">\n "+
-					"<p>&nbsp </p> \n"+
 					"<p>Date: ").append(ctx.get("curr_date")).append("</p> \n")
 
 			.append("<p style=\"margin: 0;\">").append(ctx.get("agency_name")).append(", #").append(ctx.get("agency_code")).append("</p>")  
