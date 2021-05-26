@@ -153,7 +153,7 @@
 										</xsl:if></fo:block>
 										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
 										<xsl:if test="response/personID !='null' ">
-										We’ve received and processed your appointment request with <xsl:value-of select="response/Entity_Name"/>,#<xsl:value-of select="response/agency_code"/>. The Appointment(s)\Authorization(s) for <xsl:value-of select="response/Agent_Name"/> have been sent to the following states listed below.
+										We’ve received and processed your appointment request with <xsl:value-of select="concat(normalize-space(response/Entity_Name), ',', ' ', '#', normalize-space(response/agency_code))"/>. The Appointment(s)\Authorization(s) for <xsl:value-of select="response/Agent_Name"/> have been sent to the following states listed below.
 										</xsl:if></fo:block>
 									</fo:table-cell>
 								</fo:table-row>
