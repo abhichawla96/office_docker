@@ -1398,7 +1398,7 @@
   <!-- Dashboard Request List -->
   <protectedresource deltaind="M" defaultaccesstype="0" description="show/hide requests tab on home action" uniquename="homeAction_requests_security"/>
   
-  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show Agency Termination request link on dashboard" uniquename="dashboard_agencytermination_security"/>
+  <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/Show Agency Termination request link on dashboard" uniquename="dashboard_agencytermination_security"/>   <!-- modified -->
   
   <protectedresource deltaind="M" defaultaccesstype="0" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceAgencyApplicable"/>
   
