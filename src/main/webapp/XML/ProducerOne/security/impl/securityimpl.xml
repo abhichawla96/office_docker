@@ -1549,5 +1549,15 @@
     </userdefined>    
   </protectedresource>
   
+  <!-- Hide Send Email Button -->
+  <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/show Send Email Button" uniquename="sendAttachmentInEmail"/>
+  
+  <!-- Hide Generate Letter Button Button -->
+  <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/show Send Email Button" uniquename="bulkappointerminationletter_generateletter"/>
+  
+  <!-- Hide Generate Welcome Letter -->
+  <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/show Send Email Button" uniquename="welcomeagencyletter_generateletter"/>
+  
+  
 </security>  
 
