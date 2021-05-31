@@ -9,7 +9,7 @@
 	
 	<xsl:template match="/">
 	<xsl:variable name="p1Logo" select="response/p1LogoPath"></xsl:variable>
-	
+	<xsl:variable name="agencyName" select="response/Entity_Name"></xsl:variable>
 		<fo:root>
 			<fo:layout-master-set>
 				<fo:simple-page-master master-name="master0"
@@ -48,7 +48,7 @@
 							 	<fo:table-row >
 									<fo:table-cell >
 										<fo:block margin-top="5mm" font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-										<fo:inline padding-left="15mm"><xsl:value-of select="response/Entity_Name"/>,
+										<fo:inline padding-left="15mm"><xsl:value-of select="translate($agencyName, 'amp;', '')"/>,
 										#<xsl:value-of select="response/agency_code"/>
 										</fo:inline></fo:block>
 									</fo:table-cell>
@@ -80,7 +80,7 @@
 								<fo:table-row>
 									<fo:table-cell>
 										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-										<fo:inline padding-left="15mm"><xsl:value-of select="response/Agent_City"/>,<xsl:value-of select="response/Agent_State"/>,<xsl:value-of select="response/Agent_Zip"/>
+										<fo:inline padding-left="15mm"><xsl:value-of select="response/Agent_City"/>,<xsl:value-of select="response/state_code"/>,<xsl:value-of select="response/Agent_Zip"/>
 										</fo:inline></fo:block>
 									</fo:table-cell>
 								</fo:table-row>
@@ -129,7 +129,7 @@
 									<fo:table-cell  padding-left="15mm">
 										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
 										
-										We’ve received and processed your appointment request with <xsl:value-of select="response/Entity_Name"/>,#<xsl:value-of select="response/agency_code"/>. The Appointment(s)\Authorization(s) for <xsl:value-of select="response/Agent_Name"/> have been sent to the following states listed below.
+										We’ve received and processed your appointment request with <xsl:value-of select="translate($agencyName, 'amp;', '')"/>,#<xsl:value-of select="response/agency_code"/>. The Appointment(s)\Authorization(s) for <xsl:value-of select="response/Agent_Name"/> have been sent to the following states listed below.
 										</fo:block>
 									</fo:table-cell>
 								</fo:table-row>
