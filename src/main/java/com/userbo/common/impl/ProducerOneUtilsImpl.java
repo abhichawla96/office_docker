@@ -649,11 +649,12 @@ public static String attachAndSendEmail (Context ctx)
   
 			.append("<p>The Appointment(s) for ").append(ctx.get("agency_name")).append(", #").append(ctx.get("agency_code")).append(" have been sent to the following states listed below.</p> \n")  
 			.append("<p>&nbsp </p> \n")
-			.append("<table style=\"border: black 1px solid; border-collapse: collapse; width: 45%;\"> \n")
+			.append("<table style=\"border: black 1px solid; border-collapse: collapse; width: 60%;\"> \n")
 			.append("<tr> \n")
 			.append("<th style=\"border: black 1px solid; border-collapse: collapse;\">Company</th> \n")
 			.append("<th style=\"border: black 1px solid; border-collapse: collapse;\">State</th> \n")
 			.append("<th style=\"border: black 1px solid; border-collapse: collapse;\">LOA</th> \n")
+			.append("<th style=\"border: black 1px solid; border-collapse: collapse;\">License</th> \n")
 			.append("<th style=\"border: black 1px solid; border-collapse: collapse;\">Effective Date</th> \n")
 			.append("</tr> \n");
 			
@@ -668,6 +669,7 @@ public static String attachAndSendEmail (Context ctx)
 				.append("<td style=\"border: black 1px solid; border-collapse: collapse;\">").append(map.get("company")).append("</td> \n")
 				.append("<td style=\"border: black 1px solid; border-collapse: collapse;\">").append(map.get("abbreviation")).append("</td> \n")
 				.append("<td style=\"border: black 1px solid; border-collapse: collapse;\">").append(map.get("description")).append("</td> \n")
+				.append("<td style=\"border: black 1px solid; border-collapse: collapse;\">").append(map.get("license")).append("</td> \n")
 				.append("<td style=\"border: black 1px solid; border-collapse: collapse;\">").append(map.get("effective_date")).append("</td> \n")
 				.append("</tr> \n");
 			};
