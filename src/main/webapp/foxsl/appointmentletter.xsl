@@ -214,7 +214,7 @@
 										</fo:table-cell>
 										<fo:table-cell border="0.1pt solid black">
 											<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;" padding-start="5px" padding-top="3px" padding-bottom="3px" margin-right="15mm" text-align="center">
-												<xsl:value-of select="license_num"></xsl:value-of>
+												<xsl:value-of select="license"></xsl:value-of>
 											</fo:block>
 										</fo:table-cell>
 										
