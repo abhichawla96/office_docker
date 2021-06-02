@@ -1553,8 +1553,8 @@
   <protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Send Email Button" uniquename="sendAttachmentInEmail"/>
 
   <!-- Hide Generate Welcome Letter -->
-   <protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Generate Welcome Letter Button" uniquename="welcomeagencyletter_generateletter"/>
-   
+   <!-- <protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Generate Welcome Letter Button" uniquename="welcomeagencyletter_generateletter"/>
+    -->
   
 </security>  
 
