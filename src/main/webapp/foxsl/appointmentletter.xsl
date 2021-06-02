@@ -318,7 +318,7 @@
 						</fo:table>
 					</fo:block>
 		
-					<fo:block margin-top="15px">
+					<fo:block margin-top="15px" margin-bottom="5px">
 						<fo:table>
 						  		         
 							<fo:table-body >
@@ -352,7 +352,7 @@
 							<fo:table-column/>
 							<fo:table-body >
 					<fo:table-row>
-									<fo:table-cell margin-top="10mm" padding-left="15mm">
+									<fo:table-cell margin-top="15mm" padding-left="15mm">
 										<!-- <fo:block font-size="11px">or e-mail at <fo:inline font-weight="bold"><xsl:value-of select="response/adminSupportMail"/></fo:inline>.</fo:block>-->
 										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">Nothing in this email shall commit BMIC to any purchase, sale, contract or other course of action.</fo:block>
 									</fo:table-cell>
