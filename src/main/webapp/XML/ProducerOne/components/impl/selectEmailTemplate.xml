@@ -15,7 +15,7 @@
     		<actionparam executionsequence="7" form="Y" name="ISKIPEMAILTEMPLATE" paramid="ISKIPEMAILTEMPLATE" pre="Y" val="Y"/>
     		<actionparam executionsequence="8" form="Y" name="INET_SHOW_SELECT_EMAIL_TEMPLATE" paramid="INET_SHOW_SELECT_EMAIL_TEMPLATE" pre="Y" val="Y"/>
     		<workflow name="send" seq="0">
-	    		<email attachmentcontent="attachmentcontent" cc="mailcc" eventname="event_name" executionsequence="0" mailto="mailto" msgstring="bodyContent" name="send" objectid="objectid" objecttype="objecttype" templatename="template_name"/>
+	    		<email deltaind="D" attachmentcontent="attachmentcontent" cc="mailcc" eventname="event_name" executionsequence="0" mailto="mailto" msgstring="bodyContent" name="send" objectid="objectid" objecttype="objecttype" templatename="template_name"/>
 	    		<storedprocedureoperation dbspname="updateEmailNotificationStatus_p" eval="ProducerOneRule.isEmailSentSuccessfully" executionsequence="1" id="updateEmailNotificationStatus_p" metaobject="sendInvitation" name="updateEmailNotificationStatus_p" operation="4">
 						<parameteroperation indexno="0" mode="IN" property="objecttype" seq="1"/>
 						<parameteroperation indexno="1" mode="IN" property="objectid" seq="2"/>
