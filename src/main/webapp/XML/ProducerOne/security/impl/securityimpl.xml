@@ -1549,18 +1549,12 @@
     </userdefined>    
   </protectedresource>
   
-  <!-- Hide Send Email Button -->
-  <protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Send Email Button" uniquename="sendAttachmentInEmail"/>
-
-  <!-- Hide Generate Welcome Letter -->
-   <!-- <protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Generate Welcome Letter Button" uniquename="welcomeagencyletter_generateletter"/>
-    -->
+ 
     <!-- Edit email button hide -->
    <protectedresource deltaind="I" defaultaccesstype="1" uniquename="editEmailTemplate_security">
     <userdefined executionsequence="0" ruleid="agencyListPublicSubmitNInvitationRule.isSendEmailShow">
       <userdefinedaccesslevel accesstype="0"/>
     </userdefined>
   </protectedresource>
-  
 </security>  
 
