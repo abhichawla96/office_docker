@@ -22,7 +22,7 @@
 				<fo:static-content flow-name="xsl-region-before">
 					<fo:block text-align="left" color="white">
 							<xsl:if test="not(response/personID)">	  	
-				  		<fo:external-graphic src="images/bmicLogo2.jpg" content-height="80px" content-width="380px"/>            	
+				  		<fo:external-graphic src="images/bmicLogo4.jpg" content-height="80px" content-width="380px"/>            	
 				  </xsl:if>
 				  	</fo:block>	
 				</fo:static-content>
