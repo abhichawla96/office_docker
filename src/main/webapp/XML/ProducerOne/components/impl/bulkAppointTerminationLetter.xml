@@ -32,7 +32,7 @@
           <databaseoperation deltaind="I" executionsequence="0" metaobject="master_lookup_data_lku" name="newProducerEmail1" operation="3" sqlstmt="select top 1 p.person_id, (p.prdcr_first_name + ' ' + prdcr_last_name) name, p.person_id as person_id_row from person p with(nolock) inner join agency_person ap with(nolock) on ap.person_id=p.person_id and isnull(p.is_highest_ranking_principal,0) = 1 and ap.agency_id=#agency_id#"/>
       	  <databaseoperation deltaind="I" executionsequence="2" metaobject="master_lookup_data_lku" name="newStatement" operation="3" sqlstmt="select top 1 agency_licenses_appointment_id from agency_licenses_appointment where agency_id=#agency_id#"/>
   
-	      <storedprocedureoperation deltaind="I" dbspname="getDataForNewProducerAppoiment_p" executionsequence="3" id="getDataForNewProducerAppoiment_p" metaobject="person" name="getDataForNewProducerAppoiment_p" operation="3">
+	      <storedprocedureoperation deltaind="I" dbspname="getDataForagencyAppoiment_p" executionsequence="3" id="getDataForagencyAppoiment_p" metaobject="person" name="getDataForagencyAppoiment_p" operation="3">
              <parameteroperation indexno="0" mode="IN" property="person_id" seq="0"/>
              <resultsetoperation indexno="1" mappingclass="java.util.HashMap" seq="0"/>
           </storedprocedureoperation>

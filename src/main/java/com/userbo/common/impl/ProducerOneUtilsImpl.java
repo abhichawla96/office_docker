@@ -553,7 +553,7 @@ public static String attachAndSendEmail (Context ctx)
 		String body="";
 		
 		
-		body="Dear "+name+",</br></br>\n" + 
+		body="<div style=\"font-size:14.5px; font-family:Arial;\">"+"Dear "+name+",</br></br>\n" + 
 				"We have processed your request for appointment in "+state+". Please review the attached letter and save for your records.\n" + 
 				"</br>\n" + 
 				"</br>\n" 
@@ -562,7 +562,7 @@ public static String attachAndSendEmail (Context ctx)
 				  +"</br>\n" + 
 				"Sales Support\n"
 				+"</br>\n" + 
-				"Builders Mutual Insurance Company\n";
+				"Builders Mutual Insurance Company\n"+"</div>";
 		List to = new ArrayList<String>();
 		to.add(toEmail);
 		mailSender.setContenttype("text/html");
@@ -634,65 +634,74 @@ public static String attachAndSendEmail (Context ctx)
 			}
 			
 			StringBuilder buf = new StringBuilder();
-			buf.append("<html> \n"+
-					"<body> \n"+
-					"<p>Date: ").append(ctx.get("curr_date")).append("</p> \n")
+			 buf.append("<html> \n"+
+	                    "<body> \n"+
+	                    "<p style=\"font-size:13px; font-family:Arial;\">Date: ").append(ctx.get("curr_date")).append("</p> \n")
 
-			.append("<p style=\"margin: 0;\">").append(ctx.get("agency_name")).append(", #").append(ctx.get("agency_code")).append("</p>")  
-			.append("<p style=\"margin: 0;\">Attn: ").append(ctx.get("name")).append("</p> \n")  
-			.append("<p style=\"margin: 0;\">").append(ctx.get("addressline1")).append("</p> \n")  
-			.append("<p style=\"margin: 0;\">").append(ctx.get("city")).append(", ").append(ctx.get("abbreviation")).append(" ").append(ctx.get("zip")).append("</p> \n")  
-			.append("<p>&nbsp</p> \n")    
-			.append("<p>Appointment Date: ").append(ctx.get("curr_date")).append("</p> \n")
+	 
 
-			.append("<p>Re: Appointment\\Authorization with Builders Mutual Insurance Company</p> \n")
-  
-			.append("<p>The Appointment(s) for ").append(ctx.get("agency_name")).append(", #").append(ctx.get("agency_code")).append(" have been sent to the following states listed below.</p> \n")  
-			.append("<p>&nbsp </p> \n")
-			.append("<table style=\"border: black 1px solid; border-collapse: collapse; width: 60%;\"> \n")
-			.append("<tr> \n")
-			.append("<th style=\"border: black 1px solid; border-collapse: collapse;\">Company</th> \n")
-			.append("<th style=\"border: black 1px solid; border-collapse: collapse;\">State</th> \n")
-			.append("<th style=\"border: black 1px solid; border-collapse: collapse;\">LOA</th> \n")
-			.append("<th style=\"border: black 1px solid; border-collapse: collapse;\">License</th> \n")
-			.append("<th style=\"border: black 1px solid; border-collapse: collapse;\">Effective Date</th> \n")
-			.append("</tr> \n");
-			
-			ctx.put("commaseperatedAppointedID", commaSeparatedIds);
-			ctx.put("agency_id", 0);
-			new SetParametersForStoredProcedures().setParametersInContext(ctx,"commaseperatedAppointedID,agency_id");
-			List appointmentLetterList = SqlResources.getSqlMapProcessor(ctx).select("person.GetAgencyAppointmentRecords_p", ctx);
-			for(int i=0; i<appointmentLetterList.size();i++)
-			{
-				Map map = (Map) appointmentLetterList.get(i);
-				buf.append("<tr> \n")
-				.append("<td style=\"border: black 1px solid; border-collapse: collapse;\">").append(map.get("company")).append("</td> \n")
-				.append("<td style=\"border: black 1px solid; border-collapse: collapse;\">").append(map.get("abbreviation")).append("</td> \n")
-				.append("<td style=\"border: black 1px solid; border-collapse: collapse;\">").append(map.get("description")).append("</td> \n")
-				.append("<td style=\"border: black 1px solid; border-collapse: collapse;\">").append(map.get("license")).append("</td> \n")
-				.append("<td style=\"border: black 1px solid; border-collapse: collapse;\">").append(map.get("effective_date")).append("</td> \n")
-				.append("</tr> \n");
-			};
-                  
-        buf.append("</table> \n")
-        	.append("<p>Sincerely,</p> \n")
-        	.append("<div style=\"float: left; height: 130px; width: 120px;\"> \n")
-        	.append("<img src=\"https://builderuat.rscube.com/BuilderClient/images/bmicLogo2.jpg\" width=\"90\" height=\"90\"> \n")    
-        	.append("</div> \n")
+	                    .append("<p style=\"margin: 0; font-size:13px; font-family:Arial;\">").append(ctx.get("agency_name")).append(", #").append(ctx.get("agency_code")).append("</p>")
+	                    .append("<p style=\"margin: 0; font-size:13px; font-family:Arial;\">Attn: ").append(ctx.get("name")).append("</p> \n")
+	                    .append("<p style=\"margin: 0; font-size:13px; font-family:Arial;\">").append(ctx.get("addressline1")).append("</p> \n")
+	                    .append("<p style=\"margin: 0; font-size:13px; font-family:Arial;\">").append(ctx.get("city")).append(", ").append(ctx.get("abbreviation")).append(" ").append(ctx.get("zip")).append("</p> \n")
+	                    .append("<p style=\"font-size:13px; font-family:Arial;\">Appointment Date: ").append(ctx.get("curr_date")).append("</p> \n")
 
-        	.append("<p style=\"margin: 0;\">Sales Support </p> \n")
-        	.append("<p style=\"margin-top: 0;\"><a href=\"mailto:salessupport@bmico.com\">salessupport@bmico.com</a></p> \n")
-				
-        	.append("<p style=\"margin-bottom: 0;\"><span style=\"color: red;\">CONTACT CENTER</p> \n")
-        	.append("<p style=\"margin: 0;\"> 800-809-4859, M-F 8am-6pm ET </p> \n")
-			.append("<p style=\"margin: 0;\"><strong>buildersmutual.com</strong></p> \n")
-			.append("<p style=\"margin: 0;\"><a href=\"https://www.facebook.com/buildersmutual\">Facebook</a> | <a href=\"https://www.linkedin.com/company/builders-mutual-insurance-company\">LinkedIn</a> | <a href=\"https://www.youtube.com/user/BuildersMutual/videos\">YouTube</a></p> \n")
-			.append("<p style=\"font-size: smaller;\">Nothing in this email shall commit BMIC to any purchase, sale, contract or other course of action.</p> \n")
-                
-			.append("<p style=\"float: left;\"><em>This document shall be retained while your appointment is in effect and for at least 5 years after the termination of your appointment</em></p> \n")
-			.append("</body> \n") 
-			.append("</html>");
-        
+	 
+
+	                    .append("<p style=\"font-size:13px; font-family:Arial;\">Re: Appointment\\Authorization with Builders Mutual Insurance Company</p> \n")
+	                    .append("<p style=\"font-size:13px; font-family:Arial;\">The Appointment(s) for ").append(ctx.get("agency_name")).append(", #").append(ctx.get("agency_code")).append(" have been sent to the following states listed below.</p> \n")
+	                    .append("<table style=\"border: black 1px solid; border-collapse: collapse; width: 60%;\"> \n")
+	                    .append("<tr> \n")
+	                    .append("<th style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">Company</th> \n")
+	                    .append("<th style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">State</th> \n")
+	                    .append("<th style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">LOA</th> \n")
+	                    .append("<th style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">License#</th> \n")
+	                    .append("<th style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">Effective Date</th> \n")
+	                    .append("</tr> \n");
+	                    ctx.put("commaseperatedAppointedID", commaSeparatedIds);
+	                    ctx.put("agency_id", 0);
+	                    new SetParametersForStoredProcedures().setParametersInContext(ctx,"commaseperatedAppointedID,agency_id");
+	                    List appointmentLetterList = SqlResources.getSqlMapProcessor(ctx).select("person.GetAgencyAppointmentRecords_p", ctx);
+	                    for(int i=0; i<appointmentLetterList.size();i++)
+	                    {
+	                    Map map = (Map) appointmentLetterList.get(i);
+	                    if(map.get("description").equals(null)){
+	                    buf.append("<tr> \n")
+	                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("company")).append("</td> \n")
+	                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("abbreviation")).append("</td> \n")
+	                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append("").append("</td> \n")
+	                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("license")).append("</td> \n")
+	                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("effective_date")).append("</td> \n")
+	                    .append("</tr> \n");
+	                    }else{
+	                    buf.append("<tr> \n")
+	                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("company")).append("</td> \n")
+	                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("abbreviation")).append("</td> \n")
+	                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("description")).append("</td> \n")
+	                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("license")).append("</td> \n")
+	                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("effective_date")).append("</td> \n")
+	                    .append("</tr> \n");
+	                    }
+	                    };
+	                    buf.append("</table> \n")
+	                    .append("<p>&nbsp </p> \n")
+	                    .append("<p style=\"font-size:13px; font-family:Arial;\">Sincerely,</p> \n")
+	                    .append("<div style=\"float: left; height: 130px; width: 120px;\"> \n")
+	                    .append("<img src=\"https://builderuat.rscube.com/BuilderClient/images/bmicLogo2.jpg\" width=\"90\" height=\"90\"> \n")
+	                    .append("</div> \n")
+
+	 
+
+	                    .append("<p style=\"margin: 0; font-size:13px; font-family:Arial;\">Sales Support </p> \n")
+	                    .append("<p style=\"margin-top: 0; font-size:12px; font-family:Arial;\"><a href=\"mailto:salessupport@bmico.com\">salessupport@bmico.com</a></p> \n")
+	                    .append("<p style=\"margin-bottom: 0; font-size:12px; font-family:Arial;\"><span style=\"color: red;\"><strong>CONTACT CENTER</strong></span></p> \n")
+	                    .append("<p style=\"margin: 0; font-size:12px; font-family:Arial;\"> 800-809-4859, M-F 8am-6pm ET </p> \n")
+	                    .append("<p style=\"margin: 0; font-size:12px; font-family:Arial;\"><strong>buildersmutual.com</strong></p> \n")
+	                    .append("<p style=\"margin: 0; font-size:12px; font-family:Arial;\"><a href=\"https://www.facebook.com/buildersmutual\">Facebook | <a href=\"https://www.linkedin.com/company/builders-mutual-insurance-company\">LinkedIn | <a href=\"https://www.youtube.com/user/BuildersMutual/videos\">YouTube</a> \n")
+	                    .append("<p style=\"font-size:10.5px; font-family:Arial;\">Nothing in this email shall commit BMIC to any purchase, sale, contract or other course of action.</p> \n")
+	                    .append("<p style=\"float: left; font-size:13px; font-family:Arial;\"><em>This document shall be retained while your appointment is in effect and for at least 5 years after the termination of your appointment</em></p> \n")
+	                    .append("</body> \n")
+	                    .append("</html>");
         	body = buf.toString();
         	
 			List to = new ArrayList<String>();

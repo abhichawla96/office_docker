@@ -48,7 +48,15 @@
 							 	<fo:table-row >
 									<fo:table-cell >
 										<fo:block margin-top="5mm" font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-										<fo:inline padding-left="15mm"><xsl:value-of select="translate($agencyName, 'amp;', '')"/>,
+										<fo:inline padding-left="15mm">
+										
+										<xsl:if test="contains(response/Entity_Name, '&amp;')">
+										
+										<xsl:value-of select="translate($agencyName, 'amp;', '')"/>,
+										</xsl:if>
+									    <xsl:if test="not(contains(response/Entity_Name, '&amp;'))">
+										<xsl:value-of select="response/Entity_Name"/>,
+										</xsl:if>
 										#<xsl:value-of select="response/agency_code"/>
 										</fo:inline></fo:block>
 									</fo:table-cell>
@@ -80,7 +88,7 @@
 								<fo:table-row>
 									<fo:table-cell>
 										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-										<fo:inline padding-left="15mm"><xsl:value-of select="response/Agent_City"/>,<xsl:value-of select="response/state_code"/>,<xsl:value-of select="response/Agent_Zip"/>
+										<fo:inline padding-left="15mm"><xsl:value-of select="response/Agent_City"/>,<xsl:value-of select="response/state_code"/>, <xsl:value-of select="response/Agent_Zip"/>
 										</fo:inline></fo:block>
 									</fo:table-cell>
 								</fo:table-row>
@@ -129,7 +137,13 @@
 									<fo:table-cell  padding-left="15mm">
 										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
 										
-										We’ve received and processed your appointment request with <xsl:value-of select="translate($agencyName, 'amp;', '')"/>,#<xsl:value-of select="response/agency_code"/>. The Appointment(s)\Authorization(s) for <xsl:value-of select="response/Agent_Name"/> have been sent to the following states listed below.
+										We’ve received and processed your appointment request with <xsl:if test="contains(response/Entity_Name, '&amp;')">
+										
+										<xsl:value-of select="translate($agencyName, 'amp;', '')"/>,
+										</xsl:if>
+									    <xsl:if test="not(contains(response/Entity_Name, '&amp;'))">
+										<xsl:value-of select="response/Entity_Name"/>,
+										</xsl:if> #<xsl:value-of select="response/agency_code"/>. The Appointment(s)\Authorization(s) for <xsl:value-of select="response/Agent_Name"/> have been sent to the following states listed below.
 										</fo:block>
 									</fo:table-cell>
 								</fo:table-row>
@@ -172,6 +186,7 @@
 									</fo:table-cell>
 								</fo:table-row>
 								<xsl:for-each select="response/appointment_letter_list_01/data">
+								<xsl:variable name="loa" select="description"></xsl:variable>
 									<fo:table-row border="0.1pt solid black">
 										<fo:table-cell border="0.1pt solid black">
 											<fo:block font-size="11px" margin-left="-12mm">
@@ -185,8 +200,13 @@
 										</fo:table-cell>
 										
 										<fo:table-cell border="0.1pt solid black">
-											<fo:block font-size="11px" margin-left="-12mm">
-											<xsl:value-of select="description"/>
+											<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;" margin-left="-12mm">
+											<xsl:if test="contains(description, '&amp;')">
+										     <xsl:value-of select="translate($loa, 'amp;', '')"/>
+										  </xsl:if>
+									      <xsl:if test="not(contains(description, '&amp;'))">
+										    <xsl:value-of select="description"/>
+										  </xsl:if>
 											</fo:block>
 										</fo:table-cell>
 										<fo:table-cell border="0.1pt solid black">
