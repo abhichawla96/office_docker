@@ -665,7 +665,7 @@ public static String attachAndSendEmail (Context ctx)
 	                    for(int i=0; i<appointmentLetterList.size();i++)
 	                    {
 	                    Map map = (Map) appointmentLetterList.get(i);
-	                    if(map.get("description").equals(null)){
+	                    if(map.get("description")== null && "".equals(map.get("description"))){
 	                    buf.append("<tr> \n")
 	                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("company")).append("</td> \n")
 	                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("abbreviation")).append("</td> \n")
