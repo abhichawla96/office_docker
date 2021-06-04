@@ -548,7 +548,8 @@
 <tabsconfigurationresource deltaind="I" name="mergerSellingPhysicalLocation2_generateLetter_adminFooterInclude" value="N"/>
 <tabsconfigurationresource deltaind="M" accesslevel="1" name="agencyListPublicSubmitNInvitation_resend_invitation_security" description="agencyListPublicSubmitNInvitation_resend_invitation_security"/>
 
-  <tabsconfigurationresource deltaind="M" accesslevel="0" description="hide_show_prospect_section_security" name="hide_show_prospect_section_security"/>
+<!-- Showing Prospect Sign on Homepage - Phase 2 -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="hide_show_prospect_section_security" name="hide_show_prospect_section_security"/>
  
  <!-- Show Cyber Liability Carrier Name -->
  <tabsconfigurationresource deltaind="M" accesslevel="1" description="Agency_declarationCyberLiability_security" name="Agency_declarationCyberLiability_security"/>
@@ -589,6 +590,36 @@
  <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show entityGeneralDetails_copy_business_to_w9_security" name="entityGeneralDetails_copy_business_to_w9_security"/>
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show entityGeneralDetails_copy_mailing_to_w9_security" name="entityGeneralDetails_copy_mailing_to_w9_security"/>
  
+ <!--   PHASE 2 DEVELOPMENT LTI JUNE 2021   -->
  
+  <!-- Prospect - Hide Convert to Agency button - Phase 2 -->
+   <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/show Convert to Agency Button" name="prospectAgencyDetails_convert_to_agency_security"/>
+  
+   
+ <!-- Hiding fields in Prospect - Phase 2-->
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="prospect_details_any_rollover_potential_security" name="prospect_details_any_rollover_potential_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="prospectDetails_rating_security" name="prospectDetails_rating_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="prospectDetails_years_in_business_security" name="prospectDetails_years_in_business_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="prospect_detail_distribution_type_security" name="prospect_detail_distribution_type_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="prospectDetails_fax_business_security" name="prospectDetails_fax_business_security"/>
 
+ <!-- Showing Street Address 1 in Prospect Business Address - Phase 2  -->
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show dashboard invitation buckets" name="isShowProspectDetailsStreetAddress1"/> 
+
+<!-- Hiding Territory Column from Prospect Call Report - Phase 2 -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="zone_code_CallReportPage_Security" name="zone_code_CallReportPage_Security"/>
+
+<!-- Hiding Operation Division Prospect Call Report - Phase 2 -->
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="hide show addProspectCallReport_operating_division_call_report_security" name="addProspectCallReport_operating_division_call_report_security"/>
+
+<!-- Hiding Location Prospect Call Report - Phase 2 -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="hide show addProspectCallReport_location_description_security" name="addProspectCallReport_location_description_security"/>
+
+<!-- Hiding Territory Prospect Call Report - Phase 2 -->  
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="hide show addProspectCallReport_territory_security" name="addProspectCallReport_territory_security"/>
+ 
+ <!-- Hiding Fax Prospect Call Report - Phase 2 --> 
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="hide show addProspectCallReport_report_fax_security" name="addProspectCallReport_report_fax_security"/>
+ 
+ 
 </tabsconfiguration>

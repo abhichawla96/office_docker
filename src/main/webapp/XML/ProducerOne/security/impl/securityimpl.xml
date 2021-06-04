@@ -1036,10 +1036,10 @@
   
   
   <!-- New Change  -->
-  
-   <protectedresource deltaind="M" defaultaccesstype="0" description="hide_show_prospect_section_security" uniquename="hide_show_prospect_section_security">
+  <!-- Showing Prospect Sign on Homepage - Phase 2 -->
+   <protectedresource deltaind="M" defaultaccesstype="1" description="hide_show_prospect_section_security" uniquename="hide_show_prospect_section_security">
     <businessrole roleid="AgencyAdmin">
-      <roleaccesslevel accesstype="0"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
@@ -1556,5 +1556,16 @@
       <userdefinedaccesslevel accesstype="0"/>
     </userdefined>
   </protectedresource>
+  
+  <!--   PHASE 2 DEVELOPMENT LTI JUNE 2021     -->
+  
+  
+  <!-- Task Assigned to Editable - Phase 2 -->
+   <protectedresource deltaind="D" description="task_assigned_to_security" uniquename="task_assigned_to_security">
+    <businessrole roleid="CarrierAdmin">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
+  </protectedresource>
+  
 </security>  
 

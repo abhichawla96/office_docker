@@ -163,5 +163,11 @@
   <!-- Test Change in Cyber Liability Declaration Form -->
   <label deltaind="I" labeldesc=" I understand it's required to obtain and maintain a policy or policies of cyber liability insurance coverage with limits of liability of at least $500,000. Please attach a copy of your current declaration page in the Additional Documents section at the end of the application. Click the box to agree to these terms." labelkey="cyber_liability_eo_claims_declaration_label"/>
   
+  <!--   PHASE 2 DEVELOPMENT LTI JUNE 2021 -->
+  
+  
+  <!-- Label Change in Prospect - Phase 2 -->
+  <label deltaind="M" labeldesc="Territory Manager" labelkey="marketingRepFieldLabel"/>
+  <label deltaind="M" labeldesc="Territory Manager" labelkey="pd_account_executive_label"/>
   
 </labelconf>

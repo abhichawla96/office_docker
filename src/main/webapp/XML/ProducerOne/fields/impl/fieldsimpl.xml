@@ -388,4 +388,20 @@
 	<!-- ssn production issue -->
 	 <field deltaind="I" id="ssn_tax_id_popup" screen="carrier/taxidPopup.html" name="ssn_num" isrequired="Y" labelkey="feinFieldLabel1" tabsconfigurationresourcename="ssn_popup_securityHeader" protectedresourceuniquename="ssn_popup_securityHeader" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
   </field>
+  
+  
+  <!--  PHASE 2 DEVELOPMENT LTI JUNE 2021   -->
+  
+    <!-- Registration Type Mandatory - Phase 2 -->
+  <field deltaind="I" id="prospectAgencyDetails_prospect_agency_registration_type_security" screen="carrier/prospectAgencyDetails.html" name="agency_registration_type_list_01" isrequired="Y" labelkey="agency_registration_type_label" tabsconfigurationresourcename="prospect_agency_registration_type_security" protectedresourceuniquename="prospect_agency_registration_type_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N">
+  </field>
+  
+  <!-- Business Address Mandatory in Prospect - Phase 2-->
+  <field deltaind="I" id="prospectAgencyDetails_addressline1_business" screen="carrier/prospectAgencyDetails.html" name="addressline1_business" isrequired="Y" labelkey="streetAddress1FieldLabel" tabsconfigurationresourcename="isShowProspectDetailsStreetAddress1" protectedresourceuniquename="isShowProspectDetailsStreetAddress1" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N">
+  </field>
+  <field deltaind="I" id="prospectAgencyDetails_city_business" screen="carrier/prospectAgencyDetails.html" name="city_business" isrequired="Y" labelkey="cityFieldLabel" tabsconfigurationresourcename="prospectDetails_city_business_security" protectedresourceuniquename="prospectDetails_city_business_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N">
+  </field>
+  <field deltaind="I" id="prospectAgencyDetails_business_state_id" screen="carrier/prospectAgencyDetails.html" name="business_state_id" isrequired="Y" labelkey="statefieldlabel" tabsconfigurationresourcename="prospectDetails_state_security" protectedresourceuniquename="prospectDetails_state_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N">
+  </field>
+  
  </fields>
