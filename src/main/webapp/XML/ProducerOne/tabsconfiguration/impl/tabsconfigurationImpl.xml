@@ -179,8 +179,8 @@
  <!-- Bug id : 0076 -->
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="agencyListEdit_general_chk_agency_comparativerate_security" name="agencyListEdit_general_chk_agency_comparativerate_security"/>
  
- 
- <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide show agencyListPublicSubmitNInvitationEdit_narrative_info_section_security in agencyListPublicSubmitNInvitationEdit.html" name="agencyListPublicSubmitNInvitationEdit_narrative_info_section_security"/>
+ <!--  change request-->
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide show agencyListPublicSubmitNInvitationEdit_narrative_info_section_security in agencyListPublicSubmitNInvitationEdit.html" name="agencyListPublicSubmitNInvitationEdit_narrative_info_section_security"/>
  
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="agency_bulk_license_states_security" name="bulkEntityAppointNew_agency_bulk_license_states_security"/>
  
@@ -311,7 +311,7 @@
    <tabsconfigurationresource deltaind="M" description="Show/Hide entityOtherInformation_primary_company_usage_security" name="entityOtherInformation_primary_company_usage_security" accesslevel="1"/>
  <tabsconfigurationresource deltaind="M" description="Show/Hide entityOtherInformation_current_advertising_methods_security" name="entityOtherInformation_current_advertising_methods_security" accesslevel="1"/>
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="market_information_commercial_lines_security in market information screen" name="market_information_commercial_lines_security"/>
- <tabsconfigurationresource deltaind="M" description="Show/Hide entityOtherInformation_narrative_info_section_security" name="entityOtherInformation_narrative_info_section_security" accesslevel="1"/>
+ <tabsconfigurationresource deltaind="M" description="Show/Hide entityOtherInformation_narrative_info_section_security" name="entityOtherInformation_narrative_info_section_security" accesslevel="0"/><!-- change request -->
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="market_information_production_commitment_security information screen" name="market_information_production_commitment_security"/>
  <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show entityOtherInformation_life_volume_security" name="entityOtherInformation_life_volume_security"/>
  <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show entityOtherInformation_pl_volume_security" name="entityOtherInformation_pl_volume_security"/>
@@ -434,8 +434,8 @@
      <tabsconfigurationresource deltaind="M" accesslevel="0" name="entityGeneralDetails_new_business_term_date_security"/>
      <tabsconfigurationresource deltaind="M" accesslevel="0" description="agency_comparativerate_securityHeader" name="agency_comparativerate_securityHeader"/>
      <!-- sprint 4 - other reason -->
-  <!--    <tabsconfigurationresource deltaind="I" accesslevel="0" description="Suspension_Reason_Other_security" name="Suspension_Reason_Other_security"/>
-  --><!-- New Req sent by Preeti -->
+     <tabsconfigurationresource deltaind="I" accesslevel="0" description="Suspension_Reason_Other_security" name="Suspension_Reason_Other_security"/>
+ <!-- New Req sent by Preeti -->
  <tabsconfigurationresource deltaind="I" accesslevel="0" name="agencyListPublicSubmit_license_num_security"/>
  
  <!-- Bug Id : 149 -->
@@ -532,7 +532,10 @@
 	  <tabsconfigurationresource deltaind="M" description="Show/Hide entityOtherInformation_narrative_question_3_security" name="entityOtherInformation_narrative_question_3_security" accesslevel="1"/>
 	  <tabsconfigurationresource deltaind="M" description="Show/Hide entityOtherInformation_narrative_question_4_security" name="entityOtherInformation_narrative_question_4_security" accesslevel="1"/>
 	    
-	    <tabsconfigurationresource deltaind="M" accesslevel="0" description="addAgencyTaskDetails_agent_name_security" name="addAgencyTaskDetails_agent_name_security"/>
+	  <!-- production issue  -->
+     <!--    <tabsconfigurationresource deltaind="M" accesslevel="0" description="addAgencyTaskDetails_agent_name_security" name="addAgencyTaskDetails_agent_name_security"/> -->
+     <tabsconfigurationresource deltaind="M" accesslevel="1" description="addAgencyTaskDetails_agent_name_security" name="addAgencyTaskDetails_agent_name_security"/>
+	  
 	  
 	  <!-- Hide Benefit Enrollment link  -->
 	     <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show navigation_link_security" name="navigation_link_security"/>
@@ -547,4 +550,45 @@
 
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="hide_show_prospect_section_security" name="hide_show_prospect_section_security"/>
  
+ <!-- Show Cyber Liability Carrier Name -->
+ <tabsconfigurationresource deltaind="M" accesslevel="1" description="Agency_declarationCyberLiability_security" name="Agency_declarationCyberLiability_security"/>
+ 
+ <!-- Hiding Comment and Question -->
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="agencyListEdit_cyber_liability_eo_claims_security" name="agencyListEdit_cyber_liability_eo_claims_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="cyber_liability_eo_claims_idDiv" name="cyber_liability_eo_claims_idDiv"/>
+ 
+ <!-- Hiding Report from Producer Compliance 14/04/2021 -->
+ <tabsconfigurationresource deltaind="M" accesslevel="0" name="isShowReportsOnAgencyAdminDashboard"/>
+ 
+ <!-- Hiding Other Report Tabs -->
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide Show Adhoc report" name="showAdhocReport"/>
+ 
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide Show WhatifAnalysis report" name="showWhatifAnalysisReport"/>
+ 
+ <!-- Test -->
+ <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide Show Plas report" name="plasreports_tab_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide Show Compensation report" name="compensationreports_tab_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide Show Relationship report" name="relationshipreports_tab_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide Show Performance report" name="performancereports_tab_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide Show Audit report" name="auditreports_tab_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide Show Bonus report" name="ccbreports_tab_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide Show Commission report" name="commissionreports_tab_security"/>
+ 
+ <!-- Observations -->
+ <tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyListEdit_top_companies_appointmentdate_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="1" description="agencyListEdit_general_other_office_location_security" name="agencyListEdit_general_other_office_location_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="1" description="agencyListPublicSubmitN_freeform_contextdata_1123" name="agencyListPublicSubmitN_freeform_contextdata_1123"/>
+
+
+ <!-- Email Event -->
+ <tabsconfigurationresource deltaind="M" name="agencyListPublicSubmitNInvitation_send_email_security" accesslevel="1" description="Set this flag's accesslevel 1 to enable the resend invitation email functionality in Send Invitation Bucket" />
+
+
+ 
+ <!-- 30/04.2021 Copy Business Address to W9 Address -->
+ <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show entityGeneralDetails_copy_business_to_w9_security" name="entityGeneralDetails_copy_business_to_w9_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show entityGeneralDetails_copy_mailing_to_w9_security" name="entityGeneralDetails_copy_mailing_to_w9_security"/>
+ 
+ 
+
 </tabsconfiguration>

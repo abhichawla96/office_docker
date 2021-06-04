@@ -454,8 +454,8 @@
       </workflow>
 
     </action>
-    <action name="save">
-    	<actionparam form="Y" name="isSaveExtendedFields" paramid="isSaveExtendedFields" pre="Y" val="Y"/>
+    <action name="save" deltaind="M">
+      <actionparam form="Y" name="isSaveExtendedFields" paramid="isSaveExtendedFields" pre="Y" val="Y"/>
       <actionparam eval="ProducerOneRule.removeHyphenFromZip" executionsequence="27" form="Y" name="zip" paramid="zip" pre="Y"/>
       <actionparam eval="ProducerOneRule.encryptbankRoutingNumber" executionsequence="26" form="Y" name="bank_routing_number" paramid="bank_routing_number123" pre="Y"/>
       <actionparam eval="ProducerOneRule.encryptbankAccountNumber" executionsequence="25" form="Y" name="bank_account_number" paramid="bank_account_number123" pre="Y"/>
@@ -618,6 +618,13 @@
           <parameteroperation indexno="3" mode="IN" property="last_updated_by" seq="3"/>
           <parameteroperation indexno="4" mode="IN" property="assigned_parent_producer_number_id" seq="4"/>
           <resultsetoperation indexno="1" mappingclass="java.util.HashMap"/>
+        </storedprocedureoperation>
+      </workflow>
+      
+      <workflow deltaind="I" name="autoGenerateSubProdCodes" seq="14">
+        <storedprocedureoperation dbspname="insert_sub_producer_code_p" eval="ProducerOneRule.isInetErrorListEmpty" executionsequence="0" id="insert_sub_producer_code_p" metaobject="sub_producer_association" name="insert_sub_producer_code_p" operation="1">
+          <parameteroperation indexno="1" mode="IN" property="producer_number_id" seq="1"/>
+		  <resultsetoperation indexno="1" mappingclass="java.util.HashMap"/>
         </storedprocedureoperation>
       </workflow>
 
@@ -1494,6 +1501,11 @@
         </storedprocedureoperation>
       </workflow>
       <actionparam executionsequence="0" form="Y" name="maintab" paramid="maintab" post="Y" session="Y" val="agencycode"/>
+      
+      <!-- new CR -->
+       <workflow deltaind="I" name="producer_name" seq="24">
+	        	<databaseoperation executionsequence="0" metaobject="agency_master" name="producer_name" operation="3" sqlstmt="select name as producer_name from agency_master where agency_id = #agency_id# "/>
+	      </workflow>
     </action>
     <action name="refreshZoneLob">
       <actionparam executionsequence="0" form="Y" name="object_type_v" paramid="object_type_v" val="ProducerNumber" viewparam="Y"/>

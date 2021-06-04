@@ -1,0 +1,15 @@
+<projectcomponents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/components_XSD.xsd">
+  <component name="sqlStatements">
+    <action name="view" deltaind="M">
+      <workflow deltaind="M" name="view" seq="0">
+      
+       <storedprocedureoperation deltaind="I" dbspname="getLatestSubProducerCode_p" executionsequence="27" id="getLatestSubProducerCode_p" metaobject="person" name="getLatestSubProducerCode_p" operation="5">
+		  <parameteroperation indexno="0" mode="IN" property="producer_number_id" seq="1"/>
+		  <parameteroperation indexno="1" mode="OUT" property="output" seq="2"/>
+          <resultsetoperation indexno="1" mappingclass="java.util.HashMap" seq="0"/>
+       </storedprocedureoperation>
+        
+	</workflow>
+    </action>
+  </component>
+</projectcomponents>

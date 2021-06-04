@@ -56,11 +56,20 @@
 				objectid="aar_requestid" objecttype="Onboarding">
 			</status>
 		</event>
-		<event name="ResendInvitation" assigneerole="MarketingAssistant">
-			<status name="ResendInvitation" workflowstatus="Invited" workflowfunction="Public Submission" executionsequence="0"
+		<event name="ResendInvitation" assigneerole="MarketingAssistant" deltaind="M">
+			<status deltaind="M" eval="ProducerOneRule.isRegistrationTypePrimarySecondary" name="ResendInvitation" workflowstatus="Invited" workflowfunction="Public Submission" executionsequence="0"
 				statuscomment="comments" usergroup="MarketingAssistant" statusgroup="Onboarding" assignee="user_id"
 				objectid="aar_requestid" objecttype="Onboarding">
 				<email name="ResendInvitation" eventname="ResendInvitation" objectid="aar_requestid" objecttype="Onboarding">
+					<parameter name="System_Name" value="clientName" executionsequence="0"></parameter>
+					<parameter name="Entity_Name" value="Entity_Name" executionsequence="1"></parameter>
+				</email>
+			</status>
+			<!-- Bmic req -->
+			<status deltaind="I" eval="ProducerOneRule.isRegistrationTypeProducerRegistrationAgencyDetailScreen" name="ResendInvitationProducer" workflowstatus="Invited" workflowfunction="Public Submission" executionsequence="0"
+				statuscomment="comments" usergroup="MarketingAssistant" statusgroup="Onboarding" assignee="user_id"
+				objectid="aar_requestid" objecttype="Onboarding">
+				<email name="ResendInvitation" eventname="ResendInvitationForAgent" objectid="aar_requestid" objecttype="Onboarding">
 					<parameter name="System_Name" value="clientName" executionsequence="0"></parameter>
 					<parameter name="Entity_Name" value="Entity_Name" executionsequence="1"></parameter>
 				</email>

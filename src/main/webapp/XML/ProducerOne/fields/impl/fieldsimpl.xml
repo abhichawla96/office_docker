@@ -309,7 +309,7 @@
   
   <!-- Market info new section -->
   <field deltaind="I" isextendedfield="Y" name="co_op_ad_dollar_spent" screen="carrier/entityOtherInformation.html" objectcolumn="agency_id" section="entityOtherInformation_co_op_ad_freeform_contextdata_1" displaytype="text" 
-	isrequired="N" labelkey="co_op_ad_dollar_spent_label" labeldesc="Co-Op Advertising dollar amount spent YTD" accesslevel="1" tabsconfigurationresourcename="co_op_ad_dollar_spent_security" mappedto="f10"
+	isrequired="N" labelkey="co_op_ad_dollar_spent_label" labeldesc="Co-Op Advertising dollar amount spent YTD" accesslevel="1" tabsconfigurationresourcename="co_op_ad_dollar_spent_security" mappedto="f10" format="amount"
 	protectedresourceuniquename="co_op_ad_dollar_spent_security" id="co_op_ad_dollar_spent" position="#co_op_ad_dollar_spent_security_before#">
 	</field>	                     
 					
@@ -369,4 +369,23 @@
 	  <!-- Market info new section -->
   
   
+  <!-- blocker issue- review screen  -->  
+  <field deltaind="M" id="agencyListPublicSubmitNInvitationEdit_narrative_kit_delivery" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" name="kit_delivery" isrequired="N" labelkey="agencyListPublicSubmitNInvitationEdit_narrative_kit_delivery_security" tabsconfigurationresourcename="agencyListPublicSubmitNInvitationEdit_narrative_kit_delivery_security" protectedresourceuniquename="agencyListPublicSubmitNInvitationEdit_narrative_kit_delivery_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
+  
+  
+   <!-- Adding Brand Ambassador Recipient in Market Info -->
+	  
+  	<field deltaind="I" isextendedfield="Y" name="co_op_ad_brand_ambassador_recipient" screen="carrier/entityOtherInformation.html" objectcolumn="agency_id" section="entityOtherInformation_co_op_ad_freeform_contextdata_1" displaytype="text" 
+	isrequired="N" labelkey="co_op_ad_brand_ambassador_recipient_label" labeldesc="Brand Ambassador Recipient" accesslevel="1" tabsconfigurationresourcename="co_op_ad_brand_ambassador_recipient_security" mappedto="f22"
+	protectedresourceuniquename="co_op_ad_brand_ambassador_recipient_security" id="co_op_ad_brand_ambassador_recipient" position="#co_op_ad_brand_ambassador_recipient_security_before#">
+	</field>
+	
+	<!--Earlier : bug id 100 -->
+	<!-- Now : Effective Date Not Mandatory 23/04/2021-->
+  
+  	<field deltaind="I" id="agencyFunctions_selectFunctionType_effective_date" screen="admin/agencyFunctions_selectFunctionType.html" name="effective_date" isrequired="N" labelkey="agencyFunction_effective_date_label" tabsconfigurationresourcename="agencyFunctions_effective_date_security" protectedresourceuniquename="agencyFunctions_effective_date_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">    
+  	</field>
+	<!-- ssn production issue -->
+	 <field deltaind="I" id="ssn_tax_id_popup" screen="carrier/taxidPopup.html" name="ssn_num" isrequired="Y" labelkey="feinFieldLabel1" tabsconfigurationresourcename="ssn_popup_securityHeader" protectedresourceuniquename="ssn_popup_securityHeader" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
+  </field>
  </fields>

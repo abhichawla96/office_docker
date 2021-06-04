@@ -519,7 +519,32 @@
 																	</div>
 																</li>
 																<li class="inlineBlock_2" id="#suspension_reason_after#"></li>
-																
+																<!-- BMIC req. -->
+																<li class="inlineBlock_2" id="agencyFunctions_selectFunctionType_agencySus_security">
+										                                <div class="freeFormList form-group">
+										                                  <div class="freeFormListTr">
+										                                    <div class="freeFormListTdError">
+										                                      <h6>#space#</h6>
+										                                    </div>
+										                                    <div class="freeFormListTdError paddingLeft3">
+										                                      <div id="error_termination_reason_other" class="error"></div>
+										                                      <div id="ajax_error_termination_reason_other" class="error"></div>
+										                                    </div>
+										                                  </div>
+										                                  <div class="freeFormListTr">
+										                                    <div class="freeFormListTd labelAlign freeFormLabelWidth">
+										                                    	<span id="agencyFunctions_selectFunctionType_agencysus_reason_other_label">Suspension Reason Other</span> :
+										                                    </div>
+										                                    <div class="freeFormListTd tdInput">
+										                                    	<input name="termination_reason_other"
+																					fullid="agencyFunctions_selectFunctionType_freeform_contextdata_2(agencyFunctions_selection_security.agencyFunctions_selection_header_filters_label).agencyFunctions_selectFunctionType_terminationReasonOther_security.agencyFunctions_selectFunctionType_termination_reason_other_label.termination_reason_other"
+																				id="ajax_field_termination_reason_other" type="text"
+										                                    	class="form-control" maxlength="200" />
+																			</div>
+										                                  </div>
+										                                </div>
+										                        </li>
+										                        <!-- END - -->
 																<li class="inlineBlock_2" id="#termination_reason_other_before#"></li>
 																<li class="inlineBlock_2" id="agencyFunctions_selectFunctionType_terminationReasonOther_security">
 										                                <div class="freeFormList form-group">
@@ -1673,7 +1698,11 @@
 
 											<div id="ajax_error_selectedTemplateType" class="error" align="center" />
 											<div id="error_selectedTemplateType" class="error" align="center" />
-											<div class="text-heading txtbold mendatoryInput">
+											<!-- Changes to make optional for DC  -->
+											<div id="selectlettermandatory_security" class="text-heading txtbold mendatoryInput">
+												&nbsp;<label id="agencyFunctions_letterTemplateList_label">Select Letter Template</label>
+											</div>
+											<div id="selectletternonmandatory_security" class="text-heading txtbold">
 												&nbsp;<label id="agencyFunctions_letterTemplateList_label">Select Letter Template</label>
 											</div>
 											<div id="ajax_sorting_15" class="gridTopPadding4">
