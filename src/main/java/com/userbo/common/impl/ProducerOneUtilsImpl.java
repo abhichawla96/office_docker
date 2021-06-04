@@ -686,7 +686,7 @@ public static String attachAndSendEmail (Context ctx)
 	                    buf.append("</table> \n")
 	                    .append("<p>&nbsp </p> \n")
 	                    .append("<p style=\"font-size:13px; font-family:Arial;\">Sincerely,</p> \n")
-	                    .append("<div style=\"float: left; height: 130px; width: 120px;\"> \n")
+	                    .append("<div style=\"float: left; height: 110px; width: 120px;\"> \n")
 	                    .append("<img src=\"https://builderuat.rscube.com/BuilderClient/images/bmicLogo2.jpg\" width=\"90\" height=\"90\"> \n")
 	                    .append("</div> \n")
 
