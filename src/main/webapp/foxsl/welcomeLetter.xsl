@@ -142,7 +142,7 @@
 								<fo:table-row>
 									<fo:table-cell>
 										<fo:block font-size="10px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-										<fo:inline padding-left="15mm">Dear <fo:inline font-weight="bold"><xsl:value-of select="response/hrp_fname"/></fo:inline>
+										<fo:inline padding-left="15mm">Dear <fo:inline><xsl:value-of select="response/hrp_fname"/></fo:inline>
 										</fo:inline></fo:block>
 									</fo:table-cell>
 								</fo:table-row>
@@ -214,7 +214,7 @@
 									<fo:table-cell  padding-left="15mm">
 										<fo:block font-size="10px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
 										I look forward to the partnership that we will build together.  Your Territory Manager, 
-										<fo:inline font-weight="bold"><xsl:value-of select="concat(normalize-space(response/t_manager), ',')"/></fo:inline>
+										<fo:inline><xsl:value-of select="concat(normalize-space(response/t_manager), ',')"/></fo:inline>
 										
 										 is the primary point of contact for all of your agency needs.  If you have any questions or need any assistance in the future, please feel free to contact me at 919-227-0363 or bmoock@bmico.com. 
 										
