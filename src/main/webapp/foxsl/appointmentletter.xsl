@@ -84,10 +84,12 @@
 								<fo:table-row>
 									<fo:table-cell>
 										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-										<fo:inline padding-left="15mm"><xsl:value-of select="response/Agent_Address1"/> 
+										<fo:inline padding-left="15mm">
 										<xsl:if test="response/Agent_Address2 !='null' ">
-										
-										 ,<xsl:value-of select="response/Agent_Address2"/>
+										<xsl:value-of select="concat(normalize-space(response/Agent_Address1), ',',' ',normalize-space(response/Agent_Address2))"/>
+										 </xsl:if>
+										 <xsl:if test="response/Agent_Address2 ='null' ">
+										 <xsl:value-of select="response/Agent_Address1"/>
 										 </xsl:if>
 										</fo:inline>
 										</fo:block>
