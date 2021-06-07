@@ -51,8 +51,7 @@
 										<fo:inline padding-left="15mm">
 										
 										<xsl:if test="contains(response/Entity_Name, '&amp;')">
-										
-										<xsl:value-of select="translate($agencyName, 'amp;', '')"/>,
+										   <xsl:value-of select="substring-before($agencyName, '&amp;')"/> &amp; <xsl:value-of select="substring-after($agencyName, ';')"/>,
 										</xsl:if>
 									    <xsl:if test="not(contains(response/Entity_Name, '&amp;'))">
 										<xsl:value-of select="response/Entity_Name"/>,
@@ -88,7 +87,9 @@
 								<fo:table-row>
 									<fo:table-cell>
 										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-										<fo:inline padding-left="15mm"><xsl:value-of select="response/Agent_City"/>,<xsl:value-of select="response/state_code"/>, <xsl:value-of select="response/Agent_Zip"/>
+										<fo:inline padding-left="15mm">
+										<xsl:value-of select="concat(normalize-space(response/Agent_City), ',', normalize-space(response/state_code), ' ', normalize-space(response/Agent_Zip))"/>
+									
 										</fo:inline></fo:block>
 									</fo:table-cell>
 								</fo:table-row>
@@ -139,7 +140,7 @@
 										
 										We’ve received and processed your appointment request with <xsl:if test="contains(response/Entity_Name, '&amp;')">
 										
-										<xsl:value-of select="translate($agencyName, 'amp;', '')"/>,
+										<xsl:value-of select="substring-before($agencyName, '&amp;')"/> &amp; <xsl:value-of select="substring-after($agencyName, ';')"/>,
 										</xsl:if>
 									    <xsl:if test="not(contains(response/Entity_Name, '&amp;'))">
 										<xsl:value-of select="response/Entity_Name"/>,
@@ -202,7 +203,7 @@
 										<fo:table-cell border="0.1pt solid black">
 											<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;" margin-left="-12mm">
 											<xsl:if test="contains(description, '&amp;')">
-										     <xsl:value-of select="translate($loa, 'amp;', '')"/>
+											<xsl:value-of select="substring-before(description, '&amp;')"/> &amp; <xsl:value-of select="substring-after(description, ';')"/>
 										  </xsl:if>
 									      <xsl:if test="not(contains(description, '&amp;'))">
 										    <xsl:value-of select="description"/>
