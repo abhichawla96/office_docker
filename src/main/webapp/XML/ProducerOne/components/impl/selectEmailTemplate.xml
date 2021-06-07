@@ -9,14 +9,11 @@
 						<parameteroperation indexno="1" mode="IN" property="objectid" seq="2"/>
 						<resultsetoperation indexno="0" mappingclass="java.util.HashMap" seq="1"/>
 				</storedprocedureoperation>
-	       <!--  </workflow>
-	        <workflow name="send" seq="1"> -->
-    			<function deltaind="I" name="parseDataXML" functionid="parseDataXML" parameters="context,:backpagedata_context" executionsequence="0"></function>
-    		</workflow>
+    			</workflow>
     		
-    		 <workflow deltaind="M" name="send" seq="1">
-    			<function deltaind="D" name="parseDataXML" functionid="parseDataXML" parameters="context,:backpagedata_context" executionsequence="0"></function>
-    		</workflow>
+    		 <workflow name="sendParse" deltaind="I" seq="1">
+    			<function name="parseDataXML" functionid="parseDataXML" parameters="context,:backpagedata_context" executionsequence="0"></function>
+    		</workflow>  
     		
     		 <workflow name="email" deltaind="I"  seq="2" eval="ProducerOneRule.isNotSendInvitationEmail">
                   <databaseoperation deltaind="I" executionsequence="0" metaobject="master_lookup_data_lku" name="newProducerEmail1" operation="3" sqlstmt="select top 1 person_id  from person where requestid = #aar_requestid#"/>
@@ -26,7 +23,7 @@
          <actionparam deltaind="I" executionsequence="9" form="Y" name="person_id" paramid="person_id" viewparam="Y"/>
          <actionparam deltaind="I" executionsequence="10" form="Y" name="email_additionalAddress" paramid="email_additionalAddress" pre="Y"/>
          <actionparam deltaind="I" executionsequence="11" form="Y" name="agency_id" paramid="agency_id" viewparam="Y"/> 
-         <actionparam deltaind="I"  executionsequence="12" form="Y" name="Status" paramid="Status" pre="Y" val="Completed"/>
+         <actionparam deltaind="I"  executionsequence="12" eval="ProducerOneRule.isNotSendInvitationEmail" form="Y" name="Status" paramid="Status" post="Y" val="Completed"/>
          <actionparam deltaind="I"  executionsequence="13" form="Y" name="registration_type" paramid="registration_type" viewparam="Y"/>
        
        <workflow name="emaildetails" deltaind="I"  seq="3" eval="ProducerOneRule.isNotSendInvitationEmail">
