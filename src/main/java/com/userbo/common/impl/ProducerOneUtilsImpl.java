@@ -680,10 +680,11 @@ public static String attachAndSendEmail (Context ctx)
                     .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("description")).append("</td> \n")
                     .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("license")).append("</td> \n")
                     .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("effective_date")).append("</td> \n")
-                    .append("</tr></table> \n");
+                    .append("</tr> \n");
                     }
                     };
-                    buf .append("<p>&nbsp </p> \n")
+                    buf  .append("</table> \n")
+                    .append("<p>&nbsp </p> \n")
                     .append("<p style=\"font-size:13px; font-family:Arial;\">Sincerely,</p> \n")
                     .append("<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width:225pt; border-collapse:collapse;\"> \n")
                     .append("<tr> \n")
