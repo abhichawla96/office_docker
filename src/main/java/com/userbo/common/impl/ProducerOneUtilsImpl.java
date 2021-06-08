@@ -634,78 +634,82 @@ public static String attachAndSendEmail (Context ctx)
 			}
 			
 			StringBuilder buf = new StringBuilder();
-			buf.append("<html> \n"+
-                    "<body> \n"+
-                    "<p style=\"font-size:13px; font-family:Arial;\">Date: ").append(ctx.get("curr_date")).append("</p> \n")
+			 buf.append("<html> \n"+
+	                    "<body> \n"+
+	                    "<p style=\"font-size:13px; font-family:Arial;\">Date: ").append(ctx.get("curr_date")).append("</p> \n")
 
- 
+	 
 
-                    .append("<p style=\"margin: 0; font-size:13px; font-family:Arial;\">").append(ctx.get("agency_name")).append(", #").append(ctx.get("agency_code")).append("</p>")
-                    .append("<p style=\"margin: 0; font-size:13px; font-family:Arial;\">Attn: ").append(ctx.get("name")).append("</p> \n")
-                    .append("<p style=\"margin: 0; font-size:13px; font-family:Arial;\">").append(ctx.get("addressline1")).append("</p> \n")
-                    .append("<p style=\"margin: 0; font-size:13px; font-family:Arial;\">").append(ctx.get("city")).append(", ").append(ctx.get("abbreviation")).append(" ").append(ctx.get("zip")).append("</p> \n")
-                    .append("<p style=\"font-size:13px; font-family:Arial;\">Appointment Date: ").append(ctx.get("curr_date")).append("</p> \n")
+	                    .append("<p style=\"margin: 0; font-size:13px; font-family:Arial;\">").append(ctx.get("agency_name")).append(", #").append(ctx.get("agency_code")).append("</p>")
+	                    .append("<p style=\"margin: 0; font-size:13px; font-family:Arial;\">Attn: ").append(ctx.get("name")).append("</p> \n");
+	                    if(ctx.get("addressline2")== null || "".equals(ctx.get("addressline2"))){
+	                    	buf.append("<p style=\"margin: 0; font-size:13px; font-family:Arial;\">").append(ctx.get("addressline1")).append("</p> \n");
+	                    }else{
+	                    	buf.append("<p style=\"margin: 0; font-size:13px; font-family:Arial;\">").append(ctx.get("addressline1")).append(",").append(ctx.get("addressline2")).append("</p> \n");
+	                    }
+	                    buf.append("<p style=\"margin: 0; font-size:13px; font-family:Arial;\">").append(ctx.get("city")).append(", ").append(ctx.get("abbreviation")).append(" ").append(ctx.get("zip")).append("</p> \n")
+	                    .append("<p style=\"font-size:13px; font-family:Arial;\">Appointment Date: ").append(ctx.get("curr_date")).append("</p> \n")
 
- 
+	 
 
-                    .append("<p style=\"font-size:13px; font-family:Arial;\">Re: Appointment\\Authorization with Builders Mutual Insurance Company</p> \n")
-                    .append("<p style=\"font-size:13px; font-family:Arial;\">The Appointment(s) for ").append(ctx.get("agency_name")).append(", #").append(ctx.get("agency_code")).append(" have been sent to the following states listed below.</p> \n")
-                    .append("<table style=\"border: black 1px solid; border-collapse: collapse; width: 60%;\"> \n")
-                    .append("<tr> \n")
-                    .append("<th style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">Company</th> \n")
-                    .append("<th style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">State</th> \n")
-                    .append("<th style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">LOA</th> \n")
-                    .append("<th style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">License#</th> \n")
-                    .append("<th style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">Effective Date</th> \n")
-                    .append("</tr> \n");
-                    ctx.put("commaseperatedAppointedID", commaSeparatedIds);
-                    ctx.put("agency_id", 0);
-                    new SetParametersForStoredProcedures().setParametersInContext(ctx,"commaseperatedAppointedID,agency_id");
-                    List appointmentLetterList = SqlResources.getSqlMapProcessor(ctx).select("person.GetAgencyAppointmentRecords_p", ctx);
-                    for(int i=0; i<appointmentLetterList.size();i++)
-                    {
-                    Map map = (Map) appointmentLetterList.get(i);
-                    if(map.get("description")== null && "".equals(map.get("description"))){
-                    buf.append("<tr> \n")
-                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("company")).append("</td> \n")
-                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("abbreviation")).append("</td> \n")
-                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append("").append("</td> \n")
-                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("license")).append("</td> \n")
-                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("effective_date")).append("</td> \n")
-                    .append("</tr> \n");
-                    }else{
-                    buf.append("<tr> \n")
-                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("company")).append("</td> \n")
-                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("abbreviation")).append("</td> \n")
-                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("description")).append("</td> \n")
-                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("license")).append("</td> \n")
-                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("effective_date")).append("</td> \n")
-                    .append("</tr> \n");
-                    }
-                    };
-                    buf  .append("</table> \n")
-                    .append("<p>&nbsp </p> \n")
-                    .append("<p style=\"font-size:13px; font-family:Arial;\">Sincerely,</p> \n")
-                    .append("<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width:225pt; border-collapse:collapse;\"> \n")
-                    .append("<tr> \n")
-                    .append("<td valign=\"top\" style=\"width:58.5pt; height:60.7pt; padding:0 5.75pt 0 0; border-style:none solid none none; border-right-width:1pt; border-right-color:#D9D9D9;\"> \n")
-                    .append("<p style=\"font-size:11pt;font-family:Calibri,sans-serif;margin:0;line-height:105%;>")
-                    .append("<span style=\"font-family:Arial,sans-serif;\"></p> \n")
-                    .append("<img src=\"https://builder.outlinesys.com/BuilderClient/images/bmicLogo2.jpg\" width=\"90\" height=\"90\"> \n")
-                    .append("</span> \n")
-                    .append("</td> \n")
-                    .append("<td valign=\"top\" style=\"width:166.5pt;height:60.7pt;padding:0 0 0 5.75pt;\">")
-                    .append("<p style=\"margin: 0; font-size:13px; font-family:Arial;\">Sales Support </p> \n")
-                    .append("<p style=\"margin-top: 0; font-size:12px; font-family:Arial;\"><a href=\"mailto:salessupport@bmico.com\">salessupport@bmico.com</a></p> \n")
-                    .append("<p style=\"margin-bottom: 0; font-size:12px; font-family:Arial;\"><span style=\"color: red;\"><strong>CONTACT CENTER</strong></span></p> \n")
-                    .append("<p style=\"margin: 0; font-size:12px; font-family:Arial;\"> 800-809-4859, M-F 8am-6pm ET </p> \n")
-                    .append("<p style=\"margin: 0; font-size:12px; font-family:Arial;\"><strong>buildersmutual.com</strong></p> \n")
-                    .append("<p style=\"margin: 0; font-size:12px; font-family:Arial;\"><a href=\"https://www.facebook.com/buildersmutual\">Facebook | <a href=\"https://www.linkedin.com/company/builders-mutual-insurance-company\">LinkedIn | <a href=\"https://www.youtube.com/user/BuildersMutual/videos\">YouTube</a> \n")
-                    .append("</td></tr></tbody></table> \n")
-                    .append("<p style=\"font-size:10.5px; font-family:Arial;\">Nothing in this email shall commit BMIC to any purchase, sale, contract or other course of action.</p> \n")
-                    .append("<p style=\"float: left; font-size:13px; font-family:Arial;\"><em>This document shall be retained while your appointment is in effect and for at least 5 years after the termination of your appointment</em></p> \n")
-                    .append("</body> \n")
-                    .append("</html>");
+	                    .append("<p style=\"font-size:13px; font-family:Arial;\">Re: Appointment\\Authorization with Builders Mutual Insurance Company</p> \n")
+	                    .append("<p style=\"font-size:13px; font-family:Arial;\">The Appointment(s) for ").append(ctx.get("agency_name")).append(", #").append(ctx.get("agency_code")).append(" have been sent to the following states listed below.</p> \n")
+	                    .append("<table style=\"border: black 1px solid; border-collapse: collapse; width: 60%;\"> \n")
+	                    .append("<tr> \n")
+	                    .append("<th style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">Company</th> \n")
+	                    .append("<th style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">State</th> \n")
+	                    .append("<th style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">LOA</th> \n")
+	                    .append("<th style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">License#</th> \n")
+	                    .append("<th style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">Effective Date</th> \n")
+	                    .append("</tr> \n");
+	                    ctx.put("commaseperatedAppointedID", commaSeparatedIds);
+	                    ctx.put("agency_id", 0);
+	                    new SetParametersForStoredProcedures().setParametersInContext(ctx,"commaseperatedAppointedID,agency_id");
+	                    List appointmentLetterList = SqlResources.getSqlMapProcessor(ctx).select("person.GetAgencyAppointmentRecords_p", ctx);
+	                    for(int i=0; i<appointmentLetterList.size();i++)
+	                    {
+	                    Map map = (Map) appointmentLetterList.get(i);
+	                    if(map.get("description")== null || "".equals(map.get("description"))){
+	                    buf.append("<tr> \n")
+	                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("company")).append("</td> \n")
+	                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("abbreviation")).append("</td> \n")
+	                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append("").append("</td> \n")
+	                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("license")).append("</td> \n")
+	                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("effective_date")).append("</td> \n")
+	                    .append("</tr> \n");
+	                    }else{
+	                    buf.append("<tr> \n")
+	                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("company")).append("</td> \n")
+	                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("abbreviation")).append("</td> \n")
+	                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("description")).append("</td> \n")
+	                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("license")).append("</td> \n")
+	                    .append("<td style=\"border: black 1px solid; border-collapse: collapse; font-size:13px; font-family:Arial;\">").append(map.get("effective_date")).append("</td> \n")
+	                    .append("</tr> \n");
+	                    }
+	                    };
+	                    buf  .append("</table> \n")
+	                    .append("<p>&nbsp </p> \n")
+	                    .append("<p style=\"font-size:13px; font-family:Arial;\">Sincerely,</p> \n")
+	                    .append("<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width:225pt; border-collapse:collapse;\"> \n")
+	                    .append("<tr> \n")
+	                    .append("<td valign=\"top\" style=\"width:58.5pt; height:60.7pt; padding:0 5.75pt 0 0; border-style:none solid none none; border-right-width:1pt; border-right-color:#D9D9D9;\"> \n")
+	                    .append("<p style=\"font-size:11pt;font-family:Calibri,sans-serif;margin:0;line-height:105%;>")
+	                    .append("<span style=\"font-family:Arial,sans-serif;\"></p> \n")
+	                    .append("<img src=\"https://builder.outlinesys.com/BuilderClient/images/bmicLogo2.jpg\" width=\"90\" height=\"90\"> \n")
+	                    .append("</span> \n")
+	                    .append("</td> \n")
+	                    .append("<td valign=\"top\" style=\"width:166.5pt;height:60.7pt;padding:0 0 0 5.75pt;\">")
+	                    .append("<p style=\"margin: 0; font-size:13px; font-family:Arial;\">Sales Support </p> \n")
+	                    .append("<p style=\"margin-top: 0; font-size:12px; font-family:Arial;\"><a href=\"mailto:salessupport@bmico.com\">salessupport@bmico.com</a></p> \n")
+	                    .append("<p style=\"margin-bottom: 0; font-size:12px; font-family:Arial;\"><span style=\"color: red;\"><strong>CONTACT CENTER</strong></span></p> \n")
+	                    .append("<p style=\"margin: 0; font-size:12px; font-family:Arial;\"> 800-809-4859, M-F 8am-6pm ET </p> \n")
+	                    .append("<p style=\"margin: 0; font-size:12px; font-family:Arial;\"><strong>buildersmutual.com</strong></p> \n")
+	                    .append("<p style=\"margin: 0; font-size:12px; font-family:Arial;\"><a href=\"https://www.facebook.com/buildersmutual\">Facebook | <a href=\"https://www.linkedin.com/company/builders-mutual-insurance-company\">LinkedIn | <a href=\"https://www.youtube.com/user/BuildersMutual/videos\">YouTube</a> \n")
+	                    .append("</td></tr></tbody></table> \n")
+	                    .append("<p style=\"font-size:10.5px; font-family:Arial;\">Nothing in this email shall commit BMIC to any purchase, sale, contract or other course of action.</p> \n")
+	                    .append("<p style=\"float: left; font-size:13px; font-family:Arial;\"><em>This document shall be retained while your appointment is in effect and for at least 5 years after the termination of your appointment</em></p> \n")
+	                    .append("</body> \n")
+	                    .append("</html>");
         	body = buf.toString();
         	
 			List to = new ArrayList<String>();
