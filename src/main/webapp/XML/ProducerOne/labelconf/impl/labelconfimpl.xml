@@ -170,4 +170,11 @@
   <label deltaind="M" labeldesc="Territory Manager" labelkey="marketingRepFieldLabel"/>
   <label deltaind="M" labeldesc="Territory Manager" labelkey="pd_account_executive_label"/>
   
+   <!-- Label Change in Market Information - Phase 2 -->
+   <label deltaind="M" labeldesc="Top Three Companies Appointed" labelkey="top_companies_appointed_label"/>
+   
+   <!-- LOB Commercial Lines Prechecked - Phase 2 -->
+    <label deltaind="I" labeldesc="Commercial Lines" labelkey="prospectDetails_agency_lob_checkbox_label"/> 
+  
+   
 </labelconf>

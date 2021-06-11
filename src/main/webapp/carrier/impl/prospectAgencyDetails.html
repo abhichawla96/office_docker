@@ -1,0 +1,2400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta name="generator" content="HTML Tidy, see www.w3.org" />
+<meta http-equiv="X-UA-Compatible" content="IE=10" />
+<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+<!-- tag for resolution change -->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<title>ProducerOne - Producer Management Center</title>
+<!-- css -->
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<!-- Scripts -->
+<script type="text/javascript" src="js/all_files.js" />
+</head>
+<body
+	onload="javascript:setGetRadioButtonsFromRadioGroup('rollover_potential','ajax_field_rollover_potential','set');javascript:setGetRadioButtonsFromRadioGroup('agency_registration_type_id','ajax_field_selected_agency_registration_type_id','set');loadAdminBrokerageDetails1();showNationalAgencyNameDropdownForProspect();loadentityGeneralDetail();updatePreviewEmail();checkBrowsewrType();showPopUpList('popupSendInvitation','isSendInvitationClicked');showPopUpList('popupSendInvitationNew','isSendInvitationNewClicked');showPopUpList('popupSendInvitationNewLink','isShowInvitationLinkPopup');showPopUpList('popupSendEmail','isSendEmailClicked');showPopUpList('popupConvertToAgencyPopup','isConvertToAgencyClicked');"
+	onclick="loadAdminBrokerageDetails1();loadentityGeneralDetail();updatePreviewEmail();checkBrowsewrType();showPopUpList('popupSendInvitation','isSendInvitationClicked');showPopUpList('popupSendInvitationNew','isSendInvitationNewClicked');showPopUpList('popupSendInvitationNewLink','isShowInvitationLinkPopup');showPopUpList('popupSendEmail','isSendEmailClicked');showPopUpList('popupConvertToAgencyPopup','isConvertToAgencyClicked');"
+	>
+	<form>
+		<div id="cover" />
+		<div id="contextLinks" />
+		<div id="deleteConfirmation">
+			<!-- Modal -->
+			
+			<div class="modal fade modal_popup">
+				<div class="modal-dialog modal-dialog-width_350">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">
+								<a id="ProspectAgencyDetail_Close" href="#" class="close"
+									onclick="closePopUp('deleteConfirmation')"> <img
+									src="images/close.png" />
+								</a> Delete Contact
+							</h4>
+						</div>
+						<div class="modal-body">
+							<div class="modal-body-scroll popup_small_height">
+								<span class="delete_ico icons">#space#</span> Are you sure you
+								want to delete this item?
+							</div>
+						</div>
+						<div class="modal-footer">
+							<div class="buttonwrapper">
+								<a id="ProspectAgencyDetail_yes"
+									onclick="closePopUp('deleteConfirmation');"
+									href="javascript:document.forms[0].submit();"
+									class="btn btn-primary"> <span>Yes</span>
+								</a> <a id="ProspectAgencyDetail_No" href="#"
+									onclick="clean();closePopUp('deleteConfirmation');"
+									class="btn btn-default"> <span>No</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Modal End -->
+		</div>
+		<div id="deleteConfirmation2">
+			<!-- Modal -->
+			<div class="modal fade modal_popup">
+				<div class="modal-dialog modal-dialog-width_350">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">
+								<a href="#" class="close" id="entityGeneralDetails_close2"
+									onclick="closePopUp('deleteConfirmation2')"> <img
+									src="images/close.png" />
+								</a> Delete
+							</h4>
+						</div>
+						<div class="modal-body">
+							<div class="modal-body-scroll popup_small_height">
+								<span class="delete_ico icons">#space#</span> Are you sure you
+								want to delete this item?
+							</div>
+						</div>
+						<div class="modal-footer">
+							<div class="buttonwrapper">
+								<a id="entityGeneralDetails_yes2"
+									onclick="closePopUp('deleteConfirmation2');callAjaxDelete('additionalEmailAddressDiv');"
+									href="#" class="btn btn-primary"> <span id="entityGeneralDetails_yes2_label">Yes</span>
+								</a> 
+								<a href="#" id="entityGeneralDetails_no2"
+									onclick="clean();closePopUp('deleteConfirmation2');"
+									class="btn btn-default"> <span id="entityGeneralDetails_no2_label">No</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Modal End -->
+		</div>
+		
+		<div id="popupSendInvitationNewLink">
+			<div id="isShowInvitationLinkPopup">
+				<!-- Modal -->
+				<div class="modal fade modal_popup">
+					<div class="modal-dialog modal-dialog-width_700">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title">
+									<a id="ProspectAgencyDetail_Close1" class="close"
+										href="javascript:submitform('carrier/prospectAgencyDetails.html','prospectAgencyDetails.closepopupSendInvitationNewLink','','');">
+										<img src="images/close.png" />
+									</a> <span id="entitybuttonlabel">Send Invitation</span>
+								</h4>
+							</div>
+							<div class="modal-body">
+								<div class="modal-body-scroll scroll_300">
+									<div class="row"
+										id="advanceSearchEntityResult_freeform_contextdata_102">
+										<p align="center">Public Submission Invitation has been
+											created.</p>
+										<p align="center" id="checkEmailForInvitation">
+											You can send the invitation to <label
+												id="toemail_forInvitation" name="toemail_forInvitation" />
+											<span id="isCcEmailForInvitationNotEmpty"> &amp; <label
+												id="ccemail_forInvitation" name="ccemail_forInvitation" />
+											</span> using the "Send EMail" button.
+										</p>
+										<p align="center">The URL for the Invitation record
+											created is given below.</p>
+										<p id="copyURLButtonDiv1" align="center">You can copy and
+											save this url to your clipboard for future reference using
+											the "Copy URL" Button.</p>
+										<p id="copyURLButtonDiv2" align="center" style="display: none">You
+											can copy and save this url to your clipboard for future
+											reference.</p>
+										<p align="center">
+											<a onclick="OpenPublicInvitataion();" href="#"> <label
+												name="invitation_link" id="invitation_link1" />
+											</a>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<div class="buttonwrapper">
+									<span id="send_email_security"> <a class="btn btn-primary"
+										id="checkEmailForInvitation"
+										href="javascript:submitform('carrier/prospectAgencyDetails.html','prospectAgencyDetails.sendInvitationNew','','');">
+											<span>Send Email</span>
+									</a>
+									</span> <span id="enable_preview_email_popup_security"> <a
+										class="btn btn-primary" id="checkEmailForInvitation"
+										href="javascript:submitform('carrier/prospectAgencyDetails.html','prospectAgencyDetails.showEmailPreview','','');">
+											<span>Send Email</span>
+									</a>
+									</span>
+									<div id="copyURLButtonDiv">
+										<a id="ProspectAgencyDetail_CopyURl" class="btn btn-primary"
+											href="#" onclick="copyToClipboard();"> <span>Copy
+												URL</span>
+										</a>
+									</div>
+									<a class="btn btn-default"
+										href="javascript:submitform('carrier/prospectAgencyDetails.html','prospectAgencyDetails.closepopupSendInvitationNewLink','','');">
+										<span>Cancel</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Modal End -->
+			</div>
+		</div>
+		<div id="popupSendInvitationNew">
+			<div id="isSendInvitationNewClicked">
+				<!-- Modal -->
+				<div class="modal fade modal_popup">
+					<div class="modal-dialog modal-dialog-width_700">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title">
+									<a class="close"
+										href="javascript:submitform('carrier/prospectAgencyDetails.html','prospectAgencyDetails.closeSendInvitationPopupNew','','');">
+										<img src="images/close.png" />
+									</a> <span id="entitybuttonlabel">Create Invitation</span>
+								</h4>
+							</div>
+							<div class="modal-body">
+								<div class="modal-body-scroll scroll_300">
+									<div class="freeFormDiv form-inline">
+										<div class="padding-left-form">
+											<ul class="inlineBlock"
+												id="advanceSearchEntityResult_freeform_contextdata_101">
+												<li class="inlineBlock_1">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="error_entity_name_forInvitation" class="error" />
+																<div id="" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">
+																<span id="invitation_popup_entity_label">Entity</span>
+																Name :
+															</div>
+															<div class="freeFormListTd mendatoryInput">
+																<input name="entity_name_forInvitation"
+																	id="entity_name_forInvitation" type="text"
+																	maxlength="50" class="form-control form-control-150" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_1">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="error_toemail_forInvitation" class="error" />
+																<div id="" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">To
+																:</div>
+															<div class="freeFormListTd mendatoryInput">
+																<input name="toemail_forInvitation"
+																	id="toemail_forInvitation" type="text" maxlength="255"
+																	class="form-control form-control-250" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_1">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="error_ccemail_forInvitation" class="error" />
+																<div id="" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">Cc
+																:</div>
+															<div class="freeFormListTd tdInput">
+																<input name="ccemail_forInvitation"
+																	id="ccemail_forInvitation" type="text" maxlength="255"
+																	class="form-control form-control-250" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li id="primary_operating_division_security"
+													class="inlineBlock_1">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="error_primary_operating_division" class="error" />
+																<div id="" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">
+																<span id="primary_operating_division_label">Primary
+																	Operating Division</span> :
+															</div>
+															<div class="freeFormListTd mendatoryInput">
+																<select name="primary_operating_division"
+																	id="ajax_field_primary_operating_division"
+																	class="form-control selectWidth"
+																	onchange="javascript:ajaxpageblocklink('carrier/homeAction.html','homeAction.refreshAssigntoDropdown','','','assigntoDropdownDiv');">
+																	<option value="">Select</option>
+																</select>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li
+													id="1common.showForMarketRepSalesDirectorCarrierAdminNotAsstRoles"
+													class="inlineBlock_1">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="error_home_workflow_user" class="error" />
+																<div id="" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">Assigned
+																To :</div>
+															<div class="freeFormListTd mendatoryInput">
+																<div id="assigntoDropdownDiv">
+																	<select name="home_workflow_user"
+																		id="home_workflow_user"
+																		class="form-control selectWidth">
+																		<option value="">Select</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_1"
+													id="isShowIsDuplicateAgencyCheckBox">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="error_home_workflow_user" class="error" />
+																<div id="" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">Check
+																For Duplicate :</div>
+															<div class="freeFormListTd tdInput">
+																<input type="checkbox" name="is_check_for_duplicate"
+																	id="is_check_for_duplicate" value="1" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_1">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="ajax_error_comments" class="error" />
+																<div id="" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div
+																class="freeFormListTd labelAlign valignTop freeFormLabelWidth">Comment
+																:</div>
+															<div class="freeFormListTd tdInput">
+																<textarea name="comments" id="ajax_field_comments"
+																	style="height: 70px"
+																	class="form-control form-control-250"
+																	onkeyup="updateTextAreaCharCountMsg(this,'descriptionCharCountMsg',1024)"
+																	onfocus="showTextAreaCharCountMsg(this,'descriptionCharCountMsg',1024)"
+																	onblur="hideTextAreaCharCountMsg(this,'descriptionCharCountMsg',1024)" />
+																<div class="textareacharcount"
+																	id="descriptionCharCountMsg" />
+															</div>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<div class="buttonwrapper">
+									<a class="btn btn-primary"
+										href="javascript:submitform('carrier/prospectAgencyDetails.html','prospectAgencyDetails.createUrl','','');">
+										<span>Create URL</span>
+									</a> <a class="btn btn-default"
+										href="javascript:submitform('carrier/prospectAgencyDetails.html','prospectAgencyDetails.closeSendInvitationPopupNew','','');">
+										<span>Cancel</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Modal End -->
+			</div>
+		</div>
+		<div id="popupConvertToAgencyPopup">
+			<div id="isConvertToAgencyClicked">
+				<!-- Modal -->
+				<div class="modal fade modal_popup">
+					<div class="modal-dialog modal-dialog-width_700">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title">
+									<a class="close"
+										href="javascript:submitform('carrier/prospectAgencyDetails.html','prospectAgencyDetails.closeConvertToAgencyPopup','','');">
+										<img src="images/close.png" />
+									</a> Confirmation
+								</h4>
+							</div>
+							<div class="modal-body">
+								<div class="modal-body-scroll scroll_300">
+									<div class="freeFormDiv form-inline">
+										<div class="padding-left-form">
+											<ul class="inlineBlock"
+												id="homeAction_freeform_contextdata_101">
+												<li class="inlineBlock_1">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="error_align_to_existing" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth_300">
+																<span id="propsectWillThisBeAlignedlabel">Will this be
+														aligned to existing agency </span> :
+															</div>
+															<div class="freeFormListTd tdInput">
+																<input type="radio" class="checkboxMargins" value="Y"
+																	name="align_to_existing" id="ajax_field_align_to_existing"
+																	onclick="showNationalAgencyNameDropdownForProspect('ajax_field_national_agency_desc')" />
+																	Yes <input type="radio" class="checkboxMargins" value="N"
+																	id="ajax_field_align_to_existing" name="align_to_existing"
+																	onclick="showNationalAgencyNameDropdownForProspect('ajax_field_national_agency_desc_for_newAgency')" />
+																	No
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_1">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="error_national_agency_desc" class="error" />
+																<div id="error_national_agency_desc_for_newAgency" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth_300">
+																<span id="prospectAgencyName">Agency Name </span> :
+															</div>
+															<div class="freeFormListTd">
+																<div id="national_agency_desc_for_yes_flag" class="mendatoryInput">
+																	<input name="national_agency_desc"
+																		id="ajax_field_national_agency_desc" type="text"
+																		maxlength="255" class="form-control"
+																		autocomplete="OFF"
+																		onkeyup="javascript:ajaxpageblocklink('carrier/prospectAgencyDetails.html','prospectAgencyDetails.getProspectNationalAgencyNameList','','','ajaxxmlname_ajax_field_national_agency_desc');"
+																		onclick="nottoggleDivDisplay(this,'ajax_field_national_agency_desc','ajaxxmlname_ajax_field_national_agency_desc');" />
+																	<div id="ajaxxmlname_ajax_field_national_agency_desc"
+																		class="transparent"
+																		style="display: none; border: solid 1px #cccccc; width: 238px !important; margin-left: 0px" />
+																</div>
+																<div id="national_agency_desc_for_no_flag" class="mendatoryInput">
+																	<input name="national_agency_desc_for_newAgency"
+																		id="ajax_field_national_agency_desc_for_newAgency"
+																		type="text" maxlength="255"
+																		class="form-control" autocomplete="OFF"
+																		onchange="javascript:ajaxpageblocklink('carrier/prospectAgencyDetails.html','prospectAgencyDetails.getProspectNationalAgencyNameList','','','ajaxxmlname_ajax_field_national_agency_desc');"
+																		onclick="nottoggleDivDisplay(this,'ajax_field_national_agency_desc','ajaxxmlname_ajax_field_national_agency_desc');" />
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_1" id="assignedTo_flag">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="error_home_workflow_user_for_prospect" class="error" />
+																<div id="ajax_error_home_workflow_user_for_prospect" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth_300">
+																<span id="prospectAgencyDetails_assignedTo_label">Assigned To </span> :
+															</div>
+															<div class="freeFormListTd">
+																<div id="assigntoDropdownDiv" class="mendatoryInput">
+																	<select name="home_workflow_user_for_prospect"
+																		id="home_workflow_user_for_prospect"
+																		class="form-control">
+																		<option value="">Select</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_1" id="assignedTo_flag">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="error_cvt_agency_comment" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign valignTop freeFormLabelWidth_300">
+																<span id="prospectAgencyDetails_comment_label">Comment </span> :
+															</div>
+															<div class="freeFormListTd tdInput">
+																<textarea rows=""
+																	cols="" name="cvt_agency_comment"
+																	id="ajax_field_cvt_agency_comment" maxlength="255"
+																	style="height: 70px" class="form-control" />
+															</div>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								
+								</div>
+							</div>
+							<div class="modal-footer">
+								<div class="buttonwrapper">
+									<a class="btn btn-primary"
+										href="javascript:submitform('carrier/entityGeneralDetails.html','prospectAgencyDetails.convertToAgencyPopupSubmit','','');">
+										<span>Convert</span>
+									</a> <a class="btn btn-default"
+										href="javascript:submitform('carrier/prospectAgencyDetails.html','prospectAgencyDetails.closeConvertToAgencyPopup','','');">
+										<span>Cancel</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Modal End -->
+			</div>
+		</div>
+		<div id="popupSendEmail">
+			<div id="isSendEmailClicked">
+				<!-- Modal -->
+				<div class="modal fade modal_popup">
+					<div class="modal-dialog modal-dialog-width_700">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title">
+									<a class="close"
+										href="javascript:submitform('carrier/prospectAgencyDetails.html','prospectAgencyDetails.closeSendInvitationPopupNew','','');">
+										<img src="images/close.png" />
+									</a> Preview Email
+								</h4>
+							</div>
+							<div class="modal-body">
+								<div class="modal-body-scroll scroll_300">
+									<div class="row"
+										id="advanceSearchEntityResultemailpreview_freeform_contextdata_02">
+										<div style="overflow-y: scroll; height: 300px">
+											<div id="emailContentReadOnly" style="display: none" />
+											<div id="editableEmailBody" style="display: none">
+												<textarea rows="25" cols="100" id="editable_email_body"
+													name="editable_email_body" />
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<div class="buttonwrapper">
+									<span id="isShowEditPreviewMailTrue"> <a
+										class="btn btn-primary"
+										href="javascript:submitform('carrier/prospectAgencyDetails.html','prospectAgencyDetails.showEditableEmailPreview','','');">
+											<span>Edit Email</span>
+									</a>
+									</span> <span id="enable_preview_email_popup_security"> <a
+										class="btn btn-primary" id="checkEmailForInvitation"
+										href="javascript:submitform('carrier/prospectDetailsSearchResult.html','prospectAgencyDetails.sendInvitation','','');">
+											<span>Send Email</span>
+									</a>
+									</span> <a class="btn btn-default"
+										href="javascript:submitform('carrier/prospectAgencyDetails.html','prospectAgencyDetails.closeSendInvitationPopupNew','','');">
+										<span>Cancel</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Modal End -->
+			</div>
+		</div>
+		<div class="container-fluid bootstrap-node-1">
+			<div class="tableWidth">
+				<!--=======Header Start========-->
+				<header> <span id="#Include:carrier/carrierHeader.html#" />
+				</header>
+				<!--=======Header End========-->
+				<div class="bgmain">
+					<!--=======Menu Level 1 Start========-->
+					<nav class="menu-level-1 tab"> <span
+						id="#Include:carrier/prospectTabs.html#" /> </nav>
+					<!--=======Menu Level 1 End========-->
+					<!--=======Menu Level 2 Start========-->
+					<nav class="menu-level-2"> <span
+						id="#Include:carrier/carrierTabs2.html#" /> </nav>
+					<!--=======Menu Level 2 End========-->
+					<article class="content sidebar-content"> <!--=======Sidebar Start========-->
+					<div id="isSideBarHiereachyExists" class="sideBar">
+						<span id="#Include:carrier/sideBar.html#" />
+					</div>
+					<!--=======Sidebar End========--> <!--=======Body content Start========-->
+					<div class="panel-body-wraper" id="tdContent">
+						<!--=======page Level msg Start========-->
+						<div class="errorMsgAlign clear-both">
+							<div name="error_pageError" id="error_pageError" class="error" />
+						</div>
+						<div class="ConfirmationAlign clear-both"
+							id="prospectAgencyDetails_freeform_contextdata_100">
+							<label name="pageMsg" id="pageMsg" class="Confirmation" />
+						</div>
+						<!--=======page Level msg End========-->
+						<div id="contentTableDiv">
+							<section class="divButton">
+							<div class="row">
+								<div class="buttonwrapper buttonBottom">
+									<table cellpadding="0" cellspacing="0">
+									<tr>
+									<td><span id="buttonsDivOnStatusUpdate">
+								<span id="prospectAgencyDetails_convert_to_agency_security">
+									<span id="hideConvertToAgencyButton"> <span
+										id="isAgencyConvertedToAgency"> <!-- <a
+                                    href="javascript:submitform('carrier/entityGeneralDetails.html','prospectAgencyDetails.convertToAgency','','');"
+                                    class="btn btn-primary">Convert To Agency </a> -->
+											<a 	id="isProspectStatusConvertedToAgency"										
+												href="javascript:submitform('carrier/prospectAgencyDetails.html','prospectAgencyDetails.showConvertToAgencyPopup','','');"
+											class="btn btn-primary">Convert To Agency</a>
+									</span>
+								</span>
+								</span> <span id="prospectAgencyDetails_send_invitation_security">
+									<span id="isAgencyConvertedToAgency"> <!-- <a
+                                        href="javascript:submitform('carrier/prospectDetailsSearchResult.html','prospectAgencyDetails.sendInvitation','','');"
+                                        class="ovalbutton"><span>Send Invitation</span>
+                                    </a> --> <!-- <a href="javascript:submitform('carrier/prospectAgencyDetails.html','prospectAgencyDetails.showSendInvitationPopupNew','','');" class="ovalbutton">
+                            <span>Send
+Invitation</span>
+                          </a> --><span id="isProspectStatusConvertedToAgency"> <a id="prospectSendInvitation"                        
+                          			href="javascript:submitform('carrier/sendOnboardingInvitationStep1.html','prospectAgencyDetails.showSendOnboardingInvitation','','');"
+										class="btn btn-primary"> <span>Send Invitation</span>
+									</a>
+								</span>
+								</span>
+								</span>
+								</span></td>
+									<td>	<span id="prospectAgencyDetails_modify_security"> <a
+									id="isProspectStatusConvertedToAgency"
+									href="javascript:submitform('carrier/prospectAgencyDetails.html','prospectAgencyDetails.modify','','');"
+									class="btn btn-primary"> <span id="modify_label">Modify</span>
+								</a>
+								</span> </td>
+									</tr>
+									
+									
+									</table>
+								
+								
+								</div>
+							</div>
+							<div class="buttonwrapper buttonBottom">
+								
+							
+							
+							</div>
+							</section>
+							<section id="prospectTabs_prospect_details_security"
+								class="free-form">
+							<fieldset class="fieldset_inner">
+								<legend id="prospect_details_label">Prospect Details</legend>
+								<div class="freeFormDiv paddingTop10 form-inline prospect_agency">
+									<div class="padding-left-form">
+										<ul class="inlineBlock" id="prospectdetails_freeform_contextdata_3">
+
+											<li class="inlineBlock_2_fix" id="Prospectagency_name_security">
+												<div class="freeFormList form-group">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>#space#</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<div id="error_prospect_agency_name" class="error" />
+															<div id="ajax_error_prospect_agency_name" class="error" />
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign">
+															<div class="freeFormLabelWidth">
+																<span id="prospectAgencyName_label">Agency Name</span> :</div>															
+														</div>
+														<div class="freeFormListTd mendatoryInput">
+															<input name="prospect_agency_name"
+																id="ajax_field_prospect_agency_name" type="text"
+																fullid="prospectdetails_freeform_contextdata_3(prospectTabs_prospect_details_security.prospect_details_label).Prospectagency_name_security.prospectAgencyName_label.prospect_agency_name"
+																class="form-control" maxlength="128" value="" />
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="inlineBlock_2_fix" id="appointment_date_security">
+												<div class="freeFormList form-group"
+													id="appointment_date_div">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>#space#</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<div id="error_no_of_staff" class="error" />
+															<div id="ajax_error_no_of_staff" class="error" />
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign">
+															<div class="freeFormLabelWidth">
+																<span id="pd_numberOfEmployeesLabel">Number of Employees</span> :
+															</div>
+														</div>
+														<div class="freeFormListTd tdInput">
+															<input type="text" class="form-control"
+																name="no_of_staff" id="ajax_field_no_of_staff"
+fullid="prospectdetails_freeform_contextdata_3(prospectTabs_prospect_details_security.prospect_details_label).appointment_date_security.pd_numberOfEmployeesLabel.no_of_staff"/>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="inlineBlock_2_fix"
+												id="prospect_details_territory_manager_security">
+												<div class="freeFormList form-group" id="dba_div">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>#space#</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<div id="ajax_error_market_rep_id" class="error" />
+															<div id="error_market_rep_id" class="error" />
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign">
+															<div class="freeFormLabelWidth">
+																<span id="pd_territoryManagerLabel">Territory Manager</span> :</div>
+														</div>
+														<div class="freeFormListTd mendatoryInput">
+															<select class="form-control" name="market_rep_id"
+																id="ajax_field_market_rep_id"  fullid="prospectdetails_freeform_contextdata_3(prospectTabs_prospect_details_security.prospect_details_label).prospect_details_territory_manager_security.pd_territoryManagerLabel.market_rep_id">
+																<option value="" selected="selected">Select</option>
+															</select>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="inlineBlock_2_fix"
+												id="prospectDetails_web_address_security">
+												<div class="freeFormList form-group">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>#space#</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<div id="error_prospect_webaddress" class="error" />
+															<div id="ajax_error_prospect_webaddress" class="error" />
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign">
+															<div class="freeFormLabelWidth">
+															<span id="prospectWebsiteLabel">Website</span> :
+															</div>
+														</div>
+														<div class="freeFormListTd tdInput">
+															<input type="text" maxlength="30"
+																name="prospect_webaddress" fullid="prospectdetails_freeform_contextdata_3(prospectTabs_prospect_details_security.prospect_details_label).prospectDetails_web_address_security.prospectWebsiteLabel.prospect_webaddress"
+																id="ajax_field_prospect_webaddress" class="form-control" />
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="inlineBlock_2_fix"
+												id="prospectDetails_status_security">
+												<div class="freeFormList form-group">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>#space#</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<div id="error_prospect_status_id" class="error" />
+															<div id="ajax_error_prospect_status_id" class="error" />
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign">
+															<div class="freeFormLabelWidth">
+																<span id="pd_prospectStatusLabel">Prospect Status</span> :</div>
+														</div>
+														<div class="freeFormListTd tdInput">
+															<select name="prospect_status_id"
+																id="ajax_field_prospect_status_id" class="form-control"
+																onchange="javascript:ajaxsubmitform('carrier/prospectAgencyDetails.html','prospectAgencyDetails.refreshButtons','','','buttonsDivOnStatusUpdate');"
+																fullid="prospectdetails_freeform_contextdata_3(prospectTabs_prospect_details_security.prospect_details_label).prospectDetails_status_security.pd_prospectStatusLabel.prospect_status_id">
+																<option value="">Select</option>
+															</select>
+														</div>
+													</div>
+												</div>
+											</li>
+
+											<li id="prospect_details_any_rollover_potential_security" class="inlineBlock_1_fix">
+												<div class="freeFormList form-group">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>#space#</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<div id="error_agency_rollover_potential" class="error" />
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign">
+															<div class="freeFormLabelWidth">
+																<span id="anyrolloverpotentiallabel">
+																Any Rollover Potential
+																</span> :
+															</div>
+														</div>
+														<div
+															class="freeFormListTd tdInput divTdWidth_3 text-nowrap">
+															<input type="radio" value="Y" class="checkboxMargins"
+																name="rollover_potential"
+																fullid="prospectdetails_freeform_contextdata_3(prospectTabs_prospect_details_security.prospect_details_label).prospect_details_any_rollover_potential_security.anyrolloverpotentiallabel.rollover_potential"
+																id="ajax_field_rollover_potential" /> Yes <input
+																type="radio" value="N" class="checkboxMargins"
+																id="ajax_field_rollover_potential"
+																fullid="prospectdetails_freeform_contextdata_3(prospectTabs_prospect_details_security.prospect_details_label).prospect_details_any_rollover_potential_security.anyrolloverpotentiallabel.rollover_potential"
+																name="rollover_potential" /> No
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+										<ul class="inlineBlock">
+											<li id="#agency_registration_type_before#" class="inlineBlock_1_fix"></li>
+											<li class="inlineBlock_1_fix"
+												id="prospect_agency_registration_type_security">
+												<div class="freeFormList form-group">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>#space#</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<div id="ajax_error_agency_registration_type_id" />
+															<div id="error_agency_registration_type_id" />
+														</div>
+													</div>
+													<div class="freeFormListTr ">
+														<div
+															class="freeFormListTd labelAlign valignTop freeFormLabelWidth">
+															<span id="agency_registration_type_label" >Registration
+																Type</span> :
+														</div>
+														<!-- Registration Type Mandatory - Phase 2 -->
+														<div class="freeFormListTd mendatoryInput">
+															<div class="row full_width">
+																<ul class="div_checkbox div_checkbox3" id="agency_registration_type_list_01" style="padding-left: 6px;">
+																	<li id="agency_registration_type_list_header_01" style="display: none">
+																		<span class="tableinfoheader" id="block_field_radio_group_agency_registration_type_id"
+																						width="69" />
+																		<span class="tableinfoheader"
+																			id="block_field_agency_registration_type_desc" />
+																	</li>
+																	<li id="agency_registration_type_list_mom_data_01">
+																		<div id="mom_child_data">
+																			<span id="block_field_radio_group_agency_registration_type_id">
+																				<input type="radio"
+																				id="ajax_field_agency_registration_type_id"
+																				name="agency_registration_type_id"
+																				onclick="javascript:setGetRadioButtonsFromRadioGroup('agency_registration_type_id','ajax_field_selected_agency_registration_type_id','get');" />
+																			</span>
+																			<span id="block_field_agency_registration_type_desc" />
+																		</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li id="#agency_registration_type_after#"></li>
+											<li id="#agency_lob_before#"></li>
+											<!-- <li id="isShowAgencyLobCheckboxProspectDetails">
+												<div class="freeFormList form-group">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>#space#</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<div id="error_agency_lob" class="error" />
+															<div id="ajax_error_agency_lob" class="error" />
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign">
+															<div class="freeFormLabelWidth">
+																<label id="prospectDetails_agency_lob_label">Lines
+																	of Business</label> :
+															</div>
+														</div>
+														<div class="freeFormListTd mendatoryInput">
+															<div class="row full_width">
+																<ul class="div_checkbox div_checkbox3" id="agency_lob_list_mom_1" style="padding-left: 1px;">
+																	<li id="agency_lob_list_header_1" style="display: none">
+																		<span class="tableinfoheader" id="block_field_agency_lob_id"
+																						width="69" />
+																		<span class="tableinfoheader"
+																			id="block_field_agency_lob_desc" />
+																	</li>
+																	<li id="agency_lob_list_mom_data_1">
+																		<div id="mom_child_data">
+																			<span id="block_field_agency_lob_id" width="20"><input
+																				type="checkbox" id="ajax_field_agency_lob_id"
+																				name="agency_lob_id" tabindex="46" />
+																			</span>
+																			<span id="block_field_agency_lob_desc"
+																				nowrap="nowrap" />
+																		</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+											</li> -->
+											<li id="isShowAgencyLobCheckboxProspectDetails" class="inlineBlock_2" style="width: 100% !important; vertical-align: top;">
+														<div class="freeFormList form-group">
+															<div class="freeFormListTr">
+																<div class="freeFormListTdError">
+																	<h6>#space#</h6>
+																</div>
+																<!-- Line Of Business Start - Phase 2 -->
+																<div class="freeFormListTdError paddingLeft3">
+																	<div id="error_prospectDetails_agency_lob_checkbox" class="error" />
+																</div>
+															</div>
+															<div class="freeFormListTr">
+																<div class="freeFormListTd valignTop labelAlign">
+																	<div class="freeFormLabelWidth"><label id="prospectDetails_agency_lob_label">Lines of Business</label> :</div>
+																</div>
+													
+																<div id="prospectDetails_agency_lob_checkbox">
+																	<span id="block_field_ischecked"> 
+																		<input
+																			type="checkbox" name="prospectDetails_agency_lob_checkbox"
+																			id="prospectDetails_agency_lob_checkbox" value=1/><label id="prospectDetails_agency_lob_checkbox_label">Commercial Lines</label>
+																	</span>
+																</div>
+																
+															</div>
+														<!-- <div class="freeFormListTd valignTop">
+																	<div id="agency_lob_list_mom_1" class="row"/>
+																</div>
+															</div>
+														</div> --> 
+													<!-- Line Of Business End - Phase 2 -->
+											</li>
+											<li id="#agency_lob_after#"></li>
+										</ul>
+										<ul class="inlineBlock" id="prospectBusinessAddress_freeform_contextdata_500">
+											<li class="inlineBlock_2_fix"
+												id="prospectDetails_rating_security">
+												<div class="freeFormList form-group">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>#space#</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<div id="error_prospect_rating" class="error" />
+															<div id="ajax_error_prospect_rating" class="error" />
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign">
+															<div class="freeFormLabelWidth">
+																<span id="pd_ratingLabel">Rating</span> :
+															</div>
+														</div>
+														<div class="freeFormListTd tdInput">
+															<select name="prospect_rating" fullid="prospectBusinessAddress_freeform_contextdata_500(prospectTabs_prospect_details_security.prospect_details_label).prospectDetails_rating_security.pd_ratingLabel.prospect_rating"
+																id="ajax_field_prospect_rating" class="form-control">
+																<option value="">Select</option>
+																<option value="1">Hot</option>
+																<option value="2">Warm</option>
+																<option value="3">Cold</option>
+															</select>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="inlineBlock_2_fix"
+												id="prospect_detail_distribution_type_security">
+												<div class="freeFormList form-group">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>#space#</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<div id="error_distribution_type_id" class="error" />
+															<div id="ajax_error_distribution_type_id" class="error" />
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign">
+															<div class="freeFormLabelWidth">
+																<span id="prospectDetails_distributionTypeLabel">Distribution Type</span> :</div>
+														</div>
+														<div class="freeFormListTd tdInput">
+															<select name="distribution_type_id" fullid="prospectBusinessAddress_freeform_contextdata_500(prospectTabs_prospect_details_security.prospect_details_label).prospect_detail_distribution_type_security.prospectDetails_distributionTypeLabel.distribution_type_id"
+																id="ajax_field_distribution_type_id"
+																class="form-control">
+																<option value="">Select</option>
+															</select>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="inlineBlock_2_fix"
+												id="prospectDetails_years_of_current_ownership_security">
+												<div class="freeFormList form-group">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>#space#</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<div id="ajax_error_years_of_current_ownership"
+																class="error" />
+															<div id="error_years_of_current_ownership" class="error" />
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign">
+															<div class="freeFormLabelWidth">
+																<span id="prospectYearsOfCurrentOwnershipLabel">Years Of Current Ownership</span> :</div>
+														</div>
+														<div class="freeFormListTd tdInput">
+															<input type="text" maxlength="30" fullid="prospectBusinessAddress_freeform_contextdata_500(prospectTabs_prospect_details_security.prospect_details_label).prospectDetails_years_of_current_ownership_security.prospectYearsOfCurrentOwnershipLabel.years_of_current_ownership"
+																name="years_of_current_ownership"
+																id="ajax_field_years_of_current_ownership"
+																class="form-control" />
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="inlineBlock_2_fix"
+												id="prospectDetails_years_in_business_security">
+												<div class="freeFormList form-group">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>#space#</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<div id="ajax_error_years_in_business" class="error" />
+															<div id="error_years_in_business" class="error" />
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign">
+															<div class="freeFormLabelWidth">
+																<span id="prospectYearsInBusinessLabel">Years In Business</span> :
+																</div>
+														</div>
+														<div class="freeFormListTd tdInput">
+															<input type="text" maxlength="30" fullid="prospectBusinessAddress_freeform_contextdata_500(prospectTabs_prospect_details_security.prospect_details_label).prospectDetails_years_in_business_security.prospectYearsInBusinessLabel.years_in_business"
+																name="years_in_business"
+																id="ajax_field_years_in_business" class="form-control" />
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="inlineBlock_2_fix"
+												id="prospectDetails_positionTitle_security">
+												<div class="freeFormList form-group">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>#space#</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<div id="ajax_error_position_title" class="error" />
+															<div id="error_position_title" class="error" />
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign">
+															<div class="freeFormLabelWidth">
+																<span id="prospect_positionTitle_Label">Position Title</span> :</div>
+														</div>
+														<div class="freeFormListTd tdInput">
+															<input type="text" maxlength="30" name="position_title" fullid="prospectBusinessAddress_freeform_contextdata_500(prospectTabs_prospect_details_security.prospect_details_label).prospectDetails_positionTitle_security.prospect_positionTitle_Label.position_title"
+																id="ajax_field_position_title" class="form-control" />
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="inlineBlock_2_fix" id="associatedAgency_idDiv"
+												style="display: none;">
+												<div class="freeFormList form-group">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>#space#</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<div id="" class="error" />
+															<div id="" class="error" />
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign">
+															<div class="freeFormLabelWidth">
+																<span id="associatedAgency_idlabel">Annual Revenue</span> :
+															</div>
+														</div>
+														<div class="freeFormListTd tdInput">
+															<input name="annual_revenue"
+																id="ajax_field_annual_revenue" type="text"
+																class="form-control"
+																onkeyup="checkNumericValue(this,event);" fullid="prospectBusinessAddress_freeform_contextdata_500(prospectTabs_prospect_details_security.prospect_details_label).associatedAgency_idDiv.associatedAgency_idlabel.annual_revenue"
+																onkeypress="checkNumericValue(this,event);"
+																maxlength="5" value="" />
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="inlineBlock_2_fix"
+												id="prospect_details_account_executive_security">
+												<div class="freeFormList form-group">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>#space#</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<div id="error_account_home_workflow_user" class="error" />
+															<div id="ajax_error_home_workflow_user" class="error" />
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign">
+															<div class="freeFormLabelWidth">
+																<span id="pd_account_executive_label">Account Executive</span> :</div>
+														</div>
+													<!-- Showing Logged in user in Territory Manager Field Start - Phase 2 -->
+														<div class="freeFormListTd mendatoryInput tdInput">
+															<input type="text" maxlength="30" 
+																name="territory_manager_user_id"
+																id="ajax_field_territory_manager_user_id"
+																class="form-control" />
+														</div>
+														<!-- <div class="freeFormListTd tdInput">
+															<select name="home_workflow_user"
+															fullid="prospectBusinessAddress_freeform_contextdata_500(prospectTabs_prospect_details_security.prospect_details_label).prospect_details_account_executive_security.pd_account_executive_label.home_workflow_user"
+																id="ajax_filed_home_workflow_user" class="form-control">
+																<option value="">Select</option>
+															</select>
+														</div> -->
+														
+													<!-- Showing Logged in user in Territory Manager Field End - Phase 2 -->
+													</div>
+												</div>
+											</li>
+											<li class="inlineBlock_2_fix"
+												id="prospectDetails_prospect_source_security">
+												<div class="freeFormList form-group">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>#space#</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<div id="error_prospect_source_id" class="error" />
+															<div id="ajax_error_prospect_source_id" class="error" />
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign">
+															<div class="freeFormLabelWidth">
+																<span id="prospectDetails_source_label">Prospect Source</span> : 
+															</div>
+														</div>
+														<div class="freeFormListTd tdInput">
+															<select name="prospect_source_id" fullid="prospectBusinessAddress_freeform_contextdata_500(prospectTabs_prospect_details_security.prospect_details_label).prospectDetails_prospect_source_security.prospectDetails_source_label.prospect_source_id"
+																id="ajax_field_prospect_source_id" class="form-control">
+																<option value="">Select</option>
+															</select>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li id="prospect_details_comments_security"
+												class="inlineBlock_1_fix">
+												<div class="freeFormList form-group">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>#space#</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<div id="error_prospect_comments" class="error" />
+															<div id="ajax_error_prospect_comments" class="error" />
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign valignTop">
+															<div class="freeFormLabelWidth">
+																<span id="prospectDetails_CommentsLabel">Comments</span> :</div>
+														</div>
+														<div class="freeFormListTd tdInput">
+															<textarea name="prospect_comments" class="full_width"
+																id="ajax_field_prospect_comments" rows="6" fullid="prospectBusinessAddress_freeform_contextdata_500(prospectTabs_prospect_details_security.prospect_details_label).prospect_details_comments_security.prospectDetails_CommentsLabel.prospect_comments"
+																onkeyup="updateTextAreaCharCountMsg(this,'resultsofcallcharcount',2000)"
+																onfocus="showTextAreaCharCountMsg(this,'resultsofcallcharcount',2000)"
+																onblur="hideTextAreaCharCountMsg(this,'resultsofcallcharcount',2000)" />
+															<div class="resultsofcallcharcount"
+																id="resultsofcallcharcount" />
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</fieldset>
+							</section>
+							<section id="prospectTabs_business_details_security"
+								class="free-form">
+							<div id="addressdiv">
+								<fieldset class="fieldset_inner">
+									<legend id="prospectBusinessLabel">Business</legend>
+									<div
+										class="freeFormDiv paddingTop10 form-inline prospect_agency"
+										id="showmendatorydiv">
+										<div class="padding-left-form"
+											id="prospectBusinessAddress_freeform_contextdata_3">
+											<ul class="inlineBlock">
+												<li class="inlineBlock_2_fix" id="prospect_businessaddress_country_security">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="ajax_error_country_code_business" class="error" />
+																<div id="error_country_code_business" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	<span id="prospectDetails_countryLabel">Country</span> :</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<select class="form-control"
+																	name="country_code_business"
+																	id="ajax_field_country_code_business"
+					fullid="prospectBusinessAddress_freeform_contextdata_3(prospectTabs_business_details_security.prospectBusinessLabel).prospect_businessaddress_country_security.prospectDetails_countryLabel.country_code_business"
+																	onchange="showagentaddressdetails();loadagentGeneralDetail();javascript:ajaxpageblocklink('carrier/prospectAgencyDetails.html','prospectAgencyDetails.refreshState','','','addressdiv');">
+																	<option value="">Select</option>
+																	<option value="US" selected="selected">United
+																		States</option>
+																</select>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix"
+													id="isShowProspectDetailsStreetAddress1">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="ajax_error_addressline1_business" class="error" />
+																<div id="error_addressline1_business" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	<span id="streetAddress1FieldLabel">
+																	Street Address #1</span> :
+																</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<input name="addressline1_business"
+											fullid="prospectBusinessAddress_freeform_contextdata_3(prospectTabs_business_details_security.prospectBusinessLabel).isShowProspectDetailsStreetAddress1.streetAddress1FieldLabel.addressline1_business"					
+																
+																	id="ajax_field_addressline1_business" type="text"
+																	class="form-control" maxlength="255" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix"
+													id="isShowProspectDetailsStreetAddress2">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="error_addressline2_business" class="error" />
+																<div id="ajax_error_addressline2_business" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	<span id="streetAddress2FieldLabel">Street
+																		Address #2</span> :
+																</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<input name="addressline2_business"
+												fullid="prospectBusinessAddress_freeform_contextdata_3(prospectTabs_business_details_security.prospectBusinessLabel).isShowProspectDetailsStreetAddress2.streetAddress2FieldLabel.addressline2_business"					
+																	id="ajax_field_addressline2_business" type="text"
+																	class="form-control" maxlength="255" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix" id="isShowPOBox">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="error_po_box_business" class="error" />
+																<div id="ajax_error_po_box_business" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth"><span id="prospect_business_poBox_label">P.O Box </span>:</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<input name="po_box_business"
+												fullid="prospectBusinessAddress_freeform_contextdata_3(prospectTabs_business_details_security.prospectBusinessLabel).isShowPOBox.prospect_business_poBox_label.po_box_business"				
+																	id="ajax_field_po_box_business" type="text"
+																	class="form-control" maxlength="50" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix"
+													id="prospectDetails_city_business_security">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="ajax_error_city_business" class="error" />
+																<div id="error_city_business" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	<span id="cityFieldLabel">City</span> :
+																</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<input name="city_business"
+																	id="ajax_field_city_business" type="text"
+																	fullid="prospectBusinessAddress_freeform_contextdata_3(prospectTabs_business_details_security.prospectBusinessLabel).prospectDetails_city_business_security.cityFieldLabel.city_business"	
+																	class="form-control" maxlength="35"
+																	onkeypress="allowCharacterOnly(this);"
+																	onkeyup="allowCharacterOnly(this);" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix"
+													id="prospectDetails_state_security">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="ajax_error_business_state_id" class="error" />
+																<div id="error_business_state_id" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	<span id="statefieldlabel">State</span> :
+																</div>
+															</div>
+															<div class="freeFormListTd">
+																<div id="businessstateList">
+																	<select class="form-control" name="business_state_id"
+																	fullid="prospectBusinessAddress_freeform_contextdata_3(prospectTabs_business_details_security.prospectBusinessLabel).prospectDetails_state_security.statefieldlabel.business_state_id"	
+																		id="ajax_field_business_state_id"
+																		onchange="javascript:ajaxpageblocklink('carrier/prospectAgencyDetails.html','prospectAgencyDetails.refreshCounty','','','businesscountyList');">
+																		<option value="">Select</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix"
+													id="prospectDetails_county_security">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="error_business_county_id" class="error" />
+																<div id="ajax_error_business_county_id" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	<span id="countyFieldLabel">County</span>:
+																</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<div id="businesscountyList">
+																	<select class="form-control" name="business_county_id"
+																	fullid="prospectBusinessAddress_freeform_contextdata_3(prospectTabs_business_details_security.prospectBusinessLabel).prospectDetails_county_security.countyFieldLabel.business_county_id"	
+																		id="ajax_field_business_county_id">
+																		<option value="">Select</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix"
+													id="isShowZipCodeProspectDetails">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="ajax_error_zip_business" class="error" />
+																<div id="error_zip_business" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	<span id="zipCodeFieldLabel">Zip Code</span> :
+																</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<input name="zip_business" id="ajax_field_zip_business"
+																	type="text" class="form-control" maxlength="10"
+																	
+																	fullid="prospectBusinessAddress_freeform_contextdata_3(prospectTabs_business_details_security.prospectBusinessLabel).isShowZipCodeProspectDetails.zipCodeFieldLabel.zip_business"	
+																	title="99999-9999"
+																	onkeyup="loadentityGeneralDetail();addHyphen(this,event);"
+																	onmouseover="setTitleForZipCode(this);" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix"
+													id="prospectDetails_phone_business_security">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="ajax_error_phone_business" class="error" />
+																<div id="error_phone_business" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	<span id="pd_phone_business_label">Phone</span> :</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<input name="phone_business"
+																	id="ajax_field_phone_business" type="text"
+																	class="form-control phone-control" maxlength="12"
+																fullid="prospectBusinessAddress_freeform_contextdata_3(prospectTabs_business_details_security.prospectBusinessLabel).prospectDetails_phone_business_security.pd_phone_business_label.phone_business"	
+																	title="999-999-9999"
+																	onkeyup="loadentityGeneralDetail();"
+																	onkeypress="loadentityGeneralDetail();" /> 
+																	<span class="extnLabel" id="business_ext_prospect_address_security"><label
+																	class="ext-label_w ext-label" id="prospect_extn_label"> Extn. </label> :<input
+																	name="extn_business" id="ajax_field_extn_business"
+																		fullid="prospectBusinessAddress_freeform_contextdata_3(prospectTabs_business_details_security.prospectBusinessLabel).business_ext_prospect_address_security.prospect_extn_label.extn_business"	
+																	type="text" class="form-control ext-control"
+																	maxlength="5" title="99999" /></span>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix"
+													id="isShowProspectDetailsAltPhone">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="ajax_error_alt_phone_business" class="error" />
+																<div id="error_alt_phone_business" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr" id="isShowAltPhone">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth"><span id="prospect_altphone_label">Alt Phone</span> :</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<input name="alt_phone_business"
+																	id="ajax_field_alt_phone_business" type="text"
+																	class="form-control phone-control" maxlength="12"
+																fullid="prospectBusinessAddress_freeform_contextdata_3(prospectTabs_business_details_security.prospectBusinessLabel).isShowProspectDetailsAltPhone.prospect_altphone_label.alt_phone_business"	
+																	title="999-999-9999"
+																	onkeyup="loadentityGeneralDetail();"
+																	onkeypress="loadentityGeneralDetail();" /> 
+																	<span class="extnLabel" id="business_Altextn_prospect_address_security">
+																	<label id="prospect_Altextn_label"
+																	class="ext-label_w ext-label"> Extn. </label> :<input
+																	name="alt_extn_business"
+																	fullid="prospectBusinessAddress_freeform_contextdata_3(prospectTabs_business_details_security.prospectBusinessLabel).business_Altextn_prospect_address_security.prospect_Altextn_label.alt_extn_business"	
+																	id="ajax_field_alt_extn_business" type="text"
+																	class="form-control ext-control" maxlength="5"
+																	title="99999" /></span>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix"
+													id="prospectDetails_fax_business_security">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="ajax_error_fax_business" class="error" />
+																<div id="error_fax_business" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	<span id="pd_fax_business_label">Fax</span> :</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<input name="fax_business" id="ajax_field_fax_business"
+																	type="text" class="form-control" maxlength="12"
+																	fullid="prospectBusinessAddress_freeform_contextdata_3(prospectTabs_business_details_security.prospectBusinessLabel).prospectDetails_fax_business_security.pd_fax_business_label.fax_business"	
+																	title="999-999-9999"
+																	onkeyup="loadentityGeneralDetail();"
+																	onkeypress="loadentityGeneralDetail();" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix"
+													id="prospectDetails_email_business_security">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="ajax_error_e_mail_business" class="error" />
+																<div id="error_e_mail_business" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	<span id="emaillabel">Email</span> :
+																</div>
+															</div>
+															<div class="freeFormListTd mendatoryInput">
+																<input name="e_mail_business"
+																fullid="prospectBusinessAddress_freeform_contextdata_3(prospectTabs_business_details_security.prospectBusinessLabel).prospectDetails_email_business_security.emaillabel.e_mail_business"	
+																	id="ajax_field_e_mail_business" type="text"
+																	class="form-control" maxlength="50" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix"
+													id="prospectDetails_copyBusisnessToMailing_security">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="" class="error" />
+																<div id="" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth"><span id="prospect_business_address_label">#space# </span></div>
+															</div>
+															<div class="freeFormListTd tdInput text-nowrap">
+																<input name="copy_business_to_mail"
+																	id="ajax_field_copy_business_to_mail" type="checkbox"
+																	
+																	fullid="prospectBusinessAddress_freeform_contextdata_3(prospectTabs_business_details_security.prospectBusinessLabel).prospectDetails_copyBusisnessToMailing_security.prospect_business_address_label.copy_business_to_mail"	
+																	value="true" class="checkboxMargins"
+																	onclick="javascript:ajaxsubmitform('carrier/prospectAgencyDetails.html','prospectAgencyDetails.copyBusinessToMailing','','','maildiv');" />
+																Copy <span id="businessAddressLabel">Business</span>
+																Address to Mailing Address
+															</div>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+							</section>
+							<section id="prospectTabs_mailing_details_security"
+								class="free-form">
+							<div id="maildiv">
+								<fieldset class="fieldset_inner">
+									<legend id="prospectMailingLabel">Mailing</legend>
+									<div
+										class="freeFormDiv paddingTop10 form-inline prospect_agency"
+										id="showmendatorydiv">
+										<div class="padding-left-form"
+											id="prospectMailingAddress__freeform_contextdata_3">
+											<ul class="inlineBlock">
+												<li class="inlineBlock_2_fix"
+													id="prospectDetails_country_mailing_security">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="ajax_error_country_code_mailing" class="error" />
+																<div id="error_country_code_mailing" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	<span id="pd_country_mailing_label">Country</span> :</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<select class="form-control" name="country_code_mailing"
+																	id="ajax_field_country_code_mailing"
+														fullid="prospectMailingAddress__freeform_contextdata_3(prospectTabs_mailing_details_security.prospectMailingLabel).prospectDetails_country_mailing_security.pd_country_mailing_label.country_code_mailing"	
+																	onchange="showagentaddressdetails();loadagentGeneralDetail();javascript:ajaxpageblocklink('carrier/prospectAgencyDetails.html','prospectAgencyDetails.refreshState','','','maildiv');">
+																	<option value="">Select</option>
+																	<option value="US" selected="selected">United
+																		States</option>
+																</select>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix"
+													id="prospectDetails_street_address1_mailing_security">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="ajax_error_addressline1_mailing" class="error" />
+																<div id="error_addressline1_mailing" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	<span id="streetAddress1FieldLabel">
+																	Street Address #1</span> :
+																</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<input name="addressline1_mailing"
+																fullid="prospectMailingAddress__freeform_contextdata_3(prospectTabs_mailing_details_security.prospectMailingLabel).prospectDetails_street_address1_mailing_security.streetAddress1FieldLabel.addressline1_mailing"	
+																	id="ajax_field_addressline1_mailing" type="text"
+																	class="form-control" maxlength="255" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix"
+													id="prospectDetails_street_address2_mailing_security">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="error_addressline2_mailing" class="error" />
+																<div id="ajax_error_addressline2_mailing" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	<span id="streetAddress2FieldLabel">Street
+																		Address #2</span> :
+																</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<input name="addressline2_mailing"
+																fullid="prospectMailingAddress__freeform_contextdata_3(prospectTabs_mailing_details_security.prospectMailingLabel).prospectDetails_street_address2_mailing_security.streetAddress2FieldLabel.addressline2_mailing"	
+																	id="ajax_field_addressline2_mailing" type="text"
+																	class="form-control" maxlength="255" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix" id="isShowPOBox">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="" class="error" />
+																<div id="" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth"><span id="prospectMailing_pobox_label">P.O Box </span> :</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<input name="po_box_mailing"
+																fullid="prospectMailingAddress__freeform_contextdata_3(prospectTabs_mailing_details_security.prospectMailingLabel).isShowPOBox.prospectMailing_pobox_label.po_box_mailing"	
+																	id="ajax_field_po_box_mailing" type="text"
+																	class="form-control" maxlength="50" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix"
+													id="prospectDetails_city_mailing_security">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="ajax_error_city_mailing" class="error" />
+																<div id="error_city_mailing" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	<span id="cityFieldLabel">City</span> :
+																</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<input name="city_mailing" id="ajax_field_city_mailing"
+																fullid="prospectMailingAddress__freeform_contextdata_3(prospectTabs_mailing_details_security.prospectMailingLabel).prospectDetails_city_mailing_security.cityFieldLabel.city_mailing"	
+																	type="text" class="form-control" maxlength="35"
+																	onkeypress="allowCharacterOnly(this);"
+																	onkeyup="allowCharacterOnly(this);" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix"
+													id="prospectDetails_state_mailing_security">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="ajax_error_mailing_state_id" class="error" />
+																<div id="error_mailing_state_id" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	<span id="statefieldlabel">State</span> :
+																</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<div id="mailingstateList">
+																	<select class="form-control" name="mailing_state_id"
+																		id="ajax_field_mailing_state_id"
+																		fullid="prospectMailingAddress__freeform_contextdata_3(prospectTabs_mailing_details_security.prospectMailingLabel).prospectDetails_state_mailing_security.statefieldlabel.mailing_state_id"	
+																		onchange="javascript:ajaxpageblocklink('carrier/prospectAgencyDetails.html','prospectAgencyDetails.refreshCounty','','','mailingcountyList');">
+																		<option value="">Select</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix"
+													id="prospectDetails_county_mailing_security">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="error_mailing_county_id" class="error" />
+																<div id="ajax_error_mailing_county_id" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	<span id="countyFieldLabel">County</span> :
+																</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<div id="mailingcountyList">
+																	<select class="form-control" name="mailing_county_id"
+																	fullid="prospectMailingAddress__freeform_contextdata_3(prospectTabs_mailing_details_security.prospectMailingLabel).prospectDetails_county_mailing_security.countyFieldLabel.mailing_county_id"	
+																		id="ajax_field_mailing_county_id">
+																		<option value="">Select</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix"
+													id="isShowZipCodeProspectDetails">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="ajax_error_zip_mailing" class="error" />
+																<div id="error_zip_mailing" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	<span id="zipCodeFieldLabel">Zip Code</span> :
+																</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<input name="zip_mailing" id="ajax_field_zip_mailing"
+																	type="text" class="form-control" maxlength="10"
+																	title="99999-9999"
+																		fullid="prospectMailingAddress__freeform_contextdata_3(prospectTabs_mailing_details_security.prospectMailingLabel).isShowZipCodeProspectDetails.zipCodeFieldLabel.zip_mailing"	
+																	onkeyup="loadentityGeneralDetail();addHyphen(this,event);"
+																	onmouseover="setTitleForZipCode(this);" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix"
+													id="prospectDetails_phone_mailing_security">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="ajax_error_phone_mailing" class="error" />
+																<div id="error_phone_mailing" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	<span id="pd_phone_mailing_label">Phone</span> :</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<input name="phone_mailing"
+																	id="ajax_field_phone_mailing" type="text"
+																	fullid="prospectMailingAddress__freeform_contextdata_3(prospectTabs_mailing_details_security.prospectMailingLabel).prospectDetails_phone_mailing_security.pd_phone_mailing_label.phone_mailing"	
+																	class="form-control phone-control" maxlength="12"
+																	title="999-999-9999"
+																	onkeyup="loadentityGeneralDetail();"
+																	onkeypress="loadentityGeneralDetail();" /> 
+																	<span class="extnLabel" id="prospectDetails_extn_mailing_security">
+																	<label id="pd_extn_mailing_label"
+																	class="ext-label_w ext-label"> Extn. </label> :<input
+																	name="extn_mailing" id="ajax_field_extn_mailing"
+																	fullid="prospectMailingAddress__freeform_contextdata_3(prospectTabs_mailing_details_security.prospectMailingLabel).prospectDetails_extn_mailing_security.pd_extn_mailing_label.extn_mailing"	
+																	type="text" class="form-control ext-control"
+																	maxlength="5" title="99999" /></span>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix" id="isShowAltPhone">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="ajax_error_alt_phone_mailing" class="error" />
+																<div id="error_alt_phone_mailing" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth"><span id="pd_AltPhone_mailing_label">Alt Phone </span>:</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<input name="alt_phone_mailing"
+																	id="ajax_field_alt_phone_mailing" type="text"
+																	class="form-control phone-control" maxlength="12"
+																	title="999-999-9999"
+																	fullid="prospectMailingAddress__freeform_contextdata_3(prospectTabs_mailing_details_security.prospectMailingLabel).isShowAltPhone.pd_AltPhone_mailing_label.alt_phone_mailing"	
+																	onkeyup="loadentityGeneralDetail();"
+																	onkeypress="loadentityGeneralDetail();" /> 
+																	<span class="extnLabel" id="isShow_Altextn_security">
+																	<label id="pd_Altextn_mailing_label"
+																	class="ext-label_w ext-label"> Extn. </label> :<input
+																	name="alt_extn_mailing"
+																	fullid="prospectMailingAddress__freeform_contextdata_3(prospectTabs_mailing_details_security.prospectMailingLabel).isShow_Altextn_security.pd_Altextn_mailing_label.alt_extn_mailing"	
+																	id="ajax_field_alt_extn_mailing" type="text"
+																	class="form-control ext-control" maxlength="5"
+																	title="99999" /></span>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix"
+													id="prospectDetails_fax_mailing_security">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="ajax_error_fax_mailing" class="error" />
+																<div id="error_fax_mailing" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																<span id="pd_fax_mailing_label">Fax</span> :</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<input name="fax_mailing" id="ajax_field_fax_mailing"
+																	type="text" class="form-control" maxlength="12"
+																		fullid="prospectMailingAddress__freeform_contextdata_3(prospectTabs_mailing_details_security.prospectMailingLabel).prospectDetails_fax_mailing_security.pd_fax_mailing_label.fax_mailing"	
+																	title="999-999-9999"
+																	onkeyup="loadentityGeneralDetail();"
+																	onkeypress="loadentityGeneralDetail();" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix"
+													id="prospectDetails_email_mailing_security">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="ajax_error_e_mail_mailing" class="error" />
+																<div id="error_e_mail_mailing" class="error" />
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	<span id="emaillabel">Email</span> :
+																</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<input name="e_mail_mailing"
+																	fullid="prospectMailingAddress__freeform_contextdata_3(prospectTabs_mailing_details_security.prospectMailingLabel).prospectDetails_email_mailing_security.emaillabel.e_mail_mailing"	
+																	id="ajax_field_e_mail_mailing" type="text"
+																	class="form-control" maxlength="50" />
+															</div>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+							</section>
+															<section class="list-grid paddingTop20"
+										id="additional_email_address_prospectAgencyDetails_security">
+									<fieldset>
+										<legend>
+											<label id="additional_email_address_entityGeneralDetails_label">Additional Email Address</label>
+										</legend>
+										<div id="additionalEmailAddressDiv" class="gridTopPadding4">
+											<div id="">
+
+												<div class="ConfirmationAlign clear-both"
+													id="additionalEmailAddress_freeform_contextdata_105">
+													<label name="pageMsgAdditionalEmailAddress"
+														id="pageMsgAdditionalEmailAddress" class="Confirmation" />
+												</div>
+
+												<div class="errorMsgAlign clear-both">
+													<div id="ajax_error_additionalEmailAddressError"
+														class="error" />
+													<div id="error_additionalEmailAddressError" class="error" />
+												</div>
+												<div class="clear-both table-responsive">
+													<table cellspacing="0" cellpadding="0"
+														class="gridTable grid-width underwriter-width"
+														id="additionalEmailAddress_list_listfreeform_1">
+														<tr id="additionalEmailAddress_list_header_listfreeform_1">
+
+															<td width="33%" class="HeaderStyle"
+																id="email_category_entityGeneralDetails_security"><span
+																id="block_field_email_category_desc"> <span
+																	id="email_category_label">Email Category</span>
+															</span></td>
+														
+															<td width="33%" class="HeaderStyle"
+																id="email_additionalAddress_entityGeneralDetails_security">
+																<span id="block_field_email_additionalAddress"> <span
+																	id="email_additionalAddress_label">Email</span>
+															</span>
+															</td>
+
+															<td class="HeaderStyle" width="1%">
+																<span id="delete_email_additionalEmailAddress_prospectAgencyDetails_security"><span
+																id="block_field_delete_email_additionalEmailAddress_row_link" /></span>
+															</td>
+															<td style="display: none;"><span
+																id="block_field_email_category" />
+															</td>
+														
+														</tr>
+														<tr
+															id="additionalEmailAddress_list_mom_data_listfreeform_1">
+
+															<td id="email_category_entityGeneralDetails_security">
+																<span id="block_field_email_category_desc"></span>
+															</td>
+														
+															<td
+																id="email_additionalAddress_entityGeneralDetails_security"><span
+																id="block_field_email_additionalAddress"></span></td>
+
+															<td>
+																<span ><span
+																id="block_field_delete_email_additionalEmailAddress_row_link">
+																	<a id="delete_email_additionalEmailAddress_prospectAgencyDetails_security"
+																	href="javascript:ajaxpageblocklink('carrier/prospectAgencyDetails.html','prospectAgencyDetails.deleteEntityGeneralDetailsEmailAdditionalAddress','','','additionalEmailAddressDiv');" class="delete_ico icons">
+																</a>
+															</span>
+															</span>
+															</td>
+
+															<td style="display: none;"><span
+																id="block_field_email_category" /></td>
+														</tr>
+														<tbody id="additionalEmailAddress_freeform_contextdata_1"
+															class="bgAccordionN">
+															<tr>
+																<td class="paddingLeft3"
+																	id="email_category_prospectAgencyDetails_security">
+																	<div id="ajax_error_email_category" class="error" />
+																	<div id="error_email_category" class="error" />
+																</td>
+															
+																<td class="paddingLeft3"
+																	id="email_additionalAddress_entityGeneralDetails_security">
+																	<div id="ajax_error_email_additionalAddress"
+																		class="error" />
+																	<div id="error_email_additionalAddress" class="error" />
+																</td>
+
+																<td><span id="add_email_additionalEmailAddress_prospectAgencyDetails_security"></span></td>
+																<td style="display: none;" />
+															</tr>
+															<tr>
+																<td style="padding-top: 5px; padding-bottom: 5px"
+																	id="email_category_entityGeneralDetails_security"><span>
+																		<select name="email_category"
+																		id="ajax_field_email_category" style="width: 150px"
+																		onchange="javascript:setSlectedIndexDesc('ajax_field_email_category','ajax_field_email_category_desc');">
+																			<option value="">Select</option>
+																	</select>
+																</span>
+																</td>
+																
+																<td style="padding-top: 5px; padding-bottom: 5px"
+																	id="email_additionalAddress_prospectAgencyDetails_security">
+																	 <span><input name="email_additionalAddress"
+																		id="ajax_field_email_additionalAddress" type="text"
+																		class="form-control" style="width: 250px;"
+																		maxlength="100" /></span>
+																</td>
+																<td align="right" style="padding-right: 8px;"><span>
+																	<span><a id="add_email_additionalEmailAddress_prospectAgencyDetails_security"
+																		href="javascript:ajaxsubmitform('carrier/prospectAgencyDetails.html','prospectAgencyDetails.addEmailAdditionalEmailAddress','','','additionalEmailAddressDiv');">
+																			<img src="images/icons/icon_notepadPlus.gif"
+																			title="Add" />
+																	</a></span>
+																</span></td>
+																<td style="display: none;"><input type="hidden"
+																	name="email_category_desc"
+																	id="ajax_field_email_category_desc" /></td>
+																<td style="display: none;"><input type="hidden"
+																	name="producer_num_id_desc"
+																	id="ajax_field_producer_num_id_desc" />
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</fieldset>
+									</section>
+							
+							
+							<section class="list-grid" id="contactDiv">
+							<fieldset class="fieldset_inner">
+								<legend>
+									<span id="individualfieldlabel">Contact</span> Details
+								</legend>
+								<div class="gridTopPadding4">
+								<div class="ConfirmationAlign clear-both" id=contactDetails_freeform_contextdata_105">
+							<label name="pageMsgContactDetails" id="pageMsgContactDetails" class="Confirmation" ></label>
+								</div>
+									<section id="add_new_contact_security" class="divButton">
+									<div class="buttonwrapper paddingBottom10">
+										<a id="isProspectStatusConvertedToAgency"
+											href="javascript:rightclickmenu('carrier/addNewContactDetail.html','addNewContactDetail.showContactDetailPage','','','div_ajaxpostion_add1099Type:country');"
+											class="btn btn-primary"> <span id="add_new_person_label">Add
+												new Contact</span>
+										</a>
+									</div>
+									</section>
+									<section class="ajax-div"
+										id="addNewContact_freeform_contextdata_112">
+									<div id="div_ajaxpostion_add1099Type:country" />
+									</section>
+								</div>
+								<div id="ajax_sorting" class="table-responsive clear-both">
+									<table id="GetProspectAgencyContact_list_1" width="100%"
+										cellpadding="0" class="gridTable" cellspacing="0">
+										<tr id="isAgencyProspectClearanceListNotEmpty">
+											<td colspan="9" class="pagination">
+												<table cellpadding="0" cellspacing="0" border="0"
+													width="100%">
+													<tr id="prospectClearanceDetailsSearchResult_pagination_1">
+														<td align="left" width="2%" nowrap="nowrap"
+															class="paginationCenter">#space#Records per Page :</td>
+														<td align="left" width="1%"><select
+															id="recordsperpage" onchange="ajax_sorting"
+															name="recordsperpage" class="inputbox" /></td>
+														<td align="center">
+															<table cellpadding="0" cellspacing="0">
+																<tr>
+																	<td nowrap="nowrap" align="center"
+																		class="paginationCenter">Viewing#space#</td>
+																	<td
+																		id="prospectClearanceDetailsSearchResult_recordsfrom_1"
+																		class="PaginationText" />
+																	<td class="linright">#space#to#space#</td>
+																	<td
+																		id="prospectClearanceDetailsSearchResult_recordsto_1"
+																		class=" PaginationText" />
+																	<td class="linright">#space#of#space#</td>
+																	<td
+																		id="prospectClearanceDetailsSearchResult_totalrecords_1"
+																		class=" PaginationText" />
+																</tr>
+															</table>
+														</td>
+														<td align="right" width="20%" nowrap="nowrap">
+															<table border="0" cellspacing="1" cellpadding="1">
+																<tr>
+																	<td
+																		id="prospectClearanceDetailsSearchResult_firstpagelink_1">
+																		<a
+																		href="javascript:ajaxpagination('prospectAgencyDetails.html','ajax_sorting','','');"
+																		title="First Page" tabindex="21"> <img
+																			src="images/previous_all.png" border="0" />
+																	</a>
+																	</td>
+																	<td
+																		id="prospectClearanceDetailsSearchResult_previouspagelink_01">
+																		<a
+																		href="javascript:ajaxpagination('prospectAgencyDetails.html','ajax_sorting','','');"
+																		title="Previous" tabindex="21"> <img
+																			src="images/previous_one.png" border="0" />
+																	</a>
+																	</td>
+																	<td class="paginationCenter" nowrap="nowrap">Page
+																		:</td>
+																	<td><select id="pagenumber"
+																		onchange="ajax_sorting" name="pagenumber"
+																		class="inputbox" /></td>
+																	<td
+																		id="prospectClearanceDetailsSearchResult_nextpagelink_1">
+																		<a
+																		href="javascript:ajaxpagination('prospectAgencyDetails.html','ajax_sorting','','');"
+																		title="Next" tabindex="21"> <img
+																			src="images/next_one.png" border="0" />
+																	</a>
+																	</td>
+																	<td
+																		id="prospectClearanceDetailsSearchResult_lastpagelink_1">
+																		<a
+																		href="javascript:ajaxpagination('prospectAgencyDetails.html','ajax_sorting','','');"
+																		title="Last Page" tabindex="21"> <img
+																			src="images/next_all.png" border="0" />
+																	</a>
+																	</td>
+																</tr>
+															</table>
+														</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<table cellpadding="0" cellspacing="0" width="100%">
+													<tr id="GetProspectAgencyContact_list_header_1">
+														<span id="prospectAgencyADetails_last_name_security">
+															<td id="sorting(,A,ajax_sorting):block_field_prp_last_name"
+															class="HeaderStyle" width="19%"><span id="pd_contactlastname">Last Name</span></td>
+														</span>
+														<span id="prospectAgencyADetails_first_name_security">
+															<td id="sorting(,A,ajax_sorting):block_field_prp_first_name"
+															class="HeaderStyle" width="19%"><span id="pd_contactfirstname">First Name</span></td>
+														</span>
+														<span id="prospectAgencyADetails_contact_type_security">
+															<td id="sorting(,A,ajax_sorting):block_field_contacttype"
+															class="HeaderStyle" width="13%"><span id="pd_contacttype">Contact Type</span></td>
+														</span>
+														<span id="prospectAgencyADetails_contact_status_security">
+															<td class="HeaderStyle" width="13%"><span id="sorting(,A,ajax_sorting):block_field_contact_status">
+																<span id="pd_contactstatus">Contact Status</span></td>
+														</span>
+														<td class="HeaderStyle" width="1%"><span
+															id="block_field_row_link" /></td>
+													</tr>
+													<tbody id="GetProspectAgencyContact_list_data_1">
+														<tr>
+														<td id="prospectAgencyADetails_last_name_security">
+															<span id="block_field_prp_last_name">
+																<a href="javascript:rightclickmenu('carrier/addNewContactDetail.html','addNewContactDetail.edit','','','div_ajaxpostion_addContactdetailDiv:prospect_contact_id');" />
+															</span>
+														</td>
+														<td id="prospectAgencyADetails_first_name_security">
+															<span id="block_field_prp_first_name"></span>
+														</td>
+														<td id="prospectAgencyADetails_contact_type_security">
+															<span id="block_field_contacttype"></span>
+														</td>
+														<td id="prospectAgencyADetails_contact_status_security">
+															<span id="block_field_contact_status"></span>
+														</td>
+														<td id="prospectAgencyDetails_delete_security"><span id="block_field_row_link">
+																<a class="delete_ico icons" id="isProspectStatusConvertedToAgency"
+																	href="javascript:submitform('carrier/prospectAgencyDetails.html','prospectAgencyDetails.delete','','');"
+																	title="Delete" />
+															</span>
+														</td>
+														</tr>
+														<tr id="general_ajaxpostion_list_02" class="border0">
+															<td align="left" class="none" border="0" colspan="10">
+																<div
+																	id="div_ajaxpostion_addContactdetailDiv:prospect_contact_id"
+																	class="bgAccordionN" />
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</fieldset>
+							</section>
+							<!--Additional Address-->
+							<section id="prospectAgencyDetails_modify_security"
+								class="divButton buttonTop">
+							<div class="buttonwrapper">
+								<a id="isProspectStatusConvertedToAgency"
+									href="javascript:submitform('carrier/prospectAgencyDetails.html','prospectAgencyDetails.modify','','');"
+									class="btn btn-primary"> <span id="modify_label">MODIFY</span>
+								</a>
+							</div>
+							</section>
+						</div>
+					</div>
+					<!--=======Body content End========--> <!--=======Sidebar Right Start========-->
+					<div id="sidebar_right_security" class="sideBarRight">
+						<span id="#Include:carrier/sideBarRight.html#" />
+					</div>
+					<!--=======Sidebar Right End========--> </article>
+				</div>
+				<!--=======Footer Start========-->
+				<footer> <span id="#Include:admin/adminFooter.html#" /> </footer>
+				<!--=======Footer End========-->
+			</div>
+		</div>
+		<table id="additionalEmailAddress_freeform_contextdata_1"
+					style="display: none;" class="bgAccordionN">
+					<tr>
+						<td class="paddingLeft3"
+							id="email_category_entityGeneralDetails_security">
+							<div id="ajax_error_email_category" class="error" />
+							<div id="error_email_category" class="error" />
+						</td>
+						
+						<td class="paddingLeft3"
+							id="email_additionalAddress_entityGeneralDetails_security">
+							<div id="ajax_error_email_additionalAddress" class="error" />
+							<div id="error_email_additionalAddress" class="error" />
+						</td>
+
+						<td />
+						<td />
+					</tr>
+					<tr
+						id="add_email_additionalEmailAddress_entityGeneralDetails_security">
+						<td style="padding-top: 5px; padding-bottom: 5px"
+							id="email_category_entityGeneralDetails_security"><span>
+								<select name="email_category" id="ajax_field_email_category"
+								style="width: 150px"
+								onchange="javascript:setSlectedIndexDesc('ajax_field_email_category','ajax_field_email_category_desc');">
+									<option value="">Select</option>
+							</select>
+						</span></td>
+					
+					<td style="padding-top: 5px; padding-bottom: 5px"
+							id="email_additionalAddress_entityGeneralDetails_security">
+							<span> <input name="email_additionalAddress"
+								id="ajax_field_email_additionalAddress" type="text"
+								class="form-control" maxlength="100" />
+						</span>
+						</td>
+
+
+						<td align="right" style="padding-right: 4px;"><span> <a
+								href="javascript:ajaxsubmitform('carrier/prospectAgencyDetails.html','prospectAgencyDetails.addEmailAdditionalEmailAddress','','','additionalEmailAddressDiv');">
+									<img src="images/icons/icon_notepadPlus.gif" title="Add" />
+							</a>
+						</span></td>
+						<td style="display: none;"><input type="hidden"
+							name="email_category_desc" id="ajax_field_email_category_desc" />
+						</td>
+					</tr>
+				</table>
+
+			
+		<div
+			id="agencyListAccPublicSubmitNInvitationEdit123458974_freeform_contextdata_0">
+			<input type="hidden" name="selected_agency_registration_type_id"
+				id="ajax_field_selected_agency_registration_type_id"
+				style="width: 250px" /> <input
+				type="hidden" name="jsessionid" id="jsessionid" /> <input
+				type="hidden" name="msg" id="msg" /> <input type="hidden"
+				name="divHideShow" id="divHideShow" /> <input type="hidden"
+				name="prospects_status" id="prospects_status" /> <input
+				type="hidden" name="invitation_link" id="invitation_link" /> <input
+				type="hidden" name="email_body" id="email_body" /> <input
+				type="hidden" name="isShowEditPreviewMailTrue"
+				id="ajax_field_isShowEditPreviewMailTrue" /> <input type="hidden"
+				name="isShowPreviewMailTrue" id="ajax_field_isShowPreviewMailTrue" />
+		</div>
+	</form>
+</body>
+</html>
+
