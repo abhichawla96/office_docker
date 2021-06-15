@@ -7,7 +7,7 @@
 		<action name="resendInvitation" deltaind="M">
 		
 			<actionparam deltaind="I" executionsequence="7" form="Y" name="registration_type_code" paramid="registration_type_code" pre="Y" viewparam="Y" />
-			<actionparam deltaind="I" executionsequence="8" form="Y" name="agent_name" paramid="person_first_name_forInvitation" pre="Y" populatename="person_first_name_forInvitation"/>
+			<actionparam deltaind="I" executionsequence="8" form="Y" name="person_first_name_forInvitation" paramid="person_first_name_forInvitation" pre="Y" viewparam="Y" populatename="person_first_name_forInvitation"/>
 			<actionparam deltaind="M" executionsequence="9" eval="ProducerOneRule.isRegistrationTypePrimarySecondary" form="Y" name="event_name" paramid="event_name" pre="Y" val="ResendInvitation" session="Y" />
 			<actionparam deltaind="I" executionsequence="10" eval="ProducerOneRule.isRegistrationTypeProducerRegistrationAgencyDetailScreen" form="Y" name="event_name_agent" paramid="event_name" pre="Y" val="ResendInvitationForAgent" session="Y" />
 		
