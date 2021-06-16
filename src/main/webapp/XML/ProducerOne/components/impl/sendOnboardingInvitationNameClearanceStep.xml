@@ -38,7 +38,9 @@
       	    <actionparam checkfornullparams="aar_requestid" executionsequence="2" form="Y" name="checkfornullparams" paramid="checkfornullparams" pre="Y"/>
       		<actionparam deltaind="D" executionsequence="0" form="Y" name="event_name" paramid="event_name" pre="Y" val="SendInvitation"/>
       		<actionparam executionsequence="0" form="Y" name="uploadDocumentAction" paramid="uploadDocumentAction" pre="Y" val="uploadDocumentInPublicDb"/>
-      		
+      		<!-- get Producer Number Id -->
+      		<actionparam deltaind="I" eval="SendInvitationRule.checkIsUserNotInInvitationFlow" executionsequence="99" form="Y" name="selected_primary_agency_code_id" paramid="selected_primary_agency_code_id" pre="Y"/>
+    		
     		<!-- <workflow eval="WorkflowRule.isAarRequestIdEmpty" name="nameClearanceStepNext" seq="0"> -->
     		<workflow name="nameClearanceStepNext" seq="0">
 		    	<databaseoperation executionsequence="0" metaobject="sendInvitation" name="getStatusId" operation="3" sqlstmt="select top 1 invitation_status_id from tbl_invitation_status_lku where description like #aar_statusid_desc#"/>
