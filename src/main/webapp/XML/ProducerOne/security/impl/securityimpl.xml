@@ -1572,6 +1572,128 @@
 		description="ReadOnly Territory Manager Field in Prospect"
 		uniquename="prospect_details_account_executive_security">
 	</protectedresource>
+	
+<!-- 14/06/2021 -->
+	<!-- Hiding Relationship Management Tab In Agency General Details - Phase 2 -->
+  
+<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show Relationship Management tab" operator="OR" uniquename="relationaship_mngmnt_tab_security">
+    <businessrole deltaind="M" roleid="MarketingRep">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="M" roleid="MarketingAssistant">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="vpmarketing">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="SalesDirector">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+  <!-- Hiding Relationship Mgmt Tab In Prospect - Phase 2 -->
+  <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Relationship Mgmtt tab in Prospect" uniquename="prospect_relationship_mgmt_security">
+	<businessrole deltaind="I" roleid="MarketingRep">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="MarketingAssistant">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="vpmarketing">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="SalesDirector">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+  <!-- Hiding Add New Prospect Button for "As a user, I want to Add new prospect information" - Phase 2 -->
+   
+  <protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Add New Prospect Button" uniquename="prospectDetailSeacrhResults_addNewProspect1">
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="CarrierAdmin">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	 <businessrole deltaind="I" roleid="ReadOnly">
+			<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="vpmarketing">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="SalesDirector">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+  <!-- Hiding Send Invitation Button Prospect - Phase 2 -->
+  
+  <protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Send Invitation Button Prospect" uniquename="prospectAgencyDetails_send_invitation_security">
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="CarrierAdmin">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+  	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="vpmarketing">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="SalesDirector">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+  <!-- Hiding Add New Note Button Prospect - Phase 2 -->
+  
+  <protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Add New Note Button Prospect" uniquename="prospectNotepad_addNewNote">
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="CarrierAdmin">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="vpmarketing">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="SalesDirector">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+   
   
 </security>  
 
