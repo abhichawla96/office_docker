@@ -139,7 +139,8 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<repositories>
 		<repository>
 			<id>osi-releases</id>
-			<url>http://10.10.10.222:8081/repository/releases/</url>
+			<!-- <url>http://10.10.10.222:8081/repository/releases/</url> -->
+			<url>http://10.10.10.222:8091/repository/releases/</url>
 			<name>OSI Repository</name>
 			<snapshots>
 				<enabled>false</enabled>
