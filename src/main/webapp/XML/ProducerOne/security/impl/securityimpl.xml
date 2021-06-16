@@ -1567,5 +1567,11 @@
     </businessrole>
   </protectedresource>
   
+  <!-- Read-Only Territory Manager Field in Prospect - Phase 2 -->
+  <protectedresource deltaind="I" defaultaccesstype="2"
+		description="ReadOnly Territory Manager Field in Prospect"
+		uniquename="prospect_details_account_executive_security">
+	</protectedresource>
+  
 </security>  
 
