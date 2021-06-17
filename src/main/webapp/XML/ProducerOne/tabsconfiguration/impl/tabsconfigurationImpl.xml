@@ -261,8 +261,9 @@
 
   
 <!-- Sprint 3 : Agency and Agent Demographics- General (Outofscope changes ) -->
-
-  <tabsconfigurationresource deltaind="M" accesslevel="0" name="relationaship_mngmnt_tab_security"/>
+ <!-- Showing Relationship Management Tab Start - Phase 2  -->
+  <tabsconfigurationresource deltaind="M" accesslevel="1" name="relationaship_mngmnt_tab_security"/>
+<!-- Showing Relationship Management Tab End - Phase 2 -->
   <tabsconfigurationresource deltaind="M" accesslevel="0" name="checkIsShowCompensationMgmtTab"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show external system tab for agency" name="isShowAgencyExternalSystemTabTrue"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" name="checkIsShowRequestTab"/>
