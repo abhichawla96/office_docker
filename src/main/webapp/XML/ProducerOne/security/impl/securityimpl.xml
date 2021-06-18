@@ -1601,27 +1601,9 @@
   </protectedresource>
   
   <!-- Hiding Relationship Mgmt Tab In Prospect - Phase 2 -->
-  <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Relationship Mgmtt tab in Prospect" uniquename="prospect_relationship_mgmt_security">
-	<businessrole deltaind="I" roleid="MarketingRep">
+   <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show Relationship Mgmt Tab In Prospect" uniquename="isCallReportInActive">
+    <businessrole deltaind="I" roleid="MarketingRep">
       <roleaccesslevel accesstype="1"/>
-    </businessrole>
-    <businessrole deltaind="I" roleid="CarrierAdmin">
-      	<roleaccesslevel accesstype="0"/>
-    </businessrole>
-    <businessrole deltaind="I" roleid="ReadOnly">
-		<roleaccesslevel accesstype="0" />
-	</businessrole>
-	<businessrole deltaind="I" roleid="MarketingAssistant">
-      	<roleaccesslevel accesstype="0"/>
-    </businessrole>
-    <businessrole deltaind="I" roleid="Underwriter">
-      	<roleaccesslevel accesstype="0"/>
-    </businessrole>
-    <businessrole deltaind="I" roleid="vpmarketing">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-    <businessrole deltaind="I" roleid="SalesDirector">
-      <roleaccesslevel accesstype="0"/>
     </businessrole>
   </protectedresource>
   
