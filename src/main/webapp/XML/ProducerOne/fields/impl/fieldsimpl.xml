@@ -410,5 +410,14 @@
   <!-- Display only Commercial Lines in Prospect LOB - Phase 2 -->
   <field deltaind="I" id="prospectAgencyDetails_prospectDetails_agency_lob_checkbox" screen="carrier/prospectAgencyDetails.html" name="prospectDetails_agency_lob_checkbox" isrequired="Y" labelkey="agency_lob_label" tabsconfigurationresourcename="prospectDetails_agency_lob_checkbox_security" protectedresourceuniquename="prospectDetails_agency_lob_checkbox_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N">
   </field>
+   <!-- Phase II - Call Report -->
+  <field deltaind="I" isextendedfield="Y" name="addProspectAgencyCallReportDetails_followup_date" screen="carrier/addProspectAgencyCallReportDetails.html" objectcolumn="prospect_callreport_id" section="callreportProspect_freeform_contextdata_01" displaytype="text" 
+	isrequired="N" componentcss="datepicker" labelkey="addProspectAgencyCallReportDetails_followup_date_label" labeldesc="Follow-up Date" accesslevel="1" tabsconfigurationresourcename="addProspectAgencyCallReportDetails_followup_date_security" mappedto="f31"
+	protectedresourceuniquename="addProspectAgencyCallReportDetails_followup_date_security" id="addProspectAgencyCallReportDetails_followup_date" position="#addProspectCallReport_date_time_security_after#"/>
+  
+  
+  <field deltaind="I" isextendedfield="Y" name="addAgencyCallReportDetails_followup_date" screen="carrier/addAgencyCallReportDetails.html" objectcolumn="agency_call_report_id" section="callreport_freeform_contextdata_01" displaytype="text" 
+	isrequired="N" componentcss="datepicker" labelkey="addAgencyCallReportDetails_followup_date_label" labeldesc="Follow-up Date" accesslevel="1" tabsconfigurationresourcename="addAgencyCallReportDetails_followup_date_security" mappedto="f32"
+	protectedresourceuniquename="addAgencyCallReportDetails_followup_date_security" id="addAgencyCallReportDetails_followup_date" position="#call_date_time_security_after#"/>
   
  </fields>
