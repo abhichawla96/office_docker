@@ -16,6 +16,8 @@
 	
 	<!-- BMIC customization - delete icon -->
 	<rule deltaind="I" id="isDeleteInvitation" expression="if(isEmpty(:inet_errors_list)=>assign(:pageMsg,getMessage(context,deleteInvitationErrorKey)););" />
+	<!-- Prod bug -Welcome Button display -->
+	<rule deltaind="I" id="isDisplayWelcomeButton" expression="andCondition(isEqual(:Status,Completed),isNot(isEmpty(:workflow_function_row)));" obj="ruleobjs.ProducerOneRule" method="showOnAdd" />
 	
 	</ruleset>
 </evalrules>

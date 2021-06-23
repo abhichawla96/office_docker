@@ -763,6 +763,10 @@
 				val="entityGeneralDetails" viewparam="Y" />
 			<actionparam deltaind="I" executionsequence="21" form="Y"
 				name="Status" paramid="Status" pre="Y" val="Completed" />
+			<!-- Prod bug -Welcome Button display -->
+			<actionparam deltaind="I" executionsequence="22" form="Y"
+				name="workflow_function_row" paramid="workflow_function_row"
+				viewparam="Y" />
 			<workflow
 				eval="EntityGeneralDetailsRule.validateNPNChangedWithActiveAppointments"
 				name="npnChangedWithActiveAppointments" seq="0">
