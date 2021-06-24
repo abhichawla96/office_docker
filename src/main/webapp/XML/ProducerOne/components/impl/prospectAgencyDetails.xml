@@ -18,8 +18,11 @@
             <actionparam deltaind="I" executionsequence="22" form="Y" name="prospectDetails_agency_lob_checkbox" paramid="prospectDetails_agency_lob_checkbox" post="Y" val="1"/>
             
          <!-- Display logged in user in Territory manager field - Phase 2 -->
-            <actionparam deltaind="I" executionsequence="23" form="Y" name="user_name" paramid="user_name" populatename="territory_manager_user_id" pre="Y"/>
-        </action>
+            <workflow deltaind="I" name="getTerritoryManagerName" seq="5">
+	        	<databaseoperation executionsequence="1" name="getTerritoryManagerName" operation="3" sqlstmt="select user_name as home_workflow_user from userprofiles where user_id=#user_id#"/>
+	      	</workflow>
+            
+            </action>
     
     </component>
 </projectcomponents>
