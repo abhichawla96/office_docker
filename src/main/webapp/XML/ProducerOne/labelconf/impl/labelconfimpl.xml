@@ -175,6 +175,7 @@
    
    <!-- LOB Commercial Lines Prechecked - Phase 2 -->
     <label deltaind="I" labeldesc="Commercial Lines" labelkey="prospectDetails_agency_lob_checkbox_label"/> 
-  
-   
+   <!--  Years Of Current Ownership label & Additional Email Address update- Phase 2 -->
+   <label deltaind="I" labeldesc="Years of Current Ownership" labelkey="prospectYearsOfCurrentOwnershipLabel"/>
+   <label deltaind="I" labeldesc="Email" labelkey="additional_email_address_entityGeneralDetails_label"/>
 </labelconf>

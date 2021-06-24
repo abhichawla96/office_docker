@@ -252,7 +252,8 @@
 <!-- Sprint 3 : Agency and Agent Demographics- General (Documents - E&O ) --> 
   
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="add_new_note_type_security" name="add_new_note_type_security"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="1" description="entity_notepad_Producer_number_security" name="entity_notepad_Producer_number_security"/>
+  <!--  Hiding Agency Code column on Notepad tab- Phase 2 -->
+  <tabsconfigurationresource deltaind="M" accesslevel="0" description="entity_notepad_Producer_number_security" name="entity_notepad_Producer_number_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="doc_insurance_producer_number_id_security" name="doc_insurance_producer_number_id_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="doc_insurance_expiration_date_from_security" name="doc_insurance_expiration_date_from_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="addNewInsuranceDetail_isShowCancellationDate" name="addNewInsuranceDetail_isShowCancellationDate"/>
