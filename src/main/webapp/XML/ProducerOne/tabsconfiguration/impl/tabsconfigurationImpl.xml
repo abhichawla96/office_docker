@@ -623,5 +623,8 @@
  <!-- Hiding Fax Prospect Call Report - Phase 2 --> 
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="hide show addProspectCallReport_report_fax_security" name="addProspectCallReport_report_fax_security"/>
  
+ <!-- Hide/show Duplicate Button on Prospect Clearance screen - Phase 2 -->
+<tabsconfigurationresource deltaind="M" name="isAgencyProspectClearanceListNotEmpty" accesslevel="1" description="Hide/show Dublicate Button on prospectClearance screen" />
+ 
  
 </tabsconfiguration>
