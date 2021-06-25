@@ -420,4 +420,10 @@
 	isrequired="N" componentcss="datepicker" labelkey="addAgencyCallReportDetails_followup_date_label" labeldesc="Follow-up Date" accesslevel="1" tabsconfigurationresourcename="addAgencyCallReportDetails_followup_date_security" mappedto="f32"
 	protectedresourceuniquename="addAgencyCallReportDetails_followup_date_security" id="addAgencyCallReportDetails_followup_date" position="#call_date_time_security_after#"/>
   
+   <!-- Phase 2 - Bug Id- P2-009  -->
+  <field deltaind="I" id="entityGeneralDetails_e_mail_business" screen="carrier/prospectAgencyDetails.html" name="e_mail_business" isrequired="Y" requiredeval="ProducerOneRule.checkAgencyBusinessEmailIdMandatory" labelkey="email_businessaddress_label" tabsconfigurationresourcename="business_email_id_agency_address_security" protectedresourceuniquename="business_email_id_agency_address_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
+    <validation name="isBusinessEmailRequiredForProspect" expression="if(andCondition(isEqual(:business_email_id_prospect_address_security,Y),andCondition(isEqual(:prospect_business_email_address_security,Y),andCondition(isEmpty(:e_mail_business),isEqual(:tabs1next_page,prospectAgencyDetails))))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="emailEmptyErrorKey" ruleid="EntityGeneralDetailsRule.isBusinessEmailRequiredForPrincipal" executionsequence="2" />
+    <validation name="checkValidProspectBusinessEmail" expression="validateMultipleEmailIds(context,e_mail_business);" message="ValidEmailIdErrorKey" ruleid="EntityGeneralDetailsRule.checkValidAgencyBusinessEmail" executionsequence="4" />
+  </field>
+  
  </fields>
