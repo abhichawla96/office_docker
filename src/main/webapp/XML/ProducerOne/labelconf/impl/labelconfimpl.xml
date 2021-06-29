@@ -184,5 +184,15 @@
    <!-- Prospect Market Information - Final Question - Phase 2 -->
    <label deltaind="I" labeldesc="Explain any interest in any other business or occupation outside of this agency" labelkey="interest_in_other_business_label"/> 
    
+   <!-- Sections in Market Information - Phase 2 -->
+  
+  <label deltaind="I" labeldesc="Special Commissions" labelkey="prospect_narrative_question_1_label"/>
+  <label deltaind="I" labeldesc="Agency Appearance" labelkey="prospect_narrative_question_2_label"/>
+  <label deltaind="I" labeldesc="Comment on neighboring Builders Mutual Insurance Agencies and with this appointment" labelkey="prospect_narrative_question_3_label"/>
+  <label deltaind="I" labeldesc="Narrative of Agent" labelkey="prospect_narrative_question_4_label"/> 
+ 
+ <!-- Agency's Total P&C Written Premium Previous Year End - Phase 2 -->
+ <label deltaind="I" labeldesc="Agency's Total P&amp;C Written Premium Previous Year" labelkey="prospect_total_written_premium_previous_year_end_label"/>
+  
    
 </labelconf>

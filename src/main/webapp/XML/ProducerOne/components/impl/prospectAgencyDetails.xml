@@ -23,6 +23,13 @@
 	      	</workflow>
             
             </action>
-    
+            
+    	<!-- Display Territory Manager Name in Territory manager Column - Phase 2 -->
+      	<action deltaind="M" name="modify">
+      	
+      		<actionparam deltaind="D" executionsequence="0" form="Y" name="home_workflow_user" paramid="home_workflow_user" populatename="account_executive_id" pre="Y"/>
+      		<actionparam deltaind="I" executionsequence="0" form="Y" name="user_id" paramid="user_id" populatename="account_executive_id" pre="Y"/>
+      	
+      	</action>
     </component>
 </projectcomponents>

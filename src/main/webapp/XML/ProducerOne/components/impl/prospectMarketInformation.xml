@@ -1,0 +1,32 @@
+<projectcomponents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/components_XSD.xsd">
+  <component metaobject="prospect_status_lku;prospect_address;prospect_source_lku;agencypremiumvolumecommitted;agencycompanieslicensed;agency_business_source;agencyterminated;agencypersonalinformation;agencymergers;agency_master;agency_marketinformation;segment_industry_classes" name="prospectMarketInformation" stackdisplayname="Prospects Market Information">
+
+<!-- Special Commission, Agency Appearance, Comment on neighboring, Narrative of Agent Sections Added - Phase 2 -->  	
+  	<action deltaind="M" name="save">
+	      <workflow deltaind="I" name="saveNarrativeInformation" seq="3">
+    		<function name="generateRequestXml" functionid="generateRequestXml" parameters="context,:fieldsForInputXml,inputXml" executionsequence="0" />
+			<storedprocedureoperation name="insertUpdateDeleteOnboardingNarrativeSupplement_p" dbspname="insertUpdateDeleteOnboardingNarrativeSupplement_p" id="insertUpdateDeleteOnboardingNarrativeSupplement_p"
+					 metaobject="onboarding_narrative_supplement" executionsequence="1" operation="4">
+				<parameteroperation indexno="0" seq="1" property="inputXml" mode="IN"></parameteroperation>
+				<resultsetoperation indexno="0" seq="1" mappingclass="java.util.HashMap"></resultsetoperation>
+			</storedprocedureoperation>
+		</workflow>
+		<!-- Agency's Total P&C Written Premium Previous Year End - Start - Phase 2  -->
+		<workflow deltaind="M" eval="ProducerOneRule.isInetErrorListEmpty" name="saveMarketInformation" seq="0">
+        
+			<storedprocedureoperation deltaind="M" dbspname="insert_update_delete_agency_current_market_information_p" eval="ProducerOneRule.isShowMarketInformationFreeformFields" executionsequence="3" id="insert_update_delete_prospect_current_market_information_p" metaobject="agency_current_market_informations" name="insert_update_delete_prospect_current_market_information_p" operation="1">
+    			<parameteroperation deltaind="I" indexno="17" mode="IN" property="total_written_premium_previous_year_end" seq="18"/>
+			</storedprocedureoperation>
+		</workflow>
+		
+    </action>
+    
+    <action deltaind="M" name="view">
+  		<workflow deltaind="M" name="view" seq="0">
+  			<databaseoperation deltaind="M" executionsequence="0" metaobject="agency_current_market_informations" name="getProspectCurrentMarketInfoRecord" operation="3" sqlstmt="select total_written_premium_previous_year_end, total_annual_revenue,market_num_locations,dbo.getAmountFormat(total_premium_PC) as total_premium_PC ,dbo.getAmountFormat(total_premium_compensation) as total_premium_compensation,no_workers_policies,      dbo.getAmountFormat(total_writtenpremium) as total_writtenpremium, mix_of_personal_business, mix_of_commercial_business , new_business from agency_current_market_informations where prospect_agency_id=#prospect_agency_id#"/>
+  		</workflow>
+  		<!-- Agency's Total P&C Written Premium Previous Year End - End - Phase 2 -->
+  		
+  	</action>
+  </component>
+</projectcomponents>
