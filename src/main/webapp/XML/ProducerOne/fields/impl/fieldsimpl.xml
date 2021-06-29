@@ -426,4 +426,11 @@
     <validation name="checkValidProspectBusinessEmail" expression="validateMultipleEmailIds(context,e_mail_business);" message="ValidEmailIdErrorKey" ruleid="EntityGeneralDetailsRule.checkValidAgencyBusinessEmail" executionsequence="4" />
   </field>
   
+  <!-- Phase 2 - Bug Id- P2-018 -->
+  <field deltaind="I" id="addProspectAgencyCallReportDetails_market_rep_id" screen="carrier/addProspectAgencyCallReportDetails.html" name="market_rep_id" isrequired="Y" labelkey="territory_manager_label" tabsconfigurationresourcename="hide_show_call_report_territory_manager_security" protectedresourceuniquename="hide_show_call_report_territory_manager_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
+    <validation name="isEmptyCalReportTerritoryManager" expression="if(isEqual(:saveCallReportClicked,Y)=&gt;isNot(isEmpty(:market_rep_id))-&gt;isEqual(1,1));" message="isEmptyCalReportTerritoryManagerErrorKey" ruleid="ProducerOneRule.isEmptyCalReportTerritoryManager" executionsequence="1" />
+  </field>
+  
+  <field deltaind="I" id="addProspectAgencyCallReportDetails_date_time" screen="carrier/addProspectAgencyCallReportDetails.html" name="date_time" isrequired="Y" labelkey="callreport_block_date_time_label" tabsconfigurationresourcename="callreport_block_date_time_security" protectedresourceuniquename="callreport_block_date_time_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
+ 
  </fields>
