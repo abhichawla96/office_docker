@@ -1716,6 +1716,31 @@
 			<userdefinedaccesslevel accesstype="0" />
 		</userdefined>
 	</protectedresource>
+	
+	
+	
+  <!-- Phase 2 - Bug Id- P2-026 -->
+  <protectedresource deltaind="M" description="operating_division_call_report_security" uniquename="operating_division_call_report_security">
+    <businessrole deltaind="I" roleid="MarketingRep">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+ 
+   <!-- Phase 2 - Bug Id- P2-026 -->
+ <protectedresource deltaind="M" description="hierarchyList_location_security" uniquename="hierarchyList_location_security">
+    <businessrole deltaind="I" roleid="MarketingRep">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+  <!-- Phase 2 - Bug Id- P2-026 -->
+  <protectedresource deltaind="M" description="hide_show_call_report_territory_security" uniquename="hide_show_call_report_territory_security">
+    <businessrole deltaind="I" roleid="MarketingRep">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+ 
   
 </security>  
 

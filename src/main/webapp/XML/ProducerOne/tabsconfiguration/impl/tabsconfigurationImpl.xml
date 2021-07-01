@@ -633,4 +633,7 @@
 <tabsconfigurationresource deltaind="I" description="Show/Hide prospect_narrative_question_4_security" name="prospect_narrative_question_4_security" accesslevel="1"/>
  
  
+ <!--Phase 2-Bug Id- P2-025  -->
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="market_rep_name_CallReportPage_Security" name="market_rep_name_CallReportPage_Security"/>
+ 
 </tabsconfiguration>

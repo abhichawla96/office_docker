@@ -194,5 +194,9 @@
  <!-- Agency's Total P&C Written Premium Previous Year End - Phase 2 -->
  <label deltaind="I" labeldesc="Agency's Total P&amp;C Written Premium Previous Year" labelkey="prospect_total_written_premium_previous_year_end_label"/>
   
+  
+  <!-- Phase 2 - Bug Id- P2-030 --> 
+  <label deltaind="I" labeldesc="Call Report" labelkey="ajax_field_document_category_title"/>
+ 
    
 </labelconf>

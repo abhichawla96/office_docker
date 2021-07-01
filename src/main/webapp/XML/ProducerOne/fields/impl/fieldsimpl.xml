@@ -454,5 +454,16 @@
  <!-- Agency's Total P&C Written Premium Previous Year End - Phase 2 -->
  <field deltaind="I" id="prospectMarketInformation_total_written_premium_previous_year_end" screen="carrier/prospectMarketInformation.html" name="total_written_premium_previous_year_end" format="amount" labelkey="prospect_total_written_premium_previous_year_end_label" tabsconfigurationresourcename="prospect_total_written_premium_previous_year_end_security" protectedresourceuniquename="prospect_total_written_premium_previous_year_end_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
   
+ <!-- Phase 2 - Bug Id- P2-019 -->
+<field deltaind="I" id="addProspectAgencyCallReportDetails_call_purpose" screen="carrier/addProspectAgencyCallReportDetails.html" name="call_purpose" isrequired="Y" labelkey="purpose_of_call_label" tabsconfigurationresourcename="hide_show_purpose_of_call_security" protectedresourceuniquename="hide_show_purpose_of_call_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
+<validation name="isEmptycall_purpose" expression="if(isEqual(:saveCallReportClicked,Y)=&gt;isNot(isEmpty(:call_purpose))-&gt;isEqual(1,1));" message="isEmptycall_purpose" ruleid="ProducerOneRule.isEmptycall_purpose" executionsequence="1" />
+</field>
+  
+  <!--Phase 2- Bug Id-P2-029  -->
+  <field deltaind="I" id="addProspectAgencyCallReportDetails_call_purpose" screen="carrier/addProspectAgencyCallReportDetails.html" name="call_purpose" isrequired="Y" labelkey="purpose_of_call_label" tabsconfigurationresourcename="hide_show_purpose_of_call_security" protectedresourceuniquename="hide_show_purpose_of_call_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
+<validation name="isEmptycall_purpose" expression="if(isEqual(:saveCallReportClicked,Y)=&gt;isNot(isEmpty(:call_purpose))-&gt;isEqual(1,1));" message="isEmptycall_purpose" ruleid="ProducerOneRule.isEmptycall_purpose" executionsequence="1" />
+</field>
+
+<field deltaind="I" id="addProspectAgencyCallReportDetails_date_time" screen="carrier/addProspectAgencyCallReportDetails.html" name="date_time" isrequired="Y" labelkey="callreport_block_date_time_label" tabsconfigurationresourcename="callreport_block_date_time_security" protectedresourceuniquename="callreport_block_date_time_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
  
  </fields>
