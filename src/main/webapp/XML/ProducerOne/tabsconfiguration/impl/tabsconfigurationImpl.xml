@@ -634,7 +634,7 @@
  
  
  <!--Phase 2-Bug Id- P2-025  -->
- <tabsconfigurationresource deltaind="M" accesslevel="0" description="market_rep_name_CallReportPage_Security" name="market_rep_name_CallReportPage_Security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="1" description="market_rep_name_CallReportPage_Security" name="market_rep_name_CallReportPage_Security"/>
  
   <!-- Phase 2 - Bug Id- P2-036 -->
  <tabsconfigurationresource deltaind="I"  accesslevel="0" description="hide show prospect_showcallReports_security" name="prospect_showcallReports_security"/>
