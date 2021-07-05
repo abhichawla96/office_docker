@@ -1747,5 +1747,14 @@
     </userdefined>    
   </protectedresource>
   
+  <!-- Phase 2 - Bug Id- P2-042 --> 
+ <protectedresource deltaind="I" description="read_only_emailfrom_field" uniquename="callReport_emailFrom_security">
+    <businessrole deltaind="I" roleid="MarketingRep">
+      <roleaccesslevel accesstype="2"/>
+    </businessrole>
+  </protectedresource>
+  
+  
+  
 </security>  
 
