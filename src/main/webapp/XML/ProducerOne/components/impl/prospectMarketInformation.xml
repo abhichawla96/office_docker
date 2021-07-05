@@ -52,8 +52,8 @@
 		</workflow>  
   <!--Phase 2 - US : OB-PPRM-04-005 (Commercial Lines)-->
 			
-		<!-- <workflow deltaind="I" name="insertUpdateTblMarketInformationLobSectionsWorkflow" seq="4">
-     	         <storedprocedureoperation deltaind="I"dbspname="insertUpdateTblMarketInformationLobSections_p" executionsequence="1" id="insertUpdateTblMarketInformationLobSections_p" metaobject="tbl_marketinformation_lob" name="insertUpdateTblMarketInformationLobSections_p" operation="4" >
+		 <workflow deltaind="I" name="insertUpdateTblMarketInformationLobSectionsWorkflow" seq="4">
+     	         <storedprocedureoperation deltaind="I" dbspname="insertUpdateTblMarketInformationLobSections_p" executionsequence="1" id="insertUpdateTblMarketInformationLobSections_p" metaobject="tbl_marketinformation_lob" name="insertUpdateTblMarketInformationLobSections_p" operation="4" >
 					<parameteroperation indexno="0" mode="IN" property="prospect_agency_id" seq="1"/>
 					<parameteroperation indexno="1" mode="IN" property="is_agency_share_contingency" seq="2"/>
 					<parameteroperation indexno="2" mode="IN" property="agency_pay_commission_to_producers" seq="3"/>
@@ -66,7 +66,21 @@
 					<parameteroperation indexno="9" mode="IN" property="last_updated_by" seq="10"/> 
 					<resultsetoperation indexno="0" mappingclass="java.util.HashMap"> </resultsetoperation>		
 				</storedprocedureoperation>
-			</workflow> -->
+			</workflow> 
+			
+			 <!--Phase 2 - US : OB-PPRM-04-005 (Production Commitment)-->
+			 
+			<workflow deltaind="I"  name="insertUpdateTblMarketInformationProdCommitmentWorkflow" seq="5">
+     	         <storedprocedureoperation deltaind="I"  dbspname="insertUpdateTblMarketInformationProdCommitment_p" executionsequence="1" id="insertUpdateTblMarketInformationProdCommitment_p" metaobject="tbl_marketinformation_lob" name="insertUpdateTblMarketInformationProdCommitment_p" operation="4" >
+					<parameteroperation indexno="0" mode="IN" property="prospect_agency_id" seq="1"/>
+					<parameteroperation indexno="1" mode="IN" property="production_commitment_first_year" seq="2"/>
+					<parameteroperation indexno="2" mode="IN" property="production_commitment_second_year" seq="3"/>
+					<parameteroperation indexno="3" mode="IN" property="production_commitment_third_year" seq="4"/>
+					<parameteroperation indexno="4" mode="IN" property="production_commitment_achieve_volume" seq="5"/>
+					<parameteroperation indexno="9" mode="IN" property="last_updated_by" seq="6"/> 
+					<resultsetoperation indexno="0" mappingclass="java.util.HashMap"> </resultsetoperation>		
+				</storedprocedureoperation>
+			</workflow>
     </action>
     
     <action deltaind="M" name="view">
@@ -111,12 +125,12 @@
 	</workflow> 
 	 <!-- Phase 2 - US : OB-PPRM-04-005 -->
 	 
-	<!-- <workflow deltaind="I" name="getMarketInformationLobSections" seq="13">
+	 <workflow deltaind="I" name="getMarketInformationLobSections" seq="13">
          		<storedprocedureoperation deltaind="I" dbspname="getTblMarketInformationLobSectionsProspect_p" executionsequence="0" id="getTblMarketInformationLobSectionsProspect_p" metaobject="tbl_marketinformation_lob" name="getTblMarketInformationLobSectionsProspect_p" operation="3">
 						<parameteroperation indexno="0" mode="IN" property="prospect_agency_id" seq="1"/>
 						<resultsetoperation indexno="1" mappingclass="java.util.HashMap"/>
 				</storedprocedureoperation>
-     	   </workflow> -->
+     	   </workflow> 
   	</action>
   </component>
 </projectcomponents>

@@ -1,18 +1,24 @@
 <structure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/metadata_XSD.xsd">
-
+<!-- Phase 2 - MarketInfo  -->
  <field deltaind="I" type="V" decimallength="0" seq="11900" length="0" displayname="foreign_languages" dropdown="N" fieldlength="200" viewlength="0" name="foreign_languages" />
  <field deltaind="I" type="V" decimallength="0" seq="11901" length="0" displayname="primary_company_usage_desc" dropdown="N" fieldlength="200" viewlength="0" name="primary_company_usage_desc" />
  <field deltaind="I" type="V" decimallength="0" seq="11902" length="0" displayname="current_advertising_methods_desc" dropdown="N" fieldlength="200" viewlength="0" name="current_advertising_methods_desc" />
 
-<!-- for Commercial Lines section MarketInfo -->
-<!--  <field deltaind="I" type="V" decimallength="0" seq="11903" length="0" displayname="is_agency_share_contingency" dropdown="N" fieldlength="200" viewlength="0" name="is_agency_share_contingency" />
+<!-- Phase 2 - MarketInfo - Commercial Lines section -->
+ <field deltaind="I" type="V" decimallength="0" seq="11903" length="0" displayname="is_agency_share_contingency" dropdown="N" fieldlength="200" viewlength="0" name="is_agency_share_contingency" />
  <field deltaind="I" type="V" decimallength="0" seq="11904" length="0" displayname="agency_pay_commission_to_producers" dropdown="N" fieldlength="200" viewlength="0" name="agency_pay_commission_to_producers" />
  <field deltaind="I" type="V" decimallength="0" seq="11905" length="0" displayname="is_agency_commercial_business" dropdown="N" fieldlength="200" viewlength="0" name="is_agency_commercial_business" />
  <field deltaind="I" type="V" decimallength="0" seq="11906" length="0" displayname="is_agencys_service_center" dropdown="N" fieldlength="200" viewlength="0" name="is_agencys_service_center" />
  <field deltaind="I" type="V" decimallength="0" seq="11907" length="0" displayname="premium_threshold" dropdown="N" fieldlength="200" viewlength="0" name="premium_threshold" />
  <field deltaind="I" type="V" decimallength="0" seq="11908" length="0" displayname="industry_makeup_agency_commercial" dropdown="N" fieldlength="200" viewlength="0" name="industry_makeup_agency_commercial" />
  <field deltaind="I" type="V" decimallength="0" seq="11909" length="0" displayname="accounts_size" dropdown="N" fieldlength="200" viewlength="0" name="accounts_size" />
-  -->
- 
+  
+ <!-- Phase 2 - MarketInfo - Production Commitment Section -->
+  
+  <field deltaind="I"  type="V" decimallength="0" seq="11910" length="0" displayname="production_commitment_first_year" dropdown="N" fieldlength="200" viewlength="0" name="production_commitment_first_year" />
+  <field deltaind="I"  type="V" decimallength="0" seq="11911" length="0" displayname="production_commitment_second_year" dropdown="N" fieldlength="200" viewlength="0" name="production_commitment_second_year" />
+  <field deltaind="I"  type="V" decimallength="0" seq="11912" length="0" displayname="production_commitment_third_year" dropdown="N" fieldlength="200" viewlength="0" name="production_commitment_first_year" />
+  <field deltaind="I"  type="V" decimallength="0" seq="11913" length="0" displayname="production_commitment_achieve_volume" dropdown="N" fieldlength="200" viewlength="0" name="production_commitment_second_year" />
+  
   
   </structure>
