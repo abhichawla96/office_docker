@@ -1,0 +1,35 @@
+<projectcomponents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/components_XSD.xsd">
+  <component metaobject="additional_address_emails;prospect_status_lku;prospect_address;prospect_source_lku;" name="prospectAgencyDetails" stackdisplayname="Prospects Detail">    
+
+<!-- To use when there are more than one Lines of Business -->
+
+ <!-- <html path="carrier/prospectAgencyDetails.html">
+  	  <block deltaind="M" id="agency_lob_list_mom_1" name="agency_lob_list_mom_1" labelkey="prospectDetails_agency_lob_label" securitykey="isShowAgencyLobCheckboxProspectDetails" type="momchilddatalist1" css="div_checkbox3">
+			<field deltaind="M" id="agency_lob" name="agency_lob" displaytype="multicheckbox" executionsequence="0" isrequired="MA" labelkey="agency_lob_label"
+				lookupobjecttype="procedure" lookupobjectmetaobject="prospect_source_lku" lookupobjectprocedure="getAgencyLobForProspect_p" 
+				displayfield="agency_lob_desc" valuefield="agency_lob_id">
+				<validation name="validateAgencyLob" expression="if(andCondition(isEmpty(:agency_lob),isEqual(:isShowAgencyLobCheckboxProspectDetails,Y))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="prospectAgencyDetails_agency_lobErrorKey" executionsequence="0" />
+			</field>
+		</block>
+ </html> -->
+        <action deltaind="M" name="view">
+        
+        <!-- Display Only Commercial line in Prospect LOB - Phase 2 -->
+            <actionparam deltaind="I" executionsequence="22" form="Y" name="prospectDetails_agency_lob_checkbox" paramid="prospectDetails_agency_lob_checkbox" post="Y" val="1"/>
+            
+         <!-- Display logged in user in Territory manager field - Phase 2 -->
+            <workflow deltaind="I" name="getTerritoryManagerName" seq="5">
+	        	<databaseoperation executionsequence="1" name="getTerritoryManagerName" operation="3" sqlstmt="select user_name as home_workflow_user from userprofiles where user_id=#user_id#"/>
+	      	</workflow>
+            
+            </action>
+            
+    	<!-- Display Territory Manager Name in Territory manager Column - Phase 2 -->
+      	<action deltaind="M" name="modify">
+      	
+      		<actionparam deltaind="D" executionsequence="0" form="Y" name="home_workflow_user" paramid="home_workflow_user" populatename="account_executive_id" pre="Y"/>
+      		<actionparam deltaind="I" executionsequence="0" form="Y" name="user_id" paramid="user_id" populatename="account_executive_id" pre="Y"/>
+      	
+      	</action>
+    </component>
+</projectcomponents>

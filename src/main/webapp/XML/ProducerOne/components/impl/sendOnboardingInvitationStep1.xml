@@ -124,11 +124,16 @@
    
     </action>
     <action name="step1Next">
+     <!-- get Producer Number Id -->
+	 <actionparam deltaind="I" eval="SendInvitationRule.checkIsUserNotInInvitationFlow" executionsequence="99" form="Y" name="selected_primary_agency_code_id" paramid="selected_primary_agency_code_id" post="Y" session="Y"/>
+	  <workflow deltaind="I" eval="SendInvitationRule.checkIsUserNotInInvitationFlow" name="getProducerid" seq="10">
+	  	<databaseoperation deltaind="I" executionsequence="0" metaobject="agency_master" name="selectedProducerNumb" operation="3" sqlstmt="SELECT producer_number  FROM PRODUCER_NUMBER where agency_id = #agency_id#"/>
+	    <databaseoperation deltaind="I" executionsequence="1" metaobject="agency_master" name="selectedProducerId" operation="3" sqlstmt="SELECT producer_number_id as selected_primary_agency_code_id FROM PRODUCER_NUMBER where producer_number= #producer_number#"/>
+	</workflow>
     <actionparam deltaind="I" executionsequence="95" form="Y" name="entity_name_forInvitation" paramid="entity_name_forInvitation" post="Y" session="Y"/>	
     <actionparam deltaind="I" executionsequence="96" form="Y" name="person_first_name_forInvitation" paramid="person_first_name_forInvitation" post="Y" session="Y"/>	
     <actionparam deltaind="I" executionsequence="97" form="Y" name="primary_agency_name_forInvitation" paramid="primary_agency_name_forInvitation" post="Y" session="Y"/>	
-    
-    </action>
+     </action>
     
     </component>
 </projectcomponents>

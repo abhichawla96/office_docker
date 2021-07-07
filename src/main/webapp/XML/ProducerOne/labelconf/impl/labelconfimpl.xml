@@ -1,7 +1,9 @@
 <labelconf project="ProducerOne">
  <label deltaind="M" labeldesc="Approve" labelkey="agencyListPublicSubmitNInvitationEdit_approvebyassigneelabel"/>
- <!-- <label deltaind="I" labeldesc="How did you learn about Sample Insurance Company" labelkey="learn_about_label"/>
-  --><label deltaind="I" labelkey="interest_for_appointment_label" labeldesc="Why are you interested in Sample Insurance Company appointment?"/>
+ <!-- Change Final Question Start - Phase 2  -->
+ <label deltaind="I" labeldesc="How did you hear about Company" labelkey="learn_about_label"/>
+ <label deltaind="I" labelkey="interest_for_appointment_label" labeldesc="How will Builders Mutual Insurance Company meet the needs of your agency and how will you meet your minimum production requirement"/>
+ <!-- Change Final Question End - Phase 2  -->
  <label deltaind="M" labeldesc="Years in Business" labelkey="years_in_business_label"/>
  <label deltaind="I" labelkey="addendum_to_agency_desc_label" labeldesc="By the agreement below, Agent and the Sample Insurance Companies agree to amend the Agency Agreement between them as follows:"/>
  <label deltaind="I" labelkey="addendum_to_agency_q1_label" labeldesc="1. Agent understands and agrees that Agent does not have the authority to place business with Sample Insurance Companies which would violate any provisions of any contract between the Agent and the insurance company, agency or previous employer entered in the box below."/>
@@ -163,5 +165,38 @@
   <!-- Test Change in Cyber Liability Declaration Form -->
   <label deltaind="I" labeldesc=" I understand it's required to obtain and maintain a policy or policies of cyber liability insurance coverage with limits of liability of at least $500,000. Please attach a copy of your current declaration page in the Additional Documents section at the end of the application. Click the box to agree to these terms." labelkey="cyber_liability_eo_claims_declaration_label"/>
   
+  <!--   PHASE 2 DEVELOPMENT LTI JUNE 2021 -->
   
+  
+  <!-- Label Change in Prospect - Phase 2 -->
+  <label deltaind="M" labeldesc="Territory Manager" labelkey="marketingRepFieldLabel"/>
+  <label deltaind="M" labeldesc="Territory Manager" labelkey="pd_account_executive_label"/>
+  
+   <!-- Label Change in Market Information - Phase 2 -->
+   <label deltaind="M" labeldesc="Top Three Companies Appointed" labelkey="top_companies_appointed_label"/>
+   
+   <!-- LOB Commercial Lines Prechecked - Phase 2 -->
+    <label deltaind="I" labeldesc="Commercial Lines" labelkey="prospectDetails_agency_lob_checkbox_label"/> 
+   <!--  Years Of Current Ownership label & Additional Email Address update- Phase 2 -->
+   <label deltaind="I" labeldesc="Years of Current Ownership" labelkey="prospectYearsOfCurrentOwnershipLabel"/>
+   <label deltaind="I" labeldesc="Email" labelkey="additional_email_address_entityGeneralDetails_label"/>
+   
+   <!-- Prospect Market Information - Final Question - Phase 2 -->
+   <label deltaind="I" labeldesc="Explain any interest in any other business or occupation outside of this agency" labelkey="interest_in_other_business_label"/> 
+   
+   <!-- Sections in Market Information - Phase 2 -->
+  
+  <label deltaind="I" labeldesc="Special Commissions" labelkey="prospect_narrative_question_1_label"/>
+  <label deltaind="I" labeldesc="Agency Appearance" labelkey="prospect_narrative_question_2_label"/>
+  <label deltaind="I" labeldesc="Comment on neighboring Builders Mutual Insurance Agencies and with this appointment" labelkey="prospect_narrative_question_3_label"/>
+  <label deltaind="I" labeldesc="Narrative of Agent" labelkey="prospect_narrative_question_4_label"/> 
+ 
+ <!-- Agency's Total P&C Written Premium Previous Year End - Phase 2 -->
+ <label deltaind="I" labeldesc="Agency's Total P&amp;C Written Premium Previous Year" labelkey="prospect_total_written_premium_previous_year_end_label"/>
+  
+  
+  <!-- Phase 2 - Bug Id- P2-030 --> 
+  <label deltaind="I" labeldesc="Call Report" labelkey="ajax_field_document_category_title"/>
+ 
+   
 </labelconf>

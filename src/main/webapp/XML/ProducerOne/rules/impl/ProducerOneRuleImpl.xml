@@ -12,10 +12,13 @@
 	<rule deltaind="I" id="showOnAddAgencySetUp" expression="andCondition(isEqual(:showOnAdd,Y),isEqual(:aar_statusid_desc,Pending Agency Setup));" obj="ruleobjs.ProducerOneRule" method="showOnAdd" />
 	<rule deltaind="I" id="showOnAddAgencySentForEsign" expression="andCondition(isEqual(:showOnAdd,Y),isEqual(:aar_statusid_desc,Sent for ESignature));" obj="ruleobjs.ProducerOneRule" method="showOnAdd" />
 	<rule deltaind="I" id="showOnAddAgencyBgCheck" expression="andCondition(isEqual(:showOnAdd,Y),isEqual(:aar_statusid_desc,BG Check Submitted));" obj="ruleobjs.ProducerOneRule" method="showOnAdd" />
-	<rule deltaind="I" id="isWelcomeEmailSentMsg" expression="if(isEmpty(:inet_errors_list)=>assign(:pageMsg,getMessage(context,WelcomeemailSentSuccessfullyErrorKey)););" obj="ruleobjs.ProducerOneRule" method="isWelcomeEmailSentMsg" />
+	<rule deltaind="I" id="isWelcomeEmailSentMsg" expression="if(andCondition(isEmpty(:inet_errors_list),call_rule(ProducerOneRule.isNotSendInvitationEmail))=>assign(:pageMsg,getMessage(context,WelcomeemailSentSuccessfullyErrorKey)););" obj="ruleobjs.ProducerOneRule" method="isWelcomeEmailSentMsg" />
 	
 	<!-- BMIC customization - delete icon -->
-	<rule deltaind="I" id="isDeleteInvitation" expression="if(isEmpty(:inet_errors_list)=>assign(:pageMsg,getMessage(context,deleteInvitationErrorKey)););" obj="ruleobjs.ProducerOneRule" method="isWelcomeEmailSentMsg" />
+	<rule deltaind="I" id="isDeleteInvitation" expression="if(isEmpty(:inet_errors_list)=>assign(:pageMsg,getMessage(context,deleteInvitationErrorKey)););" />
+	<!-- Prod bug -Welcome Button display -->
+	<rule deltaind="I" id="isDisplayWelcomeButton" expression="andCondition(isEqual(:Status,Completed),isNot(isEmpty(:workflow_function_row)));" obj="ruleobjs.ProducerOneRule" method="showOnAdd" />
+
 	
 	</ruleset>
 </evalrules>
