@@ -112,17 +112,24 @@
 									<fo:table-cell>
 										<fo:block margin-top="6px" font-size="10px" font-family="Arial"><xsl:value-of select="response/market_rep_desc"/></fo:block>
 									</fo:table-cell>
+									
+									<xsl:if test="response/addProspectAgencyCallReportDetails_followup_date!=null or response/addProspectAgencyCallReportDetails_followup_date!= '' ">
+								    <fo:table-cell>
+										<fo:block margin-top="6px" font-size="10px" font-family="Arial" font-weight="bold">Follow-up Date :</fo:block>
+									</fo:table-cell>
+									<fo:table-cell>
+										<fo:block margin-top="6px" font-size="10px" font-family="Arial"><xsl:value-of select="response/addProspectAgencyCallReportDetails_followup_date"/></fo:block>
+									</fo:table-cell>
+									</xsl:if>
+									<xsl:if test="response/addAgencyCallReportDetails_followup_date!='null' or response/addAgencyCallReportDetails_followup_date!= '' ">
 									 <fo:table-cell>
 										<fo:block margin-top="6px" font-size="10px" font-family="Arial" font-weight="bold">Follow-up Date :</fo:block>
 									</fo:table-cell>
 									<fo:table-cell>
-									<xsl:if test="response/addProspectAgencyCallReportDetails_followup_date!=null or response/addProspectAgencyCallReportDetails_followup_date!= '' ">
-										<fo:block margin-top="6px" font-size="10px" font-family="Arial"><xsl:value-of select="response/addProspectAgencyCallReportDetails_followup_date"/></fo:block>
-									</xsl:if>
-									<xsl:if test="response/addAgencyCallReportDetails_followup_date!='null' or response/addAgencyCallReportDetails_followup_date!= '' ">
 									<fo:block margin-top="6px" font-size="10px" font-family="Arial"><xsl:value-of select="response/addAgencyCallReportDetails_followup_date"/></fo:block>
-									</xsl:if>
 									</fo:table-cell>
+									</xsl:if>
+									
 								<!-- 	<fo:table-cell padding-start="1pt">
 										<fo:block  wrap-option="no-wrap" margin-top="6px" font-size="10px" font-family="Arial" font-weight="bold">Territory:</fo:block>
 									</fo:table-cell>
