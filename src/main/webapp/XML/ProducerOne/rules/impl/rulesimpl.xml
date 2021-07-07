@@ -46,14 +46,12 @@
 			obj="ruleobjs.ProducerOneRule" method="decryptssn_num" />
 
 
-		<rule deltaind="I"
-			id="isRegistrationTypePrimarySecondary" expression="orCondition(isEqual(:registration_type_code,SCAG),isEqual(:registration_type_code,PRAG));"/>
+		<rule deltaind="I" id="isRegistrationTypePrimarySecondary" expression="orCondition(isEqual(:registration_type_code,SCAG),isEqual(:registration_type_code,PRAG));"/>
 		
 		<!-- Production Issue -->
-		<rule deltaind="I"
-			id="isSendInvitationEmail" expression="orCondition(isEqual(:event_name,SendInvitation),isEqual(:event_name,sendInvitationForLicensedProducer));"/>
-		<rule deltaind="I"
-			id="isNotSendInvitationEmail" expression="isNot(orCondition(isEqual(:event_name,SendInvitation),isEqual(:event_name,sendInvitationForLicensedProducer)););"/>
+		<rule deltaind="I"	id="isSendInvitationEmail" expression="orCondition(isEqual(:event_name,SendInvitation),isEqual(:event_name,sendInvitationForLicensedProducer));"/>
+		<rule deltaind="I" id="isNotSendInvitationEmail" expression="isNot(orCondition(isEqual(:event_name,SendInvitation),isEqual(:event_name,sendInvitationForLicensedProducer)));"/>
+
 		
 
 	</ruleset>

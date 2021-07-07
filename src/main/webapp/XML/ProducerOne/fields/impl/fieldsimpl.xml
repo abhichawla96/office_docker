@@ -388,4 +388,82 @@
 	<!-- ssn production issue -->
 	 <field deltaind="I" id="ssn_tax_id_popup" screen="carrier/taxidPopup.html" name="ssn_num" isrequired="Y" labelkey="feinFieldLabel1" tabsconfigurationresourcename="ssn_popup_securityHeader" protectedresourceuniquename="ssn_popup_securityHeader" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
   </field>
+  
+  
+  <!--  PHASE 2 DEVELOPMENT LTI JUNE 2021   -->
+  
+    <!-- Registration Type Mandatory - Phase 2 -->
+  <field deltaind="I" id="prospectAgencyDetails_agency_registration_type_id" screen="carrier/prospectAgencyDetails.html" 
+  name="agency_registration_type_id" isrequired="Y" labelkey="agency_registration_type_label" 
+  tabsconfigurationresourcename="prospect_agency_registration_type_security" protectedresourceuniquename="prospect_agency_registration_type_security" 
+  isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N">
+  </field>
+  
+  <!-- Business Address Mandatory in Prospect - Phase 2-->
+  <field deltaind="I" id="prospectAgencyDetails_addressline1_business" screen="carrier/prospectAgencyDetails.html" name="addressline1_business" isrequired="Y" labelkey="streetAddress1FieldLabel" tabsconfigurationresourcename="isShowProspectDetailsStreetAddress1" protectedresourceuniquename="isShowProspectDetailsStreetAddress1" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N">
+  </field>
+  <field deltaind="I" id="prospectAgencyDetails_city_business" screen="carrier/prospectAgencyDetails.html" name="city_business" isrequired="Y" labelkey="cityFieldLabel" tabsconfigurationresourcename="prospectDetails_city_business_security" protectedresourceuniquename="prospectDetails_city_business_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N">
+  </field>
+  <field deltaind="I" id="prospectAgencyDetails_business_state_id" screen="carrier/prospectAgencyDetails.html" name="business_state_id" isrequired="Y" labelkey="statefieldlabel" tabsconfigurationresourcename="prospectDetails_state_security" protectedresourceuniquename="prospectDetails_state_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N">
+  </field>
+  
+  <!-- Display only Commercial Lines in Prospect LOB - Phase 2 -->
+  <field deltaind="I" id="prospectAgencyDetails_prospectDetails_agency_lob_checkbox" screen="carrier/prospectAgencyDetails.html" name="prospectDetails_agency_lob_checkbox" isrequired="Y" labelkey="agency_lob_label" tabsconfigurationresourcename="prospectDetails_agency_lob_checkbox_security" protectedresourceuniquename="prospectDetails_agency_lob_checkbox_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N">
+  </field>
+   <!-- Phase II - Call Report -->
+  <field deltaind="I" isextendedfield="Y" name="addProspectAgencyCallReportDetails_followup_date" screen="carrier/addProspectAgencyCallReportDetails.html" objectcolumn="prospect_callreport_id" section="callreportProspect_freeform_contextdata_01" displaytype="text" 
+	isrequired="N" componentcss="datepicker" labelkey="addProspectAgencyCallReportDetails_followup_date_label" labeldesc="Follow-up Date" accesslevel="1" tabsconfigurationresourcename="addProspectAgencyCallReportDetails_followup_date_security" mappedto="f31"
+	protectedresourceuniquename="addProspectAgencyCallReportDetails_followup_date_security" id="addProspectAgencyCallReportDetails_followup_date" position="#addProspectCallReport_date_time_security_after#"/>
+  
+  
+  <field deltaind="I" isextendedfield="Y" name="addAgencyCallReportDetails_followup_date" screen="carrier/addAgencyCallReportDetails.html" objectcolumn="agency_call_report_id" section="callreport_freeform_contextdata_01" displaytype="text" 
+	isrequired="N" componentcss="datepicker" labelkey="addAgencyCallReportDetails_followup_date_label" labeldesc="Follow-up Date" accesslevel="1" tabsconfigurationresourcename="addAgencyCallReportDetails_followup_date_security" mappedto="f32"
+	protectedresourceuniquename="addAgencyCallReportDetails_followup_date_security" id="addAgencyCallReportDetails_followup_date" position="#call_date_time_security_after#"/>
+  
+   <!-- Phase 2 - Bug Id- P2-009  -->
+  <field deltaind="I" id="entityGeneralDetails_e_mail_business" screen="carrier/prospectAgencyDetails.html" name="e_mail_business" isrequired="Y" requiredeval="ProducerOneRule.checkAgencyBusinessEmailIdMandatory" labelkey="email_businessaddress_label" tabsconfigurationresourcename="business_email_id_agency_address_security" protectedresourceuniquename="business_email_id_agency_address_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
+    <validation name="isBusinessEmailRequiredForProspect" expression="if(andCondition(isEqual(:business_email_id_prospect_address_security,Y),andCondition(isEqual(:prospect_business_email_address_security,Y),andCondition(isEmpty(:e_mail_business),isEqual(:tabs1next_page,prospectAgencyDetails))))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="emailEmptyErrorKey" ruleid="EntityGeneralDetailsRule.isBusinessEmailRequiredForPrincipal" executionsequence="2" />
+    <validation name="checkValidProspectBusinessEmail" expression="validateMultipleEmailIds(context,e_mail_business);" message="ValidEmailIdErrorKey" ruleid="EntityGeneralDetailsRule.checkValidAgencyBusinessEmail" executionsequence="4" />
+  </field>
+  
+  <!-- Phase 2 - Bug Id- P2-018 -->
+  <field deltaind="I" id="addProspectAgencyCallReportDetails_market_rep_id" screen="carrier/addProspectAgencyCallReportDetails.html" name="market_rep_id" isrequired="Y" labelkey="territory_manager_label" tabsconfigurationresourcename="hide_show_call_report_territory_manager_security" protectedresourceuniquename="hide_show_call_report_territory_manager_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
+    <validation name="isEmptyCalReportTerritoryManager" expression="if(isEqual(:saveCallReportClicked,Y)=&gt;isNot(isEmpty(:market_rep_id))-&gt;isEqual(1,1));" message="isEmptyCalReportTerritoryManagerErrorKey" ruleid="ProducerOneRule.isEmptyCalReportTerritoryManager" executionsequence="1" />
+  </field>
+  
+  <field deltaind="I" id="addProspectAgencyCallReportDetails_date_time" screen="carrier/addProspectAgencyCallReportDetails.html" name="date_time" isrequired="Y" labelkey="callreport_block_date_time_label" tabsconfigurationresourcename="callreport_block_date_time_security" protectedresourceuniquename="callreport_block_date_time_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
+ 
+ <!-- Fields in Prospect - Market Information - Phase 2 -->
+  	<!-- Special Commission -->
+  <field deltaind="I" id="prospectMarketInformation_narrative_question_1" screen="carrier/prospectMarketInformation.html" name="narrative_question_1" isrequired="N" labelkey="prospect_narrative_question_1_label" tabsconfigurationresourcename="prospect_narrative_question_1_security" protectedresourceuniquename="prospect_narrative_question_1_security" isextendedfield="Y" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N">
+  </field>
+  	<!-- Agency Appearance -->
+  <field deltaind="I" id="prospectMarketInformation_narrative_question_2" screen="carrier/prospectMarketInformation.html" name="narrative_question_2" isrequired="N" labelkey="prospect_narrative_question_2_label" tabsconfigurationresourcename="prospect_narrative_question_2_security" protectedresourceuniquename="prospect_narrative_question_2_security" isextendedfield="Y" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N">
+  </field>
+  	<!-- Comment on neighboring Sample commerce -Agencies and any possible concerns with this appointment -->
+  <field deltaind="I" id="prospectMarketInformation_narrative_question_3" screen="carrier/prospectMarketInformation.html" name="narrative_question_3" isrequired="N" labelkey="prospect_narrative_question_3_label" tabsconfigurationresourcename="prospect_narrative_question_3_security" protectedresourceuniquename="prospect_narrative_question_3_security" isextendedfield="Y" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N">
+  </field>
+  	<!-- Narrative of Agent -->
+  <field deltaind="I" id="prospectMarketInformation_narrative_question_4" screen="carrier/prospectMarketInformation.html" name="narrative_question_4" isrequired="N" labelkey="prospect_narrative_question_4_label" tabsconfigurationresourcename="prospect_narrative_question_4_security" protectedresourceuniquename="prospect_narrative_question_4_security" isextendedfield="Y" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N">
+  </field>
+ 
+  
+	<!-- Mandatory Reason for Action Taken - Other - Phase 2  -->
+  <field deltaind="M" id="entityOtherInformation_reason_for_action_taken_desc" screen="carrier/entityOtherInformation.html" name="reason_for_action_taken_desc" isrequired="Y" labelkey="companiesTerminated_block_action_taken_label" tabsconfigurationresourcename="companiesTerminated_block_action_taken_security" protectedresourceuniquename="companiesTerminated_block_action_taken_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
+ 
+ <!-- Agency's Total P&C Written Premium Previous Year End - Phase 2 -->
+ <field deltaind="I" id="prospectMarketInformation_total_written_premium_previous_year_end" screen="carrier/prospectMarketInformation.html" name="total_written_premium_previous_year_end" format="amount" labelkey="prospect_total_written_premium_previous_year_end_label" tabsconfigurationresourcename="prospect_total_written_premium_previous_year_end_security" protectedresourceuniquename="prospect_total_written_premium_previous_year_end_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
+  
+ <!-- Phase 2 - Bug Id- P2-019 -->
+<field deltaind="I" id="addProspectAgencyCallReportDetails_call_purpose" screen="carrier/addProspectAgencyCallReportDetails.html" name="call_purpose" isrequired="Y" labelkey="purpose_of_call_label" tabsconfigurationresourcename="hide_show_purpose_of_call_security" protectedresourceuniquename="hide_show_purpose_of_call_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
+<validation name="isEmptycall_purpose" expression="if(isEqual(:saveCallReportClicked,Y)=&gt;isNot(isEmpty(:call_purpose))-&gt;isEqual(1,1));" message="isEmptycall_purpose" ruleid="ProducerOneRule.isEmptycall_purpose" executionsequence="1" />
+</field>
+  
+  <!--Phase 2- Bug Id-P2-029  --> 
+ <field deltaind="I" id="addAgencyCallReportDetails_call_purpose" screen="carrier/addAgencyCallReportDetails.html" name="call_purpose" isrequired="Y" labelkey="purpose_of_call_label" tabsconfigurationresourcename="hide_show_purpose_of_call_security" protectedresourceuniquename="hide_show_purpose_of_call_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
+	<validation name="isEmptycall_purpose" expression="if(isEqual(:saveCallReportClicked,Y)=&gt;isNot(isEmpty(:call_purpose))-&gt;isEqual(1,1));" message="isEmptycall_purpose" ruleid="ProducerOneRule.isEmptycall_purpose" executionsequence="1" />
+  </field>
+
+  <field deltaind="I" id="addAgencyCallReportDetails_date_time" screen="carrier/addAgencyCallReportDetails.html" name="date_time" isrequired="Y" labelkey="callreport_block_date_time_label" tabsconfigurationresourcename="callreport_block_date_time_security" protectedresourceuniquename="callreport_block_date_time_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
+ 
  </fields>
