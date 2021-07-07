@@ -1754,7 +1754,18 @@
     </businessrole>
   </protectedresource>
   
+  <!-- Phase 2 - Bug Id- P2-035 -->
+ <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show new label on Agency code details option" uniquename="agencyFunctions_selectFunctionType_closeagencycode_security">
+    <userdefined deltaind="I" executionsequence="0" ruleid="AgencyFunctionsRule.isShowCloseAgencyCodeLabel">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+ </protectedresource>
   
+ <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show new label on Agency code details option" uniquename="agencyFunctions_selectFunctionType_terminationReasonOther_security">
+    <userdefined deltaind="I" executionsequence="0" ruleid="AgencyFunctionsRule.isShowCloseLocationLabel">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+ </protectedresource>
   
 </security>  
 

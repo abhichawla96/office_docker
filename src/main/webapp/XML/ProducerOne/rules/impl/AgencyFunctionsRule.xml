@@ -6,5 +6,10 @@
  
  <rule id="isShowTemplateAndDocumentForAgencyFunction" deltaind="M" expression="andCondition(call_rule(AgencyFunctionsRule.isShowGenrateLetterForAgencyAdmin),orCondition(isEqual(:selectFunctionType_code,functionCAC),orCondition(isEqual(:selectFunctionType_code,functionCL),isEqual(:selectFunctionType_code,functionDC))));"
 method="isShowTemplateAndDocumentForAgencyFunction" />
+
+<!-- Phase 2 - Bug Id- P2-035 --> 
+<rule id="isShowCloseAgencyCodeLabel" deltaind="I" expression="andCondition(isEqual(:selectFunctionType_code,functionCAC),isEqual(:termination_reason_code,Oth));" obj="ruleobjs.AgencyFunctionsRule" method="isShowCloseAgencyCodeLabel" />
+<rule id="isShowCloseLocationLabel" deltaind="I" expression="andCondition(isEqual(:selectFunctionType_code,functionCL),isEqual(:termination_reason_code,Oth));" obj="ruleobjs.AgencyFunctionsRule" method="isShowCloseLocationLabel" />  
+  
   </ruleset>
 </evalrules>
