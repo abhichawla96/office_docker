@@ -2,8 +2,8 @@
 	<component metaobject="email_notifications_templates_mapping" name="selectEmailTemplate" stackdisplayname="Select Email Template">
     	
     	<action deltaind="M" name="send">
-    		<workflow name="send" deltaind="I" seq="0" eval="ProducerOneRule.isSendInvitationEmail">
-	    		<email deltaind="I" attachmentcontent="attachmentcontent" cc="mailcc" eventname="event_name" executionsequence="0" mailto="mailto" msgstring="bodyContent" name="send" objectid="objectid" objecttype="objecttype" templatename="template_name"/>
+        	<workflow name="send" deltaind="I" seq="0" eval="ProducerOneRule.isSendInvitationEmail">
+        	<email deltaind="I" attachmentcontent="attachmentcontent" cc="mailcc" eventname="event_name" executionsequence="0" mailto="mailto" msgstring="bodyContent" name="send" objectid="objectid" objecttype="objecttype" templatename="template_name"/>
 	    		<storedprocedureoperation deltaind="I" dbspname="updateEmailNotificationStatus_p" eval="ProducerOneRule.isEmailSentSuccessfully" executionsequence="1" id="updateEmailNotificationStatus_p" metaobject="sendInvitation" name="updateEmailNotificationStatus_p" operation="4">
 						<parameteroperation indexno="0" mode="IN" property="objecttype" seq="1"/>
 						<parameteroperation indexno="1" mode="IN" property="objectid" seq="2"/>
