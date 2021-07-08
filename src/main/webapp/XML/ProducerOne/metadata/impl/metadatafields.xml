@@ -20,5 +20,12 @@
   <field deltaind="I"  type="V" decimallength="0" seq="11912" length="0" displayname="production_commitment_third_year" dropdown="N" fieldlength="200" viewlength="0" name="production_commitment_first_year" />
   <field deltaind="I"  type="V" decimallength="0" seq="11913" length="0" displayname="production_commitment_achieve_volume" dropdown="N" fieldlength="200" viewlength="0" name="production_commitment_second_year" />
   
+  <!-- Phase 2 - MarketInfo - Top 3 Companies Appointed Columns -->
+  
+    
+  <field deltaind="I" decimallength="0" displayname="life_volume" length="0" name="life_volume" seq="493" type="N" viewlength="1"/>
+  <field deltaind="I" decimallength="0" displayname="pl_volume" length="0" name="pl_volume" seq="493" type="N" viewlength="1"/>
+  <field deltaind="I" decimallength="0" displayname="cl_volume" length="0" name="cl_volume" seq="493" type="N" viewlength="1"/>
+  
   
   </structure>
