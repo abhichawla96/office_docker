@@ -639,4 +639,7 @@
   <!-- Phase 2 - Bug Id- P2-036 -->
  <tabsconfigurationresource deltaind="I"  accesslevel="0" description="hide show prospect_showcallReports_security" name="prospect_showcallReports_security"/>
  
+ <!-- Additional Configuration on Requests dashboard for Phase 2-->
+ <tabsconfigurationresource deltaind="I" accesslevel="1" description="isAddUpdateSelfServiceDocCyberLiabilityApplicable_security" name="isAddUpdateSelfServiceDocCyberLiabilityApplicable_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="1" name="isAddUpdateSelfServiceOthersApplicable"/>
 </tabsconfiguration>
