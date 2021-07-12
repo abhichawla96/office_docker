@@ -1767,5 +1767,119 @@
     </userdefined>
  </protectedresource>
   
+  <!-- Phase 2 - SS-002-04 - Hiding fields -->
+   <protectedresource deltaind="M" defaultaccesstype="1" description="contact_details_login_id_selfService_security" uniquename="contact_details_login_id_selfService_security">
+  <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+   <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show agentGeneralDetailsForSelfServiceApproval_license_number_security" uniquename="agentGeneralDetailsForSelfServiceApproval_license_number_security">
+ <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+   <protectedresource deltaind="M" description="Hide/show former_name_security" uniquename="agentGeneralDetailsForSelfServiceApproval_former_name_security">
+   <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole> 
+    </protectedresource>
+    
+    <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show agentGeneralDetailsForSelfServiceApproval_hire_date_security" uniquename="agentGeneralDetailsForSelfServiceApproval_hire_date_security">
+    <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole> 
+    </protectedresource>
+    
+    <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show agentGeneralDetailsForSelfServiceApproval_industryexp_security" uniquename="agentGeneralDetailsForSelfServiceApproval_industry_experience_security">
+    <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole> 
+    </protectedresource>
+    
+   <protectedresource deltaind="M" defaultaccesstype="1" description="Hide_gender_id_security" uniquename="agentGeneralDetailsForSelfServiceApproval_gender_id_security">
+  <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+    
+    <protectedresource deltaind="M" defaultaccesstype="1" description="Hide_isShowBackgrndReqforContact_security" uniquename="agentGeneralDetailsForSelfServiceApproval_isShowBackgrndReqforContact">
+  <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+   <protectedresource deltaind="M" description="Hide/show fax_business_agent_ss_security" uniquename="fax_business_agent_ss_security">
+  <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+    
+  <protectedresource deltaind="M" defaultaccesstype="1" description="Hide_contact_producer_type_security" uniquename="agentGeneralDetailsForSelfServiceApproval_contact_producer_type_security">
+  <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+  <!-- Hiding checkbox -->
+   <protectedresource deltaind="M" defaultaccesstype="0" description="Hiding_checkbox" uniquename="agentGeneralDetailsForSelfServiceApproval_isShowCopyBusinessToMailingOnBusinessOnly">
+   <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+      
+   
+   <protectedresource deltaind="I" defaultaccesstype="1" description="Hiding_fax_field" uniquename="w9_fax_agent_selfservice_security">
+   <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+      
+  <protectedresource deltaind="M" description="Hiding_Mailing_section" uniquename="mailing_addressDiv_security">
+  <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>  
+    
+  
+  
+  
 </security>  
 

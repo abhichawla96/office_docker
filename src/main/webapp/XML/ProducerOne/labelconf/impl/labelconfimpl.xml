@@ -197,6 +197,13 @@
   
   <!-- Phase 2 - Bug Id- P2-030 --> 
   <label deltaind="I" labeldesc="Call Report" labelkey="ajax_field_document_category_title"/>
- 
-   
+  
+  <!-- Phase 2 - SS-002-10- Add/Update Contact--> 
+  <label deltaind="M" labeldesc="Designations" labelkey="position_title_label"/>
+  <label deltaind="M" labeldesc="Email" labelkey="email_residence_agent_selfservice_field_label"/>
+  <label deltaind="M" labeldesc="Business Address" labelkey="agent_business_ss_label"/>
+  
+  
+  
+
 </labelconf>
