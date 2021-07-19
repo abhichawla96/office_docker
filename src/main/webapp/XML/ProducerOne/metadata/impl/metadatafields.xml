@@ -12,6 +12,9 @@
  <field deltaind="I" type="V" decimallength="0" seq="11907" length="0" displayname="premium_threshold" dropdown="N" fieldlength="200" viewlength="0" name="premium_threshold" />
  <field deltaind="I" type="V" decimallength="0" seq="11908" length="0" displayname="industry_makeup_agency_commercial" dropdown="N" fieldlength="200" viewlength="0" name="industry_makeup_agency_commercial" />
  <field deltaind="I" type="V" decimallength="0" seq="11909" length="0" displayname="accounts_size" dropdown="N" fieldlength="200" viewlength="0" name="accounts_size" />
+ <field deltaind="I" type="V" decimallength="0" seq="11914" length="0" displayname="agency_premium_size_id" dropdown="N" fieldlength="200" viewlength="0" name="agency_premium_size_id" />
+ <field deltaind="I" type="V" decimallength="0" seq="11915" length="0" displayname="agency_premium_size_percent" dropdown="N" fieldlength="200" viewlength="0" name="agency_premium_size_percent" />
+ <field deltaind="I" type="V" decimallength="0" seq="11916" length="0" displayname="agency_premium_size_percent_id" dropdown="N" fieldlength="200" viewlength="0" name="agency_premium_size_percent_id" />
   
  <!-- Phase 2 - MarketInfo - Production Commitment Section -->
   

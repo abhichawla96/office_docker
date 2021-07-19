@@ -81,6 +81,19 @@
 					<resultsetoperation indexno="0" mappingclass="java.util.HashMap"> </resultsetoperation>		
 				</storedprocedureoperation>
 			</workflow>
+			
+			<!--Phase 2 - US : OB-PPRM-04-005 (Commercial Lines)-->
+			
+			<workflow deltaind="I" name="insertUpdateDeleteTblAgencyPremiumSizePercentProspectWorkflow" seq="6">
+     	         <storedprocedureoperation deltaind="I" dbspname="insertUpdateDeleteTblAgencyPremiumSizePercentProspect_p" executionsequence="1" id="insertUpdateDeleteTblAgencyPremiumSizePercentProspect_p" metaobject="tbl_agency_premium_size_percent" name="insertUpdateDeleteTblAgencyPremiumSizePercentProspect_p" operation="4" >
+					<parameteroperation indexno="0" mode="IN" property="prospect_agency_id" seq="1"/>
+					<parameteroperation indexno="1" mode="IN" property="agency_premium_size_id" seq="2"/>
+					<parameteroperation indexno="2" mode="IN" property="agency_premium_size_percent" seq="3"/>
+					<parameteroperation indexno="3" mode="IN" property="agency_premium_size_percent_id" seq="4"/>
+					<parameteroperation indexno="4" mode="IN" property="last_updated_by" seq="5"/> 
+					<resultsetoperation indexno="0" mappingclass="java.util.HashMap"> </resultsetoperation>		
+				</storedprocedureoperation>
+			</workflow>
     </action>
     
     <action deltaind="M" name="view">
@@ -127,16 +140,31 @@
 				<resultsetoperation indexno="0" mappingclass="java.util.HashMap"></resultsetoperation>		
 			</storedprocedureoperation>
 	</workflow> 
+	
 	 <!-- Phase 2 - US : OB-PPRM-04-005 -->
-	 
 	 <workflow deltaind="I" name="getMarketInformationLobSections" seq="13">
          		<storedprocedureoperation deltaind="I" dbspname="getTblMarketInformationLobSectionsProspect_p" executionsequence="0" id="getTblMarketInformationLobSectionsProspect_p" metaobject="tbl_marketinformation_lob" name="getTblMarketInformationLobSectionsProspect_p" operation="3">
 						<parameteroperation indexno="0" mode="IN" property="prospect_agency_id" seq="1"/>
 						<resultsetoperation indexno="1" mappingclass="java.util.HashMap"/>
 				</storedprocedureoperation>
      	   </workflow> 
+     	   
+     <!-- Phase 2 - US : OB-PPRM-04-005 -->
+     <workflow deltaind="I" name="getTblAgencyPremiumSizePercentSectionsProspectSections" seq="14">
+         		<storedprocedureoperation deltaind="I" dbspname="getTblAgencyPremiumSizePercentSectionsProspect_p" executionsequence="0" id="getTblAgencyPremiumSizePercentSectionsProspect_p" metaobject="tbl_agency_premium_size_percent" name="getTblAgencyPremiumSizePercentSectionsProspect_p" operation="5" viewid="adminBrokerageStep6_commercial_lines_list_mom_1">
+						<parameteroperation indexno="0" mode="IN" property="prospect_agency_id" seq="1"/>
+						<resultsetoperation indexno="1" mappingclass="java.util.HashMap"/>
+				</storedprocedureoperation>
+     	   </workflow> 
   	</action>
   	
+  	 <!-- Phase 2 - commercial lines -->
+  	 <action deltaind="I" name="refreshProspect">
+      <actionparam deltaind="I" executionsequence="0" name="inet_skip_validation" paramid="inet_skip_validation" val="Y" viewparam="Y"/>
+     <actionparam deltaind="I" executionsequence="0" name="is_agency_share_contingency_prospect" paramid="is_agency_share_contingency_prospect" pre="Y"/>
+   </action>
+   
+   
   	<!-- Phase 2 - Adding Life Volume, PL Volume and CL Volume Column in Market Information - Start -->
   	<action deltaind="M" name="addAgencyCompanyPremiumLicensed">
   		<actionparam deltaind="M" eval="ProducerOneRule.isInetErrorListEmpty" executionsequence="0" form="Y" name="removeparams" paramid="removeparams" post="Y" remove="Y" removeparams="carrier_id,class1volume,loss_ratio,dateofappointment,yearofappointment,PY_written_premium,years_represented,carrier_id_desc,life_volume,pl_volume,cl_volume" session="Y"/>  
