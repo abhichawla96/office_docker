@@ -188,7 +188,10 @@
   
   <label deltaind="I" labeldesc="Special Commissions" labelkey="prospect_narrative_question_1_label"/>
   <label deltaind="I" labeldesc="Agency Appearance" labelkey="prospect_narrative_question_2_label"/>
-  <label deltaind="I" labeldesc="Comment on neighboring Builders Mutual Insurance Agencies and with this appointment" labelkey="prospect_narrative_question_3_label"/>
+  
+  <!-- Phase 2- Bug ID- P2-044 -->
+  <label deltaind="I" labeldesc="Comment on neighboring Sample commerce -Agencies and any possible concerns with this appointment" labelkey="prospect_narrative_question_3_label"/>
+  
   <label deltaind="I" labeldesc="Narrative of Agent" labelkey="prospect_narrative_question_4_label"/> 
  
  <!-- Agency's Total P&C Written Premium Previous Year End - Phase 2 -->
@@ -209,4 +212,14 @@
   <!-- For the column -->
   <label deltaind="I" labeldesc="Agency Code" labelkey="entityRequests_AgentNumber_label"/>
   
+  
+  <!-- Phase 2- P2-048 - Spelling Mistake in PPRM- Market Information- Agency Review Section -->
+  <label deltaind="I" labeldesc="Review of Agency Experience: Review of the agency experience with their other carriers. There must be a history of underwriting profit for at least three of the last five years for all companies represented. Obtain copies of year-end experience report, and look for a pattern of unexplained losses in a major line :" labelkey="agency_experience_label"/>
+  <label deltaind="M" labeldesc="Review of Agency Financials : The agency should have strong financial statements, two year of balance sheets and income statements. Look for acceptable financials ratios, trust ratio ,and account receivable ratio." labelkey="agency_financials_label"/>
+  
+  <!-- Phase 2- P2-049 - Spelling Mistake in PPRM- Market Information- Premium Volume and Production Information Section -->
+  <label deltaind="M" labeldesc="Total" labelkey="premium_totalpremium_label"/>
+  
+  
+ 
 </labelconf>
