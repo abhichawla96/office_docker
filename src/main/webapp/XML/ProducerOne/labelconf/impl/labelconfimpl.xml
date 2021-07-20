@@ -220,6 +220,8 @@
   <!-- Phase 2- P2-049 - Spelling Mistake in PPRM- Market Information- Premium Volume and Production Information Section -->
   <label deltaind="M" labeldesc="Total" labelkey="premium_totalpremium_label"/>
   
+  <!-- Phase 2 - SS-002-25- Add/Update Contact-->  
+   <label deltaind="M" labeldesc="Agency Code" labelkey="entityRequests_agentnumber_label"/>
   
  
 </labelconf>
