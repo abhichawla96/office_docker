@@ -14,7 +14,7 @@
    <!-- Task Id- SS-009-002-01 Add and update Contact page - Phase 2 Start-->
    <action deltaind="I" name="sendUpdatedAgentDataForSaveApproval">
       <workflow deltaind="I" name="selfServiceInitiateEmail" seq="8">
-	    <databaseoperation deltaind="I" executionsequence="0" metaobject="userprofiles" name="getMarketAssistantEmail" operation="3" sqlstmt="select  e_mail as e_mail from userprofiles where user_id=#user_id#"/>
+	    <databaseoperation deltaind="I" executionsequence="0" metaobject="userprofiles" name="getMarketAssistantEmail" operation="3" sqlstmt="select  e_mail as e_mail from userprofiles where user_id=#assigned_to#"/>
 		<email deltaind="I" eventname="InitiateSelfServiceRequest" executionsequence="1" name="InitiateSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail"/>
 	 </workflow>
    </action>

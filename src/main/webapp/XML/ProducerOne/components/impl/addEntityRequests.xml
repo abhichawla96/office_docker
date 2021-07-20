@@ -3,12 +3,15 @@
     <!-- Task Id- SS-009-002-02 Add and update Contact page - Phase 2 Start-->
      <action deltaind="I" name="apprvoveRequests">
      
-       <actionparam deltaind="I" executionsequence="0" form="Y" name="user_id" paramid="user_id" populatename="home_workflow_user" post="Y"/>
+      <actionparam deltaind="I" executionsequence="0" form="Y" name="workflow_assignee" paramid="workflow_assignee" viewparam="Y"/>
       <workflow deltaind="I" name="selfServiceApproveEmail" seq="2">
-	    <databaseoperation deltaind="I" executionsequence="0" metaobject="userprofiles" name="getAgencyAdminApproverEmail" operation="3" sqlstmt="select  e_mail as e_mail from userprofiles where user_id=#user_id#"/>
+	    <databaseoperation deltaind="I" executionsequence="0" metaobject="userprofiles" name="getAgencyAdminApproverEmail" operation="3" sqlstmt="select  e_mail as e_mail from userprofiles where user_id=#workflow_assignee#"/>
 		<email deltaind="I" eventname="ApproveSelfServiceRequest" executionsequence="1" name="ApproveSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail"/>
 	  </workflow>
     </action>
    
+    <action deltaind="I" name="declineRequests">
+      <actionparam deltaind="I" executionsequence="0" form="Y" name="workflow_assignee" paramid="workflow_assignee" viewparam="Y"/>
+   </action>
   </component>
 </projectcomponents>
