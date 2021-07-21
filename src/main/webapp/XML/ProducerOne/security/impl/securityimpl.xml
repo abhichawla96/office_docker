@@ -1936,5 +1936,12 @@
 	</protectedresource>
 <!-- To show fields when Contact Type is Licensed Producer- End - Phase 2 -->
   
+<!-- SS-012-05- Hide Request Type Dropdown- Phase 2- Start -->
+	<protectedresource deltaind="M" defaultaccesstype="0" description="Show/Hide Request Type in Dashboard" uniquename="homeAction_request_type_security">
+		<businessrole deltaind="I" roleid="AgencyAdmin" accesstype="1"/>
+	</protectedresource>
+<!-- SS-012-05- Hide Request Type Dropdown- Phase 2- End-->  
+  
+  
 </security>  
 
