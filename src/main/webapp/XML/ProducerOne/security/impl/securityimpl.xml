@@ -1756,6 +1756,10 @@
    <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show attach button on agentcall report page" uniquename="uploadDocument_attach">
     <userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.isRelationShipCallReportFlagY">
       <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    <!-- Phase 2 - Task Id- SS-005-11 -->
+     <userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.checkIsNewRequest">
+      <userdefinedaccesslevel accesstype="1"/>
     </userdefined>    
   </protectedresource>
   

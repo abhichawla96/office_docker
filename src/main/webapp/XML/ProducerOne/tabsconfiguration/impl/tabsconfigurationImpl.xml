@@ -642,4 +642,13 @@
  <!-- Additional Configuration on Requests dashboard for Phase 2-->
  <tabsconfigurationresource deltaind="I" accesslevel="1" description="isAddUpdateSelfServiceDocCyberLiabilityApplicable_security" name="isAddUpdateSelfServiceDocCyberLiabilityApplicable_security"/>
  <tabsconfigurationresource deltaind="I" accesslevel="1" name="isAddUpdateSelfServiceOthersApplicable"/>
+ 
+ <!-- Phase 2 - Task Id- SS-005-10 -->
+ <tabsconfigurationresource deltaind="I" accesslevel="1" description="addNewCyberLiabilityForSelfService_eo_claims_declaration_security" name="addNewCyberLiabilityForSelfService_eo_claims_declaration_security"/>
+ 
+ <!-- Phase 2 - Task Id- SS-005-05 -->
+ <tabsconfigurationresource deltaind="I" accesslevel="0" description="addNewCyberLiabilityForSelfService_producer_number_id_security" name="addNewCyberLiabilityForSelfService_producer_number_id_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="0" description="addNewCyberLiabilityForSelfService_aggregate_limit_security" name="addNewCyberLiabilityForSelfService_aggregate_limit_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="0" description="addNewCyberLiabilityForSelfService_deductible_security" name="addNewCyberLiabilityForSelfService_deductible_security"/>
+ 
 </tabsconfiguration>
