@@ -220,8 +220,17 @@
   <!-- Phase 2- P2-049 - Spelling Mistake in PPRM- Market Information- Premium Volume and Production Information Section -->
   <label deltaind="M" labeldesc="Total" labelkey="premium_totalpremium_label"/>
   
-  <!-- Phase 2 - SS-002-25- Add/Update Contact-->  
-   <label deltaind="M" labeldesc="Agency Code" labelkey="entityRequests_agentnumber_label"/>
+  <!-- Phase 2 - SS-002-25- Add/Update Contact--> 
+  <!-- Phase 2- SS-001-17- Agency Code on Update Location Page -->
+  <label deltaind="M" labeldesc="Agency Code" labelkey="entityRequests_agentnumber_label"/>
   
+  
+  <!-- Phase 2- SS-001-04- Changing labels on Update Location Page -->
+  <label deltaind="M" labeldesc="Agency Name" labelkey="name_securityHeader_label"/>
+  <label deltaind="M" labeldesc="Agency web Address" labelkey="entityGeneralDetailsForSelfServiceApproval_url_label"/>
+  <label deltaind="M" labeldesc="W-9 Legal Name" labelkey="entityGeneralDetailsForSelfServiceApproval_taxpayer_name_label"/>
+  <label deltaind="M" labeldesc="Mailing Address" labelkey="mailing_addressDiv_selfService_label"/>
+  <label deltaind="M" labeldesc="Email" labelkey="email_id_business_ss_label"/>
+  <label deltaind="M" labeldesc="Business Address" labelkey="agency_business_ss_label"/>
  
 </labelconf>

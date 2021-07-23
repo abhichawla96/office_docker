@@ -651,4 +651,10 @@
  <tabsconfigurationresource deltaind="I" accesslevel="0" description="addNewCyberLiabilityForSelfService_aggregate_limit_security" name="addNewCyberLiabilityForSelfService_aggregate_limit_security"/>
  <tabsconfigurationresource deltaind="I" accesslevel="0" description="addNewCyberLiabilityForSelfService_deductible_security" name="addNewCyberLiabilityForSelfService_deductible_security"/>
  
+ 
+ <!-- Phase 2- SS-001-03- Hiding buttons on Update Location Page -->
+ <tabsconfigurationresource deltaind="M" accesslevel="0" name="addEntityRequests_add_new_location"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="0" name="addEntityRequests_close_location"/>
+ 
+
 </tabsconfiguration>
