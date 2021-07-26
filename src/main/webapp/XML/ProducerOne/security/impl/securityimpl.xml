@@ -2057,6 +2057,11 @@
 	</protectedresource> 
 <!-- Phase 2- SS-001-05- Update Location Page- End -->
 
-
+	<!-- Task Id- SS-005-26 Add and update CyberLiability page - Phase 2 Start-->
+  <protectedresource deltaind="I"  defaultaccesstype="1" uniquename="addNewCyberLiabilityForSelfService_disapprove">
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+	  <roleaccesslevel accesstype="0" />
+	</businessrole>
+  </protectedresource>
 
 </security> 
