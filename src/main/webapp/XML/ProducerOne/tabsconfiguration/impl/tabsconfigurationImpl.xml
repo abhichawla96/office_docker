@@ -521,11 +521,12 @@
 	<tabsconfigurationresource deltaind="M" accesslevel="1" description="isShowEMailonEntityCyberLiabilityExpireList" name="isShowEMailonEntityCyberLiabilityExpireList"/>
 
 
-<!-- bug id : 57 --> 
-<tabsconfigurationresource deltaind="M" name="cyberLiability_contact_security" value="E&amp;O Cyber Liability Contact" description="Mention here the contact types you want to display in dropdown,you can pass comma seperated contact type or single values here eg principal,agency admin or hrp else All for all records" />
-	
+     <!-- bug id : 57 --> 
+     <!-- Phase 2 US :SS-005-06 -->
+       <tabsconfigurationresource deltaind="M" name="cyberLiability_contact_security" value="E&amp;O/Cyber Liability Contact" description="Mention here the contact types you want to display in dropdown,you can pass comma seperated contact type or single values here eg principal,agency admin or hrp else All for all records" />
+	<!-- Phase 2 US : SS-004-06 -->
 	<!-- bug id : 58  -->
-	 <tabsconfigurationresource deltaind="M" name="insurance_contact_security" value="E&amp;O Cyber Liability Contact" description="Mention here the contact types you want to display in SelfService dropdown,you can pass comma seperated contact type or single values here eg principal,agency admin or hrp" />
+	   <tabsconfigurationresource deltaind="M" name="insurance_contact_security" value="E&amp;O/Cyber Liability Contact" description="Mention here the contact types you want to display in SelfService dropdown,you can pass comma seperated contact type or single values here eg principal,agency admin or hrp" />
  
   <!-- Bug no. : 154 : Missing Section in Market Information -->
 	  
