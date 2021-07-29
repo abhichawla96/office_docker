@@ -660,5 +660,18 @@
  <tabsconfigurationresource deltaind="M" accesslevel="0" name="addEntityRequests_add_new_location"/>
  <tabsconfigurationresource deltaind="I" accesslevel="0" name="addEntityRequests_close_location"/>
  
+<!-- Phase 2- Bug Id- P2-053 - Hiding sections on Dashboard -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="agency admindashboard profit sharing statement security" name="agencyadmindashboard_profit_sharing_statement_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyadmindashboard_contingent_commission_bonus_statement_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="agency admindashboard agency profile report security" name="agencyadmindashboard_agency_profile_report_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyadmindashboard_commission_security"/>
+ 
+<!-- Phase 2- Bug Id- P2-054 - Disable User Button on Update Contact Page --> 
+<tabsconfigurationresource deltaind="I" accesslevel="0" name="addEntityRequests_disable_user"/>
+
+<!-- Phase 2- Bug Id- P2-057- Reports Dashboard--> 
+<tabsconfigurationresource deltaind="M" accesslevel="1" name="isShowAgencyAdminReportDashBoard"/>
+
+
 
 </tabsconfiguration>
