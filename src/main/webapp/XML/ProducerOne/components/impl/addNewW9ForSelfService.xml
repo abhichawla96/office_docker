@@ -1,0 +1,21 @@
+<projectcomponents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/components_XSD.xsd">
+  <component breadcrumbsessionparams="agency_id" metaobject="agency_w9_ss" name="addNewW9ForSelfService" objectcolumn="request_ss_id" objecttype="Self Service">
+    
+    <!-- Phase 2- SS-009-007-03- Upload W9 Document -->
+    <action deltaind="M" name="sendDocW9DataForSaveApproval">
+    	<workflow deltaind="I" name="selfServiceInitiateEmail" seq="4">
+	    	<databaseoperation deltaind="I" executionsequence="0" metaobject="userprofiles" name="getMarketAssistantEmail" operation="3" sqlstmt="select e_mail as e_mail from userprofiles where user_id=#assigned_to#"/>
+			<email deltaind="I" eventname="InitiateSelfServiceRequest" executionsequence="1" name="InitiateSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail"/>
+	  	</workflow>
+	</action>
+    
+    <!-- <action deltaind="M" name="approveRequests">
+		<actionparam deltaind="I" executionsequence="0" form="Y" name="workflow_assignee" paramid="workflow_assignee" viewparam="Y"/>
+	    <workflow deltaind="I" name="selfServiceApproveEmail" seq="2">
+		    <databaseoperation deltaind="I" executionsequence="0" metaobject="userprofiles" name="getAgencyAdminApproverEmail" operation="3" sqlstmt="select  e_mail as e_mail from userprofiles where user_id=#workflow_assignee#"/>
+			<email deltaind="I" eventname="ApproveSelfServiceRequest" executionsequence="1" name="ApproveSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail"/>
+		</workflow>
+	</action> -->
+    
+  </component>
+</projectcomponents>

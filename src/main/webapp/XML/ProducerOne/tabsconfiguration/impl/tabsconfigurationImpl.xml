@@ -672,6 +672,8 @@
 <!-- Phase 2- Bug Id- P2-057- Reports Dashboard--> 
 <tabsconfigurationresource deltaind="M" accesslevel="1" name="isShowAgencyAdminReportDashBoard"/>
 
+<!-- Phase 2- SS-007-18- Disapprove Button on Upload W9 Document Page -->
+<tabsconfigurationresource deltaind="I" accesslevel="0" name="addNewW9ForSelfService_disapprove"/>
 
 
 </tabsconfiguration>
