@@ -9,13 +9,13 @@
 	  	</workflow>
 	</action>
     
-    <!-- <action deltaind="M" name="approveRequests">
+    <action deltaind="M" name="approveRequests">
 		<actionparam deltaind="I" executionsequence="0" form="Y" name="workflow_assignee" paramid="workflow_assignee" viewparam="Y"/>
 	    <workflow deltaind="I" name="selfServiceApproveEmail" seq="2">
 		    <databaseoperation deltaind="I" executionsequence="0" metaobject="userprofiles" name="getAgencyAdminApproverEmail" operation="3" sqlstmt="select  e_mail as e_mail from userprofiles where user_id=#workflow_assignee#"/>
 			<email deltaind="I" eventname="ApproveSelfServiceRequest" executionsequence="1" name="ApproveSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail"/>
 		</workflow>
-	</action> -->
+	</action>
     
   </component>
 </projectcomponents>
