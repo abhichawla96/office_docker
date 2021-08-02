@@ -233,4 +233,12 @@
   <label deltaind="M" labeldesc="Email" labelkey="email_id_business_ss_label"/>
   <label deltaind="M" labeldesc="Business Address" labelkey="agency_business_ss_label"/>
  
+ <!-- Phase 2 - Self Service SS-004-06 -->
+  <label deltaind="M" labeldesc="E&amp;O Contact" labelkey="addInsuranceDetailsForSelfServiceApproval_doc_insurance_insurance_contact_label"/>
+ 
+ <label deltaind="I" labeldesc="Coverage Amount" labelkey="addInsuranceDetailsForSelfServiceApproval_coverage_amount_label"/>
+ 
+ <!-- Phase 2 - SS-004-23- Add/Update E&O-->  
+   <label deltaind="M" labeldesc="Agency Code" labelkey="entityRequests_agentnumber_label"/>
+ 
 </labelconf>
