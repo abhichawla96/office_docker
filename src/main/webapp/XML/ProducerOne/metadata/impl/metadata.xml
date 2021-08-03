@@ -10142,7 +10142,7 @@
       <!-- Phase 2- SS-001-16 - Request Type Drop-down - Start -->
       
       <property deltaind="M" autoincrement="NOT NULL" contextfield="N" deleteind="N" field="request_type_str" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="N" propertylength="50" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="6903" viewlength="50">
-        <dropdown deltaind="M" dropdowntype="sql" isrowlink="N" metaobject="reason_request_lku" name="getAgencyAdminReasonrequestSelfService" sqlstmt="select request_reason_id,case when display_name is not null then display_name else description end as description from reason_request_lku where isnull(is_external_request,'')!='N' AND description IN ('Add Bank Information','Add/Update Contact','Add/Update Cyber Liability','Add/Update E&amp;O','Others','Update Agency Location','Upload W-9 Document', 'functionCAC', 'functionCL', 'functionDC','functionAS','functionRS') order by description asc;">
+        <dropdown deltaind="M" dropdowntype="sql" isrowlink="N" metaobject="reason_request_lku" name="getAgencyAdminReasonrequestSelfService" sqlstmt="select request_reason_id,case when display_name is not null then display_name else description end as description from reason_request_lku where description IN ('Add Bank Information','Add/Update Contact','Add/Update Cyber Liability','Add/Update E&amp;O','Others','Update Agency Location','Upload W-9 Document', 'functionCAC', 'functionCL', 'functionDC','functionAS','functionRS') order by description asc;">
           <displayfield field="description"/>
           <valuefield field="request_reason_id"/>
         </dropdown>
