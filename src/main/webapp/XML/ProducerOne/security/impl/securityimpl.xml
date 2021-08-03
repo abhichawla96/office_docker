@@ -2064,9 +2064,6 @@
 	</businessrole>
   </protectedresource>
 
-<!-- Phase 2- Bug Id- P2-063- Comparative Rater field on Update Location Page - Test -->
-<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show agency_comparativerate_securityHeader" uniquename="entityGeneralDetailsForSelfServiceApproval_agency_comparativerate_securityHeader"/>
-
  <!-- Phase 2 - Self Service US :SS-004-26-->
  
     <protectedresource deltaind="I"  defaultaccesstype="1" uniquename="addNewInsuranceDetailForSelfService_disapprove">

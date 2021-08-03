@@ -562,7 +562,8 @@
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="cyber_liability_eo_claims_idDiv" name="cyber_liability_eo_claims_idDiv"/>
  
  <!-- Hiding Report from Producer Compliance 14/04/2021 -->
- <tabsconfigurationresource deltaind="M" accesslevel="0" name="isShowReportsOnAgencyAdminDashboard"/>
+ <!-- Phase 2 - Bug Id- P2-057 - Report Dashboard - List Of producer Code Addresses -->
+ <tabsconfigurationresource deltaind="M" accesslevel="1" name="isShowReportsOnAgencyAdminDashboard"/>
  
  <!-- Hiding Other Report Tabs -->
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide Show Adhoc report" name="showAdhocReport"/>
@@ -683,6 +684,8 @@
 
 <!-- Phase 2 -US :SS-004-11 -->
  <tabsconfigurationresource deltaind="M" name="add_new_insurance_details_for_self_service_eo_claims_declaration_security" accesslevel="1" description="add_new_insurance_details_for_self_service_eo_claims_declaration_security hide/show" />
-  
 
+<!-- Phase 2- Bug Id- P2-063- Comparative Rater field on Update Location Page - Test -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="entityGeneralDetailsForSelfServiceApproval_agency_comparativerate_securityHeader" name="entityGeneralDetailsForSelfServiceApproval_agency_comparativerate_securityHeader"/>
+  
 </tabsconfiguration>
