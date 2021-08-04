@@ -12,6 +12,9 @@
  <field deltaind="I" type="V" decimallength="0" seq="11907" length="0" displayname="premium_threshold" dropdown="N" fieldlength="200" viewlength="0" name="premium_threshold" />
  <field deltaind="I" type="V" decimallength="0" seq="11908" length="0" displayname="industry_makeup_agency_commercial" dropdown="N" fieldlength="200" viewlength="0" name="industry_makeup_agency_commercial" />
  <field deltaind="I" type="V" decimallength="0" seq="11909" length="0" displayname="accounts_size" dropdown="N" fieldlength="200" viewlength="0" name="accounts_size" />
+ <field deltaind="I" type="V" decimallength="0" seq="11914" length="0" displayname="agency_premium_size_id" dropdown="N" fieldlength="200" viewlength="0" name="agency_premium_size_id" />
+ <field deltaind="I" type="V" decimallength="0" seq="11915" length="0" displayname="agency_premium_size_percent" dropdown="N" fieldlength="200" viewlength="0" name="agency_premium_size_percent" />
+ <field deltaind="I" type="V" decimallength="0" seq="11916" length="0" displayname="agency_premium_size_percent_id" dropdown="N" fieldlength="200" viewlength="0" name="agency_premium_size_percent_id" />
   
  <!-- Phase 2 - MarketInfo - Production Commitment Section -->
   
@@ -19,6 +22,13 @@
   <field deltaind="I"  type="V" decimallength="0" seq="11911" length="0" displayname="production_commitment_second_year" dropdown="N" fieldlength="200" viewlength="0" name="production_commitment_second_year" />
   <field deltaind="I"  type="V" decimallength="0" seq="11912" length="0" displayname="production_commitment_third_year" dropdown="N" fieldlength="200" viewlength="0" name="production_commitment_first_year" />
   <field deltaind="I"  type="V" decimallength="0" seq="11913" length="0" displayname="production_commitment_achieve_volume" dropdown="N" fieldlength="200" viewlength="0" name="production_commitment_second_year" />
+  
+  <!-- Phase 2 - MarketInfo - Top 3 Companies Appointed Columns -->
+  
+    
+  <field deltaind="I" decimallength="0" displayname="life_volume" length="0" name="life_volume" seq="493" type="N" viewlength="1"/>
+  <field deltaind="I" decimallength="0" displayname="pl_volume" length="0" name="pl_volume" seq="493" type="N" viewlength="1"/>
+  <field deltaind="I" decimallength="0" displayname="cl_volume" length="0" name="cl_volume" seq="493" type="N" viewlength="1"/>
   
   
   </structure>

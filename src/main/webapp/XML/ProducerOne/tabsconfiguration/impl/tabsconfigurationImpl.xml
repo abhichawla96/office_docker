@@ -521,11 +521,12 @@
 	<tabsconfigurationresource deltaind="M" accesslevel="1" description="isShowEMailonEntityCyberLiabilityExpireList" name="isShowEMailonEntityCyberLiabilityExpireList"/>
 
 
-<!-- bug id : 57 --> 
-<tabsconfigurationresource deltaind="M" name="cyberLiability_contact_security" value="E&amp;O Cyber Liability Contact" description="Mention here the contact types you want to display in dropdown,you can pass comma seperated contact type or single values here eg principal,agency admin or hrp else All for all records" />
-	
+     <!-- bug id : 57 --> 
+     <!-- Phase 2 US :SS-005-06 -->
+       <tabsconfigurationresource deltaind="M" name="cyberLiability_contact_security" value="E&amp;O/Cyber Liability Contact" description="Mention here the contact types you want to display in dropdown,you can pass comma seperated contact type or single values here eg principal,agency admin or hrp else All for all records" />
+	<!-- Phase 2 US : SS-004-06 -->
 	<!-- bug id : 58  -->
-	 <tabsconfigurationresource deltaind="M" name="insurance_contact_security" value="E&amp;O Cyber Liability Contact" description="Mention here the contact types you want to display in SelfService dropdown,you can pass comma seperated contact type or single values here eg principal,agency admin or hrp" />
+	   <tabsconfigurationresource deltaind="M" name="insurance_contact_security" value="E&amp;O/Cyber Liability Contact" description="Mention here the contact types you want to display in SelfService dropdown,you can pass comma seperated contact type or single values here eg principal,agency admin or hrp" />
  
   <!-- Bug no. : 154 : Missing Section in Market Information -->
 	  
@@ -561,7 +562,8 @@
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="cyber_liability_eo_claims_idDiv" name="cyber_liability_eo_claims_idDiv"/>
  
  <!-- Hiding Report from Producer Compliance 14/04/2021 -->
- <tabsconfigurationresource deltaind="M" accesslevel="0" name="isShowReportsOnAgencyAdminDashboard"/>
+ <!-- Phase 2 - Bug Id- P2-057 - Report Dashboard - List Of producer Code Addresses -->
+ <tabsconfigurationresource deltaind="M" accesslevel="1" name="isShowReportsOnAgencyAdminDashboard"/>
  
  <!-- Hiding Other Report Tabs -->
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide Show Adhoc report" name="showAdhocReport"/>
@@ -639,4 +641,53 @@
   <!-- Phase 2 - Bug Id- P2-036 -->
  <tabsconfigurationresource deltaind="I"  accesslevel="0" description="hide show prospect_showcallReports_security" name="prospect_showcallReports_security"/>
  
+ <!-- Additional Configuration on Requests dashboard for Phase 2-->
+ <tabsconfigurationresource deltaind="I" accesslevel="1" description="isAddUpdateSelfServiceDocCyberLiabilityApplicable_security" name="isAddUpdateSelfServiceDocCyberLiabilityApplicable_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="1" name="isAddUpdateSelfServiceOthersApplicable"/>
+ 
+ <!-- Phase 2 - Task Id- SS-005-10 -->
+ <tabsconfigurationresource deltaind="I" accesslevel="1" description="addNewCyberLiabilityForSelfService_eo_claims_declaration_security" name="addNewCyberLiabilityForSelfService_eo_claims_declaration_security"/>
+ 
+ <!-- Phase 2 - Task Id- SS-005-05 -->
+ <tabsconfigurationresource deltaind="I" accesslevel="0" description="addNewCyberLiabilityForSelfService_producer_number_id_security" name="addNewCyberLiabilityForSelfService_producer_number_id_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="0" description="addNewCyberLiabilityForSelfService_aggregate_limit_security" name="addNewCyberLiabilityForSelfService_aggregate_limit_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="0" description="addNewCyberLiabilityForSelfService_deductible_security" name="addNewCyberLiabilityForSelfService_deductible_security"/>
+ 
+ <!-- Phase 2 - Task Id- SS-005-02 -->
+ <tabsconfigurationresource deltaind="I" accesslevel="0" description="docCyberLiability_producer_number_id_security" name="docCyberLiability_producer_number_id_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="1" description="cyber_liability_id_security" name="cyber_liability_id_security"/>
+ 
+  <!-- Phase 2- SS-001-03- Hiding buttons on Update Location Page -->
+ <tabsconfigurationresource deltaind="M" accesslevel="0" name="addEntityRequests_add_new_location"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="0" name="addEntityRequests_close_location"/>
+ 
+<!-- Phase 2- Bug Id- P2-053 - Hiding sections on Dashboard -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="agency admindashboard profit sharing statement security" name="agencyadmindashboard_profit_sharing_statement_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyadmindashboard_contingent_commission_bonus_statement_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="agency admindashboard agency profile report security" name="agencyadmindashboard_agency_profile_report_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyadmindashboard_commission_security"/>
+ 
+<!-- Phase 2- Bug Id- P2-054 - Disable User Button on Update Contact Page --> 
+<tabsconfigurationresource deltaind="I" accesslevel="0" name="addEntityRequests_disable_user"/>
+
+<!-- Phase 2- Bug Id- P2-057- Reports Dashboard--> 
+<tabsconfigurationresource deltaind="M" accesslevel="1" name="isShowAgencyAdminReportDashBoard"/>
+
+<!-- Phase 2- SS-007-18- Disapprove Button on Upload W9 Document Page -->
+<tabsconfigurationresource deltaind="I" accesslevel="0" name="addNewW9ForSelfService_disapprove"/>
+
+<!-- Phase 2  -->
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="addInsuranceDetailsForSelfServiceApproval_doc_insurance_expiration_date_from_security" name="addInsuranceDetailsForSelfServiceApproval_doc_insurance_expiration_date_from_security"/>
+  
+ <!-- Phase 2 - Self Service US :SS-004-05-->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="addInsuranceDetailsForSelfServiceApproval_doc_insurance_deductible_security" name="addInsuranceDetailsForSelfServiceApproval_doc_insurance_deductible_security"/>
+
+<!-- Phase 2 -US :SS-004-11 -->
+ <tabsconfigurationresource deltaind="M" name="add_new_insurance_details_for_self_service_eo_claims_declaration_security" accesslevel="1" description="add_new_insurance_details_for_self_service_eo_claims_declaration_security hide/show" />
+
+<!-- Phase 2- Bug Id- P2-063- Comparative Rater field on Update Location Page - Test -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="entityGeneralDetailsForSelfServiceApproval_agency_comparativerate_securityHeader" name="entityGeneralDetailsForSelfServiceApproval_agency_comparativerate_securityHeader"/>
+ 
+<!-- Phase 2- Bug Id- P2-065- Update Agency Location -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" name="w9_fax_address_agency_selfService_security"/>  
 </tabsconfiguration>

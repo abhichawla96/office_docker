@@ -55,8 +55,20 @@
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
 	</protectedresource>
-	<protectedresource deltaind="M" defaultaccesstype="1"
-		description="Hide/show showdivnpn" uniquename="showdivnpn" />
+	<!-- To show NPN when Contact Type is Licensed Producer- Start - Phase 2 -->
+	<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show showdivnpn" uniquename="showdivnpn">
+	
+	<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="1" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="1" />
+		</businessrole>
+		<userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.checkAgenctContactTypeLicensedProducer">
+			<userdefinedaccesslevel accesstype="1"/>
+		</userdefined>
+	<!-- To show NPN when Contact Type is Licensed Producer - End - Phase 2 -->
+	</protectedresource>
 	<protectedresource deltaind="M"
 		uniquename="common.hideEntityRequestTab">
 		<businessrole deltaind="M" roleid="AgencyAdmin">
@@ -1400,21 +1412,21 @@
   
   <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/Show Agency Termination request link on dashboard" uniquename="dashboard_agencytermination_security"/>   <!-- modified -->
   
-  <protectedresource deltaind="M" defaultaccesstype="0" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceAgencyApplicable"/>
+  <protectedresource deltaind="M" defaultaccesstype="1" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceAgencyApplicable"/>
   
   <protectedresource deltaind="M" defaultaccesstype="0" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceProducerApplicable"/>
   
-  <protectedresource deltaind="M" defaultaccesstype="0" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceENOApplicable_security"/>
+  <protectedresource deltaind="M" defaultaccesstype="1" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceENOApplicable_security"/>
   
-  <protectedresource deltaind="M" defaultaccesstype="0" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceDocW9Applicable_security"/>
+  <protectedresource deltaind="M" defaultaccesstype="1" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceDocW9Applicable_security"/>
   
   <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show request individual transfer link on dashboard" uniquename="isDashboardRequestIndividualTransfer"/>
   
   <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show request wholesale transfer link on dashboard" uniquename="isDashboardRequestWholesaleTransfer"/>
   
-  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show Add Bank Information request link on dashboard" uniquename="isAddUpdateSelfServiceBankInformationApplicable"/>
+  <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/Show Add Bank Information request link on dashboard" uniquename="isAddUpdateSelfServiceBankInformationApplicable"/>
   
-  <protectedresource deltaind="M" defaultaccesstype="0" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceAgentApplicable"/>
+  <protectedresource deltaind="M" defaultaccesstype="1" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceAgentApplicable"/>
   
   <!-- Test -->
   <protectedresource deltaind="I" defaultaccesstype="0" description="show/hide Add Existing Agency to Cluster" uniquename="isAddExistingAgencyToClusterForSelfService_security"/>
@@ -1744,6 +1756,10 @@
    <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show attach button on agentcall report page" uniquename="uploadDocument_attach">
     <userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.isRelationShipCallReportFlagY">
       <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    <!-- Phase 2 - Task Id- SS-005-11 -->
+     <userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.checkIsNewRequest">
+      <userdefinedaccesslevel accesstype="1"/>
     </userdefined>    
   </protectedresource>
   
@@ -1754,7 +1770,313 @@
     </businessrole>
   </protectedresource>
   
+  <!-- Phase 2 - Bug Id- P2-035 -->
+ <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show new label on Agency code details option" uniquename="agencyFunctions_selectFunctionType_closeagencycode_security">
+    <userdefined deltaind="I" executionsequence="0" ruleid="AgencyFunctionsRule.isShowCloseAgencyCodeLabel">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+ </protectedresource>
   
+ <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show new label on Agency code details option" uniquename="agencyFunctions_selectFunctionType_terminationReasonOther_security">
+    <userdefined deltaind="I" executionsequence="0" ruleid="AgencyFunctionsRule.isShowCloseLocationLabel">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+ </protectedresource>
   
-</security>  
+  <!-- Phase 2 - SS-002-04 - Hiding fields -->
+   <protectedresource deltaind="M" defaultaccesstype="1" description="contact_details_login_id_selfService_security" uniquename="contact_details_login_id_selfService_security">
+  <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+   <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show agentGeneralDetailsForSelfServiceApproval_license_number_security" uniquename="agentGeneralDetailsForSelfServiceApproval_license_number_security">
+ <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+   <protectedresource deltaind="M" description="Hide/show former_name_security" uniquename="agentGeneralDetailsForSelfServiceApproval_former_name_security">
+   <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole> 
+    </protectedresource>
+    
+    <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show agentGeneralDetailsForSelfServiceApproval_hire_date_security" uniquename="agentGeneralDetailsForSelfServiceApproval_hire_date_security">
+    <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole> 
+    </protectedresource>
+    
+    <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show agentGeneralDetailsForSelfServiceApproval_industryexp_security" uniquename="agentGeneralDetailsForSelfServiceApproval_industry_experience_security">
+    <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole> 
+    </protectedresource>
+    
+   <protectedresource deltaind="M" defaultaccesstype="1" description="Hide_gender_id_security" uniquename="agentGeneralDetailsForSelfServiceApproval_gender_id_security">
+  <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+    
+    <protectedresource deltaind="M" defaultaccesstype="1" description="Hide_isShowBackgrndReqforContact_security" uniquename="agentGeneralDetailsForSelfServiceApproval_isShowBackgrndReqforContact">
+  <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+   <protectedresource deltaind="M" description="Hide/show fax_business_agent_ss_security" uniquename="fax_business_agent_ss_security">
+  <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+    
+  <protectedresource deltaind="M" defaultaccesstype="1" description="Hide_contact_producer_type_security" uniquename="agentGeneralDetailsForSelfServiceApproval_contact_producer_type_security">
+  <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+  <!-- Hiding checkbox -->
+   <protectedresource deltaind="M" defaultaccesstype="0" description="Hiding_checkbox" uniquename="agentGeneralDetailsForSelfServiceApproval_isShowCopyBusinessToMailingOnBusinessOnly">
+   <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+      
+   
+   <protectedresource deltaind="I" defaultaccesstype="1" description="Hiding_fax_field" uniquename="w9_fax_agent_selfservice_security">
+   <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+      
+  <protectedresource deltaind="M" description="Hiding_Mailing_section" uniquename="mailing_addressDiv_security">
+  <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>  
+    
+  <!-- Task Id- SS-002-26 Add and update Contact page - Phase 2 -->	
+  <protectedresource deltaind="I"  defaultaccesstype="1" uniquename="addEntityRequests_disapprove">
+   <businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+  </protectedresource>
+  
+      <!-- To show fields when Contact Type is Licensed Producer- Start - Phase 2 -->
+  
+	<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show SSN field on Add and update Contact page" uniquename="contact_ssn_security">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="1" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="1" />
+		</businessrole>
+		<userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.checkAgenctContactTypeLicensedProducer">
+			<userdefinedaccesslevel accesstype="1"/>
+		</userdefined>
+	</protectedresource>
+	
+	<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show DOB field on Add and update Contact page" uniquename="date_of_birth_security">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="1" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="1" />
+		</businessrole>
+		<userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.checkAgenctContactTypeLicensedProducer">
+			<userdefinedaccesslevel accesstype="1"/>
+		</userdefined>
+	</protectedresource>
+	
+	<protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Resident Address Section on Add and update Contact page" uniquename="w9_addressDiv_agent_selfService_security">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="1" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="1" />
+		</businessrole>
+		<userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.checkAgenctContactTypeLicensedProducer">
+			<userdefinedaccesslevel accesstype="1"/>
+		</userdefined>
+	</protectedresource>
+<!-- To show fields when Contact Type is Licensed Producer- End - Phase 2 -->
+  
+<!-- SS-012-05- Hide Request Type Dropdown- Phase 2- Start -->
+	<protectedresource deltaind="M" defaultaccesstype="0" description="Show/Hide Request Type in Dashboard" uniquename="homeAction_request_type_security">
+		<businessrole deltaind="I" roleid="AgencyAdmin" accesstype="1"/>
+	</protectedresource>
+<!-- SS-012-05- Hide Request Type Dropdown- Phase 2- End-->
 
+
+<!-- Phase 2- SS-001-05- Update Location Page- Start -->
+	<protectedresource deltaind="M" description="Hide/show agency_lead_gen_in_securityHeader" uniquename="entityGeneralDetailsForSelfServiceApproval_agency_lead_gen_in_securityHeader">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+
+	<protectedresource deltaind="M" defaultaccesstype="1" description="hide field on agency detail page" uniquename="entityGeneralDetailsForSelfServiceApproval_agencyestablished_date_securityHeader">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+
+	<protectedresource deltaind="M" defaultaccesstype="1" description="years_in_business_securityHeader" uniquename="years_in_business_securityHeader">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+
+	<protectedresource deltaind="M" description="Hide/show domicile_state_securityHeader" uniquename="entityGeneralDetailsForSelfServiceApproval_domicile_state_securityHeader">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+
+	<protectedresource deltaind="M" description="readonly fields on entity general details page" uniquename="entityGeneralDetailsForSelfServiceApproval_Entity_Type_General_Detail_securityHeader">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+
+	<protectedresource deltaind="M" defaultaccesstype="0" description="Security for assigned to field in update agency location" uniquename="updateagencylocation_assignedto_security">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+	
+	<protectedresource deltaind="M" description="Hide/show fax_business_ss_security" uniquename="fax_business_ss_security">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+	
+	<protectedresource deltaind="M" defaultaccesstype="1" description="w9_alt_email_address_agency_selfService_security" uniquename="w9_alt_email_address_agency_selfService_security">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+	
+	<protectedresource deltaind="M" defaultaccesstype="1" description="w9_alt_phone_ext_address_agency_selfService_security" uniquename="w9_alt_phone_ext_address_agency_selfService_security">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+	
+	<protectedresource deltaind="M" description="Hide/show find widget on agency selfservice details page" uniquename="entityGeneralDetailsForSelfServiceApproval_is_searchable_security">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+	
+	<protectedresource deltaind="M" defaultaccesstype="1" description="w9_po_box_address_agency_selfService_security" uniquename="w9_po_box_address_agency_selfService_security">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource> 
+	
+	<protectedresource deltaind="I" defaultaccesstype="1" description="Hide/Show agency association in general details" uniquename="isShowAgencyAssociationCheckbox_entityGeneralDetailsForSelfServiceApproval">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource> 
+<!-- Phase 2- SS-001-05- Update Location Page- End -->
+
+	<!-- Task Id- SS-005-26 Add and update CyberLiability page - Phase 2 Start-->
+  <protectedresource deltaind="I"  defaultaccesstype="1" uniquename="addNewCyberLiabilityForSelfService_disapprove">
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+	  <roleaccesslevel accesstype="0" />
+	</businessrole>
+  </protectedresource>
+
+ <!-- Phase 2 - Self Service US :SS-004-26-->
+ 
+    <protectedresource deltaind="I"  defaultaccesstype="1" uniquename="addNewInsuranceDetailForSelfService_disapprove">
+   <businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+  </protectedresource> 
+  
+<!-- Phase 2- Bug Id- P2-066- NIPR Name on Update Location Page -->
+<protectedresource deltaind="M" description="nipr_name_agency_self_service_security" uniquename="nipr_name_agency_self_service_security">
+    <userdefined deltaind="M" executionsequence="0" ruleid="entityGeneralDetailsForSelfServiceApprovalRule.isAddingNewLocationSelfserviceApproval">
+      <userdefinedaccesslevel deltaind="M" accesstype="2"/>
+    </userdefined>
+</protectedresource>
+  
+</security> 
