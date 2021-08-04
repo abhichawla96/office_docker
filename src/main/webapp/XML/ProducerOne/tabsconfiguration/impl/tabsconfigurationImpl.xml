@@ -687,5 +687,7 @@
 
 <!-- Phase 2- Bug Id- P2-063- Comparative Rater field on Update Location Page - Test -->
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="entityGeneralDetailsForSelfServiceApproval_agency_comparativerate_securityHeader" name="entityGeneralDetailsForSelfServiceApproval_agency_comparativerate_securityHeader"/>
-  
+ 
+<!-- Phase 2- Bug Id- P2-065- Update Agency Location -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" name="w9_fax_address_agency_selfService_security"/>  
 </tabsconfiguration>

@@ -2071,4 +2071,12 @@
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
   </protectedresource> 
+  
+<!-- Phase 2- Bug Id- P2-066- NIPR Name on Update Location Page -->
+<protectedresource deltaind="M" description="nipr_name_agency_self_service_security" uniquename="nipr_name_agency_self_service_security">
+    <userdefined deltaind="M" executionsequence="0" ruleid="entityGeneralDetailsForSelfServiceApprovalRule.isAddingNewLocationSelfserviceApproval">
+      <userdefinedaccesslevel deltaind="M" accesstype="2"/>
+    </userdefined>
+</protectedresource>
+  
 </security> 

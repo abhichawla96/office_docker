@@ -240,5 +240,8 @@
  
  <!-- Phase 2 - SS-004-23- Add/Update E&O-->  
    <label deltaind="M" labeldesc="Agency Code" labelkey="entityRequests_agentnumber_label"/>
+   
+ <!-- Phase 2- Bug Id- P2-064- Update Agency Location  -->
+ <label deltaind="M" labeldesc="Total Number of Employees" labelkey="entityGeneralDetailsForSelfServiceApproval_no_of_staff_label"/> 
  
 </labelconf>
