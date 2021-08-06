@@ -1,0 +1,29 @@
+<projectcomponents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/components_XSD.xsd">
+  <component metaobject="bank_information_ss;entityRequestsSelfService;requests" name="bankInformationForSelfServiceApproval" stackdisplayname="Request">
+    
+    <!-- Phase 2 - SS-009-006-01 - Email to Sales Support once the request is Assigned -->
+    <action deltaind="M" name="sendBankInformationForAgencySelfserviceApprovalOnModify">
+    	<workflow deltaind="I" name="selfServiceInitiateEmail" seq="4">
+	    	<databaseoperation deltaind="I" executionsequence="0" metaobject="userprofiles" name="getMarketAssistantEmail" operation="3" sqlstmt="select e_mail as e_mail from userprofiles where user_id=#assigned_to#"/>
+			<email deltaind="I" eventname="InitiateSelfServiceRequest" executionsequence="1" name="InitiateSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail"/>
+	  	</workflow>
+    </action>
+    
+    <!-- Phase 2 - SS-009-006-02 - Email to Agency Admin once the request is Approved -->
+    <action deltaind="M" name="apprvoveRequests">
+    	<actionparam deltaind="I" executionsequence="0" form="Y" name="workflow_assignee" paramid="workflow_assignee" viewparam="Y"/>
+	    <workflow deltaind="I" name="selfServiceApproveEmail" seq="2">
+	    	<databaseoperation deltaind="I" executionsequence="0" metaobject="requests" name="getAgencyAdminApproverName" operation="3" sqlstmt="select top 1 req.assignee as workflow_assignee from workflowrequests as req join tbl_invitation_status_lku as status on req.workflowstatus_id=status.invitation_status_id join workflowrequestsstatus as reqsts on reqsts.workflowrequests_id=req.workflowrequests_id where req.objectid=#request_ss_id# order by workflowrequestsstatus_id desc"/>
+			<databaseoperation deltaind="I" executionsequence="1" metaobject="userprofiles" name="getAgencyAdminApproverEmail" operation="3" sqlstmt="select e_mail as e_mail from userprofiles where user_id=#workflow_assignee#"/>
+			<email deltaind="I" eventname="ApproveSelfServiceRequest" executionsequence="1" name="ApproveSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail"/>
+		</workflow>
+    </action>
+    
+   <!-- Phase 2 - SS-006-03 - Add Bank Information - Default values in Drop-down -->
+	<action deltaind="M" name="view">
+		<actionparam deltaind="I" executionsequence="0" form="Y" pre="Y" name="bank_account_status" paramid="bank_account_status" val="1" viewparam="Y"/>
+		<actionparam deltaind="I" executionsequence="0" form="Y" pre="Y" name="payment_type" paramid="payment_type" val="3" viewparam="Y"/>
+	</action>	    
+	    
+  </component>
+</projectcomponents>

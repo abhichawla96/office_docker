@@ -689,5 +689,15 @@
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="entityGeneralDetailsForSelfServiceApproval_agency_comparativerate_securityHeader" name="entityGeneralDetailsForSelfServiceApproval_agency_comparativerate_securityHeader"/>
  
 <!-- Phase 2- Bug Id- P2-065- Update Agency Location -->
-<tabsconfigurationresource deltaind="M" accesslevel="0" name="w9_fax_address_agency_selfService_security"/>  
+<tabsconfigurationresource deltaind="M" accesslevel="0" name="w9_fax_address_agency_selfService_security"/>
+
+<!-- Phase 2- SS-006-21- Add Bank Information -->
+<tabsconfigurationresource deltaind="I" accesslevel="0" name="bankInformation_disapprove"/>
+
+<!-- Phase 2- SS-006-06- Add Bank Information -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="bankInformationForSelfServiceApproval_account_type_trust_operating_security" name="bankInformationForSelfServiceApproval_account_type_trust_operating_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_expiration_date_self_service_security" name="bank_expiration_date_self_service_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_effective_date_self_service_security" name="bank_effective_date_self_service_security"/>
+
+
 </tabsconfiguration>
