@@ -4,7 +4,7 @@
     <action name="sendDocCyberLiabilityDataForSaveApproval">
      <!-- Task Id- SS-009-005-03 Add and update CyberLiability page - Phase 2 Start-->
       <workflow deltaind="I" name="selfServiceInitiateEmail" seq="4">
-	    <databaseoperation deltaind="I" executionsequence="0" metaobject="userprofiles" name="getMarketAssistantEmail" operation="3" sqlstmt="select  e_mail as e_mail from userprofiles where user_id=#assigned_to#"/>
+	    <databaseoperation deltaind="I" executionsequence="0" metaobject="userprofiles" name="getMarketAssistantEmail" operation="3" sqlstmt="select  e_mail as e_mail from userprofiles where user_id=#workflow_user#"/>
 		<email deltaind="I" eventname="InitiateSelfServiceRequest" executionsequence="1" name="InitiateSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail"/>
 	 </workflow>
       
