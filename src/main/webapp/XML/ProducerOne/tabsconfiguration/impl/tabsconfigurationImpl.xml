@@ -699,5 +699,8 @@
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_expiration_date_self_service_security" name="bank_expiration_date_self_service_security"/>
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_effective_date_self_service_security" name="bank_effective_date_self_service_security"/>
 
+<!-- Phase 2 - Feedback From BMIC - Hiding Contact Status in Update Agency Location  -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security" name="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security"/>
+
 
 </tabsconfiguration>
