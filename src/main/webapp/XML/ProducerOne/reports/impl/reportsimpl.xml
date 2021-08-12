@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reports project="ProducerOne">
+ 
+   <reportdef  name="selfServiceListOfUsersList" description="List of Agency Users (AIM251)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isreportdatapagination="Y" isshowoutputcolumns="Y" isshowresetbutton="Y" dynakeys="agency_code_V">
+      <columnset name="listOfUsersListset">
+         <!-- Phase 2- SS-011-01- BMIC requirement to hide column -->
+         <column deltaind="D" name="national_code" columnlabel="National Code" isreportfilter="N" isreportdisplay="Y" executionsequence="1" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" /> 
+         <column deltaind="D" name="spinn_user_ind" columnlabel="Spinn User" isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+      </columnset>
+      
+   </reportdef>
+    
+</reports>
