@@ -2083,5 +2083,12 @@
 <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/Show account_type_checking_saving_security" uniquename="bankInformationForSelfServiceApproval_account_type_checking_saving_security"/>
 <protectedresource deltaind="M"  defaultaccesstype="2" description="Hide/Show payment_type_security" uniquename="bankInformationForSelfServiceApproval_payment_type_security"/>
 <protectedresource deltaind="M" defaultaccesstype="2" description="Hide/show bank_account_status_security" uniquename="bank_account_status_security"/>
-   
+ 
+ <!-- Phase 2- Bug Id- P2-072 -->
+
+    <protectedresource deltaind="I"  defaultaccesstype="1" uniquename="addEntityRequests_freeform_contextdata_20">
+   <businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="2" />
+		</businessrole>
+  </protectedresource>    
 </security> 
