@@ -1587,35 +1587,48 @@
 	
 <!-- 14/06/2021 -->
 	<!-- Hiding Relationship Management Tab In Agency General Details - Phase 2 -->
-  
+  <!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised -->
 <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show Relationship Management tab" operator="OR" uniquename="relationaship_mngmnt_tab_security">
     <businessrole deltaind="M" roleid="MarketingRep">
       <roleaccesslevel accesstype="1"/>
     </businessrole>
     <businessrole deltaind="M" roleid="CarrierAdmin">
-      	<roleaccesslevel accesstype="0"/>
+      	<roleaccesslevel accesstype="1"/>
     </businessrole>
     <businessrole deltaind="I" roleid="ReadOnly">
-		<roleaccesslevel accesstype="0" />
+		<roleaccesslevel accesstype="1" />
 	</businessrole>
-	<businessrole deltaind="M" roleid="MarketingAssistant">
-      	<roleaccesslevel accesstype="0"/>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="1"/>
     </businessrole>
-    <businessrole deltaind="I" roleid="Underwriter">
-      	<roleaccesslevel accesstype="0"/>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="1"/>
     </businessrole>
-    <businessrole deltaind="M" roleid="vpmarketing">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-    <businessrole deltaind="M" roleid="SalesDirector">
-      <roleaccesslevel accesstype="0"/>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
   <!-- Hiding Relationship Mgmt Tab In Prospect - Phase 2 -->
+  <!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised -->
    <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show Relationship Mgmt Tab In Prospect" uniquename="isCallReportInActive">
     <businessrole deltaind="I" roleid="MarketingRep">
       <roleaccesslevel accesstype="1"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="1"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="1" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="1"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="1"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
@@ -2083,12 +2096,300 @@
 <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/Show account_type_checking_saving_security" uniquename="bankInformationForSelfServiceApproval_account_type_checking_saving_security"/>
 <protectedresource deltaind="M"  defaultaccesstype="2" description="Hide/Show payment_type_security" uniquename="bankInformationForSelfServiceApproval_payment_type_security"/>
 <protectedresource deltaind="M" defaultaccesstype="2" description="Hide/show bank_account_status_security" uniquename="bank_account_status_security"/>
- 
- <!-- Phase 2- Bug Id- P2-072 -->
+   
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Add New Call Report Button -->
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Add New Call Report Button" uniquename="prospectCallReportDetails_addnewCallReport">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource>
 
-    <protectedresource deltaind="I"  defaultaccesstype="1" uniquename="addEntityRequests_freeform_contextdata_20">
-   <businessrole deltaind="I" roleid="MarketingAssistant">
-			<roleaccesslevel accesstype="2" />
-		</businessrole>
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Add New Call Report Button -->
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Add New Call Report Button" uniquename="agencyCallReportDetails_addNew">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource>
+
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Edit Button - Prospect and Agency General Details (Same ID) -->
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Edit Button" uniquename="agencycallreportEditbutton">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource>   
+
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Modify Button - Prospect - Relationship Mgmt Tab -->
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Modify Button in Prospect - Relationship Mgmt Tab" uniquename="addProspectAgencyCallReportDetails_modify">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource>
+  
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Modify Button - Agency General Details - Relationship Mgmt Tab -->
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Modify Button in Prospect - Relationship Mgmt Tab" uniquename="addAgencyCallReportDetails_modify">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource>
+
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Email Button - Agency General Details - Relationship Mgmt Tab -->
+<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show callreport_block_e_mail_row_security" uniquename="callreport_block_e_mail_row_security">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource>
+
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Email Button - Prospect - Relationship Mgmt Tab -->
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show callreport_block_e_mail_row_security" uniquename="block_field_e_mail_row_link">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource>  
+
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Copy Button - Prospect - Relationship Mgmt Tab -->
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show callreport_block_e_mail_row_security" uniquename="prospectCallReportDetails_clone">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource>
+
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Copy Button - Agency General Details - Relationship Mgmt Tab -->
+<protectedresource deltaind="M" description="Hide/show callreport_block_clone_row_security" defaultaccesstype="1" uniquename="callreport_block_clone_row_security">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource>
+  
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Delete Button - Agency General Details - Relationship Mgmt Tab -->  
+<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show callreport_block_delete_row_security" uniquename="callreport_block_delete_row_security">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource>
+   
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Delete Button - Prospect - Relationship Mgmt Tab -->  
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show callreport_block_delete_row_security" uniquename="agencycallreportdeletebutton">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource> 
+
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Delete Button - Prospect Details Search Results Page -->  
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Delete Button - Prospect Details Search Results Page" uniquename="delete_row_link_security">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource>
+
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Modify Button - Prospect Details Search Results Page -->
+<protectedresource deltaind="M" defaultaccesstype="1" uniquename="isProspectStatusConvertedToAgency">
+    <businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Add New Task Button - Agency General Details Page -->    
+<protectedresource deltaind="I" defaultaccesstype="1" uniquename="relatioshipTask_addNewTask">
+    <businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Delete Button - Prospect - Notepad Page -->    
+<protectedresource deltaind="I" defaultaccesstype="1" uniquename="delete_note_security">
+    <businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
   </protectedresource>    
+ 
+ <!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Save Button - Prospect Market Information Page -->   
+ <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show save button on agency market information page" operator="AND" uniquename="entityotherInformation_save">
+    <businessrole deltaind="M" roleid="CarrierAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
 </security> 
