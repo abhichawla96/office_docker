@@ -2392,4 +2392,12 @@
     </businessrole>
   </protectedresource>
   
+   <!-- Phase 2- Bug Id- P2-072 -->
+
+    <protectedresource deltaind="I"  defaultaccesstype="1" uniquename="addEntityRequests_freeform_contextdata_20">
+   <businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="2" />
+		</businessrole>
+  </protectedresource>  
+  
 </security> 
