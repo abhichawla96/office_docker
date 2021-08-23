@@ -150,12 +150,12 @@
      	   </workflow> 
      	   
      <!-- Phase 2 - US : OB-PPRM-04-005 -->
-     <workflow deltaind="I" name="getTblAgencyPremiumSizePercentSectionsProspectSections" seq="14">
+   <!--   <workflow deltaind="I" name="getTblAgencyPremiumSizePercentSectionsProspectSections" seq="14">
          		<storedprocedureoperation deltaind="I" dbspname="getTblAgencyPremiumSizePercentSectionsProspect_p" executionsequence="0" id="getTblAgencyPremiumSizePercentSectionsProspect_p" metaobject="tbl_agency_premium_size_percent" name="getTblAgencyPremiumSizePercentSectionsProspect_p" operation="5" viewid="adminBrokerageStep6_commercial_lines_list_mom_1">
 						<parameteroperation indexno="0" mode="IN" property="prospect_agency_id" seq="1"/>
 						<resultsetoperation indexno="1" mappingclass="java.util.HashMap"/>
 				</storedprocedureoperation>
-     	   </workflow> 
+     	   </workflow> -->
   	</action>
   	
   	 <!-- Phase 2 - commercial lines -->
