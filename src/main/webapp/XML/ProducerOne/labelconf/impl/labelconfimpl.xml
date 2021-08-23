@@ -244,8 +244,7 @@
  <!-- Phase 2- Bug Id- P2-064- Update Agency Location  -->
  <label deltaind="M" labeldesc="Total Number of Employees" labelkey="entityGeneralDetailsForSelfServiceApproval_no_of_staff_label"/> 
  
-    <!-- Phase 2 - Bug Id-  P2-071 --> 
-  <label deltaind="I" labeldesc="Insurance" labelkey="ajax_field_document_category_title"/> 
+
  
  <!-- Phase 2 - Bug Id-  P2-068 --> 
 <label deltaind="M" labeldesc="I understand that I am required to obtain and maintain errors and omissions insurance in an amount not less than $1,000,000 of coverage. Please attach a copy of your current declaration page in the Additional Documents section at the end of the application.Click the box to agree these terms." labelkey="add_new_insurance_detail_for_self_service_eo_claims_declaration_label"/>
