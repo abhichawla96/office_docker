@@ -702,5 +702,8 @@
 <!-- Phase 2 - Feedback From BMIC - Hiding Contact Status in Update Agency Location  -->
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security" name="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security"/>
 
+<!-- Phase 2- Bug Id- P2-097- Add Bank Information- Account Type column -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="bankInformationForSelfServiceApproval_account_type_checking_saving_security" name="bankInformationForSelfServiceApproval_account_type_checking_saving_security"/>
+
 
 </tabsconfiguration>
