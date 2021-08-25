@@ -245,5 +245,8 @@
  <!-- Phase 2 - Bug Id-  P2-068 --> 
 <label deltaind="M" labeldesc="I understand that I am required to obtain and maintain errors and omissions insurance in an amount not less than $1,000,000 of coverage. Please attach a copy of your current declaration page in the Additional Documents section at the end of the application.Click the box to agree these terms." labelkey="add_new_insurance_detail_for_self_service_eo_claims_declaration_label"/>
 		
+ <!-- Phase 2- Bug Id- P2-100- Add Bank Information -->
+ <label deltaind="M" labeldesc="Add Bank Information" labelkey="addupdate_bakinformation_label"/>
+
  
 </labelconf>

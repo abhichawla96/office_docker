@@ -19,6 +19,9 @@
 	<!-- Prod bug -Welcome Button display -->
 	<rule deltaind="I" id="isDisplayWelcomeButton" expression="andCondition(isEqual(:Status,Completed),isNot(isEmpty(:workflow_function_row)));" obj="ruleobjs.ProducerOneRule" method="showOnAdd" />
 
-	
+		<!-- Phase 2 - P2-084 - Making Attachment Mandatory in Upload W9 Doc -->
+		<rule deltaind="I" id="isAttachmentMandatory" expression="isEqual(:attachflag,Y);"
+			obj="ruleobjs.ProducerOneRule" method="isAttachmentMandatory" />
+
 	</ruleset>
 </evalrules>

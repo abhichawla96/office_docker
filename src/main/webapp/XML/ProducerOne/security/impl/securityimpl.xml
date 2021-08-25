@@ -2400,4 +2400,15 @@
 		</businessrole>
   </protectedresource>  
   
+  <!-- Phase 2 - P2-084 - Making Attachment Section Mandatory in Upload W9 Doc -->
+	<protectedresource deltaind="I" defaultaccesstype="0" description="show validation to attcah eo document" operator="AND" uniquename="validation_eo_document_security">
+	  	<businessrole deltaind="I" roleid="AgencyAdmin">
+	      <roleaccesslevel accesstype="1"/>
+	    </businessrole>
+	    <userdefined deltaind="I" 
+	    	ruleid="ProducerOneRule.isAttachmentMandatory" executionsequence="0">
+	  		<userdefinedaccesslevel accesstype="1" />
+		</userdefined>
+	</protectedresource>
+	
 </security> 

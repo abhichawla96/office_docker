@@ -1,0 +1,10 @@
+<projectcomponents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/components_XSD.xsd">
+  <component breadcrumbsessionparams="agency_id" metaobject="agency_w9_ss" name="docW9DetailsForSelfService" stackdisplayname="Requests">
+   
+   <!-- Phase 2 - P2-084 - Making Attachment Field Mandatory in Upload W9 Document -->
+    <action deltaind="M" name="view">
+    	<actionparam deltaind="I" executionsequence="0" pre="Y" form="Y" name="attachflag" paramid="attachflag" val="Y"/>
+    </action>
+    
+  </component>
+</projectcomponents>

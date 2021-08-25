@@ -21,8 +21,10 @@
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="invitationStep1_entity_type_general_Detail_security" name="invitationStep1_entity_type_general_Detail_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="invitationStep1_any_rollover_potential_security" name="invitationStep1_any_rollover_potential_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="invitationStep1_commission_to_be_paid_security" name="invitationStep1_commission_to_be_paid_security"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" description="show validation to attcah eo document" name="validation_eo_document_security"/>
- 
+  
+  <!-- Phase 2 - P2-084 - Making Attachment Mandatory in Upload W9 Doc - This part is handled in Rule based Security -->
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="show validation to attcah eo document" name="validation_eo_document_security"/>
+  
  <!--Sprint 1 : Onboarding Dashboard_Bucket -->
 
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show homeAction_pendingReview_security on homeAction page" name="homeAction_pendingReview_security"/>
