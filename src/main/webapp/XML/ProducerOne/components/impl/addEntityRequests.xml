@@ -15,5 +15,11 @@
     <action deltaind="M" name="declineRequests">
       <actionparam deltaind="I" executionsequence="0" form="Y" name="workflow_assignee" paramid="workflow_assignee" viewparam="Y"/>
    </action>
+   
+   <!-- Phase 2- Bug Id- P2- 084 - Making Attachment Section Mandatory in Upload W9 Doc -->
+   <action deltaind="M" name="view">
+   <actionparam deltaind="I" executionsequence="0" pre="Y" form="Y" name="attachflag" paramid="attachflag" val="Y"/>
+   </action>
+   
   </component>
 </projectcomponents>
