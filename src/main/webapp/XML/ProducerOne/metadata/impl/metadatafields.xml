@@ -25,10 +25,4 @@
   
   <!-- Phase 2 - MarketInfo - Top 3 Companies Appointed Columns -->
   
-    
-  <field deltaind="I" decimallength="0" displayname="life_volume" length="0" name="life_volume" seq="493" type="N" viewlength="1"/>
-  <field deltaind="I" decimallength="0" displayname="pl_volume" length="0" name="pl_volume" seq="493" type="N" viewlength="1"/>
-  <field deltaind="I" decimallength="0" displayname="cl_volume" length="0" name="cl_volume" seq="493" type="N" viewlength="1"/>
-  
-  
   </structure>

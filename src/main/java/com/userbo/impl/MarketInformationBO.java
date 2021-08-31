@@ -918,14 +918,6 @@ public class MarketInformationBO extends Businessobject {
 							//newCtx.put("total_volume", ctx.get("total_volume"+i));
 							newCtx.put("PY_written_premium", ctx.get("PY_written_premium_"+i));
 							
-							//Updated by Shobhit as per BMIC Request - Start - Phase 2
-							
-							newCtx.put("life_volume", ctx.get("life_volume_"+i));
-							newCtx.put("pl_volume", ctx.get("pl_volume_"+i));
-							newCtx.put("cl_volume", ctx.get("cl_volume_"+i));
-							
-							//Updated by Shobhit as per BMIC Request - End - Phase 2
-
 							newCtx.put("years_represented", ctx.get("years_represented_"+i));
 							newCtx.put("is_cl_auto_lsc_carrier",ctx.get("is_cl_auto_lsc_carrier_"+i) != null && !HtmlConstants.EMPTY.equals(ctx.get("is_cl_auto_lsc_carrier_"+i)) && ctx.get("is_cl_auto_lsc_carrier_"+i).toString().equals("Y") ? 1 : 0);
 							rowMap.putAll(newCtx);
@@ -969,22 +961,6 @@ public class MarketInformationBO extends Businessobject {
 							if(ctx.get("PY_written_premium_"+i) != null 
 									&& !ctx.get("PY_written_premium_"+i).toString().equals(HtmlConstants.EMPTY))
 								newCtx.put("PY_written_premium", DataUtils.removeAmountFormat(ctx.get("PY_written_premium_"+i)));
-							//Removing $ Sign - Updated by Shobhit for BMIC - Start - Phase 2
-							
-							if(ctx.get("life_volume_"+i) != null && !ctx.get("life_volume_"+i).toString().equals(HtmlConstants.EMPTY))
-								{
-									newCtx.put("life_volume", DataUtils.removeAmountFormat(ctx.get("life_volume_"+i)));
-								}
-							if(ctx.get("pl_volume_"+i) != null && !ctx.get("pl_volume_"+i).toString().equals(HtmlConstants.EMPTY))
-								{
-									newCtx.put("pl_volume", DataUtils.removeAmountFormat(ctx.get("pl_volume_"+i)));
-								}
-							if(ctx.get("cl_volume_"+i) != null && !ctx.get("cl_volume_"+i).toString().equals(HtmlConstants.EMPTY))
-								{
-									newCtx.put("cl_volume", DataUtils.removeAmountFormat(ctx.get("cl_volume_"+i)));
-								}
-							
-							//Removing $ Sign - Updated by Shobhit for BMIC - End - Phase 2
 							
 							newCtx.put("last_updated_by", ctx.get("last_updated_by"));
 							newCtx.put("last_updated_ts", ctx.get("last_updated_ts"));

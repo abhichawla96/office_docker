@@ -90,14 +90,6 @@
     </action>
     
     <action deltaind="M" name="view">
-  		<workflow deltaind="M" name="view" seq="0">
-  			<databaseoperation deltaind="M" executionsequence="0" metaobject="agency_current_market_informations" name="getProspectCurrentMarketInfoRecord" operation="3" sqlstmt="select total_written_premium_previous_year_end, total_annual_revenue,market_num_locations,dbo.getAmountFormat(total_premium_PC) as total_premium_PC ,dbo.getAmountFormat(total_premium_compensation) as total_premium_compensation,no_workers_policies,      dbo.getAmountFormat(total_writtenpremium) as total_writtenpremium, mix_of_personal_business, mix_of_commercial_business , new_business from agency_current_market_informations where prospect_agency_id=#prospect_agency_id#"/>
-  		
-  		<!-- Phase 2 - Adding Life Volume, PL Volume and CL Volume Column in Market Information - Start -->
-  			 <databaseoperation deltaind="M" eval="ProducerOneRule.isTopCompanyLicensedListEmpty" executionsequence="5" metaobject="agency_marketinformation" name="getProspectMarketInformationList" operation="5" sqlstmt="select row_number() over(order by marketinformation_id) rownum,(select description from carrier_lku cl where cl.carrier_id=am.carrier_id) as carrier_id_desc,        (select description from lob_lku where lob_id=am.lob_id) as lob_desc,       case when loss_ratio is null or loss_ratio='' then '' else REPLACE(CONVERT(varchar(15), [loss_ratio], 1), '.00', '') end as loss_ratio,       dbo.getAmountFormat(writtenpremium) as writtenpremium,retentionrate,commissionrate,marketinformation_id ,dbo.getAmountFormat(cast(class1volume as numeric(15,0))) as class1volume,dateofappointment,       convert(varchar(20),dateofappointment,101) as dateofappointmentFormatted,yearofappointment,carrier_id,agency_id,       dbo.getAmountFormat(cast(PY_written_premium as numeric(15,0))) as PY_written_premium,years_represented,other_company_description, dbo.getAmountFormat(cast(pl_volume as numeric(15,0))) as pl_volume , dbo.getAmountFormat(cast(cl_volume as numeric(15,0))) as cl_volume , dbo.getAmountFormat(cast(life_volume as numeric(15,0))) as life_volume from agency_marketinformation am where prospect_agency_id=#prospect_agency_id#" viewid="agencyMarketInformation_list_listfreeform_1"/>
-   		<!-- Phase 2 - Adding Life Volume, PL Volume and CL Volume Column in Market Information - End -->
-  		</workflow>
-  		<!-- Agency's Total P&C Written Premium Previous Year End - End - Phase 2 -->
   		
   		<!-- Phase 2 - US : OB-PPRM-04-005 -->
   	<workflow deltaind="I" name="prospectForeignLanguagesSpokenInAgencyWorkflow" seq="10">
@@ -157,11 +149,5 @@
      <actionparam deltaind="I" executionsequence="0" name="is_agency_share_contingency_prospect" paramid="is_agency_share_contingency_prospect" pre="Y"/>
    </action>
    
-   
-  	<!-- Phase 2 - Adding Life Volume, PL Volume and CL Volume Column in Market Information - Start -->
-  	<action deltaind="M" name="addAgencyCompanyPremiumLicensed">
-  		<actionparam deltaind="M" eval="ProducerOneRule.isInetErrorListEmpty" executionsequence="0" form="Y" name="removeparams" paramid="removeparams" post="Y" remove="Y" removeparams="carrier_id,class1volume,loss_ratio,dateofappointment,yearofappointment,PY_written_premium,years_represented,carrier_id_desc,life_volume,pl_volume,cl_volume" session="Y"/>  
-  	</action>
-  	<!-- Phase 2 - Adding Life Volume, PL Volume and CL Volume Column in Market Information - End -->
   </component>
 </projectcomponents>
