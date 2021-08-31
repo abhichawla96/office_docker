@@ -184,16 +184,6 @@
    <!-- Prospect Market Information - Final Question - Phase 2 -->
    <label deltaind="I" labeldesc="Explain any interest in any other business or occupation outside of this agency" labelkey="interest_in_other_business_label"/> 
    
-   <!-- Sections in Market Information - Phase 2 -->
-  
-  <label deltaind="I" labeldesc="Special Commissions" labelkey="prospect_narrative_question_1_label"/>
-  <label deltaind="I" labeldesc="Agency Appearance" labelkey="prospect_narrative_question_2_label"/>
-  
-  <!-- Phase 2- Bug ID- P2-044 -->
-  <label deltaind="I" labeldesc="Comment on neighboring Sample commerce -Agencies and any possible concerns with this appointment" labelkey="prospect_narrative_question_3_label"/>
-  
-  <label deltaind="I" labeldesc="Narrative of Agent" labelkey="prospect_narrative_question_4_label"/> 
-  
   <!-- Phase 2 - SS-002-10 - Add/Update Contact--> 
   <label deltaind="M" labeldesc="Designations" labelkey="position_title_label"/>
   <label deltaind="M" labeldesc="Email" labelkey="email_residence_agent_selfservice_field_label"/>

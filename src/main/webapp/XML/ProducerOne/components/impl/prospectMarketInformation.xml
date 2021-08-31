@@ -1,18 +1,8 @@
 <projectcomponents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/components_XSD.xsd">
   <component metaobject="prospect_status_lku;prospect_address;prospect_source_lku;agencypremiumvolumecommitted;agencycompanieslicensed;agency_business_source;agencyterminated;agencypersonalinformation;agencymergers;agency_master;agency_marketinformation;segment_industry_classes" name="prospectMarketInformation" stackdisplayname="Prospects Market Information">
 
-<!-- Special Commission, Agency Appearance, Comment on neighboring, Narrative of Agent Sections Added - Phase 2 -->  	
-  	<action deltaind="M" name="save">
-	      <workflow deltaind="I" name="saveNarrativeInformation" seq="3">
-    		<function name="generateRequestXml" functionid="generateRequestXml" parameters="context,:fieldsForInputXml,inputXml" executionsequence="0" />
-			<storedprocedureoperation name="insertUpdateDeleteOnboardingNarrativeSupplement_p" dbspname="insertUpdateDeleteOnboardingNarrativeSupplement_p" id="insertUpdateDeleteOnboardingNarrativeSupplement_p"
-					 metaobject="onboarding_narrative_supplement" executionsequence="1" operation="4">
-				<parameteroperation indexno="0" seq="1" property="inputXml" mode="IN"></parameteroperation>
-				<resultsetoperation indexno="0" seq="1" mappingclass="java.util.HashMap"></resultsetoperation>
-			</storedprocedureoperation>
-		</workflow>
-		
-		<!-- Phase 2 - US : OB-PPRM-04-005 -->
+ 	<action deltaind="M" name="save">
+	    <!-- Phase 2 - US : OB-PPRM-04-005 -->
 		 <workflow deltaind="I" eval="foreign_languages_spoken_in_agency_security" name="insertUpdateForeignLanguagesSpokenInAgencyWorkflow" seq="1">
      	         <storedprocedureoperation deltaind="I" dbspname="insertUpdateForeignLanguagesSpokenInAgency_p" executionsequence="1" id="insertUpdateForeignLanguagesSpokenInAgency_p" metaobject="tbl_marketinformation" name="insertUpdateForeignLanguagesSpokenInAgency_p" operation="4" >
 					<parameteroperation indexno="0" mode="IN" property="prospect_agency_id" seq="1"/>

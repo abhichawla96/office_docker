@@ -433,22 +433,7 @@
   
   <field deltaind="I" id="addProspectAgencyCallReportDetails_date_time" screen="carrier/addProspectAgencyCallReportDetails.html" name="date_time" isrequired="Y" labelkey="callreport_block_date_time_label" tabsconfigurationresourcename="callreport_block_date_time_security" protectedresourceuniquename="callreport_block_date_time_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
  
- <!-- Fields in Prospect - Market Information - Phase 2 -->
-  	<!-- Special Commission -->
-  <field deltaind="I" id="prospectMarketInformation_narrative_question_1" screen="carrier/prospectMarketInformation.html" name="narrative_question_1" isrequired="N" labelkey="prospect_narrative_question_1_label" tabsconfigurationresourcename="prospect_narrative_question_1_security" protectedresourceuniquename="prospect_narrative_question_1_security" isextendedfield="Y" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N">
-  </field>
-  	<!-- Agency Appearance -->
-  <field deltaind="I" id="prospectMarketInformation_narrative_question_2" screen="carrier/prospectMarketInformation.html" name="narrative_question_2" isrequired="N" labelkey="prospect_narrative_question_2_label" tabsconfigurationresourcename="prospect_narrative_question_2_security" protectedresourceuniquename="prospect_narrative_question_2_security" isextendedfield="Y" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N">
-  </field>
-  	<!-- Comment on neighboring Sample commerce -Agencies and any possible concerns with this appointment -->
-  <field deltaind="I" id="prospectMarketInformation_narrative_question_3" screen="carrier/prospectMarketInformation.html" name="narrative_question_3" isrequired="N" labelkey="prospect_narrative_question_3_label" tabsconfigurationresourcename="prospect_narrative_question_3_security" protectedresourceuniquename="prospect_narrative_question_3_security" isextendedfield="Y" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N">
-  </field>
-  	<!-- Narrative of Agent -->
-  <field deltaind="I" id="prospectMarketInformation_narrative_question_4" screen="carrier/prospectMarketInformation.html" name="narrative_question_4" isrequired="N" labelkey="prospect_narrative_question_4_label" tabsconfigurationresourcename="prospect_narrative_question_4_security" protectedresourceuniquename="prospect_narrative_question_4_security" isextendedfield="Y" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N">
-  </field>
- 
-  
-	<!-- Mandatory Reason for Action Taken - Other - Phase 2  -->
+ <!-- Mandatory Reason for Action Taken - Other - Phase 2  -->
   <field deltaind="M" id="entityOtherInformation_reason_for_action_taken_desc" screen="carrier/entityOtherInformation.html" name="reason_for_action_taken_desc" isrequired="Y" labelkey="companiesTerminated_block_action_taken_label" tabsconfigurationresourcename="companiesTerminated_block_action_taken_security" protectedresourceuniquename="companiesTerminated_block_action_taken_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
   
  <!-- Phase 2 - Bug Id- P2-019 -->

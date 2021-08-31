@@ -1715,44 +1715,7 @@
 	    </businessrole>
   </protectedresource>
   
-  <!-- Sections in Prospect - Market Information - Phase 2 -->
-  
-   <protectedresource deltaind="I" defaultaccesstype="1"
-		description="Hide/Show Special Commission Section in Prospect Market Information Page"
-		uniquename="prospect_narrative_question_1_security">
-		<userdefined deltaind="I" executionsequence="0"
-			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
-			<userdefinedaccesslevel accesstype="0" />
-		</userdefined>
-	</protectedresource>
-  <protectedresource deltaind="I" defaultaccesstype="1"
-		description="Hide/Show Agency Appearance Section in Prospect Market Information Page"
-		uniquename="prospect_narrative_question_2_security">
-		<userdefined deltaind="I" executionsequence="0"
-			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
-			<userdefinedaccesslevel accesstype="0" />
-		</userdefined>
-	</protectedresource>
-  <protectedresource deltaind="I" defaultaccesstype="1"
-		description="Hide/Show Comment on neighboring Builders Mutual Insurance Agencies and with this appointment Section in Prospect Market Information Page"
-		uniquename="prospect_narrative_question_3_security">
-		<userdefined deltaind="I" executionsequence="0"
-			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
-			<userdefinedaccesslevel accesstype="0" />
-		</userdefined>
-	</protectedresource>
-  <protectedresource deltaind="I" defaultaccesstype="1"
-		description="Hide/Show Narrative of Agent Section in Prospect Market Information Page"
-		uniquename="prospect_narrative_question_4_security">
-		<userdefined deltaind="I" executionsequence="0"
-			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
-			<userdefinedaccesslevel accesstype="0" />
-		</userdefined>
-	</protectedresource>
-	
-	
-	
-  <!-- Phase 2 - Bug Id- P2-026 -->
+<!-- Phase 2 - Bug Id- P2-026 -->
   <protectedresource deltaind="M" description="operating_division_call_report_security" uniquename="operating_division_call_report_security">
     <businessrole deltaind="I" roleid="MarketingRep">
       <roleaccesslevel accesstype="0"/>

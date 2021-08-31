@@ -629,14 +629,7 @@
  
  <!-- Hide/show Duplicate Button on Prospect Clearance screen - Phase 2 -->
 <tabsconfigurationresource deltaind="M" name="isAgencyProspectClearanceListNotEmpty" accesslevel="1" description="Hide/show Dublicate Button on prospectClearance screen" />
- 
-<!-- Sections in Prospect - Market Information - Phase 2 -->
-<tabsconfigurationresource deltaind="I" description="Show/Hide prospect_narrative_question_1_security" name="prospect_narrative_question_1_security" accesslevel="1"/>
-<tabsconfigurationresource deltaind="I" description="Show/Hide prospect_narrative_question_2_security" name="prospect_narrative_question_2_security" accesslevel="1"/>
-<tabsconfigurationresource deltaind="I" description="Show/Hide prospect_narrative_question_3_security" name="prospect_narrative_question_3_security" accesslevel="1"/>
-<tabsconfigurationresource deltaind="I" description="Show/Hide prospect_narrative_question_4_security" name="prospect_narrative_question_4_security" accesslevel="1"/>
- 
- 
+  
  <!--Phase 2-Bug Id- P2-025  -->
  <tabsconfigurationresource deltaind="M" accesslevel="1" description="market_rep_name_CallReportPage_Security" name="market_rep_name_CallReportPage_Security"/>
  
