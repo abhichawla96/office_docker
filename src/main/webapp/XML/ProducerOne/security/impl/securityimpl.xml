@@ -1633,6 +1633,7 @@
   </protectedresource>
   
   <!-- Hiding Add New Prospect Button for "As a user, I want to Add new prospect information" - Phase 2 -->
+  <!-- Phase 2- Bug Id- P2-105- Hiding Add New Prospect Button for Accounting -->
    
   <protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Add New Prospect Button" uniquename="prospectDetailSeacrhResults_addNewProspect1">
     <businessrole deltaind="I" roleid="MarketingAssistant">
@@ -1651,6 +1652,9 @@
       <roleaccesslevel accesstype="0"/>
     </businessrole>
     <businessrole deltaind="I" roleid="SalesDirector">
+	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
       <roleaccesslevel accesstype="0"/>
     </businessrole>
   </protectedresource>
@@ -1679,6 +1683,7 @@
   </protectedresource>
   
   <!-- Hiding Add New Note Button Prospect - Phase 2 -->
+  <!-- Phase 2- Bug Id- P2-106- Hiding Add New Note Button for Accounting -->
   
   <protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Add New Note Button Prospect" uniquename="prospectNotepad_addNewNote">
     <businessrole deltaind="I" roleid="MarketingAssistant">
@@ -1697,6 +1702,9 @@
       <roleaccesslevel accesstype="0"/>
     </businessrole>
     <businessrole deltaind="I" roleid="SalesDirector">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
       <roleaccesslevel accesstype="0"/>
     </businessrole>
   </protectedresource>
