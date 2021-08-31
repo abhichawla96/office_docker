@@ -193,9 +193,6 @@
   <label deltaind="I" labeldesc="Comment on neighboring Sample commerce -Agencies and any possible concerns with this appointment" labelkey="prospect_narrative_question_3_label"/>
   
   <label deltaind="I" labeldesc="Narrative of Agent" labelkey="prospect_narrative_question_4_label"/> 
- 
- <!-- Agency's Total P&C Written Premium Previous Year End - Phase 2 -->
- <label deltaind="I" labeldesc="Agency's Total P&amp;C Written Premium Previous Year" labelkey="prospect_total_written_premium_previous_year_end_label"/>
   
   <!-- Phase 2 - SS-002-10 - Add/Update Contact--> 
   <label deltaind="M" labeldesc="Designations" labelkey="position_title_label"/>

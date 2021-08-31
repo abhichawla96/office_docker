@@ -11,13 +11,6 @@
 				<resultsetoperation indexno="0" seq="1" mappingclass="java.util.HashMap"></resultsetoperation>
 			</storedprocedureoperation>
 		</workflow>
-		<!-- Agency's Total P&C Written Premium Previous Year End - Start - Phase 2  -->
-		<workflow deltaind="M" eval="ProducerOneRule.isInetErrorListEmpty" name="saveMarketInformation" seq="0">
-        
-			<storedprocedureoperation deltaind="M" dbspname="insert_update_delete_agency_current_market_information_p" eval="ProducerOneRule.isShowMarketInformationFreeformFields" executionsequence="3" id="insert_update_delete_prospect_current_market_information_p" metaobject="agency_current_market_informations" name="insert_update_delete_prospect_current_market_information_p" operation="1">
-    			<parameteroperation deltaind="I" indexno="17" mode="IN" property="total_written_premium_previous_year_end" seq="18"/>
-			</storedprocedureoperation>
-		</workflow>
 		
 		<!-- Phase 2 - US : OB-PPRM-04-005 -->
 		 <workflow deltaind="I" eval="foreign_languages_spoken_in_agency_security" name="insertUpdateForeignLanguagesSpokenInAgencyWorkflow" seq="1">
