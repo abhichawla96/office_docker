@@ -1579,13 +1579,7 @@
     </businessrole>
   </protectedresource>
   
-  <!-- Read-Only Territory Manager Field in Prospect - Phase 2 -->
-  <protectedresource deltaind="I" defaultaccesstype="2"
-		description="ReadOnly Territory Manager Field in Prospect"
-		uniquename="prospect_details_account_executive_security">
-	</protectedresource>
-	
-<!-- 14/06/2021 -->
+  <!-- 14/06/2021 -->
 	<!-- Hiding Relationship Management Tab In Agency General Details - Phase 2 -->
   <!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised -->
 <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show Relationship Management tab" operator="OR" uniquename="relationaship_mngmnt_tab_security">
