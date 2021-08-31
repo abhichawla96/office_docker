@@ -484,4 +484,10 @@
 	<validation deltaind="D" name="checkagencyComparativerate" expression="isNot(isEmpty(:agency_comparativerate));" message="agency_comparativerate_error_message_key" executionsequence="0" />
 </field>
 
+<!-- Phase 2 Bug id - P2 104 -->
+
+<field deltaind="M" id="addNewInsuranceDetailForSelfService_category_id" screen="carrier/addNewInsuranceDetailForSelfService.html" name="category_id" isrequired="Y" lookupobjectsql="select category_id, description from category_lku where description='E&amp;O' order by description asc" lookupobjectmetaobject="category_lku" displayfield="description" valuefield="category_id" labelkey="addInsuranceDetailsForSelfServiceApproval_doc_insurance_category_label" tabsconfigurationresourcename="addInsuranceDetailsForSelfServiceApproval_doc_insurance_category_security" protectedresourceuniquename="addInsuranceDetailsForSelfServiceApproval_doc_insurance_category_security" lookupobjecttype="sql" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
+    <validation name="checkCategoryIdForDocuments" expression="if(andCondition(call_rule(ProducerOneRule.isComingForDocuments),isEmpty(:category_id))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="CategorySelectErrorKey" ruleid="ProducerOneRule.checkCategoryIdForDocuments" executionsequence="0" />
+</field>
+
  </fields>
