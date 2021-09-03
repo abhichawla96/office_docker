@@ -19,6 +19,13 @@
 			<email deltaind="I" eventname="ApproveSelfServiceRequest" executionsequence="2" name="ApproveSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail"/>
 		</workflow>
 	</action>
+	
+	<!-- Phase 2 - Email to Agency Admin once the request is Declined -->
+	<action deltaind="M" name="declineRequests">
+	  	<workflow deltaind="M" eval="ProducerOneRule.assignDateFields" name="disapprvoveRequests" seq="0">
+	  		<databaseoperation deltaind="I" executionsequence="0" metaobject="requests" name="getAgencyAdminDisApproverName" operation="3" sqlstmt="select top 1 req.assignee as workflow_assignee from workflowrequests as req join tbl_invitation_status_lku as status on req.workflowstatus_id=status.invitation_status_id join workflowrequestsstatus as reqsts on reqsts.workflowrequests_id=req.workflowrequests_id where req.objectid=#request_ss_id# order by workflowrequestsstatus_id desc"/>
+		</workflow>
+     </action>
     
   </component>
 </projectcomponents>
