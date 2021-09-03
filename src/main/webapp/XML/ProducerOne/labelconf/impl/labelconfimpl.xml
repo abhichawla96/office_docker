@@ -232,6 +232,11 @@
 		
  <!-- Phase 2- Bug Id- P2-100- Add Bank Information -->
  <label deltaind="M" labeldesc="Add Bank Information" labelkey="addupdate_bakinformation_label"/>
-
+ 
+ <!-- Phase 2- Bug Id- P2-050- Market Information- Premium Volume and Production Information -->
+  <label deltaind="M" labeldesc="Monthly Application Written" labelkey="premium_lob_yearly_premium_label"/>
+  <label deltaind="M" labeldesc="Annual Application Written" labelkey="premium_lob_next3year_premium_label"/>
+  <label deltaind="M" labeldesc="Annual Premium Volume" labelkey="premium_lob_monthly_premium1_label"/>
+  
  
 </labelconf>
