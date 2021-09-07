@@ -528,7 +528,8 @@
        <tabsconfigurationresource deltaind="M" name="cyberLiability_contact_security" value="E&amp;O/Cyber Liability Contact" description="Mention here the contact types you want to display in dropdown,you can pass comma seperated contact type or single values here eg principal,agency admin or hrp else All for all records" />
 	<!-- Phase 2 US : SS-004-06 -->
 	<!-- bug id : 58  -->
-	   <tabsconfigurationresource deltaind="M" name="insurance_contact_security" value="E&amp;O/Cyber Liability Contact" description="Mention here the contact types you want to display in SelfService dropdown,you can pass comma seperated contact type or single values here eg principal,agency admin or hrp" />
+<!-- 	 <tabsconfigurationresource deltaind="M" name="insurance_contact_security" value="E&amp;O Cyber Liability Contact" description="Mention here the contact types you want to display in SelfService dropdown,you can pass comma seperated contact type or single values here eg principal,agency admin or hrp" />  -->	<!-- override changes phase 2 --> 
+<tabsconfigurationresource deltaind="M" name="insurance_contact_security" value="E&amp;O/Cyber Liability Contact" description="Mention here the contact types you want to display in SelfService dropdown,you can pass comma seperated contact type or single values here eg principal,agency admin or hrp" /><!-- Make changes for phase 2 -->
  
   <!-- Bug no. : 154 : Missing Section in Market Information -->
 	  
