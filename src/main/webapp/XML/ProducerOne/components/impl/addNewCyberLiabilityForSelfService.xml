@@ -29,6 +29,11 @@
     
     <!-- Phase 2 - P2-084 - Removing Validation for Attach Document -->
     <action deltaind="M" name="sendDocCyberLiabilityDataForSaveApproval">
+    
+    	<!-- Phase 2 - P2-110 - Request not getting sent without attachment - Start -->
+    	<actionparam deltaind="D" eval="ProducerOneRule.uploadEODocument" executionsequence="12" form="Y" name="uploadEODocument" paramid="uploadEODocument" pre="Y"/>
+    	<!-- Phase 2 - P2-110 - Request not getting sent without attachment - End -->
+     
      <validatefield deltaind="D" name="validatefieldFileUpload">
                 <function name="uploadDocumentEmptyCheck" functionid="uploadDocumentEmptyCheck" parameters="context" />
 	</validatefield>
