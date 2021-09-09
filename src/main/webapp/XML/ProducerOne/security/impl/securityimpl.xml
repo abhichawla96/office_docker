@@ -1263,69 +1263,70 @@
   </protectedresource>
   
   <!-- Market Info Page TM Role Configuration -->
+  <!-- Phase 2- Bug Id- P2-107- TM Market Info Page- making fields accessible -->
   <protectedresource deltaind="M" description="market_information_security" uniquename="market_information_security">
     <businessrole deltaind="I" roleid="MarketingRep">
-      <roleaccesslevel accesstype="2"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
   <protectedresource deltaind="M" description="premium_volume_by_lob_security" uniquename="premium_volume_by_lob_security">
     <businessrole deltaind="I" roleid="MarketingRep">
-      <roleaccesslevel accesstype="2"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
   <protectedresource deltaind="M" description="top_companies_appointed_security" uniquename="top_companies_appointed_security">
     <businessrole deltaind="I" roleid="MarketingRep">
-      <roleaccesslevel accesstype="2"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
   <protectedresource deltaind="M" description="source_to_generate_new_business_security" uniquename="source_to_generate_new_business_security">
     <businessrole deltaind="I" roleid="MarketingRep">
-      <roleaccesslevel accesstype="2"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
   <protectedresource deltaind="M" description="companies_terminated_security" uniquename="companies_terminated_security">
    <businessrole deltaind="I" roleid="MarketingRep">
-      <roleaccesslevel accesstype="2"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
   <protectedresource deltaind="M" defaultaccesstype="1" description="Show/Hide entityOtherInformation_primary_company_usage_security" uniquename="entityOtherInformation_primary_company_usage_security">
   	<businessrole deltaind="I" roleid="MarketingRep">
-      <roleaccesslevel accesstype="2"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
   <protectedresource deltaind="M" defaultaccesstype="1" description="Show/Hide entityOtherInformation_current_advertising_methods_security" uniquename="entityOtherInformation_current_advertising_methods_security">
   	<businessrole deltaind="I" roleid="MarketingRep">
-      <roleaccesslevel accesstype="2"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
   <protectedresource deltaind="M" defaultaccesstype="1" description="Show/Hide entityOtherInformation_foreign_languages_spoken_in_agency_security" uniquename="entityOtherInformation_foreign_languages_spoken_in_agency_security">
   	<businessrole deltaind="I" roleid="MarketingRep">
-      <roleaccesslevel accesstype="2"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
   <protectedresource deltaind="M" description="mergers_and_acquisitions_security" uniquename="mergers_and_acquisitions_security">
     <businessrole deltaind="I" roleid="MarketingRep">
-      <roleaccesslevel accesstype="2"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
   <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show market_information_commercial_lines_security" uniquename="market_information_commercial_lines_security">
   	<businessrole deltaind="I" roleid="MarketingRep">
-      <roleaccesslevel accesstype="2"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
    <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show market_information_production_commitment_security" uniquename="market_information_production_commitment_security">
    	<businessrole deltaind="I" roleid="MarketingRep">
-      <roleaccesslevel accesstype="2"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
