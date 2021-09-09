@@ -860,11 +860,6 @@ already exists.</div>
                           </li>
                            <li id="#background_required_after#"></li>
                            
-                           <!-- Displaying fields on selecting Licensed Producer - Start - Phase 2 -->
-                           
-                          <div id="ssn_dob_npn_div">
-                          
-                          <!-- Displaying fields on selecting Licensed Producer - End - Phase 2 -->
                            <li id="#prdcr_cde_before#"></li>
                           <li id="showdivnpn">
                             <div class="freeFormList form-group">
@@ -1014,11 +1009,7 @@ already exists.</div>
                             </div>
                           </li>
                           <li id="#decrypted_dateofbirth_after#"></li>
-                           <!-- Displaying fields on selecting Licensed Producer - Start - Phase 2 -->
                           
-                        </div>
-                        
-                        <!-- Displaying fields on selecting Licensed Producer - End - Phase 2 -->
                           <li id="#ownership_before#"></li>
                           <li id="agentGeneralDetailsForSelfServiceApproval_ownership_security">
                             <div class="freeFormList form-group">
@@ -1611,13 +1602,7 @@ already exists.</div>
                                           <tr>
                                             <td id="contactType_checkBox_security" width="10">
                                               <span id="block_field_ispersoncontact">
-                                              
-                                              <!-- Displaying fields on selecting Licensed Producer - Start - Phase 2 -->
-                                              
-                                              <input type="checkbox" id="ispersoncontact" name="ispersoncontact" value="Y" onchange="javascript:getOtherContactTypeDiv();javascript:ajaxpageblocklink('carrier/agentGeneralDetailsForSelfServiceApproval.html','agentGeneralDetailsForSelfServiceApproval.refreshNonLicensedFields','','','ssn_dob_npn_div');javascript:ajaxpageblocklink('carrier/agentGeneralDetailsForSelfServiceApproval.html','agentGeneralDetailsForSelfServiceApproval.refreshNonLicensedFields','','','residence_address_div');"/>
-                                              <!-- <input type="checkbox" id="ajax_field_ispersoncontact" name="ispersoncontact" value="Y" onclick="javascript:getSelectedContactType();" /> --> 
-                                              
-                                              <!-- Displaying fields on selecting Licensed Producer - End - Phase 2 -->
+                                              	<input type="checkbox" id="ajax_field_ispersoncontact" name="ispersoncontact" value="Y" onclick="javascript:getSelectedContactType();" />
                                               </span>
                                             </td>
                                             <td id="block_field_contact_typ_desc" />
@@ -3198,14 +3183,7 @@ already exists.</div>
                     </div>
                   </fieldset>
                 </section>
-               
-               <!-- Displaying fields on selecting Licensed Producer as Contact Type - Start - Phase 2 -->
-               
-               <div id="residence_address_div"> 
-               
-               <!-- Displaying fields on selecting Licensed Producer as Contact Type - End - Phase 2 -->
-               
-                <section id="w9_addressDiv_agent_selfService_security">
+               	<section id="w9_addressDiv_agent_selfService_security">
                 	<fieldset id="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_214">
                         <legend>
                           <label id="residence_address_agent_selfService_label">Residence Address</label>
@@ -3855,13 +3833,7 @@ already exists.</div>
 					</fieldset>
              	</section>
              	
-             	<!-- Displaying fields on selecting Licensed Producer as Contact Type - Start - Phase 2 -->
-             	
-              </div>
-              
-              <!-- Displaying fields on selecting Licensed Producer as Contact Type - End - Phase 2 -->
-              
-               <section class="list-grid paddingBottom10" id="agentGeneralDetailsForSelfServiceApproval_additional_email_address_security">
+             	<section class="list-grid paddingBottom10" id="agentGeneralDetailsForSelfServiceApproval_additional_email_address_security">
                     <fieldset>
                       <legend>
                         <label id="additional_email_address_label">Additional Email Address</label>

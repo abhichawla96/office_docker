@@ -55,8 +55,8 @@
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
 	</protectedresource>
-	<!-- To show NPN when Contact Type is Licensed Producer- Start - Phase 2 -->
-	<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show showdivnpn" uniquename="showdivnpn">
+	
+	<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show showdivnpn" uniquename="showdivnpn">
 	
 	<businessrole deltaind="I" roleid="AgencyAdmin">
 			<roleaccesslevel accesstype="1" />
@@ -1879,45 +1879,6 @@
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
   </protectedresource>
-  
-      <!-- To show fields when Contact Type is Licensed Producer- Start - Phase 2 -->
-  
-	<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show SSN field on Add and update Contact page" uniquename="contact_ssn_security">
-		<businessrole deltaind="I" roleid="AgencyAdmin">
-			<roleaccesslevel accesstype="1" />
-		</businessrole>
-		<businessrole deltaind="I" roleid="MarketingAssistant">
-			<roleaccesslevel accesstype="1" />
-		</businessrole>
-		<userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.checkAgenctContactTypeLicensedProducer">
-			<userdefinedaccesslevel accesstype="1"/>
-		</userdefined>
-	</protectedresource>
-	
-	<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show DOB field on Add and update Contact page" uniquename="date_of_birth_security">
-		<businessrole deltaind="I" roleid="AgencyAdmin">
-			<roleaccesslevel accesstype="1" />
-		</businessrole>
-		<businessrole deltaind="I" roleid="MarketingAssistant">
-			<roleaccesslevel accesstype="1" />
-		</businessrole>
-		<userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.checkAgenctContactTypeLicensedProducer">
-			<userdefinedaccesslevel accesstype="1"/>
-		</userdefined>
-	</protectedresource>
-	
-	<protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Resident Address Section on Add and update Contact page" uniquename="w9_addressDiv_agent_selfService_security">
-		<businessrole deltaind="I" roleid="AgencyAdmin">
-			<roleaccesslevel accesstype="1" />
-		</businessrole>
-		<businessrole deltaind="I" roleid="MarketingAssistant">
-			<roleaccesslevel accesstype="1" />
-		</businessrole>
-		<userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.checkAgenctContactTypeLicensedProducer">
-			<userdefinedaccesslevel accesstype="1"/>
-		</userdefined>
-	</protectedresource>
-<!-- To show fields when Contact Type is Licensed Producer- End - Phase 2 -->
   
 <!-- SS-012-05- Hide Request Type Dropdown- Phase 2- Start -->
 	<protectedresource deltaind="M" defaultaccesstype="0" description="Show/Hide Request Type in Dashboard" uniquename="homeAction_request_type_security">
