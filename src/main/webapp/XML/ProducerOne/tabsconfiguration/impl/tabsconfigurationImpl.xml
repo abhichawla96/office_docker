@@ -701,5 +701,8 @@
 <!-- Phase 2- Bug Id- P2-097- Add Bank Information- Account Type column -->
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="bankInformationForSelfServiceApproval_account_type_checking_saving_security" name="bankInformationForSelfServiceApproval_account_type_checking_saving_security"/>
 
+<!-- Phase 2- Bug id-P2-028  ‘Other Notes/Questions to be Asked’ & ‘Result of Call’ sections display -->
+<tabsconfigurationresource deltaind="I" accesslevel="1" description="questions_to_be_tasked_security" name="questions_to_be_tasked_security"/>
+<tabsconfigurationresource deltaind="I" accesslevel="1" description="isCallReportResultOfCallApplicable" name="isCallReportResultOfCallApplicable"/>
 
 </tabsconfiguration>
