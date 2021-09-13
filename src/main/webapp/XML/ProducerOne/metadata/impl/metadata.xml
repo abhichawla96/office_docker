@@ -17173,7 +17173,7 @@
       <property autoincrement="NOT NULL" contextfield="N" deleteind="N" field="last_updated_ts" formdisplay="Y" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="Y" persistent="Y" propertylength="10" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="11862" viewlength="10"/>
     </propertyversion>
   </metaobject>
-  <metaobject active="Y" name="homeAction" persistent="N" seq="11863">
+  <metaobject deltaind="M" active="Y" name="homeAction" persistent="N" seq="11863">
     <propertyversion seq="0" versionname="0">
       <property autoincrement="NOT NULL" contextfield="N" deleteind="N" field="home_user_id" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="N" propertylength="10" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="11865" viewlength="10">
         <dropdown dropdowntype="procedure" isrowlink="N" metaobject="homeAction" name="getHomeUsersList_p_java" parameters="user_id" procname="getHomeUsersList_p_java">
@@ -17190,8 +17190,9 @@
         <propvalidation executionseq="0" expression="ProducerOneRule.checkWorkflowUserAtInv" message="workflowUserMASelectErrorKey" name="checkWorkflowUserAtInv"/>
         <propvalidation executionseq="1" expression="ProducerOneRule.checkWorkflowUserAtInv1" message="workflowUserBDCSelectErrorKey" name="checkWorkflowUserAtInv1"/>
       </property>
-      <property autoincrement="NOT NULL" contextfield="N" deleteind="N" field="hierarchy_type_code_filter" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="N" propertylength="4" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="11876" viewlength="4">
-        <dropdown dropdowntype="procedure" isrowlink="N" metaobject="hierarchyNew" name="getHierarchyTypeForAgencyAdminDashboard_p" procname="getHierarchyTypeForAgencyAdminDashboard_p">
+      <!-- Phase 2 - Task Id- SS-010-03 -->
+      <property deltaind="M" autoincrement="NOT NULL" contextfield="N" deleteind="N" field="hierarchy_type_code_filter" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="N" propertylength="4" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="11876" viewlength="4">
+        <dropdown deltaind="M" dropdowntype="sql" isrowlink="N" metaobject="agency_master" name="getHierarchyTypeForAgencyAdminDashboard_p" sqlstmt="select hierarchy_type_code,hierarchy_type_description from hierarchy_type_lku where hierarchy_type_code = 'LOCH' or hierarchy_type_code = 'RPTH'">
           <displayfield field="hierarchy_type_description"/>
           <valuefield field="hierarchy_type_code"/>
         </dropdown>

@@ -1017,7 +1017,9 @@
 		</event>
 	</workflow>
 	
-	<workflow name="selfServiceWorkFlow">
+	<!-- Phase 2 - Add Bank Information - Adding new event node and removed the previous one as deltaind="M" was not working - Start -->
+	<workflow deltaind="M" name="selfServiceWorkFlow">
+	<!-- Phase 2 - Add Bank Information - Adding new event node and removed the previous one as deltaind="M" was not working - Start -->
 		<event name="sendForApprovalSelfService" approverrole="MarketingAssistant" >
 			<status name="sendForApprovalSelfService" workflowstatus="Pending Review" eval="ProducerOneRule.checkSelfServicePrivilege" 
 			workflowfunction="Self Service" executionsequence="0" statuscomment="comment" usergroup="roles" 
@@ -1039,9 +1041,12 @@
 			workflowfunction="Self Service" executionsequence="0" statuscomment="comment" usergroup="roles" 
 			statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
 				approver="workflow_user" forward="agencyAdminDashboard">
-				<statusworkflow name="sendForApprovalSelfServiceforAgencyAdmin1" executionsequence="0">
+				
+				<!-- Phase 2 - Removing DocuSign Flow for Add Bank Information as it is an extra code and not being used - Edited by Shobhit - Start -->
+				<statusworkflow deltaind="D" name="sendForApprovalSelfServiceforAgencyAdmin1" executionsequence="0">
 				<businessobject name="SendDocForESign" obj="com.userbo.integration.SendDocForESign"/>
 				</statusworkflow>
+				<!-- Phase 2 - Removing DocuSign Flow for Add Bank Information as it is an extra code and not being used - Edited by Shobhit - Start -->
 			</status>
 			<status name="sendForApprovalSelfServiceForOther" workflowstatus="pendingESign" eval="ProducerOneRule.notAgencyAdmin" 
 			workflowfunction="Self Service" executionsequence="1" statuscomment="comment" usergroup="roles" 
@@ -1096,8 +1101,16 @@
 				statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service" assignee="user_id" 
 				forward="homeAction" isapproval="Y">
 			</status>
-		
 		</event>
+		<!-- Phase 2 - Add Bank Information - Adding this event node and removed the previous one as deltaind="M" was not working - Start -->
+		<event deltaind="I" name="approveSelfServiceBankRequestSelfServiceNew" type="approve">
+			<status executionsequence="0" name="approveSelfService0" workflowstatus="Approved" workflowfunction="Self Service" 
+				statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service" assignee="user_id" 
+				forward="homeAction" isapproval="Y">
+			</status>
+		</event>
+		<!-- Phase 2 - Add Bank Information - Adding this event node and removed the previous one as deltaind="M" was not working - End -->
+		
 		<event type="disapprove" name="disApproveSelfService" parentevent="sendForApprovalSelfService">
 			<status name="disApproveSelfService" workflowstatus="Pending Review" workflowfunction="Self Service" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"

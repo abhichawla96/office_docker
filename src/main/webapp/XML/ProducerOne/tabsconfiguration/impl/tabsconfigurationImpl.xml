@@ -21,8 +21,10 @@
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="invitationStep1_entity_type_general_Detail_security" name="invitationStep1_entity_type_general_Detail_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="invitationStep1_any_rollover_potential_security" name="invitationStep1_any_rollover_potential_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="invitationStep1_commission_to_be_paid_security" name="invitationStep1_commission_to_be_paid_security"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" description="show validation to attcah eo document" name="validation_eo_document_security"/>
- 
+  
+  <!-- Phase 2 - P2-084 - Making Attachment Mandatory in Upload W9 Doc - This part is handled in Rule based Security -->
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="show validation to attcah eo document" name="validation_eo_document_security"/>
+  
  <!--Sprint 1 : Onboarding Dashboard_Bucket -->
 
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show homeAction_pendingReview_security on homeAction page" name="homeAction_pendingReview_security"/>
@@ -526,7 +528,8 @@
        <tabsconfigurationresource deltaind="M" name="cyberLiability_contact_security" value="E&amp;O/Cyber Liability Contact" description="Mention here the contact types you want to display in dropdown,you can pass comma seperated contact type or single values here eg principal,agency admin or hrp else All for all records" />
 	<!-- Phase 2 US : SS-004-06 -->
 	<!-- bug id : 58  -->
-	   <tabsconfigurationresource deltaind="M" name="insurance_contact_security" value="E&amp;O/Cyber Liability Contact" description="Mention here the contact types you want to display in SelfService dropdown,you can pass comma seperated contact type or single values here eg principal,agency admin or hrp" />
+<!-- 	 <tabsconfigurationresource deltaind="M" name="insurance_contact_security" value="E&amp;O Cyber Liability Contact" description="Mention here the contact types you want to display in SelfService dropdown,you can pass comma seperated contact type or single values here eg principal,agency admin or hrp" />  -->	<!-- override changes phase 2 --> 
+<tabsconfigurationresource deltaind="M" name="insurance_contact_security" value="E&amp;O/Cyber Liability Contact" description="Mention here the contact types you want to display in SelfService dropdown,you can pass comma seperated contact type or single values here eg principal,agency admin or hrp" /><!-- Make changes for phase 2 -->
  
   <!-- Bug no. : 154 : Missing Section in Market Information -->
 	  
@@ -627,14 +630,7 @@
  
  <!-- Hide/show Duplicate Button on Prospect Clearance screen - Phase 2 -->
 <tabsconfigurationresource deltaind="M" name="isAgencyProspectClearanceListNotEmpty" accesslevel="1" description="Hide/show Dublicate Button on prospectClearance screen" />
- 
-<!-- Sections in Prospect - Market Information - Phase 2 -->
-<tabsconfigurationresource deltaind="I" description="Show/Hide prospect_narrative_question_1_security" name="prospect_narrative_question_1_security" accesslevel="1"/>
-<tabsconfigurationresource deltaind="I" description="Show/Hide prospect_narrative_question_2_security" name="prospect_narrative_question_2_security" accesslevel="1"/>
-<tabsconfigurationresource deltaind="I" description="Show/Hide prospect_narrative_question_3_security" name="prospect_narrative_question_3_security" accesslevel="1"/>
-<tabsconfigurationresource deltaind="I" description="Show/Hide prospect_narrative_question_4_security" name="prospect_narrative_question_4_security" accesslevel="1"/>
- 
- 
+  
  <!--Phase 2-Bug Id- P2-025  -->
  <tabsconfigurationresource deltaind="M" accesslevel="1" description="market_rep_name_CallReportPage_Security" name="market_rep_name_CallReportPage_Security"/>
  
@@ -689,5 +685,24 @@
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="entityGeneralDetailsForSelfServiceApproval_agency_comparativerate_securityHeader" name="entityGeneralDetailsForSelfServiceApproval_agency_comparativerate_securityHeader"/>
  
 <!-- Phase 2- Bug Id- P2-065- Update Agency Location -->
-<tabsconfigurationresource deltaind="M" accesslevel="0" name="w9_fax_address_agency_selfService_security"/>  
+<tabsconfigurationresource deltaind="M" accesslevel="0" name="w9_fax_address_agency_selfService_security"/>
+
+<!-- Phase 2- SS-006-21- Add Bank Information -->
+<tabsconfigurationresource deltaind="I" accesslevel="0" name="bankInformation_disapprove"/>
+
+<!-- Phase 2- SS-006-06- Add Bank Information -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="bankInformationForSelfServiceApproval_account_type_trust_operating_security" name="bankInformationForSelfServiceApproval_account_type_trust_operating_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_expiration_date_self_service_security" name="bank_expiration_date_self_service_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_effective_date_self_service_security" name="bank_effective_date_self_service_security"/>
+
+<!-- Phase 2 - Feedback From BMIC - Hiding Contact Status in Update Agency Location  -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security" name="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security"/>
+
+<!-- Phase 2- Bug Id- P2-097- Add Bank Information- Account Type column -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="bankInformationForSelfServiceApproval_account_type_checking_saving_security" name="bankInformationForSelfServiceApproval_account_type_checking_saving_security"/>
+
+<!-- Phase 2- Bug id-P2-028  ‘Other Notes/Questions to be Asked’ & ‘Result of Call’ sections display -->
+<tabsconfigurationresource deltaind="I" accesslevel="1" description="questions_to_be_tasked_security" name="questions_to_be_tasked_security"/>
+<tabsconfigurationresource deltaind="I" accesslevel="1" description="isCallReportResultOfCallApplicable" name="isCallReportResultOfCallApplicable"/>
+
 </tabsconfiguration>
