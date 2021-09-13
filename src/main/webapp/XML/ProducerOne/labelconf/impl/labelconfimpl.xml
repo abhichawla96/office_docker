@@ -92,7 +92,7 @@
   <label deltaind="M" labeldesc="Producer W-9 Name" labelkey="doc_w9_list_agency_w9_label"/>
   
   
-  <label deltaind="I" labeldesc="I understand it&apos;s required to obtain and maintain a policy or policies of cyber liability insurance coverage with limits of liability of at least $500,000.Please attach a copy of your current declaration page in the Additional Documants section at the end of the application. Click the box to agree to these terms." labelkey="add_new_cyber_liability_eo_claims_declaration_label"/>
+  <label deltaind="I" labeldesc="I understand it&apos;s required to obtain and maintain a policy or policies of cyber liability insurance coverage with limits of liability of at least $500,000.Please attach a copy of your current declaration page in the Additional Documents section at the end of the application. Click the box to agree to these terms." labelkey="add_new_cyber_liability_eo_claims_declaration_label"/>
   
 
 <!-- Sprint 3:Agency Profile -->
@@ -174,9 +174,7 @@
   
    <!-- Label Change in Market Information - Phase 2 -->
    <label deltaind="M" labeldesc="Top Three Companies Appointed" labelkey="top_companies_appointed_label"/>
-   
-   <!-- LOB Commercial Lines Prechecked - Phase 2 -->
-    <label deltaind="I" labeldesc="Commercial Lines" labelkey="prospectDetails_agency_lob_checkbox_label"/> 
+    
    <!--  Years Of Current Ownership label & Additional Email Address update- Phase 2 -->
    <label deltaind="I" labeldesc="Years of Current Ownership" labelkey="prospectYearsOfCurrentOwnershipLabel"/>
    <label deltaind="I" labeldesc="Email" labelkey="additional_email_address_entityGeneralDetails_label"/>
@@ -184,19 +182,61 @@
    <!-- Prospect Market Information - Final Question - Phase 2 -->
    <label deltaind="I" labeldesc="Explain any interest in any other business or occupation outside of this agency" labelkey="interest_in_other_business_label"/> 
    
-   <!-- Sections in Market Information - Phase 2 -->
+  <!-- Phase 2 - SS-002-10 - Add/Update Contact--> 
+  <label deltaind="M" labeldesc="Designations" labelkey="position_title_label"/>
+  <label deltaind="M" labeldesc="Email" labelkey="email_residence_agent_selfservice_field_label"/>
+  <label deltaind="M" labeldesc="Business Address" labelkey="agent_business_ss_label"/>
   
-  <label deltaind="I" labeldesc="Special Commissions" labelkey="prospect_narrative_question_1_label"/>
-  <label deltaind="I" labeldesc="Agency Appearance" labelkey="prospect_narrative_question_2_label"/>
-  <label deltaind="I" labeldesc="Comment on neighboring Builders Mutual Insurance Agencies and with this appointment" labelkey="prospect_narrative_question_3_label"/>
-  <label deltaind="I" labeldesc="Narrative of Agent" labelkey="prospect_narrative_question_4_label"/> 
+  <!-- Phase 2- SS-002-20 - Add/Update Contact - Changing Agent Number to Agency Code -->
+  <!-- For the field -->
+  <label deltaind="M" labeldesc="Agency Code" labelkey="entityRequests_agentnumber_label"/>
+  <!-- For the column -->
+  <label deltaind="I" labeldesc="Agency Code" labelkey="entityRequests_AgentNumber_label"/>
+  
+  
+  <!-- Phase 2- P2-048 - Spelling Mistake in PPRM- Market Information- Agency Review Section -->
+  <label deltaind="I" labeldesc="Review of Agency Experience: Review of the agency experience with their other carriers. There must be a history of underwriting profit for at least three of the last five years for all companies represented. Obtain copies of year-end experience report, and look for a pattern of unexplained losses in a major line :" labelkey="agency_experience_label"/>
+  <label deltaind="M" labeldesc="Review of Agency Financials : The agency should have strong financial statements, two year of balance sheets and income statements. Look for acceptable financials ratios, trust ratio ,and account receivable ratio." labelkey="agency_financials_label"/>
+  
+  <!-- Phase 2- P2-049 - Spelling Mistake in PPRM- Market Information- Premium Volume and Production Information Section -->
+  <label deltaind="M" labeldesc="Total" labelkey="premium_totalpremium_label"/>
+  
+  <!-- Phase 2 - SS-002-25- Add/Update Contact--> 
+  <!-- Phase 2- SS-001-17- Agency Code on Update Location Page -->
+  <label deltaind="M" labeldesc="Agency Code" labelkey="entityRequests_agentnumber_label"/>
+  
+  
+  <!-- Phase 2- SS-001-04- Changing labels on Update Location Page -->
+  <label deltaind="M" labeldesc="Agency Name" labelkey="name_securityHeader_label"/>
+  <label deltaind="M" labeldesc="Agency web Address" labelkey="entityGeneralDetailsForSelfServiceApproval_url_label"/>
+  <label deltaind="M" labeldesc="W-9 Legal Name" labelkey="entityGeneralDetailsForSelfServiceApproval_taxpayer_name_label"/>
+  <label deltaind="M" labeldesc="Mailing Address" labelkey="mailing_addressDiv_selfService_label"/>
+  <label deltaind="M" labeldesc="Email" labelkey="email_id_business_ss_label"/>
+  <label deltaind="M" labeldesc="Business Address" labelkey="agency_business_ss_label"/>
  
- <!-- Agency's Total P&C Written Premium Previous Year End - Phase 2 -->
- <label deltaind="I" labeldesc="Agency's Total P&amp;C Written Premium Previous Year" labelkey="prospect_total_written_premium_previous_year_end_label"/>
-  
-  
-  <!-- Phase 2 - Bug Id- P2-030 --> 
-  <label deltaind="I" labeldesc="Call Report" labelkey="ajax_field_document_category_title"/>
+ <!-- Phase 2 - Self Service SS-004-06 -->
+  <label deltaind="M" labeldesc="E&amp;O Contact" labelkey="addInsuranceDetailsForSelfServiceApproval_doc_insurance_insurance_contact_label"/>
  
+ <label deltaind="I" labeldesc="Coverage Amount" labelkey="addInsuranceDetailsForSelfServiceApproval_coverage_amount_label"/>
+ 
+ <!-- Phase 2 - SS-004-23- Add/Update E&O-->  
+   <label deltaind="M" labeldesc="Agency Code" labelkey="entityRequests_agentnumber_label"/>
    
+ <!-- Phase 2- Bug Id- P2-064- Update Agency Location  -->
+ <label deltaind="M" labeldesc="Total Number of Employees" labelkey="entityGeneralDetailsForSelfServiceApproval_no_of_staff_label"/> 
+ 
+
+ 
+ <!-- Phase 2 - Bug Id-  P2-068 --> 
+<label deltaind="M" labeldesc="I understand that I am required to obtain and maintain errors and omissions insurance in an amount not less than $1,000,000 of coverage. Please attach a copy of your current declaration page in the Additional Documents section at the end of the application.Click the box to agree these terms." labelkey="add_new_insurance_detail_for_self_service_eo_claims_declaration_label"/>
+		
+ <!-- Phase 2- Bug Id- P2-100- Add Bank Information -->
+ <label deltaind="M" labeldesc="Add Bank Information" labelkey="addupdate_bakinformation_label"/>
+ 
+ <!-- Phase 2- Bug Id- P2-050- Market Information- Premium Volume and Production Information -->
+  <label deltaind="M" labeldesc="Monthly Application Written" labelkey="premium_lob_yearly_premium_label"/>
+  <label deltaind="M" labeldesc="Annual Application Written" labelkey="premium_lob_next3year_premium_label"/>
+  <label deltaind="M" labeldesc="Annual Premium Volume" labelkey="premium_lob_monthly_premium1_label"/>
+  
+ 
 </labelconf>

@@ -10110,7 +10110,12 @@
     </propertyversion>
   </metaobject>
   
-  <metaobject active="Y" name="entityRequestsSelfService" persistent="N" seq="6890">
+  <!-- Phase 2- SS-001-16 - Request Type Drop-down - Start -->
+  
+  <metaobject deltaind="M" active="Y" name="entityRequestsSelfService" persistent="N" seq="6890">
+  
+  <!-- Phase 2- SS-001-16 - Request Type Drop-down - End -->
+  
     <propertyversion seq="0" versionname="0">
       <property contextfield="N" deleteind="N" field="assigned_to" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="N" propertylength="20" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="6892" viewlength="20">
         <dropdown dataobject="com.userbo.customdropdown.GetOnboardingUsersDropDown" dropdowntype="bo" isrowlink="N" metaobject="agencyListPublicSubmitNInvitationEdit" name="getOnboardingUsersListSelfService">
@@ -10134,12 +10139,16 @@
           <valuefield field="home_workflow_user"/>
         </dropdown>
       </property>
-      <property autoincrement="NOT NULL" contextfield="N" deleteind="N" field="request_type_str" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="N" propertylength="50" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="6903" viewlength="50">
-        <dropdown dropdowntype="sql" isrowlink="N" metaobject="reason_request_lku" name="getAgencyAdminReasonrequestSelfService" sqlstmt="select request_reason_id,case when display_name is not null then display_name else description end as description from reason_request_lku where isnull(is_external_request,'')!='N' order by description asc">
+      <!-- Phase 2- SS-001-16 - Request Type Drop-down - Start -->
+      
+      <property deltaind="M" autoincrement="NOT NULL" contextfield="N" deleteind="N" field="request_type_str" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="N" propertylength="50" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="6903" viewlength="50">
+        <dropdown deltaind="M" dropdowntype="sql" isrowlink="N" metaobject="reason_request_lku" name="getAgencyAdminReasonrequestSelfService" sqlstmt="select request_reason_id,case when display_name is not null then display_name else description end as description from reason_request_lku where description IN ('Add Bank Information','Add/Update Contact','Add/Update Cyber Liability','Add/Update E&amp;O','Others','Update Agency Location','Upload W-9 Document', 'functionCAC', 'functionCL', 'functionDC','functionAS','functionRS') order by description asc;">
           <displayfield field="description"/>
           <valuefield field="request_reason_id"/>
         </dropdown>
       </property>
+      
+      <!-- Phase 2- SS-001-16 - Request Type Drop-down - End -->
       <property contextfield="N" deleteind="N" field="person_id_requests" formdisplay="Y" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="Y" persistent="Y" propertylength="10" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="6907" viewlength="10">
         <dropdown dropdowntype="procedure" isrowlink="N" metaobject="requests" name="getAgentListByUserId_p" parameters="user_id,ClientID,agency_id_requests,roles" procname="getAgentListByUserId_p">
           <displayfield field="name"/>
@@ -17164,7 +17173,7 @@
       <property autoincrement="NOT NULL" contextfield="N" deleteind="N" field="last_updated_ts" formdisplay="Y" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="Y" persistent="Y" propertylength="10" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="11862" viewlength="10"/>
     </propertyversion>
   </metaobject>
-  <metaobject active="Y" name="homeAction" persistent="N" seq="11863">
+  <metaobject deltaind="M" active="Y" name="homeAction" persistent="N" seq="11863">
     <propertyversion seq="0" versionname="0">
       <property autoincrement="NOT NULL" contextfield="N" deleteind="N" field="home_user_id" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="N" propertylength="10" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="11865" viewlength="10">
         <dropdown dropdowntype="procedure" isrowlink="N" metaobject="homeAction" name="getHomeUsersList_p_java" parameters="user_id" procname="getHomeUsersList_p_java">
@@ -17181,8 +17190,9 @@
         <propvalidation executionseq="0" expression="ProducerOneRule.checkWorkflowUserAtInv" message="workflowUserMASelectErrorKey" name="checkWorkflowUserAtInv"/>
         <propvalidation executionseq="1" expression="ProducerOneRule.checkWorkflowUserAtInv1" message="workflowUserBDCSelectErrorKey" name="checkWorkflowUserAtInv1"/>
       </property>
-      <property autoincrement="NOT NULL" contextfield="N" deleteind="N" field="hierarchy_type_code_filter" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="N" propertylength="4" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="11876" viewlength="4">
-        <dropdown dropdowntype="procedure" isrowlink="N" metaobject="hierarchyNew" name="getHierarchyTypeForAgencyAdminDashboard_p" procname="getHierarchyTypeForAgencyAdminDashboard_p">
+      <!-- Phase 2 - Task Id- SS-010-03 -->
+      <property deltaind="M" autoincrement="NOT NULL" contextfield="N" deleteind="N" field="hierarchy_type_code_filter" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="N" propertylength="4" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="11876" viewlength="4">
+        <dropdown deltaind="M" dropdowntype="sql" isrowlink="N" metaobject="agency_master" name="getHierarchyTypeForAgencyAdminDashboard_p" sqlstmt="select hierarchy_type_code,hierarchy_type_description from hierarchy_type_lku where hierarchy_type_code = 'LOCH' or hierarchy_type_code = 'RPTH'">
           <displayfield field="hierarchy_type_description"/>
           <valuefield field="hierarchy_type_code"/>
         </dropdown>

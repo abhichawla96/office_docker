@@ -55,8 +55,20 @@
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
 	</protectedresource>
-	<protectedresource deltaind="M" defaultaccesstype="1"
-		description="Hide/show showdivnpn" uniquename="showdivnpn" />
+	
+	<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show showdivnpn" uniquename="showdivnpn">
+	
+	<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="1" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="1" />
+		</businessrole>
+		<userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.checkAgenctContactTypeLicensedProducer">
+			<userdefinedaccesslevel accesstype="1"/>
+		</userdefined>
+	<!-- To show NPN when Contact Type is Licensed Producer - End - Phase 2 -->
+	</protectedresource>
 	<protectedresource deltaind="M"
 		uniquename="common.hideEntityRequestTab">
 		<businessrole deltaind="M" roleid="AgencyAdmin">
@@ -1251,69 +1263,70 @@
   </protectedresource>
   
   <!-- Market Info Page TM Role Configuration -->
+  <!-- Phase 2- Bug Id- P2-107- TM Market Info Page- making fields accessible -->
   <protectedresource deltaind="M" description="market_information_security" uniquename="market_information_security">
     <businessrole deltaind="I" roleid="MarketingRep">
-      <roleaccesslevel accesstype="2"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
   <protectedresource deltaind="M" description="premium_volume_by_lob_security" uniquename="premium_volume_by_lob_security">
     <businessrole deltaind="I" roleid="MarketingRep">
-      <roleaccesslevel accesstype="2"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
   <protectedresource deltaind="M" description="top_companies_appointed_security" uniquename="top_companies_appointed_security">
     <businessrole deltaind="I" roleid="MarketingRep">
-      <roleaccesslevel accesstype="2"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
   <protectedresource deltaind="M" description="source_to_generate_new_business_security" uniquename="source_to_generate_new_business_security">
     <businessrole deltaind="I" roleid="MarketingRep">
-      <roleaccesslevel accesstype="2"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
   <protectedresource deltaind="M" description="companies_terminated_security" uniquename="companies_terminated_security">
    <businessrole deltaind="I" roleid="MarketingRep">
-      <roleaccesslevel accesstype="2"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
   <protectedresource deltaind="M" defaultaccesstype="1" description="Show/Hide entityOtherInformation_primary_company_usage_security" uniquename="entityOtherInformation_primary_company_usage_security">
   	<businessrole deltaind="I" roleid="MarketingRep">
-      <roleaccesslevel accesstype="2"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
   <protectedresource deltaind="M" defaultaccesstype="1" description="Show/Hide entityOtherInformation_current_advertising_methods_security" uniquename="entityOtherInformation_current_advertising_methods_security">
   	<businessrole deltaind="I" roleid="MarketingRep">
-      <roleaccesslevel accesstype="2"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
   <protectedresource deltaind="M" defaultaccesstype="1" description="Show/Hide entityOtherInformation_foreign_languages_spoken_in_agency_security" uniquename="entityOtherInformation_foreign_languages_spoken_in_agency_security">
   	<businessrole deltaind="I" roleid="MarketingRep">
-      <roleaccesslevel accesstype="2"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
   <protectedresource deltaind="M" description="mergers_and_acquisitions_security" uniquename="mergers_and_acquisitions_security">
     <businessrole deltaind="I" roleid="MarketingRep">
-      <roleaccesslevel accesstype="2"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
   <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show market_information_commercial_lines_security" uniquename="market_information_commercial_lines_security">
   	<businessrole deltaind="I" roleid="MarketingRep">
-      <roleaccesslevel accesstype="2"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
    <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show market_information_production_commitment_security" uniquename="market_information_production_commitment_security">
    	<businessrole deltaind="I" roleid="MarketingRep">
-      <roleaccesslevel accesstype="2"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
@@ -1400,21 +1413,21 @@
   
   <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/Show Agency Termination request link on dashboard" uniquename="dashboard_agencytermination_security"/>   <!-- modified -->
   
-  <protectedresource deltaind="M" defaultaccesstype="0" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceAgencyApplicable"/>
+  <protectedresource deltaind="M" defaultaccesstype="1" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceAgencyApplicable"/>
   
   <protectedresource deltaind="M" defaultaccesstype="0" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceProducerApplicable"/>
   
-  <protectedresource deltaind="M" defaultaccesstype="0" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceENOApplicable_security"/>
+  <protectedresource deltaind="M" defaultaccesstype="1" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceENOApplicable_security"/>
   
-  <protectedresource deltaind="M" defaultaccesstype="0" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceDocW9Applicable_security"/>
+  <protectedresource deltaind="M" defaultaccesstype="1" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceDocW9Applicable_security"/>
   
   <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show request individual transfer link on dashboard" uniquename="isDashboardRequestIndividualTransfer"/>
   
   <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show request wholesale transfer link on dashboard" uniquename="isDashboardRequestWholesaleTransfer"/>
   
-  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show Add Bank Information request link on dashboard" uniquename="isAddUpdateSelfServiceBankInformationApplicable"/>
+  <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/Show Add Bank Information request link on dashboard" uniquename="isAddUpdateSelfServiceBankInformationApplicable"/>
   
-  <protectedresource deltaind="M" defaultaccesstype="0" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceAgentApplicable"/>
+  <protectedresource deltaind="M" defaultaccesstype="1" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceAgentApplicable"/>
   
   <!-- Test -->
   <protectedresource deltaind="I" defaultaccesstype="0" description="show/hide Add Existing Agency to Cluster" uniquename="isAddExistingAgencyToClusterForSelfService_security"/>
@@ -1567,47 +1580,55 @@
     </businessrole>
   </protectedresource>
   
-  <!-- Read-Only Territory Manager Field in Prospect - Phase 2 -->
-  <protectedresource deltaind="I" defaultaccesstype="2"
-		description="ReadOnly Territory Manager Field in Prospect"
-		uniquename="prospect_details_account_executive_security">
-	</protectedresource>
-	
-<!-- 14/06/2021 -->
+  <!-- 14/06/2021 -->
 	<!-- Hiding Relationship Management Tab In Agency General Details - Phase 2 -->
-  
+  <!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised -->
 <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show Relationship Management tab" operator="OR" uniquename="relationaship_mngmnt_tab_security">
     <businessrole deltaind="M" roleid="MarketingRep">
       <roleaccesslevel accesstype="1"/>
     </businessrole>
     <businessrole deltaind="M" roleid="CarrierAdmin">
-      	<roleaccesslevel accesstype="0"/>
+      	<roleaccesslevel accesstype="1"/>
     </businessrole>
     <businessrole deltaind="I" roleid="ReadOnly">
-		<roleaccesslevel accesstype="0" />
+		<roleaccesslevel accesstype="1" />
 	</businessrole>
-	<businessrole deltaind="M" roleid="MarketingAssistant">
-      	<roleaccesslevel accesstype="0"/>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="1"/>
     </businessrole>
-    <businessrole deltaind="I" roleid="Underwriter">
-      	<roleaccesslevel accesstype="0"/>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="1"/>
     </businessrole>
-    <businessrole deltaind="M" roleid="vpmarketing">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-    <businessrole deltaind="M" roleid="SalesDirector">
-      <roleaccesslevel accesstype="0"/>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
   <!-- Hiding Relationship Mgmt Tab In Prospect - Phase 2 -->
+  <!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised -->
    <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show Relationship Mgmt Tab In Prospect" uniquename="isCallReportInActive">
     <businessrole deltaind="I" roleid="MarketingRep">
       <roleaccesslevel accesstype="1"/>
     </businessrole>
+    <businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="1"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="1" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="1"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="1"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="1"/>
+    </businessrole>
   </protectedresource>
   
   <!-- Hiding Add New Prospect Button for "As a user, I want to Add new prospect information" - Phase 2 -->
+  <!-- Phase 2- Bug Id- P2-105- Hiding Add New Prospect Button for Accounting -->
    
   <protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Add New Prospect Button" uniquename="prospectDetailSeacrhResults_addNewProspect1">
     <businessrole deltaind="I" roleid="MarketingAssistant">
@@ -1626,6 +1647,9 @@
       <roleaccesslevel accesstype="0"/>
     </businessrole>
     <businessrole deltaind="I" roleid="SalesDirector">
+	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
       <roleaccesslevel accesstype="0"/>
     </businessrole>
   </protectedresource>
@@ -1654,6 +1678,7 @@
   </protectedresource>
   
   <!-- Hiding Add New Note Button Prospect - Phase 2 -->
+  <!-- Phase 2- Bug Id- P2-106- Hiding Add New Note Button for Accounting -->
   
   <protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Add New Note Button Prospect" uniquename="prospectNotepad_addNewNote">
     <businessrole deltaind="I" roleid="MarketingAssistant">
@@ -1674,6 +1699,9 @@
     <businessrole deltaind="I" roleid="SalesDirector">
       <roleaccesslevel accesstype="0"/>
     </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
   </protectedresource>
      <!-- Phase - 2 Task filter  -->
   <protectedresource deltaind="M" defaultaccesstype="1" description="filter_relationshipTask_assigned_to_security Tasks" uniquename="filter_relationshipTask_assigned_to_security">
@@ -1682,44 +1710,7 @@
 	    </businessrole>
   </protectedresource>
   
-  <!-- Sections in Prospect - Market Information - Phase 2 -->
-  
-   <protectedresource deltaind="I" defaultaccesstype="1"
-		description="Hide/Show Special Commission Section in Prospect Market Information Page"
-		uniquename="prospect_narrative_question_1_security">
-		<userdefined deltaind="I" executionsequence="0"
-			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
-			<userdefinedaccesslevel accesstype="0" />
-		</userdefined>
-	</protectedresource>
-  <protectedresource deltaind="I" defaultaccesstype="1"
-		description="Hide/Show Agency Appearance Section in Prospect Market Information Page"
-		uniquename="prospect_narrative_question_2_security">
-		<userdefined deltaind="I" executionsequence="0"
-			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
-			<userdefinedaccesslevel accesstype="0" />
-		</userdefined>
-	</protectedresource>
-  <protectedresource deltaind="I" defaultaccesstype="1"
-		description="Hide/Show Comment on neighboring Builders Mutual Insurance Agencies and with this appointment Section in Prospect Market Information Page"
-		uniquename="prospect_narrative_question_3_security">
-		<userdefined deltaind="I" executionsequence="0"
-			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
-			<userdefinedaccesslevel accesstype="0" />
-		</userdefined>
-	</protectedresource>
-  <protectedresource deltaind="I" defaultaccesstype="1"
-		description="Hide/Show Narrative of Agent Section in Prospect Market Information Page"
-		uniquename="prospect_narrative_question_4_security">
-		<userdefined deltaind="I" executionsequence="0"
-			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
-			<userdefinedaccesslevel accesstype="0" />
-		</userdefined>
-	</protectedresource>
-	
-	
-	
-  <!-- Phase 2 - Bug Id- P2-026 -->
+<!-- Phase 2 - Bug Id- P2-026 -->
   <protectedresource deltaind="M" description="operating_division_call_report_security" uniquename="operating_division_call_report_security">
     <businessrole deltaind="I" roleid="MarketingRep">
       <roleaccesslevel accesstype="0"/>
@@ -1744,6 +1735,10 @@
    <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show attach button on agentcall report page" uniquename="uploadDocument_attach">
     <userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.isRelationShipCallReportFlagY">
       <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    <!-- Phase 2 - Task Id- SS-005-11 -->
+     <userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.checkIsNewRequest">
+      <userdefinedaccesslevel accesstype="1"/>
     </userdefined>    
   </protectedresource>
   
@@ -1754,7 +1749,590 @@
     </businessrole>
   </protectedresource>
   
+  <!-- Phase 2 - Bug Id- P2-035 -->
+ <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show new label on Agency code details option" uniquename="agencyFunctions_selectFunctionType_closeagencycode_security">
+    <userdefined deltaind="I" executionsequence="0" ruleid="AgencyFunctionsRule.isShowCloseAgencyCodeLabel">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+ </protectedresource>
   
+ <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show new label on Agency code details option" uniquename="agencyFunctions_selectFunctionType_terminationReasonOther_security">
+    <userdefined deltaind="I" executionsequence="0" ruleid="AgencyFunctionsRule.isShowCloseLocationLabel">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+ </protectedresource>
   
-</security>  
+  <!-- Phase 2 - SS-002-04 - Hiding fields -->
+   <protectedresource deltaind="M" defaultaccesstype="1" description="contact_details_login_id_selfService_security" uniquename="contact_details_login_id_selfService_security">
+  <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+   <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show agentGeneralDetailsForSelfServiceApproval_license_number_security" uniquename="agentGeneralDetailsForSelfServiceApproval_license_number_security">
+ <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+   <protectedresource deltaind="M" description="Hide/show former_name_security" uniquename="agentGeneralDetailsForSelfServiceApproval_former_name_security">
+   <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole> 
+    </protectedresource>
+    
+    <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show agentGeneralDetailsForSelfServiceApproval_hire_date_security" uniquename="agentGeneralDetailsForSelfServiceApproval_hire_date_security">
+    <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole> 
+    </protectedresource>
+    
+    <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show agentGeneralDetailsForSelfServiceApproval_industryexp_security" uniquename="agentGeneralDetailsForSelfServiceApproval_industry_experience_security">
+    <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole> 
+    </protectedresource>
+    
+   <protectedresource deltaind="M" defaultaccesstype="1" description="Hide_gender_id_security" uniquename="agentGeneralDetailsForSelfServiceApproval_gender_id_security">
+  <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+    
+    <protectedresource deltaind="M" defaultaccesstype="1" description="Hide_isShowBackgrndReqforContact_security" uniquename="agentGeneralDetailsForSelfServiceApproval_isShowBackgrndReqforContact">
+  <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+   <protectedresource deltaind="M" description="Hide/show fax_business_agent_ss_security" uniquename="fax_business_agent_ss_security">
+  <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+    
+  <protectedresource deltaind="M" defaultaccesstype="1" description="Hide_contact_producer_type_security" uniquename="agentGeneralDetailsForSelfServiceApproval_contact_producer_type_security">
+  <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+  <!-- Hiding checkbox -->
+   <protectedresource deltaind="M" defaultaccesstype="0" description="Hiding_checkbox" uniquename="agentGeneralDetailsForSelfServiceApproval_isShowCopyBusinessToMailingOnBusinessOnly">
+   <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+      
+   
+   <protectedresource deltaind="I" defaultaccesstype="1" description="Hiding_fax_field" uniquename="w9_fax_agent_selfservice_security">
+   <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+      
+  <protectedresource deltaind="M" description="Hiding_Mailing_section" uniquename="mailing_addressDiv_security">
+  <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>  
+    
+  <!-- Task Id- SS-002-26 Add and update Contact page - Phase 2 -->	
+  <protectedresource deltaind="I"  defaultaccesstype="1" uniquename="addEntityRequests_disapprove">
+   <businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+  </protectedresource>
+  
+<!-- SS-012-05- Hide Request Type Dropdown- Phase 2- Start -->
+	<protectedresource deltaind="M" defaultaccesstype="0" description="Show/Hide Request Type in Dashboard" uniquename="homeAction_request_type_security">
+		<businessrole deltaind="I" roleid="AgencyAdmin" accesstype="1"/>
+	</protectedresource>
+<!-- SS-012-05- Hide Request Type Dropdown- Phase 2- End-->
 
+
+<!-- Phase 2- SS-001-05- Update Location Page- Start -->
+	<protectedresource deltaind="M" description="Hide/show agency_lead_gen_in_securityHeader" uniquename="entityGeneralDetailsForSelfServiceApproval_agency_lead_gen_in_securityHeader">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+
+	<protectedresource deltaind="M" defaultaccesstype="1" description="hide field on agency detail page" uniquename="entityGeneralDetailsForSelfServiceApproval_agencyestablished_date_securityHeader">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+
+	<protectedresource deltaind="M" defaultaccesstype="1" description="years_in_business_securityHeader" uniquename="years_in_business_securityHeader">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+
+	<protectedresource deltaind="M" description="Hide/show domicile_state_securityHeader" uniquename="entityGeneralDetailsForSelfServiceApproval_domicile_state_securityHeader">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+
+	<protectedresource deltaind="M" description="readonly fields on entity general details page" uniquename="entityGeneralDetailsForSelfServiceApproval_Entity_Type_General_Detail_securityHeader">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+
+	<protectedresource deltaind="M" defaultaccesstype="0" description="Security for assigned to field in update agency location" uniquename="updateagencylocation_assignedto_security">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+	
+	<protectedresource deltaind="M" description="Hide/show fax_business_ss_security" uniquename="fax_business_ss_security">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+	
+	<protectedresource deltaind="M" defaultaccesstype="1" description="w9_alt_email_address_agency_selfService_security" uniquename="w9_alt_email_address_agency_selfService_security">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+	
+	<protectedresource deltaind="M" defaultaccesstype="1" description="w9_alt_phone_ext_address_agency_selfService_security" uniquename="w9_alt_phone_ext_address_agency_selfService_security">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+	
+	<protectedresource deltaind="M" description="Hide/show find widget on agency selfservice details page" uniquename="entityGeneralDetailsForSelfServiceApproval_is_searchable_security">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource>
+	
+	<protectedresource deltaind="M" defaultaccesstype="1" description="w9_po_box_address_agency_selfService_security" uniquename="w9_po_box_address_agency_selfService_security">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource> 
+	
+	<protectedresource deltaind="I" defaultaccesstype="1" description="Hide/Show agency association in general details" uniquename="isShowAgencyAssociationCheckbox_entityGeneralDetailsForSelfServiceApproval">
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+	</protectedresource> 
+<!-- Phase 2- SS-001-05- Update Location Page- End -->
+
+	<!-- Task Id- SS-005-26 Add and update CyberLiability page - Phase 2 Start-->
+  <protectedresource deltaind="I"  defaultaccesstype="1" uniquename="addNewCyberLiabilityForSelfService_disapprove">
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+	  <roleaccesslevel accesstype="0" />
+	</businessrole>
+  </protectedresource>
+
+ <!-- Phase 2 - Self Service US :SS-004-26-->
+ 
+    <protectedresource deltaind="I"  defaultaccesstype="1" uniquename="addNewInsuranceDetailForSelfService_disapprove">
+   <businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+  </protectedresource> 
+  
+<!-- Phase 2- Bug Id- P2-066- NIPR Name on Update Location Page -->
+<protectedresource deltaind="M" description="nipr_name_agency_self_service_security" uniquename="nipr_name_agency_self_service_security">
+    <userdefined deltaind="M" executionsequence="0" ruleid="entityGeneralDetailsForSelfServiceApprovalRule.isAddingNewLocationSelfserviceApproval">
+      <userdefinedaccesslevel deltaind="M" accesstype="2"/>
+    </userdefined>
+  </protectedresource>
+
+<!-- Phase 2- SS-006-03- Add Bank Information -->
+<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/Show account_type_checking_saving_security" uniquename="bankInformationForSelfServiceApproval_account_type_checking_saving_security"/>
+<protectedresource deltaind="M"  defaultaccesstype="2" description="Hide/Show payment_type_security" uniquename="bankInformationForSelfServiceApproval_payment_type_security"/>
+<protectedresource deltaind="M" defaultaccesstype="2" description="Hide/show bank_account_status_security" uniquename="bank_account_status_security"/>
+   
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Add New Call Report Button -->
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Add New Call Report Button" uniquename="prospectCallReportDetails_addnewCallReport">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource>
+
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Add New Call Report Button -->
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Add New Call Report Button" uniquename="agencyCallReportDetails_addNew">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource>
+
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Edit Button - Prospect and Agency General Details (Same ID) -->
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Edit Button" uniquename="agencycallreportEditbutton">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource>   
+
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Modify Button - Prospect - Relationship Mgmt Tab -->
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Modify Button in Prospect - Relationship Mgmt Tab" uniquename="addProspectAgencyCallReportDetails_modify">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource>
+  
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Modify Button - Agency General Details - Relationship Mgmt Tab -->
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Modify Button in Prospect - Relationship Mgmt Tab" uniquename="addAgencyCallReportDetails_modify">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource>
+
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Email Button - Agency General Details - Relationship Mgmt Tab -->
+<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show callreport_block_e_mail_row_security" uniquename="callreport_block_e_mail_row_security">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource>
+
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Email Button - Prospect - Relationship Mgmt Tab -->
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show callreport_block_e_mail_row_security" uniquename="block_field_e_mail_row_link">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource>  
+
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Copy Button - Prospect - Relationship Mgmt Tab -->
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show callreport_block_e_mail_row_security" uniquename="prospectCallReportDetails_clone">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource>
+
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Copy Button - Agency General Details - Relationship Mgmt Tab -->
+<protectedresource deltaind="M" description="Hide/show callreport_block_clone_row_security" defaultaccesstype="1" uniquename="callreport_block_clone_row_security">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource>
+  
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Delete Button - Agency General Details - Relationship Mgmt Tab -->  
+<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show callreport_block_delete_row_security" uniquename="callreport_block_delete_row_security">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource>
+   
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Delete Button - Prospect - Relationship Mgmt Tab -->  
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show callreport_block_delete_row_security" uniquename="agencycallreportdeletebutton">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource> 
+
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Delete Button - Prospect Details Search Results Page -->  
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Delete Button - Prospect Details Search Results Page" uniquename="delete_row_link_security">
+	<businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+</protectedresource>
+
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Modify Button - Prospect Details Search Results Page -->
+<protectedresource deltaind="M" defaultaccesstype="1" uniquename="isProspectStatusConvertedToAgency">
+    <businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Add New Task Button - Agency General Details Page -->    
+<protectedresource deltaind="I" defaultaccesstype="1" uniquename="relatioshipTask_addNewTask">
+    <businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Delete Button - Prospect - Notepad Page -->    
+<protectedresource deltaind="I" defaultaccesstype="1" uniquename="delete_note_security">
+    <businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="ReadOnly">
+		<roleaccesslevel accesstype="0" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="Underwriter">
+      	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="Accounting">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>    
+ 
+ <!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Save Button - Prospect Market Information Page -->   
+ <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show save button on agency market information page" operator="AND" uniquename="entityotherInformation_save">
+    <businessrole deltaind="M" roleid="CarrierAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+  </protectedresource>
+  
+   <!-- Phase 2- Bug Id- P2-072 -->
+
+    <protectedresource deltaind="I"  defaultaccesstype="1" uniquename="addEntityRequests_freeform_contextdata_20">
+   <businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="2" />
+		</businessrole>
+  </protectedresource>  
+  
+  <!-- Phase 2 - P2-084 - Making Attachment Section Mandatory in Upload W9 Doc -->
+	<protectedresource deltaind="I" defaultaccesstype="0" description="show validation to attcah eo document" uniquename="validation_eo_document_security">
+	    <userdefined deltaind="I" 
+	    	ruleid="ProducerOneRule.isAttachmentMandatory" executionsequence="0">
+	  		<userdefinedaccesslevel accesstype="1" />
+		</userdefined>
+	</protectedresource>
+	
+</security> 

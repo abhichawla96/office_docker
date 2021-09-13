@@ -1,0 +1,13 @@
+<projectcomponents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/components_XSD.xsd">
+  <component breadcrumbsessionparams="agency_id,workflow_function,aar_statusid_desc,workflow_user" metaobject="entityRequestsSelfService;entityGeneralDetailsAddress_ss;agentMoObject;person_ss;cost_center_lku;background_check;compititor_appointments;hierarchy_details_master;" name="agentGeneralDetailsForSelfServiceApproval" stackdisplayname="individualtablabel General Detail" objectcolumn="request_ss_id" objecttype="Self Service">
+   
+   <!-- Task Id- SS-009-002-01 Add and update Contact page - Phase 2 Start-->
+   <action deltaind="I" name="sendUpdatedAgentDataForSaveApproval">
+      <workflow deltaind="I" name="selfServiceInitiateEmail" seq="8">
+	    <databaseoperation deltaind="I" executionsequence="0" metaobject="userprofiles" name="getMarketAssistantEmail" operation="3" sqlstmt="select  e_mail as e_mail from userprofiles where user_id=#workflow_user#"/>
+		<databaseoperation deltaind="I" executionsequence="1" metaobject="agency_master" name="getAgencyName" operation="3" sqlstmt="select name as Agency_Name from agency_master where agency_id = (select agency_id from requests_ss where request_ss_id = #request_ss_id#)"/>
+		<email deltaind="I" eventname="InitiateSelfServiceRequest" executionsequence="2" name="InitiateSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail"/>
+	 </workflow>
+   </action>
+  </component>
+</projectcomponents>
