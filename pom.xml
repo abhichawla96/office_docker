@@ -139,7 +139,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<repositories>
 		<repository>
 			<id>osi-releases</id>
-			<!-- <url>http://10.10.10.222:8081/repository/releases/</url> -->
+			<!-- <url>http://10.10.10.222:8081/repository/releases/</url>   -->
 			<url>http://10.10.10.222:8091/repository/releases/</url>
 			<name>OSI Repository</name>
 			<snapshots>
@@ -166,7 +166,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<distributionManagement>
 		<repository>
 			<id>releases</id>
-			<!-- <url>http://172.10.40.180:8081/repository/releases/</url> mail from release team to change port -->
+			<!-- <url>http://172.10.40.180:8081/repository/releases/</url> mail from release team to change the port-->
 			<url>http://172.10.40.180:8091/repository/releases/</url>
 		</repository>
 	</distributionManagement>

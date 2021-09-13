@@ -1639,11 +1639,13 @@
 			<actionparam executionsequence="3" form="Y"
 				name="AgencyLicensesAppointments_mom_list_1" paramid="AgencyLicensesAppointments_mom_list_1"
 				post="Y" remove="Y" session="Y" />
-			<actionparam executionsequence="15" form="Y"
+				<!-- PROD Issue : PROD-019/'0047 -->
+			<actionparam deltaind="M" executionsequence="15" form="Y"
 				name="agentlicence_agent_fname" paramid="agentlicence_agent_fname4545"
 				pre="Y" remove="Y"
-				removeparams="isComingFromPersonPage,agentlicence_appointment_termination_date_to,agentlicence_appointment_termination_date_from,agentlicence_appointment_effective_date_to,agentlicence_appointment_effective_date_from,agent_lic_authorised_status_id,agentappoint_auth_reason_id,agentprocessing_status_id,agent_lic_company_id,agent_auth_state_id,agentlicence_license_exp_date_to,agentlicence_license_exp_date_from,agentlicence_license_issue_date_to,agentlicence_license_issue_date_from,agent_license_reason_id,agent_lic_state_id,agentlicence_license_num,agentlicence_System_Code,agentlicence_npn,agentlicence_agent_ssn_num,agentlicenceagentlname,agentlicence_agent_fname"
+				removeparams="registration_type_desc,isComingFromPersonPage,agentlicence_appointment_termination_date_to,agentlicence_appointment_termination_date_from,agentlicence_appointment_effective_date_to,agentlicence_appointment_effective_date_from,agent_lic_authorised_status_id,agentappoint_auth_reason_id,agentprocessing_status_id,agent_lic_company_id,agent_auth_state_id,agentlicence_license_exp_date_to,agentlicence_license_exp_date_from,agentlicence_license_issue_date_to,agentlicence_license_issue_date_from,agent_license_reason_id,agent_lic_state_id,agentlicence_license_num,agentlicence_System_Code,agentlicence_npn,agentlicence_agent_ssn_num,agentlicenceagentlname,agentlicence_agent_fname"
 				session="Y" />
+				<!-- PROD Issue Change Ends  -->
 			<actionparam executionsequence="14" form="Y"
 				name="agencylicencename" paramid="agencylicencename545" pre="Y"
 				remove="Y"
