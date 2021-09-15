@@ -705,4 +705,7 @@
 <tabsconfigurationresource deltaind="I" accesslevel="1" description="questions_to_be_tasked_security" name="questions_to_be_tasked_security"/>
 <tabsconfigurationresource deltaind="I" accesslevel="1" description="isCallReportResultOfCallApplicable" name="isCallReportResultOfCallApplicable"/>
 
+<!-- Prod- Bug Id- prod-0054 - Add Bank information page --> 
+<tabsconfigurationresource deltaind="I" name="isShowBankInformationForAllRelatedAgencies" value="N" description="Hide/Show isShowBankInformationForAllRelatedAgencies" />
+
 </tabsconfiguration>
