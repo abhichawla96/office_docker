@@ -707,5 +707,7 @@
 
 <!-- Prod- Bug Id- prod-0054 - Add Bank information page --> 
 <tabsconfigurationresource deltaind="I" name="isShowBankInformationForAllRelatedAgencies" value="N" description="Hide/Show isShowBankInformationForAllRelatedAgencies" />
+ <!-- prod support - issue 0062  -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show bulkAgentAppointNew_decline in bulkAgentAppointNew.html" name="bulkAgentAppointNew_decline"/>
 
 </tabsconfiguration>
