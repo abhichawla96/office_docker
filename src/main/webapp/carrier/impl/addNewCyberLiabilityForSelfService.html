@@ -604,16 +604,22 @@
 	                           </a>
 	                       </span>
 	                     </span>
-	                     <span id="cyber_liability_cancel_security">
+	                    <!--  <span id="cyber_liability_cancel_security">
 	                       <a id="addNewCyberLiabilityForSelfService_cancel" href="javascript:ajaxsubmitform('carrier/cyberLiabilityForSelfServiceApproval.html','addNewCyberLiabilityForSelfService.cancel','','','divComplete');" class="ovalbutton">
 	                         <span id="cancel_label">Cancel</span>
 	                       </a>
-	                     </span>
+	                     </span> -->
+	                      <span id="cyber_liability_cancel_security"> 
+	                      	<a id="addEntityRequests_cancel_btn"
+								href="javascript:submitform('carrier/agencyAdminDashboard.html|carrier/homeAction.html','addEntityRequests.CancelPendingRequest','forwardeval','ProducerOneRule.checkSelfServicePrivilege|ProducerOneRule.notAgencyAdmin');"
+								class="ovalbutton"> <span id="addEntityRequests_cancel_btn_label">Cancel</span>
+							</a>
+						</span>			
 	                   <!-- </span> -->
 	                   </div>
 	              </section>
 	              <section class="divButton paddingTop10" id="addEntityRequest_ApproveDisprove_security">
-	                   <div class="buttonwrapper" id="isShowButtonsForRequestToMa">
+	                   <div class="buttonwrapper" id="isShowButtonsForRequestToMa11">
 	                     <span id="addCyberLiability_ss_modify_bttn_security">
 	                       <span id="checkIsExistingRequest">
 	                         <span>
@@ -623,7 +629,6 @@
 	                         </span>
 	                       </span>
 	                     </span>
-	                     
 <!-- 	                     <span id="checkRequestApproveDisApproveButton"> -->
 	                     <span id="addEntityRequest_ApproveDisprove_security">
 	                       <span id="common.showSelfServiceApproveDisapproveButtonsForMarketingAssistant">
@@ -638,7 +643,7 @@
 	                           </a>
 	                         </span>
 	                         <span>
-	                         <!-- Task Id- SS-005-26 Add and update CyberLiability page - Phase 2 Changes made because both the button contain same id -->
+	                 <!-- BMIC Specific-->        <!-- Task Id- SS-005-26 Add and update CyberLiability page - Phase 2 Changes made because both the button contain same id -->
 	                         <a id="addNewCyberLiabilityForSelfService_decline" href="javascript:ajaxsubmitform('carrier/entityRequests.html','addNewCyberLiabilityForSelfService.declineRequests','','','divComplete');" class="ovalbutton">
 	                             <span>Decline</span>
 	                           </a>
@@ -652,16 +657,18 @@
           </div>
         </div>
         <div class="hiddenFields" id="addNewInsuranceDetailForSelfService_freeform_contextdata_912">
-        <input type="hidden" name="dummy_field_duplicate_InsuranceInfo" id="ajax_field_dummy_field_duplicate_InsuranceInfo" />
-        <input type="hidden" name="dummyFieldToValidateAtleast1DocumentAttachment" id="ajax_field_dummyFieldToValidateAtleast1DocumentAttachment" />
-        <input type="hidden" name="divHideShow" id="divHideShow" />
-        <input type="hidden" name="doc_CyberLiability_policy_limit_mandatory_security" id="ajax_field_doc_CyberLiability_policy_limit_mandatory_security" />
-         <input type="hidden" name="doc_CyberLiability_carrier_name_mandatory_security" id="ajax_field_doc_CyberLiability_carrier_name_mandatory_security" />
-         <input type="hidden" name="doc_CyberLiability_policy_number_mandatory_security" id="ajax_field_doc_CyberLiability_policy_number_mandatory_security" />
-         <input type="hidden" name="doc_CyberLiability_aggregate_limit_mandatory_security" id="ajax_field_doc_CyberLiability_aggregate_limit_mandatory_security" />
-         <input type="hidden" name="doc_CyberLiability_review_status_mandatory_security" id="ajax_field_doc_CyberLiability_review_status_mandatory_security" />
-         <input type="hidden" name="doc_CyberLiability_deductible_mandatory_security" id="ajax_field_doc_CyberLiability_deductible_mandatory_security" />
-      </div> 
+	        <input type="hidden" name="dummy_field_duplicate_InsuranceInfo" id="ajax_field_dummy_field_duplicate_InsuranceInfo" />
+	        <input type="hidden" name="dummyFieldToValidateAtleast1DocumentAttachment" id="ajax_field_dummyFieldToValidateAtleast1DocumentAttachment" />
+	        <input type="hidden" name="divHideShow" id="divHideShow" />
+	        <input type="hidden" name="doc_CyberLiability_policy_limit_mandatory_security" id="ajax_field_doc_CyberLiability_policy_limit_mandatory_security" />
+	        <input type="hidden" name="doc_CyberLiability_carrier_name_mandatory_security" id="ajax_field_doc_CyberLiability_carrier_name_mandatory_security" />
+	        <input type="hidden" name="doc_CyberLiability_policy_number_mandatory_security" id="ajax_field_doc_CyberLiability_policy_number_mandatory_security" />
+	        <input type="hidden" name="doc_CyberLiability_aggregate_limit_mandatory_security" id="ajax_field_doc_CyberLiability_aggregate_limit_mandatory_security" />
+	        <input type="hidden" name="doc_CyberLiability_review_status_mandatory_security" id="ajax_field_doc_CyberLiability_review_status_mandatory_security" />
+	        <input type="hidden" name="doc_CyberLiability_deductible_mandatory_security" id="ajax_field_doc_CyberLiability_deductible_mandatory_security" />
+	        <input type="hidden" name="Status" id="ajax_field_Status" />
+	        <input type="hidden" name="status" id="ajax_field_status" />
+      </div>
       </div>
     </form>
   </body>

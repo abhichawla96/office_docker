@@ -1018,10 +1018,9 @@
 
 																			</select>
 																		</span>
-																	</span> 
-																	<span
+																	</span> <span
 																		id="isValidationClosedRequiredBeforeClosingAgencyCode">
-																		<span
+																<!-- BMIC Specific-->		<span
 																					class="mendatoryInput"
 																					id="showOnAdd">
 																					 <select
@@ -1080,13 +1079,11 @@
 																							<option value="3">Pending</option>
 																							<!-- <option id="isShowMergedProducerNumberStatus" value="7">Merged</option> -->
 																					</select>
-																				</span>
+																				</span><!-- BMIC Specific-->
 																			<span id="isEditEvent"> <span
-																				id="few_producer_status_cde_security"> 
-																				<span
+																				id="few_producer_status_cde_security"> <span
 																					class="mendatoryInput"
-																					id="isActiveProducerNumberStatus">
-																					 <select
+																					id="isActiveProducerNumberStatus"> <select
 																						class="form-control"
 																						onchange="javascript:setProducerStateCode();javascript:submitform('carrier/producerDetail.html','producerDetail.addClosedDate1','','');"
 																						name="producer_status_cde"
@@ -1094,7 +1091,7 @@
 																						id="ajax_field_producer_status_cde">
 																							<option value="1">Active</option>
 																							<option value="2">Closed</option>
-																							<option value="3">Pending</option>
+																				<!-- BMIC Specific-->			<option value="3">Pending</option>
 																							<!-- <option value="6">Pending Termination</option>
 																							<option id="isShowMergedProducerNumberStatus" value="7">Merged</option> -->
 																					</select>
@@ -1195,7 +1192,7 @@
 																			</span>
 																		</span>
 																	</span>
-																	</span> <span id="isHideProdNumProbationTrue"> <span
+																	</span> <span id="isHideProdNumProbationTrue"><!-- BMIC Specific--> <span
 																		id="few_producer_status_cde_security_2"> <span
 																			class="mendatoryInput"
 																			id="isBGContractApptOnboardingStatusFound"> <select

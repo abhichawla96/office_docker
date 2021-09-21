@@ -296,8 +296,7 @@ Termination</label>
                 <div class="left_100">
                   <fieldset>
                     <legend><span id="agentGeneralDetails_Selfservice_label"> General Details</span></legend>
-                    
-                    <div align="center">
+                    <div  align="center">
                         <div class="warning txtbold paddingBottom10" id="ajax_error_dummy_field_duplicate_contact"></div>
                          <div class="warning txtbold paddingBottom10" id="error_dummy_field_duplicate_contact"  />
                       </div>
@@ -310,7 +309,7 @@ already exists.</div>
                       <div id="entityPersonDetails_freeform_contextdata_2">
                         <ul class="inlineBlock">
                           <li id="#person_agency_id_before#"></li>
-                          <li class="inlineBlock_1" id="isAddingNewContactSelfserviceApproval">
+                          <li class="inlineBlock_1" id="isShowAgencyNameOnNewContactSelfserviceApproval">
                             <div id="person_agency_id_security">
                               <div class="freeFormList form-group">
                                 <div class="freeFormListTr">
@@ -859,7 +858,7 @@ already exists.</div>
                             </div>
                           </li>
                            <li id="#background_required_after#"></li>
-                           
+                          
                            <li id="#prdcr_cde_before#"></li>
                           <li id="showdivnpn">
                             <div class="freeFormList form-group">
@@ -1038,9 +1037,7 @@ already exists.</div>
                               </div>
                             </div>
                           </li>
-                        <li id="#ownership_after#"></li>
-                         
-                        
+                             <li id="#ownership_after#"></li>
                              
                              <li id="#assigned_agent_number_after#"></li>
                              <li id="agentGeneralDetailsForSelfServiceApproval_assigned_agent_number_security">
@@ -1578,7 +1575,7 @@ already exists.</div>
                                           <tr>
                                             <td id="contactType_checkBox_selfservice_security" width="10">
                                               <span id="block_field_ispersoncontact">
-                                              <input type="checkbox" id="ajax_field_ispersoncontact" name="ispersoncontact" value="Y" onclick="javascript:getSelectedContactType();" /> 
+                                                 <input type="checkbox" id="ajax_field_ispersoncontact" name="ispersoncontact" value="Y" onclick="javascript:getSelectedContactType();" /> 
                                               </span>
                                             </td>
                                             <td id="block_field_contact_typ_desc" />
@@ -1602,7 +1599,7 @@ already exists.</div>
                                           <tr>
                                             <td id="contactType_checkBox_security" width="10">
                                               <span id="block_field_ispersoncontact">
-                                              	<input type="checkbox" id="ajax_field_ispersoncontact" name="ispersoncontact" value="Y" onclick="javascript:getSelectedContactType();" />
+                                                 <input type="checkbox" id="ajax_field_ispersoncontact" name="ispersoncontact" value="Y" onclick="javascript:getSelectedContactType();" /> 
                                               </span>
                                             </td>
                                             <td id="block_field_contact_typ_desc" />
@@ -1923,8 +1920,8 @@ already exists.</div>
                     </div>
                   </fieldset>
                 </div>
-               </section>
-            
+              </section>
+              
                 <section id="business_addressDiv_security" class="paddingTop10">
                   <fieldset id="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_212">
                     <legend>
@@ -3183,7 +3180,9 @@ already exists.</div>
                     </div>
                   </fieldset>
                 </section>
-               	<section id="w9_addressDiv_agent_selfService_security">
+                
+                
+                <section id="w9_addressDiv_agent_selfService_security">
                 	<fieldset id="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_214">
                         <legend>
                           <label id="residence_address_agent_selfService_label">Residence Address</label>
@@ -3832,8 +3831,8 @@ already exists.</div>
                     	</div>
 					</fieldset>
              	</section>
-             	
-             	<section class="list-grid paddingBottom10" id="agentGeneralDetailsForSelfServiceApproval_additional_email_address_security">
+              
+               <section class="list-grid paddingBottom10" id="agentGeneralDetailsForSelfServiceApproval_additional_email_address_security">
                     <fieldset>
                       <legend>
                         <label id="additional_email_address_label">Additional Email Address</label>
@@ -4819,7 +4818,6 @@ Address :</strong>
                   </div>
                 </div>
               </section>
-             
               <section class="list-grid" id="checkIsExistingRequest">
                 <div id="ajax_sorting">
                   <table width="100%" class="gridTable" border="0" cellpadding="0" cellspacing="0" id="requestComments_list_1">
@@ -4845,7 +4843,6 @@ Address :</strong>
 				</div>
 				<div id="attachmentDivContentEnd"></div>
 			  </section>
-			  
               <section class="divButton buttons-section">
                 <div>
                   <div>
@@ -4888,11 +4885,8 @@ Address :</strong>
                 </div>
               </section>
             </div>
-            
           </div>
         </div>
-       
-       
         <script type="text/javascript">loadagentGeneralDetail();</script>
         <div class="hiddenFields">
           <div id="agentGeneralDetail_freeform_contextdata_0">
@@ -4951,3 +4945,4 @@ Address :</strong>
     </form>
   </body>
 </html>
+
