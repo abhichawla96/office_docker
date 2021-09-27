@@ -8303,7 +8303,7 @@
       <property autoincrement="IDENTITY" contextfield="N" deleteind="N" field="master_lookup_detail_id" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="Y" propertylength="4" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="5764" viewlength="4"/>
     </propertyversion>
   </metaobject>
-  <metaobject active="Y" name="entityGeneralDetailsAddress_ss" persistent="N" seq="5765">
+  <metaobject deltaind="M" active="Y" name="entityGeneralDetailsAddress_ss" persistent="N" seq="5765">
     <propertyversion seq="0" versionname="0">
       <property autoincrement="NOT NULL" contextfield="N" deleteind="N" field="territory_id" formdisplay="Y" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="Y" persistent="N" propertylength="10" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="5767" viewlength="10">
         <dropdown dropdowntype="procedure" eval="ProducerOneRule.isShowTerritoryFlagTrue" isrowlink="N" metaobject="territory_lku" name="getAllTerritoyForAgency" procname="GetTerritoryList_p">
@@ -8376,18 +8376,21 @@
         <propvalidation executionseq="0" expression="addressForSelfServiceApprovalRule.checkAgencyStateIdBusiness" message="StateBusinessSelectErrorKey" name="checkAgencyStateIdBusiness"/>
         <propvalidation executionseq="2" expression="EntityGeneralDetails.checkIsStateIDRequriedAsPerBusinessRule" message="StateMailingSelectErrorKey" name="checkIsStateIDRequriedAsPerBusinessRule"/>
       </property>
-      <property contextfield="N" deleteind="N" field="state_id_mailing" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="N" propertylength="10" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="5813" viewlength="10">
-        <dropdown dropdowntype="procedure" isrowlink="N" metaobject="state_lku" name="GetCountryStateMapping_pForAgencyMailing" parameters="country_code_mailing" procname="GetCountryStateMapping_p">
+      <!-- Phase 2- Reg-005 - Residence Address Drop-down in Add/Update Contact - Start -->
+      <property deltaind="M" contextfield="N" deleteind="N" field="state_id_mailing" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="N" propertylength="10" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="5813" viewlength="10">
+        <dropdown deltaind="M" dropdowntype="procedure" isrowlink="N" metaobject="state_lku" name="GetCountryStateMapping_pForAgencyMailing" parameters="country_code_w9" procname="GetCountryStateMapping_p">
           <displayfield field="description"/>
           <valuefield field="state_id"/>
         </dropdown>
       </property>
-      <property contextfield="N" deleteind="N" field="state_id_w9" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="N" propertylength="10" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="5813" viewlength="10">
-        <dropdown dropdowntype="procedure" isrowlink="N" metaobject="state_lku" name="GetCountryStateMapping_pForAgencyMailing" parameters="country_code_w9" procname="GetCountryStateMapping_p">
+      
+      <property deltaind="M" contextfield="N" deleteind="N" field="state_id_w9" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="N" propertylength="10" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="5814" viewlength="10">
+        <dropdown deltaind="M" dropdowntype="procedure" isrowlink="N" metaobject="state_lku" name="GetCountryStateMapping_pForAgencyW9" parameters="country_code_w9" procname="GetCountryStateMapping_p">
           <displayfield field="description"/>
           <valuefield field="state_id"/>
         </dropdown>
       </property>
+      <!-- Phase 2- Reg-005 - Residence Address Drop-down in Add/Update Contact - End -->
       <property contextfield="N" deleteind="N" field="county_business" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="N" propertylength="10" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="5817" viewlength="10">
         <dropdown dropdowntype="sql" isrowlink="N" metaobject="county_lku" name="getAllCountyForStateListMailingForAgencyBusiness" sqlstmt="select county_id as county,description from county_lku where state_id=#state_id_business# order by description">
           <displayfield field="description"/>
