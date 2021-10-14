@@ -716,5 +716,6 @@
 <tabsconfigurationresource deltaind="I" accesslevel="1" description="ShowCyberLiabilityNoticesSent" name="dashboard_Cyber_Liability_Notices_Sent_label"/>
 <tabsconfigurationresource deltaind="I" accesslevel="1" description="CyberLiabilityNoticesSent" name="Cyber_Liability_Notices_Sent"/>
 
-
+<!-- Main-006 - deleting contact -->
+<tabsconfigurationresource deltaind="I" name="SkipProducerCodeLogicaldeletionvalidation" value="N"/>
 </tabsconfiguration>
