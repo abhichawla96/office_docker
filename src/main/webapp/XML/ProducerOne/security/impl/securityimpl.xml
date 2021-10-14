@@ -2335,4 +2335,12 @@
 		</userdefined>
 	</protectedresource>
 	
+  <!-- Maintenance Bug- Main-001 -->
+   <protectedresource deltaind="I" defaultaccesstype="1" description="show validation for insurance section" uniquename="attachment_security">
+	    <userdefined deltaind="I" 
+	    	ruleid="ProducerOneRule.isAttachmentMandatory" executionsequence="0">
+	  		<userdefinedaccesslevel accesstype="1"/>
+		</userdefined>
+	</protectedresource> 
+	
 </security> 

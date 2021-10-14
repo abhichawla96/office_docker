@@ -710,4 +710,11 @@
  <!-- prod support - issue 0062  -->
 <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show bulkAgentAppointNew_decline in bulkAgentAppointNew.html" name="bulkAgentAppointNew_decline"/>
 
+
+<!-- Maintenance Bug- Main- 003- Cyber liability dashboard -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="isShowCyberLiabilityNoticesSent" name="isShowCyberLiabilityNoticesSent"/>
+<tabsconfigurationresource deltaind="I" accesslevel="1" description="ShowCyberLiabilityNoticesSent" name="dashboard_Cyber_Liability_Notices_Sent_label"/>
+<tabsconfigurationresource deltaind="I" accesslevel="1" description="CyberLiabilityNoticesSent" name="Cyber_Liability_Notices_Sent"/>
+
+
 </tabsconfiguration>
