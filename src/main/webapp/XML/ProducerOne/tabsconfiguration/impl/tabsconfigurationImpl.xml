@@ -717,7 +717,7 @@
 <tabsconfigurationresource deltaind="I" accesslevel="1" description="CyberLiabilityNoticesSent" name="Cyber_Liability_Notices_Sent"/>
 
 <!-- Main-006 - deleting contact -->
-<tabsconfigurationresource deltaind="I" name="SkipProducerCodeLogicaldeletionvalidation" value="N"/>
+<tabsconfigurationresource  deltaind="I" name="SkipProducerCodeLogicaldeletionvalidation" value="N"/>
 
 <!-- MR bug id Main-002 start -->
 <tabsconfigurationresource deltaind="M" name="doc_insurance_notice_listing_security" accesslevel="1" description="hide/show doc_insurance_notice_listing_security on docCyberLiability.html" />
