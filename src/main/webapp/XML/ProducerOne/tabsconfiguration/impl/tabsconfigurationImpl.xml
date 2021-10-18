@@ -718,4 +718,12 @@
 
 <!-- Main-006 - deleting contact -->
 <tabsconfigurationresource deltaind="I" name="SkipProducerCodeLogicaldeletionvalidation" value="N"/>
+
+<!-- MR bug id Main-002 start -->
+<tabsconfigurationresource deltaind="M" name="doc_insurance_notice_listing_security" accesslevel="1" description="hide/show doc_insurance_notice_listing_security on docCyberLiability.html" />
+<!-- MR bug id Main-002 end -->
+  
+<!-- MR bug id Main-004 start -->
+<tabsconfigurationresource deltaind="M" name="doc_CyberLiability_notice_listing_security" accesslevel="1" description="hide/show doc_CyberLiability_notice_listing_security on docCyberLiability.html" />
+<!-- MR bug id Main-004 end -->
 </tabsconfiguration>
