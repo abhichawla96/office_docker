@@ -253,7 +253,7 @@
 																<li class="inlineBlock_2" id="#toBeProcessed_agency_name_after#"></li>
 																
 																<li id="#AgencyFunction_request_agency_id_before#"></li>
-																		<li id="AgencyFunction_request_agency_id_security"  class="inlineBlock_2">
+																		<li id="AgencyFunction_request_agency_id_security" class="inlineBlock_2">
 																			<div class="freeFormList form-group">
 																				<div class="freeFormListTr">
 																					<div class="freeFormListTdError">
@@ -310,6 +310,7 @@
 																						Code</span> :
 																				</div>
 																			</div>
+																			<!-- BMIC Specific-->
 																			<div
 																				class="freeFormListTd text-nowrap mendatoryInput">  <!-- class added for mandetory fields -->
 																				<span id="isAgencyFunctionsProducerNumberOnBlurEventRequired_security">
@@ -318,16 +319,27 @@
 																					id="ajax_field_toBeProcessed_producer_number"
 																					type="text" maxlength="50"
 																					class="form-control" />
+																					<span id="agencyFunctions_selectFunctionType_toBeProcessed_producer_number_searchicon_security">
 																					<a title="Search"
 																						id="toBeProcessed_producer_number_searchicon"
 																						class="icons search_ico"
 																						href="javascript:ajaxpageblocklink('admin/lookupTables/producerNumberSearchPopup.html','agencyFunctions_selectFunctionType.producerNumberSearch','','','popupEntityList');"></a>
-																					<input name="toBeProcessed_producer_number_id"
+																					</span>
+																					<!-- <input name="toBeProcessed_producer_number_id"
+																						fullid="agencyFunctions_selectFunctionType_freeform_contextdata_2(agencyFunctions_selection_security.agencyFunctions_selection_header_filters_label).toBeProcessed_producer_number_id_security.toBeProcessed_producer_number_id_label.toBeProcessed_producer_number_id"
+																						id="ajax_field_toBeProcessed_producer_number_id"
+																						type="hidden" class="form-control" tabindex="20"
+																						maxlength="8" readonly="readonly" /> -->
+																						</span>
+																				</div>
+																			
+																				<div>
+																				 <input name="toBeProcessed_producer_number_id"
 																						fullid="agencyFunctions_selectFunctionType_freeform_contextdata_2(agencyFunctions_selection_security.agencyFunctions_selection_header_filters_label).toBeProcessed_producer_number_id_security.toBeProcessed_producer_number_id_label.toBeProcessed_producer_number_id"
 																						id="ajax_field_toBeProcessed_producer_number_id"
 																						type="hidden" class="form-control" tabindex="20"
 																						maxlength="8" readonly="readonly" />
-																				</span>
+																				
 																			</div>
 																			
 																		</div>
@@ -394,19 +406,29 @@
 																						Name</span> :
 																				</div>
 																			</div>
-																			<div class="mendatoryInput"> <!-- added for BMIC -->
+																	<!-- BMIC Specific-->		<div class="mendatoryInput"> <!-- added for BMIC -->
 																			<div
 																				class="freeFormListTd text-nowrap mendatoryInput">
 																				<input name="toBeProcessed_agent_name"
 																				fullid="agencyFunctions_selectFunctionType_freeform_contextdata_2(agencyFunctions_selection_security.agencyFunctions_selection_header_filters_label).agencyFunctions_toBeProcessed_agent_name_security.toBeProcessed_agent_name_label.toBeProcessed_agent_name"
 																					id="ajax_field_toBeProcessed_agent_name"
 																					readonly="readonly" type="text" maxlength="50"
-																					class="form-control" /> <a title="Search"
+																					class="form-control" />
+														             			<span id="agencyFunctions_selectFunctionType_toBeProcessed_agent_name_searchicon_security">																				
+																					
+																					 <a title="Search"
 																					id="toBeProcessed_agent_name_searchicon"
 																					class="icons search_ico"
 																					href="javascript:ajaxpageblocklink('admin/lookupTables/agentNameSearchPopup.html','agencyFunctions_selectFunctionType.contactNameSearch','','','popupEntityList');"></a>
-																					
-																					<input name="toBeProcessed_agent_id"
+																					</span>
+																					<!-- <input name="toBeProcessed_agent_id"
+																						fullid="agencyFunctions_selectFunctionType_freeform_contextdata_2(agencyFunctions_selection_security.agencyFunctions_selection_header_filters_label).toBeProcessed_agent_id_security.toBeProcessed_agent_id_label.toBeProcessed_agent_id"
+																						id="ajax_field_toBeProcessed_agent_id" type="hidden"
+																						class="form-control" tabindex="20" maxlength="8"
+																						readonly="true" /> -->
+																			</div>
+																			<div>
+																			<input name="toBeProcessed_agent_id"
 																						fullid="agencyFunctions_selectFunctionType_freeform_contextdata_2(agencyFunctions_selection_security.agencyFunctions_selection_header_filters_label).toBeProcessed_agent_id_security.toBeProcessed_agent_id_label.toBeProcessed_agent_id"
 																						id="ajax_field_toBeProcessed_agent_id" type="hidden"
 																						class="form-control" tabindex="20" maxlength="8"
@@ -1916,7 +1938,12 @@
 			<input type="hidden" name="selected_lob_ids" id="ajax_field_selected_lob_ids" />
 			<input type="hidden" name="selected_product_ids" id="ajax_field_selected_product_ids" />
 			<input type="hidden" name="termination_log_id" id="ajax_field_termination_log_id" />
-			<input type="hidden" name="status" id="ajax_field_status" />
+			<input type="hidden" name="request_type_str" id="ajax_field_request_type_str" />
+            <input type="hidden" name="Status" id="ajax_field_Status" />
+            <input type="hidden" name="status" id="ajax_field_status" />
+            <input type="hidden" name="assigned_to" id="ajax_field_assigned_to" />
+            <input type="hidden" name="agency_id" id="ajax_field_agency_id" />
+            <input type="hidden" name="object_type_desc" id="ajax_field_object_type_desc" />
 			<input type="hidden" name="iscomingFromAgencyAdminDashboard" id="ajax_field_iscomingFromAgencyAdminDashboard" />
 		</div>
 	</form>

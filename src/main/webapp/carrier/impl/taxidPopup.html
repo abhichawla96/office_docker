@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
 <html>
+<head>
 <meta name="generator" content="HTML Tidy, see www.w3.org" />
 <title />
 </head>
@@ -15,13 +16,7 @@
 									<a class="close" id="taxidPopup_cancel"
 									href="javascript:ajaxsubmitform('carrier/entityGeneralDetails.html','taxidPopup.cancel','','','tax_id_securityHeader');">
 										<img src="images/close.png" />
-									</a>
-									<span id="showtaxidsecurity"> 
-										<span id="feinFieldLabel">FEIN/TaxID#</span>
-									</span>
-										<!-- <span id="npn_popup_securityHeader">NPN#</span> --> <!-- Added by Aashutosh to mask SSN -->
-									</span>
-										<span id="ssn_popup_securityHeader">SSN#</span> <!-- Added by Aashutosh to mask SSN -->
+									</a> <span id="feinFieldLabel">FEIN/TaxID#</span>
 								</h4>
 							</div>
 							<div class="modal-body">
@@ -38,7 +33,7 @@
 														<div id="ajax_error_tax_id_popup" class="error" />
 													</div>
 												</div>
-												<div id="showtaxidsecurity">
+						<!-- BMIC Specific-->						<div id="showtaxidsecurity">
 												<div class="freeFormListTr" id="tax_id_popup_securityHeader">
 													<div
 														class="freeFormListTd text-nowrap labelAlign">
@@ -50,7 +45,7 @@
 															class="xform-control form-control-50" />
 													</div>
 												</div>
-												</div>
+							<!-- BMIC Specific-->					</div>
 												<!-- Added by Aashutosh to mask SSN -->
 												<!-- <div class="freeFormListTr" id="npn_popup_securityHeader">
 													<div
