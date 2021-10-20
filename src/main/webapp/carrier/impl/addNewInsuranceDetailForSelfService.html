@@ -13,7 +13,9 @@
 	          <legend>
 	            <label id="ajax_insurance_detail_label">Insurance Details</label>
 	          </legend>
-          	<div class="freeFormDiv form-inline docInsuranceSelfService">	            <div class="padding-left-form" id="addEntityRequests_freeform_contextdata_20">
+          	<div class="freeFormDiv form-inline docInsuranceSelfService">
+          		<div id="addNewInsuranceForSelfservice_security">
+	            <div class="padding-left-form" id="addEntityRequests_freeform_contextdata_20">
 	            	<div class="errorMsgAlign clear-both">
 	            		<div id="ajax_error_pageError1" class="error" align="center" />
                         <div id="ajax_error_pageError" class="error" align="center" />
@@ -532,7 +534,7 @@
                       </div>
                     </li>
                      
-                     <!-- Phase 2 Self Service - US :SS-004-11 -->
+                   <!-- BMIC Specific-->  <!-- Phase 2 Self Service - US :SS-004-11 -->
                      
                      <div class="freeFormList form-group width100" id="add_new_insurance_details_for_self_service_eo_claims_declaration_security">
                    <div class="freeFormListTr">
@@ -640,9 +642,7 @@
                     </table>
                   </div>
                 </section>
-                
-                <!-- Phase 2 - Self Service (Placed this section after comments section above -->
-               <!--  <div class="freeFormList form-group width100" id="add_new_insurance_details_for_self_service_eo_claims_declaration_security">
+                <div class="freeFormList form-group width100" id="add_new_insurance_details_for_self_service_eo_claims_declaration_security">
                    <div class="freeFormListTr">
                      <div class="freeFormListTdError">
                        <h6>#space#</h6>
@@ -659,7 +659,7 @@
                        <span id="add_new_insurance_detail_for_self_service_eo_claims_declaration_label">I understand that I am required to carry at least $1,000,000 of coverage. If I have less than $1,000,000 of coverage,  I agree to increase it to $1,000,000.  Please attach a copy of your current  declaration pagein the Additional Documents section at the end of the application.Click the box to agree these terms.</span>
                      </div>
                    </div>
-                 </div> -->
+                 </div>
                 <section class="divButton paddingTop10" id="doc_insurance_group_buttons_security">
 	                 <div class="buttonwrapper">
 	                   <!-- <span id="CheckIsNewOrDisapprovedRequest"> -->
@@ -713,7 +713,7 @@
 	                           </a>
 	                         </span>
 	                         <span>
-	                         <a id="addNewInsuranceDetailForSelfService_decline" href="javascript:ajaxsubmitform('carrier/entityRequests.html','addNewInsuranceDetailForSelfService.declineRequests','','','divComplete');" class="ovalbutton">
+<!-- BMIC Specific-->	                         <a id="addNewInsuranceDetailForSelfService_decline" href="javascript:ajaxsubmitform('carrier/entityRequests.html','addNewInsuranceDetailForSelfService.declineRequests','','','divComplete');" class="ovalbutton">
 	                             <span>Decline</span>
 	                           </a>
 	                         </span>

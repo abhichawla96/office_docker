@@ -705,4 +705,25 @@
 <tabsconfigurationresource deltaind="I" accesslevel="1" description="questions_to_be_tasked_security" name="questions_to_be_tasked_security"/>
 <tabsconfigurationresource deltaind="I" accesslevel="1" description="isCallReportResultOfCallApplicable" name="isCallReportResultOfCallApplicable"/>
 
+<!-- Prod- Bug Id- prod-0054 - Add Bank information page --> 
+<tabsconfigurationresource deltaind="I" name="isShowBankInformationForAllRelatedAgencies" value="N" description="Hide/Show isShowBankInformationForAllRelatedAgencies" />
+ <!-- prod support - issue 0062  -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show bulkAgentAppointNew_decline in bulkAgentAppointNew.html" name="bulkAgentAppointNew_decline"/>
+
+
+<!-- Maintenance Bug- Main- 003- Cyber liability dashboard -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="isShowCyberLiabilityNoticesSent" name="isShowCyberLiabilityNoticesSent"/>
+<tabsconfigurationresource deltaind="I" accesslevel="1" description="ShowCyberLiabilityNoticesSent" name="dashboard_Cyber_Liability_Notices_Sent_label"/>
+<tabsconfigurationresource deltaind="I" accesslevel="1" description="CyberLiabilityNoticesSent" name="Cyber_Liability_Notices_Sent"/>
+
+<!-- Main-006 - deleting contact -->
+<tabsconfigurationresource  deltaind="I" name="SkipProducerCodeLogicaldeletionvalidation" value="N"/>
+
+<!-- MR bug id Main-002 start -->
+<tabsconfigurationresource deltaind="M" name="doc_insurance_notice_listing_security" accesslevel="1" description="hide/show doc_insurance_notice_listing_security on docCyberLiability.html" />
+<!-- MR bug id Main-002 end -->
+  
+<!-- MR bug id Main-004 start -->
+<tabsconfigurationresource deltaind="M" name="doc_CyberLiability_notice_listing_security" accesslevel="1" description="hide/show doc_CyberLiability_notice_listing_security on docCyberLiability.html" />
+<!-- MR bug id Main-004 end -->
 </tabsconfiguration>

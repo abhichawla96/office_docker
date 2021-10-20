@@ -12,7 +12,7 @@
     <!-- Scripts -->
     <script type="text/javascript" src="js/all_files.js"></script>
 </head>
-<body onload="calculateTotalNPercentage();showReasonOtherDiv();assignCarrierIdDesc();loadEntityOtherInformation();setGetMultiCheckboxValues('ajax_field_foreign_language_id','ajax_field_foreign_languages','set');setGetMultiCheckboxValues('ajax_field_primary_company_usage_id','ajax_field_primary_company_usage_desc','set');setGetMultiCheckboxValues('ajax_field_current_advertising_method_id','ajax_field_current_advertising_methods_desc','set');">
+<body onload="calculateTotalNPercentage();showReasonOtherDiv();assignCarrierIdDesc();loadEntityOtherInformation();">
    <form>
       <div id="cover" />
       <div id="contextLinks" />
@@ -152,7 +152,7 @@
 				                                </div>
 				                              </div>
 				                            </li>
-				                           
+				                            
 				                            <li id="prospect_market_new_business_per_month_security" class="inlineBlock_2">
 				                              <div class="freeFormList form-group">
 				                                <div class="freeFormListTr">
@@ -424,8 +424,7 @@
                                 	<label id="top_companies_carrier_id_desc_label">Company Name</label>
                                 </span>
                               </td>
-                              
-                             <td class="HeaderStyle" width="25%" id="top_companies_other_company_desc_security">
+                              <td class="HeaderStyle" width="25%" id="top_companies_other_company_desc_security">
                               	<span id="block_field_other_company_description">
                                 	<label id="top_companies_other_company_description_label">Description</label>
                                 </span>
@@ -496,8 +495,7 @@
                                 </span>
                                 </span>
                               </td>
-                              
-                       		 <td id="top_companies_class1volume_security">
+                              <td id="top_companies_class1volume_security">
                               	<span id="block_field_class1volume">
                                 <span id="isRowEditable">
                                   <span id="block_field_class1volume">
@@ -603,7 +601,6 @@
                                   <div id="ajax_error_carrier_id" class="error paddingLeftError" />
                                   <div id="error_carrier_id" class="error paddingLeftError" />
                                 </td>
-                                
                                 <td id="top_companies_other_company_desc_security">
                                   <div id="ajax_error_other_company_description" class="error paddingLeftError" />
                                   <div id="error_other_company_description" class="error paddingLeftError" />
@@ -646,7 +643,6 @@
                                   		</span>
                                   	</span>
                                 </td>
-                                
                                 <td class="add-cell" id="top_companies_class1volume_security">
                                 	<span id="block_field_class1volume">
                                   		<input type="text" maxlength="15" class="form-control-grid" name="class1volume" id="ajax_field_class1volume" onkeyup="checkNumericValue(this,event);loadEntityOtherInformation();" onkeypress="checkNumericValue(this,event);loadEntityOtherInformation();" />
@@ -826,9 +822,6 @@
                                 	<span id="block_field_reason_for_action_taken_desc">
                                 		<span id="companiesTerminated_block_action_taken_label">Reason for Action Taken</span>
                                 	</span>
-                                </td>
-                                <td class="HeaderStyle" width="1%">
-                                  <span id="block_field_reason_for_action_taken_desc_SelectedText" />
                                 </td>
                                 <td class="HeaderStyle" width="20%" id="companiesTerminated_block_action_taken_security"><span id="block_field_reason_other"></span></td>
                                 <td class="HeaderStyle" width="1%">
@@ -1056,8 +1049,7 @@
                       </div>
                     </fieldset>
                   </section>
-                 
-              <!-- Personal References -->
+                  <!-- Personal References -->
                    <section class="list-grid" id="personal_references_security">
                     <fieldset class="fieldset_Level_1">
                       <legend><span id="personal_references_label">Personal References</span></legend>
@@ -1444,7 +1436,7 @@
                       </div>
                     </fieldset>
                   </section>
-         
+                  
                   <section id="brief_profile_agency_security" class="free-form">
 						<div class="text-heading txtbold">
 							<span id="brief_profile_agency label">Brief profile of the
@@ -1493,8 +1485,6 @@
 				</fieldset>
 			</section>
 			
-			
-			
 			<section id="prospectMarketInformation_agency_review_security" class="free-form">
 					<fieldset>
 						<legend>
@@ -1539,7 +1529,6 @@
 									<div class="textareacharcount" id="descriptionCharCountMsg"></div>
 								</div>
 							</section>
-							
 							<section class="free-form">							
 								<div class="text-heading">
 									<span id="location_of_agency_label">Location of Agency :</span>
@@ -1709,7 +1698,6 @@
           <td id="block_field_other_company_description" width="20%" style="padding-top: 3px">
             <input type="text" name="other_company_description" id="ajax_field_other_company_description" maxlength="500" />
           </td>
-          
           <td id="block_field_class1volume" width="20%" style="padding-top: 3px">
             <input type="text" maxlength="15" name="class1volume" id="ajax_field_class1volume" onkeyup="applyNumericAmountFormat(this);checkNumericValue(this,event);" onkeypress="applyNumericAmountFormat(this);checkNumericValue(this,event);" />
           </td>
@@ -1827,10 +1815,6 @@
         <input type="hidden" name="divHideShow" id="divHideShow" />
         <input type="hidden" name="prospects_status" id="prospects_status" />
         <input type="hidden" name="prospect_agency_id" id="ajax_field_prospect_agency_id" />
-        <input type="hidden" name="foreign_languages" id="ajax_field_foreign_languages" />
-        <input type="hidden" name="primary_company_usage_desc" id="ajax_field_primary_company_usage_desc" />
-		<input type="text" name="current_advertising_methods_desc" id="ajax_field_current_advertising_methods_desc" />
-						
       </div>
    </form>
 </body>

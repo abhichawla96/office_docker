@@ -70,9 +70,9 @@ delete this item?
 		
 		<div class="bgmain">
 			<!---------Menu Level 1 Start---------->
-			<nav class="menu-level-1 tab" id="entitytRequests_carrier_tabs_hide_show_security">
+			<!-- <nav class="menu-level-1 tab" id="entitytRequests_carrier_tabs_hide_show_security">
 				<span id="#Include:carrier/carrierTabs1.html#"></span>
-			</nav>
+			</nav> -->
 			
 			<!---------Menu Level 1 End---------->
 			
@@ -457,7 +457,7 @@ status.</i>
                                                <option value="1">Approved</option>
                                                <option value="2">Completed</option>
                                                <option value="3">Declined</option>
-                                               <!-- <option value="4">Pending Esignature</option -->>
+<!-- BMIC Specific-->                                               <!-- <option value="4">Pending Esignature</option -->>
                                              </select>
                                   </div>
                                 </div>
@@ -725,7 +725,7 @@ Updated</span>
                                                     <span id="sorting(,A,ajax_sorting):block_field_last_updated_by">Last
 Updated By</span>
                                                   </td>
-                                                  <td id="isMarketingAssistantLoggedIn" class="HeaderStyle" width="1px">
+                                                  <td id="isShowReassignUserIconForRequestListing" class="HeaderStyle" width="1px">
                                                     <span id="block_field_reassign_row_link" />
                                                   </td>
                                                   <td id="block_field_comments_row_link" class="HeaderStyle"></td>
@@ -1042,6 +1042,7 @@ Updated</th>
           <input type="hidden" name="isdisplayusers" id="ajax_field_isdisplayusers" />
           <input type="hidden" id="ajax_field_PAGE_DISABLED_FIELDS" name="PAGE_DISABLED_FIELDS" />
           <input type="hidden" id="ajax_field_isCommingFromCarrierTab1" name="isCommingFromCarrierTab1" />
+          <input type="hidden" name="iscomingFromAgencyAdminDashboard" id="ajax_field_iscomingFromAgencyAdminDashboard" />
          
         </div>
         <div id="requesterInfo" class="requestIdPopUp">

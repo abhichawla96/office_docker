@@ -396,13 +396,6 @@ Location</span>
                        	href="#" onclick="showPopUp('failConfirmation');" class="btn btn-primary">
                          <span id="agentbackgroundlist_faillabel">Fail</span>
                        </a>
-                        <!-- Welcome Email event -->
-	                   <!-- <a id="contact_welcomeEmailEvent_security"
-						 fullid="page(page.page).contact_welcomeEmailEvent_security.welcomeEmailEvent_label.contact_welcomeEmailEvent_security"
-						 href="javascript:submitform('carrier/agentGeneralDetails.html','agentGeneralDetails.welcomeEmailEvent','','');"
-						 class="btn btn-primary"> 
-						 <span id="welcomeEmailEvent_label">Send Email</span>
-						</a> -->
                   		<span id="#contact_modify_security_before#"></span>
                   		<a id="contact_modify_security" 
                   			fullid="page(page.page).contact_modify_security.contact_modify_label.contact_modify_security"
@@ -1094,7 +1087,7 @@ Location</span>
                               
                               
                              <li id="#prdcr_cde_before#"></li>
-                              <li id="agentGeneralDetails_divnpn_ls_security"> <!-- added id by Sudhir for BMIC req -->
+                        <!-- BMIC Specific-->      <li id="agentGeneralDetails_divnpn_ls_security"> <!-- added id by Sudhir for BMIC req -->
                               <div id="npnDiv">
                               	<div id="agentGeneralDetails_divnpn_security">
                                 <div class="freeFormList form-group">
@@ -1124,7 +1117,7 @@ Location</span>
                               <li id="#prdcr_cde_after#"></li>
 		                              
                              <li id="#ssn_str_before#"></li>
-                             <li id="agent_contact_ssn_ls_security"> <!-- added id by Sudhir for BMIC req -->
+<!-- BMIC Specific-->                             <li id="agent_contact_ssn_ls_security"> <!-- added id by Sudhir for BMIC req -->
                                <div id="ssnDiv">
                                	<div class="freeFormList form-group" id="agent_contact_ssn_security">
                                    <div class="freeFormListTr">
@@ -1583,7 +1576,7 @@ Location</span>
 												<div id="mom_child_data">
 													<span id="contactType_checkBox_security" width="10">
 	                                                     <span id="block_field_ispersoncontact">
-	                                                   <!-- modified imput- sudhir BMIC req -->		<input type="checkbox" id="ispersoncontact" name="ispersoncontact" value="Y" onchange="javascript:getOtherContactTypeDiv();javascript:ajaxpageblocklink('carrier/agentGeneralDetails.html','agentGeneralDetails.refreshNonLicensedFields','','','agent_contact_ssn_ls_security#agentGeneralDetails_divnpn_ls_security#agent_date_of_birth_security');"/>
+<!-- BMIC Specific-->	                                                   <!-- modified imput- sudhir BMIC req -->		<input type="checkbox" id="ispersoncontact" name="ispersoncontact" value="Y" onchange="javascript:getOtherContactTypeDiv();javascript:ajaxpageblocklink('carrier/agentGeneralDetails.html','agentGeneralDetails.refreshNonLicensedFields','','','agent_contact_ssn_ls_security#agentGeneralDetails_divnpn_ls_security#agent_date_of_birth_security');"/>
 													  </span>
 	                                                  </span>
 	                                                  <span id="block_field_contact_typ_desc" />
@@ -1785,7 +1778,7 @@ Location</span>
 																<div class="freeFormListTr">
 																	<div
 																		class="freeFormListTd">
-																		<div style="width: 830px;">
+																		<div style="padding-left: 10px !important; width: 830px;">
 																			<span id="non_compete_label">Are you currently
 																				under a non-compete agreement/arrangement from a
 																				previous employer, agency or insurance company?</span> :
@@ -1809,7 +1802,7 @@ Location</span>
 
 															<div id="non_compete_ext_questions_securityDiv">
 																<div id="non_compete_ext_questions_security">
-																	<div id="sh2B" class="DBA2 well" style="margin-left: 16px;">
+																	<div id="sh2B" class="DBA2 well" style="margin-left: 8px;">
 																		
 																		<p>
 																			<b id="addendum_to_agency_label">Addendum to
@@ -1908,7 +1901,7 @@ Location</span>
 
 															<div id="does_intend_writing_authorization_securityDiv">
 																<div id="does_intend_writing_authorization_security"
-																	class="DBA2 well" style="margin-left: 16px;">
+																	class="DBA2 well" style="margin-left: 8px;">
 																	<p id="sign_motor_label">
 																		Below is the link to the 'Authorization to Sign Motor
 																		Vehicle Registration Certificate' form required by the

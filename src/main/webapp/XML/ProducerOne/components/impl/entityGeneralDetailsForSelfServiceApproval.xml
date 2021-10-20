@@ -3,6 +3,8 @@
     
     <!-- SS-009-001-01 - Update Agency Location - Phase 2 - Start -->
     <action deltaind="M" name="sendUpdatedAgencyDataForSaveApproval">
+    	<actionparam deltaind="I" form="Y" name="isSaveExtendedFields" paramid="isSaveExtendedFields" pre="Y" val="Y" />
+
       <workflow deltaind="I" name="selfServiceInitiateEmail" seq="8">
 	    <databaseoperation deltaind="I" executionsequence="0" metaobject="userprofiles" name="getMarketAssistantEmail" operation="3" sqlstmt="select  e_mail as e_mail from userprofiles where user_id=#workflow_user#"/>
 		<databaseoperation deltaind="I" executionsequence="1" metaobject="agency_master" name="getAgencyName" operation="3" sqlstmt="select name as Agency_Name from agency_master where agency_id = (select agency_id from requests_ss where request_ss_id = #request_ss_id#)"/>

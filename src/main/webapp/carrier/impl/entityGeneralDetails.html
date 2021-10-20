@@ -10,7 +10,6 @@
 <title>ProducerOne - Producer Management Center</title>
 <!-- css -->
 <link href="css/style.css" rel="stylesheet" type="text/css" />
-<link href="css/impl/bmic_specific_style.css" rel="stylesheet" type="text/css" />
 <!-- Scripts -->
 <script type="text/javascript" src="js/all_files.js" />
 
@@ -797,8 +796,8 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 				<!-- Modal End -->
 			</div>
 		</div>
-		<div id="checkCombinedSearch">
-			<!-- Modal -->
+		<!-- <div id="checkCombinedSearch">
+			Modal
 			<div class="modal fade modal_popup">
 				<div class="modal-dialog modal-dialog-width_700">
 					<div class="modal-content">
@@ -1004,8 +1003,8 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 					</div>
 				</div>
 			</div>
-			<!-- Modal End -->
-		</div>
+			Modal End
+		</div> -->
 		<div id="reviewConfirmation">
 			<!-- Modal -->
 			<div class="modal fade modal_popup">
@@ -1784,7 +1783,7 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 													href="javascript:submitform('carrier/entityGeneralDetails.html','entityGeneralDetails.downloadDeclinationLetter','','');">
 														<span id="entitybackgroundlist_downloaddeclinationletterlabel">Download Declination Letter</span>
 												</a>
-												<!-- New Agency App Letter  -->
+<!-- BMIC Specific-->												<!-- New Agency App Letter  -->
 												<a id="welcomeagencyletter_generateletter" class="btn btn-primary" 
 	                                fullid="page(page.page).welcomeagencyletter_generateletter.welcomeagencyletter_generateletter_label.welcomeagencyletter_generateletter"
 	                                href="javascript:submitform('carrier/entityGeneralDetails.html','entityGeneralDetails.downloadWelcomeLetter','','');">
@@ -4602,7 +4601,7 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 													
 													
 													<li id="#agency_lob_before#"></li>
-													<li id="isShowAgencyLobCheckbox" class="inlineBlock_2" style="width: 49.8% !important; vertical-align: top;">
+													<!-- <li id="isShowAgencyLobCheckbox" class="inlineBlock_2" style="width: 49.8% !important; vertical-align: top;">
 														<div class="freeFormList form-group">
 															<div class="freeFormListTr">
 																<div class="freeFormListTdError">
@@ -4621,12 +4620,15 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 																</div>
 															</div>
 														</div>
+													</li> -->
+													<li id="isShowAgencyLobCheckbox" class="inlineBlock_2" style="width: 49.7% !important; vertical-align: top;">
+														<div id="agency_lob_checkbox_list_mom_1" class="row"/>
 													</li>
 													<li id="#agency_lob_after#"></li>
 												
 													<li id="#agency_association1_before#"></li>
 													
-													<li id="isShowAgencyAssociationCheckbox" class="inlineBlock_2"  style="width: 49.8% !important; vertical-align: top;">
+													<!-- <li id="isShowAgencyAssociationCheckbox" class="inlineBlock_2"  style="width: 49.8% !important; vertical-align: top;">
 														<div class="freeFormList form-group">
 															<div class="freeFormListTr">
 																<div class="freeFormListTdError">
@@ -4647,8 +4649,10 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 															</div>
 														</div>
 														
+													</li> -->
+													<li id="isShowAgencyAssociationCheckbox" class="inlineBlock_2"  style="width: 49.8% !important; vertical-align: top;">
+														<div id="agency_association_list_mom_1" class="row"/>
 													</li>
-													
 													<li id="#agency_association1_after#"></li>
 												</ul>
 												
@@ -7705,7 +7709,7 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 														</div>
 													</fieldset>
 												</div>
-							<!--  Sprint 3 BMIC Req-->					
+<!-- BMIC Specific-->							<!--  Sprint 3 BMIC Req-->					
 							<!-- <section id="secDividendDist"> -->
 							 <div id="divDividendDist" >
 								<fieldset >

@@ -52,7 +52,12 @@
 		<rule deltaind="I"	id="isSendInvitationEmail" expression="orCondition(isEqual(:event_name,SendInvitation),isEqual(:event_name,sendInvitationForLicensedProducer));"/>
 		<rule deltaind="I" id="isNotSendInvitationEmail" expression="isNot(orCondition(isEqual(:event_name,SendInvitation),isEqual(:event_name,sendInvitationForLicensedProducer)));"/>
 
+		<!-- phase 2 start- extended fields-->
+		<rule deltaind="I" id="isHBAYesNOSS" expression="isEqual(:member_of_hba_ss,Y);"></rule>
 		
+		
+		<rule deltaind="I" id="isCBIAYesNoSS" expression="isEqual(:ss_cbia_designation,Y);"></rule>
+<!-- phase 2 end- extended fields-->
 
 	</ruleset>
 

@@ -9,13 +9,13 @@
 <title>ProducerOne - Producer Management Center</title>
 <!-- css -->
 <link href="css/style.css" rel="stylesheet" type="text/css" />
-
+<!-- BMIC Specific-->
 <link href="css/impl/bmic_specific_style.css" rel="stylesheet" type="text/css" />
 <!-- Scripts -->
 <script type="text/javascript" src="js/all_files.js" />
 </head>
 <body onmouseover="assign1099Type();"
-	onload="javascript:setGetMultiCheckboxValues('ajax_field_agency_association_id','ajax_field_agency_association','set');setGetRadioButtonsFromRadioGroup('kit_delivery_id','ajax_field_kit_delivery','set');assign1099Type();formatTaxIdForPublicSubmit();showdivOtherAgency();showAgencyListPublicSubmitListOtherDiv();showLegalOtherDiv();loadUploadDiv();loadAgencyListPublicSubmitNInvEdit();showPopUpList('popupSendForReview','sendForReviewPopup');showPopUpList('popupWorkflow','workflowPopup');getCheckedAgencyAssociation();getCheckedAgencyComparativeRater1();setInWhatLinesMultiSelectValues();checkStateCheckBox();loadentityGeneralDetail();checkAgencyLobSelections('ajax_field_agency_lob','agency_lob_id');setGetMultiCheckboxValues('ajax_field_foreign_language_id','ajax_field_foreign_languages','set');setGetMultiCheckboxValues('ajax_field_current_advertising_method_id','ajax_field_current_advertising_methods_desc','set');setGetMultiCheckboxValues('ajax_field_primary_company_usage_id','ajax_field_primary_company_usage_desc','set');setGetMultiCheckboxValues('ajax_field_market_contract_states_id','ajax_field_market_contract_states','set');setGetMultiCheckboxValues('ajax_field_market_contract_company_id','ajax_field_market_contract_company','set');setGetMultiCheckboxValues('ajax_field_market_contract_lob_id','ajax_field_market_contract_lob','set');"
+	onload="javascript:setGetMultiCheckboxValues('ajax_field_agency_association_id','ajax_field_agency_association','set');setGetRadioButtonsFromRadioGroup('kit_delivery_id','ajax_field_kit_delivery','set');assign1099Type();formatTaxIdForPublicSubmit();showdivOtherAgency();showAgencyListPublicSubmitListOtherDiv();showLegalOtherDiv();loadUploadDiv();loadAgencyListPublicSubmitNInvEdit();showPopUpList('popupSendForReview','sendForReviewPopup');showPopUpList('popupWorkflow','workflowPopup');getCheckedAgencyAssociation();setGetMultiCheckboxValues('ajax_field_agency_comparativerate_id','ajax_field_agency_comparativerate','set');setInWhatLinesMultiSelectValues();checkStateCheckBox();loadentityGeneralDetail();checkAgencyLobSelections('ajax_field_agency_lob','agency_lob_id');setGetMultiCheckboxValues('ajax_field_foreign_language_id','ajax_field_foreign_languages','set');setGetMultiCheckboxValues('ajax_field_current_advertising_method_id','ajax_field_current_advertising_methods_desc','set');setGetMultiCheckboxValues('ajax_field_primary_company_usage_id','ajax_field_primary_company_usage_desc','set');setGetMultiCheckboxValues('ajax_field_market_contract_states_id','ajax_field_market_contract_states','set');setGetMultiCheckboxValues('ajax_field_market_contract_company_id','ajax_field_market_contract_company','set');setGetMultiCheckboxValues('ajax_field_market_contract_lob_id','ajax_field_market_contract_lob','set');"
 	id="divComplete">
 	<form enctype="multipart/form-data">
 		<div id="progressBarDiv" />
@@ -265,15 +265,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span id="agencyListEdit_general_agency_office_label">Agency
 															Office Name</span> :
@@ -299,15 +295,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span id="agencyListEdit_general_DBA_label">DBA</span> :
 													</div>
@@ -331,15 +323,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div
 														class="freeFormListTd labelAlign valignMiddle freeFormLabelWidth">
 														<span id="agencyListEdit_general_isdbaregistered_label">IS
@@ -373,15 +361,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span id="agencyListEdit_general_entity_name_label">Corporate/Parent
 															Agency Name</span> :
@@ -406,15 +390,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span id="agencyListEdit_general_legal_form_label">Legal
 															Form</span> :
@@ -430,11 +410,21 @@
 														</span>
 													</div>
 												</div>
-												<div class="freeFormListTr" id="legalOtherDiv"
+											</div>
+											<div class="freeFormList form-group" id="legalOtherDiv"
 													style="display: none;">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError">
+														<h6>#space#</h6>
+													</div>
+													<div class="freeFormListTdError paddingLeft3">
+														<div id="" class="error" />
+													</div>
+												</div>
+												<div class="freeFormListTr" >
 													<div class="freeFormListTd mendatoryAsteriskDiv ">
 														<div class="freeFormLabelWidth"
-															style="padding-left: 20px !important" id="legalOtherDiv_label">&nbsp;</div>
+															id="legalOtherDiv_label">&nbsp;</div>
 													</div>
 													<div class="freeFormListTd tdInput paddingTop5">
 														<input type="text" name="aar_producertype"
@@ -456,15 +446,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="error_aar_taxid" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span id="agencyListEdit_general_aar_taxid_label">FEIN/Tax
 															ID#</span> :
@@ -499,15 +485,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span id="agencyListEdit_general_taxpayer_name_label">Tax
 															Payer Name</span> :
@@ -533,15 +515,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span id="agencyListEdit_general_npn_label">National
 															Producer Number(NPN)</span> :
@@ -567,15 +545,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span id="agencyListEdit_source_label">Source</span> :
 													</div>
@@ -598,15 +572,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span id="agencyListEdit_general_aar_webaddress_label">Web
 															Address</span> :
@@ -632,15 +602,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span
 															id="agencyListEdit_general_any_rollover_potential_label">Any
@@ -671,15 +637,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span id="agencyDateOfOriginLabel">Date of
 															Origination</span> :
@@ -712,15 +674,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span id="agencyListEdit_agency_in_business_since_label">Agency
 															in business since</span> :
@@ -753,15 +711,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span id="Agency_License_Number_label">Agency
 															License Number</span> :
@@ -787,15 +741,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span
 															id="agencyListEdit_general_agencyestablished_date_label">Employment
@@ -831,15 +781,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span id="agencyListEdit_general_aar_yrsinbusiness_label">Years
 															in Business</span> :
@@ -865,15 +811,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span id="agencyListEdit_general_aar_expinyears_label">Years
 															of Current Ownership</span> :
@@ -901,15 +843,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span
 															id="agencyListEdit_general_aar_nooflicproducers_label">No
@@ -938,15 +876,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span id="agencyListEdit_general_aar_noofliccsr_label">Numbers
 															of CSRs</span> :
@@ -972,15 +906,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span id="agencyListEdit_general_no_of_staff_label">Total
 															Number of Staff</span> :
@@ -997,10 +927,7 @@
 												</div>
 											</div>
 										</li>
-										<li class="inlineBlock_2 7extendedFieldHide" id="#no_of_staff_after#"></li>
-										
-										<li class="inlineBlock_2 extendedFieldHide" id="#agency_location_after#"></li>
-										
+										<li class="inlineBlock_2 extendedFieldHide" id="#no_of_staff_after#"></li>
 
 										<li class="inlineBlock_2 extendedFieldHide" id="#Entity_Type_General_Detail_before#"></li>
 										<li class="inlineBlock_2"
@@ -1010,15 +937,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span id="invitationStep1_entity_type_label">Distribution
 															Type</span> :
@@ -1046,15 +969,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<label
 															id="agencyListEdit_general_agency_comparativerate_label">Comparative
@@ -1072,7 +991,6 @@
 												</div>
 												<div class="freeFormListTr"
 													id="agencyComparativerateOtherDiv" style="display: none;">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<label
 															id="agencyListEdit_general_other_agency_comparativerate_label"></label> 
@@ -1098,15 +1016,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span id="multi_rater_label">Multi-Rater</span> :
 													</div>
@@ -1128,9 +1042,6 @@
 															<div class="freeFormListTdError">
 																<h6>&nbsp;</h6>
 															</div>
-															<div class="freeFormListTdError">
-																<h6>&nbsp;</h6>
-															</div>
 															<div class="freeFormListTdError paddingLeft3 text-nowrap"
 																style="padding-left: 60% !important">
 																<div id="error_other_agency_comparativerate"
@@ -1139,7 +1050,6 @@
 														</div>
 														<div id="agencyComparativerateOtherDiv1"
 															class="freeFormListTr" style="display: none;">
-															<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
 															<div class="freeFormListTd labelAlign freeFormLabelWidth">
 																<span style="line-height: 0px" id="agencyListEdit_agency_comparativerate_other_label">Description :</span>
 															</div>
@@ -1167,15 +1077,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span id="agency_management_label">Agency
 															Management System</span> :
@@ -1196,15 +1102,11 @@
 															<div class="freeFormListTdError">
 																<h6>&nbsp;</h6>
 															</div>
-															<div class="freeFormListTdError">
-																<h6>&nbsp;</h6>
-															</div>
 															<div class="freeFormListTdError paddingLeft3">
 																<div id="error_other_agency_management" class="error"></div>
 															</div>
 														</div>
 														<div class="freeFormListTr">
-															<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
 															<div class="freeFormListTd labelAlign freeFormLabelWidth">
 																<span style="line-height: 0px" id="other_agency_management_label">Description :</span>
 															</div>
@@ -1220,19 +1122,12 @@
 												</div>
 											</div>
 										</li>
+										<li class="inlineBlock_2 extendedFieldHide" id="#agency_location_after#"></li>
 										
-											<!-- Start - Sprint 1 BMIC req -->
-											<li class="inlineBlock_2" id="agencyListPublicSubmitNInvitationEdit_hba_label_security">
-											<label id="agencyListPublicSubmitNInvitationEdit_hba_desc_label">(It is required for all North Carolina Agencies to be a member of a Home Builders Association)</label>
-											</li>	
-											<!-- End - Sprint 1 BMIC req -->
 										<li class="inlineBlock_2 extendedFieldHide" id="#agency_comparativerate_before#"></li>
 										<li class="inlineBlock_2" id="agencyListPublicSubmitNInvitationEdit_agency_location_system_security">
 											<div class="freeFormList form-group">
 												<div class="freeFormListTr">
-													<div class="freeFormListTdError">
-														<h6>&nbsp;</h6>
-													</div>
 													<div class="freeFormListTdError">
 														<h6>&nbsp;</h6>
 													</div>
@@ -1242,7 +1137,6 @@
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
 													<div
 														class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span id="agencyListPublicSubmitNInvitationEdit_agency_location_label">Agency Location</span> :
@@ -1262,16 +1156,12 @@
 														<div class="freeFormListTdError">
 															<h6>&nbsp;</h6>
 														</div>
-														<div class="freeFormListTdError">
-															<h6>&nbsp;</h6>
-														</div>
 														<div class="freeFormListTdError paddingLeft3">
 														<div id="error_agency_location_other" class="error" />
 														<div id="ajax_error_agency_location_other" class="error" />
 														</div>
 													</div>
 													<div class="freeFormListTr">
-														<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
 														<div
 															class="freeFormListTd labelAlign freeFormLabelWidth">
 															<span id="agencyListPublicSubmitNInvitationEdit_agency_location_other_label"></span> 
@@ -1299,16 +1189,12 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="error_domicile_state" class="error" />
 														<div id="ajax_error_domicile_state" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<label id="agencyListEdit_domicileState_label">Domicile
 															State</label> :
@@ -1325,7 +1211,7 @@
 											</div>
 										</li>
 										<li class="inlineBlock_2 extendedFieldHide" id="#domicile_state_after#"></li>
-											
+										
 										<li class="inlineBlock_2 extendedFieldHide" id="#isMasterAssociatedAgency_before#"></li>
 										<li id="agencyListEdit_isMasterAssociatedAgency_security"
 											class="inlineBlock_2">
@@ -1344,7 +1230,6 @@
 														</div>
 													</div>
 													<div class="freeFormListTr">
-														<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
 														<div class="freeFormListTd labelAlign freeFormLabelWidth">
 															<div>
 																<span id="agencyListEdit_isMasterAssociatedAgency_label">
@@ -1378,7 +1263,6 @@
 																</div>
 															</div>
 															<div class="freeFormListTr">
-																<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
 																<div class="freeFormListTd labelAlign">
 																	<div class="freeFormLabelWidth">
 																		<span id="agencyListEdit_memberOf_label">Member
@@ -1399,8 +1283,6 @@
 												</div>
 											</div>
 										</li>
-										
-									
 										<li class="inlineBlock_2 extendedFieldHide" id="#isMasterAssociatedAgency_after#"></li>
 										
 										<li class="inlineBlock_2 extendedFieldHide" id="#agency_volume_before#"></li>
@@ -1411,15 +1293,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span id="agencyListEdit_general_agency_volume_label">
 															Volume through Assigned Risk Plans, General
@@ -1445,15 +1323,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div
 														class="freeFormListTd valignMiddle labelAlign freeFormLabelWidth">
 														<span id="agencyListEdit_general_agency_association_label">Agency
@@ -1488,14 +1362,11 @@
 										</li>
 										<li class="inlineBlock_2 extendedFieldHide" id="#agency_association_after#"></li>
 										</ul>
-									<ul class="split-column agencyListPublicSubmitNInvitationEdit_section">
-										<li class="extendedFieldHide" id="#agency_association_before#"></li>
-										<li id="agencyListEdit_general_agency_association_checkbox_security">
+									<ul class="inlineBlock agencyListPublicSubmitNInvitationEdit_section">
+										<li class="extendedFieldHide inlineBlock_2" id="#agency_association_before#"></li>
+										<li id="agencyListEdit_general_agency_association_checkbox_security" class="inlineBlock_2">
 											<div class="freeFormList form-group">
 												<div class="freeFormListTr">
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
@@ -1504,7 +1375,6 @@
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign valignTop freeFormLabelWidth">
 														<span
 															id="agencyListEdit_general_agency_association_checkbox_label">Agency
@@ -1568,9 +1438,6 @@
 																<div id="associatedAgency_idDiv" style="display: none; padding-top: 5px;">
 																	<div class="freeFormList form-group">
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd">
-																				<span style="line-height: 0px">&nbsp;&nbsp;</span>
-																			</div>
 																			<div
 																				class="freeFormListTd labelAlign freeFormLabelWidth">
 																				<span style="line-height: 0px">&nbsp;&nbsp;</span>
@@ -1592,15 +1459,77 @@
 																</div>
 															</div>
 										</li>
-										<li class="extendedFieldHide" id="#agency_association_after#"></li>
+										<li class="extendedFieldHide inlineBlock_2" id="#agency_association_after#"></li>
 										
-										<li class="extendedFieldHide" id="#agency_registration_type_before#"></li>
-										<li id="pendingImport_agency_registration_type_security">
+										<li class="extendedFieldHide inlineBlock_2" id="#agency_comparativerate_before#"></li>
+										<li id="agencyListEdit_general_chk_agency_comparativerate_security" class="inlineBlock_2">
 											<div class="freeFormList form-group">
 												<div class="freeFormListTr">
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
+													<div class="freeFormListTdError paddingLeft3">
+														<div id="" class="error" />
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd valignTop labelAlign freeFormLabelWidth">
+														<label
+															id="agencyListEdit_general_chk_agency_comparativerate_label">Comparative
+															Rater</label> :
+													</div>
+													<div class="freeFormListTd tdInput_8 nonMandatory">
+														<ul class="div_checkbox div_checkbox2 commisson_company"
+															id="agency_comparativerate_list_mom_1"
+															style="padding-left: 1px;">
+															<li id="agency_comparativerate_list_header_1"
+																style="display: none">
+																<span class="tableinfoheader"
+																	id="block_field_agency_comparativerate_desc"
+																	width="69" />
+																<span class="tableinfoheader"
+																	id="block_field_agency_comparativerate_id" width="69" />
+																<span class="tableinfoheader"
+																	id="block_field_agency_comparativerate_id" width="0" />
+																<span class="tableinfoheader"
+																	id="block_field_agency_comparativerate_desc"
+																	width="0" />
+															</li>
+															<li id="agency_comparativerate_list_mom_data_1">
+																<div id="mom_child_data">
+																	<span id="block_field_agency_comparativerate_id"
+																		width="20"><input type="checkbox"
+																		id="ajax_field_agency_comparativerate_id"
+																		name="agency_comparativerate_id" 
+																		tabindex="46" disabled="disabled"
+																		onclick="javascript:getCheckedAgencyComparativeRater();" />
+																	</span>
+																	<span id="block_field_agency_comparativerate_desc"
+																		nowrap="nowrap" />
+																	<span id="block_field_agency_comparativerate_id"
+																		width="20"><input type="hidden"
+																		id="agency_comparativerate_id"
+																		name="agency_comparativerate_id" tabindex="47" />
+																	</span>
+																	<span id="block_field_agency_comparativerate_desc">
+																		<input type="hidden"
+																		id="agency_comparativerate_desc"
+																		name="agency_comparativerate_desc"
+																		tabindex="47" />
+																	</span>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="extendedFieldHide inlineBlock_2" id="#agency_comparativerate_after#"></li>
+										
+										<li class="extendedFieldHide inlineBlock_2" id="#agency_registration_type_before#"></li>
+										<li id="pendingImport_agency_registration_type_security" class="inlineBlock_2">
+											<div class="freeFormList form-group">
+												<div class="freeFormListTr">
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
@@ -1610,7 +1539,6 @@
 													</div>
 												</div>
 												<div class="freeFormListTr ">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div
 														class="freeFormListTd labelAlign valignTop freeFormLabelWidth">
 														<span id="agency_registration_type_label">Registration
@@ -1645,86 +1573,12 @@
 											</div>
 
 										</li>
-										<li class="extendedFieldHide" id="#agency_registration_type_after#"></li>
+										<li class="extendedFieldHide inlineBlock_2" id="#agency_registration_type_after#"></li>
 										
-										<li class="extendedFieldHide" id="#agency_comparativerate_before#"></li>
-										<li id="agencyListEdit_general_chk_agency_comparativerate_security">
+										<li class="extendedFieldHide inlineBlock_2" id="#agency_lob_before#"></li>
+										<li id="agencyListPublicSubmitNInvitationEdit_isShowAgencyLobCheckbox_security" class="inlineBlock_2">
 											<div class="freeFormList form-group">
 												<div class="freeFormListTr">
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
-													<div class="freeFormListTdError paddingLeft3">
-														<div id="" class="error" />
-													</div>
-												</div>
-												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
-													<div class="freeFormListTd valignTop labelAlign freeFormLabelWidth">
-														<label
-															id="agencyListEdit_general_chk_agency_comparativerate_label">Comparative
-															Rater</label> :
-													</div>
-													<div class="freeFormListTd tdInput_8 nonMandatory">
-														<ul class="div_checkbox div_checkbox2 commisson_company"
-															id="agency_comparativerate_list_mom_1"
-															style="padding-left: 1px;">
-															<li id="agency_comparativerate_list_header_1"
-																style="display: none">
-																<span class="tableinfoheader"
-																	id="block_field_agency_comparativerate_desc"
-																	width="69" />
-																<span class="tableinfoheader"
-																	id="block_field_agency_comparativerate1" width="69" />
-																<span class="tableinfoheader"
-																	id="block_field_agency_comparativerate_id" width="0" />
-																<span class="tableinfoheader"
-																	id="block_field_agency_comparativerate_desc"
-																	width="0" />
-															</li>
-															<li id="agency_comparativerate_list_mom_data_1">
-																<div id="mom_child_data">
-																	<span id="block_field_agency_comparativerate1"
-																		width="20"><input type="checkbox"
-																		id="agency_comparativerate1"
-																		name="agency_comparativerate1" value="Y"
-																		tabindex="46" disabled="disabled"
-																		onclick="javascript:getCheckedAgencyComparativeRater();" />
-																	</span>
-																	<span id="block_field_agency_comparativerate_desc"
-																		nowrap="nowrap" />
-																	<span id="block_field_agency_comparativerate_id"
-																		width="20"><input type="hidden"
-																		id="agency_comparativerate_id"
-																		name="agency_comparativerate_id" tabindex="47" />
-																	</span>
-																	<span id="block_field_agency_comparativerate_desc">
-																		<input type="hidden"
-																		id="agency_comparativerate_desc"
-																		name="agency_comparativerate_desc"
-																		tabindex="47" />
-																	</span>
-																</div>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-										</li>
-										<li class="extendedFieldHide" id="#agency_comparativerate_after#"></li>
-										
-										
-										
-										<li class="extendedFieldHide" id="#agency_lob_before#"></li>
-										<li id="agencyListPublicSubmitNInvitationEdit_isShowAgencyLobCheckbox_security">
-											<div class="freeFormList form-group">
-												<div class="freeFormListTr">
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
@@ -1733,7 +1587,6 @@
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd valignTop labelAlign">
 														<div class="freeFormLabelWidth">
 															<label id="agency_lob_label">Lines of Business</label> :
@@ -1764,7 +1617,7 @@
 												</div>
 											</div>
 										</li>
-										<li class="extendedFieldHide" id="#agency_lob_after#"></li>
+										<li class="extendedFieldHide inlineBlock_2" id="#agency_lob_after#"></li>
 									</ul>
 									<ul class="inlineBlock">
 										<li class="inlineBlock_2" id="associatedAgency_idDiv"
@@ -1775,15 +1628,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth"><span id="associatedAgency_idDiv_label">#space#</span></div>
 													<div class="freeFormListTd tdInput">
 														<input type="text"
@@ -1834,15 +1683,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span id="agencyListEdit_general_entity_type_label">Type
 															of Organization</span> :
@@ -1869,15 +1714,11 @@
 													<div class="freeFormListTdError">
 														<h6>#space#</h6>
 													</div>
-													<div class="freeFormListTdError">
-														<h6>#space#</h6>
-													</div>
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="" class="error" />
 													</div>
 												</div>
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 													<div class="freeFormListTd labelAlign freeFormLabelWidth">
 														<span
 															id="agencyListEdit_general_other_office_location_label">List
@@ -1924,9 +1765,6 @@
 									<div class="freeFormListTdError">
 										<h6>#space#</h6>
 									</div>
-									<div class="freeFormListTdError">
-										<h6>#space#</h6>
-									</div>
 									<div class="freeFormListTdError paddingLeft3">
 										<div id="ajax_error_country_code_business"
 											class="error" />
@@ -1934,7 +1772,6 @@
 									</div>
 								</div>
 								<div class="freeFormListTr">
-									<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 									<div class="freeFormListTd labelAlign">
 										<div class="detailLeftLableWidth">
 											<label id="country_businessaddress_label">Country</label>
@@ -1942,7 +1779,7 @@
 										</div>
 									</div>
 									<div class="freeFormListTd mendatoryInput">
-										<span> <select class="form-control"
+										<select class="form-control"
 											name="country_code_business"
 											fullid="entityGeneralDetailsResult_freeform_contextdata_4(agency_business_address_security.business_address_label).business_country_agency_address_security.country_businessaddress_label.country_code_business"
 											id="ajax_field_country_code_business"
@@ -1950,7 +1787,6 @@
 											disabled="disabled">
 												<option value="">Select</option>
 										</select>
-										</span>
 									</div>
 								</div>
 							</div>
@@ -1963,9 +1799,6 @@
 									<div class="freeFormListTdError">
 										<h6>#space#</h6>
 									</div>
-									<div class="freeFormListTdError">
-										<h6>#space#</h6>
-									</div>
 									<div class="freeFormListTdError paddingLeft3">
 										<div id="ajax_error_addressline1_business"
 											class="error" />
@@ -1973,7 +1806,6 @@
 									</div>
 								</div>
 								<div class="freeFormListTr">
-									<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 									<div class="freeFormListTd labelAlign">
 										<div class="detailLeftLableWidth">
 											<span
@@ -1982,12 +1814,11 @@
 										</div>
 									</div>
 									<div class="freeFormListTd mendatoryInput">
-										<span> <input name="addressline1_business"
+										<input name="addressline1_business"
 											fullid="entityGeneralDetailsResult_freeform_contextdata_4(agency_business_address_security.business_address_label).business_addressline1_agency_address_security.streetAddress1_businessaddress_FieldLabel.addressline1_business"
 											id="ajax_field_addressline1_business" type="text"
 											class="form-control" maxlength="255"
 											disabled="disabled" />
-										</span>
 									</div>
 								</div>
 							</div>
@@ -2000,9 +1831,6 @@
 									<div class="freeFormListTdError">
 										<h6>#space#</h6>
 									</div>
-									<div class="freeFormListTdError">
-										<h6>#space#</h6>
-									</div>
 									<div class="freeFormListTdError paddingLeft3">
 										<div id="ajax_error_addressline2_business"
 											class="error" />
@@ -2010,7 +1838,6 @@
 									</div>
 								</div>
 								<div class="freeFormListTr">
-									<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 									<div class="freeFormListTd labelAlign">
 										<div class="detailLeftLableWidth">
 											<span
@@ -2036,16 +1863,12 @@
 									<div class="freeFormListTdError">
 										<h6>#space#</h6>
 									</div>
-									<div class="freeFormListTdError">
-										<h6>#space#</h6>
-									</div>
 									<div class="freeFormListTdError paddingLeft3">
 										<div id="ajax_error_city_business" class="error" />
 										<div id="error_city_business" class="error" />
 									</div>
 								</div>
 								<div class="freeFormListTr">
-									<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 									<div class="freeFormListTd labelAlign">
 										<div class="detailLeftLableWidth">
 											<span id="city_businessadress_Field_Label">City</span>
@@ -2053,14 +1876,13 @@
 										</div>
 									</div>
 									<div class="freeFormListTd mendatoryInput">
-										<span> <input name="city_business"
+										<input name="city_business"
 											fullid="entityGeneralDetailsResult_freeform_contextdata_4(agency_business_address_security.business_address_label).business_city_agency_address_security.city_businessadress_Field_Label.city_business"
 											id="ajax_field_city_business" type="text"
 											class="form-control" maxlength="35"
 											onkeypress="allowCharacterOnly(this);"
 											onkeyup="allowCharacterOnly(this);"
 											disabled="disabled" />
-										</span>
 									</div>
 								</div>
 							</div>
@@ -2073,16 +1895,12 @@
 									<div class="freeFormListTdError">
 										<h6>#space#</h6>
 									</div>
-									<div class="freeFormListTdError">
-										<h6>#space#</h6>
-									</div>
 									<div class="freeFormListTdError paddingLeft3">
 										<div id="ajax_error_state_id_business" class="error" />
 										<div id="error_state_id_business" class="error" />
 									</div>
 								</div>
 								<div class="freeFormListTr">
-									<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 									<div class="freeFormListTd labelAlign">
 										<div class="detailLeftLableWidth">
 											<span id="state_businessaddress_fieldlabel">State</span>
@@ -2091,7 +1909,7 @@
 									</div>
 									<div class="freeFormListTd">
 										<div id="mailingstateList" class="mendatoryInput">
-											<span> <select class="form-control"
+											<select class="form-control"
 												name="state_id_business"
 												fullid="entityGeneralDetailsResult_freeform_contextdata_4(agency_business_address_security.business_address_label).business_state_agency_address_security.state_businessaddress_fieldlabel.state_id_business"
 												id="ajax_field_state_id_business"
@@ -2099,7 +1917,6 @@
 												disabled="disabled">
 													<option value="">Select</option>
 											</select>
-											</span>
 										</div>
 									</div>
 								</div>
@@ -2114,16 +1931,12 @@
 									<div class="freeFormListTdError">
 										<h6>#space#</h6>
 									</div>
-									<div class="freeFormListTdError">
-										<h6>#space#</h6>
-									</div>
 									<div class="freeFormListTdError paddingLeft3">
 										<div id="error_county_business" class="error" />
 										<div id="ajax_error_county_business" class="error" />
 									</div>
 								</div>
 								<div class="freeFormListTr">
-									<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 									<div class="freeFormListTd labelAlign">
 										<div class="detailLeftLableWidth">
 											<span id="county_businessaddress_Field_Label">County</span>
@@ -2151,16 +1964,12 @@
 									<div class="freeFormListTdError">
 										<h6>#space#</h6>
 									</div>
-									<div class="freeFormListTdError">
-										<h6>#space#</h6>
-									</div>
 									<div class="freeFormListTdError paddingLeft3">
 										<div id="error_zip_business" class="error" />
 										<div id="ajax_error_zip_business" class="error" />
 									</div>
 								</div>
 								<div class="freeFormListTr">
-									<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 									<div class="freeFormListTd labelAlign">
 										<div class="detailLeftLableWidth">
 											<span id="business_zip_code_agency_address_label">Zip
@@ -2168,7 +1977,7 @@
 										</div>
 									</div>
 									<div class="freeFormListTd mendatoryInput">
-										<span> <input name="zip_business"
+										<input name="zip_business"
 											fullid="entityGeneralDetailsResult_freeform_contextdata_4(agency_business_address_security.business_address_label).business_zip_code_agency_address_security.business_zip_code_agency_address_label.zip_business"
 											id="ajax_field_zip_business" type="text"
 											class="form-control zipMaskClass" maxlength="10"
@@ -2176,7 +1985,6 @@
 											onkeyup="loadentityGeneralDetail();addHyphen(this,event);"
 											onmouseover="setTitleForZipCode(this);"
 											disabled="disabled" />
-										</span>
 									</div>
 								</div>
 							</div>
@@ -2193,16 +2001,12 @@
 									<div class="freeFormListTdError">
 										<h6>#space#</h6>
 									</div>
-									<div class="freeFormListTdError">
-										<h6>#space#</h6>
-									</div>
 									<div class="freeFormListTdError paddingLeft3">
 										<div id="error_fax_business" class="error" />
 										<div id="ajax_error_fax_business" class="error" />
 									</div>
 								</div>
 								<div class="freeFormListTr">
-									<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 									<div class="freeFormListTd labelAlign">
 										<div class="detailLeftLableWidth">
 											<label id="fax_businessaddress_label">Fax </label>
@@ -2230,16 +2034,12 @@
 									<div class="freeFormListTdError">
 										<h6>#space#</h6>
 									</div>
-									<div class="freeFormListTdError">
-										<h6>#space#</h6>
-									</div>
 									<div class="freeFormListTdError paddingLeft3">
 										<div id="error_phone_business" class="error" />
 										<div id="ajax_error_phone_business" class="error" />
 									</div>
 								</div>
 								<div class="freeFormListTr">
-									<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 									<div class="freeFormListTd labelAlign">
 										<div class="detailLeftLableWidth">
 											<label id="phone_businessaddress_label">Phone</label>
@@ -2248,7 +2048,7 @@
 									</div>
 									<div class="freeFormListTd mendatoryInput"
 										id="addressPhoneInput">
-										<span> <input name="phone_business"
+										<input name="phone_business"
 											fullid="entityGeneralDetailsResult_freeform_contextdata_4(agency_business_address_security.business_address_label).business_phone_ext_agency_address_security.phone_businessaddress_label.phone_business"
 											id="ajax_field_phone_business" type="text"
 											class="form-control phone-control phoneMaskClass" maxlength="12"
@@ -2269,7 +2069,6 @@
 												onkeypress="checkNumericValue(this,event);"
 												title="99999" disabled="disabled" />
 										</span>
-										</span>
 									</div>
 								</div>
 							</div>
@@ -2282,16 +2081,12 @@
 									<div class="freeFormListTdError">
 										<h6>#space#</h6>
 									</div>
-									<div class="freeFormListTdError">
-										<h6>#space#</h6>
-									</div>
 									<div class="freeFormListTdError paddingLeft3">
 										<div id="error_e_mail_business" class="error" />
 										<div id="ajax_error_e_mail_business" class="error" />
 									</div>
 								</div>
 								<div class="freeFormListTr">
-									<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 									<div class="freeFormListTd labelAlign">
 										<div class="detailLeftLableWidth">
 											<span
@@ -2300,12 +2095,11 @@
 										</div>
 									</div>
 									<div class="freeFormListTd mendatoryInput">
-										<span> <input name="e_mail_business"
+										<input name="e_mail_business"
 											fullid="entityGeneralDetailsResult_freeform_contextdata_4(agency_business_address_security.business_address_label).business_email_id_agency_address_security.submit_invitation_email_businessaddress_label.e_mail_business"
 											id="ajax_field_e_mail_business" type="text"
 											class="form-control" maxlength="100"
 											disabled="disabled" />
-										</span>
 									</div>
 								</div>
 							</div>
@@ -2318,16 +2112,12 @@
 									<div class="freeFormListTdError">
 										<h6>#space#</h6>
 									</div>
-									<div class="freeFormListTdError">
-										<h6>#space#</h6>
-									</div>
 									<div class="freeFormListTdError paddingLeft3">
 										<div id="ajax_error_po_box_business" class="error" />
 										<div id="error_po_box_business" class="error" />
 									</div>
 								</div>
 								<div class="freeFormListTr">
-									<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 									<div class="freeFormListTd labelAlign">
 										<div class="detailLeftLableWidth">
 											<label id="po_box_businessaddress_label">P.O
@@ -2353,9 +2143,6 @@
 										<div class="freeFormListTdError">
 											<h6>#space#</h6>
 										</div>
-										<div class="freeFormListTdError">
-											<h6>#space#</h6>
-										</div>
 										<div class="freeFormListTdError paddingLeft3">
 											<div id="error_misc_phone_business" class="error" />
 											<div id="ajax_error_misc_phone_business"
@@ -2363,7 +2150,6 @@
 										</div>
 									</div>
 									<div class="freeFormListTr">
-										<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 										<div class="freeFormListTd labelAlign">
 											<div class="detailLeftLableWidth">
 												<span id="misc_businessaddress_PhoneLabel">Speed
@@ -2391,9 +2177,6 @@
 									<div class="freeFormListTdError">
 										<h6>#space#</h6>
 									</div>
-									<div class="freeFormListTdError">
-										<h6>#space#</h6>
-									</div>
 									<div class="freeFormListTdError paddingLeft3">
 										<div id="error_alt_phone_business" class="error" />
 										<div id="ajax_error_alt_phone_business"
@@ -2401,7 +2184,6 @@
 									</div>
 								</div>
 								<div class="freeFormListTr">
-									<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 									<div class="freeFormListTd labelAlign">
 										<div class="detailLeftLableWidth">
 											<label id="alt_business_phone_label">Alt
@@ -2440,9 +2222,6 @@
 									<div class="freeFormListTdError">
 										<h6>#space#</h6>
 									</div>
-									<div class="freeFormListTdError">
-										<h6>#space#</h6>
-									</div>
 									<div class="freeFormListTdError paddingLeft3">
 										<div id="ajax_error_addressline3_business"
 											class="error" />
@@ -2450,7 +2229,6 @@
 									</div>
 								</div>
 								<div class="freeFormListTr">
-									<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 									<div class="freeFormListTd labelAlign">
 										<div class="detailLeftLableWidth">
 											<span
@@ -2476,9 +2254,6 @@
 									<div class="freeFormListTdError">
 										<h6>#space#</h6>
 									</div>
-									<div class="freeFormListTdError">
-										<h6>#space#</h6>
-									</div>
 									<div class="freeFormListTdError paddingLeft3">
 										<div id="ajax_error_territory_id_business"
 											class="error" />
@@ -2486,7 +2261,6 @@
 									</div>
 								</div>
 								<div class="freeFormListTr">
-									<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 									<div class="freeFormListTd labelAlign">
 										<div class="detailLeftLableWidth" id="business_territory_agency_address_label">Territory</div>
 									</div>
@@ -2512,9 +2286,6 @@
 									<div class="freeFormListTdError">
 										<h6>#space#</h6>
 									</div>
-									<div class="freeFormListTdError">
-										<h6>#space#</h6>
-									</div>
 									<div class="freeFormListTdError paddingLeft3">
 										<div id="error_alt_email_business" class="error" />
 										<div id="ajax_error_alt_email_business"
@@ -2522,7 +2293,6 @@
 									</div>
 								</div>
 								<div class="freeFormListTr">
-									<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 									<div class="freeFormListTd labelAlign">
 										<div class="detailLeftLableWidth">
 											<span id="alt_business_email_label">Alt
@@ -2548,9 +2318,6 @@
 									<div class="freeFormListTdError">
 										<h6>#space#</h6>
 									</div>
-									<div class="freeFormListTdError">
-										<h6>#space#</h6>
-									</div>
 									<div class="freeFormListTdError paddingLeft3">
 										<div id="error_agency_zip_code_2_business"
 											class="error" />
@@ -2559,7 +2326,6 @@
 									</div>
 								</div>
 								<div class="freeFormListTr">
-									<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 									<div class="freeFormListTd labelAlign">
 										<div class="detailLeftLableWidth">
 											<span id="agency__business_zip_code_2_label">Agency
@@ -2589,9 +2355,6 @@
 									<div class="freeFormListTdError">
 										<h6>#space#</h6>
 									</div>
-									<div class="freeFormListTdError">
-										<h6>#space#</h6>
-									</div>
 									<div class="freeFormListTdError paddingLeft3">
 										<div id="error_agency_foreign_addr_in_business"
 											class="error" />
@@ -2600,7 +2363,6 @@
 									</div>
 								</div>
 								<div class="freeFormListTr">
-									<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 									<div class="freeFormListTd labelAlign">
 										<div class="detailLeftLableWidth">
 											<label id="agency_Business_foreign_address_label">Agency
@@ -2648,16 +2410,12 @@
 																		<div class="freeFormListTdError">
 																			<h6>#space#</h6>
 																		</div>
-																		<div class="freeFormListTdError">
-																			<h6>#space#</h6>
-																		</div>
 																		<div class="freeFormListTdError paddingLeft3">
 																			<div id="error_copy_business_to_mailing"
 																				class="error" />
 																		</div>
 																	</div>
 																	<div class="freeFormListTr">
-																		<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																		<div class="freeFormListTd labelAlign">
 																			<div class="detailLeftLableWidthAddress">#space#</div>
 																		</div>
@@ -2685,9 +2443,6 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="ajax_error_country_code_mailing"
 																					class="error" />
@@ -2695,7 +2450,6 @@
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<label id="country_mailingaddress_label">Country</label>
@@ -2703,7 +2457,7 @@
 																				</div>
 																			</div>
 																			<div class="freeFormListTd mendatoryInput">
-																				<span> <select class="form-control"
+																				<select class="form-control"
 																					name="country_code_mailing"
 																					fullid="entityGeneralDetailsResult_freeform_contextdata_44(agency_mailing_address_security.mailing_address_label).mailing_country_agency_address_security.country_mailingaddress_label.country_code_mailing"
 																					id="ajax_field_country_code_mailing"
@@ -2711,7 +2465,6 @@
 																					disabled="disabled">
 																						<option value="">Select</option>
 																				</select>
-																				</span>
 																			</div>
 																		</div>
 																	</div>
@@ -2724,9 +2477,6 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="ajax_error_addressline1_mailing"
 																					class="error" />
@@ -2734,7 +2484,6 @@
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<span
@@ -2743,12 +2492,11 @@
 																				</div>
 																			</div>
 																			<div class="freeFormListTd mendatoryInput">
-																				<span> <input name="addressline1_mailing"
+																				<input name="addressline1_mailing"
 																					fullid="entityGeneralDetailsResult_freeform_contextdata_44(agency_mailing_address_security.mailing_address_label).mailing_addressline1_agency_address_security.submit_invitation_streetAddress1_mailingaddress_FieldLabel.addressline1_mailing"
 																					id="ajax_field_addressline1_mailing" type="text"
 																					class="form-control" maxlength="255"
 																					disabled="disabled" />
-																				</span>
 																			</div>
 																		</div>
 																	</div>
@@ -2761,9 +2509,6 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="ajax_error_addressline2_mailing"
 																					class="error" />
@@ -2771,7 +2516,6 @@
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<span id="streetAddress2_mailingaddress_FieldLabel">Street
@@ -2797,16 +2541,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="ajax_error_city_mailing" class="error" />
 																				<div id="error_city_mailing" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<span id="city_mailingaddress_Field_Label">City</span>
@@ -2814,14 +2554,13 @@
 																				</div>
 																			</div>
 																			<div class="freeFormListTd mendatoryInput">
-																				<span> <input name="city_mailing"
+																				<input name="city_mailing"
 																					fullid="entityGeneralDetailsResult_freeform_contextdata_44(agency_mailing_address_security.mailing_address_label).mailing_city_agency_address_security.city_mailingaddress_Field_Label.city_mailing"
 																					id="ajax_field_city_mailing" type="text"
 																					class="form-control" maxlength="35"
 																					onkeypress="allowCharacterOnly(this);"
 																					onkeyup="allowCharacterOnly(this);"
 																					disabled="disabled" />
-																				</span>
 																			</div>
 																		</div>
 																	</div>
@@ -2835,16 +2574,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="ajax_error_state_id_mailing" class="error" />
 																				<div id="error_state_id_mailing" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<span id="state_mailingaddress_fieldlabel">State</span>
@@ -2853,7 +2588,7 @@
 																			</div>
 																			<div class="freeFormListTd">
 																				<div id="mailingstateList" class="mendatoryInput">
-																					<span> <select class="form-control"
+																					<select class="form-control"
 																						name="state_id_mailing"
 																						fullid="entityGeneralDetailsResult_freeform_contextdata_44(agency_mailing_address_security.mailing_address_label).mailing_state_agency_address_security.state_mailingaddress_fieldlabel.state_id_mailing"
 																						id="ajax_field_state_id_mailing"
@@ -2861,7 +2596,6 @@
 																						disabled="disabled">
 																							<option value="">Select</option>
 																					</select>
-																					</span>
 																				</div>
 																			</div>
 																		</div>
@@ -2876,16 +2610,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="error_county_mailing" class="error" />
 																				<div id="ajax_error_county_mailing" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<span id="county_mailingaddress_Field_Label">County</span>
@@ -2913,16 +2643,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="error_zip_mailing" class="error" />
 																				<div id="ajax_error_zip_mailing" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<span id="mailing_zip_code_agency_address_label">Zip
@@ -2930,7 +2656,7 @@
 																				</div>
 																			</div>
 																			<div class="freeFormListTd mendatoryInput">
-																				<span> <input name="zip_mailing"
+																				<input name="zip_mailing"
 																					fullid="entityGeneralDetailsResult_freeform_contextdata_44(agency_mailing_address_security.mailing_address_label).mailing_zip_code_agency_address_security.mailing_zip_code_agency_address_label.zip_mailing"
 																					id="ajax_field_zip_mailing" type="text"
 																					class="form-control zipMaskClass" maxlength="10"
@@ -2938,7 +2664,6 @@
 																					onkeyup="loadentityGeneralDetail();addHyphen(this,event);"
 																					onmouseover="setTitleForZipCode(this);"
 																					disabled="disabled" />
-																				</span>
 																			</div>
 																		</div>
 																	</div>
@@ -2955,9 +2680,6 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="ajax_error_territory_id_mailing"
 																					class="error" />
@@ -2965,7 +2687,6 @@
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth" id="mailing_territory_agency_address_label">Territory</div>
 																			</div>
@@ -2992,9 +2713,6 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="ajax_error_addressline3_mailing"
 																					class="error" />
@@ -3002,7 +2720,6 @@
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<span id="streetAddress3_mailingaddress_FieldLabel">Street
@@ -3028,16 +2745,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="ajax_error_po_box_mailing" class="error" />
 																				<div id="error_po_box_mailing" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<label id="po_box_mailingaddress_label">P.O
@@ -3056,17 +2769,10 @@
 																</li>
 																<li id="#po_box_mailing_after#"></li>
 
-
-
-
-
 																<li id="#phone_mailing_before#"></li>
 																<li id="mailing_phone_ext_agency_address_security">
 																	<div class="freeFormList form-group">
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
@@ -3076,7 +2782,6 @@
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<label id="phone_mailingaddress_label">Phone</label>
@@ -3118,16 +2823,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="error_alt_phone_mailing" class="error" />
 																				<div id="ajax_error_alt_phone_mailing" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<label id="alt_phone_label">Alt Phone</label> :
@@ -3167,9 +2868,6 @@
 																				<div class="freeFormListTdError">
 																					<h6>#space#</h6>
 																				</div>
-																				<div class="freeFormListTdError">
-																					<h6>#space#</h6>
-																				</div>
 																				<div class="freeFormListTdError paddingLeft3">
 																					<div id="error_misc_phone_mailing" class="error" />
 																					<div id="ajax_error_misc_phone_mailing"
@@ -3177,7 +2875,6 @@
 																				</div>
 																			</div>
 																			<div class="freeFormListTr">
-																				<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																				<div class="freeFormListTd labelAlign">
 																					<div class="detailLeftLableWidth">
 																						<span id="miscPhoneLabel">Speed Dial No</span> :
@@ -3205,16 +2902,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="error_fax_mailing" class="error" />
 																				<div id="ajax_error_fax_mailing" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<label id="fax_label">Fax </label> :
@@ -3242,16 +2935,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="error_e_mail_mailing" class="error" />
 																				<div id="ajax_error_e_mail_mailing" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<span
@@ -3278,16 +2967,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="error_alt_email_mailing" class="error" />
 																				<div id="ajax_error_alt_email_mailing" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<span id="agency_mailing_alt_email_label">Alt
@@ -3313,9 +2998,6 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="error_agency_zip_code_2_mailing"
 																					class="error" />
@@ -3324,7 +3006,6 @@
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<span id="agency_zip_code_2_label">Agency
@@ -3354,9 +3035,6 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="error_agency_foreign_addr_in_mailing"
 																					class="error" />
@@ -3365,7 +3043,6 @@
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<label id="agency_foreign_address_label">Agency
@@ -3421,15 +3098,11 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="error_copy_mailing_to_w9" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">#space#</div>
 																			</div>
@@ -3454,16 +3127,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="ajax_error_country_code_w9" class="error" />
 																				<div id="error_country_code_w9" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<label id="country_w9address_label">Country</label>
@@ -3471,7 +3140,7 @@
 																				</div>
 																			</div>
 																			<div class="freeFormListTd mendatoryInput">
-																				<span> <select class="form-control"
+																				<select class="form-control"
 																					name="country_code_w9"
 																					fullid="entityGeneralDetailsResult_freeform_contextdata_45(agencyListPublicSubmitNInvitationEdit_agency_w9_address_security.agencyListPublicSubmitNInvitationEdit_w9_address_label).w9_country_agency_address_security.country_w9address_label.country_code_w9"
 																					id="ajax_field_country_code_w9"
@@ -3479,7 +3148,6 @@
 																					disabled="disabled">
 																						<option value="">Select</option>
 																				</select>
-																				</span>
 																			</div>
 																		</div>
 																	</div>
@@ -3492,16 +3160,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="ajax_error_addressline1_w9" class="error" />
 																				<div id="error_addressline1_w9" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<span
@@ -3510,12 +3174,11 @@
 																				</div>
 																			</div>
 																			<div class="freeFormListTd mendatoryInput">
-																				<span> <input name="addressline1_w9"
+																				<input name="addressline1_w9"
 																					fullid="entityGeneralDetailsResult_freeform_contextdata_45(agencyListPublicSubmitNInvitationEdit_agency_w9_address_security.agencyListPublicSubmitNInvitationEdit_w9_address_label).w9_addressline1_agency_address_security.submit_invitation_streetAddress1_w9address_FieldLabel.addressline1_w9"
 																					id="ajax_field_addressline1_w9" type="text"
 																					class="form-control" maxlength="255"
 																					disabled="disabled" />
-																				</span>
 																			</div>
 																		</div>
 																	</div>
@@ -3528,16 +3191,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="ajax_error_addressline2_w9" class="error" />
 																				<div id="error_addressline2_w9" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<span id="streetAddress2_w9address_FieldLabel">Street
@@ -3562,30 +3221,25 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="ajax_error_city_w9" class="error" />
 																				<div id="error_city_w9" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<span id="city_w9address_Field_Label">City</span> :
 																				</div>
 																			</div>
 																			<div class="freeFormListTd mendatoryInput">
-																				<span> <input name="city_w9"
+																				<input name="city_w9"
 																					fullid="entityGeneralDetailsResult_freeform_contextdata_45(agencyListPublicSubmitNInvitationEdit_agency_w9_address_security.agencyListPublicSubmitNInvitationEdit_w9_address_label).w9_city_agency_address_security.city_w9address_Field_Label.city_w9"
 																					id="ajax_field_city_w9" type="text"
 																					class="form-control" maxlength="35"
 																					onkeypress="allowCharacterOnly(this);"
 																					onkeyup="allowCharacterOnly(this);"
 																					disabled="disabled" />
-																				</span>
 																			</div>
 																		</div>
 																	</div>
@@ -3598,16 +3252,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="ajax_error_state_id_w9" class="error" />
 																				<div id="error_state_id_w9" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<span id="state_w9address_fieldlabel">State</span>
@@ -3616,14 +3266,13 @@
 																			</div>
 																			<div class="freeFormListTd">
 																				<div id="mailingstateList" class="mendatoryInput">
-																					<span> <select class="form-control"
+																					<select class="form-control"
 																						name="state_id_w9" id="ajax_field_state_id_w9"
 																						fullid="entityGeneralDetailsResult_freeform_contextdata_45(agencyListPublicSubmitNInvitationEdit_agency_w9_address_security.agencyListPublicSubmitNInvitationEdit_w9_address_label).w9_state_agency_address_security.state_w9address_fieldlabel.state_id_w9"
 																						onchange="javascript:ajaxpageblocklink('carrier/agencyListPublicSubmitNInvitationEdit.html','agencyListPublicSubmitNInvitationEdit.refreshCounty_w9','','','w9_county_div');"
 																						disabled="disabled">
 																							<option value="">Select</option>
 																					</select>
-																					</span>
 																				</div>
 																			</div>
 																		</div>
@@ -3637,16 +3286,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="error_county_w9" class="error" />
 																				<div id="ajax_error_county_w9" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<span id="county_w9address_Field_Label">County</span>
@@ -3673,16 +3318,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="error_zip_w9" class="error" />
 																				<div id="ajax_error_zip_w9" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<span id="w9_zip_code_agency_address_label">Zip
@@ -3690,7 +3331,7 @@
 																				</div>
 																			</div>
 																			<div class="freeFormListTd mendatoryInput">
-																				<span> <input name="zip_w9"
+																				<input name="zip_w9"
 																					fullid="entityGeneralDetailsResult_freeform_contextdata_45(agencyListPublicSubmitNInvitationEdit_agency_w9_address_security.agencyListPublicSubmitNInvitationEdit_w9_address_label).w9_zip_code_agency_address_security.w9_zip_code_agency_address_label.zip_w9"
 																					id="ajax_field_zip_w9" type="text"
 																					class="form-control zipMaskClass" maxlength="10"
@@ -3698,7 +3339,6 @@
 																					onkeyup="loadentityGeneralDetail();addHyphen(this,event);"
 																					onmouseover="setTitleForZipCode(this);"
 																					disabled="disabled" />
-																				</span>
 																			</div>
 																		</div>
 																	</div>
@@ -3711,16 +3351,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="error_e_mail_w9" class="error" />
 																				<div id="ajax_error_e_mail_w9" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<span id="submit_invitation_email_w9address_label">Email
@@ -3745,16 +3381,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="error_alt_email_w9" class="error" />
 																				<div id="ajax_error_alt_email_w9" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<span id="alt_w9_email_label">Alt Email ID</span> :
@@ -3815,9 +3447,6 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="error_agency_zip_code_2_w9" class="error" />
 																				<div id="ajax_error_agency_zip_code_2_w9"
@@ -3825,7 +3454,6 @@
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<span id="agency__w9_zip_code_2_label">Agency
@@ -3855,9 +3483,6 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="error_agency_foreign_addr_in_w9"
 																					class="error" />
@@ -3866,7 +3491,6 @@
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<label id="agency__w9_foreign_address_label">Agency
@@ -3897,16 +3521,12 @@
 																				<div class="freeFormListTdError">
 																					<h6>#space#</h6>
 																				</div>
-																				<div class="freeFormListTdError">
-																					<h6>#space#</h6>
-																				</div>
 																				<div class="freeFormListTdError paddingLeft3">
 																					<div id="ajax_error_w9_legal_name" class="error" />
 																					<div id="error_w9_legal_name" class="error" />
 																				</div>
 																			</div>
 																			<div class="freeFormListTr">
-																				<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																				<div class="freeFormListTd labelAlign">
 																					<div class="detailLeftLableWidth">
 																						<label id="type1099_desscription_label">1099 Type </label> :
@@ -3933,16 +3553,12 @@
 																				<div class="freeFormListTdError">
 																					<h6>#space#</h6>
 																				</div>
-																				<div class="freeFormListTdError">
-																					<h6>#space#</h6>
-																				</div>
 																				<div class="freeFormListTdError paddingLeft3">
 																					<div id="ajax_error_w9_legal_name" class="error" />
 																					<div id="error_w9_legal_name" class="error" />
 																				</div>
 																			</div>
 																			<div class="freeFormListTr">
-																				<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																				<div class="freeFormListTd labelAlign">
 																					<div class="detailLeftLableWidth">
 																						<label id="w9_legal_name_label">W-9 Legal
@@ -3968,16 +3584,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="ajax_error_po_box_w9" class="error" />
 																				<div id="error_po_box_w9" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<label id="po_box_w9address_label">P.O Box</label>
@@ -4002,16 +3614,12 @@
 																				<div class="freeFormListTdError">
 																					<h6>#space#</h6>
 																				</div>
-																				<div class="freeFormListTdError">
-																					<h6>#space#</h6>
-																				</div>
 																				<div class="freeFormListTdError paddingLeft3">
 																					<div id="error_w9_on_file" class="error" />
 																					<div id="ajax_error_w9_on_file" class="error" />
 																				</div>
 																			</div>
 																			<div class="freeFormListTr">
-																				<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																				<div class="freeFormListTd labelAlign">
 																					<div class="detailLeftLableWidth">
 																						<label id="w9_on_file_label">W-9 on File</label> :
@@ -4041,16 +3649,12 @@
 																				<div class="freeFormListTdError">
 																					<h6>#space#</h6>
 																				</div>
-																				<div class="freeFormListTdError">
-																					<h6>#space#</h6>
-																				</div>
 																				<div class="freeFormListTdError paddingLeft3">
 																					<div id="error_w9_issue" class="error" />
 																					<div id="ajax_error_w9_issue" class="error" />
 																				</div>
 																			</div>
 																			<div class="freeFormListTr">
-																				<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																				<div class="freeFormListTd labelAlign">
 																					<div class="detailLeftLableWidth">
 																						<label id="w9_issue_label">W9 Issue</label> :
@@ -4081,9 +3685,6 @@
 																				<div class="freeFormListTdError">
 																					<h6>#space#</h6>
 																				</div>
-																				<div class="freeFormListTdError">
-																					<h6>#space#</h6>
-																				</div>
 																				<div class="freeFormListTdError paddingLeft3">
 																					<div id="error_agency_taxpayer_short_nm"
 																						class="error" />
@@ -4092,7 +3693,6 @@
 																				</div>
 																			</div>
 																			<div class="freeFormListTr">
-																				<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																				<div class="freeFormListTd labelAlign">
 																					<div class="detailLeftLableWidth">
 																						<label id="agency_taxpayer_short_nm_label">Taxpayer
@@ -4118,16 +3718,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="ajax_error_territory_id_w9" class="error" />
 																				<div id="error_territory_id_w9" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth" id="territory_id_w9_label">Territory</div>
 																			</div>
@@ -4154,16 +3750,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="ajax_error_addressline3_w9" class="error" />
 																				<div id="error_addressline3_w9" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<span id="streetAddress3_w9address_FieldLabel">Street
@@ -4189,16 +3781,12 @@
 																				<div class="freeFormListTdError">
 																					<h6>#space#</h6>
 																				</div>
-																				<div class="freeFormListTdError">
-																					<h6>#space#</h6>
-																				</div>
 																				<div class="freeFormListTdError paddingLeft3">
 																					<div id="error_irs_tax_nm_1" class="error" />
 																					<div id="" class="error" />
 																				</div>
 																			</div>
 																			<div class="freeFormListTr">
-																				<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																				<div class="freeFormListTd labelAlign">
 																					<div class="detailLeftLableWidth">
 																						<label id="irs_tax_name1_label">Taxpayer
@@ -4225,16 +3813,12 @@
 																				<div class="freeFormListTdError">
 																					<h6>#space#</h6>
 																				</div>
-																				<div class="freeFormListTdError">
-																					<h6>#space#</h6>
-																				</div>
 																				<div class="freeFormListTdError paddingLeft3">
 																					<div id="error_irs_tax_nm_2" class="error" />
 																					<div id="" class="error" />
 																				</div>
 																			</div>
 																			<div class="freeFormListTr">
-																				<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																				<div class="freeFormListTd labelAlign">
 																					<div class="detailLeftLableWidth">
 																						<label id="irs_tax_name2_label">IRS Tax
@@ -4261,9 +3845,6 @@
 																				<div class="freeFormListTdError">
 																					<h6>#space#</h6>
 																				</div>
-																				<div class="freeFormListTdError">
-																					<h6>#space#</h6>
-																				</div>
 																				<div class="freeFormListTdError paddingLeft3">
 																					<div id="ajax_error_w9_bckp_withholding"
 																						class="error" />
@@ -4271,7 +3852,6 @@
 																				</div>
 																			</div>
 																			<div class="freeFormListTr">
-																				<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																				<div class="freeFormListTd labelAlign">
 																					<div class="detailLeftLableWidth">
 																						<label id="w9_bckp_withholding_label">Backup
@@ -4301,16 +3881,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="error_phone_w9" class="error" />
 																				<div id="ajax_error_phone_w9" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<label id="phone_w9address_label">Phone</label> :
@@ -4351,16 +3927,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="error_alt_phone_w9" class="error" />
 																				<div id="ajax_error_alt_phone_w9" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<label id="alt_w9_phone_label">Alt Phone</label> :
@@ -4400,16 +3972,12 @@
 																				<div class="freeFormListTdError">
 																					<h6>#space#</h6>
 																				</div>
-																				<div class="freeFormListTdError">
-																					<h6>#space#</h6>
-																				</div>
 																				<div class="freeFormListTdError paddingLeft3">
 																					<div id="error_misc_phone_w9" class="error" />
 																					<div id="ajax_error_misc_phone_w9" class="error" />
 																				</div>
 																			</div>
 																			<div class="freeFormListTr">
-																				<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																				<div class="freeFormListTd labelAlign">
 																					<div class="detailLeftLableWidth">
 																						<span id="misc_w9address_Phone_Label">Speed
@@ -4436,16 +4004,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="error_fax_w9" class="error" />
 																				<div id="ajax_error_fax_w9" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<label id="fax_w9address_label">Fax </label> :
@@ -4473,9 +4037,6 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="error_billing_distribution_method_id"
 																					class="error" />
@@ -4484,7 +4045,6 @@
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<span
@@ -4517,9 +4077,6 @@
 											</div>
 										</fieldset>
 									</div>
-								
-									
-								
 								<div id="agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security">
 										<fieldset class="paddingBottom0">
 											<legend>
@@ -4554,7 +4111,6 @@
 														<li id="agencyListPublicSubmitNInvitationEdit_copy_dec_address_security" >
 															<div class="freeFormList form-group">
 																<div class="freeFormListTr">
-																	<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
 																	<div
 																		class="freeFormListTd labelAlign freeFormLabelWidth">&nbsp;
 																	</div>
@@ -4576,16 +4132,12 @@
 																	<div class="freeFormListTdError">
 																		<h6>#space#</h6>
 																	</div>
-																	<div class="freeFormListTdError">
-																		<h6>#space#</h6>
-																	</div>
 																	<div class="freeFormListTdError paddingLeft3">
 																		<div id="ajax_error_country_code_DEC" class="error" />
 																		<div id="error_country_code_DEC" class="error" />
 																	</div>
 																</div>
 																<div class="freeFormListTr">
-																	<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																	<div class="freeFormListTd labelAlign">
 																		<div class="detailLeftLableWidth">
 																			<label id="country_DECaddress_label">Country</label> :
@@ -4608,16 +4160,12 @@
 																		<div class="freeFormListTdError">
 																			<h6>#space#</h6>
 																		</div>
-																		<div class="freeFormListTdError">
-																			<h6>#space#</h6>
-																		</div>
 																		<div class="freeFormListTdError paddingLeft3">
 																			<div id="ajax_error_addressline1_DEC" class="error" />
 																			<div id="error_addressline1_DEC" class="error" />
 																		</div>
 																	</div>
 																	<div class="freeFormListTr">
-																		<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																		<div class="freeFormListTd labelAlign">
 																			<div class="detailLeftLableWidth">
 																				<span id="streetAddress1_DECaddress_FieldLabel">Street Address #1</span> :
@@ -4639,16 +4187,12 @@
 																		<div class="freeFormListTdError">
 																			<h6>#space#</h6>
 																		</div>
-																		<div class="freeFormListTdError">
-																			<h6>#space#</h6>
-																		</div>
 																		<div class="freeFormListTdError paddingLeft3">
 																			<div id="ajax_error_addressline2_DEC" class="error" />
 																			<div id="error_addressline2_DEC" class="error" />
 																		</div>
 																	</div>
 																	<div class="freeFormListTr">
-																		<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																		<div class="freeFormListTd labelAlign">
 																			<div class="detailLeftLableWidth">
 																				<span id="streetAddress2_DECaddress_FieldLabel">Street Address #2</span> :
@@ -4669,16 +4213,12 @@
 																		<div class="freeFormListTdError">
 																			<h6>#space#</h6>
 																		</div>
-																		<div class="freeFormListTdError">
-																			<h6>#space#</h6>
-																		</div>
 																		<div class="freeFormListTdError paddingLeft3">
 																			<div id="ajax_error_addressline3_DEC" class="error" />
 																			<div id="error_addressline3_DEC" class="error" />
 																		</div>
 																	</div>
 																	<div class="freeFormListTr">
-																		<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																		<div class="freeFormListTd labelAlign">
 																			<div class="detailLeftLableWidth">
 																				<span id="streetAddress3_DECaddress_FieldLabel">Street Address #3</span>
@@ -4699,16 +4239,12 @@
 																		<div class="freeFormListTdError">
 																			<h6>#space#</h6>
 																		</div>
-																		<div class="freeFormListTdError">
-																			<h6>#space#</h6>
-																		</div>
 																		<div class="freeFormListTdError paddingLeft3">
 																			<div id="ajax_error_po_box_DEC" class="error" />
 																			<div id="error_po_box_DEC" class="error" />
 																		</div>
 																	</div>
 																	<div class="freeFormListTr">
-																		<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																		<div class="freeFormListTd labelAlign">
 																			<div class="detailLeftLableWidth">
 																				<label id="po_box_DECaddress_label">P.O Box</label> :
@@ -4729,16 +4265,12 @@
 																		<div class="freeFormListTdError">
 																			<h6>#space#</h6>
 																		</div>
-																		<div class="freeFormListTdError">
-																			<h6>#space#</h6>
-																		</div>
 																		<div class="freeFormListTdError paddingLeft3">
 																			<div id="ajax_error_city_DEC" class="error" />
 																			<div id="error_city_DEC" class="error" />
 																		</div>
 																	</div>
 																	<div class="freeFormListTr">
-																		<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																		<div class="freeFormListTd labelAlign">
 																			<div class="detailLeftLableWidth">
 																				<span id="city_DECadress_Field_Label">City</span> :
@@ -4761,16 +4293,12 @@
 																		<div class="freeFormListTdError">
 																			<h6>#space#</h6>
 																		</div>
-																		<div class="freeFormListTdError">
-																			<h6>#space#</h6>
-																		</div>
 																		<div class="freeFormListTdError paddingLeft3">
 																			<div id="ajax_error_state_id_DEC" class="error" />
 																			<div id="error_state_id_DEC" class="error" />
 																		</div>
 																	</div>
 																	<div class="freeFormListTr">
-																		<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																		<div class="freeFormListTd labelAlign">
 																			<div class="detailLeftLableWidth">
 																				<span id="state_DECaddress_fieldlabel">State</span> :
@@ -4797,16 +4325,12 @@
 																		<div class="freeFormListTdError">
 																			<h6>#space#</h6>
 																		</div>
-																		<div class="freeFormListTdError">
-																			<h6>#space#</h6>
-																		</div>
 																		<div class="freeFormListTdError paddingLeft3">
 																			<div id="error_county_DEC" class="error" />
 																			<div id="ajax_error_county_DEC" class="error" />
 																		</div>
 																	</div>
 																	<div class="freeFormListTr">
-																		<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																		<div class="freeFormListTd labelAlign">
 																			<div class="detailLeftLableWidth">
 																				<span id="county_DECaddress_Field_Label">County</span> :
@@ -4832,16 +4356,12 @@
 																		<div class="freeFormListTdError">
 																			<h6>#space#</h6>
 																		</div>
-																		<div class="freeFormListTdError">
-																			<h6>#space#</h6>
-																		</div>
 																		<div class="freeFormListTdError paddingLeft3">
 																			<div id="error_zip_DEC" class="error" />
 																			<div id="ajax_error_zip_DEC" class="error" />
 																		</div>
 																	</div>
 																	<div class="freeFormListTr">
-																		<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																		<div class="freeFormListTd labelAlign">
 																			<div class="detailLeftLableWidth">
 																				<span id="DEC_zip_code_agency_address_label">Zip Code</span> :
@@ -4869,16 +4389,12 @@
 																		<div class="freeFormListTdError">
 																			<h6>#space#</h6>
 																		</div>
-																		<div class="freeFormListTdError">
-																			<h6>#space#</h6>
-																		</div>
 																		<div class="freeFormListTdError paddingLeft3">
 																			<div id="error_phone_DEC" class="error" />
 																			<div id="ajax_error_phone_DEC" class="error" />
 																		</div>
 																	</div>
 																	<div class="freeFormListTr">
-																		<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																		<div class="freeFormListTd labelAlign">
 																			<div class="detailLeftLableWidth">
 																				<label id="phone_DECaddress_label">Phone</label> :
@@ -4910,16 +4426,12 @@
 																		<div class="freeFormListTdError">
 																			<h6>#space#</h6>
 																		</div>
-																		<div class="freeFormListTdError">
-																			<h6>#space#</h6>
-																		</div>
 																		<div class="freeFormListTdError paddingLeft3">
 																			<div id="error_alt_phone_DEC" class="error" />
 																			<div id="ajax_error_alt_phone_DEC" class="error" />
 																		</div>
 																	</div>
 																	<div class="freeFormListTr">
-																		<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																		<div class="freeFormListTd labelAlign">
 																			<div class="detailLeftLableWidth">
 																				<label id="alt_DEC_phone_label">Alt Phone</label> :
@@ -4951,16 +4463,12 @@
 																			<div class="freeFormListTdError">
 																				<h6>#space#</h6>
 																			</div>
-																			<div class="freeFormListTdError">
-																				<h6>#space#</h6>
-																			</div>
 																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="error_misc_phone_DEC" class="error" />
 																				<div id="ajax_error_misc_phone_DEC" class="error" />
 																			</div>
 																		</div>
 																		<div class="freeFormListTr">
-																			<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																			<div class="freeFormListTd labelAlign">
 																				<div class="detailLeftLableWidth">
 																					<span id="misc_DECaddress_PhoneLabel">Speed Dial No</span> :
@@ -4982,16 +4490,12 @@
 																		<div class="freeFormListTdError">
 																			<h6>#space#</h6>
 																		</div>
-																		<div class="freeFormListTdError">
-																			<h6>#space#</h6>
-																		</div>
 																		<div class="freeFormListTdError paddingLeft3">
 																			<div id="error_fax_DEC" class="error" />
 																			<div id="ajax_error_fax_DEC" class="error" />
 																		</div>
 																	</div>
 																	<div class="freeFormListTr">
-																		<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																		<div class="freeFormListTd labelAlign">
 																			<div class="detailLeftLableWidth">
 																				<label id="fax_DECaddress_label">Fax </label> :
@@ -5012,16 +4516,12 @@
 																		<div class="freeFormListTdError">
 																			<h6>#space#</h6>
 																		</div>
-																		<div class="freeFormListTdError">
-																			<h6>#space#</h6>
-																		</div>
 																		<div class="freeFormListTdError paddingLeft3">
 																			<div id="error_e_mail_DEC" class="error" />
 																			<div id="ajax_error_e_mail_DEC" class="error" />
 																		</div>
 																	</div>
 																	<div class="freeFormListTr">
-																		<div class="freeFormListTd">#space##space#</div>
 																		<div class="freeFormListTd labelAlign">
 																			<div class="detailLeftLableWidth">
 																				<span id="email_DECaddress_label">Email ID</span> :
@@ -5042,16 +4542,12 @@
 																		<div class="freeFormListTdError">
 																			<h6>#space#</h6>
 																		</div>
-																		<div class="freeFormListTdError">
-																			<h6>#space#</h6>
-																		</div>
 																		<div class="freeFormListTdError paddingLeft3">
 																			<div id="error_alt_email_DEC" class="error" />
 																			<div id="ajax_error_alt_email_DEC" class="error" />
 																		</div>
 																	</div>
 																	<div class="freeFormListTr">
-																		<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																		<div class="freeFormListTd labelAlign">
 																			<div class="detailLeftLableWidth">
 																				<span id="alt_DEC_email_label">Alt Email ID</span> :
@@ -5072,16 +4568,12 @@
 																		<div class="freeFormListTdError">
 																			<h6>#space#</h6>
 																		</div>
-																		<div class="freeFormListTdError">
-																			<h6>#space#</h6>
-																		</div>
 																		<div class="freeFormListTdError paddingLeft3">
 																			<div id="error_agency_zip_code_2_DEC" class="error" />
 																			<div id="ajax_error_agency_zip_code_2_DEC" class="error" />
 																		</div>
 																	</div>
 																	<div class="freeFormListTr">
-																		<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																		<div class="freeFormListTd labelAlign">
 																			<div class="detailLeftLableWidth">
 																				<span id="agency__DEC_zip_code_2_label">Agency Zip code(NextGen)</span> :
@@ -5105,16 +4597,12 @@
 																		<div class="freeFormListTdError">
 																			<h6>#space#</h6>
 																		</div>
-																		<div class="freeFormListTdError">
-																			<h6>#space#</h6>
-																		</div>
 																		<div class="freeFormListTdError paddingLeft3">
 																			<div id="error_agency_foreign_addr_in_DEC" class="error" />
 																			<div id="ajax_error_agency_foreign_addr_in_DEC" class="error" />
 																		</div>
 																	</div>
 																	<div class="freeFormListTr">
-																		<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 																		<div class="freeFormListTd labelAlign">
 																			<div class="detailLeftLableWidth">
 																				<label id="agency_DEC_foreign_address_label">Agency Foreign Address</label> :
@@ -5797,15 +5285,11 @@
 																<div class="freeFormListTdError">
 																	<h6>&nbsp;</h6>
 																</div>
-																<div class="freeFormListTdError">
-																	<h6>&nbsp;</h6>
-																</div>
 																<div class="freeFormListTdError paddingLeft3">
 																	<div id="error_aar_agencyname" class="error"></div>
 																</div>
 															</div>
 															<div class="freeFormListTr">
-																<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
 																<div
 																	class="freeFormListTd labelAlign freeFormLabelWidthagent">
 																	<span id="public1_agency_office_name_label">Agency
@@ -5831,21 +5315,16 @@
 																<div class="freeFormListTdError">
 																	<h6>&nbsp;</h6>
 																</div>
-																<div class="freeFormListTdError">
-																	<h6>&nbsp;</h6>
-																</div>
 																<div class="freeFormListTdError paddingLeft3">
 																	<div id="error_aar_taxid" class="error"></div>
 																</div>
 															</div>
 															<div class="freeFormListTr">
-																<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
 																<div
 																	class="freeFormListTd labelAlign freeFormLabelWidthagent">
 																	<span id="public1_fein_tax_id_label">Tax ID</span> :
 																</div>
 																<div class="freeFormListTd">
-																	<div>
 																		<span id="checkAgencyAdminNotLoggedIn"> <input
 																			name="aar_taxid" id="aar_taxid" type="password"
 																			fullid="adminBrokerageDetailsStep1_freeform_contextdata_1(public1_general_information_security.public1_general_information_label).public1_fein_tax_id_security.public1_fein_tax_id_label.aar_taxid"
@@ -5863,8 +5342,6 @@
 																			onkeypress="checkNumericValue(this,event);"
 																			onkeyup="checkNumericValue(this,event);" />
 																		</span>
-
-																	</div>
 
 																</div>
 															</div>
@@ -5900,18 +5377,12 @@
 														<h6>&nbsp;</h6>
 													</div>
 
-													<div class="freeFormListTdError">
-														<h6>&nbsp;</h6>
-													</div>
-
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="error_prdcr_name_prfx" class="error"></div>
 													</div>
 												</div>
 
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
-
 													<div
 														class="freeFormListTd labelAlign freeFormLabelWidthagent">
 														<span id="agencyListEdit_prdcr_name_prfx_label">Salutation
@@ -5942,18 +5413,12 @@
 														<h6>&nbsp;</h6>
 													</div>
 
-													<div class="freeFormListTdError">
-														<h6>&nbsp;</h6>
-													</div>
-
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="error_assigned_agent_number" class="error"></div>
 													</div>
 												</div>
 
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
-
 													<div
 														class="freeFormListTd labelAlign freeFormLabelWidthagent">
 														<span id="agencyListEdit_assigned_agent_number_label">Agent
@@ -5980,18 +5445,12 @@
 														<h6>&nbsp;</h6>
 													</div>
 
-													<div class="freeFormListTdError">
-														<h6>&nbsp;</h6>
-													</div>
-
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="error_prdcr_first_name" class="error"></div>
 													</div>
 												</div>
 
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
-
 													<div
 														class="freeFormListTd labelAlign freeFormLabelWidthagent">
 														<span id="agencyListEdit_firstname_label">First
@@ -6018,10 +5477,6 @@
 														<h6>&nbsp;</h6>
 													</div>
 
-													<div class="freeFormListTdError">
-														<h6>&nbsp;</h6>
-													</div>
-
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="ajax_error_taxpayer_name" class="error"></div>
 
@@ -6030,7 +5485,6 @@
 												</div>
 
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
 													<div
 														class="freeFormListTd labelAlign freeFormLabelWidthagent">
 														<span id="agencyListEdit_maidenname_label">Nick
@@ -6056,10 +5510,6 @@
 														<h6>&nbsp;</h6>
 													</div>
 
-													<div class="freeFormListTdError">
-														<h6>&nbsp;</h6>
-													</div>
-
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="ajax_error_prdcr_mid_name" class="error"></div>
 
@@ -6068,7 +5518,6 @@
 												</div>
 
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
 													<div
 														class="freeFormListTd labelAlign freeFormLabelWidthagent">
 														<span id="agencyListEdit_middlename_label">Middle
@@ -6094,10 +5543,6 @@
 														<h6>&nbsp;</h6>
 													</div>
 
-													<div class="freeFormListTdError">
-														<h6>&nbsp;</h6>
-													</div>
-
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="ajax_error_prdcr_last_name" class="error"></div>
 
@@ -6106,8 +5551,6 @@
 												</div>
 
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
-
 													<div
 														class="freeFormListTd labelAlign freeFormLabelWidthagent">
 														<span id="agencyListEdit_lastname_label">Last
@@ -6134,10 +5577,6 @@
 														<h6>&nbsp;</h6>
 													</div>
 
-													<div class="freeFormListTdError">
-														<h6>&nbsp;</h6>
-													</div>
-
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="ajax_error_decrypted_ssn_num" class="error"></div>
 
@@ -6146,7 +5585,6 @@
 												</div>
 
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
 													<div
 														class="freeFormListTd labelAlign freeFormLabelWidthagent">
 														<span id="agencyListEdit_ssn_label">Social
@@ -6185,10 +5623,6 @@
 															<h6>&nbsp;</h6>
 														</div>
 
-														<div class="freeFormListTdError">
-															<h6>&nbsp;</h6>
-														</div>
-
 														<div class="freeFormListTdError paddingLeft3">
 															<div id="ajax_error_is_application_signer"
 																class="error"></div>
@@ -6198,7 +5632,6 @@
 													</div>
 
 													<div class="freeFormListTr">
-														<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
 														<div
 															class="freeFormListTd labelAlign freeFormLabelWidth">Application
 															Signer :</div>
@@ -6218,10 +5651,6 @@
 														<h6>&nbsp;</h6>
 													</div>
 
-													<div class="freeFormListTdError">
-														<h6>&nbsp;</h6>
-													</div>
-
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="ajax_error_onboarding_dateofbirth"
 															class="error"></div>
@@ -6231,7 +5660,6 @@
 												</div>
 
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
 													<div
 														class="freeFormListTd labelAlign freeFormLabelWidthagent">
 														<span id="agencyListEdit_dob_label"></span>Date of
@@ -6267,10 +5695,6 @@
 														<h6>&nbsp;</h6>
 													</div>
 
-													<div class="freeFormListTdError">
-														<h6>&nbsp;</h6>
-													</div>
-
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="ajax_error_e_mail_business" class="error"></div>
 
@@ -6279,8 +5703,6 @@
 												</div>
 
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
-
 													<div
 														class="freeFormListTd labelAlign freeFormLabelWidthagent">
 														<span id="agencyListEdit_businessemail_label">Email
@@ -6307,10 +5729,6 @@
 														<h6>&nbsp;</h6>
 													</div>
 
-													<div class="freeFormListTdError">
-														<h6>&nbsp;</h6>
-													</div>
-
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="ajax_error_phone_business" class="error"></div>
 
@@ -6319,8 +5737,6 @@
 												</div>
 
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
-
 													<div
 														class="freeFormListTd labelAlign freeFormLabelWidthagent">
 														<span id="agencyListEdit_businessphone_label">Cell
@@ -6352,10 +5768,6 @@
 														<h6>&nbsp;</h6>
 													</div>
 
-													<div class="freeFormListTdError">
-														<h6>&nbsp;</h6>
-													</div>
-
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="ajax_error_gender_id" class="error"></div>
 
@@ -6364,8 +5776,6 @@
 												</div>
 
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
-
 													<div
 														class="freeFormListTd labelAlign freeFormLabelWidthagent">
 														<span id="agencyListEdit_gender_label">Gender </span> :
@@ -6392,10 +5802,6 @@
 														<h6>&nbsp;</h6>
 													</div>
 
-													<div class="freeFormListTdError">
-														<h6>&nbsp;</h6>
-													</div>
-
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="ajax_error_marital_status_id" class="error"></div>
 
@@ -6404,8 +5810,6 @@
 												</div>
 
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
-
 													<div
 														class="freeFormListTd labelAlign freeFormLabelWidthagent">
 														<span id="agencyListEdit_maritalstatus_label">Marital
@@ -6434,10 +5838,6 @@
 														<h6>&nbsp;</h6>
 													</div>
 
-													<div class="freeFormListTdError">
-														<h6>&nbsp;</h6>
-													</div>
-
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="ajax_error_passport_number" class="error"></div>
 
@@ -6446,8 +5846,6 @@
 												</div>
 
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
-
 													<div
 														class="freeFormListTd labelAlign freeFormLabelWidthagent">
 														<span id="agencyListEdit_passportnumber_label">Passport
@@ -6474,10 +5872,6 @@
 														<h6>&nbsp;</h6>
 													</div>
 
-													<div class="freeFormListTdError">
-														<h6>&nbsp;</h6>
-													</div>
-
 													<div class="freeFormListTdError paddingLeft3">
 														<div id="ajax_error_driver_license_no" class="error"></div>
 
@@ -6486,8 +5880,6 @@
 												</div>
 
 												<div class="freeFormListTr">
-													<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
-
 													<div
 														class="freeFormListTd labelAlign freeFormLabelWidthagent">
 														<span id="agencyListEdit_driverlicenseno_label">Driver's
@@ -6531,10 +5923,6 @@
 															<h6>&nbsp;</h6>
 														</div>
 
-														<div class="freeFormListTdError">
-															<h6>&nbsp;</h6>
-														</div>
-
 														<div class="freeFormListTdError paddingLeft3">
 															<div id="ajax_error_spouse_first_name" class="error"></div>
 															<div id="error_spouse_first_name" class="error"></div>
@@ -6542,8 +5930,6 @@
 													</div>
 
 													<div class="freeFormListTr">
-														<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
-
 														<div
 															class="freeFormListTd labelAlign freeFormLabelWidthagent">
 															<span id="agencyListEdit_spousefirstname_label">Spouse
@@ -6572,10 +5958,6 @@
 															<h6>&nbsp;</h6>
 														</div>
 
-														<div class="freeFormListTdError">
-															<h6>&nbsp;</h6>
-														</div>
-
 														<div class="freeFormListTdError paddingLeft3">
 															<div id="ajax_error_spouse_last_name" class="error"></div>
 
@@ -6584,8 +5966,6 @@
 													</div>
 
 													<div class="freeFormListTr">
-														<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
-
 														<div
 															class="freeFormListTd labelAlign freeFormLabelWidthagent">
 															<span id="agencyListEdit_spouselastname_label">Spouse
@@ -6613,10 +5993,6 @@
 															<h6>&nbsp;</h6>
 														</div>
 
-														<div class="freeFormListTdError">
-															<h6>&nbsp;</h6>
-														</div>
-
 														<div class="freeFormListTdError paddingLeft3">
 															<div id="ajax_error_taxpayer_name" class="error"></div>
 
@@ -6625,7 +6001,6 @@
 													</div>
 
 													<div class="freeFormListTr">
-														<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
 														<div
 															class="freeFormListTd labelAlign freeFormLabelWidthagent">
 															<span id="agencyListEdit_spousenickname_label">Spouse
@@ -6651,10 +6026,6 @@
 															<h6>&nbsp;</h6>
 														</div>
 
-														<div class="freeFormListTdError">
-															<h6>&nbsp;</h6>
-														</div>
-
 														<div class="freeFormListTdError paddingLeft3">
 															<div id="ajax_error_spouse_ssn" class="error"></div>
 
@@ -6663,7 +6034,6 @@
 													</div>
 
 													<div class="freeFormListTr">
-														<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
 														<div
 															class="freeFormListTd labelAlign freeFormLabelWidthagent">
 															<span id="agencyListEdit_spousessn_label">Spouse
@@ -6693,10 +6063,6 @@
 															<h6>&nbsp;</h6>
 														</div>
 
-														<div class="freeFormListTdError">
-															<h6>&nbsp;</h6>
-														</div>
-
 														<div class="freeFormListTdError paddingLeft3">
 															<div id="ajax_error_Date_Of_Birth" class="error"></div>
 
@@ -6705,7 +6071,6 @@
 													</div>
 
 													<div class="freeFormListTr">
-														<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
 														<div
 															class="freeFormListTd labelAlign freeFormLabelWidthagent">
 															<span id="agencyListEdit_spousedob_label">Spouse
@@ -6741,10 +6106,6 @@
 															<h6>&nbsp;</h6>
 														</div>
 
-														<div class="freeFormListTdError">
-															<h6>&nbsp;</h6>
-														</div>
-
 														<div class="freeFormListTdError paddingLeft3">
 															<div id="ajax_error_spouse_email" class="error"></div>
 
@@ -6753,8 +6114,6 @@
 													</div>
 
 													<div class="freeFormListTr">
-														<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
-
 														<div
 															class="freeFormListTd labelAlign freeFormLabelWidthagent">
 															<span id="agencyListEdit_spouseemail_label">Spouse
@@ -6781,10 +6140,6 @@
 															<h6>&nbsp;</h6>
 														</div>
 
-														<div class="freeFormListTdError">
-															<h6>&nbsp;</h6>
-														</div>
-
 														<div class="freeFormListTdError paddingLeft3">
 															<div id="ajax_error_spouse_phone" class="error"></div>
 
@@ -6793,8 +6148,6 @@
 													</div>
 
 													<div class="freeFormListTr">
-														<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
-
 														<div
 															class="freeFormListTd labelAlign freeFormLabelWidthagent">
 															<span id="agencyListEdit_spousephone_label">Spouse
@@ -6824,10 +6177,6 @@
 															<h6>&nbsp;</h6>
 														</div>
 
-														<div class="freeFormListTdError">
-															<h6>&nbsp;</h6>
-														</div>
-
 														<div class="freeFormListTdError paddingLeft3">
 															<div id="ajax_error_spouse_occupation" class="error"></div>
 
@@ -6836,8 +6185,6 @@
 													</div>
 
 													<div class="freeFormListTr">
-														<div class="freeFormListTd mendatoryAsteriskDiv">&nbsp;&nbsp;</div>
-
 														<div
 															class="freeFormListTd labelAlign freeFormLabelWidthagent">
 															<span id="agencyListEdit_spouseoccupation_label">Spouse
@@ -7768,7 +7115,7 @@
 											<td id="principal_keyContact_phone_security"><span
 												id="block_field_phone" /></td>
 											<td id="ssn_num_security"><span id="block_field_ssn_num">
-													<!-- <span id="common.ssnencrypt"> <span
+													<span id="common.ssnencrypt"> <span
 														id="isSSNNumNotEmpty">XXX-XX-XXXX</span> <span
 														id="block_field_ssn_num"> <input type="hidden"
 															id="ajax_field_ssn_num" name="ssn_num" maxlength="11"
@@ -7783,16 +7130,6 @@
 															onkeypress="maskSSNPrincipalList();"
 															onkeyup="maskSSNPrincipalList();" />
 													</span>
-												</span> -->
-												
-												<span id=""> <span
-														id="block_field_npn"> <input type="password" 
-															id="ajax_field_npn" name="ssn_popup" maxlength="11"
-															style="width: 130px;" value="XXXXXXXX"  readonly="readonly"
-															ondblclick="javascript:ajaxpageblocklink('carrier/taxidPopup.html','entityGeneralDetails.showTaxIdPopup','','','popupTaxId');" />	
-															
-															 
-													</span>
 												</span>
 											</span></td>
 											<td id="agencyListPublicSubmit_license_num_security"><span
@@ -7805,7 +7142,7 @@
 													onchange="ValidateLicenseNumber(this)" />
 											</span></td>
 											
-												<td id="npn_security"><span id="block_field_npn">  <!-- Added by Aashutosh  -->
+					<!-- BMIC Specific-->							<td id="npn_security"><span id="block_field_npn">  <!-- Added by Aashutosh  -->
 												
 												<!-- <span id=""> <span
 														id="block_field_npn"> <input type="password" 
@@ -9334,7 +8671,7 @@
 							</table>
 						</div>
 						</section>
-						<!-- ************************************ New Section ************************* -->
+<!-- BMIC Specific-->						<!-- ************************************ New Section ************************* -->
 						<section class="paddingTop20 free-form" id="adminBrokerageStep6_marketinformation_lob_commercial_lines_section_security">
 	<fieldset>
 		<legend id="adminBrokerageStep6_commerciallineslabel_security"><span  id="adminBrokerageStep6_marketinformation_lob_commercial_lines_section_label">Commercial Lines</span> </legend>
@@ -13098,7 +12435,6 @@
 
 
 						</section> </section>
-					
 					</div>
 					<!--=======Body content End========--> </article>
 				</div>
@@ -13150,15 +12486,16 @@
 					id="ajax_field_other_agency_association" /> <input type="hidden"
 					name="legal_other_desc" id="ajax_field_legal_other_desc" /> <input
 					type="hidden" name="agency_comparativerate"
-					id="agency_comparativerate" /> <input
-					type="hidden" name="agency_comparativerate"
-					id="ajax_field_agency_comparativerate" /><input type="hidden"
+					id="agency_comparativerate" /> 
+					<input type="hidden" name="agency_comparativerate"
+					id="ajax_field_agency_comparativerate" />
+					<input type="hidden"
 					name="state_ids" id="state_ids" /> <input type="hidden"
 					name="agency_comparativerate_security"
 					id="ajax_field_agency_comparativerate_security" /> <input
 					type="hidden" name="agency_lob" id="ajax_field_agency_lob"
 					style="width: 250px" />
-					<input type="text" name="kit_delivery" id="ajax_field_kit_delivery" />
+					<input type="hidden" name="kit_delivery" id="ajax_field_kit_delivery" />
 					<input type="hidden" name="foreign_languages" id="ajax_field_foreign_languages" />
 					<input type="hidden" name="current_advertising_methods_desc" id="ajax_field_current_advertising_methods_desc" />
 					<input type="hidden" name="primary_company_usage_desc" id="ajax_field_primary_company_usage_desc" />

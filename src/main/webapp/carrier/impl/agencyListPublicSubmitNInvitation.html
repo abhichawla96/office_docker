@@ -41,15 +41,15 @@
 clipboard for future reference using the "Copy URL" Button.</p>
                     <p id="copyURLButtonDiv2" style="display: none">You can copy and
 save this url to your clipboard for future reference.</p>
-                    <p>
+                    <p id="copuURL">
                       <label name="invitation_link" id="invitation_link1" />
                     </p>
                   </div>
                 </div>
                 <div class="modal-footer">
                   <div class="buttonwrapper">
-                    <span id="copyURLButtonDiv">
-                      <a class="btn btn-primary" href="#" id="agencyListPublicSubmitNInvitation_copy" onclick="copyToClipboard();">
+                    <span id=""><!-- copyURLButtonDiv -->
+                      <a class="btn btn-primary" href="#" id="agencyListPublicSubmitNInvitation_copy" onclick="copyToClipboardURL('#copuURL');">
                         <span>Copy
 URL</span>
                       </a>
@@ -798,6 +798,8 @@ URL</span>
                               </span>
                                 <!-- BMIC - customization -->
                             </td>
+                            
+                            
                             
                             <td align="right">
                             	<span id="1regenerate_security">
