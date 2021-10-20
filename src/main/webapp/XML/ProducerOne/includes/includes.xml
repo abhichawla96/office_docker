@@ -1,0 +1,40 @@
+<resources project="ProducerOne">
+	<resource type="icon" path="images/icons/P1_favicon.png"/>
+	<resource type="css" path="css/common.css"/>
+	<resource type="css" path="css/style.layout.css"/>
+	<resource type="css" path="css/style.color.css"/>
+	
+	<resource type="css" path="css/bootstrap.css"/>
+	<resource type="css" path="css/font-awesome.css"/>
+	<resource type="css" path="css/tabelizer.css"/>
+	<resource type="css" path="css/xmltree.css"/>
+	<resource type="css" path="css/datepicker3.css"/>
+	
+	<!-- Phase 2 - Override Base file as the version 2.9.2.11 does not support impl of include -->
+	<resource type="css" path="css/impl/bmic_specific_style.css" />
+	
+	<resource type="javascript" path="js/jquery-1.10.2.js"/>
+	<resource type="javascript" path="js/jquery.tabelizer.js"/>
+	<resource type="javascript" path="js/jquery.dataTables1.10.19.js"/>
+	<resource type="javascript" path="js/jquery.dataTables.js"/>
+	<resource type="javascript" path="script/jquery.mask.js"/>
+	<resource type="javascript" path="script/manage.js"/>
+	<resource type="javascript" path="script/managetestharness.js"/>
+	<resource type="javascript" path="script/manageperformance.js" />
+	<resource type="javascript" path="js/producerOne.js"/>
+	<resource type="javascript" path="js/producerOne_ext.js"/>
+	<resource type="javascript" path="js/producerOne_ext1.js"/>
+	<resource type="javascript" path="script/producerOnePerformance.js"/>
+	<resource type="javascript" path="script/design.js"/>
+	<resource type="javascript" path="js/impl/producerOneImpl.js"/>
+	<resource type="javascript" path="script/masks.js"/>
+	<resource type="javascript" path="js/bootstrap.js"/>
+	<resource type="javascript" path="js/bootstrap-datepicker.js"/>
+	<resource type="javascript" path="js/stix.js"/>
+	<resource type="javascript" path="js/producerOneClient.js"/>
+	<resource type="javascript" path="js/jquery.columnizer.js"/>
+	<resource type="javascript" path="js/jQuery.print.js"/>
+	<resource type="javascript" path="js/ckeditor/ckeditor.js"/>
+	<resource type="javascript" path="js/ckeditor/samples/js/sample.js"/>
+	<resource type="javascript" path="js/jquery.tabelizer1.js"/>
+</resources>
