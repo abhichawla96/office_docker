@@ -1,0 +1,18 @@
+<projectcomponents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/components_XSD.xsd">
+	<component metaobject="termination_log" name="agencyTerminationStep2" stackdisplayname="agencyterminationlabel - Step 2" displayname="Agency Termination Step 2" objectcolumn="termination_log_id" objecttype="Agency Termination">
+    	
+    	<action name="generateLetter">
+    		<workflow deltaind="M" name="generateLetter" seq="0">
+    			
+    			<!-- Phase 2 - Agency Termination Letter Template - Non Renew - Start  -->
+    			
+    			<document deltaind="M" name="generateLetterFromTemplate" method="generatetolist" templateinput="selected_producer_number_ids" datafields="AgencyAddresType,AgentAddresType,reason_id,person_id,user_id,termination_date,effective_date_policy"
+    				templateoutput="uploadPopup_list_1" indoccategory="41" outdoccategory="39" data="context" objectid="from_object_id" objecttype="Agency Termination" executionsequence="0"/>	
+    			
+    			<!-- Phase 2 - Agency Termination Letter Template - Non Renew - End  -->
+    		</workflow>
+    	</action>
+    	
+	    
+  	</component>
+</projectcomponents>
