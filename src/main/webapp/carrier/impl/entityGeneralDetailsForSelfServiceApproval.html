@@ -390,14 +390,7 @@ agency location exists in the system.</div>
                                     
                                     </div>
                                     <div class="freeFormListTd mendatoryInput">
-                                    
-                                    	<select class="selectWidth form-control" name="is_active" 
-										  fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_2(selfservice_general_details_security.selfservice_general_details_label).entityGeneralDetailsForSelfServiceApproval_is_active_securityHeader.entityGeneralDetailsForSelfServiceApproval_is_active_label.is_active"
-										  onchange="addClassToFields();" id="ajax_field_is_active" disabled="disabled">
-                                            <option value="">Select</option>
-                                          </select>
-                                          
-                                      <!-- <span id="isNotClientId1013">
+                                      <span id="isNotClientId1013">
                                         <span id="isShowPendingAgencyStatusForOnBoarding">
                                           <select class="selectWidth form-control" name="is_active" 
 										  fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_2(selfservice_general_details_security.selfservice_general_details_label).entityGeneralDetailsForSelfServiceApproval_is_active_securityHeader.entityGeneralDetailsForSelfServiceApproval_is_active_label.is_active"
@@ -447,12 +440,12 @@ agency location exists in the system.</div>
                                             <option value="6">Terminated</option>
                                           </select>
                                         </span>
-                                      </span> -->
+                                      </span>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            <!-- <div id="isShowOnHoldBy" class="freeFormList form-group">
+                            <div id="isShowOnHoldBy" class="freeFormList form-group">
                                 <div class="freeFormListTr">
                                   <div class="freeFormListTdError">
                                     <h6>#space#</h6>
@@ -488,7 +481,7 @@ agency location exists in the system.</div>
                                     </span>
                                   </div>
                                 </div>
-                              </div> -->
+                              </div>
                             </li>  <li id="#is_active_after#"></li>
 
 							<li id="#commission_reduction_date_before#"></li>
@@ -628,7 +621,7 @@ agency location exists in the system.</div>
 										<div class="freeFormListTr">
 											<div class="freeFormListTd labelAlign freeFormLabelWidth">
 													<span id="entityGeneralDetailsForSelfServiceApproval_new_business_term_date_label">New
-														Business Termination Date</span> :
+														Business Term Date</span> :
 											</div>
 											<div class="freeFormListTd text-nowrap">
 												<div class="input-group mendatoryInput date">
@@ -772,7 +765,7 @@ agency location exists in the system.</div>
 											<div
 												class="freeFormListTd tdInput text-nowrap">
 												<select class="form-control" name="on_hold_id"
-												fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_2(selfservice_general_details_security.selfservice_general_details_label).entityGeneralDetailsForSelfServiceApproval_on_hold_id_security.entityGeneralDetailsForSelfServiceApproval_on_hold_id_label.on_hold_id"
+												fullid="entityGeneralDetailsResult_freeform_contextdata_2(general_information_security.general_details_information_label).isShowOnHoldBy.onHoldByLabel.on_hold_id"
 													id="ajax_field_on_hold_id">
 													<option value="">Select</option>
 												</select>
@@ -1527,7 +1520,7 @@ Intermediary</label>
                                   </div>
                                 </div>
                               </div>
-                              <div id="agencyComparativerateOtherDiv" style="display: none;">
+                              <div id="ajax_field_agencyComparativerateOtherDiv" style="display: none;">
                                 <div class="freeFormList form-group">
                                   <div class="freeFormListTr">
                                     <div class="freeFormListTdError">
@@ -1543,11 +1536,7 @@ Intermediary</label>
                                     <div class="freeFormListTd mendatoryInput">
                                       <input type="text" name="other_agency_comparativerate" 
 									  fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_2(selfservice_general_details_security.selfservice_general_details_label).ajax_field_agencyComparativerateOtherDiv.other_agency_comparativerate_label.other_agency_comparativerate"
-									  class="form-control form-control-150" id="ajax_field_other_agency_comparativerate" maxlength="50" tabindex="21" />
-									  
-									  <span id="isMarketingAssistantLoggedIn">
-	                                     <label class="oldValue" name="other_agency_comparativerate_old" id="other_agency_comparativerate_old" />
-	                                  </span>
+									  class="form-control form-control-150" id="other_agency_comparativerate" maxlength="50" tabindex="21" />
                                     </div>
                                   </div>
                                 </div>
@@ -1934,7 +1923,7 @@ Certificate Number</label>
                                   <div class="freeFormListTd tdInput">
                                     <select class="form-control" name="agency_management" 
 									fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_2(selfservice_general_details_security.selfservice_general_details_label).entityGeneralDetailsForSelfServiceApproval_agency_management_securityHeader.agency_management_label.agency_management"
-									id="ajax_field_agency_management" onchange="javascript:ajaxpageblocklink('carrier/entityGeneralDetailsForSelfServiceApproval.html','entityGeneralDetailsForSelfServiceApproval.refresh','','','agencyManagementOtherDiv');">
+									id="ajax_field_agency_management">
                                       <option value="">Select</option>
                                     </select>
                                     <span id="isMarketingAssistantLoggedIn">
@@ -2316,8 +2305,8 @@ Plans,GeneralAgencies,Brokers</span>
                                     <h6>#space#</h6>
                                   </div>
                                   <div class="freeFormListTdError paddingLeft3">
-                              		<div id="error_years_in_business" class="error" />
-                                    <div id="ajax_error_years_in_business" class="error" />
+                                    <div id="" class="error" />
+                                    <div id="" class="error" />
                                   </div>
                                 </div>
                                 <div class="freeFormListTr">
@@ -3095,7 +3084,7 @@ Plans,GeneralAgencies,Brokers</span>
 				                                    <div id="associatedAgencyIdDiv" style="padding-left:5px !important">
 				                                    	<span id="associatedAgencyIdDiv_label"></span>
 				                                      <input type="text" class="form-control form-control-3" maxlength="30" name="associatedAgencyName" 
-				                                      fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_2(selfservice_general_details_security.selfservice_general_details_label).associatedAgencyName_securityHeader.associatedAgencyIdDiv_label.associatedAgencyName"
+				                                      fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_040(selfservice_general_details_security.selfservice_general_details_label).associatedAgencyName_securityHeader.associatedAgencyIdDiv_label.associatedAgencyName"
 				                                      id="ajax_field_associatedAgencyName" style="margin-left: 13px; margin-bottom: 2px" />
 				                                    </div>
 				                                  </div>
@@ -3118,7 +3107,7 @@ Plans,GeneralAgencies,Brokers</span>
 	                                                  <div class="freeFormListTd mendatoryInput">
 	                                                      <select
 	                                                          name="assigned_to" 
-	                                                          fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_2(selfservice_general_details_security.selfservice_general_details_label).updateagencylocation_assignedto_security.assigned_to_label.assigned_to"
+	                                                          fullid="addEntityRequests_freeform_contextdata_212131(selfservice_general_details_security.selfservice_general_details_label).updateagencylocation_assignedto_security.assigned_to_label.assigned_to"
 	                                                          id="ajax_field_assigned_to"
 	                                                         class="form-control">
 	                                                              <option value="">Select</option>
@@ -3143,7 +3132,7 @@ Plans,GeneralAgencies,Brokers</span>
                                   <div class="freeFormListTd labelAlign freeFormLabelWidth">#space#</div>
                                   <div class="freeFormListTd tdInput">
                                     <input name="is_searchable" 
-                                    fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_2(selfservice_general_details_security.selfservice_general_details_label).entityGeneralDetailsForSelfServiceApproval_is_searchable_security.entityGeneralDetailsForSelfServiceApproval_is_searchable_label.is_searchable"
+                                    fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_3(selfservice_general_details_security.selfservice_general_details_label).entityGeneralDetailsForSelfServiceApproval_is_searchable_security.entityGeneralDetailsForSelfServiceApproval_is_searchable_label.is_searchable"
                                     id="ajax_field_is_searchable" type="checkbox" value="Y" />
                                     <span id="entityGeneralDetailsForSelfServiceApproval_is_searchable_label">find a widget,declaration part</span>
                                   </div>
@@ -3776,7 +3765,7 @@ Plans,GeneralAgencies,Brokers</span>
 		                    	<div  class="freeFormListTd tdInput text-nowrap" id="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_2122">
 		                         <span>
 		                           <input name="copy_business_to_mail" 
-		                           fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_212(business_addressDiv.agency_business_ss_label).isShowCopyBusinessToMailingOnBusinessOnly.entityGeneralDetailsForSelfServiceApproval_copy_business_to_mailing_label.copy_business_to_mail"
+		                           fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_2122(business_addressDiv.agency_business_ss_label).isShowCopyBusinessToMailingOnBusinessOnly.entityGeneralDetailsForSelfServiceApproval_copy_business_to_mailing_label.copy_business_to_mail"
 		                           id="ajax_field_copy_business_to_mail" type="checkbox" value="true" onclick="javascript:copyBusinessAddrToMailingForSelfSerNewLoc();javascript:ajaxsubmitform('carrier/entityGeneralDetailsForSelfServiceApproval.html','entityGeneralDetailsForSelfServiceApproval.copyBusinessToMailingForNewLocation','','','mailing_addressDiv');" />
 		                         </span>
 		                         <label id="entityGeneralDetailsForSelfServiceApproval_copy_business_to_mailing_label">
@@ -4382,7 +4371,7 @@ Plans,GeneralAgencies,Brokers</span>
 									                    	<div  class="freeFormListTd tdInput text-nowrap" >
 									                         <span>
 									                           <input name="copy_business_to_w9" 
-									                           fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_212(business_addressDiv.agency_business_ss_label).isShowCopyBusinessToMailingOnBusinessOnly.entityGeneralDetailsForSelfServiceApproval_copy_business_to_mailing_label.copy_business_to_mail"
+									                           fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_2122(business_addressDiv.agency_business_ss_label).isShowCopyBusinessToMailingOnBusinessOnly.entityGeneralDetailsForSelfServiceApproval_copy_business_to_mailing_label.copy_business_to_mail"
 									                           id="ajax_field_copy_business_to_w9" type="checkbox" value="true" onclick="javascript:ajaxsubmitform('carrier/entityGeneralDetailsForSelfServiceApproval.html','entityGeneralDetailsForSelfServiceApproval.copyBusinessToW9','','','w9_addressDiv');" />
 									                         </span>
 									                         <label id="entityGeneralDetailsForSelfServiceApproval_copy_business_to_w9_label">
@@ -4788,8 +4777,8 @@ Plans,GeneralAgencies,Brokers</span>
 																					id="ajax_field_w9_legal_name" type="text"
 																					class="form-control" maxlength="80" /> <span
 																					id="value_difference_selfService_security">
-																					<label class="oldValue" name="w9_legal_name_old"
-																					id="w9_legal_name_old" />
+																					<label class="oldValue" name="w9_legal_name_old_w9"
+																					id="w9_legal_name_old_w9" />
 																				</span>
 																			</div>
 																		</div>
@@ -4830,8 +4819,8 @@ Plans,GeneralAgencies,Brokers</span>
 																					class="form-control" /> <span
 																					id="value_difference_selfService_security">
 																					<label class="oldValue"
-																					name="agency_taxpayer_short_nm_old"
-																					id="agency_taxpayer_short_nm_old" />
+																					name="agency_taxpayer_short_nm_old_w9"
+																					id="agency_taxpayer_short_nm_old_w9" />
 																				</span>
 																			</div>
 																		</div>
@@ -4868,8 +4857,8 @@ Plans,GeneralAgencies,Brokers</span>
 																					id="ajax_field_irs_tax_nm_1"
 																					class="form-control" /> <span
 																					id="value_difference_selfService_security">
-																					<label class="oldValue" name="irs_tax_nm_1_old"
-																					id="irs_tax_nm_1_old" />
+																					<label class="oldValue" name="irs_tax_nm_1_old_w9"
+																					id="irs_tax_nm_1_old_w9" />
 																				</span>
 																			</div>
 																		</div>
@@ -4906,8 +4895,8 @@ Plans,GeneralAgencies,Brokers</span>
 																					id="ajax_field_irs_tax_nm_2"
 																					class="form-control" /> <span
 																					id="value_difference_selfService_security">
-																					<label class="oldValue" name="irs_tax_nm_2_old"
-																					id="irs_tax_nm_2_old" />
+																					<label class="oldValue" name="irs_tax_nm_2_old_w9"
+																					id="irs_tax_nm_2_old_w9" />
 																				</span>
 																			</div>
 																		</div>
@@ -5357,7 +5346,7 @@ Plans,GeneralAgencies,Brokers</span>
 																					class="form-control">
 																					<option value="">Select</option>
 																				</select> <span id="value_difference_selfService_security">
-																					<label class="oldValue" name="w9_type_id_old"
+																					<label class="oldValue" name="w9_type_id_old_w9"
 																					id="w9_type_id_old_w9" />
 																				</span>
 
@@ -6499,26 +6488,27 @@ Plans,GeneralAgencies,Brokers</span>
 					<div id="attachmentDivContentEnd"></div>
 				</section>
                 <section class="divButton buttons-section" id="modify_with_approval_security">
-                  
+                  <div id="checkRequestStatusEmpty">
                     <div class="buttonwrapper">
-                            <a id="showSendForApprovalButtonUpdateAgencyLocationForSelfService"
+                            <a id="isEditingDataForSelfserviceApproval"
                             fullid="page(page.page).isEditingDataForSelfserviceApproval.isEditingDataForSelfserviceApproval_label.isEditingDataForSelfserviceApproval"
                             onclick="javascript:getCheckedAgencyAssociation1();copyAddressInfo();checkMasterAssociatedAgencyId();addClassToFields();setGetMultiCheckboxValues('ajax_field_agency_lob_id','ajax_field_agency_lob','get');" href="javascript:ajaxsubmitform('carrier/agencyAdminDashboard.html','entityGeneralDetailsForSelfServiceApproval.sendUpdatedAgencyDataForSaveApproval','','','divComplete');" class="ovalbutton">
                               <span id="isEditingDataForSelfserviceApproval_label">Save And Send For Approval</span>
                             </a>
-                           <!--  <a id="isAddingNewLocationSelfserviceApproval" 
+                            <a id="isAddingNewLocationSelfserviceApproval" 
                             fullid="page(page.page).isAddingNewLocationSelfserviceApproval.isAddingNewLocationSelfserviceApproval_label.isAddingNewLocationSelfserviceApproval"
                             onclick="javascript:getCheckedAgencyAssociation1();copyAddressInfo();checkMasterAssociatedAgencyId();addClassToFields();setGetMultiCheckboxValues('ajax_field_agency_lob_id','ajax_field_agency_lob','get');" href="javascript:ajaxsubmitform('carrier/agencyAdminDashboard.html','entityGeneralDetailsForSelfServiceApproval.sendUpdatedAgencyDataForSaveApproval','','','divComplete');" class="ovalbutton">
                               <span id="isAddingNewLocationSelfserviceApproval_label">Save And Send For Approval</span>
-                            </a> -->
-                          <span>
-                            <a fullid="page(page.page).checkIsNewRequest.checkIsNewRequest_label.checkIsNewRequest"
+                            </a>
+                          <span id="checkIsNewRequest">
+                            <a 
+                            fullid="page(page.page).checkIsNewRequest.checkIsNewRequest_label.checkIsNewRequest"
                             href="javascript:submitform('carrier/agencyAdminDashboard.html|carrier/homeAction.html','entityGeneralDetailsForSelfServiceApproval.cancel','forwardeval','ProducerOneRule.checkSelfServicePrivilege|ProducerOneRule.notAgencyAdmin');" class="ovalbutton">
                               <span id="checkIsNewRequest_label">Cancel</span>
                             </a>
                           </span>
                     </div>
-                  
+                  </div>
                 </section>
               </div>
             </div>

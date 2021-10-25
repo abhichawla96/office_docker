@@ -365,12 +365,8 @@ already exists.</div>
 									id="ajax_field_LOGIN_ID" type="text" class="form-control form-control-150" maxlength="50" />
                                   </div>
                                   <span id="checkIsMoreThen1LoginIDExists">
-                                    <label name="LOGIN_ID" 
-                                    fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).contact_details_login_id_selfService_security.ss_agent_general_selfService_login_id_label.LOGIN_ID"
-									id="ajax_field_LOGIN_ID" />
-                                    <input name="LOGIN_ID" 
-                                    fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).contact_details_login_id_selfService_security.ss_agent_general_selfService_login_id_label.LOGIN_ID"
-									id="ajax_field_LOGIN_ID" type="hidden" />
+                                    <label name="LOGIN_ID" id="ajax_field_LOGIN_ID" />
+                                    <input name="LOGIN_ID" id="ajax_field_LOGIN_ID" type="hidden" />
                                   </span>
                                   <span id="isMarketingAssistantLoggedIn">
                                     <label class="oldValue" name="LOGIN_ID_old" id="LOGIN_ID_old" />
@@ -400,9 +396,7 @@ already exists.</div>
 									</div>
 
 									<div class="freeFormListTd tdInput">
-										<input name="prefix_custom" 
-										fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).agentGeneralDetailsForSelfServiceApproval_prefix_custom_security.agentGeneralDetails_prefix_custom_label.prefix_custom"
-										type="text" id="ajax_field_prefix_custom"
+										<input name="prefix_custom" type="text" id="ajax_field_prefix_custom"
 											class="form-control form-control-150" maxlength="99" />
 										 <span id="isMarketingAssistantLoggedIn">
                                     		<label class="oldValue" name="prefix_custom_old" id="prefix_custom_old" />
@@ -873,8 +867,8 @@ already exists.</div>
                                   <h6>#space#</h6>
                                 </div>
                                 <div class="freeFormListTdError paddingLeft3">
-                                  <div id="ajax_error_prdcr_cde" class="error" />
-                                  <div id="error_prdcr_cde" class="error" />
+                                  <div id="" class="error" />
+                                  <div id="" class="error" />
                                 </div>
                               </div>
                               <div class="freeFormListTr">
@@ -897,26 +891,24 @@ already exists.</div>
                          
                           <li id="#ssn_str_before#"></li>
                           <li id="contact_ssn_security">
-                            <div class="ssnRequired" id="ssnDiv">
-                          	<div id="showdivsystemcode">
-                            <div class="freeFormList form-group " >
+                            <div class="freeFormList form-group ssnRequired" id="ssnDiv">
                               <div class="freeFormListTr">
                                 <div class="freeFormListTdError">
                                   <h6>#space#</h6>
                                 </div>
                                 <div class="freeFormListTdError paddingLeft3">
-                                  <div id="ajax_error_ssn_num" class="error" />
+                                  <div id="ajax_error_decrypted_ssn_num" class="error" />
                                   <div id="" class="error" />
                                 </div>
                               </div>
-                              <div class="freeFormListTr" >
+                              <div class="freeFormListTr" id="showdivsystemcode">
                                 <div class="freeFormListTd labelAlign freeFormLabelWidth">
                                   <span id="contact_ssn_label">SSN</span>
                                   :
                                 </div>
                                 <div class="freeFormListTd" style="padding-left: 0px" id="ssn_num">
                                   <div id="1ssnencryption">
-                                    <div id="mandatorySsnForLicense" style="padding-left: 0px !important; background:none !important">
+                                    <div id="mandatorySsnForLicense" class="">
                                       <div id="isAddingNewContactSelfserviceApproval">
                                       	<input name="ssn_num" 
 										fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).contact_ssn_security.contact_ssn_label.ssn_num"
@@ -964,8 +956,6 @@ already exists.</div>
                                   </div> -->
                                 </div>
                               </div>
-                            </div>
-                            </div>
                             </div>
                           </li>
                            <li id="#ssn_str_after#"></li>
@@ -1065,9 +1055,7 @@ already exists.</div>
                                      <span id="agent_assigned_agent_number_label">Assigned Agent Number</span> :
                                    </div>
                                    <div class="freeFormListTd mendatoryInput">
-                                           <input name="assigned_agent_number" 
-                                           fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).agentGeneralDetailsForSelfServiceApproval_assigned_agent_number_security.agent_assigned_agent_number_label.assigned_agent_number"
-								  			id="ajax_field_assigned_agent_number" type="text" class="fname form-control" maxlength="20"/>
+                                           <input name="assigned_agent_number" id="ajax_field_assigned_agent_number" type="text" class="fname form-control" maxlength="20"/>
 										
 										<span id="isMarketingAssistantLoggedIn">
 		                                    <label class="oldValue" name="assigned_agent_number_old" id="assigned_agent_number_old" />
@@ -1135,9 +1123,7 @@ already exists.</div>
 									<div class="freeFormListTd text-nowrap">
 										<div class="input-group date mendatoryInput tdInput">
                        						<div class="input-group-addon" id="ico_fa_calender_security"> <i class="fa fa-calendar">&nbsp;</i> </div>
-											<input name="inactive_date" 
-											fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).agentGeneralDetailsForSelfServiceApproval_inactive_date_security.inactive_date_agentGeneralDetails_label.inactive_date"
-								  			id="ajax_field_inactive_date" type="text" class="form-control datepicker"
+											<input name="inactive_date" id="ajax_field_inactive_date" type="text" class="form-control datepicker"
 											onkeyup="applyDateFormat(this,event);" maxlength="10" />
 											
 										</div>
@@ -1200,7 +1186,7 @@ already exists.</div>
                               </div>
                               <div class="freeFormListTr">
                                 <div class="freeFormListTd labelAlign freeFormLabelWidth">
-                                  <label id="agentGeneralDetailsForSelfServiceApproval_prev_experience_label">Previous Sample Insurance Group Experience</label>
+                                  <label id="agentGeneralDetailsForSelfServiceApproval_prev_experience_label">Previous CSE Experience</label>
                                   :
                                 </div>
                                 <div class="freeFormListTd tdInput">
@@ -1334,9 +1320,7 @@ already exists.</div>
                                     <label id="is_affiliated_label">Is Affiliated</label> :
                                   </div>
                                   <div class="freeFormListTd tdInput">
-                                    <input class="checkboxMargins" name="is_affiliated" 
-                                    fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).agentGeneralDetailsForSelfServiceApproval_is_affiliated_security.is_affiliated_label.is_affiliated"
-								  	id="ajax_field_is_affiliated" type="checkbox" value="1" />
+                                    <input class="checkboxMargins" name="is_affiliated" id="ajax_field_is_affiliated" type="checkbox" value="1" />
                                      <span id="isMarketingAssistantLoggedIn">
 										<label class="oldValue" name="is_affiliated_old" id="is_affiliated_old" />
 									</span>
@@ -1363,9 +1347,7 @@ already exists.</div>
                                     	<label id="employee_number_label">Employee Number</label> :</div>
                                     <div class="freeFormListTd tdInput">
                                     	
-                                      <input name="employee_number" 
-                                      fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).agentGeneralDetailsForSelfServiceApproval_employee_number_security.employee_number_label.employee_number"
-								  		id="ajax_field_employee_number" type="text" class="form-control char50 form-control-150" maxlength="5" 
+                                      <input name="employee_number" id="ajax_field_employee_number" type="text" class="form-control char50 form-control-150" maxlength="5" 
                                       	onkeyup="checkNumericValue(this,event);" onkeypress="checkNumericValue(this,event);"/>
                                        <span id="isMarketingAssistantLoggedIn">
 											<label class="oldValue" name="employee_number_old" id="employee_number_old" />
@@ -1394,9 +1376,7 @@ already exists.</div>
                                     <div class="freeFormListTd">
                                       <div class="input-group date">
 										<div class="input-group-addon" id="ico_fa_calender_security"> <i class="fa fa-calendar">&nbsp;</i> </div>
-											<input name="employee_hired_service_date" 
-											fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).agentGeneralDetailsForSelfServiceApproval_employee_hired_service_date_security.employee_hired_service_date_label.employee_hired_service_date"
-								  			id="ajax_field_employee_hired_service_date" 
+											<input name="employee_hired_service_date" id="ajax_field_employee_hired_service_date" 
 											class="form-control form-control-date datepicker" type="text" autocomplete="OFF" onkeyup="applyDateFormat(this,event);" maxlength="10" />
 										</div>
                                       <a title="Select Date" class="calender_ico icons" id="date_link" onclick="show_calendar_widget(this);" />
@@ -1428,9 +1408,7 @@ already exists.</div>
                                     </div>
                                     <div class="freeFormListTd">
 	                                    <div class="freeFormListTd tdInput">
-	                                      <input class="checkboxMargins" name="is_full_time_employee" 
-	                                      	fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).agentGeneralDetailsForSelfServiceApproval_is_full_time_employee_security.is_full_time_employee_label.is_full_time_employee"
-								  			id="ajax_field_is_full_time_employee" type="checkbox" value="1" />
+	                                      <input class="checkboxMargins" name="is_full_time_employee" id="ajax_field_is_full_time_employee" type="checkbox" value="1" />
 	                                    </div>
 	                                     <span id="isMarketingAssistantLoggedIn">
 												<label class="oldValue" name="is_full_time_employee_old" id="is_full_time_employee_old" />
@@ -1460,9 +1438,7 @@ already exists.</div>
                                     <div class="freeFormListTd tdInput">
                                     <div class="input-group date">
 										<div class="input-group-addon" id="ico_fa_calender_security"> <i class="fa fa-calendar">&nbsp;</i> </div>
-											<input name="pnc_training_date" 
-											fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).agentGeneralDetailsForSelfServiceApproval_pnc_training_date_security.pnc_training_date_label.pnc_training_date"
-								  			id="ajax_field_pnc_training_date" 
+											<input name="pnc_training_date" id="ajax_field_pnc_training_date" 
 											class="form-control form-control-date datepicker" type="text" autocomplete="OFF" onkeyup="applyDateFormat(this,event);" maxlength="10" />
                                         </div>
                                         <a title="Select Date" class="calender_ico icons" id="date_link" onclick="show_calendar_widget(this);" />
@@ -1773,7 +1749,7 @@ already exists.</div>
                               </div>
                               <div class="freeFormListTd tdInput">
                                 <textarea name="comments" id="comments" 
-                                fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).agentGeneralDetailsForSelfServiceApproval_agent_comments_security.agentGeneralDetailsForSelfServiceApproval_comments_label.comments"
+                                fullid="entityPersonDetails_freeform_contextdata_200(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).agentGeneralDetailsForSelfServiceApproval_agent_comments_security.agentGeneralDetailsForSelfServiceApproval_comments_label.comments"
                                 style="width: 869px; height: 70px" onkeyup="updateTextAreaCharCountMsg(this,'descriptionCharCountMsg',2000)" onfocus="showTextAreaCharCountMsg(this,'descriptionCharCountMsg',2000)" onblur="hideTextAreaCharCountMsg(this,'descriptionCharCountMsg',2000)" />
                                 <div class="textareacharcount" id="descriptionCharCountMsg" style="padding-left: 4px" />
                                 <span id="isMarketingAssistantLoggedIn">
@@ -1813,12 +1789,8 @@ already exists.</div>
 
 										<div class="freeFormListTd text-nowrap">
 											<div style="padding-left: 10px;">
-												<input value="yes" type="radio" name="is_non_compete_agreement" 
-												fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).agentGeneralDetailsForSelfServiceApproval_non_compete_agreement_security.non_compete_label.is_non_compete_agreement"
-								  				id="ajax_field_is_non_compete_agreement"/>yes
-												<input value="no" type="radio" name="is_non_compete_agreement" 
-												fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).agentGeneralDetailsForSelfServiceApproval_non_compete_agreement_security.non_compete_label.is_non_compete_agreement"
-								  				id="ajax_field_is_non_compete_agreement"/>No
+												<input value="yes" type="radio" name="is_non_compete_agreement" id="ajax_field_is_non_compete_agreement"/>yes
+												<input value="no" type="radio" name="is_non_compete_agreement" id="ajax_field_is_non_compete_agreement"/>No
 											</div>
 											
 											 <span id="isMarketingAssistantLoggedIn">
@@ -1837,12 +1809,12 @@ already exists.</div>
 													Agency Agreement</b>
 											</p>
 											<p id="addendum_to_agency_desc_label">By the
-												agreement below, Agent and the Sample Insurance
+												agreement below, Agent and the State Auto Insurance
 												Companies agree to amend the Agency Agreement between
 												them as follows:</p>
 											<p id="addendum_to_agency_q1_label">
 												1. Agent understands and agrees that Agent does not
-												have the authority to place business with Sample
+												have the authority to place business with State Auto
 												Insurance Companies which would violate any
 												provisions of any contract between the Agent and the
 												insurance company, agency or previous employer
@@ -1853,9 +1825,7 @@ already exists.</div>
 													<span id="ajax_error_addendum_to_agency_q1" class="error2"></span>
 												<span style="padding-left: 0px !important;">
 													<textarea id="ajax_field_addendum_to_agency_q1"
-														name="addendum_to_agency_q1" 
-														fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).agentGeneralDetailsForSelfServiceApproval_non_compete_ext_questions_security.addendum_to_agency_q1_label.addendum_to_agency_q1"
-								  						style="width: 98%;height: 70px; margin-top: 5px; margin-bottom: 5px;margin-left: 0px;">
+														name="addendum_to_agency_q1" style="width: 98%;height: 70px; margin-top: 5px; margin-bottom: 5px;margin-left: 0px;">
 													</textarea>
 												</span>
 												 <span id="isMarketingAssistantLoggedIn">
@@ -1876,9 +1846,7 @@ already exists.</div>
 												<span id="ajax_error_addendum_to_agency_q2" class="error2"></span>
 											</div>
 											<p style="margin-left: -8px; margin-top: 10px;">
-												&nbsp;<input name="addendum_to_agency_q2" 
-													fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).agentGeneralDetailsForSelfServiceApproval_non_compete_ext_questions_security.addendum_to_agency_q2_label.addendum_to_agency_q2"
-								  						id="ajax_field_addendum_to_agency_q2" value="Y"
+												&nbsp;<input name="addendum_to_agency_q2" id="ajax_field_addendum_to_agency_q2" value="Y"
 													type="checkbox" /> <span id="addendum_to_agency_q2_agree_label">I agree to the addition of above
 												addendum to the Agency Agreement</span>
 											</p>
@@ -1917,13 +1885,9 @@ already exists.</div>
 										<div class="freeFormListTd">
 											<div style="padding-left: 10px;"
 												class="nonMandatory nonMandatory">
-												<input value="yes" type="radio" name="does_intend_writing_business" 
-													fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).agentGeneralDetailsForSelfServiceApproval_does_intend_writing_business_security.does_intend_writing_business_label.does_intend_writing_business"
-								  					id="ajax_field_does_intend_writing_business"
+												<input value="yes" type="radio" name="does_intend_writing_business" id="ajax_field_does_intend_writing_business"
 													onchange="javascript:ajaxpageblocklink('carrier/agentGeneralDetailsForSelfServiceApproval.html','agentGeneralDetailsForSelfServiceApproval.refreshWritingIntentQuestions','','','does_intend_writing_authorization_securityDiv');" />Yes
-													<input value="no" type="radio" name="does_intend_writing_business" 
-													fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).agentGeneralDetailsForSelfServiceApproval_does_intend_writing_business_security.does_intend_writing_business_label.does_intend_writing_business"
-								  					id="ajax_field_does_intend_writing_business"
+													<input value="no" type="radio" name="does_intend_writing_business" id="ajax_field_does_intend_writing_business"
 													onchange="javascript:ajaxpageblocklink('carrier/agentGeneralDetailsForSelfServiceApproval.html','agentGeneralDetailsForSelfServiceApproval.refreshWritingIntentQuestions','','','does_intend_writing_authorization_securityDiv');" />No
 											</div>
 											 <span id="isMarketingAssistantLoggedIn">
@@ -3913,19 +3877,12 @@ Codes</span>
                              </div>
                              <div class="freeFormListTr">
                                <div class="freeFormListTd labelAlign freeFormLabelWidth">
-                                 <label id="producerAssociation_is_primary_producer_number_label">Primary Producer Association </label> :
+                                 <label id=producerAssociation_is_primary_producer_number_label>Primary Producer Association </label> :
                                </div>
                                <div class="freeFormListTd tdInput">
-                                 <select class="form-control selectWidth" id="ajax_field_is_primary_producer_number" name="is_primary_producer_number"
-                                 fullid="agentGeneralDetailsForSelfServiceApproval_freeform_contextdata_20(associate_producer_codes_div_security.associate_producer_codes_label).agentGeneralDetailsForSelfServiceApproval_primary_producer_number_security.producerAssociation_is_primary_producer_number_label.is_primary_producer_number"
-								>
+                                 <select class="form-control selectWidth" id="ajax_field_is_primary_producer_number" name="is_primary_producer_number">
                                    <option value="">Select</option>
                                  </select>
-                                 
-                                 <span id="agentGeneralDetailsForSelfServiceApproval_primary_producer_number_old_security">
-										  <label class="oldValue" name="is_primary_producer_number_old" id="is_primary_producer_number_old" />
-										</span>
-                                  </div>
                                </div>
                              </div>
                            </div>
@@ -3946,11 +3903,11 @@ Codes</span>
                               <span id="select_all_producer_for_associate_label">Select All</span>
                               <input type="radio" name="selectall_producercodes" 
                               fullid="agentGeneralDetailsForSelfServiceApproval_freeform_contextdata_20(associate_producer_codes_div_security.associate_producer_codes_label).agentGeneralDetailsForSelfservice_selectAll_security.select_all_producer_for_associate_label.selectall_producercodes"
-                              id="ajax_field_selectall_producercodes"  value="Y" onclick="selectAllProducerAssociatedCodes('is_producer_code_associated','ajax_field_producer_number_id','ajax_field_selectedproducernumberids');javascript:ajaxsubmitform('carrier/agentGeneralDetailsForSelfServiceApproval.html','agentGeneralDetailsForSelfServiceApproval.selectAllProducerForAssociation','','','producercode_association_div');" />
+                              id="ajax_field_selectall_producercodes"  value="Y" onclick="javascript:ajaxsubmitform('carrier/agentGeneralDetailsForSelfServiceApproval.html','agentGeneralDetailsForSelfServiceApproval.selectAllProducerForAssociation','','','producercode_association_div');" />
                               Yes
                               <input type="radio" name="selectall_producercodes" 
                               fullid="agentGeneralDetailsForSelfServiceApproval_freeform_contextdata_20(associate_producer_codes_div_security.associate_producer_codes_label).agentGeneralDetailsForSelfservice_selectAll_security.select_all_producer_for_associate_label.selectall_producercodes"
-                              id="ajax_field_selectall_producercodes"  value="N" onclick="unSelectAllProducerAssociatedCodes('is_producer_code_associated','ajax_field_producer_number_id','ajax_field_selectedproducernumberids');javascript:ajaxsubmitform('carrier/agentGeneralDetailsForSelfServiceApproval.html','agentGeneralDetailsForSelfServiceApproval.selectAllProducerForAssociation','','','producercode_association_div');" />
+                              id="ajax_field_selectall_producercodes"  value="N" onclick="javascript:ajaxsubmitform('carrier/agentGeneralDetailsForSelfServiceApproval.html','agentGeneralDetailsForSelfServiceApproval.selectAllProducerForAssociation','','','producercode_association_div');" />
                               No
                             </div>
                           </div>
@@ -4076,7 +4033,7 @@ codes</label>
                                 <table id="mom_child_data" width="100%" border="0" align="left" cellpadding="0" cellspacing="0" class="borderMom">
                                   <tr>
                                     <td id="block_field_is_producer_code_associated" width="10">
-                                      <input type="checkbox" id="ajax_field_is_producer_code_associated" name="is_producer_code_associated" value="Y" onchange="selectAllProducercodes();setProducerCodeAssociatedValue(this);getMultipleSelectedCheckBoxValue('is_producer_code_associated','ajax_field_producer_number_id','ajax_field_selectedproducernumberids');" />
+                                      <input type="checkbox" id="ajax_field_is_producer_code_associated" name="is_producer_code_associated" value="Y" onchange="setProducerCodeAssociatedValue(this);getMultipleSelectedCheckBoxValue('is_producer_code_associated','ajax_field_producer_number_id','ajax_field_selectedproducernumberids');" />
                                     </td>
                                     <td id="block_field_producer_number" />
                                     <td id="block_field_isNew" width="1">
@@ -4092,7 +4049,7 @@ codes</label>
                                 <table id="mom_child_data" width="100%" border="0" align="left" cellpadding="0" cellspacing="0" class="borderMom">
                                   <tr>
                                     <td id="block_field_is_producer_code_associated" width="10">
-                                      <input type="checkbox" id="ajax_field_is_producer_code_associated" name="is_producer_code_associated" value="Y" onchange="selectAllProducercodes();setProducerCodeAssociatedValue(this);getMultipleSelectedCheckBoxValue('is_producer_code_associated','ajax_field_producer_number_id','ajax_field_selectedproducernumberids');" />
+                                      <input type="checkbox" id="ajax_field_is_producer_code_associated" name="is_producer_code_associated" value="Y" onchange="setProducerCodeAssociatedValue(this);getMultipleSelectedCheckBoxValue('is_producer_code_associated','ajax_field_producer_number_id','ajax_field_selectedproducernumberids');" />
                                     </td>
                                     <td id="block_field_producer_number" />
                                     <td id="block_field_isNew" width="1">
@@ -4108,7 +4065,7 @@ codes</label>
                                 <table id="mom_child_data" width="100%" border="0" align="left" cellpadding="0" cellspacing="0" class="borderMom">
                                   <tr>
                                     <td id="block_field_is_producer_code_associated" width="10">
-                                      <input type="checkbox" id="ajax_field_is_producer_code_associated" name="is_producer_code_associated" value="Y" onchange="selectAllProducercodes();setProducerCodeAssociatedValue(this);getMultipleSelectedCheckBoxValue('is_producer_code_associated','ajax_field_producer_number_id','ajax_field_selectedproducernumberids');" />
+                                      <input type="checkbox" id="ajax_field_is_producer_code_associated" name="is_producer_code_associated" value="Y" onchange="setProducerCodeAssociatedValue(this);getMultipleSelectedCheckBoxValue('is_producer_code_associated','ajax_field_producer_number_id','ajax_field_selectedproducernumberids');" />
                                     </td>
                                     <td id="block_field_producer_number" />
                                     <td id="block_field_isNew" width="1">
@@ -4124,7 +4081,7 @@ codes</label>
                                 <table id="mom_child_data" width="100%" border="0" align="left" cellpadding="0" cellspacing="0" class="borderMom">
                                   <tr>
                                     <td id="block_field_is_producer_code_associated" width="10">
-                                      <input type="checkbox" id="ajax_field_is_producer_code_associated" name="is_producer_code_associated" value="Y" onchange="selectAllProducercodes();setProducerCodeAssociatedValue(this);getMultipleSelectedCheckBoxValue('is_producer_code_associated','ajax_field_producer_number_id','ajax_field_selectedproducernumberids');" />
+                                      <input type="checkbox" id="ajax_field_is_producer_code_associated" name="is_producer_code_associated" value="Y" onchange="setProducerCodeAssociatedValue(this);getMultipleSelectedCheckBoxValue('is_producer_code_associated','ajax_field_producer_number_id','ajax_field_selectedproducernumberids');" />
                                     </td>
                                     <td id="block_field_producer_number" />
                                     <td id="block_field_isNew" width="1">
@@ -4140,7 +4097,7 @@ codes</label>
                                 <table id="mom_child_data" width="100%" border="0" align="left" cellpadding="0" cellspacing="0" class="borderMom">
                                   <tr>
                                     <td id="block_field_is_producer_code_associated" width="10">
-                                      <input type="checkbox" id="ajax_field_is_producer_code_associated" name="is_producer_code_associated" value="Y" onchange="selectAllProducercodes();setProducerCodeAssociatedValue(this);getMultipleSelectedCheckBoxValue('is_producer_code_associated','ajax_field_producer_number_id','ajax_field_selectedproducernumberids');" />
+                                      <input type="checkbox" id="ajax_field_is_producer_code_associated" name="is_producer_code_associated" value="Y" onchange="setProducerCodeAssociatedValue(this);getMultipleSelectedCheckBoxValue('is_producer_code_associated','ajax_field_producer_number_id','ajax_field_selectedproducernumberids');" />
                                     </td>
                                     <td id="block_field_producer_number" />
                                     <td id="block_field_isNew" width="1">
@@ -4767,9 +4724,7 @@ Address :</strong>
                                                           <table cellpadding="0" cellspacing="0">
                                                             <tr id="isNIPRBusinessAddressNotEmpty">
                                                               <td>
-                                                                <input name="copy_Nipr_to_business" 
-                                                                fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).agentGeneralDetailsForSelfServiceApproval_employee_number_security.businessAddressLabel.copy_Nipr_to_business"
-								  								id="ajax_field_copy_Nipr_to_business" type="checkbox" value="true" onclick="javascript:ajaxsubmitform('carrier/agentGeneralDetailsForSelfServiceApproval.html','agentGeneralDetailsForSelfServiceApproval.updateNiprAddressInJavaScriptAdressKeyPair','','','addressdiv');updateNiprAddressInJavaScriptAdressKeyPair(this);" />
+                                                                <input name="copy_Nipr_to_business" id="ajax_field_copy_Nipr_to_business" type="checkbox" value="true" onclick="javascript:ajaxsubmitform('carrier/agentGeneralDetailsForSelfServiceApproval.html','agentGeneralDetailsForSelfServiceApproval.updateNiprAddressInJavaScriptAdressKeyPair','','','addressdiv');updateNiprAddressInJavaScriptAdressKeyPair(this);" />
                                                               </td>
                                                               <td>
                                                                 Copy NIPR Business Address to
@@ -4779,17 +4734,13 @@ Address :</strong>
                                                             </tr>
                                                             <tr id="isNIPRMailingAddressNotEmpty">
                                                               <td>
-                                                                <input name="copy_Nipr_to_mailing" 
-                                                                fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).agentGeneralDetailsForSelfServiceApproval_employee_number_security.businessAddressLabel.copy_Nipr_to_mailing"
-								  								id="ajax_field_copy_Nipr_to_mailing" type="checkbox" value="true" onclick="javascript:ajaxsubmitform('carrier/agentGeneralDetailsForSelfServiceApproval.html','agentGeneralDetailsForSelfServiceApproval.updateNiprAddressInJavaScriptAdressKeyPair','','','addressdiv');updateNiprAddressInJavaScriptAdressKeyPair(this);" />
+                                                                <input name="copy_Nipr_to_mailing" id="ajax_field_copy_Nipr_to_mailing" type="checkbox" value="true" onclick="javascript:ajaxsubmitform('carrier/agentGeneralDetailsForSelfServiceApproval.html','agentGeneralDetailsForSelfServiceApproval.updateNiprAddressInJavaScriptAdressKeyPair','','','addressdiv');updateNiprAddressInJavaScriptAdressKeyPair(this);" />
                                                               </td>
                                                               <td>Copy NIPR Mailing Address to Mailing Address</td>
                                                             </tr>
                                                             <tr id="isNIPRResidenceAddressNotEmpty">
                                                               <td>
-                                                                <input name="copy_Nipr_to_w9" 
-                                                                fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).agentGeneralDetailsForSelfServiceApproval_employee_number_security.businessAddressLabel.copy_Nipr_to_w9"
-								  								id="ajax_field_copy_Nipr_to_w9" type="checkbox" value="true" onclick="javascript:ajaxsubmitform('carrier/agentGeneralDetailsForSelfServiceApproval.html','agentGeneralDetailsForSelfServiceApproval.updateNiprAddressInJavaScriptAdressKeyPair','','','addressdiv');updateNiprAddressInJavaScriptAdressKeyPair(this);" />
+                                                                <input name="copy_Nipr_to_w9" id="ajax_field_copy_Nipr_to_w9" type="checkbox" value="true" onclick="javascript:ajaxsubmitform('carrier/agentGeneralDetailsForSelfServiceApproval.html','agentGeneralDetailsForSelfServiceApproval.updateNiprAddressInJavaScriptAdressKeyPair','','','addressdiv');updateNiprAddressInJavaScriptAdressKeyPair(this);" />
                                                               </td>
                                                               <td>Copy NIPR Residence Address to Residence Address</td>
                                                             </tr>
@@ -4935,8 +4886,10 @@ Address :</strong>
               </section>
             </div>
           </div>
-          <div class="hiddenFields">
-          <div id="agentGeneralDetailsForSelfServiceApproval_freeform_contextdata_999">
+        </div>
+        <script type="text/javascript">loadagentGeneralDetail();</script>
+        <div class="hiddenFields">
+          <div id="agentGeneralDetail_freeform_contextdata_0">
          	<input type="hidden" name="dummy_field_duplicate_contact" id="ajax_field_dummy_field_duplicate_contact" />
             <input type="hidden" name="contacttypid" id="ajax_field_contacttypid" />
             <input type="hidden" name="contacttype" id="ajax_field_contacttype" />
@@ -4984,8 +4937,6 @@ Address :</strong>
           </div>
           <input type="hidden" name="agentBGQuestionsCommentsSize" id="ajax_field_agentBGQuestionsCommentsSize" value="1024" />
         </div>
-        <script type="text/javascript">loadagentGeneralDetail();</script>
-        
         <div id="isAddNewPersonDetails">
           <script type="text/javascript">if (document.getElementById("response_FixedValue_0") != null)
                         document.getElementById("response_FixedValue_0").checked = true;</script>

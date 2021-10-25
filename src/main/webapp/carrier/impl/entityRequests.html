@@ -92,7 +92,7 @@ delete this item?
 				<div class="panel-body-wraper" id="tdContent">
 					<!---------page Level msg Start---------->
 					<div class="errorMsgAlign clear-both">
-						<div class="error" id="ajax_error_pageError1" />
+						
 					</div>
 					<div class="ConfirmationAlign clear-both" id="entityRequestMsg_freeform_contextdata_100">
 						 <label name="pageMsg" id="pageMsg" class="Confirmation" />
@@ -477,13 +477,13 @@ status.</i>
                                 </div>
                                 <div class="freeFormListTr" >
                                   <div class="freeFormListTd labelAlign freeFormLabelWidth">
-                                    <span id="entityRequests_national_agency_desc_label">National Agency :
+                                    <span id="national_agency_desc_label">National Agency :
  </span>
                                  
                                   </div>
                                   <div class="freeFormListTd tdInput">
                          <input name="national_agency_name" 
-						 fullid="entityRequestFilter_freeform_contextdata_1(isHideEntityRequestListingPageFilter.isHideEntityRequestListingPageFilter_label).hideEntityNationalNameBasedOnRole.entityRequests_national_agency_desc_label.national_agency_name"
+						 fullid="entityRequestFilter_freeform_contextdata_1(isHideEntityRequestListingPageFilter.isHideEntityRequestListingPageFilter_label).hideEntityNationalNameBasedOnRole.national_agency_desc_label.national_agency_name"
 						 id="ajax_field_national_agency_name" type="text" style="width: 274px" maxlength="100" autocomplete="OFF" onkeyup="javascript:ajaxpageblocklink('carrier/entityRequests.html','entityRequests.getNationalAgencyDescList','','','ajaxxmlname_ajax_field_national_agency_name');" onclick="nottoggleDivDisplay(this,'ajax_field_national_agency_name','ajaxxmlname_ajax_field_national_agency_name');" />
                                              <div id="ajaxxmlname_ajax_field_national_agency_name" class="transparent fixcolumnSearchDiv" style="display: none; border: solid 1px #cccccc; width: 271px; margin-left: 4px;" />
 
@@ -680,7 +680,7 @@ exists in the system !</span>
                                                   <td id="sorting(,A,ajax_sorting):block_field_request_ss_id" class="HeaderStyle" width="8%">Request ID</td>
                                                   <td width="20%" id="hideEntityNationalNameBasedOnRole" class="HeaderStyle">
                                                     <span id="sorting(,A,ajax_sorting):block_field_national_agency_name">
-                                                      <label id="entityRequests_national_agency_desc_label">National Agency</label>
+                                                      <label id="national_agency_desc_label">National Agency</label>
                                                     </span>
                                                   </td>
                                                   <td width="20%" id="entityrequests_name_security" class="HeaderStyle">
@@ -1041,8 +1041,8 @@ Updated</th>
           <input type="hidden" name="isallusers" id="ajax_field_isallusers" />
           <input type="hidden" name="isdisplayusers" id="ajax_field_isdisplayusers" />
           <input type="hidden" id="ajax_field_PAGE_DISABLED_FIELDS" name="PAGE_DISABLED_FIELDS" />
-          <input type="hidden" name="iscomingFromAgencyAdminDashboard" id="ajax_field_iscomingFromAgencyAdminDashboard" />
           <input type="hidden" id="ajax_field_isCommingFromCarrierTab1" name="isCommingFromCarrierTab1" />
+          <input type="hidden" name="iscomingFromAgencyAdminDashboard" id="ajax_field_iscomingFromAgencyAdminDashboard" />
          
         </div>
         <div id="requesterInfo" class="requestIdPopUp">

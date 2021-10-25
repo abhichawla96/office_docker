@@ -307,7 +307,7 @@
 									fullid="addEntityRequests_freeform_contextdata_20(ajax_insurance_detail_security.ajax_insurance_detail_label).addInsuranceDetailsForSelfServiceApproval_coverage_amount_security.addInsuranceDetailsForSelfServiceApproval_coverage_amount_label.coverage_amount"
 									class="form-control char16" onkeyup="checkNumericValue(this,event);loadDocInsuranceDetail();" onkeypress="checkNumericValue(this,event);loadDocInsuranceDetail();" />
                                 	<div id="isMarketingAssistantLoggedIn">
-                                      <label class="oldValue" name="coverage_amount_old" id="coverage_amount_old" />
+                                      <label class="oldValue" name="policy_number_old" id="policy_number_old" />
                                     </div>
                                 </div>
                                 
@@ -392,7 +392,7 @@
                           <div class="freeFormListTd mendatoryInput">
                             <input name="deductible" 
 							fullid="addEntityRequests_freeform_contextdata_20(ajax_insurance_detail_security.ajax_insurance_detail_label).addInsuranceDetailsForSelfServiceApproval_doc_insurance_deductible_security.addInsuranceDetailsForSelfServiceApproval_doc_insurance_deductible_label.deductible"
-							maxlength="20" type="text" id="ajax_field_deductible" class="form-control form-control-100" />
+							maxlength="20" type="text" id="ajax_field_deductible" class="form-control form-control-100" onkeyup="checkNumericValue(this,event);loadDocInsuranceDetail();" onkeypress="checkNumericValue(this,event);loadDocInsuranceDetail();" />
                                 <div id="isMarketingAssistantLoggedIn">
                                   <label class="oldValue" name="deductible_old" id="deductible_old" />
                                 </div>
@@ -400,8 +400,6 @@
                             </div>
                           </div>
                         </li>
-                        
-                        
                         <li class="inlineBlock_2_fix" id="addInsuranceDetailsForSelfServiceApproval_isShowCancellationDate">
                               <div class="freeFormList form-group">
                                 <div class="freeFormListTr">
@@ -475,34 +473,6 @@
                                 </div>
                               </div>
                             </li>
-                            
-                             <li class="inlineBlock_2_fix"  id="addInsuranceDetailsForSelfServiceApproval_self_insured_retention_security">
-                            <div class="freeFormList form-group">
-                              <div class="freeFormListTr">
-                                <div class="freeFormListTdError">
-                                  <h6>#space#</h6>
-                                </div>
-                                <div class="freeFormListTdError paddingLeft3">
-                                  <div id="ajax_error_self_insured_retention" class="error" />
-                                </div>
-                              </div>
-                              <div class="freeFormListTr">
-                                <div class="freeFormListTd labelAlign freeFormLabelWidth">
-                                  <label id="addInsuranceDetailsForSelfServiceApproval_self_insured_retention_label">SIR</label> :
-                                </div>
-                                <div class="freeFormListTd ">
-                                  <input name="self_insured_retention"
-									fullid="addEntityRequests_freeform_contextdata_20(ajax_insurance_detail_security.ajax_insurance_detail_label).addInsuranceDetailsForSelfServiceApproval_self_insured_retention_security.addInsuranceDetailsForSelfServiceApproval_self_insured_retention_label.self_insured_retention"
-									 maxlength="20" type="text" id="ajax_field_self_insured_retention"  class="form-control form-control-100" />
-                                	<div id="isMarketingAssistantLoggedIn">
-                                      <label class="oldValue" name="self_insured_retention_old" id="self_insured_retention_old" />
-                                    </div>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                            
-                            
                              <li  class="inlineBlock_2_fix"></li>
                            									 <li  class="inlineBlock_2_fix" id="addInsuranceDetailsForSelfServiceApproval_assigned_to_security">
                                                                             <div class="freeFormList">
@@ -643,11 +613,9 @@
                                     </div>
                                   </div>
                                   <div class="freeFormListTr">
-                                    <div class="freeFormListTd labelAlign valignTop nowrapDiv txtbold"><div style="width: 96px" class="txtbold"><span id="docInsuranceDetail_ss_comments_req_label">Comments</span> :</div></div>
+                                    <div class="freeFormListTd labelAlign valignTop nowrapDiv txtbold"><div style="width: 96px" class="txtbold">Comments :</div></div>
                                     <div class="freeFormListTd tdInput width100">
-                                      <textarea name="comments_requests" 
-                                      fullid="addEntityRequests_freeform_contextdata_20(ajax_insurance_detail_security.ajax_insurance_detail_label).docInsuranceDetail_ss_comments_req_security.docInsuranceDetail_ss_comments_req_label.comments_requests"
-									  class="width100 form-control" id="ajax_field_comments_requests" style="width: 99.5%" rows="4" onkeyup="updateTextAreaCharCountMsg(this,'commentsentitytaskCharCountMsg',2048)" onfocus="showTextAreaCharCountMsg(this,'commentsentitytaskCharCountMsg',2048)" onblur="hideTextAreaCharCountMsg(this,'commentsentitytaskCharCountMsg',2048)" />
+                                      <textarea name="comments_requests" class="width100 form-control" id="ajax_field_comments_requests" style="width: 99.5%" rows="4" onkeyup="updateTextAreaCharCountMsg(this,'commentsentitytaskCharCountMsg',2048)" onfocus="showTextAreaCharCountMsg(this,'commentsentitytaskCharCountMsg',2048)" onblur="hideTextAreaCharCountMsg(this,'commentsentitytaskCharCountMsg',2048)" />
                                       <div class="textareacharcount" id="commentsentitytaskCharCountMsg" />
                                     </div>
                                   </div>
@@ -685,10 +653,8 @@
                      </div>
                    </div>
                    <div class="freeFormListTr" id="addNewInsuranceDetailsForSelfServiceStep1eo_claims_declaration_freeform_contextdata_1000">
-                     <div class="freeFormListTd labelAlign "><div style="margin-left: 98px!important;">
-                     <input name="eo_claims_declaration" 
-                     fullid="addEntityRequests_freeform_contextdata_20(ajax_insurance_detail_security.ajax_insurance_detail_label).add_new_insurance_details_for_self_service_eo_claims_declaration_security.add_new_insurance_detail_for_self_service_eo_claims_declaration_label.eo_claims_declaration"
-					value="Y" id="ajax_field_eo_claims_declaration" type="checkbox" /></div></div>
+                     <div class="freeFormListTd labelAlign "><div style="width: 114px">
+                     <input name="eo_claims_declaration" value="Y" id="ajax_field_eo_claims_declaration" type="checkbox" /></div></div>
                      <div class="freeFormListTd tdInput width100">
                        <span id="add_new_insurance_detail_for_self_service_eo_claims_declaration_label">I understand that I am required to carry at least $1,000,000 of coverage. If I have less than $1,000,000 of coverage,  I agree to increase it to $1,000,000.  Please attach a copy of your current  declaration pagein the Additional Documents section at the end of the application.Click the box to agree these terms.</span>
                      </div>

@@ -10,6 +10,7 @@
     <script type="text/javascript" src="script/producerOnePerformance.js" />
   <script type="text/javascript" src="js/all_files.js" />
     <script type="text/javascript" src="script/managetestharness.js" />
+    <script type="text/javascript" src="script/epoch_classes.js" />
     <script type="text/javascript" src="js/jquery.easing.1.3.js" />
     
      <script type="text/javascript" src="js/googlejsapi.js" />
@@ -1288,14 +1289,6 @@ Life Cycle
                                         <label name="totalCompletedPublicSubmissionsNew" 
 										fullid="newdashboard_freeform_contextdata_20(homeActionOnBoardingHideShow.dashboard_onboarding_label).rejected_bucket_completed_security.onboard_rejected_bucket_completed_label.totalCompletedPublicSubmissionsNew"
 										id="totalCompletedPublicSubmissionsNew" />
-                                        )
-                                      </a>
-                                    </li>
-                                    
-                                    <li id="trashed_Onboarded_application_security">
-                                      <a class="trashed_onboarded_application_css_security" href="javascript:submitform('carrier/agencyListPublicSubmitNInvitation.html','homeAction.trashOnboardedApplication','','');">
-                                        <span id="onboard_trashed_application_label">Trashed Onboarded Application</span> (
-                                        <label name="totalTrashPublicSubmissionsNew" id="totalTrashPublicSubmissionsNew" />
                                         )
                                       </a>
                                     </li>
@@ -3031,7 +3024,7 @@ Details</span>
 		                                  <ul class="ul_block_1">
 		                                    <li id="noticeSendCount_list_data_01">
 		                                      <span id="block_field_MM">
-		                                        <a href="javascript:submitform('reports/entityInsuranceExpireNoticeSentListing.html','homeAction.entityInsuranceExpireNoticeSentListing','','');" />
+		                                        <a href="#" />
 		                                      </span>
 		                                    </li>
 		                                  </ul>
@@ -3126,7 +3119,7 @@ Details</span>
 		                                  <ul class="ul_block_1">
 		                                    <li id="cyber_liability_noticeSendCount_list_data_01">
 		                                      <span id="block_field_MM">
-		                                        <a href="javascript:submitform('reports/entityCyberLiabilityExpireNoticeSentListing.html','homeAction.entityInsuranceCyberLiabilityNoticeSentListing','','');" />
+		                                        <a href="#" />
 		                                      </span>
 		                                    </li>
 		                                  </ul>
@@ -4354,237 +4347,6 @@ Details</span>
                     </div>
                   </div>
                 </div>
-                <!-- Profile Dashboard -->
-                <div class="homeActionBlock2" id="homeAction_profile_dashboard_security">
-                  <div id="checkRoleIDSalesAdmin">
-                    <div class="row">
-                      <div class="col-sm-3" >
-                        <div class="dashboard-block-inner">
-                          <div class="panel panel-default dashboard-block">
-                            <div class="frameHeader">
-                              <h3 class="panel-title pull-left"><span id="homeAction_profile_dashboard_label">PeerPerformance Dashboard</span></h3>
-                            </div>
-                            <!-- /.box-header -->
-                            <div class="frameData scroll_block">
-                              <div class="row dashboardGird headerChange">
-                                <table cellpadding="0" cellspacing="0" width="100%" id="saleRepDashBoardRegion_list_01">
-                                  <tr>
-                                    <td>
-                                      <table cellpadding="0" cellspacing="0" width="100%">
-                                        <tr id="saleRepDashBoardRegion_list_header_01">
-                                          <td id="block_field_rep_name" class="HeaderStyle">Name</td>
-                                          <td width="30px" id="block_field_percentage" class="HeaderStyle">%</td>
-                                        </tr>
-                                        <tr id="saleRepDashBoardRegion_list_data_01">
-                                          <td id="block_field_rep_name" />
-                                          <td width="30px" id="block_field_percentage" />
-                                        </tr>
-                                      </table>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td />
-                                  </tr>
-                                </table>
-                              </div>
-                              <!-- /.row -->
-                            </div>
-                            <!-- /.box-body -->
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-9">
-                        <div class="dashboard-block-inner">
-                          <div class="panel panel-default">
-                            <div class="frameHeader">
-                              <h3 class="panel-title pull-left">Profile Dashboard</h3>
-                            </div>
-                            <!-- /.box-header -->
-                            <div class="frameData scroll_block">
-                              <div class="row dashboardGird">
-                                <section>
-                                  <table cellpadding="1" cellspacing="0" width="98%" align="center" id="saleRepDashBoardYearWrittenPremium_list_01" class="gridTable">
-                                    <tr bgcolor="#CCCCCC" class="homeActionGridBg" id="saleRepDashBoardYearWrittenPremium_list_header_01">
-                                      <td nowrap="nowrap" class="HeaderStyle" id="block_field_year" width="10%">Year</td>
-                                      <td class="HeaderStyle" id="block_field_Written_Premium" width="15%">WP($)</td>
-                                      <td class="HeaderStyle" id="block_field_Written_Premium_New" width="15%">WP
-New($)</td>
-                                      <!-- <td class="DashboardHeaderStyle"
-                                                        id="block_field_Net_Earned">Net
-                                                        Earned</td> -->
-                                      <td class="HeaderStyle" id="block_field_Policy_in_Force" width="15%">Policy in
-Force</td>
-                                      <td class="HeaderStyle" id="block_field_New_Apps" width="15%">New Apps</td>
-                                      <td class="HeaderStyle" id="block_field_Incurred_Loss" width="15%">Incurred
-Loss</td>
-                                      <td class="HeaderStyle" id="block_field_Loss_Ratio">Loss Ratio</td>
-                                    </tr>
-                                    <tr id="saleRepDashBoardYearWrittenPremium_list_data_01">
-                                      <td nowrap="nowrap" id="block_field_year">
-                                        <a href="javascript:submitform('carrier/agentDashBoardDetailByLob.html','homeAction.getAgentDashBoardByLob','','');" />
-                                      </td>
-                                      <td id="block_field_Written_Premium" />
-                                      <td id="block_field_Written_Premium_New" />
-                                      <!-- <td id="block_field_Net_Earned"></td> -->
-                                      <td id="block_field_Policy_in_Force" />
-                                      <td id="block_field_New_Apps" />
-                                      <td id="block_field_Incurred_Loss" />
-                                      <td id="block_field_Loss_Ratio" />
-                                    </tr>
-                                  </table>
-                                </section>
-                                <section class="paddingTop10">
-                                  <table cellpadding="1" cellspacing="0" width="98%" align="center" id="saleRepDashBoardMonthWrittenPremium_list_01" class="gridTable">
-                                    <tr bgcolor="#CCCCCC" class="homeActionGridBg" id="saleRepDashBoardMonthWrittenPremium_list_header_01">
-                                      <td nowrap="nowrap" class="HeaderStyle" id="block_field_year" width="10%">Month</td>
-                                      <td class="HeaderStyle" id="block_field_Written_Premium" width="15%">WP($)</td>
-                                      <td class="HeaderStyle" id="block_field_Written_Premium_New" width="15%">WP
-New($)</td>
-                                      <!-- <td class="DashboardHeaderStyle"
-                                                        id="block_field_Net_Earned">Net
-                                                        Earned</td> -->
-                                      <td class="HeaderStyle" id="block_field_Policy_in_Force" width="15%">Policy in
-Force</td>
-                                      <td class="HeaderStyle" id="block_field_New_Apps" width="15%">New Apps</td>
-                                      <td class="HeaderStyle" id="block_field_Incurred_Loss" width="15%">Incurred
-Loss</td>
-                                      <td class="HeaderStyle" id="block_field_Loss_Ratio">Loss Ratio</td>
-                                    </tr>
-                                    <tr id="saleRepDashBoardMonthWrittenPremium_list_data_01">
-                                      <td nowrap="nowrap" id="block_field_year">
-                                        <a href="javascript:submitform('carrier/agentDashBoardDetailByLob.html','homeAction.getAgentDashBoardByLob','','');" />
-                                      </td>
-                                      <td id="block_field_Written_Premium" />
-                                      <td id="block_field_Written_Premium_New" />
-                                      <!-- <td id="block_field_Net_Earned"></td> -->
-                                      <td id="block_field_Policy_in_Force" />
-                                      <td id="block_field_New_Apps" />
-                                      <td id="block_field_Incurred_Loss" />
-                                      <td id="block_field_Loss_Ratio" />
-                                    </tr>
-                                  </table>
-                                </section>
-                              </div>
-                              <!-- /.row -->
-                            </div>
-                            <!-- /.box-body -->
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-3">
-                        <div class="homeActionBlock2 mostActive">
-                          <div class="dashboard-block-inner">
-                            <div class="panel panel-default dashboard-block">
-                              <div class="frameHeader">
-                                <h3 class="panel-title pull-left">Most Active</h3>
-                              </div>
-                              <!-- /.box-header -->
-                              <div class="frameData headerChange dashboardGird" id="mostActiveDiv">
-                                <div id="mostActiveDivScroll" class="scroll_Active" style="height:173px; width: auto">
-                                  <table cellpadding="1" cellspacing="0" width="100%" align="center" id="saleRepDashBoardMostActive_list_01">
-                                    <tr id="saleRepDashBoardMostActive_list_header_01">
-                                      <td nowrap="nowrap" height="20px" class="HeaderStyle" id="block_field_rep_name">Name</td>
-                                      <td class="HeaderStyle" id="block_field_premium">WP($)</td>
-                                      <td class="HeaderStyle" id="block_field_losses">Loss($)</td>
-                                      <td class="HeaderStyle" id="block_field_policy_count">Policy(#)</td>
-                                      <td class="HeaderStyle" nowrap="nowrap" id="block_field_loss_ratio">Loss Ratio(%)</td>
-                                    </tr>
-                                    <tr id="saleRepDashBoardMostActive_list_data_01">
-                                      <td nowrap="nowrap" id="block_field_rep_name" />
-                                      <td id="block_field_premium" />
-                                      <td id="block_field_losses" />
-                                      <td id="block_field_policy_count" />
-                                      <td id="block_field_loss_ratio" />
-                                    </tr>
-                                  </table>
-                                </div>
-                              </div>
-                              <!-- /.box-body -->
-                            </div>
-                          </div>
-                        </div>
-                        <div class="homeActionBlock2 mostActive">
-                          <div class="dashboard-block-inner">
-                            <div class="panel panel-default dashboard-block">
-                              <div class="frameHeader">
-                                <h3 class="panel-title pull-left">Least Active</h3>
-                              </div>
-                              <!-- /.box-header -->
-                              <div class="frameData dashboardGird headerChange">
-                                <div class="scroll_Active" style="height: 158px;width: auto;">
-                                  <table cellpadding="1" cellspacing="0" width="100%" align="center" id="saleRepDashBoardLeastActive_list_01">
-                                    <tr id="saleRepDashBoardLeastActive_list_header_01">
-                                      <td nowrap="nowrap" height="20px" class="HeaderStyle" id="block_field_rep_name">Name</td>
-                                      <td class="HeaderStyle" id="block_field_premium">WP($)</td>
-                                      <td class="HeaderStyle" id="block_field_losses">Loss($)</td>
-                                      <td class="HeaderStyle" id="block_field_policy_count">Policy(#)</td>
-                                      <td class="HeaderStyle" nowrap="nowrap" id="block_field_loss_ratio">Loss Ratio(%)</td>
-                                    </tr>
-                                    <tr id="saleRepDashBoardLeastActive_list_data_01">
-                                      <td nowrap="nowrap" id="block_field_rep_name" />
-                                      <td id="block_field_premium" />
-                                      <td id="block_field_losses" />
-                                      <td id="block_field_policy_count" />
-                                      <td id="block_field_loss_ratio" />
-                                    </tr>
-                                  </table>
-                                </div>
-                              </div>
-                              <!-- /.box-body -->
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-9">
-                        <div class="row">
-                          <div class="col-sm-6">
-                            <div class="dashboard-block-inner">
-                              <div class="panel panel-default">
-                                <div class="frameHeader">
-                                  <h3 class="panel-title pull-left">
-                                    Written Premium by Product
-                                    <input type="hidden" name="selectDate" id="selectDate" />
-                                  </h3>
-                                </div>
-                                <!-- /.box-header -->
-                                <div class="frameData homeActionBlockHeightGraph">
-                                  <div id="popupGraphDiv">
-                                    <div id="#Include:carrier/popupGraph_2_underwriterWrittenPremiumPieChart.html#" />
-                                  </div>
-                                </div>
-                                <!-- /.box-body -->
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-sm-6">
-                            <div class="dashboard-block-inner">
-                              <div class="panel panel-default">
-                                <div class="frameHeader">
-                                  <h3 class="panel-title pull-left">
-                                    Premium and Loss by Month
-                                    <input type="hidden" name="selectDate" id="selectDate" />
-                                  </h3>
-                                </div>
-                                <!-- /.box-header -->
-                                <div class="frameData homeActionBlockHeightGraph">
-                                  <div id="popupGraphDiv">
-                                    <div id="#Include:carrier/popupGraph_3_underwriterWrittenPremiumLineChart.html#" />
-                                  </div>
-                                </div>
-                                <!-- /.box-body -->
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <!-- <script type="text/javascript">showCalendar();</script> -->
-                  </div>
-                </div>
                 <!-- Organization Hierarchy -->
                 <div class="homeActionBlock dashboard-block organization_hierarchy" id="homeActionOrganizationHierarchy_security">
                   <div class="dashboard-block-inner">
@@ -4936,7 +4698,238 @@ Loss</td>
                 
                 <!-- Recent Contacts -->
                 
-               <!-- Agency Hiererchy -->
+                <!-- Profile Dashboard -->
+                <div class="homeActionBlock2" id="homeAction_profile_dashboard_security">
+                  <div id="checkRoleIDSalesAdmin">
+                    <div class="row">
+                      <div class="col-sm-3" id="1eval:ProducerOneRule.checkSalAdminDashBoard">
+                        <div class="dashboard-block-inner">
+                          <div class="panel panel-default dashboard-block">
+                            <div class="frameHeader">
+                              <h3 class="panel-title pull-left"><span id="homeAction_profile_dashboard_label">PeerPerformance Dashboard</span></h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="frameData scroll_block">
+                              <div class="row dashboardGird">
+                                <table cellpadding="0" cellspacing="0" width="100%" id="saleRepDashBoardRegion_list_01">
+                                  <tr>
+                                    <td>
+                                      <table cellpadding="0" cellspacing="0" width="100%">
+                                        <tr id="saleRepDashBoardRegion_list_header_01">
+                                          <td id="block_field_rep_name" class="HeaderStyle">Name</td>
+                                          <td width="30px" id="block_field_percentage" class="HeaderStyle">%</td>
+                                        </tr>
+                                        <tr id="saleRepDashBoardRegion_list_data_01">
+                                          <td id="block_field_rep_name" />
+                                          <td width="30px" id="block_field_percentage" />
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td />
+                                  </tr>
+                                </table>
+                              </div>
+                              <!-- /.row -->
+                            </div>
+                            <!-- /.box-body -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-9">
+                        <div class="dashboard-block-inner">
+                          <div class="panel panel-default">
+                            <div class="frameHeader">
+                              <h3 class="panel-title pull-left">Profile Dashboard</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="frameData scroll_block">
+                              <div class="row dashboardGird">
+                                <section>
+                                  <table cellpadding="1" cellspacing="0" width="98%" align="center" id="saleRepDashBoardYearWrittenPremium_list_01" class="gridTable">
+                                    <tr bgcolor="#CCCCCC" class="homeActionGridBg" id="saleRepDashBoardYearWrittenPremium_list_header_01">
+                                      <td nowrap="nowrap" class="HeaderStyle" id="block_field_year">Year</td>
+                                      <td class="HeaderStyle" id="block_field_Written_Premium">WP($)</td>
+                                      <td class="HeaderStyle" id="block_field_Written_Premium_New">WP
+New($)</td>
+                                      <!-- <td class="DashboardHeaderStyle"
+                                                        id="block_field_Net_Earned">Net
+                                                        Earned</td> -->
+                                      <td class="HeaderStyle" id="block_field_Policy_in_Force">Policy in
+Force</td>
+                                      <td class="HeaderStyle" id="block_field_New_Apps">New Apps</td>
+                                      <td class="HeaderStyle" id="block_field_Incurred_Loss">Incurred
+Loss</td>
+                                      <td class="HeaderStyle" id="block_field_Loss_Ratio">Loss Ratio</td>
+                                    </tr>
+                                    <tr id="saleRepDashBoardYearWrittenPremium_list_data_01">
+                                      <td nowrap="nowrap" id="block_field_year">
+                                        <a href="javascript:submitform('carrier/agentDashBoardDetailByLob.html','homeAction.getAgentDashBoardByLob','','');" />
+                                      </td>
+                                      <td id="block_field_Written_Premium" />
+                                      <td id="block_field_Written_Premium_New" />
+                                      <!-- <td id="block_field_Net_Earned"></td> -->
+                                      <td id="block_field_Policy_in_Force" />
+                                      <td id="block_field_New_Apps" />
+                                      <td id="block_field_Incurred_Loss" />
+                                      <td id="block_field_Loss_Ratio" />
+                                    </tr>
+                                  </table>
+                                </section>
+                                <section class="paddingTop10">
+                                  <table cellpadding="1" cellspacing="0" width="98%" align="center" id="saleRepDashBoardMonthWrittenPremium_list_01" class="gridTable">
+                                    <tr bgcolor="#CCCCCC" class="homeActionGridBg" id="saleRepDashBoardMonthWrittenPremium_list_header_01">
+                                      <td nowrap="nowrap" class="HeaderStyle" id="block_field_year">Month</td>
+                                      <td class="HeaderStyle" id="block_field_Written_Premium">WP($)</td>
+                                      <td class="HeaderStyle" id="block_field_Written_Premium_New">WP
+New($)</td>
+                                      <!-- <td class="DashboardHeaderStyle"
+                                                        id="block_field_Net_Earned">Net
+                                                        Earned</td> -->
+                                      <td class="HeaderStyle" id="block_field_Policy_in_Force">Policy in
+Force</td>
+                                      <td class="HeaderStyle" id="block_field_New_Apps">New Apps</td>
+                                      <td class="HeaderStyle" id="block_field_Incurred_Loss">Incurred
+Loss</td>
+                                      <td class="HeaderStyle" id="block_field_Loss_Ratio">Loss Ratio</td>
+                                    </tr>
+                                    <tr id="saleRepDashBoardMonthWrittenPremium_list_data_01">
+                                      <td nowrap="nowrap" id="block_field_year">
+                                        <a href="javascript:submitform('carrier/agentDashBoardDetailByLob.html','homeAction.getAgentDashBoardByLob','','');" />
+                                      </td>
+                                      <td id="block_field_Written_Premium" />
+                                      <td id="block_field_Written_Premium_New" />
+                                      <!-- <td id="block_field_Net_Earned"></td> -->
+                                      <td id="block_field_Policy_in_Force" />
+                                      <td id="block_field_New_Apps" />
+                                      <td id="block_field_Incurred_Loss" />
+                                      <td id="block_field_Loss_Ratio" />
+                                    </tr>
+                                  </table>
+                                </section>
+                              </div>
+                              <!-- /.row -->
+                            </div>
+                            <!-- /.box-body -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <div class="homeActionBlock mostActive">
+                          <div class="dashboard-block-inner">
+                            <div class="panel panel-default dashboard-block">
+                              <div class="frameHeader">
+                                <h3 class="panel-title pull-left">Most Active</h3>
+                              </div>
+                              <!-- /.box-header -->
+                              <div class="frameData headerChange" id="mostActiveDiv">
+                                <div id="mostActiveDivScroll" class="scroll_Active" style="height:173px">
+                                  <table cellpadding="1" cellspacing="0" width="100%" align="center" id="saleRepDashBoardMostActive_list_01">
+                                    <tr id="saleRepDashBoardMostActive_list_header_01">
+                                      <td nowrap="nowrap" height="20px" class="HeaderStyle" id="block_field_rep_name">Name</td>
+                                      <td class="HeaderStyle" id="block_field_premium">WP($)</td>
+                                      <td class="HeaderStyle" id="block_field_losses">Loss($)</td>
+                                      <td class="HeaderStyle" id="block_field_policy_count">Policy(#)</td>
+                                      <td class="HeaderStyle" nowrap="nowrap" id="block_field_loss_ratio">Loss Ratio(%)</td>
+                                    </tr>
+                                    <tr id="saleRepDashBoardMostActive_list_data_01">
+                                      <td nowrap="nowrap" id="block_field_rep_name" />
+                                      <td id="block_field_premium" />
+                                      <td id="block_field_losses" />
+                                      <td id="block_field_policy_count" />
+                                      <td id="block_field_loss_ratio" />
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                              <!-- /.box-body -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="homeActionBlock mostActive">
+                          <div class="dashboard-block-inner">
+                            <div class="panel panel-default dashboard-block">
+                              <div class="frameHeader">
+                                <h3 class="panel-title pull-left">Least Active</h3>
+                              </div>
+                              <!-- /.box-header -->
+                              <div class="frameData headerChange">
+                                <div class="scroll_Active">
+                                  <table cellpadding="1" cellspacing="0" width="100%" align="center" id="saleRepDashBoardLeastActive_list_01">
+                                    <tr id="saleRepDashBoardLeastActive_list_header_01">
+                                      <td nowrap="nowrap" height="20px" class="HeaderStyle" id="block_field_rep_name">Name</td>
+                                      <td class="HeaderStyle" id="block_field_premium">WP($)</td>
+                                      <td class="HeaderStyle" id="block_field_losses">Loss($)</td>
+                                      <td class="HeaderStyle" id="block_field_policy_count">Policy(#)</td>
+                                      <td class="HeaderStyle" nowrap="nowrap" id="block_field_loss_ratio">Loss Ratio(%)</td>
+                                    </tr>
+                                    <tr id="saleRepDashBoardLeastActive_list_data_01">
+                                      <td nowrap="nowrap" id="block_field_rep_name" />
+                                      <td id="block_field_premium" />
+                                      <td id="block_field_losses" />
+                                      <td id="block_field_policy_count" />
+                                      <td id="block_field_loss_ratio" />
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                              <!-- /.box-body -->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-9">
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <div class="dashboard-block-inner">
+                              <div class="panel panel-default">
+                                <div class="frameHeader">
+                                  <h3 class="panel-title pull-left">
+                                    Written Premium by Product
+                                    <input type="hidden" name="selectDate" id="selectDate" />
+                                  </h3>
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="frameData homeActionBlockHeightGraph">
+                                  <div id="popupGraphDiv">
+                                    <div id="#Include:carrier/popupGraph_2_underwriterWrittenPremiumPieChart.html#" />
+                                  </div>
+                                </div>
+                                <!-- /.box-body -->
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6">
+                            <div class="dashboard-block-inner">
+                              <div class="panel panel-default">
+                                <div class="frameHeader">
+                                  <h3 class="panel-title pull-left">
+                                    Premium and Loss by Month
+                                    <input type="hidden" name="selectDate" id="selectDate" />
+                                  </h3>
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="frameData homeActionBlockHeightGraph">
+                                  <div id="popupGraphDiv">
+                                    <div id="#Include:carrier/popupGraph_3_underwriterWrittenPremiumLineChart.html#" />
+                                  </div>
+                                </div>
+                                <!-- /.box-body -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <script type="text/javascript">showCalendar();</script>
+                  </div>
+                </div>
+                <!-- Agency Hiererchy -->
                 <div id="checkSelfServicePrivilege">
                   <div class="errorMsgAlign clear-both" id="homeAction_freeform_contextdata_99">
                     <label style="color: white;" name="pageMsg" id="pageMsg" />
