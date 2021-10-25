@@ -57,7 +57,7 @@
       <div id="popupAprooved">
         <!-- Modal -->
         <div class="modal fade modal_popup">
-          <div class="modal-dialog modal-dialog-width_500">
+          <div class="modal-dialog modal-dialog-width_600">
             <div class="modal-content">
               <div class="modal-header">
                 <h4 class="modal-title">
@@ -70,7 +70,7 @@
               <div class="modal-body">
                 <div class="modal-body-scroll popup_small_height">
                   <span class="delete_ico icons">#space#</span>
-                  Are you sure you want to no need approval confirmation?
+                  Are you sure you want to move the record immediately without approval?
                 </div>
               </div>
               <div class="modal-footer">
@@ -252,8 +252,8 @@
 
 																<li class="inlineBlock_2" id="#toBeProcessed_agency_name_after#"></li>
 																
-																<li id="#AgencyFunction_request_agency_id_before#"></li>
-																		<li id="AgencyFunction_request_agency_id_security" class="inlineBlock_2">
+																<li class="inlineBlock_2" id="#AgencyFunction_request_agency_id_before#"></li>
+																		<li id="AgencyFunction_request_agency_id_security"  class="inlineBlock_2">
 																			<div class="freeFormList form-group">
 																				<div class="freeFormListTr">
 																					<div class="freeFormListTdError">
@@ -339,15 +339,16 @@
 																						id="ajax_field_toBeProcessed_producer_number_id"
 																						type="hidden" class="form-control" tabindex="20"
 																						maxlength="8" readonly="readonly" />
+																				</div>
+																			
 																				
-																			</div>
 																			
 																		</div>
 																	</div>
 																</li>
 																<li class="inlineBlock_2" id="#toBeProcessed_agency_code_after#"></li>
 																
-																<li id="#AgencyFunction_request_agency_code_before#"></li>
+																<li class="inlineBlock_2" id="#AgencyFunction_request_agency_code_before#"></li>
 																		<li id="AgencyFunction_request_agency_code_security"  class="inlineBlock_2">
 																			<div class="freeFormList form-group"
 																				id="">
@@ -434,14 +435,13 @@
 																						class="form-control" tabindex="20" maxlength="8"
 																						readonly="true" />
 																			</div>
-																			</div>
 																		</div>
 																	</div>
 																</li>
 
 																<li class="inlineBlock_2" id="#toBeProcessed_agent_name_after#"></li>
 																
-																<li id="#AgencyFunction_request_agent_name_before#"></li>
+																<li class="inlineBlock_2" id="#AgencyFunction_request_agent_name_before#"></li>
 																		<li id="AgencyFunction_request_agent_name_security"  class="inlineBlock_2">
 																			<div class="freeFormList form-group">
 																		<div class="freeFormListTr">
@@ -775,6 +775,7 @@
 
 															</ul>
 														<ul class="inlineBlock">
+															<li class="inlineBlock_1" id="#state_id_before#"></li>
 															<li class="inlineBlock_1" id="agencyFunctions_state_security"  >
 																<div class="freeFormList form-group" >
 																	<div class="freeFormListTr">
@@ -817,7 +818,9 @@
 																	</div>
 																</div>
 															</li>
+															<li class="inlineBlock_1" id="#state_id_after#"></li>
 
+															<li class="inlineBlock_1" id="#lob_id_before#"></li>
 															<li class="inlineBlock_1" id="agencyFunctions_lob_security" >
 																<div class="freeFormList form-group">
 																	<div class="freeFormListTr">
@@ -857,7 +860,9 @@
 																	</div>
 																</div>
 															</li>
+															<li class="inlineBlock_1" id="#lob_id_after#"></li>
 
+															<li class="inlineBlock_1" id="#business_segment_code_before#"></li>
 															<li class="inlineBlock_1" id="agencyFunctions_business_segment_security" >
 																<div class="freeFormList form-group">
 																	<div class="freeFormListTr">
@@ -899,6 +904,7 @@
 																	</div>
 																</div>
 															</li>
+															<li class="inlineBlock_1" id="#business_segment_code_after#"></li>
 														</ul>
 														</div>
 															<section class="divButton">
@@ -1394,7 +1400,7 @@
 
 
 														<tr id="deactivateContactList_mom_list_header_1">
-															<td class="HeaderStyle" width="10%" id="isShowDeactivateContactCheckboxForAgencyFunctions">
+															<td class="HeaderStyle" width="1%" id="isShowDeactivateContactCheckboxForAgencyFunctions">
 																	<span id="block_field_deactivatePerson_id" /></span>
 															</td>
 															<td id="agencyFunctionListing_contactsDeactivated_agent_name_security" class="HeaderStyle" width="10%">

@@ -19,6 +19,42 @@
     <div id="popupEntityList" />
       <div id="cover" />
       <div id="contextLinks" />
+      <div id="popupWorkflow" />
+      <div id="deleteConfirmation">
+			<!-- Modal -->
+			<div class="modal fade modal_popup">
+				<div class="modal-dialog modal-dialog-width_450">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">
+								<a href="#" class="close" id="agencyListPublicSubmitNInvitation_close"
+									onclick="closePopUp('deleteConfirmation')"> <img
+									src="images/close.png" />
+								</a> Trash
+							</h4>
+						</div>
+						<div class="modal-body">
+							<div class="modal-body-scroll" style="height:50px">
+								<span class="delete_ico icons">#space#</span> Are you sure you
+								want to trash this Onboarded Application?
+							</div>
+						</div>
+						<div class="modal-footer">
+							<div class="buttonwrapper">
+								<a id="agencyListPublicSubmitNInvitation_yes"
+									onclick="closePopUp('deleteConfirmation');callAjaxDelete('agencyListPublicSubmitNInvitationForProspects');"
+									href="#" class="btn btn-primary"> <span>Yes</span>
+								</a> <a href="#" id="agencyListPublicSubmitNInvitation_no"
+									onclick="clean();closePopUp('deleteConfirmation');"
+									class="btn btn-default"> <span>No</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Modal End -->
+		</div>
       <div id="popupSendInvitationNewLink">
         <div id="isShowInvitationLinkPopup">
           <!-- Modal -->
@@ -154,7 +190,7 @@ URL</span>
                                     <input name="aar_agencyname" 
 									fullid="agencyListPublicSubmitNInvitation_freeform_contextdata_1(agencyList_filters_security.agencyList_filters_label).agencyList_filters_agencyname_security.agencyList_filters_agencyname_label.aar_agencyname"
 									id="ajax_field_aar_agencyname" type="text" class="form-control form-control-150" autocomplete="OFF" onkeyup="javascript:ajaxpageblocklink('carrier/agencyListPublicSubmitNInvitation.html','agencyListPublicSubmitNInvitation.getAgencyList','','','ajaxxmlname_aar_agencyname');" onclick="nottoggleDivDisplay(this,'aar_agencyname','ajaxxmlname_aar_agencyname');" />
-                                    <div id="ajaxxmlname_aar_agencyname" class="transparent fixcolumnHeader" style="display: none; border: solid 1px #cccccc; width:162px;" />
+                                    <div id="ajaxxmlname_aar_agencyname" class="transparent" style="display: none; border: solid 1px #cccccc; width:93.5% !important;" />
                                   </div>
                                 </div>
                               </div>
@@ -396,7 +432,9 @@ URL</span>
                                     :
                                   </div>
                                   <div class="freeFormListTd tdInput">
-                                    <select name="invitation_email_sent" id="ajax_field_invitation_email_sent" class="form-control selectWidth">
+                                    <select name="invitation_email_sent" 
+                                    fullid="agencyListPublicSubmitNInvitation_freeform_contextdata_1(agencyList_filters_security.agencyList_filters_label).agencyListPublicSubmitNInvitation_invitation_email_sent_security.agencyListPublicSubmitNInvitation_invitation_email_sent_label.invitation_email_sent"
+									id="ajax_field_invitation_email_sent" class="form-control selectWidth">
                                       <option value="">Both</option>
                                       <option value="Y">Yes</option>
                                       <option value="N">No</option>
@@ -432,7 +470,19 @@ URL</span>
                     <legend>
                       <span id="agencyList_grid_label">Agency Listing</span>
                     </legend>
+					<div id="agencyListPublicSubmitNInvitationForProspects">
                     <div id="ajax_sorting_1" class="gridTopPadding4">
+                    <div class="errorMsgAlign clear-both">
+						<div id="ajax_error_InvitedProspectError" class="error" />
+						<div id="error_InvitedProspectError" class="error" />
+					</div>
+                    <div class="ConfirmationAlign clear-both"
+										id="agencyListPublicSubmitNInvitation_freeform_contextdata_100">
+										<label name="agencyListPublicSubmitNInvitationDeleterMsg" id="agencyListPublicSubmitNInvitationDeleterMsg" class="conformationMsg" />
+					</div>
+                    	<div class="table-layout">
+                    	<div class="table-responsive">
+                    	
                       <table cellpadding="0" class="gridTable border_Level_1" cellspacing="0" width="100%" id="agencyListPublicSubmitNInvitation_list_1">
                         <tr id="isAgencyListPublicSubmitNInvitationNotEmpty">
                           <td colspan="26">
@@ -540,12 +590,12 @@ URL</span>
                             </span>
                           </td>
                           <td id="created_by_security" class="HeaderStyle" width="10%">
-                          	<span id="sorting(,A,ajax_sorting_1):block_field_invitation_sent_by">
+                          	<div style="width: 96px;" id="sorting(,A,ajax_sorting_1):block_field_invitation_sent_by">
                           		<span id="agencyList_block_created_by_label">Created By</span>
-                          	</span>
+                          	</div>
                           </td>
                           <td class="HeaderStyle" width="10%" id="agencyList_block_last_updated_ts_security">
-                            <div id="sorting(,A,ajax_sorting_1):block_field_date_time_TS">
+                            <div id="sorting(,A,ajax_sorting_1):block_field_date_time_TS" style="width: 100px;"> 
                             	<span id="agencyList_block_last_updated_ts_label">Timestamp</span>
                             </div>
                           </td>
@@ -583,8 +633,15 @@ URL</span>
                           	</span>
                             
                           </td>
-                          
-                          
+               
+                          <td class="HeaderStyle" width="1%">
+                          	<span id="agencyListPublicSubmitNInvitation_Trash_Onboarded_Application_row_security">
+                          		
+                          			<span id="block_field_delete_row_link" />
+                         
+                          	</span>
+                            
+                          </td>
                           <td class="HeaderStyle" width="1%">
                           	<span id="onboardingAgencyAppointmentApplication_security">
                           		<span id="showCreateOnboardingApplicationLink"><span id="block_field_create_onboarding_application_row_link" /></span>
@@ -777,6 +834,14 @@ URL</span>
                               </span>
                               </span>
                             </td>
+                            <td align="right">
+								<span id="agencyListPublicSubmitNInvitation_Trash_Onboarded_Application_row_security">
+									<span id="block_field_delete_row_link">
+										<a class="delete_ico icons" title="Trash"
+											href="javascript:ajaxpageblocklink('carrier/agencyListPublicSubmitNInvitation.html','agencyListPublicSubmitNInvitation.trashOnboardedApplication','','','agencyListPublicSubmitNInvitationForProspects');" />
+									</span>
+								</span>
+							</td>
                             
                             <td align="right">
                             <span id="onboardingAgencyAppointmentApplication_security">
@@ -863,7 +928,7 @@ URL</span>
                             </span>
                             <span id="agencyListPublicSubmitNInvitation_send_email_security">
                             	<span id="block_field_email_sent_row_link" >
-                            	<a href="javascript:submitform('carrier/agencyListPublicSubmitNInvitation.html','agencyListPublicSubmitNInvitation.sendEmail','','','selectEmailTemplate');" title="Send Email" >
+                            	<a href="javascript:submitform('carrier/agencyListPublicSubmitNInvitation.html','agencyListPublicSubmitNInvitation.sendEmail','','selectEmailTemplate');" title="Send Email" >
                             			<img src="images/icons/email.png" border="0" />
                             		</a>
                             	</span>
@@ -877,6 +942,9 @@ URL</span>
                           </tr>
                         </tbody>
                       </table>
+                    	</div>
+                    	</div>
+                    </div>
                     </div>
                   </fieldset>
                 </section>
@@ -902,6 +970,7 @@ URL</span>
         <input type="hidden" name="isallusers" id="ajax_field_isallusers" />
         <input type="hidden" name="aar_statusid_desc_breadcrumb" id="ajax_field_aar_statusid_desc_breadcrumb" />
         <input type="hidden" name="workflow_function_breadcrumb" id="ajax_field_workflow_function_breadcrumb" />
+        <input type="hidden" name="ajaxdeletedivid" id="ajaxdeletedivid" />
       </div>
     </form>
   </body>
