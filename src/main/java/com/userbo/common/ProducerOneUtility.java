@@ -81,6 +81,7 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.ls.DOMImplementationLS;
 import org.w3c.dom.ls.LSSerializer;
 
+import com.esign.docusgindirect.valueObjects.DocuSignRequest;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Rectangle;
 import com.itextpdf.text.pdf.PdfFormField;
@@ -95,6 +96,7 @@ import com.manage.managecomponent.components.SetParametersForStoredProcedures;
 import com.manage.managecomponent.components.WorkflowImpl;
 import com.manage.managecomponent.fields.FieldImpl;
 import com.manage.managecomponent.fields.FieldsResources;
+import com.manage.managecomponent.fields.WebservicecallImpl;
 import com.manage.managemetadata.functions.commonfunctions.DataUtils;
 import com.manage.managemetadata.messages.MessageImpl;
 import com.manage.managemetadata.messages.MessageResources;
@@ -821,9 +823,10 @@ public class ProducerOneUtility {
     		}
 
     		if(ctx.get("isOnboardingWorkflowFound") != null && ctx.get("isOnboardingWorkflowFound").toString().equals("Y")){
-    			if(ctx.get("registration_type_desc") == null || HtmlConstants.EMPTY.equals(ctx.get("registration_type_desc")) || !"PRERG".equals(ctx.get("registration_type_desc")))
+    			if(ctx.get("registration_type_desc") == null || HtmlConstants.EMPTY.equals(ctx.get("registration_type_desc")) || !"PRERG".equals(ctx.get("registration_type_desc"))) {
     				ctx.put("pendingAppointmentStatus", "Y");
-    			else
+    				ctx.put("allAgencyStatus", "N");
+    			}else
     				ctx.put("allAgencyStatus", "Y");
     			//ctx.put("allAgencyStatus", "N");
     			return;
@@ -2346,7 +2349,7 @@ public static void getCommissionScheduleAttachmentHeaderDynamic(Context ctx) thr
             List claimDetailList = null;
             localContext.putAll(ctx);
                 localContext.setProject("ProducerOnePerformance");
-                new SetParametersForStoredProcedures().setParametersInContext(localContext, "PAGE_SIZE,PAGE_NUMBER,flag_for_pagination,policy_number,Policy_ID,accounting_month");
+                new SetParametersForStoredProcedures().setParametersInContext(localContext, "PAGE_SIZE,PAGE_NUMBER,flag_for_pagination,policy_number,Policy_ID,Accounting_Month");
                 List coverageCodeDescByPolicyList = SqlResources.getSqlMapProcessor(localContext).select("f_Policy_Transaction.getpolicysummarybypolicyid_p", localContext);
                 if(coverageCodeDescByPolicyList != null && coverageCodeDescByPolicyList.size() > 0){
                     //ctx.put("policysummarybypolicy_list", coverageCodeDescByPolicyList);
@@ -4073,7 +4076,7 @@ public static void getCommissionScheduleAttachmentHeaderDynamic(Context ctx) thr
 				List fieldsList = null;
 
 				try{
-					fieldsList = FieldsResources.getInstance(ctx).getFieldListByScreen(ctx.get("report_id").toString());
+					fieldsList = FieldsResources.getInstance(ctx).getFieldListByScreen(ctx, ctx.get("report_id").toString());
 				}catch(Exception e){
 					//do nothing
 				}
@@ -6011,7 +6014,7 @@ public static void getCommissionScheduleAttachmentHeaderDynamic(Context ctx) thr
 				str = niprService.unSubsribeNPN(ctx, NPN);
 
 			if(logger.isDebugEnabled(ctx))
-				logger.debug(ctx, "Subscribing and UnSubscribing NPN Done.");
+				logger.debug(ctx, "Subscribing and UnSubscribing NPN Done. "+str);
 
 		}catch (Exception e) {
 			logger.error("Error while Subscribing and UnSubscribing NPN. "+e.getMessage());
@@ -6566,7 +6569,7 @@ public static Object getAllFieldDataFromContextAsXMLBasedOnFieldXML(Context ctx,
 	while (screenTokenizer.hasMoreTokens()) {
         String screenName = screenTokenizer.nextToken();
 
-	List fieldList = FieldsResources.getInstance(ctx).getFieldListByScreen(screenName);
+	List fieldList = FieldsResources.getInstance(ctx).getFieldListByScreen(ctx, screenName);
 	if(fieldList != null && fieldList.size() > 0){
 
 			for(int i=0; i<fieldList.size(); i++){
@@ -6680,13 +6683,13 @@ public static Object getAllFieldDataFromContextAsXMLBasedOnFieldXML(Context ctx,
 					Map rowMap = (Map)finalList.get(i);
 					if(rowMap.get("sub_producer") != null)
 					{
-						//if(rowMap.get("sub_producer").equals(subProducerCode)){
-							//DataUtils.populateError(ctx, "subProducerAssociationError", "subProducerAssociationDuplicateErrorKey");
+						if(rowMap.get("sub_producer").equals(subProducerCode))
+							DataUtils.populateError(ctx, "subProducerAssociationError", "subProducerAssociationDuplicateErrorKey");
 					}
 				}
 				}else{
-					//if(subProducerCode != null)
-					//DataUtils.populateError(ctx, "sub_producer", "subProducerLengthErrorKey");
+					if(subProducerCode != null)
+					DataUtils.populateError(ctx, "sub_producer", "subProducerLengthErrorKey");
 				}
 			}
 		}
@@ -7518,11 +7521,17 @@ public static Object getAttachmentListForSendInvitationEmail(Context ctx) throws
 					requestParams.put(ProducerOneConstants.INTEGRATION_INPUT_JSON, routingNumberJson);
 					payload.put("request", requestParams);
 					validateRoutingNumberReq.put("payload", payload);
-					if(logger.isDebugEnabled(ctx))
-						logger.debug(ctx, "Verify Routing Number : " + validateRoutingNumberReq.toString());
+					if(logger.isDebugEnabled(ctx)) {
+//						logger.debug(ctx, "Verify Routing Number : " + validateRoutingNumberReq.toString());
+						String request = new WebservicecallImpl().parseJsonResponseForMaskedKeysInLog(ctx, validateRoutingNumberReq.toString(), null);
+						logger.debug(ctx, "Verify Routing Number : " + request);
+					}
 					String validateRoutingNumberResponse = (String) integrationClient.sendAndReceive(validateRoutingNumberReq);
-					if(logger.isDebugEnabled(ctx))
-						logger.debug(ctx, "Verify Routing Number : " + validateRoutingNumberResponse);
+					if(logger.isDebugEnabled(ctx)) {
+//						logger.debug(ctx, "Verify Routing Number : " + validateRoutingNumberResponse);
+						String response = new WebservicecallImpl().parseJsonResponseForMaskedKeysInLog(ctx, validateRoutingNumberResponse, null);
+						logger.debug(ctx, "Verify Routing Number : " + response);
+					}
 					if(validateRoutingNumberResponse != null && !"".equals(validateRoutingNumberResponse)){
 						JSONObject respJson = new JSONObject(validateRoutingNumberResponse);
 						if(respJson != null && "success".equalsIgnoreCase(respJson.getString("status"))){
@@ -7853,6 +7862,7 @@ public static Object getAttachmentListForSendInvitationEmail(Context ctx) throws
 		 	String defaultAssignMasterAgencyCode="Y";
 			String defaultClosedAgencyStatusCode ="10";
 			String defaultTerminatedAgencyCodeStatusCode ="2";
+			String isAgencyCodeClosureOnRenewalDate= "N";
 		 	new SetParametersForStoredProcedures().setParametersInContext(ctx, "object_id");
 			Object obj = SqlResources.getSqlMapProcessor(ctx).findByKey("SqlStmts.sqlStatementsviewgetRequestsSSBasedOnId", ctx);
 			if(obj != null && obj instanceof Map){
@@ -7870,6 +7880,13 @@ public static Object getAttachmentListForSendInvitationEmail(Context ctx) throws
 							return false;
 					}
 
+					try{
+						isAgencyCodeClosureOnRenewalDate= SystemProperties.getInstance().getString("is.agency.code.closure.on.renewal.date") != null ? SystemProperties.getInstance().getString("is.agency.code.closure.on.renewal.date").toString():"N";
+						ctx.put("is_agency_code_closure_on_renewal_date", isAgencyCodeClosureOnRenewalDate);
+					} catch (Exception e) {
+						logger.debug("Default Assign Master Agency Code Property not found");
+						ctx.put("is_agency_code_closure_on_renewal_date", isAgencyCodeClosureOnRenewalDate);
+					}
 
 					try {
 						defaultAssignMasterAgencyCode = SystemProperties.getInstance().getString("DEFAULT.ASSIGN.MASTER.AGENCY.CODE") != null ? SystemProperties.getInstance().getString("DEFAULT.ASSIGN.MASTER.AGENCY.CODE").toString():"1";
@@ -8230,11 +8247,11 @@ public static Object getAttachmentListForSendInvitationEmail(Context ctx) throws
 												root1Element.addContent(rate_idElement.detach());
 												
 												Element nb_varianceElement = new Element("nb_variance");
-												nb_varianceElement.setText(ctx.get("NB_commission_variance_"+index) != null ? ctx.get("NB_commission_variance_"+index).toString() : HtmlConstants.EMPTY);
+												nb_varianceElement.setText(ctx.get("comm_rate_NB_variance_"+index) != null ? ctx.get("comm_rate_NB_variance_"+index).toString() : HtmlConstants.EMPTY);
 												root1Element.addContent(nb_varianceElement.detach());
 												
 												Element rb_varianceElement = new Element("rb_variance");
-												rb_varianceElement.setText(ctx.get("RB_commission_variance_"+index) != null ? ctx.get("RB_commission_variance_"+index).toString() : HtmlConstants.EMPTY);
+												rb_varianceElement.setText(ctx.get("comm_rate_RB_variance_"+index) != null ? ctx.get("comm_rate_RB_variance_"+index).toString() : HtmlConstants.EMPTY);
 												root1Element.addContent(rb_varianceElement.detach());
 												
 												Element effective_dateElement = new Element("effective_date");
@@ -8619,5 +8636,88 @@ public static Object getAttachmentListForSendInvitationEmail(Context ctx) throws
   		return null;
   	}
     
+    public static void refreshFloodInsuranceDocumentList(Context ctx){		
+		List docsList = new ArrayList();
+		List finalList = new ArrayList();
+		String templateDocName = ctx.get("template_document_name") != null
+				? ctx.get("template_document_name").toString()
+				: "";
+		if (ctx.get("uploadPopup_list_1") != null && !HtmlConstants.EMPTY.equals(ctx.get("uploadPopup_list_1")))
+			docsList = (List) ctx.get("uploadPopup_list_1");
+		for (int i = 0; i < docsList.size(); i++) {
+			Map rowMap = (Map) docsList.get(i);
+			String docmentName=rowMap.get("document_name").toString();
+			if (!docmentName.startsWith(templateDocName)) {
+				finalList.add(rowMap);
+			}
+		}
+		ctx.put("uploadPopup_list_1",finalList);
+	}
+    
+	public static void getParentProducerNumberId(Context ctx) throws Exception {
+		if (ctx.get("masterCodes_list_01") != null && ((List) ctx.get("masterCodes_list_01")).size() > 0) {
+			List list = (List) ctx.get("masterCodes_list_01");
+			for (int i = 0; i < list.size(); i++) {
+				Map listMap = (Map) list.get(i);
+				if (listMap.get("hierarchy_type_code") != null && listMap.get("hierarchy_type_code").toString().equalsIgnoreCase("RPTH")) {
+					String parent_producer_number = listMap.get("masterProducer_hierarchy_desc").toString();
+					ctx.put("parent_producer_number", parent_producer_number);
+					new SetParametersForStoredProcedures().setParametersInContext(ctx, "parent_producer_number");
+
+					Object obj = SqlResources.getSqlMapProcessor(ctx)
+							.findByKey("producer_number.getProducerDetailsByProducerNumber_p", ctx);
+					if(obj != null && obj instanceof Map) {
+	                	Map mapObj=(Map)obj;
+	                	if(mapObj != null)
+	                		ctx.put("parent_producer_number_id",mapObj.get("producer_number_id").toString());
+	                }
+				}
+
+			}
+		}
+	}
+	
+	public void getSubjectLine(DocuSignRequest docuSignRequest,IContext ctx)
+	{
+		try {
+			String subjectline="e-Signature";
+			logger.debug("Set subjectline:"+ctx.get("eSignSubjectLine"));
+			if(ctx.get("eSignSubjectLine")!=null)
+			{
+				subjectline=ctx.get("eSignSubjectLine").toString();
+				if(subjectline.isEmpty())
+				{
+					subjectline=getPropSubject();
+				}
+			}
+			else
+			{
+				subjectline=getPropSubject();
+			}
+			docuSignRequest.setSubjectline(subjectline);
+		}
+		catch(Exception e) {
+			docuSignRequest.setSubjectline("e-Signature");
+			logger.error("Error in setting subjectline eSign setting default value ='e-Signature' " + e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	private String getPropSubject()
+	{
+		String esignemailsubject = null;
+		try {
+			esignemailsubject = SystemProperties.getInstance().getString("docusign.mail.subject");
+			if(esignemailsubject!=null && !esignemailsubject.isEmpty())
+				return esignemailsubject;
+			else
+				return "e-Signature";
+		}
+		catch(Exception e)
+		{
+			logger.error("Error in setting subjectline eSign setting default value ='e-Signature' " + e.getMessage());
+			e.printStackTrace();
+			return "e-Signature";
+		}
+	}
 	
 }

@@ -908,6 +908,9 @@ public class MarketInformationBO extends Businessobject {
 							newCtx.put("carrier_id", ctx.get("carrier_id_desc_"+i));
 							newCtx.put("other_company_description", ctx.get("other_company_description_"+i));
 							newCtx.put("class1volume", ctx.get("class1volume_"+i));
+							newCtx.put("life_volume", ctx.get("life_volume_"+i));
+							newCtx.put("pl_volume", ctx.get("pl_volume_"+i));
+							newCtx.put("cl_volume", ctx.get("cl_volume_"+i));
 							newCtx.put("total_volume", ctx.get("total_volume_"+i));
 							newCtx.put("loss_ratio", ctx.get("loss_ratio_"+i) != null ? ctx.get("loss_ratio_"+i).toString().replace("%", "") : "");
 							newCtx.put("yearofappointment", ctx.get("yearofappointment_"+i));
@@ -964,10 +967,10 @@ public class MarketInformationBO extends Businessobject {
 							
 							newCtx.put("last_updated_by", ctx.get("last_updated_by"));
 							newCtx.put("last_updated_ts", ctx.get("last_updated_ts"));
-							/*newCtx.put("life_volume", ctx.get("life_volume_"+i)); //Added _
-							newCtx.put("pl_volume", ctx.get("pl_volume_"+i));  //Added _
-							newCtx.put("cl_volume", ctx.get("cl_volume_"+i));  //Added _
-*/							newCtx.put("is_cl_auto_lsc_carrier",ctx.get("is_cl_auto_lsc_carrier_"+i) != null && !HtmlConstants.EMPTY.equals(ctx.get("is_cl_auto_lsc_carrier_"+i)) && ctx.get("is_cl_auto_lsc_carrier_"+i).toString().equals("Y") ? 1 : 0);
+							newCtx.put("life_volume", ctx.get("life_volume_"+i));
+							newCtx.put("pl_volume", ctx.get("pl_volume_"+i));
+							newCtx.put("cl_volume", ctx.get("cl_volume_"+i));
+							newCtx.put("is_cl_auto_lsc_carrier",ctx.get("is_cl_auto_lsc_carrier_"+i) != null && !HtmlConstants.EMPTY.equals(ctx.get("is_cl_auto_lsc_carrier_"+i)) && ctx.get("is_cl_auto_lsc_carrier_"+i).toString().equals("Y") ? 1 : 0);
 							
 							if(ctx.get(Constants.INET_ERRORS_LIST) == null){
 							
