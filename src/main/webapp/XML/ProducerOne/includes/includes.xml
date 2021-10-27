@@ -4,7 +4,7 @@
 	<resource type="css" path="css/style.layout.css"/>
 	<resource type="css" path="css/style.color.css"/>
 		<!-- BMIC specific -->
-	<resource type="css" path="css/style.css">
+	<resource type="css" path="css/impl/bmic_specific_style.css">
 	</resource>
 	<resource type="css" path="css/bootstrap.css"/>
 	<resource type="css" path="css/font-awesome.css"/>
