@@ -15,7 +15,7 @@
 <script type="text/javascript" src="js/all_files.js" />
 </head>
 <body onmouseover="assign1099Type();"
-	onload="javascript:setGetMultiCheckboxValues('ajax_field_agency_association_id','ajax_field_agency_association','set');setGetRadioButtonsFromRadioGroup('kit_delivery_id','ajax_field_kit_delivery','set');assign1099Type();formatTaxIdForPublicSubmit();showdivOtherAgency();showAgencyListPublicSubmitListOtherDiv();showLegalOtherDiv();loadUploadDiv();loadAgencyListPublicSubmitNInvEdit();showPopUpList('popupSendForReview','sendForReviewPopup');showPopUpList('popupWorkflow','workflowPopup');getCheckedAgencyAssociation();setGetMultiCheckboxValues('ajax_field_agency_comparativerate_id','ajax_field_agency_comparativerate','set');setInWhatLinesMultiSelectValues();checkStateCheckBox();loadentityGeneralDetail();checkAgencyLobSelections('ajax_field_agency_lob','agency_lob_id');setGetMultiCheckboxValues('ajax_field_foreign_language_id','ajax_field_foreign_languages','set');setGetMultiCheckboxValues('ajax_field_current_advertising_method_id','ajax_field_current_advertising_methods_desc','set');setGetMultiCheckboxValues('ajax_field_primary_company_usage_id','ajax_field_primary_company_usage_desc','set');setGetMultiCheckboxValues('ajax_field_market_contract_states_id','ajax_field_market_contract_states','set');setGetMultiCheckboxValues('ajax_field_market_contract_company_id','ajax_field_market_contract_company','set');setGetMultiCheckboxValues('ajax_field_market_contract_lob_id','ajax_field_market_contract_lob','set');"
+	onload="javascript:setGetMultiCheckboxValues('ajax_field_agency_association_id','ajax_field_agency_association','set');setGetRadioButtonsFromRadioGroup('kit_delivery_id','ajax_field_kit_delivery','set');assign1099Type();formatTaxIdForPublicSubmit();showdivOtherAgency();showAgencyListPublicSubmitListOtherDiv();showLegalOtherDiv();loadUploadDiv();loadAgencyListPublicSubmitNInvEdit();showPopUpList('popupSendForReview','sendForReviewPopup');showPopUpList('popupWorkflow','workflowPopup');getCheckedAgencyAssociation();setGetMultiCheckboxValues('ajax_field_agency_comparativerate_id','ajax_field_agency_comparativerate','set');setInWhatLinesMultiSelectValues();checkStateCheckBox();loadentityGeneralDetail();checkAgencyLobSelections('ajax_field_agency_lob','agency_lob_id');setGetMultiCheckboxValues('ajax_field_foreign_language_id','ajax_field_foreign_languages','set');setGetMultiCheckboxValues('ajax_field_current_advertising_method_id','ajax_field_current_advertising_methods_desc','set');setGetMultiCheckboxValues('ajax_field_primary_company_usage_id','ajax_field_primary_company_usage_desc','set');setGetMultiCheckboxValues('ajax_field_market_contract_states_id','ajax_field_market_contract_states','set');setGetMultiCheckboxValues('ajax_field_market_contract_company_id','ajax_field_market_contract_company','set');setGetMultiCheckboxValues('ajax_field_market_contract_lob_id','ajax_field_market_contract_lob','set');findTotal('monthly_premium','monthlyPremium');findTotal('yearly_premium','yearlyPremium');findTotal('next3year_premium','next3yearPremium');findTotal('monthly_application_written','monthly_application_written');findTotal('annual_application_written','annual_application_written');"
 	id="divComplete">
 	<form enctype="multipart/form-data">
 		<div id="progressBarDiv" />
@@ -457,7 +457,7 @@
 													</div>
 													<div class="freeFormListTd">
 														<span id="common.FeinDecrypt"> <input
-															name="aar_taxid" 
+															name="aar_taxid" readonly="readonly"
 															fullid="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_1(agencyListEdit_general_info_security.agencyListEdit_general_info_label).agencyListEdit_general_aar_taxid_security.agencyListEdit_general_aar_taxid_label.aar_taxid"
 															id="ajax_field_aar_taxid" type="text"
 															class="form-control char9 form-control-100"
@@ -494,7 +494,7 @@
 														<span id="agencyListEdit_general_taxpayer_name_label">Tax
 															Payer Name</span> :
 													</div>
-													<div class="freeFormListTd mendatoryInput">
+													<div class="freeFormListTd">
 														<span> <input name="taxpayer_name"
 															fullid="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_1(agencyListEdit_general_info_security.agencyListEdit_general_info_label).agencyListEdit_general_taxpayer_name_security.agencyListEdit_general_taxpayer_name_label.taxpayer_name"
 															id="taxpayer_name" type="text" disabled="disabled"
@@ -1422,6 +1422,7 @@
 																					<input type="text"
 																						class="form-control char30 form-control-250"
 																						maxlength="30" name="associatedAgencyName"
+																						fullid="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_1(agencyListEdit_general_info_security.agencyListEdit_general_info_label).associatedAgencyName_security.associatedAgencyName_label.associatedAgencyName"
 																						id="ajax_field_associatedAgencyName" />
 																				</div>
 																			</div>
@@ -1451,6 +1452,7 @@
 																					<input type="text"
 																						class="form-control char30 form-control-250"
 																						maxlength="30" name="associatedAgencyName"
+																						fullid="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_1(agencyListEdit_general_info_security.agencyListEdit_general_info_label).associatedAgencyName_security.associatedAgencyName_label.associatedAgencyName"
 																						id="ajax_field_associatedAgencyName" />
 																				</div>
 																			</div>
@@ -1636,7 +1638,7 @@
 													<div class="freeFormListTd labelAlign freeFormLabelWidth"><span id="associatedAgency_idDiv_label">#space#</span></div>
 													<div class="freeFormListTd tdInput">
 														<input type="text"
-															fullid="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_123(agencyListEdit_general_info_security.agencyListEdit_general_info_label).associatedAgency_idDiv.associatedAgency_idDiv_label.associatedAgencyName"
+															fullid="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_1(agencyListEdit_general_info_security.agencyListEdit_general_info_label).associatedAgency_idDiv.associatedAgency_idDiv_label.associatedAgencyName"
 															class="form-control char30 form-control-150"
 															maxlength="30" disabled="disabled"
 															name="associatedAgencyName" id="associatedAgencyName"
@@ -1694,7 +1696,7 @@
 													</div>
 													<div class="freeFormListTd tdInput">
 														<select name="entity_type" id="entity_type"
-															fullid="agencyListPublicSubmitNInvitationEdit_orgType_freeform_contextdata_123(agencyListEdit_general_info_security.agencyListEdit_general_info_label).agencyListEdit_general_entity_type_security_security.agencyListEdit_general_entity_type_label.entity_type"
+															fullid="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_1(agencyListEdit_general_info_security.agencyListEdit_general_info_label).agencyListEdit_general_entity_type_security_security.agencyListEdit_general_entity_type_label.entity_type"
 															class="form-control selectWidth" disabled="disabled"
 															tabindex="20">
 															<option value="">Select</option>
@@ -1726,7 +1728,7 @@
 													</div>
 													<div class="freeFormListTd tdInput">
 														<textarea name="other_office_location"
-															fullid="agencyListPublicSubmitNInvitationEdit_ofc_locations_freeform_contextdata_123(agencyListEdit_general_info_security.agencyListEdit_general_info_label).agencyListEdit_general_other_office_location_security.agencyListEdit_general_other_office_location_label.other_office_location"
+															fullid="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_1(agencyListEdit_general_info_security.agencyListEdit_general_info_label).agencyListEdit_general_other_office_location_security.agencyListEdit_general_other_office_location_label.other_office_location"
 															id="other_office_location" disabled="disabled"
 															class="form-control textareaWidth" style="height: 50px"
 															tabindex="21" />
@@ -2456,7 +2458,7 @@
 																					:
 																				</div>
 																			</div>
-																			<div class="freeFormListTd mendatoryInput">
+																			<div class="freeFormListTd">
 																				<select class="form-control"
 																					name="country_code_mailing"
 																					fullid="entityGeneralDetailsResult_freeform_contextdata_44(agency_mailing_address_security.mailing_address_label).mailing_country_agency_address_security.country_mailingaddress_label.country_code_mailing"
@@ -4090,17 +4092,23 @@
 												<div class="detail_Split_List" id="entityGeneralDetailsResult_freeform_contextdata_46">
 													<div class="freeFormDiv form-inline">
 														<div class="freeFormListTd tdInput text-nowrap" id="agencyListPublicSubmitNInvitationEdit_copy_business_to_dec_security">
-															<input name="copy_business_to_dec" id="ajax_field_copy_business_to_dec" type="checkbox" class="checkboxMargins" value="true"
+															<input name="copy_business_to_dec" 
+															fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).agencyListPublicSubmitNInvitationEdit_copy_business_to_dec_security.agencyListPublicSubmitNInvitationEdit_copy_business_to_dec_label.copy_business_to_dec"
+															id="ajax_field_copy_business_to_dec" type="checkbox" class="checkboxMargins" value="true"
 																onclick="javascript:ajaxsubmitform('carrier/agencyListPublicSubmitNInvitationEdit.html','agencyListPublicSubmitNInvitationEdit.copyBusinessToDEC','','','agency_DEC_address_div');" />
 															<span id="agencyListPublicSubmitNInvitationEdit_copy_business_to_dec_label">Copy Agency Business Address to DEC Address</span>
 														</div>
 														<div class="freeFormListTd tdInput text-nowrap" id="agencyListPublicSubmitNInvitationEdit_copy_mailing_to_dec_security">
-															<input name="copy_mailing_to_dec" id="ajax_field_copy_copy_mailing_to_dec" type="checkbox" class="checkboxMargins" value="true"
+															<input name="copy_mailing_to_dec" 
+															fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).agencyListPublicSubmitNInvitationEdit_copy_mailing_to_dec_security.agencyListPublicSubmitNInvitationEdit_copy_mailing_to_dec_label.copy_mailing_to_dec"
+															id="ajax_field_copy_copy_mailing_to_dec" type="checkbox" class="checkboxMargins" value="true"
 																onclick="javascript:ajaxsubmitform('carrier/agencyListPublicSubmitNInvitationEdit.html','agencyListPublicSubmitNInvitationEdit.copyMailingToDEC','','','agency_DEC_address_div');" />
 															<span id="agencyListPublicSubmitNInvitationEdit_copy_mailing_to_dec_label">Copy Agency Mailing Address to DEC Address</span>
 														</div>
 														<div class="freeFormListTd tdInput text-nowrap" id="agencyListPublicSubmitNInvitationEdit_copy_w9_to_dec_security">
-															<input name="copy_w9_to_dec" id="ajax_field_copy_w9_to_dec" type="checkbox" class="checkboxMargins" value="true"
+															<input name="copy_w9_to_dec" 
+															fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).agencyListPublicSubmitNInvitationEdit_copy_w9_to_dec_security.agencyListPublicSubmitNInvitationEdit_copy_w9_to_dec_label.copy_w9_to_dec"
+															id="ajax_field_copy_w9_to_dec" type="checkbox" class="checkboxMargins" value="true"
 																onclick="javascript:ajaxsubmitform('carrier/agencyListPublicSubmitNInvitationEdit.html','agencyListPublicSubmitNInvitationEdit.copyW9ToDEC','','','agency_DEC_address_div');" />
 															<span id="agencyListPublicSubmitNInvitationEdit_copy_w9_to_dec_label">Copy Agency W9 Address to DEC Address</span>
 														</div>
@@ -4116,6 +4124,7 @@
 																	</div>
 																	<div class="freeFormListTd tdInput paddingLeft29">
 																		<input name="copy_business_to_dec"
+																			fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).agencyListPublicSubmitNInvitationEdit_copy_dec_address_security.agencyListPublicSubmitNInvitationEdit_copy_dec_address_label.copy_business_to_dec"
 																			onclick="javascript:ajaxsubmitform('carrier/agencyListPublicSubmitNInvitationEdit.html','agencyListPublicSubmitNInvitationEdit.copyBusinessToDEC','','','agency_DEC_address_div');"
 																			type="checkbox" value="true" id="ajax_field_copy_business_to_dec" /> <span
 																			id="agencyListPublicSubmitNInvitationEdit_copy_dec_address_label">Check here if same as Business Address</span>
@@ -4144,7 +4153,9 @@
 																		</div>
 																	</div>
 																	<div class="freeFormListTd mendatoryInput_address mendatoryMailingInput_address">
-																		<select class="form-control" name="country_code_DEC" id="ajax_field_country_code_DEC" >
+																		<select class="form-control" name="country_code_DEC" 
+																		fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).agencyListPublicSubmitNInvitationEdit_DEC_country_agency_address_security.country_DECaddress_label.country_code_DEC"
+																		id="ajax_field_country_code_DEC" >
 																			<option value="">Select</option>
 																		</select>
 																	</div>
@@ -4173,7 +4184,9 @@
 																		</div>
 																		<div
 																			class="freeFormListTd mendatoryInput_address mendatoryMailingInput_address">
-																			<input name="addressline1_DEC" id="ajax_field_addressline1_DEC" type="text" class="form-control" maxlength="255" />
+																			<input name="addressline1_DEC" 
+																			fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).agencyListPublicSubmitNInvitationEdit_DEC_addressline1_agency_address_security.streetAddress1_DECaddress_FieldLabel.addressline1_DEC"
+																			id="ajax_field_addressline1_DEC" type="text" class="form-control" maxlength="255" />
 																		</div>
 																	</div>
 																</div>
@@ -4199,7 +4212,9 @@
 																			</div>
 																		</div>
 																		<div class="freeFormListTd tdInput">
-																			<input name="addressline2_DEC" id="ajax_field_addressline2_DEC" type="text" class="form-control" maxlength="255" />
+																			<input name="addressline2_DEC" 
+																			fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).agencyListPublicSubmitNInvitationEdit_DEC_addressline2_agency_address_security.streetAddress2_DECaddress_FieldLabel.addressline2_DEC"
+																			id="ajax_field_addressline2_DEC" type="text" class="form-control" maxlength="255" />
 																		</div>
 																	</div>
 																</div>
@@ -4225,7 +4240,9 @@
 																			</div>
 																		</div>
 																		<div class="freeFormListTd tdInput">
-																			<input name="addressline3_DEC" id="ajax_field_addressline3_DEC" type="text" class="form-control" maxlength="255" />
+																			<input name="addressline3_DEC" 
+																			fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).agencyListPublicSubmitNInvitationEdit_DEC_addressline3_agency_address_security.streetAddress3_DECaddress_FieldLabel.addressline3_DEC"
+																			id="ajax_field_addressline3_DEC" type="text" class="form-control" maxlength="255" />
 																		</div>
 																	</div>
 																</div>
@@ -4251,7 +4268,9 @@
 																			</div>
 																		</div>
 																		<div class="freeFormListTd tdInput">
-																			<input name="po_box_DEC" id="ajax_field_po_box_DEC" type="text" class="form-control" maxlength="50" />
+																			<input name="po_box_DEC" 
+																			fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).agencyListPublicSubmitNInvitationEdit_DEC_po_box_agency_address_security.po_box_DECaddress_label.po_box_DEC"
+																			id="ajax_field_po_box_DEC" type="text" class="form-control" maxlength="50" />
 																		</div>
 																	</div>
 																</div>
@@ -4278,7 +4297,9 @@
 																		</div>
 																		<div
 																			class="freeFormListTd mendatoryInput_address mendatoryMailingInput_address">
-																			<input name="city_DEC" id="ajax_field_city_DEC" type="text" class="form-control" maxlength="35"
+																			<input name="city_DEC" 
+																			fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).agencyListPublicSubmitNInvitationEdit_DEC_city_agency_address_security.city_DECadress_Field_Label.city_DEC"
+																			id="ajax_field_city_DEC" type="text" class="form-control" maxlength="35"
 																				onkeypress="allowCharacterOnly(this);" onkeyup="allowCharacterOnly(this);" />
 																		</div>
 																	</div>
@@ -4307,7 +4328,9 @@
 																		<div
 																			class="freeFormListTd">
 																			<div id="DECstateList" class="mendatoryInput_address mendatoryMailingInput_address">
-																				<select class="form-control" name="state_id_DEC" id="ajax_field_state_id_DEC" >
+																				<select class="form-control" name="state_id_DEC" 
+																				fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).agencyListPublicSubmitNInvitationEdit_DEC_state_agency_address_security.state_DECaddress_fieldlabel.state_id_DEC"
+																				id="ajax_field_state_id_DEC" >
 																					<option value="">Select</option>
 																				</select>
 																			</div>
@@ -4338,7 +4361,9 @@
 																		</div>
 																		<div class="freeFormListTd mendatoryCounty">
 																			<div id="commonCountyListDec ">
-																				<select class="form-control" name="county_DEC" id="ajax_field_county_DEC">
+																				<select class="form-control" name="county_DEC" 
+																				fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).agencyListPublicSubmitNInvitationEdit_county_DEC_security.county_DECaddress_Field_Label.county_DEC"
+																				id="ajax_field_county_DEC">
 																					<option value="">Select</option>
 																				</select>
 																			</div>
@@ -4368,7 +4393,9 @@
 																			</div>
 																		</div>
 																		<div class="freeFormListTd tdInput">
-																			<input name="zip_DEC" id="ajax_field_zip_DEC" type="text"
+																			<input name="zip_DEC" 
+																			fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).agencyListPublicSubmitNInvitationEdit_DEC_zip_code_agency_address_security.DEC_zip_code_agency_address_label.zip_DEC"
+																				id="ajax_field_zip_DEC" type="text"
 																				class="form-control" maxlength="10" title="99999-9999" 
 																				onkeyup="addHyphen(this,event);" onmouseover="setTitleForZipCode(this);" />
 																		</div>
@@ -4403,12 +4430,16 @@
 																		<div
 																			class="freeFormListTd mendatoryInput_address mendatoryPhoneInput_address"
 																			id="addressPhoneInput">
-																			<input name="phone_DEC" id="ajax_field_phone_DEC" type="text"
+																			<input name="phone_DEC" 
+																			fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).agencyListPublicSubmitNInvitationEdit_DEC_phone_ext_agency_address_security.phone_DECaddress_label.phone_DEC"
+																			id="ajax_field_phone_DEC" type="text"
 																				class="form-control phone-control" maxlength="12"
 																				title="999-999-9999"/> 
 																				<span id="DEC_ext_agency_address_security" class="extnLabel">
 																				<label id="DEC_ext_agency_address_label"
-																				class="ext-label">Extn. </label> : <input name="extn_DEC" id="ajax_field_extn_DEC"
+																				class="ext-label">Extn. </label> : <input name="extn_DEC" 
+																				fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).DEC_ext_agency_address_security.DEC_ext_agency_address_label.extn_DEC"
+																				id="ajax_field_extn_DEC"
 																				type="text" class="form-control ext-control" maxlength="5"
 																				onkeyup="checkNumericValue(this,event);"
 																				onkeypress="checkNumericValue(this,event);" title="99999" />
@@ -4438,13 +4469,17 @@
 																			</div>
 																		</div>
 																		<div class="freeFormListTd tdInput">
-																			<input name="alt_phone_DEC" id="ajax_field_alt_phone_DEC" type="text"
+																			<input name="alt_phone_DEC" 
+																			fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).agencyListPublicSubmitNInvitationEdit_DEC_alt_phone_ext_agency_address_security.alt_DEC_phone_label.alt_phone_DEC"
+																				id="ajax_field_alt_phone_DEC" type="text"
 																				class="form-control phone-control" maxlength="12"
 																				title="999-999-9999" /> 
 																				<span id="DEC_alt_ext_agency_address_security" class="extnLabel">
 																				<label id="alt_DECaddress_phone_extn_label"
 																				class="ext-label"> Extn.</label> : <input
-																				name="alt_extn_DEC" id="ajax_field_alt_extn_DEC" type="text"
+																				name="alt_extn_DEC" 
+																				fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).DEC_alt_ext_agency_address_security.alt_DECaddress_phone_extn_label.alt_extn_DEC"
+																				id="ajax_field_alt_extn_DEC" type="text"
 																				class="form-control ext-control" maxlength="5"
 																				onkeyup="checkNumericValue(this,event);"
 																				onkeypress="checkNumericValue(this,event);"
@@ -4475,7 +4510,9 @@
 																				</div>
 																			</div>
 																			<div class="freeFormListTd tdInput">
-																				<input name="misc_phone_DEC" id="ajax_field_misc_phone_DEC" type="text" class="form-control" maxlength="12" />
+																				<input name="misc_phone_DEC" 
+																				fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).agencyListPublicSubmitNInvitationEdit_DEC_misc_phone_agency_address_security.misc_DECaddress_PhoneLabel.misc_phone_DEC"
+																				id="ajax_field_misc_phone_DEC" type="text" class="form-control" maxlength="12" />
 																			</div>
 																		</div>
 																	</div>
@@ -4502,7 +4539,9 @@
 																			</div>
 																		</div>
 																		<div class="freeFormListTd tdInput">
-																			<input name="fax_DEC" id="ajax_field_fax_DEC" type="text" class="form-control" maxlength="12" title="999-999-9999" />
+																			<input name="fax_DEC" 
+																			fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).agencyListPublicSubmitNInvitationEdit_DEC_fax_agency_address_security.fax_DECaddress_label.fax_DEC"
+																			id="ajax_field_fax_DEC" type="text" class="form-control" maxlength="12" title="999-999-9999" />
 																		</div>
 																	</div>
 																</div>
@@ -4528,7 +4567,9 @@
 																			</div>
 																		</div>
 																		<div class="freeFormListTd tdInput_Emailaddress">
-																			<input name="e_mail_DEC" id="ajax_field_e_mail_DEC" type="text" class="form-control" maxlength="100" />
+																			<input name="e_mail_DEC" 
+																			fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).agencyListPublicSubmitNInvitationEdit_DEC_email_id_agency_address_security.email_DECaddress_label.e_mail_DEC"
+																			id="ajax_field_e_mail_DEC" type="text" class="form-control" maxlength="100" />
 																		</div>
 																	</div>
 																</div>
@@ -4554,7 +4595,9 @@
 																			</div>
 																		</div>
 																		<div class="freeFormListTd tdInput">
-																			<input name="alt_email_DEC" id="ajax_field_alt_email_DEC" type="text" class="form-control" maxlength="100" />
+																			<input name="alt_email_DEC" 
+																			fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).agencyListPublicSubmitNInvitationEdit_DEC_alt_email_agency_address_security.alt_DEC_email_label.alt_email_DEC"
+																			id="ajax_field_alt_email_DEC" type="text" class="form-control" maxlength="100" />
 																		</div>
 																	</div>
 																</div>
@@ -4580,7 +4623,9 @@
 																			</div>
 																		</div>
 																		<div class="freeFormListTd tdInput">
-																			<input name="agency_zip_code_2_DEC" id="ajax_field_agency_zip_code_2_DEC"
+																			<input name="agency_zip_code_2_DEC" 
+																			fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).agencyListPublicSubmitNInvitationEdit_DEC_zip_code_2_agency_address_security.agency__DEC_zip_code_2_label.agency_zip_code_2_DEC"
+																			id="ajax_field_agency_zip_code_2_DEC"
 																				type="text" class="form-control" maxlength="10" title="99999-9999"
 																				onkeyup="addHyphen(this,event);"
 																				onmouseover="setTitleForZipCode(this);" />
@@ -4609,7 +4654,9 @@
 																			</div>
 																		</div>
 																		<div class="freeFormListTd tdInput">
-																			<input name="agency_foreign_addr_in_DEC" class="checkboxMargins"
+																			<input name="agency_foreign_addr_in_DEC" 
+																			fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).agencyListPublicSubmitNInvitationEdit_DEC_agency_foreign_address_agency_address_security.agency_DEC_foreign_address_label.agency_foreign_addr_in_DEC"
+																			class="checkboxMargins"
 																				id="ajax_field_agency_foreign_addr_in_DEC" type="checkbox" value="Y" />
 																		</div>
 																	</div>
@@ -6360,7 +6407,9 @@
 						<div style="border-bottom: 1px solid #ccc; padding-bottom: 5px;">
 							<b> <span id="what_states_label">In which States?</span> :
 							</b> <span id="what_states_selectall_security"> <input
-								type="checkbox" name="chkState" id="chkState"
+								type="checkbox" name="chkState" 
+								fullid="adminBrokerageDetailsStep1_freeform_contextdata_70(what_states_security.what_states_label).what_states_selectall_security.what_states_selectall_label.chkState"
+								id="chkState"
 								onclick="javascript:checkAllBoxState('chkState','ajax_field_response');" />
 								<span id="what_states_selectall_label">Select All</span>
 							</span>
@@ -7749,7 +7798,7 @@
 														<input disabled="disabled" type="text" name="total_premium_PC" 
 															fullid="marketInformation_freeform_contextdata_10(marketInformation_fieldSet2_security.agencyListEdit_market_information_label).prospectMarket_totalpremiumforpc_security.entityOtherInformation_totalpremiumforpc_label.total_premium_PC"
 															maxlength="5"
-															id="ajax_field_total_premium_PC" class="form-control"
+															id="ajax_field_total_premium_PC" class="form-control "
 															readonly="readonly" />
 													</div>
 												</div>
@@ -7780,7 +7829,7 @@
 														<input disabled="disabled" name="total_annual_revenue"
 															fullid="marketInformation_freeform_contextdata_10(marketInformation_fieldSet2_security.agencyListEdit_market_information_label).prospect_market_total_annual_revenue_security.total_annual_revenue_label.total_annual_revenue"
 															type="text" id="ajax_field_total_annual_revenue"
-															maxlength="15" class="form-control" /> 
+															maxlength="15" class="form-control " /> 
 													</div>
 												</div>
 											</div>
@@ -7803,12 +7852,12 @@
 												<div class="freeFormListTr">
 													<div
 														class="freeFormListTd labelAlign freeFormLabelWidth_300">
-														<span id="new_business_per_month_label">New
+														<span id="agencyListEdit_new_business_per_month_label">New
 															Business Applications Per Month</span> :
 													</div>
 													<div class="freeFormListTd tdInput">
 														<input readonly="readonly" name="new_business" type="text"
-															fullid="marketInformation_freeform_contextdata_10(marketInformation_fieldSet2_security.agencyListEdit_market_information_label).prospect_market_new_business_per_month_security.new_business_per_month_label.new_business"
+															fullid="marketInformation_freeform_contextdata_10(marketInformation_fieldSet2_security.agencyListEdit_market_information_label).prospect_market_new_business_per_month_security.agencyListEdit_new_business_per_month_label.new_business"
 															id="ajax_field_new_business" maxlength="15"
 															class="form-control amountMaskClass" />
 													</div>
@@ -7933,50 +7982,95 @@
 							<table cellspacing="0" cellpadding="0"
 								class="gridTable grid-width premiumVol_width"
 								id="agencyPremiumVolumeCommittedStep6_list_1">
-								<tr id="agencyPremiumVolumeCommittedStep6_list_header_1">
-									<td class="HeaderStyle"
-										id="agencyListEdit_premium_volume_lob_description_security"
-										><span id="block_field_lob_description"><span
-											id="agencyListEdit_premium_volume_lob_description_label">Lines
-												of Business</span></span></td>
-									<td class="HeaderStyle"
-										id="agencyListEdit_premium_volume_monthly_premium_security"
-										><span id="block_field_monthly_premium"><span
-											id="agencyListEdit_premium_volume_monthly_premium_label">Monthly</span></span></td>
-									<td class="HeaderStyle"
-										id="agencyListEdit_premium_volume_yearly_premium_security"
-										><span id="block_field_yearly_premium"><span
-											id="agencyListEdit_premium_volume_yearly_premium_label">Yearly</span></span></td>
-									<td class="HeaderStyle"
-										id="agencyListEdit_premium_volume_next3year_premium_security"
-										><span id="block_field_next3year_premium"><span
-											id="agencyListEdit_premium_volume_next3year_premium_label">3
-												years</span></span></td>
-									<td class="HeaderStyle" id="agencyListPublicSubmitNInvitationEdit_monthly_application_written_security" width="20%">
-										<span id="block_field_monthly_application_written">
-											<span id="agencyListPublicSubmitNInvitationEdit_monthly_application_written_label">Monthly Application Written</span>
-										</span>
-									</td>
-									<td class="HeaderStyle" id="agencyListPublicSubmitNInvitationEdit_annual_application_written_security" width="20%">
-										<span id="block_field_annual_application_written">
-											<span id="agencyListPublicSubmitNInvitationEdit_annual_application_written_label">Annual Application Written</span>
-										</span>
-									</td>
-								</tr>
-								<tr id="agencyPremiumVolumeCommittedStep6_list_data_1">
+								<thead>
+									<tr id="agencyPremiumVolumeCommittedStep6_list_header_1">
+										<td class="HeaderStyle"
+											id="agencyListEdit_premium_volume_lob_description_security"
+											><span id="block_field_lob_description"><span
+												id="agencyListEdit_premium_volume_lob_description_label">Lines
+													of Business</span></span></td>
+										<td class="HeaderStyle"
+											id="agencyListEdit_premium_volume_monthly_premium_security"
+											><span id="block_field_monthly_premium"><span
+												id="agencyListEdit_premium_volume_monthly_premium_label">Monthly</span></span></td>
+										<td class="HeaderStyle"
+											id="agencyListEdit_premium_volume_yearly_premium_security"
+											><span id="block_field_yearly_premium"><span
+												id="agencyListEdit_premium_volume_yearly_premium_label">Yearly</span></span></td>
+										<td class="HeaderStyle"
+											id="agencyListEdit_premium_volume_next3year_premium_security"
+											><span id="block_field_next3year_premium"><span
+												id="agencyListEdit_premium_volume_next3year_premium_label">3
+													years</span></span></td>
+										<td class="HeaderStyle" id="agencyListPublicSubmitNInvitationEdit_monthly_application_written_security" width="20%">
+											<span id="block_field_monthly_application_written">
+												<span id="agencyListPublicSubmitNInvitationEdit_monthly_application_written_label">Monthly Application Written</span>
+											</span>
+										</td>
+										<td class="HeaderStyle" id="agencyListPublicSubmitNInvitationEdit_annual_application_written_security" width="20%">
+											<span id="block_field_annual_application_written">
+												<span id="agencyListPublicSubmitNInvitationEdit_annual_application_written_label">Annual Application Written</span>
+											</span>
+										</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr id="agencyPremiumVolumeCommittedStep6_list_data_1">
 									<td id="agencyListEdit_premium_volume_lob_description_security"
 										><span id="block_field_lob_description"></span></td>
-									<td id="agencyListEdit_premium_volume_monthly_premium_security"><span
-										id="block_field_monthly_premium"></span></td>
-									<td id="agencyListEdit_premium_volume_yearly_premium_security"><span
-										id="block_field_yearly_premium"></span></td>
-									<td id="agencyListEdit_premium_volume_next3year_premium_security"><span
-										id="block_field_next3year_premium"></span></td>
-									<td id="agencyListPublicSubmitNInvitationEdit_monthly_application_written_security"><span
-										id="block_field_monthly_application_written"></span></td>
-									<td id="agencyListPublicSubmitNInvitationEdit_annual_application_written_security"><span
-										id="block_field_annual_application_written"></span></td>
+									<td id="agencyListEdit_premium_volume_monthly_premium_security">
+										<span id="block_field_monthly_premium" class="monthlyPremium"></span>
+									</td>
+									<td id="agencyListEdit_premium_volume_yearly_premium_security">
+										<span id="block_field_yearly_premium" class="yearlyPremium"></span>
+									</td>
+									<td id="agencyListEdit_premium_volume_next3year_premium_security">
+										<span id="block_field_next3year_premium" class="next3yearPremium"></span>
+									</td>
+									<td id="agencyListPublicSubmitNInvitationEdit_monthly_application_written_security">
+										<span id="block_field_monthly_application_written" class="monthly_application_written"></span>
+									</td>
+									<td id="agencyListPublicSubmitNInvitationEdit_annual_application_written_security">
+										<span id="block_field_annual_application_written" class="annual_application_written"></span>
+									</td>
 								</tr>
+								</tbody>
+								
+								<tfoot id="agencyListPublicSubmitNInvitationEdit_total_section_security">
+									<tr  class="listRow1CSS">
+													<td class="header-cell"	id="adminBrokeage6_block_lob_description_security">
+														<div class="txtbold" style="width: 180px ; margin: 0px">Total</div>
+													</td>
+													<td class="header-cell"
+														id="agencyListEdit_premium_volume_monthly_premium_security">
+														<div style="padding: 0px !important;" class="txtbold">
+															$<span id="ajax_field_monthly_premium_total" />
+														</div>
+													</td>
+													<td class="header-cell"
+														id="agencyListEdit_premium_volume_yearly_premium_security">
+														<div style="padding: 0px !important;" class="txtbold">
+															$<span type="text" id="ajax_field_yearly_premium_total" />
+														</div>
+													</td>
+													<td class="header-cell last-cell"
+														id="agencyListEdit_premium_volume_next3year_premium_security">
+														<div style="padding: 0px !important;" class="txtbold">
+															$<span id="ajax_field_next3year_premium_total" />
+														</div>
+													</td>
+													<td class="header-cell last-cell" id="agencyListPublicSubmitNInvitationEdit_monthly_application_written_security">
+														<div style="padding: 0px !important;" class="txtbold">
+															<span id="ajax_field_monthly_application_written_total" />
+														</div>
+													</td>
+													<td class="header-cell last-cell" id="adminBrokerageDetailsStep6_annual_application_written_total_security">
+														<div style="padding: 0px !important;" class="txtbold">
+															<span id="ajax_field_annual_application_written_total" />
+														</div>
+													</td>
+												</tr>
+								</tfoot>
 							</table>
 						</div>
 						</section> 
@@ -9776,8 +9870,8 @@
 																id="ajax_field_date_to_be_completed" type="text"
 																class="form-control" />
 														</div>
-														<a title="Select Date" class="calender_ico icons"
-															id="date_link" onclick="show_calendar_widget_dob(this);" />
+													 <a title="Select Date" class="calender_ico icons"
+															id="date_link" onclick="show_calendar_widget_dob(this);" />	
 													</div>
 												</div>
 											</div>
@@ -9862,8 +9956,7 @@
 							<section class="free-form"
 								id="agencyListEdit_comments_hear_about_security">
 							<div class="text-heading">
-								<span id="agencyListEdit_comments_hear_about_label"> How
-									did you hear about Sample? </span> :
+								<span id="agencyListEdit_comments_hear_about_label"> How did you hear about Company? </span> :
 							</div>
 							<div class="clear-both paddingLeft0"
 								id="adminBrokerageDetailsStep6_freeform_contextdata_1003">
@@ -9881,13 +9974,12 @@
 								id="agencyListEdit_comments_interest_outside_security">
 							<div class="text-heading">
 								<span id="agencyListEdit_comments_interest_outside_label">
-									If any interest in any other business or occupation outside of
-									this agency explain in remarks </span> :
+									Explain any interest in any other business or occupation outside of this agency. </span> : </span> :
 							</div>
 							<div class="paddingLeft0 clear-both"
 								id="adminBrokerageDetailsStep6_freeform_contextdata_1001">
 								<textarea name="interest_in_other_business" 
-									fullid="adminBrokerageDetailsStep6_freeform_contextdata_1001(agencyListEdit_final_questions_security.submit_invitation_finalQuestionsLabel).agencyListEdit_comments_interest_outside_security.agencyListEdit_comments_interest_outside_label.interest_in_other_business"
+									fullid="adminBrokerageDetailsStep6_freeform_contextdata_1003(agencyListEdit_final_questions_security.submit_invitation_finalQuestionsLabel).agencyListEdit_comments_interest_outside_security.agencyListEdit_comments_interest_outside_label.interest_in_other_business"
 									class="form-control"
 									id="interest_outside_comments" disabled="disabled"
 									style="width: 99.5%; height: 70px" tabindex="65" />
@@ -9906,7 +9998,7 @@
 							<div class="paddingLeft0 clear-both"
 								id="adminBrokerageDetailsStep6_freeform_contextdata_1002">
 								<textarea name="interest_for_appointment" 
-									fullid="adminBrokerageDetailsStep6_freeform_contextdata_1002(agencyListEdit_final_questions_security.submit_invitation_finalQuestionsLabel).agencyListEdit_comments_min_prod_req_security.agencyListEdit_comments_min_prod_req_label.interest_for_appointment"
+									fullid="adminBrokerageDetailsStep6_freeform_contextdata_1003(agencyListEdit_final_questions_security.submit_invitation_finalQuestionsLabel).agencyListEdit_comments_min_prod_req_security.agencyListEdit_comments_min_prod_req_label.interest_for_appointment"
 									class="form-control"
 									id="min_prod_req_comments" disabled="disabled"
 									style="width: 99.5%; height: 70px" tabindex="65" />
@@ -11037,7 +11129,7 @@
 									or remarks</span> :
 							</div>
 							<div class="paddingLeft0 clear-both">
-								<textarea name="comments" 
+								<textarea name="agency_brief_profile" 
 								fullid="adminBrokerageDetailsStep6_freeform_contextdata_1118(agencyListEdit_agency_review_security.agency_review_label).agencyListEdit_comments_or_remarks_security.agencyListEdit_comments_or_remarks_label.comments"
 								class="form-control" id="comments"
 									style="width: 99.5%; height: 70px" />
@@ -11346,16 +11438,13 @@
 							<div class="gridTopPadding4">
 								<div class="freeFormDiv form-inline invitationE-5">
 									<div class="padding-left-form">
-										<ul class="borderNone"
+										<ul class="inlineBlock"
 											id="adminBrokerageDetailsStep5_freeform_contextdata_110">
-											<li class="width33 extendedFieldHide" id="#carrier_other_before#"></li>
-											<li class="width33"
+											<li class="inlineBlock_3 extendedFieldHide" id="#carrier_other_before#"></li>
+											<li class="inlineBlock_3"
 												id="agencyListEdit_EandOForm_carrier_security">
 												<div class="freeFormList form-group">
 													<div class="freeFormListTr">
-														<div class="freeFormListTdError">
-															<h6>#space#</h6>
-														</div>
 														<div class="freeFormListTdError">
 															<h6>#space#</h6>
 														</div>
@@ -11364,10 +11453,10 @@
 														</div>
 													</div>
 													<div class="freeFormListTr">
-														<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 														<div class="freeFormListTd labelAlign">
-															<span id="agencyListEdit_EandOForm_carrier_label">E
-																&amp; O Carrier Name</span> :
+															<div class="freeFormLabelWidth">
+																<span id="agencyListEdit_EandOForm_carrier_label">E &amp; O Carrier Name</span> :
+															</div>
 														</div>
 														<div class="freeFormListTd mendatoryInput">
 															<span> <input type="text" name="carrier_other"
@@ -11379,16 +11468,13 @@
 													</div>
 												</div>
 											</li>
-											<li class="width33 extendedFieldHide" id="#carrier_other_after#"></li>
+											<li class="inlineBlock_3 extendedFieldHide" id="#carrier_other_after#"></li>
 											
-											<li class="width33 extendedFieldHide" id="#coverage_amount_before#"></li>
-											<li class="width33"
+											<li class="inlineBlock_3 extendedFieldHide" id="#coverage_amount_before#"></li>
+											<li class="inlineBlock_3"
 												id="agencyListEdit_EandOForm_coverage_amount_security">
 												<div class="freeFormList form-group">
 													<div class="freeFormListTr">
-														<div class="freeFormListTdError">
-															<h6>#space#</h6>
-														</div>
 														<div class="freeFormListTdError">
 															<h6>#space#</h6>
 														</div>
@@ -11397,10 +11483,11 @@
 														</div>
 													</div>
 													<div class="freeFormListTr">
-														<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 														<div class="freeFormListTd labelAlign">
-															<span id="agencyListEdit_EandOForm_coverage_amount_label">Coverage
-																Amount</span> :
+															<div class="freeFormLabelWidth">
+																<span id="agencyListEdit_EandOForm_coverage_amount_label">Coverage
+																	Amount</span> :
+															</div>
 														</div>
 														<div class="freeFormListTd mendatoryInput">
 															<span> <input type="text" maxlength="12"
@@ -11415,16 +11502,13 @@
 													</div>
 												</div>
 											</li>
-											<li class="width33 extendedFieldHide" id="#coverage_amount_after#"></li>
+											<li class="inlineBlock_3 extendedFieldHide" id="#coverage_amount_after#"></li>
 											
-											<li class="width33 extendedFieldHide" id="#policy_number_before#"></li>
-											<li class="width33"
+											<li class="inlineBlock_3 extendedFieldHide" id="#policy_number_before#"></li>
+											<li class="inlineBlock_3"
 												id="agencyListEdit_EandOForm_policy_number_security">
 												<div class="freeFormList form-group">
 													<div class="freeFormListTr">
-														<div class="freeFormListTdError">
-															<h6>#space#</h6>
-														</div>
 														<div class="freeFormListTdError">
 															<h6>#space#</h6>
 														</div>
@@ -11433,10 +11517,11 @@
 														</div>
 													</div>
 													<div class="freeFormListTr">
-														<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 														<div class="freeFormListTd labelAlign">
-															<span id="agencyListEdit_EandOForm_policy_number_label">Policy
-																Number</span> :
+															<div class="freeFormLabelWidth">
+																<span id="agencyListEdit_EandOForm_policy_number_label">Policy
+																	Number</span> :
+															</div>
 														</div>
 														<div class="freeFormListTd mendatoryInput">
 															<span> <input type="text" maxlength="12"
@@ -11451,16 +11536,13 @@
 													</div>
 												</div>
 											</li>
-											<li class="width33 extendedFieldHide" id="#policy_number_after#"></li>
+											<li class="inlineBlock_3 extendedFieldHide" id="#policy_number_after#"></li>
 											
-											<li class="width33 extendedFieldHide" id="#policy_limit_before#"></li>
-											<li class="width33"
+											<li class="inlineBlock_3 extendedFieldHide" id="#policy_limit_before#"></li>
+											<li class="inlineBlock_3"
 												id="agencyListEdit_EandOForm_policy_security">
 												<div class="freeFormList form-group">
 													<div class="freeFormListTr">
-														<div class="freeFormListTdError">
-															<h6>#space#</h6>
-														</div>
 														<div class="freeFormListTdError">
 															<h6>#space#</h6>
 														</div>
@@ -11469,10 +11551,11 @@
 														</div>
 													</div>
 													<div class="freeFormListTr">
-														<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 														<div class="freeFormListTd labelAlign">
-															<span id="agencyListEdit_EandOForm_policy_label">Policy
-																Limit</span> :
+															<div class="freeFormLabelWidth">
+																<span id="agencyListEdit_EandOForm_policy_label">Policy
+																	Limit</span> :
+															</div>
 														</div>
 														<div class="freeFormListTd mendatoryInput">
 															<span> <input type="text" maxlength="12"
@@ -11487,17 +11570,14 @@
 													</div>
 												</div>
 											</li>
-											<li class="width33 extendedFieldHide" id="#policy_limit_after#"></li>
+											<li class="inlineBlock_3 extendedFieldHide" id="#policy_limit_after#"></li>
 											
-											<li class="width33 extendedFieldHide" id="#effective_date_before#"></li>			
+											<li class="inlineBlock_3 extendedFieldHide" id="#effective_date_before#"></li>			
 
-											<li class="width33"
+											<li class="inlineBlock_3"
 												id="agencyListEdit_EandOForm_effdate_security">
 												<div class="freeFormList form-group">
 													<div class="freeFormListTr">
-														<div class="freeFormListTdError">
-															<h6>#space#</h6>
-														</div>
 														<div class="freeFormListTdError">
 															<h6>#space#</h6>
 														</div>
@@ -11506,10 +11586,11 @@
 														</div>
 													</div>
 													<div class="freeFormListTr">
-														<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 														<div class="freeFormListTd labelAlign">
+															<div class="freeFormLabelWidth">
 															<span id="agencyListEdit_EandOForm_effdate_label">Effective
 																Date</span> :
+															</div>
 														</div>
 														<div class="freeFormListTd mendatoryInput">
 															<span>
@@ -11531,16 +11612,13 @@
 													</div>
 												</div>
 											</li>
-											<li class="width33 extendedFieldHide" id="#effective_date_after#"></li>
+											<li class="inlineBlock_3 extendedFieldHide" id="#effective_date_after#"></li>
 											
-											<li class="width33 extendedFieldHide" id="#expiration_date_before#"></li>											
-											<li class="width33"
+											<li class="inlineBlock_3 extendedFieldHide" id="#expiration_date_before#"></li>											
+											<li class="inlineBlock_3"
 												id="agencyListEdit_EandOForm_expiration_date_security">
 												<div class="freeFormList form-group">
 													<div class="freeFormListTr">
-														<div class="freeFormListTdError">
-															<h6>#space#</h6>
-														</div>
 														<div class="freeFormListTdError">
 															<h6>#space#</h6>
 														</div>
@@ -11549,10 +11627,11 @@
 														</div>
 													</div>
 													<div class="freeFormListTr">
-														<div class="freeFormListTd mendatoryAsteriskDiv">#space##space#</div>
 														<div class="freeFormListTd labelAlign">
-															<span id="agencyListEdit_EandOForm_expiration_date_label">Expiration
-																Date</span> :
+															<div class="freeFormLabelWidth">
+																<span id="agencyListEdit_EandOForm_expiration_date_label">Expiration
+																	Date</span> :
+															</div>
 														</div>
 														<div class="freeFormListTd mendatoryInput">
 															<span>
@@ -11574,16 +11653,67 @@
 													</div>
 												</div>
 											</li>
-											<li class="width33 extendedFieldHide" id="#expiration_date_after#"></li>
+											<li class="inlineBlock_3 extendedFieldHide" id="#expiration_date_after#"></li>
 											
-											<li class="width33 extendedFieldHide" id="#eo_claims_before#"></li>
-											<li class="width100"
+											<li class="inlineBlock_3 extendedFieldHide"
+													id="#self_insured_retention_before#"></li>
+												<li class="inlineBlock_3" id="agencyListEdit_EandOForm_self_insured_retention_security">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError nowrapDiv paddingLeft3">
+																<div id="error_self_insured_retention" class="error"></div>
+																<div id="" class="error"></div>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div
+																class="freeFormListTd labelAlign text-nowrap">
+																<div class="freeFormLabelWidth"><span id="agencyListEdit_EandOForm_self_insured_retention_label">SIR</span> :</div></div>
+															<div class="freeFormListTd ">
+																<input type="text" maxlength="12" name="self_insured_retention" disabled="disabled"
+																	id="ajax_field_self_insured_retention"
+																	fullid="adminBrokerageDetailsStep9_freeform_contextdata_110(agencyListEdit_EandOForm_security.agencyListEdit_EandOForm_label).agencyListEdit_EandOForm_self_insured_retention_security.agencyListEdit_EandOForm_self_insured_retention_label.self_insured_retention"																	
+																	class="form-control char12" />
+															</div>
+														</div>
+													</div>
+												</li>
+												
+												<li class="inlineBlock_3 extendedFieldHide"
+													id="#deductible_before#"></li>
+												<li class="inlineBlock_3" id="agencyListEdit_EandOForm_deductible_security">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError nowrapDiv paddingLeft3">
+																<div id="error_deductible" class="error"></div>
+																<div id="" class="error"></div>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div
+																class="freeFormListTd labelAlign text-nowrap">
+																<div class="freeFormLabelWidth"><span id="agencyListEdit_EandOForm_deductible_label">Deductible</span> :</div></div>
+															<div class="freeFormListTd ">
+																<input type="text" maxlength="12" name="deductible" disabled="disabled"
+																	id="ajax_field_deductible"
+																	fullid="adminBrokerageDetailsStep9_freeform_contextdata_110(agencyListEdit_EandOForm_security.agencyListEdit_EandOForm_label).agencyListEdit_EandOForm_deductible_security.agencyListEdit_EandOForm_deductible_label.deductible"
+																	class="form-control char12" />
+															</div>
+														</div>
+													</div>
+												</li>
+											
+											<li class="inlineBlock_3 extendedFieldHide" id="#eo_claims_before#"></li>
+											<li class="inlineBlock_1"
 												id="agencyListEdit_EandOForm_eoclaims_security">
 												<div class="freeFormList form-group paddingTopEO">
 													<div class="freeFormListTr">
-														<div class="freeFormListTdError">
-															<h6>#space#</h6>
-														</div>
 														<div class="freeFormListTdError">
 															<h6>#space#</h6>
 														</div>
@@ -11613,10 +11743,10 @@
 													</div>
 												</div>
 											</li>
-											<li class="width33 extendedFieldHide" id="#eo_claims_after#"></li>
+											<li class="inlineBlock_1 extendedFieldHide" id="#eo_claims_after#"></li>
 											
-											<li class="width33 extendedFieldHide" id="#eoclaims_comments_before#"></li>
-											<li class="width100 comment_section" id="checlEOClaimsValues">
+											<li class="inlineBlock_1 extendedFieldHide" id="#eoclaims_comments_before#"></li>
+											<li class="inlineBlock_1 comment_section" id="checlEOClaimsValues">
 												<div class="clear-both padding10"
 													id="adminBrokerageDetailsStep5_comment_security">
 													<div class="col-sm-1 labelAlign"
@@ -11639,9 +11769,9 @@
 													</div>
 												</div>
 											</li>
-											<li class="width33 extendedFieldHide" id="#eoclaims_comments_after#"></li>
+											<li class="inlineBlock_1 extendedFieldHide" id="#eoclaims_comments_after#"></li>
 											
-											<li class="width33 extendedFieldHide" id="#eo_claims_declaration_before#"></li>
+											<li class="inlineBlock_1 extendedFieldHide" id="#eo_claims_declaration_before#"></li>
 											<li class="inlineBlock_1 paddingTopEO"
 												id="agencyListEdit_eoClaimsDeclaration_security"
 												style="width: 100% !important; padding-left: 4px !important">
@@ -11671,7 +11801,7 @@
 													</div>
 												</div>
 											</li>
-											<li class="width33 extendedFieldHide" id="#eo_claims_declaration_after#"></li>
+											<li class="inlineBlock_1 extendedFieldHide" id="#eo_claims_declaration_after#"></li>
 										</ul>
 									</div>
 								</div>
@@ -11703,7 +11833,7 @@
 														</div>
 														<div class="freeFormListTr">
 															<div
-																class="freeFormListTd labelAlign freeFormLabelWidth">
+																class="freeFormListTd labelAlign">
 																<div class="freeFormLabelWidth"><span id="public1_cyberLiabilitycarriername">Cyber Liability Carrier
 																	Name</span> :</div>
 															</div>
@@ -11842,7 +11972,7 @@
 																	<label id="cyber_liability_effective_date_label">Effective Date</label>
 																:</div>
 															</div>
-															<div class="freeFormListTd text-nowrap mendatoryInput">
+															<div class="freeFormListTd text-nowrap ">
 																<div >
 																	<input type="text" name="cyber_liability_effective_date"
 																		id="ajax_field_cyber_liability_effective_date"
@@ -11885,7 +12015,7 @@
 																	<label id="cyber_liability_expiration_date_label">Expiration Date</label>
 																:</div>
 															</div>
-															<div class="freeFormListTd text-nowrap mendatoryInput">
+															<div class="freeFormListTd text-nowrap ">
 																<div >
 																	<input type="text" name="cyber_liability_expiration_date"
 																		id="ajax_field_cyber_liability_expiration_date" 
@@ -11906,6 +12036,69 @@
 												</li>
 												<li class="inlineBlock_3 extendedFieldHide"
 													id="#cyber_liability_expiration_date_after#"></li>
+													
+													
+											<li class="inlineBlock_3 extendedFieldHide"
+													id="#self_insured_retention_before#"></li>
+												<li class="inlineBlock_3" id="agencyListEdit_cyber_liability_self_insured_retention_security">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError nowrapDiv paddingLeft3">
+																<div id="error_cyber_liability_self_insured_retention" class="error"></div>
+																<div id="" class="error"></div>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div
+																class="freeFormListTd labelAlign text-nowrap">
+																<div class="freeFormLabelWidth"><span id="agencyListEdit_cyber_liability_self_insured_retention_label">SIR</span> :</div></div>
+															<div class="freeFormListTd ">
+																<input type="text" maxlength="15" name="cyber_liability_self_insured_retention"
+																	id="ajax_field_cyber_liability_self_insured_retention"
+																	fullid="adminBrokerageDetailsStep9_freeform_contextdata_110(agencyListEdit_CyberLiability_section_security.agencyListEdit_CyberLiability_section_label).agencyListEdit_cyber_liability_self_insured_retention_security.agencyListEdit_cyber_liability_self_insured_retention_label.cyber_liability_self_insured_retention"
+																	class="form-control form-control-170" />
+															</div>
+														</div>
+												    	</div>
+													</li>
+													<li class="inlineBlock_3 extendedFieldHide"
+													id="#cyber_liability_self_insured_retention_after#"></li>
+	
+												<li class="inlineBlock_3 extendedFieldHide"
+													id="#deductible_before#"></li>
+												<li class="inlineBlock_3" id="agencyListEdit_cyber_liability_deductible_security">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError nowrapDiv paddingLeft3">
+																<div id="error_cyber_liability_deductible" class="error"></div>
+																<div id="" class="error"></div>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div
+																class="freeFormListTd labelAlign text-nowrap">
+																<div class="freeFormLabelWidth"><span id="agencyListEdit_cyber_liability_deductible_label">Deductible</span> :</div></div>
+															<div class="freeFormListTd ">
+																<input type="text" maxlength="15" name="cyber_liability_deductible"
+																	id="ajax_field_cyber_liability_deductible"
+																	fullid="adminBrokerageDetailsStep9_freeform_contextdata_110(agencyListEdit_CyberLiability_section_security.agencyListEdit_CyberLiability_section_label).agencyListEdit_cyber_liability_deductible_security.agencyListEdit_cyber_liability_deductible_label.cyber_liability_deductible"
+																	onkeyup="loadDocInsuranceDetail();checkNumericValue(this,event);addClassToFields();"
+																	onkeypress="loadDocInsuranceDetail();checkNumericValue(this,event);addClassToFields();"
+																	onblur="addClassToFields();"
+																	class="form-control form-control-170" />
+															</div>
+														</div>
+													</div>
+												</li>
+												
+												<li class="inlineBlock_3 extendedFieldHide"
+													id="#cyber_liability_deductible_after#"></li>
 	
 
 												<li class="inlineBlock_1 extendedFieldHide"
@@ -11936,9 +12129,9 @@
 												<li class="inlineBlock_1 extendedFieldHide"
 													id="#eo_claims_before#"></li>
 
-												<li class="width100 extendedFieldHide"
+												<li class="inlineBlock_1 extendedFieldHide"
 													id="#eoclaims_comments_before#"></li>
-												<li class="width100 comment_section" id="cyber_liability_eo_claims_idDiv" style="width: 100% !important;">
+												<li class="inlineBlock_1 comment_section" id="cyber_liability_eo_claims_idDiv" style="width: 100% !important;">
 													<div class="row padding10"
 														id="adminBrokerageDetailsStep9_freeform_contextdata_1000">
 														<table width="100%">
@@ -11967,7 +12160,7 @@
 													</div>
 
 												</li>
-												<li class="width100 extendedFieldHide"
+												<li class="inlineBlock_1 extendedFieldHide"
 													id="#cyber_liability_eoclaims_comments_after#"></li>
 													
 													

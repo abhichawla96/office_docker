@@ -10,9 +10,11 @@
 <title>ProducerOne - Producer Management Center</title>
 <!-- css -->
 <link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/impl/bmic_specific_style.css" rel="stylesheet" type="text/css" />
 <!-- Scripts -->
 <script type="text/javascript" src="js/all_files.js" />
 
+<link href="css/impl/bmic_specific_style.css" rel="stylesheet" type="text/css" /> <!-- BMIC req -->
 </head>
 <body onload="loadAgencyComparativeRateCheckbox();showHideClusterDiv();showHideBusinessAddressDiv();showHideW9AddressDiv();showHideMailingAddressDiv();getCheckedAgencyComparativeRater1();loadentityGeneralDetail();updateReadonlyFlagBusinessTerminationDatesDiv();showOtherDiv();showPopUpList1('searchCodePopup','checkNationalCodeSearch'); showPopUpList1('searchCodePopup2','checkCombinedCodeSearch');showPopUpList('popupEntityList','verifyWithNIPRPopup'); showPopUpList('popupEntityHistory','showEntityHistoryPopup'); showPopUpList('popupFail','isshowUpdateCommentsOnEntityGeneral'); showaddressdetails(); showPopUpList('popupActiveEntityAppointmentMsg','showActivementPopupOnAppointmentScreen'); showPopUpList('popupChangePDBLookupMsg','showChangePDBLookupPopupOnAppointmentScreen'); showPopUpList('popupInactiveAppointmentPopupMsg','showInActiveAppointmentPopupOnAppointmentScreen'); showPopUpList('popupActiveAppointmentMsg','showActiveAppointmentPopupOnAppointmentScreen');showPopUpList('popupConfirmSelection','showConfirmSelectionPopupOnAppointmentScreen');showHitListLicenseNumberTextField(this.value); showPopUpList('InactiveStatusPopupDiv','isShowInactiveStatusPopup');showPopUpList('popupSendForReview','sendForReviewPopup');loadUploadDiv();showPopUpList('divAgencyCompletePopUp','showDivAgencyCompletePopUp');showPopUpList('popupEntityList','verifyWithDefaultFeinPopup');loadQuestions();showdivOther();showPopUpList1('npnChangedWithActiveAppointments','checkNPNChangedWithActiveAppointments');checkAllStatusChecked();showAgencyLocationOtherDiv();"
 	id="divComplete">
@@ -2189,7 +2191,7 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 																		<div class="freeFormListTd labelAlign">
 																			<div class="freeFormLabelWidth">
 																				<span id="new_business_termination_date_label">New
-																					Business Term Date</span> :
+																					Business Termination Date</span> :
 																			</div>
 																		</div>
 																		<div class="freeFormListTd text-nowrap">
@@ -2274,6 +2276,36 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 																			name="agency_termination_reason_id"
 																			fullid="entityGeneralDetailsResult_freeform_contextdata_2(general_information_security.general_details_information_label).isShowAgencyTerminationReason.agencyTerminationReasonLabel.agency_termination_reason_id"
 																			id="ajax_field_agency_termination_reason_id"
+																			onchange="javascript:showdivOther();">
+																			<option value="">Select</option>
+																		</select>
+																	</div>
+																</div>
+															</div>
+														</li>
+														<li id="isShowAgencyClosedReason">
+															<div class="freeFormList form-group">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError">
+																		<h6>#space#</h6>
+																	</div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<div id="error_closed_reason_id" class="error" />
+																		<div id="ajax_error_closed_reason_id" class="error" />
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">
+																			<label id="agencyClosedReasonLabel">Closed Reason</label> :
+																		</div>
+																	</div>
+																	<div
+																		class="freeFormListTd mendatoryInput divTdWidth_3 text-nowrap">
+																		<select class="form-control"
+																			name="closed_reason_id"
+																			fullid="entityGeneralDetailsResult_freeform_contextdata_2(general_information_security.general_details_information_label).isShowAgencyClosedReason.agencyClosedReasonLabel.closed_reason_id"
+																			id="ajax_field_closed_reason_id"
 																			onchange="javascript:showdivOther();">
 																			<option value="">Select</option>
 																		</select>
@@ -2612,13 +2644,12 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 																			<option value="">Select</option>
 																		</select>
 																		</span> 
-																		<div class="freeFormListTdError paddingLeft3">
+																		<div id="showdivother" class="mendatoryInput" style="padding-top: 4px; padding-bottom: 0px; display:block">
+																			<div class="freeFormListTdError paddingLeft3">
 																				<div id="error_prdcrtype" class="error" />
 																				<div id="ajax_error_prdcrtype" class="error" />
 																				<span id="prdcrtype_label"></span>
-																		</div>
-																		<div id="showdivother" class="mendatoryInput"
-																			style="padding-top: 4px; padding-bottom: 0px; display:block">
+																			</div>
 																			<input name="prdcrtype" 
 																			fullid="entityGeneralDetailsResult_freeform_contextdata_2(general_information_security.general_details_information_label).showdivother.prdcrtype_label.prdcrtype"
 																			id="ajax_field_prdcrtype" type="text"
@@ -3948,7 +3979,7 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 															<div class="freeFormListTr">
 																<div class="freeFormListTd labelAlign">
 																	<div class="freeFormLabelWidth">
-																		<label id="years_in_business_label">Years in
+																		<label id="entity_general_details_years_in_business_label">Years in
 																			Business </label> :
 																	</div>
 																</div>
@@ -8518,7 +8549,7 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 			</script>
 		</div>
 	</form>
-	<script type="text/javascript" src="js/jQuery.dPassword.js" />
+	<!-- <script type="text/javascript" src="js/jQuery.dPassword.js" /> -->
 </body>
 </html>
 

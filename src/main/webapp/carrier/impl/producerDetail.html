@@ -99,6 +99,44 @@
 			</div>
 			<!-- Modal End -->
 		</div>
+		
+		<div id="deleteConfirmation3">
+			<!-- Modal affity delete confirmation -->
+			<div class="modal fade modal_popup">
+				<div class="modal-dialog modal-dialog-width_400">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">
+								<a id="ProducreDetail_close1" href="#" class="close"
+									onclick="closePopUp('deleteConfirmation3')"> <img
+									src="images/close.png" />
+								</a> Delete
+							</h4>
+						</div>
+						<div class="modal-body">
+							<div class="modal-body-scroll popup_small_height">
+								<span class="delete_ico icons">#space#</span> Are you sure you
+								want to delete this item?
+							</div>
+						</div>
+						<div class="modal-footer">
+							<div class="buttonwrapper">
+								<a id="ProducreDetail_yes2"
+									onclick="closePopUp('deleteConfirmation3');callAjaxDelete('affinityGroupDiv');"
+									href="#" class="btn btn-primary"> <span>Yes</span>
+								</a> <a href="#" id="ProducreDetail_no2"
+									onclick="clean();closePopUp('deleteConfirmation3');"
+									class="btn btn-default"> <span>No</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Modal End -->
+		</div>
+		
+		
 		<div id="popupAprooved">
 			<!-- Modal -->
 			<div class="modal fade modal_popup">
@@ -3643,7 +3681,13 @@
 														
 														<input type="hidden" name="isComingFromDeleteHierarchy"
 														fullid="producerDetail_freeform_contextdata_999(masterCodes_freeform_contextdata_1_security.hidden).isComingFromDeleteHierarchy_security.isComingFromDeleteHierarchy_label.isComingFromDeleteHierarchy"
-														id="ajax_field_isComingFromDeleteHierarchy" /></td>
+														id="ajax_field_isComingFromDeleteHierarchy" />
+														
+														<input type="hidden"
+														name="isRemoveParentProducerNumberId"
+														id="ajax_field_isRemoveParentProducerNumberId" /></td>
+														
+														
 												</tr>
 											</tbody>
 										</table>
@@ -4500,7 +4544,7 @@
 																<td class="HeaderStyle header-cell" width="10%"
 																	id="producerDetail_affinity_group_header_affinity_group_security">
 																	<div
-																		id="sorting(,A,ajax_sorting):block_field_affinity_group_desc">
+																		id="block_field_affinity_group_desc">
 																		<span
 																			id="producerDetail_affinity_group_section_affinity_group_label">
 																			Affinity Group </span>
@@ -4509,7 +4553,7 @@
 																<td class="HeaderStyle header-cell" width="12%"
 																	id="producerDetail_affinity_group_header_effective_date_affinity_security">
 																	<div
-																		id="sorting(,A,ajax_sorting):block_field_effective_date_affinity">
+																		id="block_field_effective_date_affinity">
 																		<span
 																			id="producerDetail_affinity_group_section_effective_date_affinity_label">Affinity
 																			Effective Date</span>
@@ -4518,7 +4562,7 @@
 																<td class="HeaderStyle header-cell" width="12%"
 																	id="producerDetail_affinity_group_header_affinity_expiration_date_security">
 																	<div
-																		id="sorting(,A,ajax_sorting):block_field_affinity_expiration_date">
+																		id="block_field_affinity_expiration_date">
 																		<span
 																			id="producerDetail_affinity_group_section_affinity_expiration_date_label">Affinity
 																			Expiration Date</span>
@@ -4528,7 +4572,7 @@
 																<td class="HeaderStyle header-cell" width="12%"
 																	id="producerDetail_affinity_group_header_affinity_group_payment_plan_security">
 																	<div
-																		id="sorting(,A,ajax_sorting):block_field_affinity_group_payment_plan_desc">
+																		id="block_field_affinity_group_payment_plan_desc">
 																		<span
 																			id="producerDetail_affinity_group_section_affinity_group_payment_plan_label">Affinity
 																			Group Payment Plan</span>
@@ -4537,7 +4581,7 @@
 																<td class="HeaderStyle header-cell" width="10%"
 																	id="producerDetail_affinity_group_header_affinity_group_effective_date_security">
 																	<div
-																		id="sorting(,A,ajax_sorting):block_field_affinity_group_effective_date">
+																		id="block_field_affinity_group_effective_date">
 																		<span
 																			id="producerDetail_affinity_group_section_affinity_group_effective_date_label">Effective
 																			Group</span>
@@ -4546,7 +4590,7 @@
 																<td class="HeaderStyle header-cell" width="10%"
 																	id="producerDetail_affinity_group_header_affinity_group_closing_date_security">
 																	<div
-																		id="sorting(,A,ajax_sorting):block_field_affinity_group_closing_date">
+																		id="block_field_affinity_group_closing_date">
 																		<span
 																			id="producerDetail_affinity_group_section_affinity_group_closing_date_label">Closing
 																			Date</span>
