@@ -38,4 +38,6 @@
 	<resource name="js/ckeditor/ckeditor.js" type="javascript" path="js/ckeditor/ckeditor.js" executionsequence="30"/>
 	<resource name="js/ckeditor/samples/js/sample.js" type="javascript" path="js/ckeditor/samples/js/sample.js" executionsequence="31"/>
 	<resource name="js/jquery.tabelizer1.js" type="javascript" path="js/jquery.tabelizer1.js" executionsequence="32"/>
+		<!-- BMIC specific -->
+	<resource type="css" path="css/impl/bmic_specific_style.css">	</resource>
 </resources>
