@@ -726,4 +726,8 @@
 <!-- MR bug id Main-004 start -->
 <tabsconfigurationresource deltaind="M" name="doc_CyberLiability_notice_listing_security" accesslevel="1" description="hide/show doc_CyberLiability_notice_listing_security on docCyberLiability.html" />
 <!-- MR bug id Main-004 end -->
+
+<!--Prod Issue- Display History icon on bank information page -->
+<tabsconfigurationresource deltaind="I" accesslevel="1" description="Hide/show bankinformation icon on addbankinformation screen" name="bankinformation_history_security"/>
+
 </tabsconfiguration>

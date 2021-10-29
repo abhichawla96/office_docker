@@ -2343,4 +2343,26 @@
 		</userdefined>
 	</protectedresource> 
 	
+	<!--Prod Issue- Display delete icon on bank information page -->
+   <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show  bankinformation_delete_security" uniquename="bankinformation_delete_security">
+    <businessrole roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
+     <businessrole roleid="ReadOnly">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <userdefined executionsequence="2" ruleid="WorkflowRule.isOnboardingDeclinedWorkflowStatusNotFound">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    <userdefined executionsequence="1" ruleid="ProducerOneRule.isBankInfoNotForHierarchyAgency">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    <userdefined executionsequence="3" ruleid="ProducerOneRule.isAgencyStatusNotInactive">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    <userdefined executionsequence="0" ruleid="ProducerOneRule.isShowModifyBankInformation">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+  </protectedresource>
+	
 </security> 
