@@ -700,8 +700,10 @@
       <userdefinedaccesslevel accesstype="2"/>
     </userdefined>
   </protectedresource>
- <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show admin compensation tab" uniquename="adminTabs_compensationmgt"/>
- <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show custom events tab" uniquename="isShowCustomEventsTab"/>
+  <!-- Phase 3 : Administration : Compensation Management -->
+ <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show admin compensation tab" uniquename="adminTabs_compensationmgt"/>
+ <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/Show custom events tab" uniquename="isShowCustomEventsTab"/>
+ 
  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show adminTabs2_transfer_security" uniquename="adminTabs2_transfer_security"/>
 <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show adminTabs2_bobtransfers_security" uniquename="adminTabs2_bobtransfers_security"/>
  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show admin accounts tab" uniquename="adminTabs_accountstab">
@@ -1420,10 +1422,10 @@
   <protectedresource deltaind="M" defaultaccesstype="1" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceENOApplicable_security"/>
   
   <protectedresource deltaind="M" defaultaccesstype="1" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceDocW9Applicable_security"/>
-  
-  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show request individual transfer link on dashboard" uniquename="isDashboardRequestIndividualTransfer"/>
-  
-  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show request wholesale transfer link on dashboard" uniquename="isDashboardRequestWholesaleTransfer"/>
+  <!-- Phase 3 : Show request individual transfer link on dashboard -->
+  <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show request individual transfer link on dashboard" uniquename="isDashboardRequestIndividualTransfer"/>
+  <!-- Phase 3 : Show request wholesale transfer link on dashboard -->
+  <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show request wholesale transfer link on dashboard" uniquename="isDashboardRequestWholesaleTransfer"/>
   
   <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/Show Add Bank Information request link on dashboard" uniquename="isAddUpdateSelfServiceBankInformationApplicable"/>
   
@@ -1477,9 +1479,10 @@
   
   
   <!-- Hiding Payment tab -->
+  <!-- Phase 3 : Show Payment Tab -->
   <protectedresource defaultaccesstype="0" description="Hide/show admin payment tab" uniquename="adminTabs_paymenttab">
     <businessrole deltaind="M" roleid="CarrierAdmin">
-      <roleaccesslevel accesstype="0"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   	<businessrole deltaind="M" roleid="accountinganalyst">
       <roleaccesslevel accesstype="0"/>

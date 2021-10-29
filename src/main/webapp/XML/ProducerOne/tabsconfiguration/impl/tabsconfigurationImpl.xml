@@ -117,8 +117,11 @@
  <!-- Sprint 3 : Agency and Agent Demographics- General- (Dashboard) -->
   
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show pending esignature bucket for self service bank request" name="allpendingesignaturecombinedrequests_security"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isCommissionManagementDashboardHideShow" name="isCommissionManagementDashboardHideShow"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowDashboardCCBStatmentHideShow" name="isShowDashboardCCBStatmentHideShow"/>
+  
+  <!-- Phase 3 : Show Commission and Bonus Dashboard -->
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="isCommissionManagementDashboardHideShow" name="isCommissionManagementDashboardHideShow"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="isShowDashboardCCBStatmentHideShow" name="isShowDashboardCCBStatmentHideShow"/>
+  
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show Dashboard Profit Sharing Statment  security" name="isShowDashboardProfitSharingStatmentHideShow"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show Agency Profile Dashboard" name="isAgencyProfileDashboardHideShow"/>
   
@@ -240,7 +243,8 @@
   <!-- US - OB-GEN-013-001 -->
     <tabsconfigurationresource deltaind="M" accesslevel="0" name="checkIsShowProducerBillingTermTab"/>
   <!--US - OB-GEN-014-001 -->
-     <tabsconfigurationresource deltaind="M" accesslevel="0" name="isShowProdNumBankInformationTab"/>
+  <!-- Phase 3 : Agency Demographics -->
+     <tabsconfigurationresource deltaind="M" accesslevel="1" name="isShowProdNumBankInformationTab"/>
 
 <!--OB-GEN-015-3-->
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="doc_contract_contact_state_security" name="doc_contract_contact_state_security"/>
@@ -267,12 +271,19 @@
  <!-- Showing Relationship Management Tab Start - Phase 2  -->
   <tabsconfigurationresource deltaind="M" accesslevel="1" name="relationaship_mngmnt_tab_security"/>
 <!-- Showing Relationship Management Tab End - Phase 2 -->
-  <tabsconfigurationresource deltaind="M" accesslevel="0" name="checkIsShowCompensationMgmtTab"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show external system tab for agency" name="isShowAgencyExternalSystemTabTrue"/>
+  <!-- Phase 3 : Agency Demographics -->
+  <tabsconfigurationresource deltaind="M" accesslevel="1" name="checkIsShowCompensationMgmtTab"/>
+  
+  <!-- Phase 3 : Agency Demographics -->
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show external system tab for agency" name="isShowAgencyExternalSystemTabTrue"/>
+  
   <tabsconfigurationresource deltaind="M" accesslevel="0" name="checkIsShowRequestTab"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyClaimPolicy_tab_security"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show Commission Hierarchy Tab" name="commission_hierarchy_new_security"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" name="isShowIncentiveHierarchyTab"/>
+  
+  <!-- Phase 3 : Agency Demographics -->
+  <tabsconfigurationresource deltaind="M" accesslevel="1" name="agencyClaimPolicy_tab_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show Commission Hierarchy Tab" name="commission_hierarchy_new_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="1" name="isShowIncentiveHierarchyTab"/>
+  
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show Profit Sharing Hierarchy Tab" name="isShowProfitSharingHierarchyTab"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show activities tab at agent level" name="agent_activities_security"/>
  
@@ -393,7 +404,10 @@
   <tabsconfigurationresource deltaind="M" name="agencyTerminationStep1_seller_state_security" accesslevel="1" description="Hide/Show of agencyTerminationStep1_seller_producer_code_security in agencyTerminationStep1.html" />
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show manage sso tab" name="isShowManageSSOTab"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" name="adminTabs2_transfer_security"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" name="adminTabs2_bobtransfers_security"/>
+  
+  <!-- Phase 3 : Administration : Agency Acquisitions : BOB transfers -->
+  <tabsconfigurationresource deltaind="M" accesslevel="1" name="adminTabs2_bobtransfers_security"/>
+  
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show mass hierachy tab in admin" name="massHierarchyListing_security"/>
   <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/show mass hierachy tab in admin" name="adminTabs_accountstab"/>
  <!-- mass changes outof scope change -->
@@ -404,8 +418,11 @@
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="hide/show Car Report Non Matching Security" name="non_matching_car_security"/>
 
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show commission_rate_hierarchy_security" name="commission_rate_hierarchy_security"/>
-  <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/show adminTabs_compensationmgt" name="adminTabs_compensationmgt"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show custom events tab" name="isShowCustomEventsTab"/>
+  
+  <!-- Phase 3 : Administration : Compensation Mgmt -->
+  <tabsconfigurationresource deltaind="I" accesslevel="1" description="Hide/show adminTabs_compensationmgt" name="adminTabs_compensationmgt"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show custom events tab" name="isShowCustomEventsTab"/>
+ 
  <tabsconfigurationresource deltaind="I" accesslevel="1" description="Hide/Show custom events tab" name="agencyFunctionListing_closingBusinessForOpenMarkets_product_security"/>
  <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show Product validation Filters" name="productValidationDetails_filter_security"/>
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show Carrier Group Product validation Filters" name="productValidationDetails_carrier_group_id_filter_security"/>
@@ -578,9 +595,11 @@
  <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide Show Compensation report" name="compensationreports_tab_security"/>
  <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide Show Relationship report" name="relationshipreports_tab_security"/>
  <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide Show Performance report" name="performancereports_tab_security"/>
- <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide Show Audit report" name="auditreports_tab_security"/>
- <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide Show Bonus report" name="ccbreports_tab_security"/>
- <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide Show Commission report" name="commissionreports_tab_security"/>
+ 
+ <!-- Phase 3 : Reports -->
+ <tabsconfigurationresource deltaind="I" accesslevel="1" description="Hide Show Audit report" name="auditreports_tab_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="1" description="Hide Show Bonus report" name="ccbreports_tab_security"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="1" description="Hide Show Commission report" name="commissionreports_tab_security"/>
  
  <!-- Observations -->
  <tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyListEdit_top_companies_appointmentdate_security"/>
@@ -659,9 +678,11 @@
  
 <!-- Phase 2- Bug Id- P2-053 - Hiding sections on Dashboard -->
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="agency admindashboard profit sharing statement security" name="agencyadmindashboard_profit_sharing_statement_security"/>
-<tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyadmindashboard_contingent_commission_bonus_statement_security"/>
+<!-- Phase 3 : Show Bonus Dashboard : Self Service -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" name="agencyadmindashboard_contingent_commission_bonus_statement_security"/>
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="agency admindashboard agency profile report security" name="agencyadmindashboard_agency_profile_report_security"/>
-<tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyadmindashboard_commission_security"/>
+<!-- Phase 3 : Show Bonus Dashboard : Self Service -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" name="agencyadmindashboard_commission_security"/>
  
 <!-- Phase 2- Bug Id- P2-054 - Disable User Button on Update Contact Page --> 
 <tabsconfigurationresource deltaind="I" accesslevel="0" name="addEntityRequests_disable_user"/>
@@ -726,4 +747,8 @@
 <!-- MR bug id Main-004 start -->
 <tabsconfigurationresource deltaind="M" name="doc_CyberLiability_notice_listing_security" accesslevel="1" description="hide/show doc_CyberLiability_notice_listing_security on docCyberLiability.html" />
 <!-- MR bug id Main-004 end -->
+<!-- Phase 3 : Agency Demographics -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" name="claim_policy_security" description="claim_policy_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="isShowAgentContractsTabAtTopLevel" name="contact_external_system_tab_security"/>
+<tabsconfigurationresource deltaind="M" name="ivans_security" accesslevel="1" description="show ivans security" /> 
 </tabsconfiguration>
