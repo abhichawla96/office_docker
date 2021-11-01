@@ -2414,4 +2414,12 @@
   	</protectedresource>
      <!-- BMIC req hiding extra Agency name field end -->
 	
+	<!-- upgrade bugs Top Three Companies Appointed start-->
+	 <protectedresource deltaind="M" description="top_companies_appointed_security" uniquename="top_companies_appointed_security">
+    
+     <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
+  </protectedresource>
+  	<!-- upgrade bugs Top Three Companies Appointed end-->
 </security> 
