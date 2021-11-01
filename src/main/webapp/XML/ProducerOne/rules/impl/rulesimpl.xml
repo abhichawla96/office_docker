@@ -59,6 +59,12 @@
 		<rule deltaind="I" id="isCBIAYesNoSS" expression="isEqual(:ss_cbia_designation,Y);"></rule>
 <!-- phase 2 end- extended fields-->
 
+<!-- BMIC req  hide complete transaction/Generate letter button start -->
+  
+  <rule deltaind="I" id="isHideCompleteTransactionButtonOnAgencyFunction" expression="andCondition(isNotEqual(:AgencySetupOBStatus_desc,Pending Review),isNotEqual(:AgencySetupOBUser_id,:user_id));"/>
+  
+   <!-- BMIC req  hide complete transaction/Generate letter button end -->
+
 	</ruleset>
 
 

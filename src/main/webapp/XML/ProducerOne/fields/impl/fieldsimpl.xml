@@ -514,4 +514,18 @@
 	<field deltaind="I" isextendedfield="Y" name="ss_year_recieved" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" objectcolumn="person_id" section="entityPersonDetails_freeform_contextdata_2" displaytype="text" isrequired="Y" labelkey="ss_year_recieved_label" labeldesc="Year Received" accesslevel="1" tabsconfigurationresourcename="ss_year_recieved_security" mappedto="f25" protectedresourceuniquename="ss_year_recieved_security" id="ss_year_recieved" position="#ss_cbia_designation_after#">
 	</field>	
 		<!-- phase 2 - end - Extended fields -->
+		
+<!-- BMIC req To remove Agency name mandetory field start -->
+ <field deltaind="M" id="agencyFunctions_selectFunctionType_agencyFunctions_toBeProcessed_agency_name" screen="admin/agencyFunctions_selectFunctionType.html" name="toBeProcessed_agency_id" isrequired="N" requiredeval="agencyFunctions_toBeProcessed_agency_name_manadatory_security" labelkey="toBeProcessed_agency_name_label" tabsconfigurationresourcename="agencyFunctions_toBeProcessed_agency_name_security" protectedresourceuniquename="agencyFunctions_toBeProcessed_agency_name_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="agencyFunctions_selectFunctionType_freeform_contextdata_2"/>
+  
+<!-- BMIC req To remove Agency name mandetory field end -->
+
+<!-- BMIC req To remove Deactivation date mandetory field start -->
+<field deltaind="M" id="agencyFunctions_selectFunctionType_suspension_date" screen="admin/agencyFunctions_selectFunctionType.html" name="suspension_date" isrequired="N" labelkey="suspension_date_label" tabsconfigurationresourcename="agencyFunctions_suspension_date_security" protectedresourceuniquename="agencyFunctions_suspension_date_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">    
+	<validation name="checkAgencyFunctionsFilterDateValidation" expression="checkAgencyFunctionsFilterDateValidation(context)" message="primaryAgencyCodeEmptyErrorKey" ruleid="AgencyFunctionsRule.checkAgencyFunctionsFilterDateValidation" executionsequence="0" />
+    <event id="onchange" name="onchange" actiontype="ajaxpageblocklink" screen="admin/agencyFunctions_selectFunctionType.html" action="refreshDataBasedOnSuspensionDate" actiontypeid="agencyFunctions_selectFunctionType_freeform_contextdata_2#is_real_time_securityDiv#agencyFunction_buttons" executionsequence="0">
+      <forward id="admin/agencyFunctions_selectFunctionType.html" screen="admin/agencyFunctions_selectFunctionType.html" executionsequence="0" />
+    </event>
+  </field>
+  <!-- BMIC req To remove Deactivation date mandetory field end -->
  </fields>

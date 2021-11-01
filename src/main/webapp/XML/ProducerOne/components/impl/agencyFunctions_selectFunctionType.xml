@@ -54,5 +54,20 @@
       		</workflow>
 	  	</action>
  	
+	  	<!--BMIC req request not moved to approved bucket start -->
+	  <action deltaind="M" name="approveAgencyFunction">
+	  <workflowevent deltaind="D" eval="AgencyFunctionsRule.isShowAgencyFunctionsTypeDeactivateContact" ajaxcontainerid="contentTableDiv" event="approveAgencyFunctionDC" isgetuser="Y" name="approveAgencyFunctionDC" userfield="workflow_user" workflow="agencyFunctions" executionsequence="3"/>
+	  <workflowevent deltaind="I" eval="AgencyFunctionsRule.isShowAgencyFunctionsTypeDeactivateContact" ajaxcontainerid="contentTableDiv" event="approveAgencyFunctionDCNew" isgetuser="Y" name="approveAgencyFunctionDCNew" userfield="workflow_user" workflow="agencyFunctions" executionsequence="4"/>
+	    	
+	    </action>
+	    <!--BMIC req request not moved to approved bucket end -->
+	    
+	    <!--BMIC req request not moved to Declined bucket start -->
+	      <action deltaind="M" name="declineAgencyFunction">
+	    	<workflowevent deltaind="D" eval="AgencyFunctionsRule.isShowAgencyFunctionsTypeDeactivateContact" ajaxcontainerid="contentTableDiv" event="declineAgencyFunctionDC" isgetuser="Y" name="declineAgencyFunctionDC" userfield="workflow_user" workflow="agencyFunctions" executionsequence="3"/>
+	    	<workflowevent deltaind="I" eval="AgencyFunctionsRule.isShowAgencyFunctionsTypeDeactivateContact" ajaxcontainerid="contentTableDiv" event="declineAgencyFunctionDCNew" isgetuser="Y" name="declineAgencyFunctionDCNew" userfield="workflow_user" workflow="agencyFunctions" executionsequence="3"/>
+	    	 
+	    	 </action>
+	    	 <!--BMIC req request not moved to Declined bucket end -->
 	</component>
  </projectcomponents>
