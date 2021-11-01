@@ -528,4 +528,10 @@
     </event>
   </field>
   <!-- BMIC req To remove Deactivation date mandetory field end -->
+  
+  	
+	<!-- Upgrade changes -->
+	
+   <field deltaind="M" id="agentGeneralDetailsForSelfServiceApproval_npn" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" name="prdcr_cde" isrequired="Y" labelkey="showdivnpn_label" tabsconfigurationresourcename="showdivnpn" protectedresourceuniquename="showdivnpn" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
+  
  </fields>
