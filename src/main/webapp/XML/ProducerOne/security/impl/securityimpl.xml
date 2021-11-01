@@ -125,10 +125,11 @@
 		</userdefined>
 		
 	</protectedresource>
-
-	<protectedresource deltaind="M" defaultaccesstype="0"
+<!-- CR 0060 show decline on Pending ESignature bucket start-->
+	<protectedresource deltaind="M" defaultaccesstype="1"
 		description="Hide/Show decline button on summary page" operator="and"
 		uniquename="agencyListPublicSubmitNInvitationEdit_decline">
+<!-- CR 0060 show decline on Pending ESignature bucket end-->
 		<businessrole deltaind="I" roleid="SalesDirector">
 			<roleaccesslevel accesstype="0" />
 		</businessrole>

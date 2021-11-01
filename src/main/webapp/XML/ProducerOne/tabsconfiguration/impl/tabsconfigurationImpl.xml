@@ -730,4 +730,8 @@
 <!--Prod Issue- Display History icon on bank information page -->
 <tabsconfigurationresource deltaind="I" accesslevel="1" description="Hide/show bankinformation icon on addbankinformation screen" name="bankinformation_history_security"/>
 
+<!-- CR-0062 show decline on Pending License Verification bucket start-->
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show bulkAgentAppointNew_decline in bulkAgentAppointNew" name="bulkAgentAppointNew_decline"/>
+
+<!-- CR-0062 show decline on Pending License Verification bucket end-->
 </tabsconfiguration>
