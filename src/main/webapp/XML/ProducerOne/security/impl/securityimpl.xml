@@ -705,7 +705,10 @@
  <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/Show custom events tab" uniquename="isShowCustomEventsTab"/>
  
  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show adminTabs2_transfer_security" uniquename="adminTabs2_transfer_security"/>
-<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show adminTabs2_bobtransfers_security" uniquename="adminTabs2_bobtransfers_security"/>
+
+<!-- Phase 3 : Administration : Agency Acquisition : BOB Transfer  -->
+<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show adminTabs2_bobtransfers_security" uniquename="adminTabs2_bobtransfers_security"/>
+ 
  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show admin accounts tab" uniquename="adminTabs_accountstab">
     <businessrole deltaind="D" roleid="accountantadmin">
       <roleaccesslevel accesstype="1"/>
@@ -1365,6 +1368,7 @@
   </protectedresource>
   
   <!-- Compensation Links -->
+  <!-- Phase 3  - Hide/show commission schedule sub tab in admin -->
   <protectedresource defaultaccesstype="0" description="Hide/show commission schedule sub tab in admin" uniquename="adminTabs2_commissionSchedule_security">
     <businessrole deltaind="M" roleid="accountantadmin">
       <roleaccesslevel accesstype="0"/>
@@ -1382,11 +1386,12 @@
       <roleaccesslevel accesstype="0"/>
     </businessrole>
     <businessrole deltaind="M" roleid="MarketingAssistant">
-      <roleaccesslevel accesstype="0"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
-  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show ccb schedule sub tab in admin" uniquename="adminTabs2_incentive_schedule_security"/>
+  <!-- Phase 3 : Administration : Compensation Mgmt : Bonus -->
+  <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show ccb schedule sub tab in admin" uniquename="adminTabs2_incentive_schedule_security"/>
   
   <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show adminTabs2_campaign_schedule_security" uniquename="adminTabs2_campaign_schedule_security"/>
   
@@ -1404,9 +1409,10 @@
   <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show commission acra outout sub tab in admin" uniquename="adminTabs2_acrasoutputtab">
   </protectedresource>
   
+  <!-- Phase 3 : Administration : Compensation Mgmt : Release Statements -->
   <protectedresource defaultaccesstype="0" description="Hide/show commission release statements sub tab in admin" uniquename="adminTabs2_releasestatementtab">
     <businessrole deltaind="M" roleid="MarketingAssistant">
-      <roleaccesslevel accesstype="0"/>
+      <roleaccesslevel accesstype="1"/>
     </businessrole>
   </protectedresource>
   
