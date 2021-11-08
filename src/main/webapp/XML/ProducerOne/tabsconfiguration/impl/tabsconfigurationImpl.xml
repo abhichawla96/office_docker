@@ -726,4 +726,8 @@
 <!-- MR bug id Main-004 start -->
 <tabsconfigurationresource deltaind="M" name="doc_CyberLiability_notice_listing_security" accesslevel="1" description="hide/show doc_CyberLiability_notice_listing_security on docCyberLiability.html" />
 <!-- MR bug id Main-004 end -->
+
+<!-- Maintenance Bug id- 023- Self Service page- add/update contact start -->
+<tabsconfigurationresource deltaind="M" name="agentGeneralDetailsForSelfServiceApproval_does_intend_writing_business_security" accesslevel="0" description="Hide/Show agentGeneralDetailsForSelfServiceApproval_does_intend_writing_business_security" />
+<!-- Maintenance Bug- 023- Self Service page- add/update contact end -->
 </tabsconfiguration>
