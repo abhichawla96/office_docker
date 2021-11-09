@@ -597,7 +597,13 @@
 					<businessobject name="SendDocForESign" obj="com.userbo.integration.SendDocForESign"/>
 				</statusworkflow> -->
 			</status>
-		 </event>		
+		 </event>
+		 <event deltaind="I" name="trashOnboardedApplication" assigneerole="MarketingAssistant">
+			<status name="trashOnboardedApplication" workflowstatus="Junk" workflowfunction="Public Submission" executionsequence="0"
+				usergroup="MarketingAssistant" statusgroup="Onboarding" assignee="user_id"
+				objectid="aar_requestid" objecttype="Onboarding">
+			</status>
+		</event> 		
 	</workflow>
 	
 	<workflow name="selfService">

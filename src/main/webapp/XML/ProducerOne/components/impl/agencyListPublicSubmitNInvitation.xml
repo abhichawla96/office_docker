@@ -63,10 +63,10 @@
 
 				<databaseoperation executionsequence="5" metaobject="tbl_agencybankinformation" name="deleteBankInfo" operation="2" sqlstmt="delete from tbl_agencybankinformation where aar_requestid=#aar_requestid#" />
 
-				<databaseoperation executionsequence="6" metaobject="tbl_agencyappointmentrequest" name="deleteApplicaton" operation="2" sqlstmt="delete from tbl_agencyappointmentrequest where aar_requestid=#aar_requestid#" />
+				<!-- <databaseoperation executionsequence="6" metaobject="tbl_agencyappointmentrequest" name="deleteApplicaton" operation="2" sqlstmt="delete from tbl_agencyappointmentrequest where aar_requestid=#aar_requestid#" /> -->
 
 			</workflow>
-
+			<workflowevent deltaind="I" event="trashOnboardedApplication" name="trashOnboardedApplication" isexecuteonsuccess="Y" workflow="onboardingDashboard" executionsequence="0"/> -->
 			<actionparam eval="ProducerOneRule.isDeleteInvitation" executionsequence="1" form="Y" name="pageMsg" paramid="pageMsg123" post="Y" />
 
 		</action>
