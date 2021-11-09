@@ -56,6 +56,16 @@
 				objectid="aar_requestid" objecttype="Onboarding">
 			</status>
 		</event>
+		
+		<!--  Upgrade Bug- U-002- Producer Reg not showing in Sent for Invitation bucket- start-->
+		<event deltaind="I" name="sendInvitationForAgent" assigneerole="MarketingAssistant">
+		<status deltaind="I" name="sendInvitationForAgent" workflowstatus="Invited" workflowfunction="Public Submission" executionsequence="0"
+		statuscomment="comments" usergroup="MarketingAssistant" statusgroup="Onboarding" assignee="user_id"
+		objectid="aar_requestid" objecttype="Onboarding">
+		</status>
+		</event>
+		<!-- Upgrade Bug- U-002- Producer Reg not showing in Sent for Invitation bucket- end -->
+		
 		<event name="ResendInvitation" assigneerole="MarketingAssistant" deltaind="M">
 			<status deltaind="M" eval="ProducerOneRule.isRegistrationTypePrimarySecondary" name="ResendInvitation" workflowstatus="Invited" workflowfunction="Public Submission" executionsequence="0"
 				statuscomment="comments" usergroup="MarketingAssistant" statusgroup="Onboarding" assignee="user_id"
