@@ -730,4 +730,11 @@
 <!-- Maintenance Bug id- 023- Self Service page- add/update contact start -->
 <tabsconfigurationresource deltaind="M" name="agentGeneralDetailsForSelfServiceApproval_does_intend_writing_business_security" accesslevel="0" description="Hide/Show agentGeneralDetailsForSelfServiceApproval_does_intend_writing_business_security" />
 <!-- Maintenance Bug- 023- Self Service page- add/update contact end -->
+
+<!-- Upgrade Bug id- 026-Agency Demographics- start --> 
+<tabsconfigurationresource deltaind="I" name="entityGeneralDetails_downpayment_security" accesslevel="0" description="Hide/Show entityGeneralDetails_downpayment_security" />
+
+<tabsconfigurationresource deltaind="I" name="entityGeneralDetails_downpayment1_security" accesslevel="0" description="Hide/Show entityGeneralDetails_downpayment1_security" />
+<!-- Upgrade Bug id- 026-Agency Demographics- end -->
+
 </tabsconfiguration>

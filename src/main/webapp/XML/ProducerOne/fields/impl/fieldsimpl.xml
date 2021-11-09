@@ -546,4 +546,14 @@
     <validation name="checkLoginIdMandatory" expression="if(andCondition(isEqual(:agent_loginid_mandatory,Y),isEmpty(:LOGIN_ID))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="loginIdEmptyErrorkey" ruleid="ProducerOneRule.checkLoginIdMandatory" executionsequence="0" />
     <validation deltaind="D" name="checkLoginIDExistsForUpdateAgentGeneralDetails" expression="if(andCondition(isEqual(:agent_loginid_mandatory,Y),isGreaterThan(getBeanProperty(executeDBOperation(context,a,3,SqlStmts.sqlStatementsviewcheckLoginIDForUpdateAgentGeneralDetails),loginid_count),0))=>populateError(context,LOGIN_ID,loginIdAlreadyExistsErrorKey);isEqual(1,1);->isEqual(1,1););" message="loginIdAlreadyExistsErrorKey" ruleid="AgentGeneralDetails.checkLoginIDExistsForUpdateAgentGeneralDetails" executionsequence="1" />
   </field>
+  
+  <!--Upgrade Bug Id- 031 Self Service start --> 
+ <field deltaind="M" id="agencyFunctions_selectFunctionType_suspension_date" screen="admin/agencyFunctions_selectFunctionType.html" name="suspension_date" isrequired="Y" labelkey="suspension_date_label" tabsconfigurationresourcename="agencyFunctions_suspension_date_security" protectedresourceuniquename="agencyFunctions_suspension_date_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="agencyFunctions_selectFunctionType_freeform_contextdata_2"> 
+    <validation name="checkAgencyFunctionsFilterDateValidation" expression="checkAgencyFunctionsFilterDateValidation(context)" message="primaryAgencyCodeEmptyErrorKey" ruleid="AgencyFunctionsRule.checkAgencyFunctionsFilterDateValidation" executionsequence="0" /> 
+    <event id="onchange" name="onchange" actiontype="ajaxpageblocklink" screen="admin/agencyFunctions_selectFunctionType.html" action="refreshDataBasedOnSuspensionDate" actiontypeid="agencyFunctions_selectFunctionType_freeform_contextdata_2#is_real_time_securityDiv#agencyFunction_buttons" executionsequence="0"> 
+      <forward id="admin/agencyFunctions_selectFunctionType.html" screen="admin/agencyFunctions_selectFunctionType.html" executionsequence="0" />  
+    </event> 
+  </field> 
+  <!-- Upgrade Bug Id- 031 Self Service end --> 
+  
  </fields>
