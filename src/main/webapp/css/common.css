@@ -5729,3 +5729,8 @@ ul.split-list li .freeFormListTr .freeFormListTd.labelAlign, ul.inline-blocks li
 #Nipr_Name_login_id_selfService_security .inlineBlock_div + .inlineBlock_div .nonMandatory {
     padding-left: 5px !important;
 }
+
+.mailing_ico{
+	background-image: url(../images/icons/icon_mailing.png);
+	display:inline-block;
+}
