@@ -737,4 +737,7 @@
 <tabsconfigurationresource deltaind="I" name="entityGeneralDetails_downpayment1_security" accesslevel="0" description="Hide/Show entityGeneralDetails_downpayment1_security" />
 <!-- Upgrade Bug id- 026-Agency Demographics- end -->
 
+<!-- Upgrade bug-U-033 start -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show call report agency personnel" name="isCallReportAgencyPersonnelApplicable"/>
+<!-- Upgrade bug-U-033 end -->
 </tabsconfiguration>
