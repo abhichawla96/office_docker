@@ -748,4 +748,8 @@
 
 <!-- Upgrade bug-U-032 end -->
 
+<!-- Upgrade bug-U-059 Start -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="isCallReportAttendingEmployeesApplicable_security" name="isCallReportAttendingEmployeesApplicable_security"/>
+<!-- Upgrade bug-U-059 end -->  
+
 </tabsconfiguration>
