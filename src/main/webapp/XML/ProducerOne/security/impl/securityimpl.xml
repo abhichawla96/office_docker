@@ -1051,8 +1051,9 @@
    </protectedresource>
   
   <!-- change request -->
+    
   <!-- BMIC req- hide complete transaction button for salesSupport -Start 22/09/2021 -->
-    <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Complete Transaction button on agency functions page" uniquename="agencyFunctions_selectFunctionType_complete_transaction_security">
+   <!--  <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Complete Transaction button on agency functions page" uniquename="agencyFunctions_selectFunctionType_complete_transaction_security">
    		<businessrole deltaind="I" roleid="AgencyAdmin">
     		<roleaccesslevel accesstype="0"/>
     	</businessrole>
@@ -1062,17 +1063,25 @@
     	
     	 <userdefined deltaind="I" executionsequence="1" ruleid="ProducerOneRule.isHideCompleteTransactionButtonOnAgencyFunction">
   		<userdefinedaccesslevel accesstype="1"/>
-  	</userdefined> 
+  	</userdefined>  -->
     
    <!-- BMIC req- hide complete transaction button for salesSupport -end -->
-    	
-    	  <!-- <userdefined ruleid="ProducerOneRule.isFunctionDC" executionsequence="0">
+   <!-- CHANGES DONE FOR UPGRADE ISSUES -->
+    	 <protectedresource deltaind="I" defaultaccesstype="0" operator="AND" description="agencyFunctions_selectFunctionType_complete_transaction_security" uniquename="agencyFunctions_selectFunctionType_complete_transaction_security">
+    	<userdefined  ruleid="ProducerOneRule.isFunctionDC" executionsequence="0">
 			<userdefinedaccesslevel accesstype="1" />
 		</userdefined>
 		<userdefined executionsequence="1"
 			ruleid="AgencyFunctionsRule.isRequestStatusNotCompleted">
 			<userdefinedaccesslevel accesstype="1" />
-		</userdefined> -->  
+		</userdefined>
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+ 		<businessrole deltaind="I" roleid="MarketingAssistant">
+      		<roleaccesslevel accesstype="1"/>
+    	</businessrole>
+    	
   </protectedresource>
   
   
