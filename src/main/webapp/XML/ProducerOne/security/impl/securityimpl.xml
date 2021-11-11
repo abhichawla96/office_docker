@@ -2430,4 +2430,13 @@
     </businessrole>
   </protectedresource>
   	<!-- upgrade bugs Top Three Companies Appointed end-->
+  	
+  	<!-- upgrade bugs for display Decline button on Agency Termination page-->
+  	<protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show decline button on agencyTerminationStep2 page" uniquename="agencyTerminationStep2_decline_security">
+  	<businessrole roleid="vpmarketing" accesstype="1"></businessrole>
+  	<userdefined executionsequence="0" ruleid="WorkflowRule.isShowApproveButtonOnAgencyTermination" >
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+  </protectedresource>
+</security> 
 </security> 
