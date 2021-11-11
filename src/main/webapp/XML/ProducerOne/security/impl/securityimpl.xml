@@ -1071,10 +1071,9 @@
     	<userdefined  ruleid="ProducerOneRule.isFunctionDC" executionsequence="0">
 			<userdefinedaccesslevel accesstype="1" />
 		</userdefined>
-		<userdefined executionsequence="1"
-			ruleid="AgencyFunctionsRule.isRequestStatusNotCompleted">
-			<userdefinedaccesslevel accesstype="1" />
-		</userdefined>
+	 <userdefined deltaind="I" executionsequence="1" ruleid="ProducerOneRule.isHideCompleteTransactionButtonOnAgencyFunction">
+  		<userdefinedaccesslevel accesstype="1"/>
+  	</userdefined> 
 		<businessrole deltaind="I" roleid="AgencyAdmin">
       <roleaccesslevel accesstype="0"/>
     </businessrole>
