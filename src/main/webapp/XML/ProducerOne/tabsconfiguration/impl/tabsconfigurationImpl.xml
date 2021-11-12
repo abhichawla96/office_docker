@@ -741,13 +741,6 @@
 <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show call report agency personnel" name="isCallReportAgencyPersonnelApplicable"/>
 <!-- Upgrade bug-U-033 end -->
 
-<!-- Upgrade bug-U-032 start -->
- <tabsconfigurationresource deltaind="M" accesslevel="0" description="agencyFuntions_letterTemplateList_security" name="agencyFuntions_letterTemplateList_security"/>
-
- <tabsconfigurationresource deltaind="M" accesslevel="0" description="agencyFuntions_documentAttachment_security" name="agencyFuntions_documentAttachment_security"/>
-
-<!-- Upgrade bug-U-032 end -->
-
 <!-- Upgrade bug-U-059 Start -->
 <tabsconfigurationresource deltaind="M" accesslevel="1" description="isCallReportAttendingEmployeesApplicable_security" name="isCallReportAttendingEmployeesApplicable_security"/>
 <!-- Upgrade bug-U-059 end -->  
