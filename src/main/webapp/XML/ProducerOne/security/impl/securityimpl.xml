@@ -1995,9 +1995,10 @@
 		</businessrole>
 	</protectedresource>
 	
+	<!-- Upgrade Bug Id 068 Email for agency admin add/update contact -->
 	<protectedresource deltaind="M" defaultaccesstype="1" description="w9_alt_email_address_agency_selfService_security" uniquename="w9_alt_email_address_agency_selfService_security">
 		<businessrole deltaind="I" roleid="AgencyAdmin">
-			<roleaccesslevel accesstype="0" />
+			<roleaccesslevel accesstype="1" />
 		</businessrole>
 		<businessrole deltaind="I" roleid="MarketingAssistant">
 			<roleaccesslevel accesstype="0" />
