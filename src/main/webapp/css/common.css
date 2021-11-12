@@ -11,7 +11,7 @@ th {
 	font-weight: normal;
 }
 
-.lineHeight20 { 
+.lineHeight20 {
 	line-height: 20px;
 }
 
@@ -913,7 +913,8 @@ div.coveragesSearchProducerno {
 	#deleteEligibilityCriteriaConfirmation, #voidDDConfirmation,
 	#deactivateDDConfirmation, #deactivateConfirmation, #unlinkConfirmation,#affilationConfirmation
 	,#deleteConfirmation3, #popupApproved, #popupDisapproved, #unsavedDataConfirmation,#npnChangedWithActiveAppointments,
-	#agencyListPopup, #reloadPFConfirmation, #reloadIbatisConfirmation, #popupdynamicConfirmationMsgPopup, #popupdynamicConfirmationMsgAjaxPopup
+	#agencyListPopup, #reloadPFConfirmation, #reloadIbatisConfirmation, #popupdynamicConfirmationMsgPopup, 
+	#popupdynamicConfirmationMsgAjaxPopup, #popupAttachLookupobjectSql
 	{
 	display: none;
 	position: absolute;
@@ -1271,7 +1272,8 @@ li {
 	#deleteConfirmation1, #deleteUserRoleConfirmation,
 	#deleteUserControlConfirmation, #domicileStatePopup,
 	 #deleteProducerConfirmation,#popupSearchReportingManager, #deleteConfirmation2,#popuptaxiddiv, #popupSSNdiv, #popupSpouseSSNdiv, #popupSelectField, #popupSelectMetaobject, #popupSelectRule
-	,#popupWorkflow,#popupTaxId ,#deleteConfirmation3,#agencyFunctionDivComplete,#popuptaskPopup, #popupworkflowPopup, #popupupdateAgencyChildDataPopup, #popupupdateAgencyNamePopup, #popupexistsCarReportPopup, #popupconfigurationSuggestionPopup{
+	,#popupWorkflow,#popupTaxId ,#deleteConfirmation3,#agencyFunctionDivComplete,#popuptaskPopup, #popupworkflowPopup, #popupupdateAgencyChildDataPopup, #popupupdateAgencyNamePopup, #popupexistsCarReportPopup, 
+	#popupconfigurationSuggestionPopup, #popupuserListColumnsPopup{
 	display: none;
 	position: absolute;
 	z-index: 999999;
@@ -2060,7 +2062,7 @@ div.labelAlign {
 .legendMandetory{
 	margin: 5px 0px;
 	padding-left: 14px !important;
-	background: url(../images/icons/mendatory_Icon.png) no-repeat 5px 5px;
+	background: url(../images/icons/mendatory_Icon.png) no-repeat 5px 5px #fff;
 }
 
 #signature_acceptance_trust_acc_security .mendatoryInput,
@@ -2320,6 +2322,7 @@ fieldset legend span.mendatoryAsterisk {
 .freeFormListTd {
 	display: table-cell;
 	padding: 0px 0px;
+	position: relative;
 }
 
 .freeFormListTdError {
@@ -2670,8 +2673,9 @@ fieldset legend span.mendatoryAsterisk {
 }
 
 .borderNone li {
-	float: left;
-	margin: 0px;
+	display: inline-block;
+    margin: 0px;
+    float: none;
 }
 
 .errorMsgAlign {
@@ -3202,6 +3206,7 @@ input[type=radio], input[type=checkbox] {
                 padding:5px;
 }
 .license_list_green{color: green !important;;font-weight: bold;}
+.license_list_grey{color: grey !important;;font-weight: bold;}
 .license_list_black{color: black !important;}
 .popupContentELConfirmation {
                 padding: 10px;
@@ -3631,6 +3636,10 @@ a.dynamicIconRule{position:relative;margin-left:5px}
 	    background-image: url(../images/icons/icon_printCheck.png);
 	    display:inline-block;
 } 
+.mailing_ico{
+	background-image: url(../images/icons/icon_mailing.png);
+	display:inline-block;
+}
 
 .notesearch_width
 {
@@ -4893,6 +4902,7 @@ input[type=text]::-ms-clear {
     border: 1px solid #ccc !important;
     border-left: none !important;
 }
+/* BMIC Specific */
 .searchGroupList a {
     background: #D6D6D2;
     border-radius: 0px 8px 8px 0px!important;
@@ -4955,6 +4965,7 @@ input[type=text]::-ms-clear {
 .topSearch .searchGroup_advanceSearch a:hover{
 	text-decoration: underline;
 }
+/* BMIC Specific */
 .right-menus {
     padding-right: 10px !important;
     background-color: #006287
@@ -5251,6 +5262,7 @@ ul.roundTab2{
     background-color: #f9f9f9;
     padding: 10px;
 }
+/* BMIC Specific */
 .bootstrap-node-home .header-top-block2{padding-bottom: 0px;}
 .user-footer a.btn{
 	color: #ffffff!important;
@@ -5716,7 +5728,7 @@ ul.split-list li .freeFormListTr .freeFormListTd.labelAlign, ul.inline-blocks li
 .valignfilter td.mendatoryInput {
     background: url(../images/icons/mendatory_Icon.png) no-repeat 0px 9px;
 }
-.invitationE-5 .inlineBlock_3 .form-control{width: 183px;}
+.invitationE-5 .inlineBlock_3 .form-control, #CyberLiabilityDeclarationDiv .inlineBlock_3 .form-control{width: 183px;}
 .invitationE-5 .inlineBlock_3 .date .input-group-addon + .form-control {
     width: 153px;
 }
@@ -5729,8 +5741,103 @@ ul.split-list li .freeFormListTr .freeFormListTd.labelAlign, ul.inline-blocks li
 #Nipr_Name_login_id_selfService_security .inlineBlock_div + .inlineBlock_div .nonMandatory {
     padding-left: 5px !important;
 }
+.dynamicGridSelect, .dynamicGridTextbox{
+	width:80%;
+}
 
-.mailing_ico{
-	background-image: url(../images/icons/icon_mailing.png);
-	display:inline-block;
+.textareacharcount + a {
+    position: absolute;
+    right: -21px;
+    top: 7px;
+}
+#manageReload_manageBugId_security {
+    padding-top: 20px;
+}
+#contact_info_producer_number_security td.mendatoryInput {
+    background-position: 0px 9px;
+}
+
+.icoAttachLookupobjectSqlMini a {
+	background-image: url(../images/icons/attach_lookupobject_icon.png);
+	width: 16px;
+	height: 16px;
+	display: block;
+	background-repeat: no-repeat;
+}
+
+.oldValueList {
+	color: #1F8DD0;
+	font-style: italic;
+	display: block;
+	font-weight: bold !important;
+	padding-left: 4px;
+}
+
+.gridTable td.mendatoryInput{background: url(../images/icons/mendatory_Icon.png) no-repeat 0px 9px !important;}
+
+.headerRow2 .HeaderStyle {
+	height: auto;
+	padding-bottom: 5px;
+}
+
+.HeaderborderBottom div {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 8px;
+	width: 90%;
+	text-align: center;
+}
+.bgAccordionMerger .HeaderStyle {
+    color: #000 !important;
+}
+.advanceSearchEntityResult_advanceSearchEntityResult_list_1_table .HeaderStyle div {
+    min-width: 103px;
+}
+.advanceSearchEntityResult_list_1_loaction_row_link_class.HeaderStyle div, .advanceSearchEntityResult_list_1_sendinvitation_row_link_class.HeaderStyle div, .HeaderStyle.advanceSearchEntityResult_list_1_showHierarchy_row_link_class div, .HeaderStyle.advanceSearchEntityResult_list_1_delete_row_link_class div {
+    min-width: 1%;
+}
+.HeaderStyle.advanceSearchEntityResult_list_1_national_code_class div, .HeaderStyle.advanceSearchEntityResult_list_1_name_class div {
+    min-width: 150px;
+}
+#xmlMenuTreeSideBar .dataTables_paginate, #xmlMenuTreeSideBar  .dataTables_length, #xmlMenuTree .dataTables_paginate, #xmlMenuTree .dataTables_length{display: none;}
+.dataTables_scrollBody .dts_label {
+    display: none !important;
+}
+.HeaderborderBottomDiv {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 8px;
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	font-size: 11px;
+}
+.languages{
+    padding: 3px 12px;
+}
+.languages span {
+	display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.languages select{
+	font-size: 11px;
+    height: 20px;
+    background: #4e7ea4;
+    color: #fff;
+    border: 1px solid #035290;
+}
+#agencyListEdit_CyberLiability_section_security .form-control {
+    width: 180px;
+}
+#agencyListEdit_EandOForm_security .freeFormLabelWidth, #CyberLiabilityDeclarationDiv .freeFormLabelWidth {
+    width: 150px;
+}
+.dynamicattachmentoperator{
+	width:20px;
+	display: inline-block;
+}
+.dynamicvariancpercentageeattachment{
+	width:50px;
+}
+.dynamicvarianceamountattachment{
+	width:65px !important;
 }

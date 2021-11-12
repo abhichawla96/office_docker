@@ -6,7 +6,7 @@ a {
 	text-decoration: none;
 }
 a:hover {
-	text-decoration: none; 
+	text-decoration: none;
 }
 td, th, div{font-size: 13px;}
 td, div {
@@ -846,10 +846,10 @@ h3 {
 .authorization td {
 	padding: 3px;
 }
-.termination {
+.termination, .inactiveLicenseState {
 	width: 14px;
 }
-.termination td {
+.termination td, .inactiveLicenseState td {
 	padding: 3px;
 }
 .legendChar {
@@ -1971,6 +1971,7 @@ templateTypeDecisionTableField {
 	padding: 10px;
 }
 .buliten_1 .dashboardGird{padding: 0px;}
+/* BMIC Specific */
 .dashboardGird td.HeaderStyle, .dashboardGird th.HeaderStyle {
 	background: #D6D6D2;
 	font-weight: normal;
