@@ -238,5 +238,8 @@
   <label deltaind="M" labeldesc="Annual Application Written" labelkey="premium_lob_next3year_premium_label"/>
   <label deltaind="M" labeldesc="Annual Premium Volume" labelkey="premium_lob_monthly_premium1_label"/>
   
+  <!-- Phase 3- Paid to Collected Premium --> 
+  <label deltaind="M" labeldesc="Collected Premium" labelkey="addNewCommissionSchedule_paidpremium"/>
+  
  
 </labelconf>

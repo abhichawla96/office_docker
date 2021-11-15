@@ -751,4 +751,14 @@
 <tabsconfigurationresource deltaind="M" accesslevel="1" name="claim_policy_security" description="claim_policy_security"/>
 <tabsconfigurationresource deltaind="M" accesslevel="1" description="isShowAgentContractsTabAtTopLevel" name="contact_external_system_tab_security"/>
 <tabsconfigurationresource deltaind="M" name="ivans_security" accesslevel="1" description="show ivans security" /> 
+
+<!-- Phase 3 : Hide Flat Rate and Is Modelling fields -->
+<tabsconfigurationresource  deltaind="I" accesslevel="0" name="addNewcommission_schedule2_NB_RB_Split_security" />
+<tabsconfigurationresource  deltaind="I" accesslevel="0" name="showAddNewCommissionScheduleIsModeling" />
+
+<!-- Phase 3 : Hide Eligibility Criteria and Attachment Icons -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide Show commSchd_eligibility_column security" name="commSchd_eligibility_column_security"/>
+<tabsconfigurationresource  deltaind="M" accesslevel="0" name="commissonSch_mass_attachment_link_security"  description="Hide/show Commission Schedule mass attachment security" />
+
+
 </tabsconfiguration>
