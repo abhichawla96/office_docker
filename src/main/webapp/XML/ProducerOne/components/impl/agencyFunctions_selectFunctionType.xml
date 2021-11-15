@@ -20,7 +20,14 @@
    	    	<validatefield deltaind="D" name="validateAttachedDocumentListSize" eval="AgencyFunctionsRule.isShowAgencyFunctionsTypeCloseAgencyCode">
    	    		<function deltaind="D" name="validateAttachedDocumentListSize" eval="AgencyFunctionsRule.checkIsUploadDocumentListEmpty" expression="isEqual(1,1)"></function>
    	    	</validatefield>
-	  	</action>
+   	    	
+   	    	<!-- Upgrade bug Id-029 start -->
+   	    	<workflow deltaind="I" name="selfServiceInitiateEmailForDC" seq="5">
+	    		<databaseoperation deltaind="I" executionsequence="0" metaobject="userprofiles" name="getMarketAssistantEmail" operation="3" sqlstmt="select e_mail as e_mail from userprofiles where user_id=#workflow_user#"/>
+				<email deltaind="I" eventname="InitiateSelfServiceRequest" executionsequence="2" name="InitiateSelfServiceRequestDC" workflow="selfServiceWorkFlow" mailto="e_mail"/>
+	 		 </workflow>
+	 		  <!-- Upgrade bug Id-029 end -->
+	 		</action>
 	  	
    		
    		<action deltaind="M" name="generateLetter">
@@ -69,5 +76,20 @@
 	    	 
 	    	 </action>
 	    	 <!--BMIC req request not moved to Declined bucket end -->
+	    	 
+	    	 <!-- Upgrade bug Id-029 start -->
+	    	 <action deltaind="M" name="approveAgencyFunction">
+  			<actionparam deltaind="I" executionsequence="6" form="Y" name="workflow_assignee" paramid="workflow_assignee" viewparam="Y"/>
+      			<workflow deltaind="I" name="selfServiceApproveEmail" seq="4">
+	    		<databaseoperation deltaind="I" executionsequence="0" metaobject="requests" name="getRequestTypeName" operation="3" sqlstmt="select case when rrl.display_name is not null then rrl.display_name else rrl.description end as request_type_desc from reason_request_lku rrl , requests_ss rss where rrl.request_reason_id = rss.request_reason_id AND rss.request_ss_id=#request_ss_id#"/>
+	    		<databaseoperation deltaind="I" executionsequence="1" metaobject="userprofiles" name="getAgencyAdminApproverEmail" operation="3" sqlstmt="select  e_mail as e_mail from userprofiles where user_id=#workflow_assignee#"/>
+					<email deltaind="I" eventname="ApproveSelfServiceRequest" executionsequence="2" name="ApproveSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail"/>
+	            </workflow>
+    		</action>
+    
+    	<action deltaind="M" name="declineAgencyFunction">
+   			<actionparam deltaind="I" executionsequence="0" form="Y" name="workflow_assignee" paramid="workflow_assignee" viewparam="Y"/>
+   		</action>
+   		<!-- Upgrade bug Id-029 end -->
 	</component>
  </projectcomponents>
