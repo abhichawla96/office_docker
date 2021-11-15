@@ -118,7 +118,7 @@
 
 <!-- Sprint 4 -->
 <label deltaind="M" labeldesc="LOB" labelkey="agencyFunctionListing_closingBusinessForOpenMarkets_market_label"/>
-<label deltaind="M" labeldesc="Close Location Reason Other" labelkey="agencyFunctions_selectFunctionType_termination_reason_other_label"/>
+<label deltaind="M" labeldesc="Reason Other" labelkey="agencyFunctions_selectFunctionType_termination_reason_other_label"/>
 <label deltaind="M" labeldesc="Termination Notice Date" labelkey="agencyTerminationNoticeDateLabel"/>
 <label deltaind="I" labeldesc="Product" labelkey="agencyFunctionListing_closingBusinessForOpenMarkets_product_label"/>
 

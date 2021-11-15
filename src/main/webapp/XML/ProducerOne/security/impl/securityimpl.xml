@@ -1804,6 +1804,11 @@
     <userdefined deltaind="I" executionsequence="0" ruleid="AgencyFunctionsRule.isShowCloseLocationLabel">
       <userdefinedaccesslevel accesstype="1"/>
     </userdefined>
+    <!-- Upgrade Bug Id 041 start -->
+    <userdefined deltaind="M" executionsequence="1" ruleid="AgencyFunctionsRule.isTerminationReasonOtherShow">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    <!-- Upgrade Bug Id 041 end -->
  </protectedresource>
   
   <!-- Phase 2 - SS-002-04 - Hiding fields -->
