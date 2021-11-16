@@ -2432,4 +2432,19 @@
     </businessrole>
   </protectedresource>
 	
+<!-- Phase 3: Commission Dashboard Access -->	
+<protectedresource deltaind="M" defaultaccesstype="1" description="isCommissionManagementDashboardHideShow" uniquename="isCommissionManagementDashboardHideShow">
+<businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+  </businessrole>
+<businessrole deltaind="I" roleid="Underwriter">
+      <roleaccesslevel accesstype="0"/>
+  </businessrole>
+  <businessrole deltaind="I" roleid="MarketingGroup">
+      <roleaccesslevel accesstype="0"/>
+   </businessrole>
+ <businessrole deltaind="I" roleid="Agent">
+    <roleaccesslevel accesstype="0"/>
+  </businessrole>
+</protectedresource>	
 </security> 
