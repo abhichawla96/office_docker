@@ -24,7 +24,7 @@
 			obj="ruleobjs.ProducerOneRule" method="isAttachmentMandatory" />
 
 			<!-- Bug Id- CR-0060 Showing Decline button on received bucket start-->
-		<rule deltaind="I" id="isRecivedBucket" expression="isEqual(:Status,Approved);" obj="ruleobjs.ProducerOneRule" method="isRecivedBucket" />	
+		<!-- <rule deltaind="I" id="isRecivedBucket" expression="isEqual(:Status,Approved);" obj="ruleobjs.ProducerOneRule" method="isRecivedBucket" />	 -->
 			<!-- Bug Id- CR-0060 Showing Decline button on received bucket end-->
 	</ruleset>
 </evalrules>
