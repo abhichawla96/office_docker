@@ -1066,7 +1066,7 @@
   <!-- Showing Prospect Sign on Homepage - Phase 2 -->
    <protectedresource deltaind="M" defaultaccesstype="1" description="hide_show_prospect_section_security" uniquename="hide_show_prospect_section_security">
     <businessrole roleid="AgencyAdmin">
-      <roleaccesslevel accesstype="1"/>
+      <roleaccesslevel accesstype="0"/>
     </businessrole>
   </protectedresource>
   
