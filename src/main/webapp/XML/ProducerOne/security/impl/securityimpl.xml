@@ -2448,12 +2448,12 @@
   <!-- Bug ID U-032, U-062 to U-066 Upgrade Bug Start -->
 	<protectedresource defaultaccesstype="0" description="Hide/Show agencyFuntions_letterTemplateList_security" operator="or" uniquename="agencyFuntions_letterTemplateList_security">
 	  	<userdefined deltaind="I" ruleid="ProducerOneRule.isFunctionDC" executionsequence="0">
-			<userdefinedaccesslevel accesstype="1" />
+			<userdefinedaccesslevel accesstype="0" />
 		</userdefined>
 	</protectedresource>
 	<protectedresource defaultaccesstype="0" description="Hide/Show agencyFuntions_documentAttachment_security" operator="or" uniquename="agencyFuntions_documentAttachment_security">
   	 	<userdefined deltaind="I" ruleid="ProducerOneRule.isFunctionDC" executionsequence="0">
-			<userdefinedaccesslevel accesstype="1" />
+			<userdefinedaccesslevel accesstype="0" />
 		</userdefined>
     </protectedresource>
   <!-- Bug ID U-032, U-062 to U-066 Upgrade Bug End -->
