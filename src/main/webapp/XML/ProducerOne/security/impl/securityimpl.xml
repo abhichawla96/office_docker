@@ -2446,5 +2446,20 @@
  <businessrole deltaind="I" roleid="Agent">
     <roleaccesslevel accesstype="0"/>
   </businessrole>
-</protectedresource>	
+</protectedresource>
+
+<!-- Phase 3 : Apply Variance : hiding Modify Button for CA --> 
+	<protectedresource deltaind="M" defaultaccesstype="0" uniquename="isShowCommSendForApprovalNewButton">
+    	<businessrole deltaind="I" roleid="CarrierAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+  	</protectedresource>
+  	
+<!-- Phase 3 : Apply Variance : hiding Send For Approval Button for CA -->
+	<protectedresource deltaind="M" defaultaccesstype="0" uniquename="isShowCommSendForApprovalButton">
+    	<businessrole deltaind="I" roleid="CarrierAdmin">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
+  </protectedresource>
+	
 </security> 
