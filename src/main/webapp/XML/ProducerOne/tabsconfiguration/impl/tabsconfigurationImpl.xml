@@ -760,5 +760,7 @@
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide Show commSchd_eligibility_column security" name="commSchd_eligibility_column_security"/>
 <tabsconfigurationresource  deltaind="M" accesslevel="0" name="commissonSch_mass_attachment_link_security"  description="Hide/show Commission Schedule mass attachment security" />
 
+<!-- Phase 3- Bug Id- P3-004- Is additive column -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" name="commissonSch_block_is_additive_security"  description="Hide/show commisson Sch is additive security" />
 
 </tabsconfiguration>
