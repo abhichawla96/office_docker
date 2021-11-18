@@ -126,7 +126,7 @@
 		
 	</protectedresource>
 
-	<protectedresource deltaind="D" defaultaccesstype="0"
+	<protectedresource deltaind="M" defaultaccesstype="0"
 		description="Hide/Show decline button on summary page" operator="and"
 		uniquename="agencyListPublicSubmitNInvitationEdit_decline">
 
