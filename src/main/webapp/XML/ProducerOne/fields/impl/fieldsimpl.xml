@@ -556,4 +556,10 @@
   </field> 
   <!-- Upgrade Bug Id- 031 Self Service end --> 
   
+    <!-- Phase 2 UpgradeHF customization bug id : U-069-->
+  <field deltaind="I" isextendedfield="Y" name="eno_question_aa" screen="carrier/addNewInsuranceDetailForSelfService.html" objectcolumn="request_ss_id" section="addEntityRequests_freeform_contextdata_20" displaytype="radio" 
+isrequired="N" labelkey="eno_question_aa_label" labeldesc="Have any E &amp; O claims been made during the past five years against the agency, agency partners, officers, or any members of the staff?" accesslevel="1" tabsconfigurationresourcename="eno_question_aa_security" 
+protectedresourceuniquename="eno_question_aa_security" id="eno_question_aa" position="#addInsuranceDetailsForSelfServiceApproval_assigned_to_security_after#" mappedto="f24"> 
+  </field>
+  
  </fields>
