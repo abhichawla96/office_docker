@@ -1453,7 +1453,8 @@
   </protectedresource>
   
   <!-- Dashboard Request List -->
-  <protectedresource deltaind="M" defaultaccesstype="0" description="show/hide requests tab on home action" uniquename="homeAction_requests_security"/>
+  <!-- Phase Upgrade Bug U56 -->
+  <protectedresource deltaind="M" defaultaccesstype="1" description="show/hide requests tab on home action" uniquename="homeAction_requests_security"/>
   
   <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/Show Agency Termination request link on dashboard" uniquename="dashboard_agencytermination_security"/>   <!-- modified -->
   

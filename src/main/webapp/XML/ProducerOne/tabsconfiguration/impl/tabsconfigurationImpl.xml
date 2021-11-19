@@ -639,7 +639,8 @@
  
  <!-- Additional Configuration on Requests dashboard for Phase 2-->
  <tabsconfigurationresource deltaind="I" accesslevel="1" description="isAddUpdateSelfServiceDocCyberLiabilityApplicable_security" name="isAddUpdateSelfServiceDocCyberLiabilityApplicable_security"/>
- <tabsconfigurationresource deltaind="I" accesslevel="1" name="isAddUpdateSelfServiceOthersApplicable"/>
+ <!-- Phase 2 Upgrade Bug U56 -->
+ <tabsconfigurationresource deltaind="I" accesslevel="0" name="isAddUpdateSelfServiceOthersApplicable"/>
  
  <!-- Phase 2 - Task Id- SS-005-10 -->
  <tabsconfigurationresource deltaind="I" accesslevel="1" description="addNewCyberLiabilityForSelfService_eo_claims_declaration_security" name="addNewCyberLiabilityForSelfService_eo_claims_declaration_security"/>
