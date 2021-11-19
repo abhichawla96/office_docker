@@ -2009,6 +2009,11 @@
 		<businessrole deltaind="I" roleid="MarketingAssistant">
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
+		<!-- Upgrade Bug Id 076 Additional email admin update agency location -->
+		<userdefined deltaind="I" 
+	    	ruleid="ProducerOneRule.isHidingAdditionalEmail" executionsequence="0">
+	  		<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
 	</protectedresource>
 	
 	<protectedresource deltaind="M" defaultaccesstype="1" description="w9_alt_phone_ext_address_agency_selfService_security" uniquename="w9_alt_phone_ext_address_agency_selfService_security">

@@ -12,6 +12,12 @@
 	  </workflow>
    	</action>
     <!-- SS-009-001-01 - Update Agency Location - Phase 2 - End -->
+    
+    <!-- Upgrade Bug Id 076 start -->
+    <action deltaind="M" name="view">
+    	<actionparam deltaind="I" executionsequence="0" pre="Y" form="Y" name="attachflagemail" paramid="attachflagemail" val="Y"/>
+     </action> 
+     <!-- Upgrade Bug Id 076 end -->
      
   </component>
 </projectcomponents>
