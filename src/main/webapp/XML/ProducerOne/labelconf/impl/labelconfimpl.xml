@@ -241,5 +241,7 @@
   <!-- Phase 3- Paid to Collected Premium --> 
   <label deltaind="M" labeldesc="Collected Premium" labelkey="addNewCommissionSchedule_paidpremium"/>
   
+  <!-- Phase 3: Renaming Exception col to Applicable to all -->
+  <label deltaind="M" labeldesc="Applicable to All" labelkey="commission_global_schedule_label"/>
  
 </labelconf>

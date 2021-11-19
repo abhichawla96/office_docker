@@ -763,4 +763,19 @@
 <!-- Phase 3- Bug Id- P3-004- Is additive column -->
 <tabsconfigurationresource deltaind="M" accesslevel="0" name="commissonSch_block_is_additive_security"  description="Hide/show commisson Sch is additive security" />
 
+<!-- Phase 3- Bug Id- P3-008- Hiding Is additive column -->
+<tabsconfigurationresource deltaind="I" accesslevel="0" name="commission_is_additive_schedule_security"  description="Hide/show commisson Sch is additive security" />
+
+<!-- Phase 3: hiding aditional values in dropdowns -->
+ <tabsconfigurationresource deltaind="M" accesslevel="0" name="adminTabs2_campaign_schedule_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" name="adminTabs2_move_schedule_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" name="adminTabs2_change_incentive_eligibility_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" name="adminTabs2_change_attachSchedule_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" name="adminTabs2_change_whatifAnalysis_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" name="isShowMassAttachment"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="0" name="adminTabs2_paftab"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="0" name="adminTabs2_acrascheduletab"/>
+ <tabsconfigurationresource deltaind="I" accesslevel="0" name="adminTabs2_acrasoutputtab"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" name="isShowCommissionRecalculationTab"/> 
+
 </tabsconfiguration>
