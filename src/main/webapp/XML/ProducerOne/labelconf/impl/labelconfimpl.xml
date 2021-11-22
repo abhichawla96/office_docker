@@ -240,5 +240,8 @@
   
  <!-- Upgrade- Bug Id- U020- Email in business address section-->
  <label deltaind="M" labeldesc="Email" labelkey="email_id_business_agent_ss_label"/>
+ 
+ <!-- Upgrade- Bug Id- U077- Email in Agency Termination -->
+ <label deltaind="M" labelkey="email_businessaddress_label" labeldesc="Email" />
    
 </labelconf>
