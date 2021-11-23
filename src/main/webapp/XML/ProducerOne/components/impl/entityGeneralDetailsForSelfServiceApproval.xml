@@ -19,5 +19,11 @@
      </action> 
      <!-- Upgrade Bug Id 076 end -->
      
+     <!-- START - Bug Id - U-061 - Upgrade - HBA Yes/No question submenu visibility -->
+    <action deltaind="M" name="refreshBusinessState">
+    <actionparam deltaind="I" executionsequence="10" form="Y" name="ISSKIPPAGEVIEW" paramid="ISSKIPPAGEVIEW" val="Y" viewparam="Y" />
+    </action>
+    <!-- END - Bug Id - U-061 - Upgrade - HBA Yes/No question submenu visibility -->
+     
   </component>
 </projectcomponents>
