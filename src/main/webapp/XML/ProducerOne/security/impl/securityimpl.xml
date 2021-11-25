@@ -2494,41 +2494,51 @@
 <businessrole deltaind="I" roleid="SalesDirector">
 	<roleaccesslevel accesstype="1" />
 </businessrole>
+<businessrole deltaind="I" roleid="Agent">
+      <roleaccesslevel accesstype="0"/>
+</businessrole>
+<businessrole deltaind="I" roleid="MarketingGroup">
+  <roleaccesslevel accesstype="0"/>
+</businessrole>
 </protectedresource>
 
 <!-- Phase 3: Alerts Complete Button -->
 <protectedresource deltaind="I" description="Hide/Show moreEmailandNotification_complete" uniquename="moreEmailandNotification_complete">
-    <businessrole deltaind="I" roleid="ReadOnly">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-    <businessrole deltaind="I" roleid="AgencyAdmin">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-    <businessrole deltaind="I" roleid="compensationanalyst">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-    <businessrole deltaind="I" roleid="CarrierAdmin">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-    <businessrole deltaind="I" roleid="vpmarketing">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-    <businessrole deltaind="I" roleid="Agent">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-    <businessrole deltaind="I" roleid="SalesDirector">
-      <roleaccesslevel accesstype="1"/>
-    </businessrole>
-    <businessrole deltaind="I" roleid="Underwriter">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-    <businessrole deltaind="I" roleid="MarketingRep">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-    <businessrole deltaind="I" roleid="MarketingAssistant">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
-  </protectedresource>
+<!-- Phase 3: US- 16504 -->   
+<businessrole deltaind="I" roleid="Accounting">
+<roleaccesslevel accesstype="0"/>
+</businessrole>    
+<businessrole deltaind="I" roleid="ReadOnly">
+ <roleaccesslevel accesstype="0"/>
+</businessrole>
+ <businessrole deltaind="I" roleid="AgencyAdmin">
+ <roleaccesslevel accesstype="0"/>
+ </businessrole>
+ <businessrole deltaind="I" roleid="compensationanalyst">
+ <roleaccesslevel accesstype="0"/>
+ </businessrole>
+ <businessrole deltaind="I" roleid="CarrierAdmin">
+ <roleaccesslevel accesstype="0"/>
+ </businessrole>
+ <businessrole deltaind="I" roleid="vpmarketing">
+ <roleaccesslevel accesstype="0"/>
+ </businessrole>
+ <businessrole deltaind="I" roleid="Agent">
+ <roleaccesslevel accesstype="0"/>
+ </businessrole>
+ <businessrole deltaind="I" roleid="SalesDirector">
+ <roleaccesslevel accesstype="1"/>
+ </businessrole>
+ <businessrole deltaind="I" roleid="Underwriter">
+ <roleaccesslevel accesstype="0"/>
+ </businessrole>
+<businessrole deltaind="I" roleid="MarketingRep">
+<roleaccesslevel accesstype="0"/>
+</businessrole>
+<businessrole deltaind="I" roleid="MarketingAssistant">
+  <roleaccesslevel accesstype="0"/>
+</businessrole>
+</protectedresource>
 
 <!-- Phase 3: Adjustments Button -->
 <protectedresource deltaind="M" description="Hide/Show Add New Adjustment" uniquename="compensationCommissionAdjustment.hideAddNewAdjustmentButton">
@@ -2550,22 +2560,22 @@
  </businessrole>
 <businessrole deltaind="M" roleid="MarketingRep">
       <roleaccesslevel accesstype="0"/>
-    </businessrole> 
+ </businessrole> 
 <businessrole deltaind="I" roleid="Underwriter">
       <roleaccesslevel accesstype="0"/>
- </businessrole>
- <businessrole deltaind="M" roleid="vpmarketing">
+</businessrole>
+<businessrole deltaind="M" roleid="vpmarketing">
       <roleaccesslevel accesstype="0"/>
-    </businessrole>
+</businessrole>
 <businessrole deltaind="M" roleid="SalesDirector">
       <roleaccesslevel accesstype="0"/>
 </businessrole>
- <businessrole deltaind="I" roleid="MarketingGroup">
+<businessrole deltaind="I" roleid="MarketingGroup">
   <roleaccesslevel accesstype="0"/>
- </businessrole>
+</businessrole>
  <businessrole deltaind="I" roleid="Agent">
       <roleaccesslevel accesstype="0"/>
-    </businessrole>
+</businessrole>
 </protectedresource>	
 
 
@@ -2584,5 +2594,20 @@
   <roleaccesslevel accesstype="0"/>
  </businessrole>
 </protectedresource>
+	
+<!-- Phase 3- US-16787- Compensation mgmt tab for accounting -->
+<protectedresource deltaind="M" description="Hide/Show compensation tab" operator="or" uniquename="checkIsShowCompensationMgmtTab">
+<businessrole deltaind="I" roleid="Accounting">
+  <roleaccesslevel accesstype="1"/>
+ </businessrole>
+</protectedresource>
+
+<!-- Phase 3- US-16787- Compensation mgmt tab- Adjustment dropdown for accounting -->
+<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show Adjustment tab" operator="or" uniquename="isShowCommissionAdjustmentTab">
+<businessrole deltaind="I" roleid="Accounting">
+  <roleaccesslevel accesstype="1"/>
+ </businessrole>
+</protectedresource>	
+	
 	
 </security> 
