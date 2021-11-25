@@ -746,4 +746,8 @@
 <tabsconfigurationresource deltaind="M" accesslevel="1" description="isCallReportAttendingEmployeesApplicable_security" name="isCallReportAttendingEmployeesApplicable_security"/>
 <!-- Upgrade bug-U-059 end -->  
 
+<!-- UAT Bug -002 start -->
+<tabsconfigurationresource deltaind="M" description="Decide whether all sent mails also sent to logged in user as bcc address" name="ISSENDMAILSTOLOGGEDINUSER" value="N"/>
+<!-- UAT Bug -002 end -->
+
 </tabsconfiguration>
