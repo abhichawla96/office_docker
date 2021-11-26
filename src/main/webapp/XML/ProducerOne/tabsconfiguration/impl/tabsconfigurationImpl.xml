@@ -340,7 +340,8 @@
 <tabsconfigurationresource deltaind="M" accesslevel="1" description="dashboard_Cyber_Liability_Records_security" name="dashboard_Cyber_Liability_Records_security"/>
 <tabsconfigurationresource deltaind="I" accesslevel="0" description="spinn_user_detailss_Security" name="spinn_user_detailss_Security"/>
 <tabsconfigurationresource deltaind="M" accesslevel="1" description="spinn_userDetails_grid_security" name="spinn_userDetails_grid_security"/>
-<tabsconfigurationresource deltaind="M" accesslevel="0" description="spinn_userRoleList_security" name="spinn_userRoleList_security"/>
+<!-- Phase 3- user admin setup-->
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="spinn_userRoleList_security" name="spinn_userRoleList_security"/>
 <!-- Sprint 3 : Agency and Agent Demographics- General (Bank Information) -->
 
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="bankInformationListing_bank_account_type_usage_security" name="bankInformationListing_bank_account_type_usage_security"/>
