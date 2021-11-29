@@ -2609,5 +2609,47 @@
  </businessrole>
 </protectedresource>	
 	
-	
+<!--Phase 3- Commission Schedule tab from Compensation management menu  -->
+<protectedresource deltaind="M" description="Hide/Show compensation tab" operator="or" uniquename="checkIsShowCompensationMgmtTab">
+<businessrole deltaind="I" roleid="Accounting">
+  <roleaccesslevel accesstype="1"/>
+ </businessrole>
+<businessrole deltaind="I" roleid="Underwriter">
+ <roleaccesslevel accesstype="1"/>
+ </businessrole>
+ <businessrole deltaind="I" roleid="MarketingGroup">
+  <roleaccesslevel accesstype="1"/>
+ </businessrole>
+ <businessrole deltaind="I" roleid="Agent">
+  <roleaccesslevel accesstype="1"/> 
+</businessrole> 
+<businessrole deltaind="I" roleid="ReadOnly">
+ <roleaccesslevel accesstype="1"/> 
+ </businessrole>
+ <businessrole deltaind="I" roleid="AgencyAdmin">
+ <roleaccesslevel accesstype="1"/>
+ </businessrole>
+</protectedresource>
+
+<!-- phase 3: Hide the Commission Schedule tab from Compensation management menu  -->
+<protectedresource deltaind="M" description="Hide/show Commission Schedule tab" operator="OR" uniquename="commissionschedule_tab_security">
+<businessrole deltaind="I" roleid="Accounting">
+  <roleaccesslevel accesstype="0"/>
+ </businessrole>
+<businessrole deltaind="I" roleid="Underwriter">
+ <roleaccesslevel accesstype="0"/>
+ </businessrole>
+ <businessrole deltaind="I" roleid="MarketingGroup">
+  <roleaccesslevel accesstype="0"/>
+ </businessrole>
+ <businessrole deltaind="I" roleid="Agent">
+  <roleaccesslevel accesstype="0"/> 
+</businessrole> 
+<businessrole deltaind="I" roleid="ReadOnly">
+ <roleaccesslevel accesstype="0"/> 
+ </businessrole>
+ <businessrole deltaind="I" roleid="AgencyAdmin">
+ <roleaccesslevel accesstype="0"/>
+ </businessrole>
+ 
 </security> 

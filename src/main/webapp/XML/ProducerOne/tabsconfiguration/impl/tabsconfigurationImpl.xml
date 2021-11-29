@@ -782,4 +782,19 @@
  <tabsconfigurationresource deltaind="I" accesslevel="0" name="adminTabs2_acrasoutputtab"/>
  <tabsconfigurationresource deltaind="M" accesslevel="0" name="isShowCommissionRecalculationTab"/> 
 
+<!-- Phase 3- hiding agency sweep section under bank info -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="producerBankInfo_sweep_account_section_security" name="producerBankInfo_sweep_account_section_security"/>
+
+<!-- Phase 3- hiding is one time column from adjustments -->
+<tabsconfigurationresource  deltaind="M" accesslevel="0" description="Hide/show compensationCommissionAdjustment is one time security" name="compensationCommissionAdjustment_is_one_time_security"/>
+
+<!-- Phase 3- hiding is one time column from adjustments listing screen-->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="is_one_time_security" name="is_one_time_security"/>
+
+<!-- Phase 3- hiding complete hierarchy-->
+<tabsconfigurationresource  deltaind="M" accesslevel="0" name="complete_hierarchy_security"/>
+
+<!-- Phase 3- hiding reporting hierarchy-->
+<tabsconfigurationresource deltaind="M" accesslevel="0" name="reporting_hierarchy_security"/>
+
 </tabsconfiguration>
