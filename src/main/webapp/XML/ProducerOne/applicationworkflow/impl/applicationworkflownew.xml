@@ -921,9 +921,9 @@
 			</status>
 		</event>
 	</workflow>
-	
-	<workflow name="commissionRateApprovalWorkFlow">
-		<event name="sendForCommissionRateApproval">
+		<!-- Phase 3- Configure workflow for salesupport -->
+	<workflow deltaind="M" name="commissionRateApprovalWorkFlow">
+		<event deltaind="M" name="sendForCommissionRateApproval">
 			<status name="sendForCommissionRateApproval" workflowstatus="Pending Review" workflowfunction="Commission Rate" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Commission Rate" objectid="Producer_Number_Commission_Schedule_ID" objecttype="Commission Rate"
 				approver="workflow_user" forward="compensationCommissionScheduleAttachment" isapproval="Y" >
@@ -933,7 +933,7 @@
 				<email name="CommissionRateChangeSendforApproval" eventname="CommissionRateChangeSendforApproval"  objectid="Producer_Number_Commission_Schedule_ID" objecttype="Commission Rate" executionsequence="0">
 				</email>
 			</status>
-			<approver name="approver1" approverrole="SalesDirector" executionsequence="0"></approver>	
+			<approver deltaind="M" name="approver1" approverrole="SalesDirector,CarrierAdmin" executionsequence="0"></approver>
 		</event>
 		<event name="approveCommissionRateApproval" parentevent="sendForCommissionRateApproval" type="approve">
 			<status name="approveCommissionRateApproval" workflowstatus="Approved" workflowfunction="Commission Rate" executionsequence="1"
