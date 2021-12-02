@@ -246,7 +246,7 @@
   <!--US - OB-GEN-014-001 -->
   <!-- Phase 3 : Agency Demographics -->
   <!-- Phase 3: Bank Info dropdown -->
-     <tabsconfigurationresource deltaind="M" accesslevel="0" name="isShowProdNumBankInformationTab"/>
+     <tabsconfigurationresource deltaind="M" accesslevel="1" name="isShowProdNumBankInformationTab"/>
 
 <!--OB-GEN-015-3-->
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="doc_contract_contact_state_security" name="doc_contract_contact_state_security"/>
@@ -283,7 +283,7 @@
   
   <!-- Phase 3 : Agency Demographics -->
   <!-- Phase 3: Policy dropdown -->
-  <tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyClaimPolicy_tab_security"/>
+  <tabsconfigurationresource deltaind="M" accesslevel="1" name="agencyClaimPolicy_tab_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show Commission Hierarchy Tab" name="commission_hierarchy_new_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="1" name="isShowIncentiveHierarchyTab"/>
   
