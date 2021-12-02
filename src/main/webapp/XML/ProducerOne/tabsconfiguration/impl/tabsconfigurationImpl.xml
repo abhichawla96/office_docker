@@ -797,4 +797,17 @@
 <!-- Phase 3- hiding reporting hierarchy-->
 <tabsconfigurationresource deltaind="M" accesslevel="0" name="reporting_hierarchy_security"/>
 
+<!-- Phase 3 : Hiding Non Relevant Audit Reports : Shobhit : Start -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show auditReport_report_payout_summary_by_accounting_LOB_security" name="auditReport_report_payout_summary_by_accounting_LOB_security"/>     
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show auditReport_ETL_process_postLoad_security" name="auditReport_ETL_process_postLoad_security"/>  
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show auditReport_payout_summaryReport_product_security" name="auditReport_payout_summaryReport_product_security"/>  
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show auditReport_agency_detailchanges_report_security" name="auditReport_agency_detailchanges_report_security"/> 
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show auditReport_agency_addressChanges_report_security" name="auditReport_agency_addressChanges_report_security"/>
+<tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/Show auditReport_agent_detailChanges_report_security" name="auditReport_agent_detailChanges_report_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show auditReport_agentAddress_changes_report_security" name="auditReport_agentAddress_changes_report_security"/>
+<tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/Show auditReport_agencyCode_detailsChanges_report_security" name="auditReport_agencyCode_detailsChanges_report_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show auditReport_agencyCode_addressName_security" name="auditReport_agencyCode_addressName_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show auditReport_commission_audit_report_security" name="auditReport_commission_audit_report_security"/>
+<!-- Phase 3 : Hiding Non Relevant Audit Reports : Shobhit : End -->
+
 </tabsconfiguration>
