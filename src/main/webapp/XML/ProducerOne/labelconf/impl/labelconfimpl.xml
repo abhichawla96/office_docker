@@ -238,5 +238,7 @@
   <label deltaind="M" labeldesc="Annual Application Written" labelkey="premium_lob_next3year_premium_label"/>
   <label deltaind="M" labeldesc="Annual Premium Volume" labelkey="premium_lob_monthly_premium1_label"/>
   
+  <!-- Customization to configuration changes -->
+  <label deltaind="M" labeldesc="Agency&#39;s Total P&#38;C Written Premium Previous Year" labelkey="marketinfo_total_written_premium_previous_year_end_label"/>
  
 </labelconf>
