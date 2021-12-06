@@ -2653,5 +2653,30 @@
  </businessrole>
  </protectedresource>
  
+ <!-- Phase 3- Bug Id- 18149- Add new bank info button  -->
+ <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show add new bank information button on bank information listing page" operator="AND"
+ uniquename="addBankInformation_addNewBankInformation_security">
+<businessrole deltaind="I" roleid="Accounting">
+  <roleaccesslevel accesstype="1"/>
+ </businessrole>
+ <businessrole deltaind="I" roleid="CarrierAdmin">
+ <roleaccesslevel accesstype="1"/>
+ </businessrole>
+</protectedresource>	 
+ 
+<!-- Phase 3- Bug Id- 18160- Modify button-->
+<!-- Phase 3- Bug Id-18162- Modify button for accounting-->
+ <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show modify button on bank account agency code association page" operator="AND" uniquename="accountAgencyCodeAssociation_modify">
+ <businessrole deltaind="M" roleid="SalesDirector">
+   <roleaccesslevel accesstype="0"/>
+  </businessrole>
+<businessrole deltaind="M" roleid="MarketingRep">
+   <roleaccesslevel accesstype="0"/>
+</businessrole>
+<businessrole deltaind="I" roleid="Accounting">
+  <roleaccesslevel accesstype="1"/>
+ </businessrole>
+ </protectedresource> 
+ 
  
 </security> 
