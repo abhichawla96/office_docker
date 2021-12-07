@@ -2553,23 +2553,18 @@
 </protectedresource>
 	
 <!-- Phase 3:Agency code- Bank Info dropdown -->
+<!-- Phase 3: Bug Id- 18180-->
  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show producer number bank information sub tab" operator="AND" uniquename="isShowProdNumBankInformationTab">
 <businessrole deltaind="I" roleid="ReadOnly">
       <roleaccesslevel accesstype="0"/>
     </businessrole>
 <businessrole deltaind="I" roleid="Accounting">
   <roleaccesslevel accesstype="1"/>
- </businessrole>
-<businessrole deltaind="M" roleid="MarketingRep">
-      <roleaccesslevel accesstype="0"/>
  </businessrole> 
 <businessrole deltaind="I" roleid="Underwriter">
       <roleaccesslevel accesstype="0"/>
 </businessrole>
 <businessrole deltaind="M" roleid="vpmarketing">
-      <roleaccesslevel accesstype="0"/>
-</businessrole>
-<businessrole deltaind="M" roleid="SalesDirector">
       <roleaccesslevel accesstype="0"/>
 </businessrole>
 <businessrole deltaind="I" roleid="MarketingGroup">
