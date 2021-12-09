@@ -622,7 +622,8 @@
 			<status name="sendForApproval" workflowstatus="Pending Review" workflowfunction="Agency Termination" executionsequence="1"
 				statuscomment="comment" usergroup="MarketingAssistant" statusgroup="Agency Termination" objectid="termination_log_id" objecttype="Agency Termination"
 				approver="workflow_user" forward="agencyTerminationList">
-				<email name="sendAgencyTerminationLetterToAgency" eventname="sendAgencyTerminationLetterToAgency" mailto="mailTo" objectid="termination_log_id" objecttype="Agency Termination" 
+				<!-- 0074 : Agency Termination Email Notification turn off-->
+				<email deltaind="D" name="sendAgencyTerminationLetterToAgency" eventname="sendAgencyTerminationLetterToAgency" mailto="mailTo" objectid="termination_log_id" objecttype="Agency Termination" 
 					attachmentcontent="attachmentContent" executionsequence="0"></email>
 			</status>
 																								 
