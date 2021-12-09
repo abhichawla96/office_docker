@@ -750,4 +750,20 @@
 <tabsconfigurationresource deltaind="M" description="Decide whether all sent mails also sent to logged in user as bcc address" name="ISSENDMAILSTOLOGGEDINUSER" value="N"/>
 <!-- UAT Bug -002 end -->
 
+<!-- UAT2 Bug 17971 add/update contact email field start -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="email_id_business_agent_ss_security" name="email_id_business_agent_ss_security"/>
+<!-- UAT2 Bug 17971 add/update contact email field end -->
+
+<!-- UAT2 Bug 17971 update agency location email field start -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="email_id_business_ss_security" name="email_id_business_ss_security"/>
+<!-- UAT2 Bug 17971 update agency location email field end -->
+
+<!-- UAT2 Bug 17971 add/update contact email section start -->
+ <tabsconfigurationresource deltaind="M" name="agentGeneralDetailsForSelfServiceApproval_additional_email_address_security" accesslevel="1" description="Hide/Show agentGeneralDetailsForSelfServiceApproval_additional_email_address_security" />
+<!-- UAT2 Bug 17971 add/update contact email section end -->
+
+<!-- UAT2 Bug 17971 update agency location email section start -->
+<tabsconfigurationresource deltaind="M" name="entityGeneralDetailsForSelfServiceApproval_additional_email_address_security" accesslevel="1" description="entityGeneralDetailsForSelfServiceApproval_additional_email_address_security hide/show" />
+<!-- UAT2 Bug 17971 update agency location email section end -->
+
 </tabsconfiguration>
