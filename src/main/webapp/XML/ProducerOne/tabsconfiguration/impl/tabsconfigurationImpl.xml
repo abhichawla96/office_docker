@@ -810,4 +810,32 @@
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show auditReport_commission_audit_report_security" name="auditReport_commission_audit_report_security"/>
 <!-- Phase 3 : Hiding Non Relevant Audit Reports : Shobhit : End -->
 
+
+<!-- Task Id-18002-Hide Commission Reports -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show commission_isHideShowCommissionAdjustmentReport" name="commission_isHideShowCommissionAdjustmentReport"/> 
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show commission_webLeads_report_security" 	name="commission_webLeads_report_security"/>  
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show commission_uncollected_premium_report_security" name="commission_uncollected_premium_report_security"/> 
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show commission_CEA_coverage_report_security" name="commission_CEA_coverage_report_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show commission_isShow102_2Report" name="commission_isShow102_2Report"/>   
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show commission_levies_agency_listing_security" name="commission_levies_agency_listing_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show commission_advertisement_charegs_report_security" name="commission_advertisement_charegs_report_security"/> 
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show commission_isShow113_1Report" name="commission_isShow113_1Report"/>
+
+<!-- Task Id-18002-rate reports -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show commission_comm_rate_based_on_template_reports_link_security" name="commission_comm_rate_based_on_template_reports_link_security"/> 
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show commission_comm_rate_based_currentaplicable_global_security" name="commission_comm_rate_based_currentaplicable_global_security"/>  
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show commission_comm_rate_based_on_schedule_by_agency_reports_link_security" name="commission_comm_rate_based_on_schedule_by_agency_reports_link_security"/>                       
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show commission_comm_rate_based_on_schedule_reports_link_security" name="commission_comm_rate_based_on_schedule_reports_link_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show commission_comm_rate_based_on_template_by_agency_reports_link_security" name="commission_comm_rate_based_on_template_by_agency_reports_link_security"/> 
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show commission_comm_rate_based_currentaplicable_rates_security" name="commission_comm_rate_based_currentaplicable_rates_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show commission_schedule_list_details_reports_link_security" name="commission_schedule_list_details_reports_link_security"/>  
+
+<!-- Task Id-18002-housekeeping reports -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show commission_comm_rate_agencyCode_schedule_security" name="commission_comm_rate_agencyCode_schedule_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show commission_showAgencyHavingPendingRateApproval" name="commission_showAgencyHavingPendingRateApproval"/> 
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show commission_showAgencyHavingPendingRateApproval" name="commission_showAgencyHavingPendingRateApproval"/> 
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show commission_showAgencyCodeWhereRateChanged" name="commission_showAgencyCodeWhereRateChanged"/> 
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show commission_comm_rate_agencyCodevalidation_schedule_security" 	name="commission_comm_rate_agencyCodevalidation_schedule_security"/> 
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show commission_isShowAgencyBillReconciliationReport" name="commission_isShowAgencyBillReconciliationReport"/>
+
 </tabsconfiguration>
