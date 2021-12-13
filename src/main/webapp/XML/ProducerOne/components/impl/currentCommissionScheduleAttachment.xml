@@ -1,7 +1,0 @@
-<projectcomponents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/components_XSD.xsd">
-  <component metaobject="commission" name="currentCommissionScheduleAttachment" objectcolumn="Producer_Number_Commission_Schedule_ID" objecttype="Commission Rate">
-    <action name="sendForApprovalNew" deltaind="M">
-      <actionparam executionsequence="0" deltaind="M" form="Y" name="approved_variance"  paramid="approved_variance" val="1" viewparam="Y"/>
-    </action>
-  </component>
-</projectcomponents>
