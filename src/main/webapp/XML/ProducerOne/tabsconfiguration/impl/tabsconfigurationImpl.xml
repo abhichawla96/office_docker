@@ -766,4 +766,8 @@
 <tabsconfigurationresource deltaind="M" name="entityGeneralDetailsForSelfServiceApproval_additional_email_address_security" accesslevel="1" description="entityGeneralDetailsForSelfServiceApproval_additional_email_address_security hide/show" />
 <!-- UAT2 Bug 17971 update agency location email section end -->
 
+<!-- START - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
+<tabsconfigurationresource deltaind="I" accesslevel="1" description="Grey out CBIA Designation" name="ss_cbia_security"/>
+<!-- END - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
+
 </tabsconfiguration>

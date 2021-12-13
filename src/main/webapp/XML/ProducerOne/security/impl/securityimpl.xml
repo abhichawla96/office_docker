@@ -2464,5 +2464,9 @@
     </protectedresource>
   <!-- Bug ID U-032, U-062 to U-066 Upgrade Bug End -->
   
+  <!-- START - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
+  <protectedresource deltaind="I" defaultaccesstype="2" description="Grey out CBIA Designation" uniquename="ss_cbia_security"> </protectedresource>
+  <!-- END - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
+  
 </security> 
  
