@@ -2682,6 +2682,12 @@
   </businessrole>
 </protectedresource>
 
+ <!-- Phase 3: Bug Id- 18759- Modify button -->
+<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show modify button on agency code details page" operator="AND" uniquename="modify_without_domicileState_popup_security">
+<businessrole deltaind="M" roleid="SalesDirector">
+<roleaccesslevel accesstype="0"/>
+</businessrole>
+</protectedresource>
  
  
 </security> 
