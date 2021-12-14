@@ -75,5 +75,12 @@
 			expression="if(andCondition(isNotEqual(:selectFunctionType_code,functionDC),andCondition(isNot(isEmpty(:suspension_date)),isDateBefore(:suspension_date,convertDateToString(getTodayDate(),MM/dd/yyyy))))=>populateError(context,suspension_date,invalidAgencyFucntionDateErrorKey););" />
 
 	</ruleset>
+	
+	<!-- START - UAT2 Bug 0013 - Editing Hierarchy Contact in SS -->
+	<ruleset name="EntityRequestsRule">
+		<rule deltaind="D" id="isCheckForPersonInHierarchy" expression="if(isEmpty(:inHierarchy)=>populateError(context,person_name_ss_filter,personRestrictedHierarchyMsg););" obj="ruleobjs.EntityRequestsRule" method="isCheckForPersonInHierarchy" />
+	</ruleset>
+	<!-- END - UAT2 Bug 0013 - Editing Hierarchy Contact in SS -->
+	
 </evalrules>	
 	
