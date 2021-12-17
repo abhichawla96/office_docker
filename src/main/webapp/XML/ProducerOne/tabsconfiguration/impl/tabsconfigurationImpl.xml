@@ -838,4 +838,8 @@
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show commission_comm_rate_agencyCodevalidation_schedule_security" 	name="commission_comm_rate_agencyCodevalidation_schedule_security"/> 
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show commission_isShowAgencyBillReconciliationReport" name="commission_isShowAgencyBillReconciliationReport"/>
 
+<!-- Phase 3 : Show Adjustment/Reduction Field : Hide Status Column -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show adjustment_deduction_type_list_security" name="adjustment_deduction_type_list_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show compensationCommissionAdjustment status security" name="compensationCommissionAdjustment_status_security"/>
+
 </tabsconfiguration>
