@@ -1503,6 +1503,9 @@
     <businessrole deltaind="I" roleid="Accounting">
     	<roleaccesslevel accesstype="1"/>
     </businessrole>
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+    	<roleaccesslevel accesstype="1"/>
+    </businessrole>
   </protectedresource>
   
   <!-- 16/04/21 Hiding Submenu in Hierarchy Menu -->
