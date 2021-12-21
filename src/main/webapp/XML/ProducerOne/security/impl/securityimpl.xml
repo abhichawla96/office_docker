@@ -131,6 +131,7 @@
 	<protectedresource deltaind="M" defaultaccesstype="0"
 		description="Hide/Show decline button on summary page" operator="and"
 		uniquename="agencyListPublicSubmitNInvitationEdit_decline">
+
 		<businessrole deltaind="I" roleid="SalesDirector">
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
@@ -146,6 +147,20 @@
 		</businessrole>
 	</protectedresource>
 
+	<!-- Bug Id- CR-0060 Showing Decline button on received bucket start-->
+	<!--  <protectedresource deltaind="I" defaultaccesstype="0" operator="and"
+		description="Hide/Show decline button on summary page"
+		uniquename="agencyListPublicSubmitNInvitationEdit_decline">
+	<businessrole roleid="MarketingAssistant">
+		<roleaccesslevel accesstype="1" />
+	</businessrole>
+	<userdefined deltaind="I" executionsequence="0"
+		ruleid="ProducerOneRule.isRecivedBucket">
+	<userdefinedaccesslevel accesstype="1" />
+	</userdefined>
+		
+	</protectedresource>  -->
+<!-- Bug Id- CR-0060 Showing Decline button on received bucket end-->
 
 	<protectedresource deltaind="M" defaultaccesstype="0"
 		description="Hide/Show decline button on summary page" uniquename="agencyListPublicSubmitNInvitationEdit_onhold">
@@ -1095,7 +1110,7 @@
   <!-- Showing Prospect Sign on Homepage - Phase 2 -->
    <protectedresource deltaind="M" defaultaccesstype="1" description="hide_show_prospect_section_security" uniquename="hide_show_prospect_section_security">
     <businessrole roleid="AgencyAdmin">
-      <roleaccesslevel accesstype="1"/>
+      <roleaccesslevel accesstype="0"/>
     </businessrole>
   </protectedresource>
   
@@ -2468,5 +2483,27 @@
   <protectedresource deltaind="I" defaultaccesstype="2" description="Grey out CBIA Designation" uniquename="ss_cbia_security"> </protectedresource>
   <!-- END - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
   
+	<!--Prod Issue- Display delete icon on bank information page -->
+   <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show  bankinformation_delete_security" uniquename="bankinformation_delete_security">
+    <businessrole roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
+     <businessrole roleid="ReadOnly">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <userdefined executionsequence="2" ruleid="WorkflowRule.isOnboardingDeclinedWorkflowStatusNotFound">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    <userdefined executionsequence="1" ruleid="ProducerOneRule.isBankInfoNotForHierarchyAgency">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    <userdefined executionsequence="3" ruleid="ProducerOneRule.isAgencyStatusNotInactive">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    <userdefined executionsequence="0" ruleid="ProducerOneRule.isShowModifyBankInformation">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+  </protectedresource>
+	
 </security> 
  
