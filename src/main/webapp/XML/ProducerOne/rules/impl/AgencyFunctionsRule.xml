@@ -11,5 +11,9 @@ method="isShowTemplateAndDocumentForAgencyFunction" />
 <rule id="isShowCloseAgencyCodeLabel" deltaind="I" expression="andCondition(isEqual(:selectFunctionType_code,functionCAC),isEqual(:termination_reason_code,Oth));" obj="ruleobjs.AgencyFunctionsRule" method="isShowCloseAgencyCodeLabel" />
 <rule id="isShowCloseLocationLabel" deltaind="I" expression="andCondition(isEqual(:selectFunctionType_code,functionCL),isEqual(:termination_reason_code,Oth));" obj="ruleobjs.AgencyFunctionsRule" method="isShowCloseLocationLabel" />  
   
+<!-- Upgrade Bug Id 041 start -->
+<rule id="isTerminationReasonOtherShow" deltaind="I" expression="andCondition(isEqual(:selectFunctionType_code,functionAS),isEqual(:termination_reason_code,Oth));" obj="ruleobjs.AgencyFunctionsRule" method="isTerminationReasonOtherShow" />  
+<!-- Upgrade Bug Id 041 end --> 
+
   </ruleset>
 </evalrules>

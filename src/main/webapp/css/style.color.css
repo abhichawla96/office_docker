@@ -3,7 +3,7 @@ body {background-color: #1e4663;}
 /*------ Links ------*/
 a {	color: #0265a8;}
 a:hover {color: #0000ff;}
-/*------ Grid Css ------*/ 
+/*------ Grid Css ------*/
 .RowStyle {	background-color: #FFFFff;	color: #000000;	border-bottom: solid 1px #f2f2f2;}
 .RowStyle a, .AltRowStyle a {	color: #0265a8;}
 .RowStyle a:hover, .AltRowStyle a:hover {color: #c6643f;}
@@ -11,6 +11,7 @@ a:hover {color: #0000ff;}
 .EmptyRowStyle td {color: #ff0000;}
 .EmptyRowStyle {color: #ff0000;}
 .showme2 .HeaderStyle{color:#000!important;background-color:#6bc2f8!important;background:-webkit-gradient(linear,0 0,0 bottom,from(#fff),to(#ccc));background:-webkit-linear-gradient(#fff,#ccc);background:-moz-linear-gradient(#fff,#ccc);background:-ms-linear-gradient(#fff,#ccc);background:-o-linear-gradient(#fff,#ccc);background:linear-gradient(#fff,#ccc);-pie-background:linear-gradient(#fff,#ccc);behavior:url(css/htc/PIE.htc)}
+/* BMIC Specific */
 .HeaderStyle, .gridheading, #dvCSV tr.myrows0 td {color: #fff !important; background-color: #4EADC7;}
 .HeaderStyle a {color: #fff;}
 .HeaderStyle a:link, .HeaderStyle a:visited, .HeaderStyle a:active {color: #fff;}
@@ -47,6 +48,7 @@ fieldset  fieldset{border-left: none; border-right: none; border-bottom: none; b
 /*------ Dashboard Section ------*/
 .frameHeader {color: #444; border-bottom: 1px solid #f4f4f4;}
 .dashboard-block-inner > .panel-default{border-color: #d2d6de !important; border-top: 3px solid #40749e !important; background: #fff;}
+/* BMIC Specific */
 .frameSubHeader {background-color: #D6D6D2;	color: #000;}
 /*------ Top Details ------*/
 .topDetails {background-color: #e9f0f8; color: #ffffff; border-top: 1px solid #e6e6e6;}
@@ -54,6 +56,7 @@ fieldset  fieldset{border-left: none; border-right: none; border-bottom: none; b
 .topDetails label {	color: #313131 !important;}
 /*------ Breadcrumb ------*/
 .breadcrumb {color: #ffffff;}
+/* BMIC Specific */
 .breadBrum_new {padding-left: 20px !important; background: #4EADC7 !important; border: none !important;}
 .breadBrum_new span a, .breadBrum_new span{	color: #fff !important; font-weight: normal;}
 .breadcrumb span span {background: none;}
@@ -68,6 +71,7 @@ fieldset  fieldset{border-left: none; border-right: none; border-bottom: none; b
 .roundTab1 li span.active1 > a, .roundTab1 li.active1 > a, .roundTab1 .active1 > a:hover  {color: #575a5d; border-top: 3px solid #f1f1f1; background: #f1f1f1;}
 /*------ Footer Section ----------*/
 .footerLine {background: -webkit-gradient(linear, right 0, right 0, from(#40749e), to(#fff)); background: -webkit-linear-gradient(right, #40749e, #fff); background: -moz-linear-gradient(right, #40749e, #fff); background: -ms-linear-gradient(right, #40749e, #fff); background: -o-linear-gradient(right, #40749e, #fff); background: linear-gradient(right, #40749e, #fff); -pie-background: linear-gradient(right, #40749e, #fff); behavior: url(css/htc/PIE.htc);}
+/* BMIC Specific */
 .footerTxt {background-color: #4EADC7; color: #fff;}
 /*------ Buttons ----------*/
 a.ovalbutton {
@@ -75,7 +79,9 @@ a.ovalbutton {
 	background: -webkit-linear-gradient(bottom, #1886e1, #1266ab); 
 	background: -moz-linear-gradient(bottom, #1886e1, #1266ab);
 	background: -o-linear-gradient(bottom, #1886e1, #1266ab); 
-	background: linear-gradient(to bottom, #C92A39, #C92A39); 
+	/* BMIC Specific */
+	background: linear-gradient(to bottom, #C92A39, #C92A39);
+	/* BMIC Specific */ 
 	border: 1px solid #C92A39; color: #ffffff;}
 a.ovalbutton span {	color: #fff;}
 a.ovalbutton:hover {
@@ -83,6 +89,7 @@ a.ovalbutton:hover {
 	background: -webkit-linear-gradient(bottom, #187dd1, #115995); 
 	background: -moz-linear-gradient(bottom, #187dd1, #115995);
 	background: -o-linear-gradient(bottom, #187dd1, #115995); 
+	/* BMIC Specific */
 	background: linear-gradient(to bottom, #C92A39, #C92A39);}
 a.ovalbutton:hover span {color: #ffffff;}
 .content .btn.btn-primary, .content .btn.btn-default, .modal_popup .btn.btn-primary, .modal_popup .btn.btn-default{
@@ -90,7 +97,9 @@ a.ovalbutton:hover span {color: #ffffff;}
 	background: -webkit-linear-gradient(bottom, #1886e1, #1266ab); 
 	background: -moz-linear-gradient(bottom, #1886e1, #1266ab);
 	background: -o-linear-gradient(bottom, #1886e1, #1266ab); 
+	/* BMIC Specific */
 	background: linear-gradient(to bottom, #C92A39, #C92A39); 
+	/* BMIC Specific */
 	border: 1px solid #C92A39; color: #fff;}
 .content a.btn.btn-primary:visited, .content a.btn.btn-primary:active,
 .content a.btn.btn-default:visited, .content a.btn.btn-default:active {color: #ffffff;}
@@ -100,6 +109,7 @@ a.ovalbutton:hover span {color: #ffffff;}
 	background: -webkit-linear-gradient(bottom, #187dd1, #115995); 
 	background: -moz-linear-gradient(bottom, #187dd1, #115995);
 	background: -o-linear-gradient(bottom, #187dd1, #115995); 
+	/* BMIC Specific */
 	background: linear-gradient(to bottom, #C92A39, #C92A39);}
 .content .btn-primary:active:hover, .content .btn-primary.active:hover, 
 .content .open>.dropdown-toggle.btn-primary:hover, .content .btn-primary:active:focus, 
@@ -146,6 +156,8 @@ a.ovalbutton:hover span {color: #ffffff;}
 .authorization td{border-bottom:solid 1px #c7c3f7}
 .termination{background-color:#bc8f8f}
 .termination td{border-bottom:solid 1px #c99e9e}
+.inactiveLicenseState{background-color:grey}
+.inactiveLicenseState td{border-bottom:solid 1px grey}
 .legendChar{color:#00f}
 .listRowCSSAppointmentWithNIPRCR66{background-color:#92d050}
 .listRowCSSAppointmentWithoutNIPRCR66{background-color:#b4aff1}
@@ -231,12 +243,15 @@ a.bucketHighlight{color:maroon!important}
 .sidebar-nav .scrollH .hierarchyPadding .active a:before{border-top:6px solid transparent;border-bottom:6px solid transparent;border-right:10px solid #fe0121}
 .HierarchyViewTree .hierarchyPadding .active a:before{border-top:6px solid transparent;border-bottom:6px solid transparent;border-right:10px solid #fe0121}
 .manageclientsactive {background: #3892d1 !important;color: #fff;}
+/* BMIC Specific */
 .header-top-block2 {background: #006287;}
 .header-top-block{background: #00355e}
 .menuTop, .menuTop:hover, .closeMenu, .closeMenu:hover{color: #fff;}
+/* BMIC Specific */
 .searchGroup select.form-control{background: #D6D6D2; border: solid 1px #D6D6D2; color: #000;}
 .topSearch .searchGroup_advanceSearch a{color: #fff !important;}
 .gridTable{background: #fff;}
+/* BMIC Specific */
 .right-menus a{color: #ffffff!important;}
 .user_dropdown li.user-header{    background-color: #006287;}
 .dropdown-menu li.user-header a{color: #fff !important;}

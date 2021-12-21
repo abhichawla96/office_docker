@@ -3340,7 +3340,7 @@ textarea.input-lg, select[multiple].input-lg {
 a.btn.disabled, fieldset[disabled] a.btn {
 	pointer-events: none;
 }
-
+/* BMIC speicific */
 .btn-default {
 	color: #333;
 	background-color: #D6D6D2;
@@ -3822,6 +3822,7 @@ tbody.collapse.in {
 .header-outer .right-buttons .dropdown-menu li a span, .header-outer .right-buttons .dropdown-menu li a label{
 	color: #0266a8 !important;
 }
+/* BMIC speicific */
 .dropdown-menu li a:hover, .dropdown-menu li a:focus {
 	color: #262626;
 	text-decoration: none;
@@ -7911,7 +7912,7 @@ section, header, footer, article {
 .inlineBlock li {
     display: inline-block;
     float: none;
-    vertical-align: middle;
+    vertical-align: top;
 }
 .inlineBlock_div{display: inline-block;}
 .inlineBlock_1{width: 99% !important;}
@@ -8346,6 +8347,7 @@ background-color: transparent!important;
 .add_hierarchy_ico .dropdown-menu:after{
 	margin-left: 56px;
 }
+/* BMIC speicific */
 .panel-group .panel-default>.panel-heading{
 	padding: 6px;
 	    background: #D6D6D2;
@@ -9140,6 +9142,7 @@ tfoot tr th.add-cell, tfoot tr th{padding-left: 3px; padding-right: 3px}
 	.inlineBlock_2_fix {width: 700px;}
 	.inlineBlock_1_fix {width: 1400px;}
 	.full_width {width: 935px;}
+	select.full_width{width: 940px;}
 }
 @media (min-width: 1280px) and (max-width: 1366px){
 	.searchGroup_advanceSearch {float: none; text-align: right;}
@@ -9164,6 +9167,7 @@ tfoot tr th.add-cell, tfoot tr th{padding-left: 3px; padding-right: 3px}
 	.inlineBlock_2_fix {width: 465px;}
 	.inlineBlock_1_fix {width: 930px;}
 	.full_width {width: 697px;}
+	select.full_width{width: 702px;}
 	.topSearch .searchGroup_advanceSearch a {color: #fff !important;}
 	.step_table_cell {float: left; display: block !important; width: 33.3% !important; height: 185px;}
 	.menu-level-1 + .menu-level-2 + .content {padding-top: 124px;}
@@ -9186,6 +9190,9 @@ tfoot tr th.add-cell, tfoot tr th{padding-left: 3px; padding-right: 3px}
 	.producer-block-input .suffix {width: 44px !important;}
 	.tooltip_width .producer-block .inlineBlock_4 {width: 61px;}
 	.tooltip_width .producer-block .inlineBlock_6 {width: 56px;}
+	#agencyListEdit_EandOForm_security .freeFormLabelWidth, #CyberLiabilityDeclarationDiv .freeFormLabelWidth {
+	    width: 150px !important;
+	}
 }
 @media (min-width: 924px) and (max-width: 1023px){
 	.header-inner .header-top-block {width: 100%; min-height: auto !important;}
@@ -9200,6 +9207,7 @@ tfoot tr th.add-cell, tfoot tr th{padding-left: 3px; padding-right: 3px}
 	.inlineBlock_2_fix {width: 400px;}
 	.inlineBlock_1_fix {width: 800px;}
 	.full_width {width: 591px;}
+	select.full_width{width: 596px;}
 	.topSearch .searchGroup_advanceSearch a {color: #fff !important;}
 	.step_table_cell {float: left; display: block !important; width: 33.3% !important; height: 185px;}
 	.menu-level-1 + .menu-level-2 + .content {padding-top: 124px;}
@@ -9232,7 +9240,25 @@ tfoot tr th.add-cell, tfoot tr th{padding-left: 3px; padding-right: 3px}
 	.tooltip_width .producer-block .inlineBlock_4 {width: 110px; padding-bottom: 4px;}
 	.tooltip_width .producer-block .inlineBlock_6 {width: 100px; padding-bottom: 4px;}
 	#non_compete_agreement_security .freeFormListTd > div, #does_intend_writing_business_security .freeFormListTd  > div{width: 100% !important;}
-	#ajax_field_contact_last_name_security
+	
+	.modal-dialog-width_600{
+		width: 500px;
+	}
+	.modal-dialog-width_700{
+		width: 500px;
+	}
+	.modal-dialog-width_800{
+		width: 600px;
+	}
+	.modal-dialog-width_900{
+		width: 700px;
+	}
+	.modal-dialog-width_1000{
+		width: 800px;
+	}
+	.modal-body-scroll {
+	    overflow-x: auto;
+	}
 }
 @media (min-width: 800px) and (max-width: 923px){
 	.header-inner .header-top-block {width: 100%; min-height: auto !important;}
@@ -9247,6 +9273,7 @@ tfoot tr th.add-cell, tfoot tr th{padding-left: 3px; padding-right: 3px}
 	.inlineBlock_2_fix {width: 325px;}
 	.inlineBlock_1_fix {width: 650px;}
 	.full_width {width: 470px;}
+	select.full_width{width: 475px;}
 	.topSearch .searchGroup_advanceSearch a {color: #fff !important;}
 	.step_table_cell {float: left; display: block !important; width: 33.3% !important; height: 185px;}
 	.menu-level-1 + .menu-level-2 + .content {padding-top: 124px;}
@@ -9286,7 +9313,25 @@ tfoot tr th.add-cell, tfoot tr th{padding-left: 3px; padding-right: 3px}
 	.producer-block-input .mname, .producer-block-input .suffix{width: 58px !important;}
 	#agentGeneralDetailsForSelfServiceApproval_contact_type_security .fix150{width: auto !important;}
 	#non_compete_agreement_security .freeFormListTd > div, #does_intend_writing_business_security .freeFormListTd  > div{width: 100% !important;}
-
+	
+	.modal-dialog-width_600{
+		width: 500px;
+	}
+	.modal-dialog-width_700{
+		width: 500px;
+	}
+	.modal-dialog-width_800{
+		width: 500px;
+	}
+	.modal-dialog-width_900{
+		width: 600px;
+	}
+	.modal-dialog-width_1000{
+		width: 700px;
+	}
+	.modal-body-scroll {
+	    overflow-x: auto;
+	}
 }
 
 @media (min-width: 300px) and (max-width: 799px){
@@ -9307,6 +9352,7 @@ tfoot tr th.add-cell, tfoot tr th{padding-left: 3px; padding-right: 3px}
 	.multiSection li {padding-left: 9px !important; width: 100%}
 	.inlineBlock_1_fix {width: 100%;}
 	.full_width {width: 209px;}
+	select.full_width{width: 214px;}
 	.topSearch .searchGroup_advanceSearch a {color: #fff !important;}
 	.step_table_cell {float: left; display: block !important; width: 33.3% !important; height: 185px;}
 	.menu-level-1 + .menu-level-2 + .content {padding-top: 124px;}
@@ -9344,6 +9390,25 @@ tfoot tr th.add-cell, tfoot tr th{padding-left: 3px; padding-right: 3px}
 	#agentGeneralDetailsForSelfServiceApproval_contact_type_security .fix150{width: auto !important;}
 	#non_compete_agreement_security .freeFormListTd > div, #does_intend_writing_business_security .freeFormListTd  > div{width: 100% !important;}
 	.homeActionBlock, .onBoardingWidth, .borderNone .width33{width: 100% !important;}
+	
+	.modal-dialog-width_600{
+		width: 400px;
+	}
+	.modal-dialog-width_700{
+		width: 400px;
+	}
+	.modal-dialog-width_800{
+		width: 400px;
+	}
+	.modal-dialog-width_900{
+		width: 400px;
+	}
+	.modal-dialog-width_1000{
+		width: 400px;
+	}
+	.modal-body-scroll {
+	    overflow-x: auto;
+	}
 
 }
 @media (min-width: 300px) and (max-width: 649px){
@@ -9358,5 +9423,4 @@ tfoot tr th.add-cell, tfoot tr th{padding-left: 3px; padding-right: 3px}
        max-width: 220px;
        word-wrap: break-word;
 }
-.agencyListPublicSubmitNInvitationEdit_section > li{margin-bottom: -10px;}
 

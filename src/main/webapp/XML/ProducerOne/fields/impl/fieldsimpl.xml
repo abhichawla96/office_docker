@@ -413,9 +413,15 @@
 	isrequired="N" componentcss="datepicker" labelkey="addAgencyCallReportDetails_followup_date_label" labeldesc="Follow-up Date" accesslevel="1" tabsconfigurationresourcename="addAgencyCallReportDetails_followup_date_security" mappedto="f32"
 	protectedresourceuniquename="addAgencyCallReportDetails_followup_date_security" id="addAgencyCallReportDetails_followup_date" position="#call_date_time_security_after#"/>
   
-   <!-- Phase 2 - Bug Id- P2-009  -->
-  <field deltaind="I" id="entityGeneralDetails_e_mail_business" screen="carrier/prospectAgencyDetails.html" name="e_mail_business" isrequired="Y" requiredeval="ProducerOneRule.checkAgencyBusinessEmailIdMandatory" labelkey="email_businessaddress_label" tabsconfigurationresourcename="business_email_id_agency_address_security" protectedresourceuniquename="business_email_id_agency_address_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
-    <validation name="isBusinessEmailRequiredForProspect" expression="if(andCondition(isEqual(:business_email_id_prospect_address_security,Y),andCondition(isEqual(:prospect_business_email_address_security,Y),andCondition(isEmpty(:e_mail_business),isEqual(:tabs1next_page,prospectAgencyDetails))))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="emailEmptyErrorKey" ruleid="EntityGeneralDetailsRule.isBusinessEmailRequiredForPrincipal" executionsequence="2" />
+   <!-- Phase 2 - Bug Id- P2-009 -->
+   <!-- Phase 2 - Upgrade - Multiple entries for same field -->
+   <field deltaind="D" id="prospectAgencyDetail_e_mail_business" screen="carrier/prospectAgencyDetails.html" name="e_mail_business" isrequired="E" requiredeval="ProducerOneRule.checkAgencyBusinessEmailIdMandatory" labelkey="email_businessaddress_label" tabsconfigurationresourcename="business_email_id_agency_address_security" protectedresourceuniquename="business_email_id_agency_address_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="prospectBusinessAddress_freeform_contextdata_3">
+    <!-- <validation name="isBusinessEmailRequiredForProspect" expression="if(andCondition(isEqual(:business_email_id_prospect_address_security,Y),andCondition(isEqual(:prospect_business_email_address_security,Y),andCondition(isEmpty(:e_mail_business),isEqual(:tabs1next_page,prospectAgencyDetails))))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="emailEmptyErrorKey" ruleid="EntityGeneralDetailsRule.isBusinessEmailRequiredForPrincipal" executionsequence="2" /> -->
+    <validation name="checkValidProspectBusinessEmail" expression="validateMultipleEmailIds(context,e_mail_business);" message="ValidEmailIdErrorKey" ruleid="EntityGeneralDetailsRule.checkValidAgencyBusinessEmail" executionsequence="4" />
+  </field>
+   
+  <field deltaind="I" id="entityGeneralDetails_e_mail_business" screen="carrier/prospectAgencyDetails.html" name="e_mail_business" isrequired="N" requiredeval="ProducerOneRule.checkAgencyBusinessEmailIdMandatory" labelkey="email_businessaddress_label" tabsconfigurationresourcename="business_email_id_agency_address_security" protectedresourceuniquename="business_email_id_agency_address_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
+    <validation deltaind="D" name="isBusinessEmailRequiredForProspect" expression="if(andCondition(isEqual(:business_email_id_prospect_address_security,Y),andCondition(isEqual(:prospect_business_email_address_security,Y),andCondition(isEmpty(:e_mail_business),isEqual(:tabs1next_page,prospectAgencyDetails))))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="emailEmptyErrorKey" ruleid="EntityGeneralDetailsRule.isBusinessEmailRequiredForPrincipal" executionsequence="2" />
     <validation name="checkValidProspectBusinessEmail" expression="validateMultipleEmailIds(context,e_mail_business);" message="ValidEmailIdErrorKey" ruleid="EntityGeneralDetailsRule.checkValidAgencyBusinessEmail" executionsequence="4" />
   </field>
   
@@ -506,7 +512,7 @@
 	</field>	
 	
 	<!-- CBIA Field -->
-	<field deltaind="I" isextendedfield="Y" name="ss_cbia_designation" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" objectcolumn="person_id" section="entityPersonDetails_freeform_contextdata_2" displaytype="radio" isrequired="Y" labelkey="ss_cbia_designation_label" labeldesc="CBIA Designation" accesslevel="1" tabsconfigurationresourcename="ss_cbia_security" mappedto="f26" protectedresourceuniquename="ss_cbia_security" id="ss_cbia_designation" position="#highest_ranking_principal_before#">
+	<field deltaind="I" isextendedfield="Y" name="ss_cbia_designation" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" objectcolumn="person_id" section="entityPersonDetails_freeform_contextdata_2" displaytype="radio" isrequired="N" labelkey="ss_cbia_designation_label" labeldesc="CBIA Designation" accesslevel="1" tabsconfigurationresourcename="ss_cbia_security" mappedto="f26" protectedresourceuniquename="ss_cbia_security" id="ss_cbia_designation" position="#highest_ranking_principal_before#">
 		<event id="onchange" name="onchange" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" actiontype="ajaxpageblocklink" action="refreshPage" actiontypeid="ss_year_recieved_security" executionsequence="0">
 			<forward id="carrier/agentGeneralDetailsForSelfServiceApproval.html" screen="carrier/agentGeneralDetails.html" />
 		</event>
@@ -514,4 +520,64 @@
 	<field deltaind="I" isextendedfield="Y" name="ss_year_recieved" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" objectcolumn="person_id" section="entityPersonDetails_freeform_contextdata_2" displaytype="text" isrequired="Y" labelkey="ss_year_recieved_label" labeldesc="Year Received" accesslevel="1" tabsconfigurationresourcename="ss_year_recieved_security" mappedto="f25" protectedresourceuniquename="ss_year_recieved_security" id="ss_year_recieved" position="#ss_cbia_designation_after#">
 	</field>	
 		<!-- phase 2 - end - Extended fields -->
+		
+<!-- BMIC req To remove Agency name mandetory field start -->
+ <field deltaind="M" id="agencyFunctions_selectFunctionType_agencyFunctions_toBeProcessed_agency_name" screen="admin/agencyFunctions_selectFunctionType.html" name="toBeProcessed_agency_id" isrequired="N" requiredeval="agencyFunctions_toBeProcessed_agency_name_manadatory_security" labelkey="toBeProcessed_agency_name_label" tabsconfigurationresourcename="agencyFunctions_toBeProcessed_agency_name_security" protectedresourceuniquename="agencyFunctions_toBeProcessed_agency_name_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="agencyFunctions_selectFunctionType_freeform_contextdata_2"/>
+  
+<!-- BMIC req To remove Agency name mandetory field end -->
+
+<!-- BMIC req To remove Deactivation date mandetory field start -->
+<field deltaind="M" id="agencyFunctions_selectFunctionType_suspension_date" screen="admin/agencyFunctions_selectFunctionType.html" name="suspension_date" isrequired="N" labelkey="suspension_date_label" tabsconfigurationresourcename="agencyFunctions_suspension_date_security" protectedresourceuniquename="agencyFunctions_suspension_date_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">    
+	<validation name="checkAgencyFunctionsFilterDateValidation" expression="checkAgencyFunctionsFilterDateValidation(context)" message="primaryAgencyCodeEmptyErrorKey" ruleid="AgencyFunctionsRule.checkAgencyFunctionsFilterDateValidation" executionsequence="0" />
+    <event id="onchange" name="onchange" actiontype="ajaxpageblocklink" screen="admin/agencyFunctions_selectFunctionType.html" action="refreshDataBasedOnSuspensionDate" actiontypeid="agencyFunctions_selectFunctionType_freeform_contextdata_2#is_real_time_securityDiv#agencyFunction_buttons" executionsequence="0">
+      <forward id="admin/agencyFunctions_selectFunctionType.html" screen="admin/agencyFunctions_selectFunctionType.html" executionsequence="0" />
+    </event>
+  </field>
+  <!-- BMIC req To remove Deactivation date mandetory field end -->
+  
+  	
+	<!-- Upgrade changes -->
+	
+   <field deltaind="M" id="agentGeneralDetailsForSelfServiceApproval_npn" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" name="prdcr_cde" isrequired="Y" labelkey="showdivnpn_label" tabsconfigurationresourcename="showdivnpn" protectedresourceuniquename="showdivnpn" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
+
+	<!-- Phase 2 - Upgrade - LoginID non-mandatory -->
+	
+	<field deltaind="M" id="agentGeneralDetails_LOGIN_ID" screen="carrier/agentGeneralDetails.html" name="LOGIN_ID" isrequired="N" requiredeval="ProducerOneRule.checkLoginIdMandatoryAstrisk" labelkey="login_id_label" tabsconfigurationresourcename="contact_details_login_id_security" protectedresourceuniquename="contact_details_login_id_security" tooltip="Login id of the contact" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" isdisplayonhistory="Y" section="entityPersonDetails_freeform_contextdata_2">
+    <validation name="checkLoginIdMandatory" expression="if(andCondition(isEqual(:agent_loginid_mandatory,Y),isEmpty(:LOGIN_ID))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="loginIdEmptyErrorkey" ruleid="ProducerOneRule.checkLoginIdMandatory" executionsequence="0" />
+    <validation deltaind="D" name="checkLoginIDExistsForUpdateAgentGeneralDetails" expression="if(andCondition(isEqual(:agent_loginid_mandatory,Y),isGreaterThan(getBeanProperty(executeDBOperation(context,a,3,SqlStmts.sqlStatementsviewcheckLoginIDForUpdateAgentGeneralDetails),loginid_count),0))=>populateError(context,LOGIN_ID,loginIdAlreadyExistsErrorKey);isEqual(1,1);->isEqual(1,1););" message="loginIdAlreadyExistsErrorKey" ruleid="AgentGeneralDetails.checkLoginIDExistsForUpdateAgentGeneralDetails" executionsequence="1" />
+  </field>
+  
+  <!--Upgrade Bug Id- 031 Self Service start --> 
+ <field deltaind="M" id="agencyFunctions_selectFunctionType_suspension_date" screen="admin/agencyFunctions_selectFunctionType.html" name="suspension_date" isrequired="Y" labelkey="suspension_date_label" tabsconfigurationresourcename="agencyFunctions_suspension_date_security" protectedresourceuniquename="agencyFunctions_suspension_date_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="agencyFunctions_selectFunctionType_freeform_contextdata_2"> 
+    <validation name="checkAgencyFunctionsFilterDateValidation" expression="checkAgencyFunctionsFilterDateValidation(context)" message="primaryAgencyCodeEmptyErrorKey" ruleid="AgencyFunctionsRule.checkAgencyFunctionsFilterDateValidation" executionsequence="0" /> 
+    <event id="onchange" name="onchange" actiontype="ajaxpageblocklink" screen="admin/agencyFunctions_selectFunctionType.html" action="refreshDataBasedOnSuspensionDate" actiontypeid="agencyFunctions_selectFunctionType_freeform_contextdata_2#is_real_time_securityDiv#agencyFunction_buttons" executionsequence="0"> 
+      <forward id="admin/agencyFunctions_selectFunctionType.html" screen="admin/agencyFunctions_selectFunctionType.html" executionsequence="0" />  
+    </event> 
+  </field> 
+  <!-- Upgrade Bug Id- 031 Self Service end --> 
+  
+    <!-- Phase 2 UpgradeHF customization bug id : U-069-->
+  <field deltaind="I" isextendedfield="Y" name="eno_question_aa" screen="carrier/addNewInsuranceDetailForSelfService.html" objectcolumn="request_ss_id" section="addEntityRequests_freeform_contextdata_20" displaytype="radio" 
+isrequired="N" labelkey="eno_question_aa_label" labeldesc="Have any E &amp; O claims been made during the past five years against the agency, agency partners, officers, or any members of the staff?" accesslevel="1" tabsconfigurationresourcename="eno_question_aa_security" 
+protectedresourceuniquename="eno_question_aa_security" id="eno_question_aa" position="#addInsuranceDetailsForSelfServiceApproval_assigned_to_security_after#" mappedto="f24"> 
+  </field>
+  
+  <!-- START - UAT Bug 16175 - Needed specific TM names only -->
+
+  <field deltaind="M" id="prospect_details_account_executive_2323131" screen="carrier/prospectAgencyDetails.html" name="home_workflow_user" isrequired="N" lookupobjectmetaobject="prospect_source_lku" lookupobjectprocedure="GetCallReportTerritoryManager_p" lookupobjectprocedureparameters="" displayfield="market_rep_desc" valuefield="market_rep_id" labelkey="pd_account_executive_label" tabsconfigurationresourcename="prospect_details_account_executive_security" protectedresourceuniquename="prospect_details_account_executive_security" isextendedfield="N" executionsequence="0" isencrypt="N" lookupobjecttype="procedure" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="prospectBusinessAddress_freeform_contextdata_500" />
+  
+  <!-- END - UAT Bug 16175 - Needed specific TM names only -->
+  
+  <!-- START bug id U-081 - double asterisk sign for close agency code -->
+  
+  <field deltaind="M" id="agencyFunctions_selectFunctionType_agencyFunctions_toBeProcessed_producer_number" screen="admin/agencyFunctions_selectFunctionType.html" name="toBeProcessed_producer_number" isrequired="N" requiredeval="agencyFunctions_toBeProcessed_agency_code_manadatory_security" labelkey="toBeProcessed_agency_code_label" tabsconfigurationresourcename="agencyFunctions_toBeProcessed_agency_code_security" protectedresourceuniquename="agencyFunctions_toBeProcessed_agency_code_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="agencyFunctions_selectFunctionType_freeform_contextdata_2">
+    <validation deltaind="I" name="isAgencyCode" expression="if(isEmpty(:toBeProcessed_producer_number)=&gt;isEqual(1,2)-&gt;isEqual(1,1))" message="agencyCodeMendatoryErrorMsg" executionsequence="0" />
+
+	<event id="onBlurProducer" name="onblur" securitykey="ProducerOneRule.isAgencyFunctionsProducerNumberOnBlurEventRequired" actiontype="ajaxpageblocklink" screen="admin/agencyFunctions_selectFunctionType.html" action="producerNumberSearchOnBlur" actiontypeid="agencyFunctions_selectFunctionType_freeform_contextdata_2" executionsequence="1">
+      <forward id="admin/agencyFunctions_selectFunctionType.html" screen="admin/agencyFunctions_selectFunctionType.html" executionsequence="0" />
+    </event>
+  </field>
+  
+  <!-- END bug id U-081 - double asterisk sign for close agency code -->
+  
  </fields>
