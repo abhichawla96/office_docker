@@ -56,6 +56,16 @@
 				objectid="aar_requestid" objecttype="Onboarding">
 			</status>
 		</event>
+		
+		<!--  Upgrade Bug- U-002- Producer Reg not showing in Sent for Invitation bucket- start-->
+		<event deltaind="I" name="sendInvitationForAgent" assigneerole="MarketingAssistant">
+		<status deltaind="I" name="sendInvitationForAgent" workflowstatus="Invited" workflowfunction="Public Submission" executionsequence="0"
+		statuscomment="comments" usergroup="MarketingAssistant" statusgroup="Onboarding" assignee="user_id"
+		objectid="aar_requestid" objecttype="Onboarding">
+		</status>
+		</event>
+		<!-- Upgrade Bug- U-002- Producer Reg not showing in Sent for Invitation bucket- end -->
+		
 		<event name="ResendInvitation" assigneerole="MarketingAssistant" deltaind="M">
 			<status deltaind="M" eval="ProducerOneRule.isRegistrationTypePrimarySecondary" name="ResendInvitation" workflowstatus="Invited" workflowfunction="Public Submission" executionsequence="0"
 				statuscomment="comments" usergroup="MarketingAssistant" statusgroup="Onboarding" assignee="user_id"
@@ -597,7 +607,13 @@
 					<businessobject name="SendDocForESign" obj="com.userbo.integration.SendDocForESign"/>
 				</statusworkflow> -->
 			</status>
-		 </event>		
+		 </event>
+		 <event deltaind="I" name="trashOnboardedApplication" assigneerole="MarketingAssistant">
+			<status name="trashOnboardedApplication" workflowstatus="Junk" workflowfunction="Public Submission" executionsequence="0"
+				usergroup="MarketingAssistant" statusgroup="Onboarding" assignee="user_id"
+				objectid="aar_requestid" objecttype="Onboarding">
+			</status>
+		</event> 		
 	</workflow>
 	
 	<workflow name="selfService">
@@ -616,7 +632,8 @@
 			<status name="sendForApproval" workflowstatus="Pending Review" workflowfunction="Agency Termination" executionsequence="1"
 				statuscomment="comment" usergroup="MarketingAssistant" statusgroup="Agency Termination" objectid="termination_log_id" objecttype="Agency Termination"
 				approver="workflow_user" forward="agencyTerminationList">
-				<email name="sendAgencyTerminationLetterToAgency" eventname="sendAgencyTerminationLetterToAgency" mailto="mailTo" objectid="termination_log_id" objecttype="Agency Termination" 
+				<!-- 0074 : Agency Termination Email Notification turn off-->
+				<email deltaind="D" name="sendAgencyTerminationLetterToAgency" eventname="sendAgencyTerminationLetterToAgency" mailto="mailTo" objectid="termination_log_id" objecttype="Agency Termination" 
 					attachmentcontent="attachmentContent" executionsequence="0"></email>
 			</status>
 																								 
@@ -860,13 +877,14 @@
 			</status>
 		</event>
 		
+		<!-- BMIC req.-should be testma in assignedTo dropdown from AA- start-->
 		<event name="saveApprovalAgencyFunctionDC" approverrole="SalesDirector">
 			<status name="saveApprovalAgencyFunctionDC" workflowstatus="Pending Review" workflowfunction="Agency Function" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				approver="user_id" forward="agencyFunctions">
 			</status>
 		</event>
-		<event deltaind="M" name="sendForApprovalAgencyFunctionDC" approverrole="vpmarketing">
+		<event deltaind="M" name="sendForApprovalAgencyFunctionDC" approverrole="MarketingAssistant">
 			<status name="sendForApprovalAgencyFunction" workflowstatus="Pending Review" workflowfunction="Agency Function" executionsequence="1" eval="ProducerOneRule.isAgencyAdminNotLoggedIn"
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				approver="workflow_user" forward="agencyFunctions">
@@ -875,15 +893,26 @@
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				approver="workflow_user" forward="agencyAdminDashboard">
 			</status>
-			<approver deltaind="M" name="approver1" approverrole="vpmarketing" executionsequence="0"></approver>
+			<approver deltaind="M" name="approver1" approverrole="MarketingAssistant" executionsequence="0"></approver>
 			<approver deltaind="D" name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver>
 		</event>
+		
+		<!-- BMIC req.-should be testma in assignedTo dropdown from AA- end-->
 		<event name="approveAgencyFunctionDC" parentevent="sendForApprovalAgencyFunctionDC" type="approve">
 			<status name="approveAgencyFunction" workflowstatus="Approved" workflowfunction="Agency Function" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				forward="agencyFunctions" isapproval="Y">
 			</status>
 		</event>
+		<!--BMIC req request not moved to approved bucket start -->
+        	<event deltaind="I" name="approveAgencyFunctionDCNew" type="approve">
+			<status name="approveAgencyFunction" workflowstatus="Approved" workflowfunction="Agency Function" executionsequence="1"
+				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
+				forward="agencyFunctions" isapproval="Y" assignee="user_id">
+			</status>
+			</event>
+		
+		  <!--BMIC req request not moved to approved bucket end -->
 		<event name="disApproveAgencyFunctionDC" parentevent="sendForApprovalAgencyFunctionDC" type="disapprove">
 			<status name="disApproveAgencyFunction" workflowstatus="Disapproved" workflowfunction="Agency Function" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
@@ -896,6 +925,14 @@
 				forward="agencyFunctions" isapproval="Y">
 			</status>
 		</event>
+		<!--BMIC req request not moved to Declined bucket start -->
+		<event deltaind="I" name="declineAgencyFunctionDCNew">
+			<status name="declineAgencyFunction" workflowstatus="Declined" workflowfunction="Agency Function" executionsequence="1"
+				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
+				forward="agencyFunctions" isapproval="Y" assignee="user_id">
+			</status>
+		</event>
+		<!--BMIC req request not moved to Declined bucket end -->
 		<!-- <event name="approveAgencyFunction" parentevent="sendForApprovalAgencyFunction">
 			<status name="approveAgencyFunction" workflowstatus="Approved" workflowfunction="Agency Function" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"

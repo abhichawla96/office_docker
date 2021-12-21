@@ -11,7 +11,7 @@
 	<resource name="css/datepicker3.css" type="css" path="css/datepicker3.css" executionsequence="8"/>
 	
 	<!-- Phase 2 - Override Base file as the version 2.9.2.11 does not support impl of include -->
-	<resource type="css" path="css/impl/bmic_specific_style.css" />
+	<resource name="css/impl/bmic_specific_style.css" type="css" path="css/impl/bmic_specific_style.css" executionsequence="33"/>
 	
 	<resource name="js/jquery-1.10.2.js" type="javascript" path="js/jquery-1.10.2.js" executionsequence="9"/>
 	<resource name="js/jquery.tabelizer.js" type="javascript" path="js/jquery.tabelizer.js" executionsequence="10"/>

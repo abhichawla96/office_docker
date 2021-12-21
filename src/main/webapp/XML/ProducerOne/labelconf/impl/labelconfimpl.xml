@@ -118,7 +118,7 @@
 
 <!-- Sprint 4 -->
 <label deltaind="M" labeldesc="LOB" labelkey="agencyFunctionListing_closingBusinessForOpenMarkets_market_label"/>
-<label deltaind="M" labeldesc="Close Location Reason Other" labelkey="agencyFunctions_selectFunctionType_termination_reason_other_label"/>
+<label deltaind="M" labeldesc="Reason Other" labelkey="agencyFunctions_selectFunctionType_termination_reason_other_label"/>
 <label deltaind="M" labeldesc="Termination Notice Date" labelkey="agencyTerminationNoticeDateLabel"/>
 <label deltaind="I" labeldesc="Product" labelkey="agencyFunctionListing_closingBusinessForOpenMarkets_product_label"/>
 
@@ -243,5 +243,15 @@
   
   <!-- Phase 3: Renaming Exception col to Applicable to all -->
   <label deltaind="M" labeldesc="Applicable to All" labelkey="commission_global_schedule_label"/>
- 
+  
+ <!-- Upgrade- Bug Id- U020- Email in business address section-->
+ <label deltaind="M" labeldesc="Email" labelkey="email_id_business_agent_ss_label"/>
+
+  <!-- Customization to configuration changes -->
+  <label deltaind="M" labeldesc="Agency&#39;s Total P&#38;C Written Premium Previous Year" labelkey="marketinfo_total_written_premium_previous_year_end_label"/>
+
+
+ <!-- Upgrade- Bug Id- U077- Email in Agency Termination -->
+ <label deltaind="M" labelkey="email_businessaddress_label" labeldesc="Email" />
+   
 </labelconf>

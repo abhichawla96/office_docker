@@ -1,7 +1,9 @@
 <security project="ProducerOne">
-	<protectedresource deltaind="M" defaultaccesstype="0"
+<!--  BMIC req- show send for approval button-Start 22/09/21 -->
+	<protectedresource deltaind="M" defaultaccesstype="1"
 		description="Hide/Show send for approval button on agency functions page"
 		operator="OR" uniquename="agencyFunctions_selectFunctionType_sendforapproval_security">
+		<!--  BMIC req- show send for approval button-end -->
 		<!-- change request -->
 		<userdefined deltaind="I" 
 			ruleid="ProducerOneRule.isFunctionDC" executionsequence="0">
@@ -129,6 +131,7 @@
 	<protectedresource deltaind="M" defaultaccesstype="0"
 		description="Hide/Show decline button on summary page" operator="and"
 		uniquename="agencyListPublicSubmitNInvitationEdit_decline">
+
 		<businessrole deltaind="I" roleid="SalesDirector">
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
@@ -144,6 +147,20 @@
 		</businessrole>
 	</protectedresource>
 
+	<!-- Bug Id- CR-0060 Showing Decline button on received bucket start-->
+	<!--  <protectedresource deltaind="I" defaultaccesstype="0" operator="and"
+		description="Hide/Show decline button on summary page"
+		uniquename="agencyListPublicSubmitNInvitationEdit_decline">
+	<businessrole roleid="MarketingAssistant">
+		<roleaccesslevel accesstype="1" />
+	</businessrole>
+	<userdefined deltaind="I" executionsequence="0"
+		ruleid="ProducerOneRule.isRecivedBucket">
+	<userdefinedaccesslevel accesstype="1" />
+	</userdefined>
+		
+	</protectedresource>  -->
+<!-- Bug Id- CR-0060 Showing Decline button on received bucket end-->
 
 	<protectedresource deltaind="M" defaultaccesstype="0"
 		description="Hide/Show decline button on summary page" uniquename="agencyListPublicSubmitNInvitationEdit_onhold">
@@ -671,6 +688,11 @@
   	<businessrole roleid="CarrierAdmin">
   		<roleaccesslevel accesstype="1"/>
   	</businessrole>
+  	<!-- BMIC req decline button show -start -->
+  	<businessrole deltaind="I" roleid="MarketingAssistant">
+  		<roleaccesslevel accesstype="1"/>
+  	</businessrole>
+  	<!-- BMIC req decline button show -end -->
   	<userdefined executionsequence="1" ruleid="WorkflowRule.isShowApproveButtonOnAgencyFunction">
   		<userdefinedaccesslevel accesstype="1"/>
   	</userdefined>
@@ -689,6 +711,11 @@
   	<businessrole roleid="CarrierAdmin">
   		<roleaccesslevel accesstype="1"/>
   	</businessrole>
+  	<!-- BMIC req approve button visible-start -->
+  	<businessrole deltaind="I" roleid="MarketingAssistant">
+  		<roleaccesslevel accesstype="1"/>
+  	</businessrole>
+  	<!-- BMIC req approve button visible-end -->
   	<userdefined executionsequence="1" ruleid="WorkflowRule.isShowApproveButtonOnAgencyFunction">
   		<userdefinedaccesslevel accesstype="1"/>
   	</userdefined>
@@ -960,10 +987,20 @@
     </businessrole>
  </protectedresource>
  
- <protectedresource deltaind="M" defaultaccesstype="0" operator="or" uniquename="agencyFunctions_toBeProcessed_agency_name_security">
+ <protectedresource deltaind="M" defaultaccesstype="0" uniquename="agencyFunctions_toBeProcessed_agency_name_security">
  <businessrole deltaind="I" roleid="vpmarketing">
       <roleaccesslevel accesstype="2"/>
     </businessrole>
+ 	 <!-- BMIC req Agency name not showing field start -->
+    <businessrole deltaind="I" roleid="MarketingAssistant">
+  		<roleaccesslevel accesstype="1"/>
+  	</businessrole>
+   
+   <userdefined deltaind="I" executionsequence="0" ruleid="AgencyFunctionsRule.isAgencyFunctionsIDAndRequestIdNotEmpty">
+   		<userdefinedaccesslevel accesstype="2"/>
+   	</userdefined>
+   	
+   	  <!-- BMIC req Agency name not showing field end -->
  </protectedresource>
 
  
@@ -1034,14 +1071,36 @@
    </protectedresource>
   
   <!-- change request -->
-   <protectedresource deltaind="I" defaultaccesstype="0" operator="AND" description="agencyFunctions_selectFunctionType_complete_transaction_security" uniquename="agencyFunctions_selectFunctionType_complete_transaction_security">
+    
+  <!-- BMIC req- hide complete transaction button for salesSupport -Start 22/09/2021 -->
+   <!--  <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Complete Transaction button on agency functions page" uniquename="agencyFunctions_selectFunctionType_complete_transaction_security">
+   		<businessrole deltaind="I" roleid="AgencyAdmin">
+    		<roleaccesslevel accesstype="0"/>
+    	</businessrole>
+ 		<businessrole deltaind="I" roleid="MarketingAssistant">
+      		<roleaccesslevel accesstype="1"/>
+    	</businessrole>
+    	
+    	 <userdefined deltaind="I" executionsequence="1" ruleid="ProducerOneRule.isHideCompleteTransactionButtonOnAgencyFunction">
+  		<userdefinedaccesslevel accesstype="1"/>
+  	</userdefined>  -->
+    
+   <!-- BMIC req- hide complete transaction button for salesSupport -end -->
+   <!-- CHANGES DONE FOR UPGRADE ISSUES -->
+    	 <protectedresource deltaind="I" defaultaccesstype="0" operator="AND" description="agencyFunctions_selectFunctionType_complete_transaction_security" uniquename="agencyFunctions_selectFunctionType_complete_transaction_security">
     	<userdefined  ruleid="ProducerOneRule.isFunctionDC" executionsequence="0">
 			<userdefinedaccesslevel accesstype="1" />
 		</userdefined>
-		<userdefined executionsequence="1"
-			ruleid="AgencyFunctionsRule.isRequestStatusNotCompleted">
-			<userdefinedaccesslevel accesstype="1" />
-		</userdefined>
+	 <userdefined deltaind="I" executionsequence="1" ruleid="ProducerOneRule.isHideCompleteTransactionButtonOnAgencyFunction">
+  		<userdefinedaccesslevel accesstype="1"/>
+  	</userdefined> 
+		<businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+ 		<businessrole deltaind="I" roleid="MarketingAssistant">
+      		<roleaccesslevel accesstype="1"/>
+    	</businessrole>
+    	
   </protectedresource>
   
   
@@ -1056,7 +1115,7 @@
   <!-- Showing Prospect Sign on Homepage - Phase 2 -->
    <protectedresource deltaind="M" defaultaccesstype="1" description="hide_show_prospect_section_security" uniquename="hide_show_prospect_section_security">
     <businessrole roleid="AgencyAdmin">
-      <roleaccesslevel accesstype="1"/>
+      <roleaccesslevel accesstype="0"/>
     </businessrole>
   </protectedresource>
   
@@ -1420,7 +1479,8 @@
   </protectedresource>
   
   <!-- Dashboard Request List -->
-  <protectedresource deltaind="M" defaultaccesstype="0" description="show/hide requests tab on home action" uniquename="homeAction_requests_security"/>
+  <!-- Phase Upgrade Bug U56 -->
+  <protectedresource deltaind="M" defaultaccesstype="1" description="show/hide requests tab on home action" uniquename="homeAction_requests_security"/>
   
   <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/Show Agency Termination request link on dashboard" uniquename="dashboard_agencytermination_security"/>   <!-- modified -->
   
@@ -1779,6 +1839,11 @@
     <userdefined deltaind="I" executionsequence="0" ruleid="AgencyFunctionsRule.isShowCloseLocationLabel">
       <userdefinedaccesslevel accesstype="1"/>
     </userdefined>
+    <!-- Upgrade Bug Id 041 start -->
+    <userdefined deltaind="M" executionsequence="1" ruleid="AgencyFunctionsRule.isTerminationReasonOtherShow">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    <!-- Upgrade Bug Id 041 end -->
  </protectedresource>
   
   <!-- Phase 2 - SS-002-04 - Hiding fields -->
@@ -1970,13 +2035,19 @@
 		</businessrole>
 	</protectedresource>
 	
+	<!-- Upgrade Bug Id 068 Email for agency admin add/update contact -->
 	<protectedresource deltaind="M" defaultaccesstype="1" description="w9_alt_email_address_agency_selfService_security" uniquename="w9_alt_email_address_agency_selfService_security">
 		<businessrole deltaind="I" roleid="AgencyAdmin">
-			<roleaccesslevel accesstype="0" />
+			<roleaccesslevel accesstype="1" />
 		</businessrole>
 		<businessrole deltaind="I" roleid="MarketingAssistant">
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
+		<!-- Upgrade Bug Id 076 Additional email admin update agency location -->
+		<userdefined deltaind="I" 
+	    	ruleid="ProducerOneRule.isHidingAdditionalEmail" executionsequence="0">
+	  		<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
 	</protectedresource>
 	
 	<protectedresource deltaind="M" defaultaccesstype="1" description="w9_alt_phone_ext_address_agency_selfService_security" uniquename="w9_alt_phone_ext_address_agency_selfService_security">
@@ -2383,7 +2454,85 @@
 <roleaccesslevel accesstype="1" />
 </businessrole>
 </protectedresource>
+
+ <!-- BMIC req hide generate letter button for salesSupport start -->
+    <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show generate letter button on agency functions page" uniquename="agencyFunctions_generateLetter_link_security">
+   		
+ 		<businessrole deltaind="I" roleid="MarketingAssistant">
+      		<roleaccesslevel accesstype="1"/>
+    	</businessrole>
+    	
+    	 <userdefined deltaind="I" executionsequence="1" ruleid="ProducerOneRule.isHideCompleteTransactionButtonOnAgencyFunction">
+  		<userdefinedaccesslevel accesstype="1"/>
+  	</userdefined> 
+    </protectedresource>
+   <!-- BMIC req hide generate letter button for salesSupport end -->
 	
+	<!-- BMIC req hiding extra Agency name field start -->
+   <protectedresource deltaind="M" defaultaccesstype="0" uniquename="AgencyFunction_request_agency_id_security">
+  
+    <businessrole deltaind="M" roleid="MarketingAssistant">
+  		<roleaccesslevel accesstype="0"/>
+  	</businessrole>
+  	</protectedresource>
+     <!-- BMIC req hiding extra Agency name field end -->
+	
+	<!-- upgrade bugs Top Three Companies Appointed start-->
+	 <protectedresource deltaind="M" description="top_companies_appointed_security" uniquename="top_companies_appointed_security">
+    
+     <businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
+  </protectedresource>
+  	<!-- upgrade bugs Top Three Companies Appointed end-->
+  	
+  	<!-- upgrade bugs for display Decline button on Agency Termination page-->
+  	<protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show decline button on agencyTerminationStep2 page" uniquename="agencyTerminationStep2_decline_security">
+  	<businessrole roleid="vpmarketing" accesstype="1"></businessrole>
+  	<userdefined executionsequence="0" ruleid="WorkflowRule.isShowApproveButtonOnAgencyTermination" >
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+  </protectedresource>
+  
+  <!-- Bug ID U-032, U-062 to U-066 Upgrade Bug Start -->
+	<protectedresource defaultaccesstype="0" description="Hide/Show agencyFuntions_letterTemplateList_security" operator="or" uniquename="agencyFuntions_letterTemplateList_security">
+	  	<userdefined deltaind="I" ruleid="ProducerOneRule.isFunctionDC" executionsequence="0">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+	<protectedresource defaultaccesstype="0" description="Hide/Show agencyFuntions_documentAttachment_security" operator="or" uniquename="agencyFuntions_documentAttachment_security">
+  	 	<userdefined deltaind="I" ruleid="ProducerOneRule.isFunctionDC" executionsequence="0">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+    </protectedresource>
+  <!-- Bug ID U-032, U-062 to U-066 Upgrade Bug End -->
+  
+  <!-- START - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
+  <protectedresource deltaind="I" defaultaccesstype="2" description="Grey out CBIA Designation" uniquename="ss_cbia_security"> </protectedresource>
+  <!-- END - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
+  
+	<!--Prod Issue- Display delete icon on bank information page -->
+   <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show  bankinformation_delete_security" uniquename="bankinformation_delete_security">
+    <businessrole roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
+     <businessrole roleid="ReadOnly">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <userdefined executionsequence="2" ruleid="WorkflowRule.isOnboardingDeclinedWorkflowStatusNotFound">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    <userdefined executionsequence="1" ruleid="ProducerOneRule.isBankInfoNotForHierarchyAgency">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    <userdefined executionsequence="3" ruleid="ProducerOneRule.isAgencyStatusNotInactive">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    <userdefined executionsequence="0" ruleid="ProducerOneRule.isShowModifyBankInformation">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+  </protectedresource>
+
 	
 	<!-- Phase 3- History of commission schedule icon -->
 <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show history button"  uniquename="commissonSch_block_history_link_security">
@@ -2697,3 +2846,4 @@
  <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show commissionStmt_exportpdf_security" uniquename="commissionStmt_exportpdf_security"/> 
  
 </security> 
+ 

@@ -6,5 +6,9 @@
  <message deltaind="I" message="Welcome email has been sent successfully." msgkey="WelcomeemailSentSuccessfullyErrorKey" msglevel="W "/>
   <!-- BMIC customization - delete icon -->
  <message deltaind="I" message="Invitation deleted successfully." msgkey="deleteInvitationErrorKey" msglevel="W "/>
+ 
+ <!-- START bug id U-081 - double asterisk sign for close agency code -->
+ <message deltaind="I" message="Please enter Agency Code" msgkey="agencyCodeMendatoryErrorMsg" msglevel="W "/>
+ <!-- END bug id U-081 - double asterisk sign for close agency code -->
   
  </messages>

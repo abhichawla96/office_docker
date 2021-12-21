@@ -22,6 +22,13 @@
 		<!-- Phase 2 - P2-084 - Making Attachment Mandatory in Upload W9 Doc -->
 		<rule deltaind="I" id="isAttachmentMandatory" expression="isEqual(:attachflag,Y);"
 			obj="ruleobjs.ProducerOneRule" method="isAttachmentMandatory" />
+			
+		<!-- Upgrade Bug Id 076 -->
+		<rule deltaind="I" id="isHidingAdditionalEmail" expression="isEqual(:attachflagemail,Y);"
+			obj="ruleobjs.ProducerOneRule" method="isHidingAdditionalEmail" />
 
+			<!-- Bug Id- CR-0060 Showing Decline button on received bucket start-->
+		<!-- <rule deltaind="I" id="isRecivedBucket" expression="isEqual(:Status,Approved);" obj="ruleobjs.ProducerOneRule" method="isRecivedBucket" />	 -->
+			<!-- Bug Id- CR-0060 Showing Decline button on received bucket end-->
 	</ruleset>
 </evalrules>

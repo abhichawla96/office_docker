@@ -576,7 +576,7 @@
 <tabsconfigurationresource deltaind="M" accesslevel="1" name="agencyListPublicSubmitNInvitation_resend_invitation_security" description="agencyListPublicSubmitNInvitation_resend_invitation_security"/>
 
 <!-- Showing Prospect Sign on Homepage - Phase 2 -->
-<tabsconfigurationresource deltaind="M" accesslevel="1" description="hide_show_prospect_section_security" name="hide_show_prospect_section_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="hide_show_prospect_section_security" name="hide_show_prospect_section_security"/>
  
  <!-- Show Cyber Liability Carrier Name -->
  <tabsconfigurationresource deltaind="M" accesslevel="1" description="Agency_declarationCyberLiability_security" name="Agency_declarationCyberLiability_security"/>
@@ -662,7 +662,8 @@
  
  <!-- Additional Configuration on Requests dashboard for Phase 2-->
  <tabsconfigurationresource deltaind="I" accesslevel="1" description="isAddUpdateSelfServiceDocCyberLiabilityApplicable_security" name="isAddUpdateSelfServiceDocCyberLiabilityApplicable_security"/>
- <tabsconfigurationresource deltaind="I" accesslevel="1" name="isAddUpdateSelfServiceOthersApplicable"/>
+ <!-- Phase 2 Upgrade Bug U56 -->
+ <tabsconfigurationresource deltaind="I" accesslevel="0" name="isAddUpdateSelfServiceOthersApplicable"/>
  
  <!-- Phase 2 - Task Id- SS-005-10 -->
  <tabsconfigurationresource deltaind="I" accesslevel="1" description="addNewCyberLiabilityForSelfService_eo_claims_declaration_security" name="addNewCyberLiabilityForSelfService_eo_claims_declaration_security"/>
@@ -841,5 +842,54 @@
 <!-- Phase 3 : Show Adjustment/Reduction Field : Hide Status Column -->
 <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show adjustment_deduction_type_list_security" name="adjustment_deduction_type_list_security"/>
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show compensationCommissionAdjustment status security" name="compensationCommissionAdjustment_status_security"/>
+
+
+
+<!-- Maintenance Bug id- 023- Self Service page- add/update contact start -->
+<tabsconfigurationresource deltaind="M" name="agentGeneralDetailsForSelfServiceApproval_does_intend_writing_business_security" accesslevel="0" description="Hide/Show agentGeneralDetailsForSelfServiceApproval_does_intend_writing_business_security" />
+<!-- Maintenance Bug- 023- Self Service page- add/update contact end -->
+
+<!-- Upgrade Bug id- 026-Agency Demographics- start --> 
+<tabsconfigurationresource deltaind="I" name="entityGeneralDetails_downpayment_security" accesslevel="0" description="Hide/Show entityGeneralDetails_downpayment_security" />
+
+<tabsconfigurationresource deltaind="I" name="entityGeneralDetails_downpayment1_security" accesslevel="0" description="Hide/Show entityGeneralDetails_downpayment1_security" />
+<!-- Upgrade Bug id- 026-Agency Demographics- end -->
+
+<!-- Upgrade bug-U-033 start -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show call report agency personnel" name="isCallReportAgencyPersonnelApplicable"/>
+<!-- Upgrade bug-U-033 end -->
+
+<!-- Upgrade bug-U-059 Start -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="isCallReportAttendingEmployeesApplicable_security" name="isCallReportAttendingEmployeesApplicable_security"/>
+<!-- Upgrade bug-U-059 end -->  
+
+<!-- UAT Bug -002 start -->
+<tabsconfigurationresource deltaind="M" description="Decide whether all sent mails also sent to logged in user as bcc address" name="ISSENDMAILSTOLOGGEDINUSER" value="N"/>
+<!-- UAT Bug -002 end -->
+
+<!-- UAT2 Bug 17971 add/update contact email field start -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="email_id_business_agent_ss_security" name="email_id_business_agent_ss_security"/>
+<!-- UAT2 Bug 17971 add/update contact email field end -->
+
+<!-- UAT2 Bug 17971 update agency location email field start -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="email_id_business_ss_security" name="email_id_business_ss_security"/>
+<!-- UAT2 Bug 17971 update agency location email field end -->
+
+<!-- UAT2 Bug 17971 add/update contact email section start -->
+ <tabsconfigurationresource deltaind="M" name="agentGeneralDetailsForSelfServiceApproval_additional_email_address_security" accesslevel="1" description="Hide/Show agentGeneralDetailsForSelfServiceApproval_additional_email_address_security" />
+<!-- UAT2 Bug 17971 add/update contact email section end -->
+
+<!-- UAT2 Bug 17971 update agency location email section start -->
+<tabsconfigurationresource deltaind="M" name="entityGeneralDetailsForSelfServiceApproval_additional_email_address_security" accesslevel="1" description="entityGeneralDetailsForSelfServiceApproval_additional_email_address_security hide/show" />
+<!-- UAT2 Bug 17971 update agency location email section end -->
+
+<!-- START - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
+<tabsconfigurationresource deltaind="I" accesslevel="1" description="Grey out CBIA Designation" name="ss_cbia_security"/>
+<!-- END - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
+
+<!--Prod Issue- Display History icon on bank information page -->
+<tabsconfigurationresource deltaind="I" accesslevel="1" description="Hide/show bankinformation icon on addbankinformation screen" name="bankinformation_history_security"/>
+
+
 
 </tabsconfiguration>
