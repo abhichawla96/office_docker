@@ -9,5 +9,61 @@
       </columnset>
       
    </reportdef>
+	<!-- start - phase 3 BMIC - added collected premium columns in reports -->
+	<reportdef name="AIM100-1" description="Cash Control Details (AIM100-1)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y">
+		<columnset name="AIM100-1set">
+			<column deltaind="I" name="PREMIUM" columnlabel="Collected Premium" metaproperty="PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="8" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		</columnset>
+	</reportdef>
+	<reportdef name="ACH113-1" description="Paid Commissions by ACH and Check ACH100 (ACH113-1)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="N" isshowoutputcolumns="Y" isshowresetbutton="Y">
+		<columnset name="ACH113-1set">
+			<column deltaind="I" name="written_premium" columnlabel="Collected Premium" metaproperty="written_premium" isreportfilter="N" isreportdisplay="Y" executionsequence="16" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		</columnset>
+	</reportdef>
+	<reportdef name="ACH113-2" description="Monthly Producer Commission Validation ACH200 (ACH113-2)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="N" isshowoutputcolumns="Y" isshowresetbutton="Y">
+		<columnset name="ACH113-2set">
+			<column deltaind="I" name="CURRENT_MONTH_PREMIUM" columnlabel="Collected Premium" metaproperty="CURRENT_MONTH_PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="16" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		</columnset>
+	</reportdef>
+	<reportdef name="CommissionBalance" description="Commission Balance and Adjustment (AIM104)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y">
+		<columnset name="CommissionBalanceset">
+			<column deltaind="I" name="Premium" columnlabel="Collected Premium" metaproperty="Premium" isreportfilter="N" isreportdisplay="Y" executionsequence="33" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		</columnset>
+	</reportdef>
+	<reportdef name="commissionBalance104-1" description="Commission Balance and Adjustment with Producer Code(AIM104-1)" isshowsortordersearch="N" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowresetbutton="Y" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y">
+		<columnset name="commissionBalance104-1set">
+			<column deltaind="I" name="Premium" columnlabel="Collected Premium" metaproperty="Premium" isreportfilter="N" isreportdisplay="Y" executionsequence="33" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		</columnset>
+	</reportdef>
+	<reportdef name="AIM105-1" description="Producer Premium and Commission Expenses (AIM105-1)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y">
+		<columnset name="AIM105-1set">
+			<column deltaind="I" name="WRITTEN_PREMIUM" columnlabel="Collected Premium" metaproperty="WRITTEN_PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="23" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		</columnset>
+	</reportdef>
+	<reportdef name="AIM105-2" description="Premium and Additional Commission for Policies (AIM105-2)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y">
+		<columnset name="AIM105-2set">
+			<column deltaind="I" name="WRITTEN_PREMIUM" columnlabel="Collected Premium" metaproperty="WRITTEN_PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="23" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		</columnset>
+	</reportdef>
+	<reportdef name="CommissionExpenseDrilldown" description="Commission Expense (AIM109)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y">
+		<columnset name="CommissionExpenseDrilldownset">
+			<column deltaind="I" name="PREMIUM" columnlabel="Collected Premium" metaproperty="PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="26" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		</columnset>
+	</reportdef>
+	<reportdef name="AIM110" description="Commission Paid Details (AIM110)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y">
+		<columnset name="AIM110set">
+			<column deltaind="I" name="COMMISSION_AMOUNT" columnlabel="Collected Premium" metaproperty="COMMISSION_AMOUNT" isreportfilter="N" isreportdisplay="Y" executionsequence="22" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		</columnset>
+	</reportdef>
+	<reportdef name="AIM111" description="Amount Paid By Payment Type (AIM111)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="N" isshowoutputcolumns="Y" isshowresetbutton="Y">
+		<columnset name="AIM111set">
+			<column deltaind="I" name="COMMISSION_AMOUNT" columnlabel="Collected Premium" metaproperty="COMMISSION_AMOUNT" isreportfilter="N" isreportdisplay="Y" executionsequence="31" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		</columnset>
+	</reportdef>
+	<reportdef name="policyLevel" description="Payment Details At Policy Level (AIM170)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y">
+		<columnset name="policyLevelset">
+			<column deltaind="I" name="WRITTEN_PREMIUM" columnlabel="Collected Premium" metaproperty="WRITTEN_PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="18" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		</columnset>
+	</reportdef>
     
 </reports>
