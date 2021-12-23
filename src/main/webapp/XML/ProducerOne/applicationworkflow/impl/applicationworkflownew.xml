@@ -970,7 +970,7 @@
 				<email name="CommissionRateChangeSendforApproval" eventname="CommissionRateChangeSendforApproval"  objectid="Producer_Number_Commission_Schedule_ID" objecttype="Commission Rate" executionsequence="0">
 				</email>
 			</status>
-			<approver deltaind="M" name="approver1" approverrole="SalesDirector,CarrierAdmin" executionsequence="0"></approver>
+			<approver deltaind="M" name="approver1" approverrole="SalesDirector" executionsequence="0"></approver>
 		</event>
 		<event name="approveCommissionRateApproval" parentevent="sendForCommissionRateApproval" type="approve">
 			<status name="approveCommissionRateApproval" workflowstatus="Approved" workflowfunction="Commission Rate" executionsequence="1"
