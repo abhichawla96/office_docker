@@ -64,6 +64,14 @@
   <rule deltaind="I" id="isHideCompleteTransactionButtonOnAgencyFunction" expression="andCondition(isNotEqual(:AgencySetupOBStatus_desc,Pending Review),isNotEqual(:AgencySetupOBUser_id,:user_id));"/>
   
    <!-- BMIC req  hide complete transaction/Generate letter button end -->
+   
+   <!-- START - UAT2 Bug Id 0004 - Remove Final Questions in PPRM Market Information -->
+   <rule deltaind="I" id="removePPRMFinalQuestions" expression="isEqual(:remove_final_questions,Y);"></rule>
+   <!-- END - UAT2 Bug Id 0004 - Remove Final Questions in PPRM Market Information -->
+   
+   	<!-- START - UAT2 Bug Id 0017 - Grey out CBIA Designation -->
+   	<rule deltaind="I" id="greyOutCBIAAgencyDemoGraphics" expression="isEqual(:greyout_CBIA_AgencyDemoGraphics,Y);"></rule>
+	<!-- END - UAT2 Bug Id 0017 - Grey out CBIA Designation -->
 
 	</ruleset>
 

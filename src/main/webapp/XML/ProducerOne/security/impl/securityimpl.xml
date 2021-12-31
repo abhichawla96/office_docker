@@ -2480,8 +2480,23 @@
   <!-- Bug ID U-032, U-062 to U-066 Upgrade Bug End -->
   
   <!-- START - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
-  <protectedresource deltaind="I" defaultaccesstype="2" description="Grey out CBIA Designation" uniquename="ss_cbia_security"> </protectedresource>
+  <protectedresource deltaind="I" defaultaccesstype="1" description="CBIA Designation" uniquename="ss_cbia_security" operator="and">
+  		<userdefined deltaind="I" ruleid="ProducerOneRule.greyOutCBIAAgencyDemoGraphics" executionsequence="0">
+			<userdefinedaccesslevel accesstype="2" />
+		</userdefined>
+		<businessrole deltaind="I" roleid="MarketingAssistant" executionsequence="0">
+			<roleaccesslevel accesstype="2" />
+		</businessrole>
+  </protectedresource>
   <!-- END - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
+  
+  <!-- START - UAT2 Bug Id 0004 - Remove Final Questions in PPRM Market Information -->
+  <protectedresource deltaind="I" description="Hide/Show PPRM Final Questions section" uniquename="final_questions_security">
+  	 	<userdefined deltaind="I" ruleid="ProducerOneRule.removePPRMFinalQuestions" executionsequence="0">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+  </protectedresource>
+  <!-- END - UAT2 Bug Id 0004 - Remove Final Questions in PPRM Market Information -->
   
 	<!--Prod Issue- Display delete icon on bank information page -->
    <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show  bankinformation_delete_security" uniquename="bankinformation_delete_security">
@@ -2504,6 +2519,6 @@
       <userdefinedaccesslevel accesstype="1"/>
     </userdefined>
   </protectedresource>
-	
+  
 </security> 
  
