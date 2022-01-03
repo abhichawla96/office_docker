@@ -890,6 +890,8 @@
 <!--Prod Issue- Display History icon on bank information page -->
 <tabsconfigurationresource deltaind="I" accesslevel="1" description="Hide/show bankinformation icon on addbankinformation screen" name="bankinformation_history_security"/>
 
+<!-- Phase 3: Hiding Pdf icon for commission statement -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="commissionStmt_exportpdf_security" name="commissionStmt_exportpdf_security"/>
 
 
 </tabsconfiguration>
