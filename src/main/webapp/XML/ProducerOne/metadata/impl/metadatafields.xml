@@ -1,4 +1,3 @@
 <structure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/metadata_XSD.xsd">
-
-  
+  <field deltaind="I" decimallength="0" displayname="statement_run_date" length="10" name="statement_run_date" seq="684" type="D" viewlength="10"/>
   </structure>

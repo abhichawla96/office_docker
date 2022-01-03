@@ -1,0 +1,5 @@
+<structure project="ProducerOnePerformance">
+
+  <field deltaind="I" decimallength="0" displayname="statement_run_date" length="10" name="statement_run_date" seq="684" type="D" viewlength="10"/>
+	
+</structure>
