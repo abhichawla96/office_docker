@@ -13,6 +13,9 @@
 	<!-- Phase 2 - Override Base file as the version 2.9.2.11 does not support impl of include -->
 	<resource name="css/impl/bmic_specific_style.css" type="css" path="css/impl/bmic_specific_style.css" executionsequence="33"/>
 	
+	<!-- Phase 3- Commission Statement -->
+  <resource name="templates/commissionStatementTemplate.xlsx" type="excel" path="templates/commissionStatementTemplate.xlsx" executionsequence="34"/>
+	
 	<resource name="js/jquery-1.10.2.js" type="javascript" path="js/jquery-1.10.2.js" executionsequence="9"/>
 	<resource name="js/jquery.tabelizer.js" type="javascript" path="js/jquery.tabelizer.js" executionsequence="10"/>
 	<resource name="js/jquery.dataTables1.10.19.js" type="javascript" path="js/jquery.dataTables1.10.19.js" executionsequence="11"/>
