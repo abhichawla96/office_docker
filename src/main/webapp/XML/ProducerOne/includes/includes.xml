@@ -14,7 +14,7 @@
 	<resource name="css/impl/bmic_specific_style.css" type="css" path="css/impl/bmic_specific_style.css" executionsequence="33"/>
 	
 	<!-- Phase 3- Commission Statement -->
-  <resource name="templates/commissionStatementTemplate.xlsx" type="excel" path="templates/commissionStatementTemplate.xlsx" executionsequence="34"/>
+  <resource name="templates/commissionStatementTemplate.xlsx" type="xlsx" path="templates/commissionStatementTemplate.xlsx" executionsequence="34"/>
 	
 	<resource name="js/jquery-1.10.2.js" type="javascript" path="js/jquery-1.10.2.js" executionsequence="9"/>
 	<resource name="js/jquery.tabelizer.js" type="javascript" path="js/jquery.tabelizer.js" executionsequence="10"/>
