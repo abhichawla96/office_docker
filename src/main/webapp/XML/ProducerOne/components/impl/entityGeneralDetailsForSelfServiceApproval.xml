@@ -25,11 +25,15 @@
     </action>
     <!-- END - Bug Id - U-061 - Upgrade - HBA Yes/No question submenu visibility -->
     
-    <!-- START - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->
+   <!-- START - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->
    <action deltaind="M" name="view">
    <actionparam deltaind="I" executionsequence="0" form="Y" name="greyout_HBA_SalesSupportRequests" paramid="greyout_HBA_SalesSupportRequests" val="Y" post="Y" session="Y"/>
    </action>
    <!-- END - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->
+   
+   <action name="sendUpdatedAgencyDataForSaveApproval">
+   <actionparam deltaind="I" form="Y" name="isSaveExtendedFields" paramid="isSaveExtendedFields" pre="Y" val="Y" />
+   </action>
      
   </component>
 </projectcomponents>

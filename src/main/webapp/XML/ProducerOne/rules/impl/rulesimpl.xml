@@ -75,6 +75,7 @@
 	
 	<!-- START - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->
 	<rule deltaind="I" id="greyOutHBASalesSupportRequests" expression="isEqual(:greyout_HBA_SalesSupportRequests,Y);"></rule>
+	<rule deltaind="I" id="greyOutHBADropDownSalesSupportRequests" expression="andCondition(isEqual(:member_of_hba_ss,Y),isEqualsIgnoreCase(:roles,MarketingAssistant));"></rule>
 	<!-- END - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->
 
 	</ruleset>
@@ -94,5 +95,4 @@
 	</ruleset>
 	<!-- END - UAT2 Bug 0013 - Editing Hierarchy Contact in SS -->
 	
-</evalrules>	
-	
+</evalrules>

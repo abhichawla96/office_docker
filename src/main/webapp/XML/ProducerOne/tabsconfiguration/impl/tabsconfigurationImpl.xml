@@ -774,5 +774,9 @@
 <!--Prod Issue- Display History icon on bank information page -->
 <tabsconfigurationresource deltaind="I" accesslevel="1" description="Hide/show bankinformation icon on addbankinformation screen" name="bankinformation_history_security"/>
 
+<!-- START - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->
+<tabsconfigurationresource deltaind="I" accesslevel="1" description="Grey out HBA Designation" name="entityGeneralDeetails_hba_que_ss_security"/>
+<tabsconfigurationresource deltaind="I" accesslevel="1" description="Grey out HBA Designation" name="entityGeneralDeetails_hba_ss_dropdown_security"/>
+<!-- END - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->
 
 </tabsconfiguration>

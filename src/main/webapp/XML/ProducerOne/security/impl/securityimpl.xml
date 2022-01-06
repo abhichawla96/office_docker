@@ -2522,51 +2522,48 @@
   
   <!-- START - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->
   
-  <protectedresource deltaind="I" defaultaccesstype="1" description="Grey out HBA Designation for Sales Support Requests" uniquename="entityGeneralDeetails_hba_que_ss_security" operator="and">
-  		<userdefined deltaind="I" ruleid="ProducerOneRule.greyOutHBASalesSupportRequests" executionsequence="0">
+  <protectedresource deltaind="I" defaultaccesstype="0" description="entity_gen_det_hba_dropdown_ss" uniquename="entityGeneralDeetails_hba_ss_dropdown_security">
+		<userdefined ruleid="ProducerOneRule.isHBAYesNOSS" executionsequence="0">
+			<userdefinedaccesslevel accesstype="1"/>
+		</userdefined>
+		<userdefined ruleid="ProducerOneRule.greyOutHBADropDownSalesSupportRequests" executionsequence="0">
 			<userdefinedaccesslevel accesstype="2" />
 		</userdefined>
-		<businessrole deltaind="I" roleid="MarketingAssistant" executionsequence="0">
+	</protectedresource>
+	
+	<protectedresource deltaind="I" defaultaccesstype="1" description="entity_gen_det_hba_dropdown_ss" uniquename="entityGeneralDeetails_hba_que_ss_security">
+		<businessrole roleid="MarketingAssistant" executionsequence="0">
 			<roleaccesslevel accesstype="2" />
 		</businessrole>
-  </protectedresource>
-  
-  <protectedresource deltaind="I" defaultaccesstype="1" description="Grey out HBA Designation dropdown for Sales Support Requests" uniquename="entityGeneralDeetails_hba_ss_dropdown_security" operator="and">
-  		<userdefined deltaind="I" ruleid="ProducerOneRule.greyOutHBASalesSupportRequests" executionsequence="0">
+	</protectedresource>
+	
+	<protectedresource deltaind="I" defaultaccesstype="1" description="Grey out Dividend Dist section for Sales Support Requests" uniquename="divDividendDist" operator="and">
+  		<userdefined ruleid="ProducerOneRule.greyOutHBASalesSupportRequests" executionsequence="0">
 			<userdefinedaccesslevel accesstype="2" />
 		</userdefined>
-		<businessrole deltaind="I" roleid="MarketingAssistant" executionsequence="0">
-			<roleaccesslevel accesstype="2" />
-		</businessrole>
-  </protectedresource>
-  
-  <protectedresource deltaind="I" defaultaccesstype="1" description="Grey out Dividend Dist section for Sales Support Requests" uniquename="divDividendDist" operator="and">
-  		<userdefined deltaind="I" ruleid="ProducerOneRule.greyOutHBASalesSupportRequests" executionsequence="0">
-			<userdefinedaccesslevel accesstype="2" />
-		</userdefined>
-		<businessrole deltaind="I" roleid="MarketingAssistant" executionsequence="0">
+		<businessrole roleid="MarketingAssistant" executionsequence="0">
 			<roleaccesslevel accesstype="2" />
 		</businessrole>
   </protectedresource>
   
   <protectedresource deltaind="I" defaultaccesstype="1" description="Grey out Policy Holder section for Sales Support Requests" uniquename="divPolicyHolder" operator="and">
-  		<userdefined deltaind="I" ruleid="ProducerOneRule.greyOutHBASalesSupportRequests" executionsequence="0">
+  		<userdefined ruleid="ProducerOneRule.greyOutHBASalesSupportRequests" executionsequence="0">
 			<userdefinedaccesslevel accesstype="2" />
 		</userdefined>
-		<businessrole deltaind="I" roleid="MarketingAssistant" executionsequence="0">
+		<businessrole roleid="MarketingAssistant" executionsequence="0">
 			<roleaccesslevel accesstype="2" />
 		</businessrole>
   </protectedresource>
   
   <protectedresource deltaind="I" defaultaccesstype="1" description="Grey out Agent Copies section for Sales Support Requests" uniquename="divAgentCopies" operator="and">
-  		<userdefined deltaind="I" ruleid="ProducerOneRule.greyOutHBASalesSupportRequests" executionsequence="0">
+  		<userdefined ruleid="ProducerOneRule.greyOutHBASalesSupportRequests" executionsequence="0">
 			<userdefinedaccesslevel accesstype="2" />
 		</userdefined>
-		<businessrole deltaind="I" roleid="MarketingAssistant" executionsequence="0">
+		<businessrole roleid="MarketingAssistant" executionsequence="0">
 			<roleaccesslevel accesstype="2" />
 		</businessrole>
   </protectedresource>
   
   <!-- END - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->
-  
+    
 </security> 
