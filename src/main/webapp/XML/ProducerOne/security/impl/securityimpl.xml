@@ -2845,5 +2845,21 @@
  <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show commissionStmt_export_row_security" uniquename="commissionStmt_export_row_security"/>
  <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show commissionStmt_exportpdf_security" uniquename="commissionStmt_exportpdf_security"/> 
  
+<!-- Phase 3- Hide Modify Button for adjustment page -->
+<protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show modify button" uniquename="addNewCompensationCommissionAdjustment_modify">
+<businessrole deltaind="I" roleid="CarrierAdmin">
+<roleaccesslevel accesstype="1"/>
+</businessrole>
+<businessrole deltaind="I" roleid="Accounting">
+<roleaccesslevel accesstype="1"/>
+</businessrole>
+</protectedresource>
+
+ <!-- Phase 3- Hide Send for approval Button for adjustment page -->
+<protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show send for approval button" uniquename="addNewCompensationCommissionAdjustment_sendforApproval">
+</protectedresource> 
+ 
+ 
+ 
 </security> 
  
