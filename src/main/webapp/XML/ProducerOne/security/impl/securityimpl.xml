@@ -2860,6 +2860,13 @@
 </protectedresource> 
  
  
+<!-- Phase 3: Bug Id-23304-Statement tab --> 
+<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show commission statement tab" operator="OR" uniquename="commissionstatement_tab_security">
+<businessrole deltaind="I" roleid="Accounting">
+<roleaccesslevel accesstype="1"/>
+</businessrole>
+</protectedresource> 
+ 
  
 </security> 
  
