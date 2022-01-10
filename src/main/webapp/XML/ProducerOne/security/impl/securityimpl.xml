@@ -2880,6 +2880,14 @@
  </userdefined>
  </protectedresource> 
   
+<!-- Phase 3- Bug Id-23455: Display modify button only for Accounting role --> 
+<protectedresource deltaind="M" defaultaccesstype="0" uniquename="editEvent"> 
+<businessrole deltaind="I" roleid="Accounting">
+<roleaccesslevel accesstype="1">
+</roleaccesslevel>
+</businessrole>
+</protectedresource> 
+ 
  
  
 </security> 
