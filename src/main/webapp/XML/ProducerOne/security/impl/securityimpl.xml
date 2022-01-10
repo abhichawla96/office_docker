@@ -2867,6 +2867,20 @@
 </businessrole>
 </protectedresource> 
  
+<!-- Phase 3: Task 23046- Modify Button  -->
+ <protectedresource deltaind="M" operator="OR" uniquename="addNewCompensationCommissionAdjustment_sendforApproval_security">
+ <businessrole deltaind="I" roleid="Accounting">
+ <roleaccesslevel accesstype="1"/>
+ </businessrole>
+ <userdefined deltaind="I" executionsequence="2" ruleid="ProducerOneRule.checkModifyforCa">
+ <userdefinedaccesslevel accesstype="1"/>
+ </userdefined>
+ <userdefined deltaind="I" executionsequence="3" ruleid="ProducerOneRule.checkModifyforAcc">
+ <userdefinedaccesslevel accesstype="1"/>
+ </userdefined>
+ </protectedresource> 
+  
+ 
  
 </security> 
  

@@ -82,5 +82,13 @@
 	</ruleset>
 	<!-- END - UAT2 Bug 0013 - Editing Hierarchy Contact in SS -->
 	
+	
+	<!-- Phase 3: Task 23046  -->
+	<ruleset name="ProducerOneRule">
+	<rule deltaind="I" id="checkModifyforCa" expression="isEqualsIgnoreCase(:roles,CarrierAdmin);"  />
+	<rule deltaind="I" id="checkModifyforAcc" expression="isEqualsIgnoreCase(:roles,Accounting);"  />
+	</ruleset>
+
+
 </evalrules>	
 	
