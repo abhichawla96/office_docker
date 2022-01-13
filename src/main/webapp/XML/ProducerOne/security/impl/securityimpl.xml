@@ -1492,8 +1492,10 @@
   
   <protectedresource deltaind="M" defaultaccesstype="1" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceDocW9Applicable_security"/>
   <!-- Phase 3 : Show request individual transfer link on dashboard -->
+  <!-- Task Id-23441- individual transfer link on dashboard-->
   <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show request individual transfer link on dashboard" uniquename="isDashboardRequestIndividualTransfer"/>
   <!-- Phase 3 : Show request wholesale transfer link on dashboard -->
+  <!-- Task Id-23441- wholesale transfer link on dashboard-->  
   <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show request wholesale transfer link on dashboard" uniquename="isDashboardRequestWholesaleTransfer"/>
   
   <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/Show Add Bank Information request link on dashboard" uniquename="isAddUpdateSelfServiceBankInformationApplicable"/>
@@ -2888,7 +2890,25 @@
 </businessrole>
 </protectedresource> 
  
- 
+ <!-- Phase 3: Task Id-23399-Security Matrix- Bonus dashboard-->
+ <protectedresource deltaind="I" uniquename="agencyadmindashboard_contingent_commission_bonus_statement_security">
+  <businessrole deltaind="I" roleid="AgencyAdmin">
+  <roleaccesslevel accesstype="1"/>
+  </businessrole>
+  <businessrole deltaind="I" roleid="Agent">
+  <roleaccesslevel accesstype="0"/>
+  </businessrole>
+</protectedresource>
+
+<!-- Phase 3:Task Id-23397-Security Matrix- Display commission dashboard-->
+ <protectedresource deltaind="I" uniquename="agencyadmindashboard_commission_security">
+  <businessrole deltaind="I" roleid="AgencyAdmin">
+  <roleaccesslevel accesstype="1"/>
+  </businessrole>
+  <businessrole deltaind="I" roleid="Agent">
+  <roleaccesslevel accesstype="0"/>
+  </businessrole>
+</protectedresource>
  
 </security> 
  
