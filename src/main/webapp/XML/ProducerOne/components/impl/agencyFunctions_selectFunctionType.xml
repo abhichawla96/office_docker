@@ -82,17 +82,23 @@
 	    
 	    <!--BMIC req request not moved to Declined bucket start -->
 	      <action deltaind="M" name="declineAgencyFunction">
+	      <!-- UAT2 Bug Id-0045 Deactivate Contact start -->
+	        <actionparam deltaind="I" executionsequence="10" form="Y" name="deactivateContactCheckSubject" paramid="deactivateContactCheckSubject" pre="Y" val="functionDCSS" viewparam="Y" />
+	      <!-- UAT2 Bug Id-0045 Deactivate Contact end -->
+	      
 	    	<workflowevent deltaind="D" eval="AgencyFunctionsRule.isShowAgencyFunctionsTypeDeactivateContact" ajaxcontainerid="contentTableDiv" event="declineAgencyFunctionDC" isgetuser="Y" name="declineAgencyFunctionDC" userfield="workflow_user" workflow="agencyFunctions" executionsequence="3"/>
 	    	<workflowevent deltaind="I" eval="AgencyFunctionsRule.isShowAgencyFunctionsTypeDeactivateContact" ajaxcontainerid="contentTableDiv" event="declineAgencyFunctionDCNew" isgetuser="Y" name="declineAgencyFunctionDCNew" userfield="workflow_user" workflow="agencyFunctions" executionsequence="3"/>
 	    	 
+	    	 <!-- UAT2 Bug Id-0045 Deactivate Contact start -->
+   			<workflow deltaind="I" name="deactivateContactSubjectLine" seq="2">
+        		<databaseoperation executionsequence="0" metaobject="reason_request_lku" name="dbOberationDCSubject" operation="3" sqlstmt="select display_name as request_type_desc from reason_request_lku where description =#deactivateContactCheckSubject#"/>
+	    	 </workflow>
+	    	 <!-- UAT2 Bug Id-0045 Deactivate Contact end -->
+	    	
 	    	 <!-- Upgrade bug Id-029 start -->
 	    	 <actionparam deltaind="I" executionsequence="0" form="Y" name="workflow_assignee" paramid="workflow_assignee" viewparam="Y"/>
    			<!-- Upgrade bug Id-029 end -->
-   			<!-- UAT2 Bug Id-0045 Deactivate Contact start -->
-   			 <workflow deltaind="I" name="deactivateContactSubjectLine" seq="2">
-        		<databaseoperation executionsequence="0" metaobject="reason_request_lku" name="dbOberationDCSubject" operation="3" sqlstmt="select display_name as request_type_desc from reason_request_lku where description =#functionDCSS#"/>
-	    	 </workflow>
-	    	 <!-- UAT2 Bug Id-0045 Deactivate Contact end -->
+   			
 	    	 </action>
 	    	 <!--BMIC req request not moved to Declined bucket end -->
 	    	 
