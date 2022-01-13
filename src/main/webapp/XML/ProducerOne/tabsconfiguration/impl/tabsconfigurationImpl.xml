@@ -893,5 +893,11 @@
 <!-- Phase 3: Hiding Pdf icon for commission statement -->
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="commissionStmt_exportpdf_security" name="commissionStmt_exportpdf_security"/>
 
+<!-- Phase 3- Extra fields for Requests Page -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="hide/show Request Period on Requests Page" name="request_period_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="hide/show Request License Num on Requests Page" name="request_license_num_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="hide/show Request Commission Statement on Requests Page" name="request_commission_statements_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="hide/show Request Policy Number on Requests Page" name="request_policy_number_security"/>
+  
 
 </tabsconfiguration>
