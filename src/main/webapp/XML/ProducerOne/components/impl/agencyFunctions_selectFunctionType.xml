@@ -88,6 +88,11 @@
 	    	 <!-- Upgrade bug Id-029 start -->
 	    	 <actionparam deltaind="I" executionsequence="0" form="Y" name="workflow_assignee" paramid="workflow_assignee" viewparam="Y"/>
    			<!-- Upgrade bug Id-029 end -->
+   			<!-- UAT2 Bug Id-0045 Deactivate Contact start -->
+   			 <workflow deltaind="I" name="deactivateContactSubjectLine" seq="2">
+        		<databaseoperation executionsequence="0" metaobject="reason_request_lku" name="dbOberationDCSubject" operation="3" sqlstmt="select display_name as request_type_desc from reason_request_lku where description ='functionDCSS'"/>
+	    	 </workflow>
+	    	 <!-- UAT2 Bug Id-0045 Deactivate Contact end -->
 	    	 </action>
 	    	 <!--BMIC req request not moved to Declined bucket end -->
 	    	 
