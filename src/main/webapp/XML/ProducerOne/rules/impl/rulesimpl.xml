@@ -71,6 +71,7 @@
    
    	<!-- START - UAT2 Bug Id 0017 - Grey out CBIA Designation -->
    	<rule deltaind="I" id="greyOutCBIAAgencyDemoGraphics" expression="isEqual(:greyout_CBIA_AgencyDemoGraphics,Y);"></rule>
+   	<rule deltaind="I" id="greyOutCBIAYrReceivedSalesSupportRequests" expression="andCondition(isEqual(:ss_cbia_designation,Y),isEqualsIgnoreCase(:roles,MarketingAssistant));"></rule>
 	<!-- END - UAT2 Bug Id 0017 - Grey out CBIA Designation -->
 	
 	<!-- START - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->

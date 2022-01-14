@@ -9,5 +9,14 @@
 		<email deltaind="I" eventname="InitiateSelfServiceRequest" executionsequence="2" name="InitiateSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail"/>
 	 </workflow>
    </action>
+   
+   <!-- START - QA2_003 - SS - Add New Contact - Show/Hide CBIA Yes/No Menu -->
+   <action deltaind="I" name="refreshPage1">
+      <actionparam executionsequence="0" form="Y" name="removeparams" paramid="removeparams1" pre="Y" remove="Y" removeparams="showEffectiveDatePopup,effective_date_request" session="Y"/>
+      <actionparam executionsequence="0" form="Y" name="inet_skip_validation" paramid="inet_skip_validation" val="Y" viewparam="Y"/>
+      <actionparam executionsequence="0" form="Y" name="ISSKIPPAGEVIEW" paramid="ISSKIPPAGEVIEW" val="Y" viewparam="Y" />
+    </action>
+    <!-- END - QA2_003 - SS - Add New Contact - Show/Hide CBIA Yes/No Menu -->
+   
   </component>
 </projectcomponents>

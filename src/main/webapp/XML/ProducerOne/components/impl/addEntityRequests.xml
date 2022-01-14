@@ -22,10 +22,11 @@
    </action>
    
    <!-- Phase 2- Bug Id- P2- 084 - Making Attachment Section Mandatory in Upload W9 Doc -->
+   
    <!-- START - UAT2 Bug Id 0017 - Grey out CBIA Designation -->
    <action deltaind="M" name="view">
    <actionparam deltaind="I" executionsequence="0" pre="Y" form="Y" name="attachflag" paramid="attachflag" val="Y"/>
-   <actionparam deltaind="I" executionsequence="0" form="Y" name="greyout_CBIA_AgencyDemoGraphics" paramid="greyout_CBIA_AgencyDemoGraphics" val="Y" post="Y" session="Y"/>
+   <actionparam deltaind="I" executionsequence="0" form="Y" name="greyout_CBIA_AgencyDemoGraphics" paramid="greyout_CBIA_AgencyDemoGraphics" val="Y" post="Y"/>
    </action>
    <!-- END - UAT2 Bug Id 0017 - Grey out CBIA Designation -->
    
