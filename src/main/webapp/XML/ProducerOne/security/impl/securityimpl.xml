@@ -2462,7 +2462,7 @@
   </protectedresource>
   
   <!-- Bug ID U-032, U-062 to U-066 Upgrade Bug Start -->
-	<protectedresource defaultaccesstype="0" description="Hide/Show agencyFuntions_letterTemplateList_security" operator="or" uniquename="agencyFuntions_letterTemplateList_security">
+	<!-- <protectedresource defaultaccesstype="0" description="Hide/Show agencyFuntions_letterTemplateList_security" operator="or" uniquename="agencyFuntions_letterTemplateList_security">
 	  	<userdefined deltaind="I" ruleid="ProducerOneRule.isFunctionDC" executionsequence="0">
 			<userdefinedaccesslevel accesstype="0" />
 		</userdefined>
@@ -2471,7 +2471,7 @@
   	 	<userdefined deltaind="I" ruleid="ProducerOneRule.isFunctionDC" executionsequence="0">
 			<userdefinedaccesslevel accesstype="0" />
 		</userdefined>
-    </protectedresource>
+    </protectedresource> -->
   <!-- Bug ID U-032, U-062 to U-066 Upgrade Bug End -->
   
   <!-- START - UAT2 Bug Id 0004 - Remove Final Questions in PPRM Market Information -->
