@@ -518,7 +518,7 @@
 	<!-- CBIA Field -->
 	<field deltaind="I" isextendedfield="Y" name="ss_cbia_designation" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" objectcolumn="person_id" section="entityPersonDetails_freeform_contextdata_2" displaytype="radio" isrequired="Y" labelkey="ss_cbia_designation_label" labeldesc="CBIA Designation" accesslevel="1" tabsconfigurationresourcename="ss_cbia_security" mappedto="f26" protectedresourceuniquename="ss_cbia_security" id="ss_cbia_designation" position="#highest_ranking_principal_before#">
 		<event id="onchange" name="onchange" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" actiontype="ajaxpageblocklink" action="refreshPage1" actiontypeid="ss_year_recieved_security" executionsequence="0">
-			<forward id="carrier/agentGeneralDetailsForSelfServiceApproval.html" screen="carrier/agentGeneralDetails.html" />
+			<forward id="carrier/agentGeneralDetailsForSelfServiceApproval.html" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" />
 		</event>
 	</field>
 	<field deltaind="I" isextendedfield="Y" name="ss_year_recieved" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" objectcolumn="person_id" section="entityPersonDetails_freeform_contextdata_2" displaytype="text" isrequired="Y" labelkey="ss_year_recieved_label" labeldesc="Year Received" accesslevel="1" tabsconfigurationresourcename="ss_year_recieved_security" mappedto="f25" protectedresourceuniquename="ss_year_recieved_security" id="ss_year_recieved" position="#ss_cbia_designation_after#">

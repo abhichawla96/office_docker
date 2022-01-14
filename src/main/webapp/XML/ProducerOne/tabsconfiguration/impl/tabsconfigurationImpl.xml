@@ -769,6 +769,7 @@
 
 <!-- START - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
 <tabsconfigurationresource deltaind="I" accesslevel="1" description="Grey out CBIA Designation" name="ss_cbia_security"/>
+<tabsconfigurationresource deltaind="I" accesslevel="1" description="Grey out CBIA Designation" name="ss_year_recieved_security"/>
 <!-- END - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
 
 <!--Prod Issue- Display History icon on bank information page -->
