@@ -586,4 +586,11 @@ protectedresourceuniquename="eno_question_aa_security" id="eno_question_aa" posi
   
   <!-- END bug id U-081 - double asterisk sign for close agency code -->
   
+  <!-- UAT2 0035 & 0036 DOB and SSN make mandatory -->  
+   <field deltaind="M" requiredeval="ProducerOneRule.isLicensedProducerChecked" id="agentGeneralDetailsForSelfServiceApproval_ssn_num" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" name="ssn_num" isrequired="E" labelkey="contact_ssn_label" tabsconfigurationresourcename="contact_ssn_security" protectedresourceuniquename="contact_ssn_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="entityPersonDetails_freeform_contextdata_2"/>
+	
+   <field deltaind="M" name="ispersoncontact" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" labeldesc="Contact Type" isrequired="N" labelkey="Contact Type" id="adminBrokerageDetailsStep2_ispersoncontact">
+    <event deltaind="I" id="onchange" name="onchange" actiontype="ajaxpageblocklink" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" action="refreshdob_ssn" actiontypeid="contact_ssn_security" executionsequence="0"/>
+  </field>
+  
  </fields>

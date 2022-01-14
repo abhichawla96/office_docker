@@ -17,6 +17,12 @@
       <actionparam executionsequence="0" form="Y" name="ISSKIPPAGEVIEW" paramid="ISSKIPPAGEVIEW" val="Y" viewparam="Y" />
     </action>
     <!-- END - QA2_003 - SS - Add New Contact - Show/Hide CBIA Yes/No Menu -->
+    
+     <!-- UAT2 0035 & 0036 DOB and SSN make mandatory -->
+  <action deltaind="I" name="refreshdob_ssn">
+      <actionparam executionsequence="0" form="Y" name="inet_skip_validation" paramid="inet_skip_validation" val="Y" viewparam="Y"/>
+      <actionparam viewparam="Y" name="ISSKIPPAGEVIEW" paramid="ISSKIPPAGEVIEW" val="Y" form="Y"></actionparam>
+  </action>
    
   </component>
 </projectcomponents>

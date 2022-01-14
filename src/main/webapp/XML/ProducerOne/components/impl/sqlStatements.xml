@@ -8,7 +8,8 @@
 		  <parameteroperation indexno="1" mode="OUT" property="output" seq="2"/>
           <resultsetoperation indexno="1" mappingclass="java.util.HashMap" seq="0"/>
        </storedprocedureoperation>
-        
+        <!-- UAT2 0035 & 0036 DOB and SSN make mandatory -->
+       <databaseoperation deltaind="I" executionsequence="30" metaobject="person" name="getLicensedProducerChecked" operation="3" sqlstmt="select count(*) as licensedProducerChecked from contacttype_lku where contact_typ_id in (select items from split(#contacttype#,',')) and contact_typ_code = 'LS'"/>
 	</workflow>
     </action>
   </component>
