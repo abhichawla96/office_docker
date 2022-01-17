@@ -19,6 +19,11 @@
 		<!-- Phase 3- Agent role -->
 		<rule deltaind="I" id="isAgent" expression="isEqual(:ispersoncontact_3,'Agent');"></rule>
 		
+		<!-- Phase 3- Requests dashboard-start -->
+		<rule deltaind="I" id="isAgencyAReq" expression="isEqual(:ispersoncontact_0,Y);"></rule>
+		<rule deltaind="I" id="isAgentReq" expression="isEqual(:ispersoncontact_3,Y);"></rule>
+		<!-- Phase 3- Requests dashboard-end -->
+		
 		<rule deltaind="I" id="isPrincipalContType" expression="isEqual(:cbia_designation,'Principal');"></rule>
 		<rule deltaind="I" id="isNewAgencyCode" expression="isEqual(:producer_number,null);"></rule>
 		<rule deltaind="I" id="isSuspensionReasonCustom" expression="isEqual(:termination_reason_code,7);"></rule>

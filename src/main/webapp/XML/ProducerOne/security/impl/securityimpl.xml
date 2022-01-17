@@ -2909,6 +2909,19 @@
       <userdefinedaccesslevel accesstype="0"/>
     </userdefined>
 </protectedresource>
+
+<!-- Task Id-23402- Hiding/Showing Request dashboard -->
+<protectedresource deltaind="M" description="Hide/Show request block on agencyadmin dashboard" uniquename="requests_security">
+<userdefined deltaind="I" ruleid="ProducerOneRule.isAgencyAReq">
+<userdefinedaccesslevel accesstype="0"/>
+</userdefined> 
+<userdefined deltaind="I" ruleid="ProducerOneRule.isAgentReq">
+<userdefinedaccesslevel accesstype="1"/>
+</userdefined>
+<businessrole deltaind="I" roleid="AgencyAdmin">
+<roleaccesslevel accesstype="1"/>
+</businessrole>
+</protectedresource>
  
 </security> 
  
