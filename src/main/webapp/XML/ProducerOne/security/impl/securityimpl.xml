@@ -2565,5 +2565,32 @@
 		</userdefined>
 	</protectedresource>
   <!-- END - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
+  
+  <!-- QA2-0004 Fix -->
+	<protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Complete Transaction button on agency functions page" uniquename="agencyFuntions_letterTemplateList_security">
+   		<businessrole deltaind="I" roleid="AgencyAdmin">
+    		<roleaccesslevel accesstype="0"/>
+    	</businessrole>
+ 		<businessrole deltaind="I" roleid="MarketingAssistant">
+      		<roleaccesslevel accesstype="1"/>
+    	</businessrole>
+    	
+    	 <userdefined deltaind="I" executionsequence="1" ruleid="ProducerOneRule.isHideCompleteTransactionButtonOnAgencyFunction">
+  		<userdefinedaccesslevel accesstype="1"/>
+  	</userdefined> 
+  </protectedresource>
+  
+  <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Complete Transaction button on agency functions page" uniquename="agencyFuntions_documentAttachment_security">
+   		<businessrole deltaind="I" roleid="AgencyAdmin">
+    		<roleaccesslevel accesstype="0"/>
+    	</businessrole>
+ 		<businessrole deltaind="I" roleid="MarketingAssistant">
+      		<roleaccesslevel accesstype="1"/>
+    	</businessrole>
+    	
+    	 <userdefined deltaind="I" executionsequence="1" ruleid="ProducerOneRule.isHideCompleteTransactionButtonOnAgencyFunction">
+  		<userdefinedaccesslevel accesstype="1"/>
+  	</userdefined> 
+  </protectedresource>
     
 </security> 
