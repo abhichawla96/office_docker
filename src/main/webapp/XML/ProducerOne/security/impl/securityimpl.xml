@@ -2405,15 +2405,14 @@
 	  		<userdefinedaccesslevel accesstype="1" />
 		</userdefined>
 	</protectedresource>
-	
 
-		<!-- phase 2 - start - extended field -->
-	<protectedresource deltaind="I" defaultaccesstype="0" description="entity_gen_det_hba_dropdown_ss" uniquename="entityGeneralDeetails_hba_ss_dropdown_security">
-		<userdefined deltaind="I" ruleid="ProducerOneRule.isHBAYesNOSS" executionsequence="0">
+<!-- phase 2 - start - extended field -->  
+	<!-- <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show year field" uniquename="ss_year_recieved_security">
+		<userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.isCBIAYesNoSS">
 			<userdefinedaccesslevel accesstype="1" />
 		</userdefined>
-	</protectedresource>
-
+	</protectedresource> -->
+	
 	<!-- phase 2 - end - extended field -->
   <!-- Maintenance Bug- Main-001 -->
    <protectedresource deltaind="I" defaultaccesstype="1" description="show validation for insurance section" uniquename="attachment_security">
