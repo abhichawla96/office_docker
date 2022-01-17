@@ -2895,9 +2895,9 @@
   <businessrole deltaind="I" roleid="AgencyAdmin">
   <roleaccesslevel accesstype="1"/>
   </businessrole>
-  <businessrole deltaind="I" roleid="Agent">
-  <roleaccesslevel accesstype="0"/>
-  </businessrole>
+ <userdefined deltaind="I" ruleid="ProducerOneRule.isAgent">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
 </protectedresource>
 
 <!-- Phase 3:Task Id-23397-Security Matrix- Display commission dashboard-->
@@ -2905,9 +2905,9 @@
   <businessrole deltaind="I" roleid="AgencyAdmin">
   <roleaccesslevel accesstype="1"/>
   </businessrole>
-  <businessrole deltaind="I" roleid="Agent">
-  <roleaccesslevel accesstype="0"/>
-  </businessrole>
+  <userdefined deltaind="I" ruleid="ProducerOneRule.isAgent">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
 </protectedresource>
  
 </security> 
