@@ -2892,9 +2892,6 @@
  
  <!-- Phase 3: Task Id-23399-Security Matrix- Bonus dashboard-->
  <protectedresource deltaind="I" uniquename="agencyadmindashboard_contingent_commission_bonus_statement_security">
-  <businessrole deltaind="I" roleid="AgencyAdmin">
-  <roleaccesslevel accesstype="1"/>
-  </businessrole>
  <userdefined deltaind="I" ruleid="ProducerOneRule.isAgent">
       <userdefinedaccesslevel accesstype="0"/>
     </userdefined>
@@ -2902,9 +2899,6 @@
 
 <!-- Phase 3:Task Id-23397-Security Matrix- Display commission dashboard-->
  <protectedresource deltaind="I" uniquename="agencyadmindashboard_commission_security">
-  <businessrole deltaind="I" roleid="AgencyAdmin">
-  <roleaccesslevel accesstype="1"/>
-  </businessrole>
   <userdefined deltaind="I" ruleid="ProducerOneRule.isAgent">
       <userdefinedaccesslevel accesstype="0"/>
     </userdefined>
