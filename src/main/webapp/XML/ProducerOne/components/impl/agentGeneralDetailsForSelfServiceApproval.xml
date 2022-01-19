@@ -9,5 +9,14 @@
 		<email deltaind="I" eventname="InitiateSelfServiceRequest" executionsequence="2" name="InitiateSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail"/>
 	 </workflow>
    </action>
+  
+  
+  <!-- Phase 3- Agent Checkbox -->
+   <action deltaind="M" name="view">
+       <workflow deltaind="M" name="view" seq="17">
+	 <function deltaind="I" executionsequence="0" functionid="showContactTypeList" name="showContactTypeList" parameters="context"/>
+	  	  </workflow>
+   </action>
   </component>
+  
 </projectcomponents>

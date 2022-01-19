@@ -734,4 +734,32 @@ public static String attachAndSendEmail (Context ctx)
 	
 	/* Existing Agency Appointed to New Location - Dynamic Row Function - End*/
 	
+	/*Hiding agent checkbox for self service*/
+	public static void showContactTypeList(Context ctx)
+	{
+		try
+		{
+			List<Map<String,String>> newList=new ArrayList<Map<String,String>>();
+			List<Map<String,String>> contactTypeList=new ArrayList<Map<String,String>>();
+
+			contactTypeList=(ArrayList<Map<String,String>>) ctx.get("contacttype_lku_mom_list_1");
+				for (Map<String, String> map : contactTypeList) {
+				if(!map.get("contact_typ_desc").equals("Agent"))																																											{
+					newList.add(map);
+				}
+			}
+			
+			for (Map<String, String> map : newList) {
+			System.out.println(map.get("contact_typ_desc"));	
+			}
+			ctx.put("contacttype_lku_mom_list_1",newList);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return;
+	}	
+
+	
 }
