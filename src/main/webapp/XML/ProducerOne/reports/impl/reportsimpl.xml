@@ -41,11 +41,10 @@
 	<reportdef name="AIM105-1" description="Producer Premium and Commission Expenses (AIM105-1)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y">
 		<columnset name="AIM105-1set">
 			<column deltaind="I" name="Collected_PREMIUM" columnlabel="Collected Premium" metaproperty="WRITTEN_PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="23" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-  		    <!-- phase 3 bug 23070- -->
-  		    <column deltaind="D" name="Uncollected_Charges" columnlabel="Commission Chargeback" metaproperty="Uncollected_Charges" isreportfilter="N" isreportdisplay="Y" executionsequence="21" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-		<!-- phase 3 bug 22034- --> 
+  		  <!-- phase 3 bug 22034- --> 
 		 <column deltaind="D" name="ADVT_COST" columnlabel="Advertising Cost" metaproperty="ADVT_COST" isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
          <column deltaind="D" name="MVR_CLUE" columnlabel="MVR/CLUE" metaproperty="MVR_CLUE" isreportfilter="N" isreportdisplay="Y" executionsequence="8" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+         <column deltaind="D" name="Poliserver_fee" columnlabel="poliserveFeeLable" metaproperty="Poliserver_fee" isreportfilter="N" isreportdisplay="Y" executionsequence="6" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
         
 		</columnset>
 	</reportdef>
