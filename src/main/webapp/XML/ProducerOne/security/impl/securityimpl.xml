@@ -2891,15 +2891,17 @@
 </protectedresource> 
  
  <!-- Phase 3: Task Id-23399-Security Matrix- Bonus dashboard-->
+ <!-- Phase 3 - Agent Role -->	
  <protectedresource deltaind="I" uniquename="agencyadmindashboard_contingent_commission_bonus_statement_security">
- <userdefined deltaind="I" ruleid="ProducerOneRule.isAgent">
+ <userdefined deltaind="I" ruleid="ProducerOneRule.getAgentChecked">
       <userdefinedaccesslevel accesstype="0"/>
     </userdefined>
 </protectedresource>
 
 <!-- Phase 3:Task Id-23397-Security Matrix- Display commission dashboard-->
- <protectedresource deltaind="I" uniquename="agencyadmindashboard_commission_security">
-  <userdefined deltaind="I" ruleid="ProducerOneRule.isAgent">
+<!-- Phase 3 - Agent Role -->	
+ <protectedresource deltaind="M" uniquename="agencyadmindashboard_commission_security">
+  <userdefined deltaind="I" ruleid="ProducerOneRule.getAgentChecked">
       <userdefinedaccesslevel accesstype="0"/>
     </userdefined>
 </protectedresource>

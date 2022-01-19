@@ -8,6 +8,10 @@
 		  <parameteroperation indexno="1" mode="OUT" property="output" seq="2"/>
           <resultsetoperation indexno="1" mappingclass="java.util.HashMap" seq="0"/>
        </storedprocedureoperation>
+       
+       <!-- Phase 3 - Agent Role -->	
+       <databaseoperation deltaind="I" executionsequence="1" metaobject="person" name="getAgentChecked" operation="3" sqlstmt="select count(*) as agentChecked from contacttype_lku where contact_typ_id in (select items from split(#contacttype#,',')) and contact_typ_code = 'AGENT'"/>
+		
         
 	</workflow>
     </action>
