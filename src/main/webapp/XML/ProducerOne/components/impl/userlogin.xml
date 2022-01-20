@@ -1,0 +1,39 @@
+<projectcomponents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/components_XSD.xsd">
+  <component name="userlogin">
+    <action deltaind="M" name="view">
+      <actionparam evalute="Y" executionsequence="0" form="Y" name="PublicURL" paramid="PublicURL" pre="Y" val="ProducerOneRule.getPublicURL"/>
+      <actionparam executionsequence="0" form="Y" name="inet_skip_breadcrumb" paramid="inet_skip_breadcrumb" post="Y" val="Y"/>
+    
+    
+    
+    </action>
+    <action deltaind="M" name="go">
+      <actionparam eval="ProducerOneRule.assignPersonIDForSelService" executionsequence="0" form="Y" name="personId" paramid="personId" post="Y"/>
+      <actionparam executionsequence="0" form="Y" name="roles" paramid="roles" post="Y" session="Y"/>
+      <actionparam executionsequence="0" form="Y" name="ClientID" paramid="ClientID" post="Y" session="Y"/>
+      <actionparam executionsequence="0" form="Y" name="user_id" paramid="user_id" post="Y" session="Y"/>
+      <actionparam eval="ProducerOneRule.assignVersion" executionsequence="0" form="Y" name="version" paramid="version" pre="Y" session="Y"/>
+      <actionparam executionsequence="0" form="Y" name="ShowVal" paramid="ShowVal" pre="Y" val="1" viewparam="Y"/>
+      <actionparam eval="ProducerOneRule.assignVersion" executionsequence="0" form="Y" name="CopyRight" paramid="CopyRight" pre="Y" session="Y"/>
+      <actionparam executionsequence="0" form="Y" name="include_location" paramid="include_location" pre="Y" val="1"/>
+      <actionparam eval="ProducerOneRule.checkAgencyAdminOrAgent" executionsequence="0" form="Y" name="agencyadmin_agency_id" paramid="agencyadmin_agency_id" populatename="agency_id" post="Y" session="Y"/>
+      <actionparam executionsequence="0" form="Y" name="user_name" paramid="user_name" post="Y" session="Y"/>
+      <actionparam executionsequence="0" form="Y" name="hierarchy_type" paramid="hierarchy_type" pre="Y" val="1"/>
+      <workflow name="go" seq="0">
+        <businessobject executionsequence="0" name="checkUserLogin" obj="com.userbo.UserLoginBO"/>
+        <databaseoperation executionsequence="2" metaobject="userprofiles" name="getUserProfileDetailAsPerRole" operation="3" sqlstmt="select top 1 landing_page from userprofiles where user_id = #user_id#"/>
+      </workflow>
+      <workflow eval="userloginRule.checkLandingPage" name="go1" seq="1">
+        <function eval="ProducerOneRule.isUserProfileLandingPageAgencyListAssignrecordsperpage" executionsequence="0" functionid="getPageStackForAdvanceSearchPage" name="getPageStackForAdvanceSearchPage" parameters="context,:landing_page"/>
+        <function eval="ProducerOneRule.isAgentRole" executionsequence="1" functionid="getPageStackForAdvanceSearchPage" name="getPageStackForAdvanceSearchPage12" parameters="context,:landing_page_for_agent_context"/>
+        <function eval="ProducerOneRule.isAgencyAdminLoggedIn" executionsequence="2" functionid="getPageStackForAdvanceSearchPage" name="getPageStackForAdvanceSearchPage13" parameters="context,:landing_page_for_agencyadmin_context"/>
+      </workflow>
+      <!-- Phase 3- Agent Role -->
+       <workflow deltaind="I" name="go2" seq="1">
+       <databaseoperation deltaind="I" executionsequence="1" metaobject="person" name="getAgentChecked" operation="3" sqlstmt="select contacttype from person where LOGIN_ID=#user_id#"/> 
+      </workflow>
+    <actionparam deltaind="I" executionsequence="1" form="Y" name="contacttype" paramid="contacttype" post="Y" session="Y"/>
+        <!-- Phase 3- Agent Role -->
+    </action>
+  </component>
+</projectcomponents>

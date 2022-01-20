@@ -1,0 +1,34 @@
+<projectcomponents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/components_XSD.xsd">
+  <component name="carrierHeader" displayname="Header">
+    <action deltaind="M" name="home">
+      <actionparam executionsequence="0" form="Y" name="hierarchy_type" paramid="hierarchy_type" pre="Y" val="1"/>
+      <actionparam executionsequence="0" form="Y" name="headercity" paramid="headercity" pre="Y" remove="Y" removeparams="isShowPreviewMailTrue,calander_month,calander_year,is_hidden,headercity,headerstate,headerparentagency_id,headername,headerfirstname,         headerlastname,aar_statusid_desc,include_all_agencycode,Commissionable_Producer_ID,admin_tab,iscomeFromEntityAppointManual,headernamewithoutlocation,contracttemplatetypeids,businessUnitIds,isComingForReassign,isShowInvitationLinkPopup,isSendInvitationNewClicked,toemail_forInvitation,ccemail_forInvitation,isShowAssignToDropdownForSendInvitation,isSendEmailClicked      ,email_body,editable_email_body,is_include_location,expirationDateTo,expirationDateFrom" session="Y"/>
+      <actionparam executionsequence="0" form="Y" name="ccb_bonus_year" paramid="ccb_bonus_year" viewparam="Y"/>
+      <actionparam executionsequence="0" form="Y" name="ccb_calander_month" paramid="ccb_calander_month" viewparam="Y"/>
+      <actionparam executionsequence="0" form="Y" name="ccb_calander_year" paramid="ccb_calander_year" viewparam="Y"/>
+      <actionparam executionsequence="0" form="Y" name="statement_period" paramid="statement_period" viewparam="Y"/>
+      <actionparam executionsequence="0" form="Y" name="comingFromHomeSearch" paramid="comingFromHomeSearch" pre="Y" remove="Y" session="Y"/>
+      <actionparam executionsequence="0" form="Y" name="ShowVal" paramid="ShowVal" pre="Y" val="1" viewparam="Y"/>
+      <actionparam executionsequence="0" form="Y" name="include_location" paramid="include_location" pre="Y" val="1"/>
+      <actionparam executionsequence="0" form="Y" name="comingFromNationalNameSearch" paramid="comingFromNationalNameSearch" pre="Y" remove="Y" session="Y"/>
+      <actionparam executionsequence="0" form="Y" name="skipParentAgency" paramid="skipParentAgency" pre="Y" val="Y"/>
+      <actionparam eval="ProducerOneRule.checkIsCarrierAdmin" executionsequence="0" form="Y" name="agency_id" paramid="agency_id" pre="Y" remove="Y" session="Y"/>
+      <actionparam executionsequence="0" form="Y" name="comingFromOperatingDivisionSearch" paramid="comingFromOperatingDivisionSearch" pre="Y" remove="Y" session="Y"/>
+      <!-- <actionparam pre="Y" name="isAddNewProspectSection" paramid="isAddNewProspectSection" form="Y" session="Y" remove="Y" executionsequence="0" /> -->
+      <actionparam form="Y" name="agencyadmin_agency_id" paramid="agencyadmin_agency_id" populatename="agency_id" post="Y" session="Y"/>
+      <actionparam form="Y" name="person_id_selfservice" paramid="person_id_selfservice" populatename="person_id" post="Y" session="Y"/>
+      <actionparam form="Y" name="person_id_selfservice" paramid="person_id_selfservice1" populatename="agencyadmin_person_id" post="Y" session="Y"/>
+      <actionparam form="Y" name="agencyadmin_producer_number_id" paramid="agencyadmin_producer_number_id" populatename="producer_number_id" post="Y" session="Y"/>
+      <actionparam form="Y" name="agencyadmin_agency_id" paramid="agencyadmin_agency_id221" populatename="backup_agencyadmin_agency_id" post="Y" session="Y"/>
+      <actionparam form="Y" name="agencyadmin_producer_number_id" paramid="agencyadmin_producer_number_id221" populatename="backup_agencyadmin_producer_number_id" post="Y" session="Y"/>
+      <workflow name="home" seq="0">
+        <businessobject executionsequence="2" name="cleanCarrierSessionData" obj="com.userbo.common.CarrierSessionDataCleanBO"/>
+      </workflow>
+            <!-- Phase 3- Agent Role -->
+      <workflow deltaind="I" name="go2" seq="1">
+ <databaseoperation deltaind="I" executionsequence="1" metaobject="person" name="getAgentChecked" operation="3" sqlstmt="select contacttype from person where LOGIN_ID=#user_id#"/> 
+            <!-- Phase 3- Agent Role -->
+      </workflow>   
+    </action>
+      </component>
+</projectcomponents>
