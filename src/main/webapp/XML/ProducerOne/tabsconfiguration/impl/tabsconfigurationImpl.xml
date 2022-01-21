@@ -898,6 +898,9 @@
 <tabsconfigurationresource deltaind="M" accesslevel="1" description="hide/show Request License Num on Requests Page" name="request_license_num_security"/>
 <tabsconfigurationresource deltaind="M" accesslevel="1" description="hide/show Request Commission Statement on Requests Page" name="request_commission_statements_security"/>
 <tabsconfigurationresource deltaind="M" accesslevel="1" description="hide/show Request Policy Number on Requests Page" name="request_policy_number_security"/>
-  
+
+<!-- Phase 3- Task Id- 25086- BOB Step 2 -->
+<tabsconfigurationresource  deltaind="M" accesslevel="0" description="Hide/Show bobtransfersStep2_LifePolicyTransferMessage_security" name="bobtransfersStep2_LifePolicyTransferMessage_security"/>
+    
 
 </tabsconfiguration>
