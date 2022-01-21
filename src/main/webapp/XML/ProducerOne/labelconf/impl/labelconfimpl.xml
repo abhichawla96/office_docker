@@ -261,6 +261,8 @@
 <label deltaind="M" labeldesc="Contingency Commission Dashboard" labelkey="contingentCommissionBonusDashboardlabel"/>
 <label deltaind="M" labeldesc="Contingency Commission Statement" labelkey="contingentCommissionBonusMapPortallabel"/>
    
+<!-- Phase 3- Bug Id- 25140- Product filter -->  
+<label deltaind="M"  labeldesc="Agency Code" labelkey="agencyadmindashboard_commission_productid_label"/>
    
    
 </labelconf>
