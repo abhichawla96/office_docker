@@ -1232,15 +1232,15 @@
                   </status>
             </event>
       </workflow>
-      <workflow name="individualTransferApprovalWorkFlow">
-            <event name="sendForIndividualTransferApproval">
+      <!-- Phase 3: Book of business -workflow config -->
+      <workflow deltaind="M" name="individualTransferApprovalWorkFlow">
+            <event deltaind="M" name="sendForIndividualTransferApproval">
                   <status name="sendForIndividualTransferApproval" workflowstatus="Pending Review" workflowfunction="Self Service" executionsequence="1"
                         statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
                         approver="workflow_user" forward="homeAction" isapproval="Y" >
                         <email name="individualTransferSendforApproval" eventname="individualTransferSendforApproval" mailto="e_mail" objectid="producer_number_transfer_id" objecttype="Self Service" executionsequence="0"/>
                   </status>
-                  <approver name="approver1" approverrole="SalesDirector" executionsequence="0"></approver>   
-                  <approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver>
+                  <approver deltaind="M" name="approver1" approverrole="SalesDirector,CarrierAdmin" executionsequence="0"></approver>   
             </event>
             <event name="approveIndividualTransferApproval" parentevent="sendForIndividualTransferApproval" type="approve">
                   <status name="approveIndividualTransferApproval" workflowstatus="Pending Review" workflowfunction="Self Service" executionsequence="1"
