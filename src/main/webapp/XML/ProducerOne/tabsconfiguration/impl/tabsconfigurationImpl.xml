@@ -901,6 +901,9 @@
 
 <!-- Phase 3- Task Id- 25086- BOB Step 2 -->
 <tabsconfigurationresource  deltaind="M" accesslevel="0" description="Hide/Show bobtransfersStep2_LifePolicyTransferMessage_security" name="bobtransfersStep2_LifePolicyTransferMessage_security"/>
+ 
+<!-- Phase 3- Bug Id-25684- Hide Bob Id -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show transfer bob id" name="bobtransferStep2_bobid"/>
     
 
 </tabsconfiguration>
