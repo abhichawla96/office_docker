@@ -1193,7 +1193,7 @@
                         approver="workflow_user" forward="homeAction" isapproval="Y" >
                         <email name="BOBTransferSendforApproval" eventname="BOBTransferSendforApproval" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
                   </status>
-                  <approver name="approver1" approverrole="SalesDirector,CarrierAdmin" executionsequence="0"></approver>   
+                  <approver deltaind="M" name="approver1" approverrole="SalesDirector,CarrierAdmin" executionsequence="0"></approver>   
 <!--              <approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver>
  -->            </event>
             <event deltaind="M" name="approveBOBTransferApproval" parentevent="sendForbobTransferApproval" type="approve">
