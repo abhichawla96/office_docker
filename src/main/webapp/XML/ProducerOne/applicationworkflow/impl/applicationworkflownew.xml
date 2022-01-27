@@ -1185,17 +1185,18 @@
 			</status>
 		</event>
 	</workflow>
-	<workflow name="BOBTransferApprovalWorkFlow">
-            <event name="sendForbobTransferApproval">
+	<!-- Phase 3- workflow config for wholesale transfer -->
+	<workflow deltaind="M" name="BOBTransferApprovalWorkFlow">
+            <event deltaind="M" name="sendForbobTransferApproval">
                   <status name="sendForBOBTransferApproval" workflowstatus="Pending Review" workflowfunction="Self Service" executionsequence="1"
                         statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
                         approver="workflow_user" forward="homeAction" isapproval="Y" >
                         <email name="BOBTransferSendforApproval" eventname="BOBTransferSendforApproval" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
                   </status>
-                  <approver name="approver1" approverrole="SalesDirector" executionsequence="0"></approver>   
-                  <approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver>
-            </event>
-            <event name="approveBOBTransferApproval" parentevent="sendForbobTransferApproval" type="approve">
+                  <approver name="approver1" approverrole="SalesDirector,CarrierAdmin" executionsequence="0"></approver>   
+<!--              <approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver>
+ -->            </event>
+            <event deltaind="M" name="approveBOBTransferApproval" parentevent="sendForbobTransferApproval" type="approve">
                   <status name="approveBOBTransferApproval" workflowstatus="Pending Review" workflowfunction="Self Service" executionsequence="1"
                         statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
                         approver="workflow_user" forward="homeAction" isapproval="Y">
@@ -1206,10 +1207,10 @@
                         approver="workflow_user" forward="homeAction" isapproval="Y">
                         <email name="BOBTransferApprove" eventname="BOBTransferApprove" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
                   </status>
-                  <approver name="approver1" status="approveBOBTransferApproval" executionsequence="0"></approver>   
-                  <approver name="approver2" status="approved" executionsequence="1"></approver>
-            </event>
-            <event name="disApproveBOBTransferApproval" parentevent="sendForbobTransferApproval" type="disapprove">
+                  <approver deltaind="M" name="approver1" status="approved" executionsequence="0"></approver>   
+<!--                   <approver name="approver2" status="approved" executionsequence="1"></approver>
+ -->            </event>
+            <event deltaind="M" name="disApproveBOBTransferApproval" parentevent="sendForbobTransferApproval" type="disapprove">
                   <status name="disApproveBOBTransferApproval" workflowstatus="Disapproved" workflowfunction="Self Service" executionsequence="1"
                         statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
                         approver="workflow_user" forward="homeAction" isapproval="Y">
@@ -1220,9 +1221,9 @@
                         approver="workflow_user" forward="homeAction" isapproval="Y">
                         <email name="BOBTransferReject" eventname="BOBTransferReject" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
                   </status>
-                        <approver name="approver1" status="disApproveBOBTransferApproval" executionsequence="0"></approver>      
-                      <approver name="approver2" status="disApproveBOBTransferApproval1" executionsequence="1"></approver>
-            </event>
+                      <approver deltaind="M" name="approver1" status="disApproveBOBTransferApproval1" executionsequence="0"></approver>      
+<!--                  <approver name="approver2" status="disApproveBOBTransferApproval1" executionsequence="1"></approver>
+ -->            </event>
             
             <event name="companyBOBTransferApproval">
                   <status name="approveSelfService" workflowstatus="Approved" workflowfunction="Self Service" executionsequence="1"
@@ -1242,7 +1243,7 @@
                   </status>
                   <approver deltaind="M" name="approver1" approverrole="SalesDirector,CarrierAdmin" executionsequence="0"></approver>   
             </event>
-            <event name="approveIndividualTransferApproval" parentevent="sendForIndividualTransferApproval" type="approve">
+            <event deltaind="M" name="approveIndividualTransferApproval" parentevent="sendForIndividualTransferApproval" type="approve">
                   <status name="approveIndividualTransferApproval" workflowstatus="Pending Review" workflowfunction="Self Service" executionsequence="1"
                         statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
                         approver="workflow_user" forward="homeAction" isapproval="Y">
@@ -1253,10 +1254,10 @@
                         approver="workflow_user" forward="homeAction" isapproval="Y">
                         <email name="IndividualTransferApprove" eventname="IndividualTransferApprove" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
                   </status>
-                  <approver name="approver1" status="approveIndividualTransferApproval" executionsequence="0"></approver>   
-                  <approver name="approver2" status="approved" executionsequence="1"></approver>
-            </event>
-            <event name="disApproveIndividualTransferApproval" parentevent="sendForIndividualTransferApproval" type="disapprove">
+                  <approver deltaind="M" name="approver1" status="approved" executionsequence="0"></approver>   
+<!--                   <approver name="approver2" status="approved" executionsequence="1"></approver>
+ -->            </event>
+            <event deltaind="M" name="disApproveIndividualTransferApproval" parentevent="sendForIndividualTransferApproval" type="disapprove">
                   <status name="disApproveIndividualTransferApproval" workflowstatus="Disapproved" workflowfunction="Self Service" executionsequence="1"
                         statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
                         approver="workflow_user" forward="homeAction" isapproval="Y">
@@ -1267,8 +1268,8 @@
                         approver="workflow_user" forward="homeAction" isapproval="Y">
                         <email name="IndividualTransferReject1" eventname="IndividualTransferReject1" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
                   </status>
-                        <approver name="approver1" status="disApproveIndividualTransferApproval" executionsequence="0"></approver>     
-                      <approver name="approver2" status="disApproveIndividualTransferApproval1" executionsequence="1"></approver>
-            </event>
+                       <approver deltaind="M" name="approver1" status="disApproveIndividualTransferApproval1" executionsequence="0"></approver>     
+<!--                    <approver name="approver2" status="disApproveIndividualTransferApproval1" executionsequence="1"></approver>
+ -->            </event>
       </workflow>
 </applicationworkflow>
