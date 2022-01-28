@@ -1,0 +1,15 @@
+<projectcomponents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/components_XSD.xsd">
+ <component metaobject="producer_number_transfer;producer_number_transfer_filters" name="bobtransfersStep2" stackdisplayname="Transfers Step2" displayname="BOB Transfers Step2">
+  
+  <action deltaind="M" name="next">
+   <actionparam deltaind="M" executionsequence="0" form="Y" name="method" paramid="method" pre="Y" val="transfersStep2Next"/>
+    	 </action>
+    	 
+    	 <action deltaind="M" name="submitsearch">
+    	
+	    
+	      
+	      <actionparam deltaind="M" eval="ProducerOneRule.isInetErrorListEmpty" executionsequence="1" form="Y" name="removeparams" paramid="removeparams" post="Y" remove="Y" removeparams="bobtransfers_search_list_mom_1,isproducersearch,agent_number_description_search,inet_event_id,method" session="Y"/>
+    </action>
+    </component>
+    </projectcomponents>
