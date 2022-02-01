@@ -904,6 +904,9 @@
  
 <!-- Phase 3- Bug Id-25684- Hide Bob Id -->
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show transfer bob id" name="bobtransferStep2_bobid"/>
+
+<!-- Phase 3- Hide Life Policy Transfer Form -->
+<tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/show download life form" name="bobtransferstep2_filedownload"/>
     
 
 </tabsconfiguration>
