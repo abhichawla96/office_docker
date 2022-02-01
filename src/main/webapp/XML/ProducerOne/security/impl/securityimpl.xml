@@ -2592,5 +2592,12 @@
   		<userdefinedaccesslevel accesstype="1"/>
   	</userdefined> 
   </protectedresource>
+  
+  <!-- Self Service-W-9 Does not display descriptions when edited -->
+  <protectedresource deltaind="D" defaultaccesstype="0" description="isAddingNewDocW9ForSelfserviceApproval" uniquename="isAddingNewDocW9ForSelfserviceApproval">
+    <userdefined executionsequence="0" ruleid="docW9DetailsForSelfServiceRule.isAddingNewDocW9ForSelfserviceApproval">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+  </protectedresource>
     
 </security> 
