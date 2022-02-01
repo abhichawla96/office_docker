@@ -146,7 +146,7 @@
 	</protectedresource>
 
 	<!-- Bug Id- CR-0060 Showing Decline button on received bucket start-->
-	<!--  <protectedresource deltaind="I" defaultaccesstype="0" operator="and"
+	  <protectedresource deltaind="I" defaultaccesstype="0" operator="and"
 		description="Hide/Show decline button on summary page"
 		uniquename="agencyListPublicSubmitNInvitationEdit_decline">
 	<businessrole roleid="MarketingAssistant">
@@ -157,7 +157,7 @@
 	<userdefinedaccesslevel accesstype="1" />
 	</userdefined>
 		
-	</protectedresource>  -->
+	</protectedresource>  
 <!-- Bug Id- CR-0060 Showing Decline button on received bucket end-->
 
 	<protectedresource deltaind="M" defaultaccesstype="0"
