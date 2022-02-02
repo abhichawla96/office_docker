@@ -583,17 +583,17 @@ protectedresourceuniquename="eno_question_aa_security" id="eno_question_aa" posi
   <!-- Phase 3- Extended field- Individual Transfer- start -->
   
   
-<field deltaind="I" isextendedfield="Y" name="bobtransfersStep2_dest_producer_code" screen="admin/bobtransfersStep2.html" section="bobtransfersStep2_freeform_contextdata_2" isrequired="Y" labelkey="bobtransfersStep2_dest_prod_label" labeldesc="Destination Producer Code" accesslevel="1" tabsconfigurationresourcename="bobtransfersStep2_dest_producer_code_security" protectedresourceuniquename="bobtransfersStep2_dest_producer_code_security" id="bobtransfersStep2_dest_producer_code" 
-position="#bobtransfersStep2_destination_producer_number_security_after#" lookupobjectsql="select p.prdcr_first_name+' '+p.prdcr_last_name+' ('+spa.sub_producer+')' as sub_producer_key, p.prdcr_first_name+' '+p.prdcr_last_name+' ('+spa.sub_producer+')' as sub_producer_value from sub_producer_association spa inner join person p on spa.person_id=p.person_id where producer_number_id in (select producer_number_id from producer_number where producer_number= '#agent_number_search#' )" displayfield="sub_producer_value" 
+<field deltaind="I" isextendedfield="Y" name="bobtransfersStep2_dest_producer_code" screen="admin/bobtransfersStep2.html" section="bobtransfersStep2_freeform_contextdata_2" isrequired="Y" labelkey="bobtransfersStep2_dest_prod_label" labeldesc="Destination Producer Code" accesslevel="1" tabsconfigurationresourcename="bobtransfersStep2_dest_producer_code_security" protectedresourceuniquename="bobtransfersStep2_dest_producer_code_security" id="bobtransfersStep2_dest_producer_code" objectcolumn="producer_number_transfer_id"
+position="#bobtransfersStep2_destination_producer_number_security_after#" lookupobjectsql="select p.prdcr_first_name+' '+p.prdcr_last_name+' ('+spa.sub_producer+')' as sub_producer_key, p.prdcr_first_name+' '+p.prdcr_last_name+' ('+spa.sub_producer+')' as sub_producer_value from sub_producer_association spa inner join person p on spa.person_id=p.person_id where producer_number_id in (select producer_number_id from producer_number where producer_number= '#producer_number_to_varchar_val#' )" displayfield="sub_producer_value" 
 valuefield="sub_producer_key" executionsequence="0" isencrypt="N" lookupobjecttype="sql" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0"
 displaytype="select" lookupmetaobject="sub_producer_association"> 
 </field> 
-
+<!-- 
 <field deltaind="M" id="bobtransfersStep2_producer_number_to_varchar" name="producer_number_to_varchar" screen="admin/bobtransfersStep2.html" section="bobtransfersStep2_freeform_contextdata_3" labelkey="bobtransfersStep2_toagentnumberlabel" tabsconfigurationresourcename="bobtransfersStep2_producer_number_to_varchar" protectedresourceuniquename="bobtransfersStep2_producer_number_to_varchar" >
 <event id="onchange" name="onchange" actiontype="ajaxpageblocklink" screen="admin/bobtransfersStep2.html" action="resetWholesaleTransferFilters" actiontypeid="bobtransfersStep2_dest_producer_code_security" executionsequence="0"> 
 <forward id="admin/bobtransfersStep2.html" screen="admin/bobtransfersStep2.html" executionsequence="0" />  
  </event> 
-  </field>
+  </field> -->
   
  <!-- Phase 3- Extended field- Individual Transfer-end -->
   
