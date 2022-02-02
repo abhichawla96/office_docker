@@ -263,6 +263,15 @@
    
 <!-- Phase 3- Bug Id- 25140- Product filter -->  
 <label deltaind="M"  labeldesc="Agency Code" labelkey="agencyadmindashboard_commission_productid_label"/>
+
+
+<!-- Phase 3- Contingency Commission Schedules -->  
+<label deltaind="M" labeldesc="Contingency Commission" labelkey="incentiveIDlabel"/>
+<label deltaind="M" labeldesc="Add New Contingency Commission Schedule" labelkey="addNewIncentiveSchedulelabel"/>
+<label deltaind="M" labeldesc="Contingency Commission Schedule" labelkey="incentivelabel"/>
+<label deltaind="M" labelkey="adminTabs2_incentive_schedule_security_menulabel" labeldesc="Contingency Commission Schedule"></label>
+<label deltaind="M" labelkey="incentive_schedule_filter_label" labeldesc="Contingency Commission"/>
+<label deltaind="I" labelkey="incentiveID_label" labeldesc="Contingency Commission"/>
    
    
 </labelconf>
