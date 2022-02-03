@@ -566,7 +566,7 @@
  
  <!-- Hiding Report from Producer Compliance 14/04/2021 -->
  <!-- Phase 2 - Bug Id- P2-057 - Report Dashboard - List Of producer Code Addresses -->
- <tabsconfigurationresource deltaind="M" accesslevel="1" name="isShowReportsOnAgencyAdminDashboard"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" name="isShowReportsOnAgencyAdminDashboard"/>
  
  <!-- Hiding Other Report Tabs -->
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide Show Adhoc report" name="showAdhocReport"/>
@@ -697,7 +697,7 @@
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_effective_date_self_service_security" name="bank_effective_date_self_service_security"/>
 
 <!-- Phase 2 - Feedback From BMIC - Hiding Contact Status in Update Agency Location  -->
-<tabsconfigurationresource deltaind="M" accesslevel="0" description="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security" name="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security"/>
+<!-- <tabsconfigurationresource deltaind="M" accesslevel="0" description="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security" name="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security"/> -->
 
 <!-- Phase 2- Bug Id- P2-097- Add Bank Information- Account Type column -->
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="bankInformationForSelfServiceApproval_account_type_checking_saving_security" name="bankInformationForSelfServiceApproval_account_type_checking_saving_security"/>

@@ -2599,5 +2599,13 @@
       <userdefinedaccesslevel accesstype="1"/>
     </userdefined>
   </protectedresource>
+  
+  <!-- START - UAT2 0054 - Hide Reports on Admin Dashboard Self Service -->
+  <protectedresource deltaind="I" defaultaccesstype="1" description="isShowReportsOnAgencyAdminDashboard" uniquename="isShowReportsOnAgencyAdminDashboard">
+   		<businessrole deltaind="I" roleid="AgencyAdmin">
+    		<roleaccesslevel accesstype="0"/>
+    	</businessrole>
+  </protectedresource>
+  <!-- END - UAT2 0054 - Hide Reports on Admin Dashboard Self Service -->
     
 </security> 
