@@ -273,5 +273,21 @@
 <label deltaind="M" labelkey="incentive_schedule_filter_label" labeldesc="Contingency Commission"/>
 <label deltaind="I" labelkey="incentiveID_label" labeldesc="Contingency Commission"/>
    
+<!-- Phase 3- Task Id-26329 -->
+<label deltaind="I" labelkey="bobtransfersStep1_enterfromagentnumberlabel" labeldesc="Enter From Agency Code"/>
+<label deltaind="I" labelkey="bobtransfersStep2_fromagentnumberlabel" labeldesc="From Agency Code"/>
+<label deltaind="I" labelkey="bobtransfersStep1_entertoagentnumberlabel" labeldesc="Enter To Agency Code"/>
+<label deltaind="I" labelkey="bobtransfersStep2_toagentnumberlabel" labeldesc="To Agency Code"/>
+<label deltaind="I" labelkey="bobtransferStep2_toagentnumberlabel" labeldesc="Enter Destination Agency Code"/>
+
+
+<!-- Phase 3- Task Id-26332 -->
+<label deltaind="M" labeldesc="Agency Code" labelkey="bobtransferStep2_agentnumberlabel"/>
+<label deltaind="M" labeldesc="Agency Code" labelkey="bobtransfersStep2_searchagentnumberlabel"/>
+<label deltaind="M"  labeldesc="Agency Code" labelkey="bobtransfersStep1_searchagentnumberlabel"/>
+ 
+   
+   
+   
    
 </labelconf>
