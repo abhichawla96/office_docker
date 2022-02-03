@@ -24,5 +24,23 @@
       <actionparam viewparam="Y" name="ISSKIPPAGEVIEW" paramid="ISSKIPPAGEVIEW" val="Y" form="Y"></actionparam>
   </action>
    
+     <!-- Bug 0033 -->
+   
+    <action deltaind="I" name="copyAgentBusinessToW9">
+      <actionparam executionsequence="0" name="inet_skip_validation" paramid="inet_skip_validation" val="Y" viewparam="Y"/>
+      <actionparam executionsequence="0" form="Y" name="refreshDropDown" paramid="refreshDropDown" val="Y" viewparam="Y"/>
+      <actionparam eval="AgentGeneralDetailsRule.isCopyAgentBusinessToW9CheckedTrue" executionsequence="2" form="Y" name="isDbAddressSkip" paramid="isDbAddressSkip" pre="Y" val="Y"/>
+      <workflow eval="AgentGeneralDetailsRule.isCopyAgentBusinessToW9CheckedTrue" name="copyAgentBusinessToW9" seq="0">
+			<function executionsequence="1" expression="assign(:country_code_w9,:country_code_business);assign(:addressline1_w9,:addressline1_business);
+			assign(:addressline2_w9,:addressline2_business);assign(:city_w9,:city_business);assign(:state_id_w9,:state_id_business);assign(:zip_w9,:zip_business);
+			assign(:county_w9,:county_business);assign(:phone_w9,:phone_business);assign(:fax_w9,:fax_business);assign(:mobile_w9,:mobile_business);
+			assign(:e_mail_w9,:e_mail_business);assign(:e_mail_w9,:e_mail_business);assign(:extn_w9,:extn_business);assign(:billing_terms_id_w9,:billing_terms_id_business);
+			assign(:territory_id_w9,:territory_id_business);assign(:agency_zip_code_2_w9,:agency_zip_code_2_business);assign(:agency_foreign_addr_in_w9,:agency_foreign_addr_in_business);
+			assign(:po_box_w9,:po_box_business);assign(:po_box_w9,:po_box_business);assign(:alt_phone_w9,:alt_phone_business);assign(:alt_extn_w9,:alt_extn_business);
+			assign(:misc_phone_w9,:misc_phone_business);assign(:addressline3_w9,:addressline3_business);assign(:email_preferred_ind_w9,:email_preferred_ind_business);
+			assign(:phone_preferred_ind_w9,:phone_preferred_ind_business);assign(:alt_email_w9,:alt_email_business);" name="copyAgentBusinessToW9"/>
+	  </workflow>
+     </action>
+     
   </component>
 </projectcomponents>
