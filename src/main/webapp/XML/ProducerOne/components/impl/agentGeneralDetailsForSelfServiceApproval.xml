@@ -42,5 +42,15 @@
 	  </workflow>
      </action>
      
+     <!-- START - UAT2 0033 - Preloading Business Address -->
+     <action deltaind="M" name="refreshCurrentPageData">
+      		<actionparam deltaind="I" executionsequence="0" form="Y" name="person_agency_id" paramid="person_agency_id" session="Y"/>
+      		<workflow deltaind="I" name="populateBusinessAdd" seq="14">
+        		<databaseoperation eval="ProducerOneRule.isPersonIdNull" metaobject="address" executionsequence="1" name="populateBusinessAdd" operation="3" 
+        sqlstmt="select addressline1 as addressline1_business, addressline2 as addressline2_business, city as city_business, state_id as state_id_business, county as county_business, zip as zip_business, phone as phone_business, mobile as mobile_business from address where agency_id = #person_agency_id# and type=1 and person_id is null"/>
+	  		</workflow>
+      </action>
+     <!-- END - UAT2 0033 - Preloading Business Address -->
+   
   </component>
 </projectcomponents>

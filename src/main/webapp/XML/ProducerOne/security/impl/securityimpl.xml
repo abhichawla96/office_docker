@@ -2607,5 +2607,13 @@
     	</businessrole>
   </protectedresource>
   <!-- END - UAT2 0054 - Hide Reports on Admin Dashboard Self Service -->
+  
+  <!-- START - UAT2 0055 - Contact Status Grey out in Self Service -->
+  <protectedresource deltaind="I" defaultaccesstype="1" description="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security" uniquename="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security">
+		<businessrole roleid="AgencyAdmin" executionsequence="0">
+			<roleaccesslevel accesstype="2" />
+		</businessrole>
+	</protectedresource>
+  <!-- END - UAT2 0055 - Contact Status Grey out in Self Service -->
     
 </security> 

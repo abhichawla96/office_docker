@@ -78,7 +78,10 @@
 	<rule deltaind="I" id="greyOutHBASalesSupportRequests" expression="isEqual(:greyout_HBA_SalesSupportRequests,Y);"></rule>
 	<rule deltaind="I" id="greyOutHBADropDownSalesSupportRequests" expression="andCondition(isEqual(:member_of_hba_ss,Y),isEqualsIgnoreCase(:roles,MarketingAssistant));"></rule>
 	<!-- END - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->
-
+	
+	<!-- START - UAT2 0033 - Preloading Business Address -->
+	<rule deltaind="I" id="isPersonIdNull" expression="isEmpty(:person_id);"/>
+	<!-- END - UAT2 0033 - Preloading Business Address -->
 	</ruleset>
 
 
