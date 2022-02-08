@@ -33,5 +33,15 @@
    </action>
    <!-- END - UAT2 Bug Id 0017 - Grey out CBIA Designation -->
    
+   <!-- START - QA2_008_Self Service_Other_Initiate Email Notification -->
+   <action deltaind="M" name="submitRequest"> 
+   <workflow deltaind="I" name="selfServiceInitiateEmail" seq="9">
+     <databaseoperation deltaind="I" executionsequence="0" metaobject="userprofiles" name="getMarketAssistantEmail" operation="3" sqlstmt="select e_mail as e_mail from userprofiles where user_id=#workflow_user#"/>
+     <databaseoperation deltaind="I" executionsequence="1" metaobject="agency_master" name="getAgencyName" operation="3" sqlstmt="select name as Agency_Name from agency_master where agency_id = (select agency_id from requests_ss where request_ss_id = #request_ss_id#)"/>
+     <email deltaind="I" eventname="InitiateSelfServiceRequest" executionsequence="2" name="InitiateSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail" objectid="agency_id"/>
+   </workflow>
+   </action>
+   
+   
   </component>
 </projectcomponents>
