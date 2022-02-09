@@ -286,6 +286,17 @@
 <label deltaind="M" labeldesc="Agency Code" labelkey="bobtransfersStep2_searchagentnumberlabel"/>
 <label deltaind="M"  labeldesc="Agency Code" labelkey="bobtransfersStep1_searchagentnumberlabel"/>
  
+<!-- Phase 3- Renaming Bonus to Commission Contingency in Schedule, Hierarchy and Statement --> 
+<label deltaind="M" labeldesc="Master Agency Code" labelkey="attachment_master_producer_number_label"/>
+<label deltaind="M" labelkey="isShowIncentiveHierarchyTab_menulabel" labeldesc="Contingency Commission Hierarchy"></label>
+<label deltaind="M" labeldesc="Contingency Commission Hierarchy" labelkey="incentivehierarchylabel"/>
+<label deltaind="M" labeldesc="Contingency Commission Hierarchy" labelkey="incentivehierarchylabel"/>
+<label deltaind="M" labeldesc="Contingency Commission Statements" labelkey="incentive_statements_label"/>
+<label deltaind="M" labeldesc="Contingency Commission Statement" labelkey="incentiveStatementlabel"/>
+<label deltaind="M" labeldesc="Contingency Commission Year" labelkey="incentiveStatements_bonus_year_label"/>
+<label deltaind="M"  labeldesc="Contingency Commission" labelkey="incentiveStatements_payment_label"/>
+<label deltaind="M" labeldesc="Contingency Commission Sch ID" labelkey="bounsAttached_incentive_schedule_id_label"/>
+<label deltaind="M" labeldesc="Contingency Commission Sch ID" labelkey="bounsAvailable_incentive_schedule_id_label"/>
    
    
    
