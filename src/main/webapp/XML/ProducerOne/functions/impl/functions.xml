@@ -32,6 +32,9 @@
   <functiondefinition deltaind="I" classname="com.userbo.common.impl.ProducerOneUtilsImpl" method="showContactTypeList" name="showContactTypeList" returntype="V">
     <argument datatype="com.util.Context" name="context" seq="0"/>
   </functiondefinition>
-  
+    <!-- phase 3 - indivdual transfer  -->
+   <functiondefinition deltaind="I" classname="com.userbo.common.impl.ProducerOneUtilsImpl" method="getToSubProdCodeForIndTransfer" name="getToSubProdCodeForIndTransfer" returntype="V">
+    <argument datatype="com.util.Context" name="context" seq="0"/>
+  </functiondefinition>
   
 </functionsdef>

@@ -761,5 +761,30 @@ public static String attachAndSendEmail (Context ctx)
 		return;
 	}	
 
+	public static void getToSubProdCodeForIndTransfer(Context ctx) {
+		try {
+			String subProdNum=null;
+			List spData =(List)ctx.get("transfersStep2_list_mom_2");
+			if(spData !=null && spData.size()>0){
+				/*for (Object object : spData) {
+					
+				}*/
+				for (int i = 0; i < spData.size(); i++) 
+				{
+					Map map = (Map) spData.get(i);
+					if(map.get("bobtransfersStep2_dest_producer_code")!=null){
+						subProdNum=map.get("bobtransfersStep2_dest_producer_code").toString();
+						break;
+					}
+				}
+				ctx.put("bobtransfersStep2_dest_producer_code",subProdNum );
+			
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
 	
 }
