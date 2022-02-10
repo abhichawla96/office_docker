@@ -62,7 +62,7 @@
    <field deltaind="M" id="advanceSearch_producer_company_id" screen="carrier/advanceSearch.html" name="producer_company_id" isrequired="N" lookupobjectsql="select company_id,abbreviation,npn, description, tax_id, zip from carriercompanies_lku" displayfield="description" valuefield="company_id" labelkey="adv_producer_company_id_label" tabsconfigurationresourcename="adv_producer_company_id_security" protectedresourceuniquename="adv_producer_company_id_security" isextendedfield="N" executionsequence="0" isencrypt="N" lookupobjecttype="sql" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
  
  <!-- Sprint 3 - creation & maintenance of contact -->
- <field deltaind="M" id="agentGeneralDetails_LOGIN_ID" screen="carrier/agentGeneralDetails.html" name="LOGIN_ID" isrequired="N" labelkey="login_id_label" tabsconfigurationresourcename="contact_details_login_id_security" protectedresourceuniquename="contact_details_login_id_security" />
+ <!-- <field deltaind="M" id="agentGeneralDetails_LOGIN_ID" screen="carrier/agentGeneralDetails.html" name="LOGIN_ID" isrequired="N" labelkey="login_id_label" tabsconfigurationresourcename="contact_details_login_id_security" protectedresourceuniquename="contact_details_login_id_security" /> -->
    
    <!-- Sprint 3 - Agency Code Association -->
   <field deltaind="M" id="selectedContacttype_producerAssociationContact" screen="carrier/producerAssociationContact.html" name="selectedContacttype" isrequired="N" labelkey="producerAssociationContact_contact_type_label" tabsconfigurationresourcename="producerAssociationContact_contact_type_security" protectedresourceuniquename="producerAssociationContact_contact_type_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
@@ -276,9 +276,9 @@
 	
 	<!-- Bug id : 160 -->
 	
-  <field deltaind="M" id="agentGeneralDetails_LOGIN_ID" screen="carrier/agentGeneralDetails.html" name="LOGIN_ID" isrequired="N" requiredeval="ProducerOneRule.checkLoginIdMandatoryAstrisk" labelkey="login_id_label" tabsconfigurationresourcename="contact_details_login_id_security" protectedresourceuniquename="contact_details_login_id_security" tooltip="Login id of the contact" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" isdisplayonhistory="Y">
+  <!-- <field deltaind="M" id="agentGeneralDetails_LOGIN_ID" screen="carrier/agentGeneralDetails.html" name="LOGIN_ID" isrequired="N" requiredeval="ProducerOneRule.checkLoginIdMandatoryAstrisk" labelkey="login_id_label" tabsconfigurationresourcename="contact_details_login_id_security" protectedresourceuniquename="contact_details_login_id_security" tooltip="Login id of the contact" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" isdisplayonhistory="Y">
     <validation deltaind="M" isskip="Y" name="checkLoginIdMandatory" expression="if(andCondition(isEqual(:agent_loginid_mandatory,Y),isEmpty(:LOGIN_ID))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="loginIdEmptyErrorkey" ruleid="ProducerOneRule.checkLoginIdMandatory" executionsequence="0" />
-  </field>
+  </field> -->
   
   
   <!-- Bug id : 58 -->
@@ -568,11 +568,13 @@
 	  
 	<!-- Phase 2 - Upgrade - LoginID non-mandatory -->
 	
+	<!-- START - UAT2 - Login Id Non Mandatory -->
 	<field deltaind="M" id="agentGeneralDetails_LOGIN_ID" screen="carrier/agentGeneralDetails.html" name="LOGIN_ID" isrequired="N" requiredeval="ProducerOneRule.checkLoginIdMandatoryAstrisk" labelkey="login_id_label" tabsconfigurationresourcename="contact_details_login_id_security" protectedresourceuniquename="contact_details_login_id_security" tooltip="Login id of the contact" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" isdisplayonhistory="Y" section="entityPersonDetails_freeform_contextdata_2">
-    <validation name="checkLoginIdMandatory" expression="if(andCondition(isEqual(:agent_loginid_mandatory,Y),isEmpty(:LOGIN_ID))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="loginIdEmptyErrorkey" ruleid="ProducerOneRule.checkLoginIdMandatory" executionsequence="0" />
-    <validation  name="checkLoginIDExistsForUpdateAgentGeneralDetails" expression="if(andCondition(isEqual(:agent_loginid_mandatory,Y),isGreaterThan(getBeanProperty(executeDBOperation(context,a,3,SqlStmts.sqlStatementsviewcheckLoginIDForUpdateAgentGeneralDetails),loginid_count),0))=>populateError(context,LOGIN_ID,loginIdAlreadyExistsErrorKey);isEqual(1,1);->isEqual(1,1););" message="loginIdAlreadyExistsErrorKey" ruleid="AgentGeneralDetails.checkLoginIDExistsForUpdateAgentGeneralDetails" executionsequence="1" />
-  </field>
-  
+    	<validation deltaind="D" name="checkLoginIdMandatory" expression="if(andCondition(isEqual(:agent_loginid_mandatory,Y),isEmpty(:LOGIN_ID))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="loginIdEmptyErrorkey" ruleid="ProducerOneRule.checkLoginIdMandatory" executionsequence="0" />
+    	<validation deltaind="M" name="checkLoginIDExistsForUpdateAgentGeneralDetails" expression="if(andCondition(isEqual(:agent_loginid_mandatory,Y),isGreaterThan(getBeanProperty(executeDBOperation(context,a,3,SqlStmts.sqlStatementsviewcheckLoginIDForUpdateAgentGeneralDetails),loginid_count),0))=>populateError(context,LOGIN_ID,loginIdAlreadyExistsErrorKey);isEqual(1,1);->isEqual(1,1););" message="loginIdAlreadyExistsErrorKey" ruleid="AgentGeneralDetails.checkLoginIDExistsForUpdateAgentGeneralDetails" executionsequence="1" />
+  	</field>
+  	<!-- END - UAT2 - Login Id Non Mandatory -->
+  	
   <!--Upgrade Bug Id- 031 Self Service start --> 
  <field deltaind="M" id="agencyFunctions_selectFunctionType_suspension_date" screen="admin/agencyFunctions_selectFunctionType.html" name="suspension_date" isrequired="Y" labelkey="suspension_date_label" tabsconfigurationresourcename="agencyFunctions_suspension_date_security" protectedresourceuniquename="agencyFunctions_suspension_date_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="agencyFunctions_selectFunctionType_freeform_contextdata_2"> 
     <validation name="checkAgencyFunctionsFilterDateValidation" expression="checkAgencyFunctionsFilterDateValidation(context)" message="primaryAgencyCodeEmptyErrorKey" ruleid="AgencyFunctionsRule.checkAgencyFunctionsFilterDateValidation" executionsequence="0" /> 
