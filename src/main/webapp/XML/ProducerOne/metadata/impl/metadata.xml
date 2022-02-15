@@ -10307,8 +10307,9 @@
           <valuefield field="license_num"/>
         </dropdown>
       </property>
-      <property contextfield="N" deleteind="N" field="request_period" formdisplay="Y" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="Y" persistent="Y" propertylength="200" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="7020" viewlength="200">
-        <dropdown dropdowntype="sql" isrowlink="N" metaobject="requests" name="getCommissionPeriodListByAgencyId" sqlstmt="select distinct (case when month(period) &gt;=10 then cast(month(period) as varchar(10)) else '0'+cast(month(period) as varchar(10)) end) + '-' + cast(year(period) as varchar(10)) as period from Commission_Statement_Summary where agency_id=#request_agency_id#">
+         <!-- Phase 3- Bug Id- 27233- Period Dropdown -->   
+      <property deltaind="M" contextfield="N" deleteind="N" field="request_period" formdisplay="Y" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="Y" persistent="Y" propertylength="200" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="7020" viewlength="200">
+        <dropdown deltaind="M" dropdowntype="sql" isrowlink="N" metaobject="requests" name="getCommissionPeriodListByAgencyId" sqlstmt="select distinct (case when month(period) &gt;10 then cast(month(period) as varchar(10)) else '0'+cast(month(period) as varchar(10)) end) + '-' + cast(year(period) as varchar(10)) as period from Commission_Statement_Summary where agency_id=#request_agency_id# and month(period) &lt; month(getdate())">
           <displayfield field="period"/>
           <valuefield field="period"/>
         </dropdown>
