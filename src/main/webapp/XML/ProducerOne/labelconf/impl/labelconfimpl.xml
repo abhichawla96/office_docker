@@ -301,6 +301,8 @@
 <!-- Phase 3- Renaming Commission Reports- 25,000 to 50,000 --> 
 <label deltaind="I"  labeldesc="This report displays commission paid details at master level which exceeding $50000." labelkey="branch19"/>
    
+<!-- Phase 3; Bonus Type -->
+<label deltaind="M" labelkey="statement_bonus_type_label" labeldesc="Contingency Commission Type"/>
    
    
 </labelconf>
