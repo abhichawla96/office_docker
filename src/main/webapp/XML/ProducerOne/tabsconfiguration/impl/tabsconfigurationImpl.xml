@@ -206,14 +206,11 @@
   <!-- Sprint 3 : Agency and Agent Demographics- General (creation&main of Agency code) -->
   
   <tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyCodeList_block_surplus_lines_indicator_security"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowIsCommissionable" name="isShowIsCommissionable"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowProdNumSubAgencyCodeTrue" name="isShowProdNumSubAgencyCodeTrue"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="eo_insurance_required_security" name="eo_insurance_required_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowPolicyFeeApplicable" name="isShowPolicyFeeApplicable"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowAL3Applicable" name="isShowAL3Applicable"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowFixedCommissionPlan" name="isShowFixedCommissionPlan"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowCCBOverriddenCheckBox" name="isShowCCBOverriddenCheckBox"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowIsBonusApplicableCheckBox" name="isShowIsBonusApplicableCheckBox"/>
  <!--  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowProdNumDBA" name="isShowProdNumDBA"/> change request 14 -->
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="isShowProdNumDBA" name="isShowProdNumDBA"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="producerDetail_distribution_type_id_security" name="producerDetail_distribution_type_id_security"/>
