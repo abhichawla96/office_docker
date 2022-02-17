@@ -248,4 +248,7 @@
  <!-- Upgrade- Bug Id- U077- Email in Agency Termination -->
  <label deltaind="M" labelkey="email_businessaddress_label" labeldesc="Email" />
    
+  <!-- Customization to configuration changes -->
+  <label deltaind="M" labeldesc="How did you learn about Company" labelkey="learn_about_label"/>
+  
 </labelconf>

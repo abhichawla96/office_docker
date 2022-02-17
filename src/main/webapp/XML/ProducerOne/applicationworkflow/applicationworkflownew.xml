@@ -178,7 +178,7 @@
 				forward="homeAction">
 				<email name="PublicSubmissonDeclined" eventname="PublicSubmissonDeclined" objectid="aar_requestid" objecttype="Onboarding">
 					<parameter name="System_Name" value="clientName" executionsequence="0"></parameter>
-					<parameter name="Entity_Name" value="Entity_Name" executionsequence="1"></parameter>
+					 <parameter name="Entity_Name" value="Entity_Name" executionsequence="1"></parameter> 
 				</email>
 			</status>
 		</event>
