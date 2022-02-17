@@ -62,7 +62,7 @@
    <field deltaind="M" id="advanceSearch_producer_company_id" screen="carrier/advanceSearch.html" name="producer_company_id" isrequired="N" lookupobjectsql="select company_id,abbreviation,npn, description, tax_id, zip from carriercompanies_lku" displayfield="description" valuefield="company_id" labelkey="adv_producer_company_id_label" tabsconfigurationresourcename="adv_producer_company_id_security" protectedresourceuniquename="adv_producer_company_id_security" isextendedfield="N" executionsequence="0" isencrypt="N" lookupobjecttype="sql" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
  
  <!-- Sprint 3 - creation & maintenance of contact -->
- <field deltaind="M" id="agentGeneralDetails_LOGIN_ID" screen="carrier/agentGeneralDetails.html" name="LOGIN_ID" isrequired="N" labelkey="login_id_label" tabsconfigurationresourcename="contact_details_login_id_security" protectedresourceuniquename="contact_details_login_id_security" />
+ <!-- <field deltaind="M" id="agentGeneralDetails_LOGIN_ID" screen="carrier/agentGeneralDetails.html" name="LOGIN_ID" isrequired="N" labelkey="login_id_label" tabsconfigurationresourcename="contact_details_login_id_security" protectedresourceuniquename="contact_details_login_id_security" /> -->
    
    <!-- Sprint 3 - Agency Code Association -->
   <field deltaind="M" id="selectedContacttype_producerAssociationContact" screen="carrier/producerAssociationContact.html" name="selectedContacttype" isrequired="N" labelkey="producerAssociationContact_contact_type_label" tabsconfigurationresourcename="producerAssociationContact_contact_type_security" protectedresourceuniquename="producerAssociationContact_contact_type_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
@@ -123,11 +123,18 @@
 	  	<forward id="carrier/agentGeneralDetails.html" screen="carrier/agentGeneralDetails.html" />
 	 </event>
 	 
+	<mapping name= "MappingA2SSCBIA" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" section="entityPersonDetails_freeform_contextdata_2" field="ss_cbia_designation">
+	</mapping>
+	 
 	</field>
 	
 	<field deltaind="I" isextendedfield="Y" name="review_year_recieved" screen="carrier/agentGeneralDetails.html" objectcolumn="person_id" section="entityPersonDetails_freeform_contextdata_2" displaytype="text" 
 	isrequired="Y" labelkey="year_recieved_label" labeldesc="Year Received" accesslevel="1" tabsconfigurationresourcename="year_recieved_security" mappedto="f25"
 	protectedresourceuniquename="year_recieved_security" id="review_year_recieved" position="#review_cbia_designation_after#">
+	
+	<mapping name= "MappingA2SSCBIAYrReceived" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" section="entityPersonDetails_freeform_contextdata_2" field="ss_year_recieved">
+	</mapping>
+		
 	</field>
 	
 	
@@ -147,7 +154,10 @@
 		lookupobjectname="dividend_dist_lku" lookupobjecttype="mastertable"
 	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f28">
 			<validation deltaind="I" name="isDividendDistribution1Selected" expression="if(isEmpty(:dividend_distribution)=&gt;isEqual(1,2)-&gt;isEqual(1,1))" message="DividendDistributionErrorKey" executionsequence="0" />
-		</field> 
+			
+			<mapping name= "MappingA2SSDivDist" screen="carrier/entityGeneralDetailsForSelfServiceApproval.html" section="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_3234" field="dividend_distribution_ss">
+	</mapping>
+	</field>
 		
 		<!-- Policyholder Copies -->
 		
@@ -157,6 +167,8 @@
 		lookupobjectname="policyholder_copies_lku" lookupobjecttype="mastertable"
 	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f27">
 			<validation deltaind="I" name="isPolicyholder_copies1Selected" expression="if(isEmpty(:dividend_distribution)=&gt;isEqual(1,2)-&gt;isEqual(1,1))" message="PolicyHolderCopiesErrorKey" executionsequence="0" />
+			<mapping name= "MappingA2SSPolicyHolderCopies" screen="carrier/entityGeneralDetailsForSelfServiceApproval.html" section="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_3235" field="policyholder_copies_ss">
+			</mapping>
 		</field>
 		
  	<!-- dividend distribution agency review page -->
@@ -205,6 +217,9 @@
 		lookupobjectname="agent_copies_lku" lookupobjecttype="mastertable"
 	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f21">
 	  	<validation deltaind="I" name="isAgentcopiesSelected" expression="if(isEmpty(:agent_copies)=&gt;isEqual(1,2)-&gt;isEqual(1,1))" message="AgentCopiesErrorKey" executionsequence="0" />
+	  	
+	  	<mapping name= "MappingA2SSAgentCopies" screen="carrier/entityGeneralDetailsForSelfServiceApproval.html" section="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_3236" field="agent_copies_ss">
+	</mapping>
 	
 		</field>
 	
@@ -214,14 +229,19 @@
 	protectedresourceuniquename="entityGeneralDeetails_hba_que_security" id="member_of_hba" position="#is_employee_after#" mappedto="f29">
 	<event id="onchange" name="onchange" screen="carrier/entityGeneralDetails.html" actiontype="ajaxpageblocklink" action="refreshCounty_business" actiontypeid="entityGeneralDeetails_hba_dropdown_security" executionsequence="0">
 	  	<forward id="carrier/entityGeneralDetails.html" screen="carrier/entityGeneralDetails.html" />
-	 </event>	 
+	 </event>
+	 
+	 <mapping name= "MappingA2SS" screen="carrier/entityGeneralDetailsForSelfServiceApproval.html" section="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_10" field="member_of_hba_ss">
+	</mapping>
 	</field>
 	
 	<field deltaind="I" isextendedfield="Y" name="entity_gen_det_hba_dropdown" screen="carrier/entityGeneralDetails.html" objectcolumn="agency_id" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="select" 
 	isrequired="Y" labelkey="hba_dropdown_label" labeldesc="If Yes, please select the HBA Chapter you are a member of " accesslevel="1" tabsconfigurationresourcename="entityGeneralDeetails_hba_dropdown_security" 
 	protectedresourceuniquename="entityGeneralDeetails_hba_dropdown_security" id="entity_gen_det_hba_dropdown" position="#segment_before#" style="width=250px;"
-	lookupobjectname="hba_chapter_lku" lookupobjecttype="mastertable"
-	  	valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f30" > 
+	lookupobjectname="hba_chapter_lku" lookupobjecttype="mastertable" valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f30" >
+	
+	<mapping name= "MappingA2SSHBADropDown" screen="carrier/entityGeneralDetailsForSelfServiceApproval.html" section="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_2" field="entity_gen_det_hba_dropdown_ss">
+	</mapping>
 	</field>
 	
 	<!-- esignature/review screen hba field -->
@@ -256,9 +276,9 @@
 	
 	<!-- Bug id : 160 -->
 	
-  <field deltaind="M" id="agentGeneralDetails_LOGIN_ID" screen="carrier/agentGeneralDetails.html" name="LOGIN_ID" isrequired="N" requiredeval="ProducerOneRule.checkLoginIdMandatoryAstrisk" labelkey="login_id_label" tabsconfigurationresourcename="contact_details_login_id_security" protectedresourceuniquename="contact_details_login_id_security" tooltip="Login id of the contact" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" isdisplayonhistory="Y">
+  <!-- <field deltaind="M" id="agentGeneralDetails_LOGIN_ID" screen="carrier/agentGeneralDetails.html" name="LOGIN_ID" isrequired="N" requiredeval="ProducerOneRule.checkLoginIdMandatoryAstrisk" labelkey="login_id_label" tabsconfigurationresourcename="contact_details_login_id_security" protectedresourceuniquename="contact_details_login_id_security" tooltip="Login id of the contact" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" isdisplayonhistory="Y">
     <validation deltaind="M" isskip="Y" name="checkLoginIdMandatory" expression="if(andCondition(isEqual(:agent_loginid_mandatory,Y),isEmpty(:LOGIN_ID))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="loginIdEmptyErrorkey" ruleid="ProducerOneRule.checkLoginIdMandatory" executionsequence="0" />
-  </field>
+  </field> -->
   
   
   <!-- Bug id : 58 -->
@@ -440,7 +460,7 @@
 <validation name="isEmptycall_purpose" expression="if(isEqual(:saveCallReportClicked,Y)=&gt;isNot(isEmpty(:call_purpose))-&gt;isEqual(1,1));" message="isEmptycall_purpose" ruleid="ProducerOneRule.isEmptycall_purpose" executionsequence="1" />
 </field>
   
-  <!--Phase 2- Bug Id-P2-029  --> 
+  <!--Phase 2- Bug Id-P2-029 --> 
  <field deltaind="I" id="addAgencyCallReportDetails_call_purpose" screen="carrier/addAgencyCallReportDetails.html" name="call_purpose" isrequired="Y" labelkey="purpose_of_call_label" tabsconfigurationresourcename="hide_show_purpose_of_call_security" protectedresourceuniquename="hide_show_purpose_of_call_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
 	<validation name="isEmptycall_purpose" expression="if(isEqual(:saveCallReportClicked,Y)=&gt;isNot(isEmpty(:call_purpose))-&gt;isEqual(1,1));" message="isEmptycall_purpose" ruleid="ProducerOneRule.isEmptycall_purpose" executionsequence="1" />
   </field>
@@ -448,12 +468,16 @@
   <field deltaind="I" id="addAgencyCallReportDetails_date_time" screen="carrier/addAgencyCallReportDetails.html" name="date_time" isrequired="Y" labelkey="callreport_block_date_time_label" tabsconfigurationresourcename="callreport_block_date_time_security" protectedresourceuniquename="callreport_block_date_time_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
  
   <!-- Phase 2 - Self Service US :SS-002-09 -->
-	  <field deltaind="I" id="w9_addressline1_agent_selfservice_security" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" name="addressline1_w9" isrequired="Y" labelkey="streetAddress1_residence_agent_selfservice_Field_Label" tabsconfigurationresourcename="w9_addressline1_agent_selfservice_security" protectedresourceuniquename="w9_addressline1_agent_selfservice_security" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N"></field>
-      <field deltaind="M" id="agentGeneralDetailsForSelfServiceApproval_zip_w9" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" name="zip_w9" isrequired="Y" labelkey="zipCode_residence_agent_selfservice_Field_Label" tabsconfigurationresourcename="w9_zip_code_agent_selfservice_security" protectedresourceuniquename="w9_zip_code_agent_selfservice_security" isextendedfield="N" executionsequence="0" isencrypt="N" format="zip" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0"></field>
-      <field deltaind="I" id="w9_city_agent_selfservice_security" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" name="city_w9" isrequired="Y" labelkey="city_residence_agent_selfservice_Field_Label" tabsconfigurationresourcename="w9_city_agent_selfservice_security" protectedresourceuniquename="w9_city_agent_selfservice_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
+  <!-- changed isrequired="N" for bug id 0035 and 0036 add/update contact start -->
+	  <field deltaind="I" id="w9_addressline1_agent_selfservice_security" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" name="addressline1_w9" isrequired="N" labelkey="streetAddress1_residence_agent_selfservice_Field_Label" tabsconfigurationresourcename="w9_addressline1_agent_selfservice_security" protectedresourceuniquename="w9_addressline1_agent_selfservice_security" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N"></field>
+      <field deltaind="M" id="agentGeneralDetailsForSelfServiceApproval_zip_w9" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" name="zip_w9" isrequired="N" labelkey="zipCode_residence_agent_selfservice_Field_Label" tabsconfigurationresourcename="w9_zip_code_agent_selfservice_security" protectedresourceuniquename="w9_zip_code_agent_selfservice_security" isextendedfield="N" executionsequence="0" isencrypt="N" format="zip" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0"></field>
+      <field deltaind="I" id="w9_city_agent_selfservice_security" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" name="city_w9" isrequired="N" labelkey="city_residence_agent_selfservice_Field_Label" tabsconfigurationresourcename="w9_city_agent_selfservice_security" protectedresourceuniquename="w9_city_agent_selfservice_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
+  <!-- changed isrequired="N" for bug id 0035 and 0036 add/update contact end -->
+  
   <!-- Phase 2- Reg-005 - Residence Address Drop-down in Add/Update Contact -->
-      <field deltaind="I" id="w9_state_agent_selfservice_security" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" name="state_id_w9" isrequired="Y" lookupobjectmetaobject="state_lku" lookupobjectprocedure="GetCountryStateMapping_p" lookupobjectprocedureparameters="country_code=:country_code_w9" displayfield="description" valuefield="state_id" labelkey="state_residence_agent_selfservice_field_label" tabsconfigurationresourcename="w9_state_agent_selfservice_security" protectedresourceuniquename="w9_state_agent_selfservice_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
-
+    <!-- changed isrequired="N" for bug id 0035 and 0036 add/update contact start -->
+  	<field deltaind="I" id="w9_state_agent_selfservice_security" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" name="state_id_w9" isrequired="N" lookupobjectmetaobject="state_lku" lookupobjectprocedure="GetCountryStateMapping_p" lookupobjectprocedureparameters="country_code=:country_code_w9" displayfield="description" valuefield="state_id" labelkey="state_residence_agent_selfservice_field_label" tabsconfigurationresourcename="w9_state_agent_selfservice_security" protectedresourceuniquename="w9_state_agent_selfservice_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
+	<!-- changed isrequired="N" for bug id 0035 and 0036 add/update contact end -->
   <!--Phase 2- Bug Id-P2-046- Prospect Market Information- Final Questions Asterisk  --> 
   	<field deltaind="I" id="prospectMarketInformation_learn_about" screen="carrier/prospectMarketInformation.html" name="learn_about" isrequired="Y" labelkey="learn_about_label" tabsconfigurationresourcename="learn_about_security" protectedresourceuniquename="learn_about_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
  	<field deltaind="I" id="prospectMarketInformation_interest_in_other_business" screen="carrier/prospectMarketInformation.html" name="interest_in_other_business" isrequired="Y" labelkey="interest_in_other_business_label" tabsconfigurationresourcename="interest_in_other_business_security" protectedresourceuniquename="interest_in_other_business_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
@@ -491,34 +515,34 @@
 </field>
 
 	<!-- phase 2 - start - Extended fields -->
-	<field deltaind="I" isextendedfield="Y" name="member_of_hba_ss" screen="carrier/entityGeneralDetailsForSelfServiceApproval.html" objectcolumn="agency_id" section="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_2" displaytype="radio" isrequired="Y" labelkey="entityGeneralDeetails_member_of_hba_ss_label" labeldesc="Are you a member of an HBA?" accesslevel="1" tabsconfigurationresourcename="entityGeneralDeetails_hba_que_ss_security" protectedresourceuniquename="entityGeneralDeetails_hba_que_ss_security" id="member_of_hba_ss" position="#isdbaregistered_after#" mappedto="f29">
+	<field deltaind="I" isextendedfield="Y" name="member_of_hba_ss" screen="carrier/entityGeneralDetailsForSelfServiceApproval.html" objectcolumn="request_ss_id" section="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_2" displaytype="radio" isrequired="Y" labelkey="entityGeneralDeetails_member_of_hba_ss_label" labeldesc="Are you a member of an HBA?" accesslevel="1" tabsconfigurationresourcename="entityGeneralDeetails_hba_que_ss_security" protectedresourceuniquename="entityGeneralDeetails_hba_que_ss_security" id="member_of_hba_ss" position="#isdbaregistered_after#" mappedto="f29">
 		<event id="onchange" name="onchange" screen="carrier/entityGeneralDetailsForSelfServiceApproval.html" actiontype="ajaxpageblocklink" action="refreshBusinessState" actiontypeid="entityGeneralDeetails_hba_ss_dropdown_security" executionsequence="0">
 			<forward id="carrier/entityGeneralDetailsForSelfServiceApproval.html" screen="carrier/entityGeneralDetailsForSelfServiceApproval.html" />
 		</event>
 	</field>
-	<field deltaind="I" isextendedfield="Y" name="entity_gen_det_hba_dropdown_ss" screen="carrier/entityGeneralDetailsForSelfServiceApproval.html" objectcolumn="agency_id" section="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_2" displaytype="select" isrequired="Y" labelkey="hba_dropdown_label" labeldesc="If Yes, please select the HBA Chapter you are a member of " accesslevel="1" tabsconfigurationresourcename="entityGeneralDeetails_hba_ss_dropdown_security" protectedresourceuniquename="entityGeneralDeetails_hba_ss_dropdown_security" id="entity_gen_det_hba_dropdown_ss" position="#segment_id_before#" style="width=250px;" lookupobjectname="hba_chapter_lku" lookupobjecttype="mastertable" valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f30">
-	</field>	
+	<field deltaind="I" isextendedfield="Y" name="entity_gen_det_hba_dropdown_ss" screen="carrier/entityGeneralDetailsForSelfServiceApproval.html" objectcolumn="request_ss_id" section="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_2" displaytype="select" isrequired="Y" labelkey="hba_dropdown_label" labeldesc="If Yes, please select the HBA Chapter you are a member of " accesslevel="1" tabsconfigurationresourcename="entityGeneralDeetails_hba_ss_dropdown_security" protectedresourceuniquename="entityGeneralDeetails_hba_ss_dropdown_security" id="entity_gen_det_hba_dropdown_ss" position="#segment_id_before#" style="width=250px;" lookupobjectname="hba_chapter_lku" lookupobjecttype="mastertable" valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f30">
+	</field>
 	<!-- dividend distribution agency general details -->
-	<field deltaind="I" isextendedfield="Y" id="dividend_distribution_ss" name="dividend_distribution_ss" objectcolumn="agency_id" section="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_3234" screen="carrier/entityGeneralDetailsForSelfServiceApproval.html" isrequired="MA" accesslevel="1" tabsconfigurationresourcename="divDividendDist" displaytype="multiradio" css="exteded_new_radio_seciton" labelkey="dividend_distribution_label" protectedresourceuniquename="divDividendDist" position="#distDistiShow_after#" lookupobjectname="dividend_dist_lku" lookupobjecttype="mastertable" valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f28">
+	<field deltaind="I" isextendedfield="Y" id="dividend_distribution_ss" name="dividend_distribution_ss" objectcolumn="request_ss_id" section="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_3234" screen="carrier/entityGeneralDetailsForSelfServiceApproval.html" isrequired="MA" accesslevel="1" tabsconfigurationresourcename="divDividendDist" displaytype="multiradio" css="exteded_new_radio_seciton" labelkey="dividend_distribution_label" protectedresourceuniquename="divDividendDist" position="#distDistiShow_after#" lookupobjectname="dividend_dist_lku" lookupobjecttype="mastertable" valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f28">
 		<validation deltaind="I" name="isDividendDistribution1Selected_ss" expression="if(isEmpty(:dividend_distribution_ss)=&gt;isEqual(1,2)-&gt;isEqual(1,1))" message="DividendDistributionErrorKey" executionsequence="0" />
 	</field>
 	<!-- Policyholder Copies -->
-	<field deltaind="I" isextendedfield="Y" id="policyholder_copies_ss" name="policyholder_copies_ss" objectcolumn="agency_id" section="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_3235" screen="carrier/entityGeneralDetailsForSelfServiceApproval.html" isrequired="MA" accesslevel="1" tabsconfigurationresourcename="divPolicyHolder" displaytype="multiradio" css="exteded_new_radio_seciton" labelkey="policyholder_copies_label" protectedresourceuniquename="divPolicyHolder" position="#policyholdercopies_after#" lookupobjectname="policyholder_copies_lku" lookupobjecttype="mastertable" valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f27">
+	<field deltaind="I" isextendedfield="Y" id="policyholder_copies_ss" name="policyholder_copies_ss" objectcolumn="request_ss_id" section="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_3235" screen="carrier/entityGeneralDetailsForSelfServiceApproval.html" isrequired="MA" accesslevel="1" tabsconfigurationresourcename="divPolicyHolder" displaytype="multiradio" css="exteded_new_radio_seciton" labelkey="policyholder_copies_label" protectedresourceuniquename="divPolicyHolder" position="#policyholdercopies_after#" lookupobjectname="policyholder_copies_lku" lookupobjecttype="mastertable" valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f27">
 		<validation deltaind="I" name="isPolicyholder_copies1Selected_ss" expression="if(isEmpty(:policyholder_copies_ss)=&gt;isEqual(1,2)-&gt;isEqual(1,1))" message="PolicyHolderCopiesErrorKey" executionsequence="0" />
 	</field>	
 	<!-- entity general details agent copies field -->
-	<field deltaind="I" isextendedfield="Y" id="agent_copies_ss" labelkey="agent_copies_label" name="agent_copies_ss" objectcolumn="agency_id" section="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_3236" screen="carrier/entityGeneralDetailsForSelfServiceApproval.html" isrequired="MA" accesslevel="1" tabsconfigurationresourcename="divAgentCopies" displaytype="multiradio" css="exteded_new_radio_seciton" protectedresourceuniquename="divAgentCopies" position="#agentCopies_after#" lookupobjectname="agent_copies_lku" lookupobjecttype="mastertable" valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f21">
+	<field deltaind="I" isextendedfield="Y" id="agent_copies_ss" labelkey="agent_copies_label" name="agent_copies_ss" objectcolumn="request_ss_id" section="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_3236" screen="carrier/entityGeneralDetailsForSelfServiceApproval.html" isrequired="MA" accesslevel="1" tabsconfigurationresourcename="divAgentCopies" displaytype="multiradio" css="exteded_new_radio_seciton" protectedresourceuniquename="divAgentCopies" position="#agentCopies_after#" lookupobjectname="agent_copies_lku" lookupobjecttype="mastertable" valuefield="master_lookup_data_code" displayfield="master_lookup_data_desc" mappedto="f21">
 		<validation deltaind="I" name="isAgentcopiesSelected_ss" expression="if(isEmpty(:agent_copies_ss)=&gt;isEqual(1,2)-&gt;isEqual(1,1))" message="AgentCopiesErrorKey" executionsequence="0" />
 	</field>	
 	
 	<!-- CBIA Field -->
-	<field deltaind="I" isextendedfield="Y" name="ss_cbia_designation" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" objectcolumn="person_id" section="entityPersonDetails_freeform_contextdata_2" displaytype="radio" isrequired="N" labelkey="ss_cbia_designation_label" labeldesc="CBIA Designation" accesslevel="1" tabsconfigurationresourcename="ss_cbia_security" mappedto="f26" protectedresourceuniquename="ss_cbia_security" id="ss_cbia_designation" position="#highest_ranking_principal_before#">
-		<event id="onchange" name="onchange" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" actiontype="ajaxpageblocklink" action="refreshPage" actiontypeid="ss_year_recieved_security" executionsequence="0">
-			<forward id="carrier/agentGeneralDetailsForSelfServiceApproval.html" screen="carrier/agentGeneralDetails.html" />
+	<field deltaind="I" isextendedfield="Y" name="ss_cbia_designation" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" objectcolumn="request_ss_id" section="entityPersonDetails_freeform_contextdata_2" displaytype="radio" isrequired="Y" labelkey="ss_cbia_designation_label" labeldesc="CBIA Designation" accesslevel="1" tabsconfigurationresourcename="ss_cbia_security" mappedto="f26" protectedresourceuniquename="ss_cbia_security" id="ss_cbia_designation" position="#highest_ranking_principal_before#">
+		<event id="onchange" name="onchange" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" actiontype="ajaxpageblocklink" action="refreshPage1" actiontypeid="ss_year_recieved_security" executionsequence="0">
+			<forward id="carrier/agentGeneralDetailsForSelfServiceApproval.html" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" />
 		</event>
 	</field>
-	<field deltaind="I" isextendedfield="Y" name="ss_year_recieved" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" objectcolumn="person_id" section="entityPersonDetails_freeform_contextdata_2" displaytype="text" isrequired="Y" labelkey="ss_year_recieved_label" labeldesc="Year Received" accesslevel="1" tabsconfigurationresourcename="ss_year_recieved_security" mappedto="f25" protectedresourceuniquename="ss_year_recieved_security" id="ss_year_recieved" position="#ss_cbia_designation_after#">
-	</field>	
+	<field deltaind="I" isextendedfield="Y" name="ss_year_recieved" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" objectcolumn="request_ss_id" section="entityPersonDetails_freeform_contextdata_2" displaytype="text" isrequired="Y" labelkey="ss_year_recieved_label" labeldesc="Year Received" accesslevel="1" tabsconfigurationresourcename="ss_year_recieved_security" mappedto="f25" protectedresourceuniquename="ss_year_recieved_security" id="ss_year_recieved" position="#ss_cbia_designation_after#">
+	</field>
 		<!-- phase 2 - end - Extended fields -->
 		
 <!-- BMIC req To remove Agency name mandetory field start -->
@@ -538,15 +562,19 @@
   	
 	<!-- Upgrade changes -->
 	
-   <field deltaind="M" id="agentGeneralDetailsForSelfServiceApproval_npn" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" name="prdcr_cde" isrequired="Y" labelkey="showdivnpn_label" tabsconfigurationresourcename="showdivnpn" protectedresourceuniquename="showdivnpn" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
-
+	  <!-- changed isrequired="N" for bug id 0035 and 0036 add/update contact start -->
+   		<field deltaind="M" id="agentGeneralDetailsForSelfServiceApproval_npn" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" name="prdcr_cde" isrequired="N" labelkey="showdivnpn_label" tabsconfigurationresourcename="showdivnpn" protectedresourceuniquename="showdivnpn" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
+	  <!-- changed isrequired="N" for bug id 0035 and 0036 add/update contact end -->
+	  
 	<!-- Phase 2 - Upgrade - LoginID non-mandatory -->
 	
+	<!-- START - UAT2 - Login Id Non Mandatory -->
 	<field deltaind="M" id="agentGeneralDetails_LOGIN_ID" screen="carrier/agentGeneralDetails.html" name="LOGIN_ID" isrequired="N" requiredeval="ProducerOneRule.checkLoginIdMandatoryAstrisk" labelkey="login_id_label" tabsconfigurationresourcename="contact_details_login_id_security" protectedresourceuniquename="contact_details_login_id_security" tooltip="Login id of the contact" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" isdisplayonhistory="Y" section="entityPersonDetails_freeform_contextdata_2">
-    <validation name="checkLoginIdMandatory" expression="if(andCondition(isEqual(:agent_loginid_mandatory,Y),isEmpty(:LOGIN_ID))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="loginIdEmptyErrorkey" ruleid="ProducerOneRule.checkLoginIdMandatory" executionsequence="0" />
-    <validation deltaind="D" name="checkLoginIDExistsForUpdateAgentGeneralDetails" expression="if(andCondition(isEqual(:agent_loginid_mandatory,Y),isGreaterThan(getBeanProperty(executeDBOperation(context,a,3,SqlStmts.sqlStatementsviewcheckLoginIDForUpdateAgentGeneralDetails),loginid_count),0))=>populateError(context,LOGIN_ID,loginIdAlreadyExistsErrorKey);isEqual(1,1);->isEqual(1,1););" message="loginIdAlreadyExistsErrorKey" ruleid="AgentGeneralDetails.checkLoginIDExistsForUpdateAgentGeneralDetails" executionsequence="1" />
-  </field>
-  
+    	<validation deltaind="D" name="checkLoginIdMandatory" expression="if(andCondition(isEqual(:agent_loginid_mandatory,Y),isEmpty(:LOGIN_ID))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="loginIdEmptyErrorkey" ruleid="ProducerOneRule.checkLoginIdMandatory" executionsequence="0" />
+    	<validation deltaind="M" name="checkLoginIDExistsForUpdateAgentGeneralDetails" expression="if(andCondition(isEqual(:agent_loginid_mandatory,Y),isGreaterThan(getBeanProperty(executeDBOperation(context,a,3,SqlStmts.sqlStatementsviewcheckLoginIDForUpdateAgentGeneralDetails),loginid_count),0))=>populateError(context,LOGIN_ID,loginIdAlreadyExistsErrorKey);isEqual(1,1);->isEqual(1,1););" message="loginIdAlreadyExistsErrorKey" ruleid="AgentGeneralDetails.checkLoginIDExistsForUpdateAgentGeneralDetails" executionsequence="1" />
+  	</field>
+  	<!-- END - UAT2 - Login Id Non Mandatory -->
+  	
   <!--Upgrade Bug Id- 031 Self Service start --> 
  <field deltaind="M" id="agencyFunctions_selectFunctionType_suspension_date" screen="admin/agencyFunctions_selectFunctionType.html" name="suspension_date" isrequired="Y" labelkey="suspension_date_label" tabsconfigurationresourcename="agencyFunctions_suspension_date_security" protectedresourceuniquename="agencyFunctions_suspension_date_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="agencyFunctions_selectFunctionType_freeform_contextdata_2"> 
     <validation name="checkAgencyFunctionsFilterDateValidation" expression="checkAgencyFunctionsFilterDateValidation(context)" message="primaryAgencyCodeEmptyErrorKey" ruleid="AgencyFunctionsRule.checkAgencyFunctionsFilterDateValidation" executionsequence="0" /> 
@@ -603,5 +631,11 @@ protectedresourceuniquename="eno_question_aa_security" id="eno_question_aa" posi
 	<!-- Phase 3- Extended field- Wholesale Transfer- end --> 
   
   
+  <!-- UAT2 0035 & 0036 DOB and SSN make mandatory -->  
+   <field deltaind="M" requiredeval="ProducerOneRule.isLicensedProducerChecked" id="agentGeneralDetailsForSelfServiceApproval_ssn_num" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" name="ssn_num" isrequired="E" labelkey="contact_ssn_label" tabsconfigurationresourcename="contact_ssn_security" protectedresourceuniquename="contact_ssn_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="entityPersonDetails_freeform_contextdata_2"/>
+	
+   <field deltaind="M" name="ispersoncontact" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" labeldesc="Contact Type" isrequired="N" labelkey="Contact Type" id="adminBrokerageDetailsStep2_ispersoncontact">
+    <event deltaind="I" id="onchange" name="onchange" actiontype="ajaxpageblocklink" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" action="refreshdob_ssn" actiontypeid="contact_ssn_security" executionsequence="0"/>
+  </field>
   
  </fields>

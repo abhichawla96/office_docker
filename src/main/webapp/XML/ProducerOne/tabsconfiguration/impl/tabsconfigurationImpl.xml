@@ -576,7 +576,7 @@
 <tabsconfigurationresource deltaind="M" accesslevel="1" name="agencyListPublicSubmitNInvitation_resend_invitation_security" description="agencyListPublicSubmitNInvitation_resend_invitation_security"/>
 
 <!-- Showing Prospect Sign on Homepage - Phase 2 -->
-<tabsconfigurationresource deltaind="M" accesslevel="0" description="hide_show_prospect_section_security" name="hide_show_prospect_section_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="hide_show_prospect_section_security" name="hide_show_prospect_section_security"/>
  
  <!-- Show Cyber Liability Carrier Name -->
  <tabsconfigurationresource deltaind="M" accesslevel="1" description="Agency_declarationCyberLiability_security" name="Agency_declarationCyberLiability_security"/>
@@ -587,7 +587,7 @@
  
  <!-- Hiding Report from Producer Compliance 14/04/2021 -->
  <!-- Phase 2 - Bug Id- P2-057 - Report Dashboard - List Of producer Code Addresses -->
- <tabsconfigurationresource deltaind="M" accesslevel="1" name="isShowReportsOnAgencyAdminDashboard"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" name="isShowReportsOnAgencyAdminDashboard"/>
  
  <!-- Hiding Other Report Tabs -->
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide Show Adhoc report" name="showAdhocReport"/>
@@ -722,7 +722,7 @@
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_effective_date_self_service_security" name="bank_effective_date_self_service_security"/>
 
 <!-- Phase 2 - Feedback From BMIC - Hiding Contact Status in Update Agency Location  -->
-<tabsconfigurationresource deltaind="M" accesslevel="0" description="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security" name="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security"/>
+<!-- <tabsconfigurationresource deltaind="M" accesslevel="0" description="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security" name="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security"/> -->
 
 <!-- Phase 2- Bug Id- P2-097- Add Bank Information- Account Type column -->
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="bankInformationForSelfServiceApproval_account_type_checking_saving_security" name="bankInformationForSelfServiceApproval_account_type_checking_saving_security"/>
@@ -885,6 +885,7 @@
 
 <!-- START - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
 <tabsconfigurationresource deltaind="I" accesslevel="1" description="Grey out CBIA Designation" name="ss_cbia_security"/>
+<tabsconfigurationresource deltaind="I" accesslevel="1" description="Grey out CBIA Designation" name="ss_year_recieved_security"/>
 <!-- END - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
 
 <!--Prod Issue- Display History icon on bank information page -->
@@ -908,5 +909,10 @@
 <!-- Phase 3- Hide Life Policy Transfer Form -->
 <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/show download life form" name="bobtransferstep2_filedownload"/>
     
+<!-- START - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->
+<tabsconfigurationresource deltaind="I" accesslevel="1" description="Grey out HBA Designation" name="entityGeneralDeetails_hba_que_ss_security"/>
+<tabsconfigurationresource deltaind="I" accesslevel="1" description="Grey out HBA Designation" name="entityGeneralDeetails_hba_ss_dropdown_security"/>
+<!-- END - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->
+
 
 </tabsconfiguration>

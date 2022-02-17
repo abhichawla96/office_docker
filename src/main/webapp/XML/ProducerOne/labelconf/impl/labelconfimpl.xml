@@ -253,6 +253,7 @@
 
  <!-- Upgrade- Bug Id- U077- Email in Agency Termination -->
  <label deltaind="M" labelkey="email_businessaddress_label" labeldesc="Email" />
+
    
 <!-- Phase 3- Reports label change to 50,000 -->  
 <label deltaind="M" labelkey="commission_masterLevelExceeding_report_label" labeldesc="Commission Paid at Master level exceeding $50,000 (AIM168)"/>
@@ -305,4 +306,8 @@
 <label deltaind="M" labelkey="statement_bonus_type_label" labeldesc="Contingency Commission Type"/>
    
    
+   
+  <!-- Customization to configuration changes -->
+  <label deltaind="M" labeldesc="How did you learn about Company" labelkey="learn_about_label"/>
+  
 </labelconf>

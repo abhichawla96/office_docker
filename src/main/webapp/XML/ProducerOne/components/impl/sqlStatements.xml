@@ -13,6 +13,12 @@
        <databaseoperation deltaind="I" executionsequence="1" metaobject="person" name="getAgentChecked" operation="3" sqlstmt="select count(*) as agentChecked from contacttype_lku where contact_typ_id in (select items from split(#contacttype#,',')) and contact_typ_code = 'AGENT'"/>
 		
         
+        <!-- UAT2 0035 & 0036 DOB and SSN make mandatory -->
+       <databaseoperation deltaind="I" executionsequence="30" metaobject="person" name="getLicensedProducerChecked" operation="3" sqlstmt="select count(*) as licensedProducerChecked from contacttype_lku where contact_typ_id in (select items from split(#contacttype#,',')) and contact_typ_code = 'LS'"/>
+       <!-- START - UAT2 - Login Id Non Mandatory -->
+       <databaseoperation deltaind="M"  executionsequence="0" metaobject="person" name="checkLoginIDForUpdateAgentGeneralDetails" operation="3" sqlstmt="select count(*) loginid_count from person where LOGIN_ID=#LOGIN_ID# and  isnull(is_deleted,0) &lt;&gt; 1 and ltrim(rtrim(LOGIN_ID))!='' and person_id!=#person_id#"/>
+       <!-- END - UAT2 - Login Id Non Mandatory -->
+
 	</workflow>
     </action>
   </component>

@@ -10228,7 +10228,7 @@
       <property contextfield="N" deleteind="N" field="last_updated_ts" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="N" propertylength="10" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="6963" viewlength="10"/>
     </propertyversion>
   </metaobject>
-  <metaobject active="Y" name="requests" persistent="Y" seq="6964">
+  <metaobject deltaind="M" active="Y" name="requests" persistent="Y" seq="6964">
     <depobject identifying="N" metaobject="req_comments" navigate="Y" seq="6965"/>
     <propertyversion seq="0" versionname="0">
       <property contextfield="N" deleteind="N" field="agency_id" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="Y" propertylength="4" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="6967" viewlength="4"/>
@@ -10295,8 +10295,8 @@
           <valuefield field="agency_id"/>
         </dropdown>
       </property>
-      <property contextfield="N" deleteind="N" field="request_person_id" formdisplay="Y" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="Y" persistent="Y" propertylength="200" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="7012" viewlength="200">
-        <dropdown dropdowntype="sql" isrowlink="N" metaobject="requests" name="getPersonListByAgencyId" sqlstmt="select person_id, prdcr_last_name + ' ' + prdcr_first_name as name  from person where person_id in(select person_id from agency_person ap where ap.agency_id=#request_agency_id#)">
+      <property deltaind="M" contextfield="N" deleteind="N" field="request_person_id" formdisplay="Y" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="Y" persistent="Y" propertylength="200" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="7012" viewlength="200">
+        <dropdown deltaind="M" dropdowntype="sql" isrowlink="N" metaobject="requests" name="getPersonListByAgencyId" sqlstmt="select person_id, prdcr_last_name + ' ' + prdcr_first_name as name  from person where isactive='1' and person_id in(select person_id from agency_person ap where ap.agency_id=#request_agency_id#)">
           <displayfield field="name"/>
           <valuefield field="person_id"/>
         </dropdown>

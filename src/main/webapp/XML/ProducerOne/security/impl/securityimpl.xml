@@ -148,7 +148,7 @@
 	</protectedresource>
 
 	<!-- Bug Id- CR-0060 Showing Decline button on received bucket start-->
-	<!--  <protectedresource deltaind="I" defaultaccesstype="0" operator="and"
+	  <protectedresource deltaind="I" defaultaccesstype="0" operator="and"
 		description="Hide/Show decline button on summary page"
 		uniquename="agencyListPublicSubmitNInvitationEdit_decline">
 	<businessrole roleid="MarketingAssistant">
@@ -159,7 +159,7 @@
 	<userdefinedaccesslevel accesstype="1" />
 	</userdefined>
 		
-	</protectedresource>  -->
+	</protectedresource>  
 <!-- Bug Id- CR-0060 Showing Decline button on received bucket end-->
 
 	<protectedresource deltaind="M" defaultaccesstype="0"
@@ -2456,20 +2456,14 @@
 	  		<userdefinedaccesslevel accesstype="1" />
 		</userdefined>
 	</protectedresource>
-	
 
-		<!-- phase 2 - start - extended field -->
-	<protectedresource deltaind="I" defaultaccesstype="0" description="entity_gen_det_hba_dropdown_ss" uniquename="entityGeneralDeetails_hba_ss_dropdown_security">
-		<userdefined deltaind="I" ruleid="ProducerOneRule.isHBAYesNOSS" executionsequence="0">
-			<userdefinedaccesslevel accesstype="1" />
-		</userdefined>
-	</protectedresource>
-
-	<protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show year field" uniquename="ss_year_recieved_security">
+<!-- phase 2 - start - extended field -->  
+	<!-- <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show year field" uniquename="ss_year_recieved_security">
 		<userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.isCBIAYesNoSS">
 			<userdefinedaccesslevel accesstype="1" />
 		</userdefined>
-	</protectedresource>
+	</protectedresource> -->
+	
 	<!-- phase 2 - end - extended field -->
   <!-- Maintenance Bug- Main-001 -->
    <protectedresource deltaind="I" defaultaccesstype="1" description="show validation for insurance section" uniquename="attachment_security">
@@ -2527,7 +2521,7 @@
   </protectedresource>
   
   <!-- Bug ID U-032, U-062 to U-066 Upgrade Bug Start -->
-	<protectedresource defaultaccesstype="0" description="Hide/Show agencyFuntions_letterTemplateList_security" operator="or" uniquename="agencyFuntions_letterTemplateList_security">
+	<!-- <protectedresource defaultaccesstype="0" description="Hide/Show agencyFuntions_letterTemplateList_security" operator="or" uniquename="agencyFuntions_letterTemplateList_security">
 	  	<userdefined deltaind="I" ruleid="ProducerOneRule.isFunctionDC" executionsequence="0">
 			<userdefinedaccesslevel accesstype="0" />
 		</userdefined>
@@ -2536,12 +2530,16 @@
   	 	<userdefined deltaind="I" ruleid="ProducerOneRule.isFunctionDC" executionsequence="0">
 			<userdefinedaccesslevel accesstype="0" />
 		</userdefined>
-    </protectedresource>
+    </protectedresource> -->
   <!-- Bug ID U-032, U-062 to U-066 Upgrade Bug End -->
   
-  <!-- START - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
-  <protectedresource deltaind="I" defaultaccesstype="2" description="Grey out CBIA Designation" uniquename="ss_cbia_security"> </protectedresource>
-  <!-- END - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
+  <!-- START - UAT2 Bug Id 0004 - Remove Final Questions in PPRM Market Information -->
+  <protectedresource deltaind="I" description="Hide/Show PPRM Final Questions section" uniquename="final_questions_security">
+  	 	<userdefined deltaind="I" ruleid="ProducerOneRule.removePPRMFinalQuestions" executionsequence="0">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+  </protectedresource>
+  <!-- END - UAT2 Bug Id 0004 - Remove Final Questions in PPRM Market Information -->
   
 	<!--Prod Issue- Display delete icon on bank information page -->
    <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show  bankinformation_delete_security" uniquename="bankinformation_delete_security">
@@ -2565,6 +2563,17 @@
     </userdefined>
   </protectedresource>
 
+  
+  <!-- START - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->
+  
+  <protectedresource deltaind="I" defaultaccesstype="0" description="entity_gen_det_hba_dropdown_ss" uniquename="entityGeneralDeetails_hba_ss_dropdown_security">
+		<userdefined ruleid="ProducerOneRule.isHBAYesNOSS" executionsequence="0">
+			<userdefinedaccesslevel accesstype="1"/>
+		</userdefined>
+		<userdefined ruleid="ProducerOneRule.greyOutHBADropDownSalesSupportRequests" executionsequence="0">
+			<userdefinedaccesslevel accesstype="2" />
+		</userdefined>
+	</protectedresource>
 	
 	<!-- Phase 3- History of commission schedule icon -->
 <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show history button"  uniquename="commissonSch_block_history_link_security">
@@ -2968,6 +2977,106 @@
 </businessrole>
 </protectedresource>
  
- 
+	<protectedresource deltaind="I" defaultaccesstype="1" description="entity_gen_det_hba_dropdown_ss" uniquename="entityGeneralDeetails_hba_que_ss_security">
+		<businessrole roleid="MarketingAssistant" executionsequence="0">
+			<roleaccesslevel accesstype="2" />
+		</businessrole>
+	</protectedresource>
+	
+	<protectedresource deltaind="I" defaultaccesstype="1" description="Grey out Dividend Dist section for Sales Support Requests" uniquename="divDividendDist" operator="and">
+  		<userdefined ruleid="ProducerOneRule.greyOutHBASalesSupportRequests" executionsequence="0">
+			<userdefinedaccesslevel accesstype="2" />
+		</userdefined>
+		<businessrole roleid="MarketingAssistant" executionsequence="0">
+			<roleaccesslevel accesstype="2" />
+		</businessrole>
+  </protectedresource>
+  
+  <protectedresource deltaind="I" defaultaccesstype="1" description="Grey out Policy Holder section for Sales Support Requests" uniquename="divPolicyHolder" operator="and">
+  		<userdefined ruleid="ProducerOneRule.greyOutHBASalesSupportRequests" executionsequence="0">
+			<userdefinedaccesslevel accesstype="2" />
+		</userdefined>
+		<businessrole roleid="MarketingAssistant" executionsequence="0">
+			<roleaccesslevel accesstype="2" />
+		</businessrole>
+  </protectedresource>
+  
+  <protectedresource deltaind="I" defaultaccesstype="1" description="Grey out Agent Copies section for Sales Support Requests" uniquename="divAgentCopies" operator="and">
+  		<userdefined ruleid="ProducerOneRule.greyOutHBASalesSupportRequests" executionsequence="0">
+			<userdefinedaccesslevel accesstype="2" />
+		</userdefined>
+		<businessrole roleid="MarketingAssistant" executionsequence="0">
+			<roleaccesslevel accesstype="2" />
+		</businessrole>
+  </protectedresource>
+  
+  <!-- END - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->
+  
+  <!-- START - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
+  <protectedresource deltaind="I" defaultaccesstype="1" description="CBIA Designation" uniquename="ss_cbia_security">
+		<businessrole deltaind="I" roleid="MarketingAssistant" executionsequence="0">
+			<roleaccesslevel accesstype="2" />
+		</businessrole>
+  </protectedresource>
+  
+  <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show year field" uniquename="ss_year_recieved_security">
+		<userdefined ruleid="ProducerOneRule.isCBIAYesNoSS" executionsequence="0">
+			<userdefinedaccesslevel accesstype="1"/>
+		</userdefined>
+		<userdefined ruleid="ProducerOneRule.greyOutCBIAYrReceivedSalesSupportRequests" executionsequence="0">
+			<userdefinedaccesslevel accesstype="2" />
+		</userdefined>
+	</protectedresource>
+  <!-- END - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
+  
+  <!-- QA2-0004 Fix -->
+	<protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Complete Transaction button on agency functions page" uniquename="agencyFuntions_letterTemplateList_security">
+   		<businessrole deltaind="I" roleid="AgencyAdmin">
+    		<roleaccesslevel accesstype="0"/>
+    	</businessrole>
+ 		<businessrole deltaind="I" roleid="MarketingAssistant">
+      		<roleaccesslevel accesstype="1"/>
+    	</businessrole>
+    	
+    	 <userdefined deltaind="I" executionsequence="1" ruleid="ProducerOneRule.isHideCompleteTransactionButtonOnAgencyFunction">
+  		<userdefinedaccesslevel accesstype="1"/>
+  	</userdefined> 
+  </protectedresource>
+  
+  <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Complete Transaction button on agency functions page" uniquename="agencyFuntions_documentAttachment_security">
+   		<businessrole deltaind="I" roleid="AgencyAdmin">
+    		<roleaccesslevel accesstype="0"/>
+    	</businessrole>
+ 		<businessrole deltaind="I" roleid="MarketingAssistant">
+      		<roleaccesslevel accesstype="1"/>
+    	</businessrole>
+    	
+    	 <userdefined deltaind="I" executionsequence="1" ruleid="ProducerOneRule.isHideCompleteTransactionButtonOnAgencyFunction">
+  		<userdefinedaccesslevel accesstype="1"/>
+  	</userdefined> 
+  </protectedresource>
+  
+  <!-- Self Service-W-9 Does not display descriptions when edited -->
+  <protectedresource deltaind="D" defaultaccesstype="0" description="isAddingNewDocW9ForSelfserviceApproval" uniquename="isAddingNewDocW9ForSelfserviceApproval">
+    <userdefined executionsequence="0" ruleid="docW9DetailsForSelfServiceRule.isAddingNewDocW9ForSelfserviceApproval">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+  </protectedresource>
+  
+  <!-- START - UAT2 0054 - Hide Reports on Admin Dashboard Self Service -->
+  <protectedresource deltaind="I" defaultaccesstype="1" description="isShowReportsOnAgencyAdminDashboard" uniquename="isShowReportsOnAgencyAdminDashboard">
+   		<businessrole deltaind="I" roleid="AgencyAdmin">
+    		<roleaccesslevel accesstype="0"/>
+    	</businessrole>
+  </protectedresource>
+  <!-- END - UAT2 0054 - Hide Reports on Admin Dashboard Self Service -->
+  
+  <!-- START - UAT2 0055 - Contact Status Grey out in Self Service -->
+  <protectedresource deltaind="I" defaultaccesstype="1" description="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security" uniquename="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security">
+		<businessrole roleid="AgencyAdmin" executionsequence="0">
+			<roleaccesslevel accesstype="2" />
+		</businessrole>
+	</protectedresource>
+  <!-- END - UAT2 0055 - Contact Status Grey out in Self Service -->
+    
 </security> 
- 

@@ -18,7 +18,7 @@
 	    <workflow deltaind="I" name="selfServiceApproveEmail" seq="2">
 	    	<databaseoperation deltaind="I" executionsequence="0" metaobject="requests" name="getRequestTypeName" operation="3" sqlstmt="select case when rrl.display_name is not null then rrl.display_name else rrl.description end as request_type_desc from reason_request_lku rrl , requests_ss rss where rrl.request_reason_id = rss.request_reason_id AND rss.request_ss_id=#request_ss_id#"/>
 			<databaseoperation deltaind="I" executionsequence="1" metaobject="requests" name="getAgencyAdminApproverName" operation="3" sqlstmt="select top 1 req.assignee as workflow_assignee from workflowrequests as req join tbl_invitation_status_lku as status on req.workflowstatus_id=status.invitation_status_id join workflowrequestsstatus as reqsts on reqsts.workflowrequests_id=req.workflowrequests_id where req.objectid=#request_ss_id# order by workflowrequestsstatus_id desc"/>
-			<databaseoperation deltaind="I" executionsequence="2" metaobject="userprofiles" name="getAgencyAdminApproverEmail" operation="3" sqlstmt="select e_mail as e_mail from userprofiles where user_id=#workflow_assignee#"/>
+			<databaseoperation deltaind="I" executionsequence="2" metaobject="userprofiles" name="getAgencyAdminApproverEmail" operation="3" sqlstmt="select  e_mail as e_mail,user_name as user_name_app from userprofiles where user_id=#workflow_assignee#"/>
 			<email deltaind="I" eventname="ApproveSelfServiceRequest" executionsequence="3" name="ApproveSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail"/>
 		</workflow>
 		<!-- Phase 2 - Bug ID- P2-103 - Changed the name of workflowevent as the earlier one contained the 'parentevent' attribute - Start -->
@@ -47,7 +47,8 @@
 	  	<workflow deltaind="M" eval="ProducerOneRule.assignDateFields" name="disapprvoveRequests" seq="0">
 	  		<databaseoperation deltaind="I" executionsequence="0" metaobject="requests" name="getAgencyAdminDisApproverName" operation="3" sqlstmt="select top 1 req.assignee as workflow_assignee from workflowrequests as req join tbl_invitation_status_lku as status on req.workflowstatus_id=status.invitation_status_id join workflowrequestsstatus as reqsts on reqsts.workflowrequests_id=req.workflowrequests_id where req.objectid=#request_ss_id# order by workflowrequestsstatus_id desc"/>
 		<!-- 18480 UAT2 Bug -->
-	    		<databaseoperation deltaind="I" executionsequence="2" metaobject="userprofiles" name="getApproverUserName" operation="3" sqlstmt="select  user_name as user_name from userprofiles where user_id=#workflow_assignee#"/>	
+	    	
+	    	<databaseoperation deltaind="I" executionsequence="1" metaobject="userprofiles" name="getAgencyAdminApproverEmail" operation="3" sqlstmt="select  e_mail as e_mail,user_name as user_name_app from userprofiles where user_id=#workflow_assignee#"/>
 		
 		</workflow>
 	  </action>
