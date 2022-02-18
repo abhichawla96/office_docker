@@ -90,7 +90,10 @@
 	    	<workflowevent deltaind="D" eval="AgencyFunctionsRule.isShowAgencyFunctionsTypeDeactivateContact" ajaxcontainerid="contentTableDiv" event="declineAgencyFunctionDC" isgetuser="Y" name="declineAgencyFunctionDC" userfield="workflow_user" workflow="agencyFunctions" executionsequence="3"/>
 	    	<workflowevent deltaind="I" eval="AgencyFunctionsRule.isShowAgencyFunctionsTypeDeactivateContact" ajaxcontainerid="contentTableDiv" event="declineAgencyFunctionDCNew" isgetuser="Y" name="declineAgencyFunctionDCNew" userfield="workflow_user" workflow="agencyFunctions" executionsequence="3"/>
 	    	
-	    	
+	    	<workflow deltaind="I" name="selfServiceDeclineEmail" seq="14">
+				<databaseoperation deltaind="I" executionsequence="10" metaobject="userprofiles" name="getAgencyAdminApproverEmail" operation="3" sqlstmt="select e_mail as e_mail,user_name as user_name from userprofiles where user_id=#workflow_assignee#"/>
+				<email deltaind="I" eventname="declineSelfServiceRequest" executionsequence="12" name="declineSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail"/>
+			</workflow>
 	    	 <!-- Upgrade bug Id-029 start -->
 	    	 <actionparam deltaind="I" executionsequence="0" form="Y" name="workflow_assignee" paramid="workflow_assignee" viewparam="Y"/>
    			<!-- Upgrade bug Id-029 end -->
