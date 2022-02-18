@@ -3080,7 +3080,7 @@
   <!-- END - UAT2 0055 - Contact Status Grey out in Self Service -->
   
   <!-- Phase 3- Expire button- bonus  --> 
-<protectedresource deltaind="M" uniquename="checkIncentiveExpireButtonHideShow">
+<protectedresource deltaind="M" uniquename="checkIncentiveExpireButtonHideShow" defaultaccesstype="1">
 <businessrole deltaind="I" roleid="MarketingAssistant">
 <roleaccesslevel accesstype="0" />
 </businessrole>
