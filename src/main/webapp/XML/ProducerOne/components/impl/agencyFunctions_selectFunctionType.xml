@@ -26,7 +26,7 @@
 	    		<!-- UAT 2 bug id 0045 start -->
 				<databaseoperation deltaind="I" executionsequence="0" metaobject="reason_request_lku" name="dbOberationDCSubject" operation="3" sqlstmt="select display_name as request_type_desc from reason_request_lku where description ='functionDC'"/>
 				<databaseoperation deltaind="I" executionsequence="1" metaobject="userprofiles" name="getMarketAssistantEmail" operation="3" sqlstmt="select e_mail as e_mail from userprofiles where user_id=#workflow_user#"/>
-				<databaseoperation deltaind="I" executionsequence="2" metaobject="agency_master" name="getAgencyName" operation="3" sqlstmt="select name as Entity_Name from agency_master where agency_id = (select agency_id from requests_ss where request_ss_id = #request_ss_id#)"/>
+				<databaseoperation deltaind="I" executionsequence="2" metaobject="agency_master" name="getAgencyName" operation="3" sqlstmt="select name as Entity_Name from agency_master where agency_id = #toBeProcessed_agency_id#"/>
 				<email deltaind="I" eventname="InitiateSelfServiceRequest" executionsequence="2" mailto="e_mail" name="InitiateSelfServiceRequest" objectid="object_id" objecttype="Other"/>
 				<!-- UAT 2 bug id 0045 end -->
 			</workflow>
