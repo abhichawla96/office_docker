@@ -780,4 +780,9 @@
 <tabsconfigurationresource deltaind="I" accesslevel="1" description="Grey out HBA Designation" name="entityGeneralDeetails_hba_ss_dropdown_security"/>
 <!-- END - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->
 
+<!-- Feature List 107740 adding Trash Onboarded Bucket start -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show  trashed_Onboarded_application_security" name="trashed_Onboarded_application_security"/>
+<!-- Feature List 107740 adding Trash Onboarded Bucket end -->
+	
+
 </tabsconfiguration>
