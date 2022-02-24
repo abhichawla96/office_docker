@@ -216,7 +216,8 @@
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="producerDetail_distribution_type_id_security" name="producerDetail_distribution_type_id_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show segmentation_security in producerDetails.html" name="producerDetails_segmentation_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowProdNumVendorTrue" name="isShowProdNumVendorTrue"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowProdNumProbationTrue" name="isShowProdNumProbationTrue"/>
+<!--   <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowProdNumProbationTrue" name="isShowProdNumProbationTrue"/>
+ --> 
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="producerDetail_isShowProdNumZoneMarketRepDivTrue" name="producerDetail_isShowProdNumZoneMarketRepDivTrue"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="producerDetail_isShowProdNumUnderWriterDivTrue" name="producerDetail_isShowProdNumUnderWriterDivTrue"/>
   <tabsconfigurationresource deltaind="I" accesslevel="0" description="is_commissionableDiv" name="is_commissionableDiv"/>
