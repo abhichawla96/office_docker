@@ -289,11 +289,11 @@ public class ValidateTransfersStep1BO extends Businessobject{
 						DataUtils.populateError((Context)ctx, "pageError1", "msgselectrecordforletter1ErrorKey");
 						return;
 					}
-
-					if(ctx.get("producer_number_to_varchar") != null && ctx.get("producer_number_from_varchar").toString().equals(ctx.get("producer_number_to_varchar").toString())){
+//Commented for BMIC
+				/*	if(ctx.get("producer_number_to_varchar") != null && ctx.get("producer_number_from_varchar").toString().equals(ctx.get("producer_number_to_varchar").toString())){
 						DataUtils.populateError((Context)ctx, "pageError1", "fromToAgentNumberCanNotSameErrorKey");
 						return;
-					}
+					}*/
 				}
 
 				if(ctx.get("searchtype").toString().equals("T")){
