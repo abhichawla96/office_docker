@@ -313,5 +313,9 @@
 <!-- Phase 3: On hold process -->
 <label deltaind="M" labeldesc="Is Contingency Commission Applicable" labelkey="producerDetail_isBonusApplicablelabel"/>
   
+  <!-- bob -->
+    <label deltaind="M" labeldesc="From Agency Code" labelkey="bobtransfersStep1_fromagentnumberlabel"/>
+     <label deltaind="M" labeldesc="To Agency Code" labelkey="bobtransfersStep1_toagentnumberlabel"/>
+ 
   
 </labelconf>
