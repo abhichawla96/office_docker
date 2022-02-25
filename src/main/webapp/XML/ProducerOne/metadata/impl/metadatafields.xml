@@ -1,3 +1,6 @@
 <structure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/metadata_XSD.xsd">
-  <field deltaind="I" decimallength="0" displayname="statement_run_date" length="10" name="statement_run_date" seq="684" type="D" viewlength="10"/>
+  <field deltaind="I" decimallength="0" displayname="statement_run_date" length="10" name="statement_run_date" seq="684" type="D" viewlength="10"/>  
+  <!-- <field deltaind="I" decimallength="0" displayname="producer_number_to_varchar_val" length="0" name="producer_number_to_varchar_val" seq="14451" type="V" viewlength="10"/> -->
+  <field deltaind="I" decimallength="0" displayname="wholesale_from_producer" length="0" name="wholesale_from_producer" seq="14451" type="I" viewlength="10"/>
+  <field deltaind="I" decimallength="0" displayname="wholesale_to_producer" length="0" name="wholesale_to_producer" seq="14452" type="I" viewlength="10"/>
   </structure>
