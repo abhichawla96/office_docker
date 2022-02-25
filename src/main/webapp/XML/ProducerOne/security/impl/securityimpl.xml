@@ -3161,6 +3161,24 @@
  </businessrole> 
 </protectedresource>
 
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide Inititate New Transfer Button" uniquename="wholesale_from_producer_security">
+ <businessrole roleid="CarrierAdmin">
+      <roleaccesslevel accesstype="2"/>
+ </businessrole>
+ <businessrole roleid="SalesDirector">
+      <roleaccesslevel accesstype="2"/>
+ </businessrole> 
+</protectedresource>
+
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide Inititate New Transfer Button" uniquename="wholesale_to_producer_security">
+ <businessrole roleid="CarrierAdmin">
+      <roleaccesslevel accesstype="2"/>
+ </businessrole>
+ <businessrole roleid="SalesDirector">
+      <roleaccesslevel accesstype="2"/>
+ </businessrole> 
+</protectedresource>
+
 <protectedresource deltaind="I" defaultaccesstype="2" description="Hide Inititate New Transfer Button" uniquename="bobtransfersStep3_dest_producer_code_step3_security">
 </protectedresource>
 
