@@ -3,4 +3,9 @@
   <!-- <field deltaind="I" decimallength="0" displayname="producer_number_to_varchar_val" length="0" name="producer_number_to_varchar_val" seq="14451" type="V" viewlength="10"/> -->
   <field deltaind="I" decimallength="0" displayname="wholesale_from_producer" length="0" name="wholesale_from_producer" seq="14451" type="I" viewlength="10"/>
   <field deltaind="I" decimallength="0" displayname="wholesale_to_producer" length="0" name="wholesale_to_producer" seq="14452" type="I" viewlength="10"/>
+  
+  <!-- Phase 3: Report filtration criteria change -->
+  <field deltaind="I" decimallength="0" displayname="reports_filter_amount" length="0" name="reports_filter_amount" seq="1410" type="I" viewlength="10"/>
+  
+  
   </structure>

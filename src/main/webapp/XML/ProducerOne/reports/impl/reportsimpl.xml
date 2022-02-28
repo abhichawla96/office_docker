@@ -98,9 +98,10 @@
    
 	<!-- end - phase 3 BMIC - added collected premium columns in reports -->
 	
-<!-- Phase 3: changing label to 50,000 -->  
+<!-- Phase 3: Report filtration criteria change -->  
  <reportdef deltaind="M" name="AIM110-Master" description="Commission Paid at Master level exceeding $50,000 (AIM168)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="N" isshowoutputcolumns="Y" isshowresetbutton="Y">
  <columnset name="AIM110-Masterset">
+ 		 <column deltaind="I" name="reports_filter_amount" columnlabel="Filter Amount" metaproperty="report_search_columns.reports_filter_amount" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="select" executionsequence="18" ispopupsearch="N" isdefaultdisplay="Y" isrequired="Y" issortdisplay="N" />  
          <column name="Period_D" columnlabel="Statement Run Date" metaproperty="report_search_columns.Period_D" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="select" executionsequence="16" ispopupsearch="N" isdefaultdisplay="Y" isrequired="Y" issortdisplay="N" isgroupbydisplay="N" href="managereportajaxpageblocklink('','','INET_REFRESH_MANAGE_REPORT','MANAGE_REPORTING','refreshFilter')" />
          <column name="state_id_V" columnlabel="statefieldlabel" metaproperty="report_search_columns.state_id_V" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="select" executionsequence="17" ispopupsearch="N" isdefaultdisplay="Y" isrequired="N" issortdisplay="Y" isgroupbydisplay="N" />
          <column name="isdownloadlink" metaproperty="isdownloadlink" isreportfilter="N" executionsequence="14" isreportdefaultdisplay="Y" />
@@ -115,7 +116,7 @@
          <column name="last_updated_by" columnlabel="Last Updated By" metaproperty="last_updated_by" isreportfilter="N" executionsequence="11" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
       </columnset>
       <reportworkflow name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,state_id_V,lob_id,business_segment_V,reportoutputtype,company_id,reportID,ispaginationrequired,Period_D">
-         <storedprocedureoperation name="GetAIM110AtMasterReport_P" id="GetAIM110AtMasterReport_P" dbspname="GetAIM110AtMasterReport_P" viewid="report_data_list_1" applid="ProducerOnePerformance" executionsequence="0" operation="5" metaobject="report_search_columns">
+         <storedprocedureoperation deltaind="M" name="GetAIM110AtMasterReport_P" id="GetAIM110AtMasterReport_P" dbspname="GetAIM110AtMasterReport_P" viewid="report_data_list_1" applid="ProducerOnePerformance" executionsequence="0" operation="5" metaobject="report_search_columns">
             <parameteroperation property="reportoutputtype" mode="IN" indexno="7" seq="8" />
             <parameteroperation property="Period_D" mode="IN" indexno="6" seq="7" />
             <parameteroperation property="PAGE_SIZE" mode="IN" indexno="0" seq="1" />
@@ -124,6 +125,7 @@
             <parameteroperation property="groupby" mode="IN" indexno="4" seq="5" />
             <parameteroperation property="ispaginationrequired" mode="IN" indexno="2" seq="3" />
             <parameteroperation property="state_id_V" mode="IN" indexno="5" seq="6" />
+            <parameteroperation deltaind="I" property="reports_filter_amount" mode="IN" indexno="8" seq="9" />   
             <resultsetoperation indexno="0" mappingclass="java.util.HashMap" />
             <resultsetoperation indexno="1" mappingclass="java.util.HashMap" />
          </storedprocedureoperation>
