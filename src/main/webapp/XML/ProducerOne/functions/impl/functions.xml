@@ -37,4 +37,10 @@
     <argument datatype="com.util.Context" name="context" seq="0"/>
   </functiondefinition>
   
+   <functiondefinition deltaind="I" classname="com.userbo.common.impl.ProducerOneUtilsImpl" method="displayCollectedPremium" name="displayCollectedPremium" returntype="V">
+    <argument datatype="com.util.Context" name="context" seq="0"/>
+    <argument seq="1" name="key" datatype="java.lang.String"/>	
+    <argument seq="2" name="value" datatype="java.lang.String"/>	
+  </functiondefinition>
+  
 </functionsdef>

@@ -787,4 +787,26 @@ public static String attachAndSendEmail (Context ctx)
 		}
 	}
 	
+//phase 3 - reports 
+	public static void displayCollectedPremium(Context ctx,String key,String value)
+	{
+		try
+		{
+		logger.debug("inside displayCollectedPremium function ");
+			List<Map<String,String>> newList=new ArrayList<Map<String,String>>();
+			List<Map<String,String>> spOutputList=new ArrayList<Map<String,String>>();
+
+			spOutputList=(ArrayList<Map<String,String>>) ctx.get(key);
+				for (Map<String, String> map : spOutputList) {				
+				map.put("Collected_PREMIUM", map.get(value));
+				newList.add(map);
+			}
+			ctx.put(key, newList);	
+			logger.debug("list size :"+newList.size());		
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}	
+	
 }
