@@ -251,4 +251,13 @@
   <!-- Customization to configuration changes -->
   <label deltaind="M" labeldesc="How did you learn about Company" labelkey="learn_about_label"/>
   
+  <!-- UAT2 Bug Id - 007 Agency Demo Market Info label change start -->
+  
+   <label deltaind="M" labeldesc="Premium Volume and Production Information" labelkey="premium_volume_commitment_to_sample_label"/>
+   <label deltaind="M" labeldesc="Annual Premium Volume" labelkey="premium_volume_monthly_premium_label"/>
+   <label deltaind="M" labeldesc="Monthly Application Written" labelkey="premium_volume_yearly_premium_label"/>
+   <label deltaind="M" labeldesc="Annual Application Written" labelkey="premium_volume_next3year_premium_label"/>
+  
+  <!-- UAT2 Bug Id - 007 Agency Demo Market Info label change end -->
+  
 </labelconf>
