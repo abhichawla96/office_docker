@@ -762,6 +762,9 @@
     <businessrole deltaind="I" roleid="vpmarketing">
       <roleaccesslevel accesstype="0"/>
    </businessrole>
+    <businessrole deltaind="I" roleid="SalesDirector">
+      <roleaccesslevel accesstype="0"/>
+   </businessrole>
 </protectedresource>
 <!-- Phase 3- Task Id-25094-end -->
 
@@ -1199,10 +1202,15 @@
   </protectedresource>
   
   <!-- Territory Manager Role Configuration -->
-  <protectedresource description="send_invite_page_level_paradigm" uniquename="send_invite_page_level_paradigm">    
+    <!-- Phase 3- Marketing Group -->
+  
+  <protectedresource deltaind="M" description="send_invite_page_level_paradigm" uniquename="send_invite_page_level_paradigm">    
     <businessrole deltaind="M" roleid="MarketingRep">
       <roleaccesslevel accesstype="0"/>
     </businessrole>   
+    <businessrole deltaind="I" roleid="MarketingGroup">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole> 
   </protectedresource>
   
   <!--Territory Manager Agency Code Association  -->
@@ -1239,10 +1247,13 @@
   
   <!-- User Details Link Read only for Territory Manager -->
   
-  <protectedresource defaultaccesstype="1" description="contact_spinn_security" operator="AND" uniquename="contact_spinn_security">
+  <protectedresource deltaind="M" defaultaccesstype="1" description="contact_spinn_security" operator="AND" uniquename="contact_spinn_security">
     <businessrole deltaind="M" roleid="MarketingRep">
       <roleaccesslevel accesstype="0"/>
     </businessrole>
+    <businessrole deltaind="I" roleid="MarketingGroup">
+	<roleaccesslevel accesstype="0" />
+	</businessrole> 
   </protectedresource>
   
   <!-- Hiding Gateway Transactions for Territory Manager -->
@@ -1662,6 +1673,9 @@
     <userdefined  ruleid="ProducerOneRule.isDisplayWelcomeButton" executionsequence="0">
 			<userdefinedaccesslevel accesstype="1" />
 		</userdefined>
+	<businessrole deltaind="I" roleid="MarketingGroup">
+		<roleaccesslevel accesstype="0" />
+		</businessrole>	
   </protectedresource>
     <!-- display delete icon -->
   <protectedresource deltaind="I" defaultaccesstype="0" operator="and" uniquename="deleteApplication_security">
@@ -3181,6 +3195,102 @@
 
 <protectedresource deltaind="I" defaultaccesstype="2" description="Hide Inititate New Transfer Button" uniquename="bobtransfersStep3_dest_producer_code_step3_security">
 </protectedresource>
+
+
+<!-- Phase 3- Marketing Group- start -->
+<protectedresource deltaind="M" description="Hide/show homeActionAnalyticsAndReportingHideShow" uniquename="homeActionAnalyticsAndReportingHideShow">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+ <businessrole deltaind="I" roleid="Underwriter">
+  <roleaccesslevel accesstype="0"/>
+ </businessrole>
+</protectedresource>
+
+<protectedresource deltaind="I" description="Hide/show agency functions tab" uniquename="agency_functions_tab_security">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show rirs tab under agency nipr tab" operator="or" uniquename="checkIsShowAgencyAppointRIRSTab">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/Show competitor appointments under agency nipr tab" operator="or" uniquename="checkIsShowAgencyCompetitorsAppointmentTab">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+<protectedresource deltaind="M" description="Hide/show Agency Claim/Policy sub tab" defaultaccesstype="1" uniquename="claim_policy_security">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+<protectedresource deltaind="M" description="common.hideDeleteLinkForAgencyAdmin" uniquename="common.hideDeleteLinkForAgencyAdmin">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+<protectedresource deltaind="M" description="Hide/Show ivansScreenListing_addNewIvans_security" defaultaccesstype="1" uniquename="ivansScreenListing_addNewIvans_security">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/Show documents insurance sub tab" uniquename="checkIsShowDocumentInsuranceTab">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/Show documents Cyber Liability sub tab" uniquename="carrierTabs_cyberliabilitytab">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+<protectedresource deltaind="M" description="Hide/show Bank Information tab" operator="OR" uniquename="isShowAgencyBankInformationTab">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+<protectedresource deltaind="M" description="Hide/Show reassign user link on onboarding workq" uniquename="reassign_user_role_based_security">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+<protectedresource deltaind="I" description="Hide/Show RIRS tab" uniquename="checkIsShowAgentAppointRIRSTab">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+<protectedresource deltaind="M" uniquename="agencyListPublicSubmitNInvitation.public_url_onboarding_list_security">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+ <protectedresource deltaind="M" description="Hide/Show reassign user button for read only role" uniquename="agencyListPublicSubmitNInvitation.reassign_user_role_based_security">
+ <businessrole deltaind="I" roleid="MarketingGroup">
+  <roleaccesslevel accesstype="0"/>
+ </businessrole>
+ </protectedresource>
+
+<protectedresource deltaind="M" description="Hide/Show show comments link on onboarding workq" uniquename="agencyList_block_comments_row_security">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0"/>
+ </businessrole>
+</protectedresource>
+<!-- Phase 3- Marketing Group- end -->
 
     
 </security> 
