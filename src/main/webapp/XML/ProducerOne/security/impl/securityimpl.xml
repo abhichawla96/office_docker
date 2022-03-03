@@ -1756,6 +1756,9 @@
   <!-- Phase 2- Bug Id- P2-105- Hiding Add New Prospect Button for Accounting -->
    
   <protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Add New Prospect Button" uniquename="prospectDetailSeacrhResults_addNewProspect1">
+    <businessrole deltaind="I" roleid="MarketingGroup">
+	<roleaccesslevel accesstype="0"/>
+ 	</businessrole>
     <businessrole deltaind="I" roleid="MarketingAssistant">
     	<roleaccesslevel accesstype="0"/>
     </businessrole>
@@ -1806,6 +1809,9 @@
   <!-- Phase 2- Bug Id- P2-106- Hiding Add New Note Button for Accounting -->
   
   <protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Add New Note Button Prospect" uniquename="prospectNotepad_addNewNote">
+    <businessrole deltaind="I" roleid="MarketingGroup">
+	<roleaccesslevel accesstype="0"/>
+ 	</businessrole> 
     <businessrole deltaind="I" roleid="MarketingAssistant">
       	<roleaccesslevel accesstype="0"/>
     </businessrole>
@@ -2333,6 +2339,9 @@
   
 <!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Delete Button - Agency General Details - Relationship Mgmt Tab -->  
 <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show callreport_block_delete_row_security" uniquename="callreport_block_delete_row_security">
+	<businessrole deltaind="I" roleid="MarketingGroup">
+	<roleaccesslevel accesstype="0"/>
+ 	</businessrole>	
 	<businessrole deltaind="I" roleid="CarrierAdmin">
       	<roleaccesslevel accesstype="0"/>
     </businessrole>
@@ -2367,10 +2376,16 @@
     <businessrole deltaind="I" roleid="Accounting">
     	<roleaccesslevel accesstype="0"/>
     </businessrole>
+    <businessrole deltaind="I" roleid="MarketingGroup">
+	<roleaccesslevel accesstype="0"/>
+ 	</businessrole>	
 </protectedresource> 
 
 <!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Delete Button - Prospect Details Search Results Page -->  
 <protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Delete Button - Prospect Details Search Results Page" uniquename="delete_row_link_security">
+	<businessrole deltaind="I" roleid="MarketingGroup">
+	<roleaccesslevel accesstype="0"/>
+ 	</businessrole>	
 	<businessrole deltaind="I" roleid="CarrierAdmin">
       	<roleaccesslevel accesstype="0"/>
     </businessrole>
@@ -2390,6 +2405,9 @@
 
 <!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Modify Button - Prospect Details Search Results Page -->
 <protectedresource deltaind="M" defaultaccesstype="1" uniquename="isProspectStatusConvertedToAgency">
+    <businessrole deltaind="I" roleid="MarketingGroup">
+	<roleaccesslevel accesstype="0"/>
+ 	</businessrole>
     <businessrole deltaind="I" roleid="CarrierAdmin">
       	<roleaccesslevel accesstype="0"/>
     </businessrole>
@@ -2453,6 +2471,9 @@
     <businessrole deltaind="M" roleid="MarketingAssistant">
       <roleaccesslevel accesstype="0"/>
     </businessrole>
+    <businessrole deltaind="I" roleid="MarketingGroup">
+	<roleaccesslevel accesstype="1"/>
+ 	</businessrole>
   </protectedresource>
   
    <!-- Phase 2- Bug Id- P2-072 -->
@@ -3290,6 +3311,43 @@
 <roleaccesslevel accesstype="0"/>
  </businessrole>
 </protectedresource>
+
+<protectedresource deltaind="M" description="Hide/Show Agency Termination request link on dashboard" uniquename="isAgencyTerminationApplicable">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0"/>
+ </businessrole>
+</protectedresource>
+
+ <protectedresource deltaind="M" defaultaccesstype="0" uniquename="isCallReportActive">
+ <businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="1"/>
+ </businessrole>
+</protectedresource>
+
+ <protectedresource deltaind="M" description="Hide/Show delete_email_additionalEmailAddress_prospectAgencyDetails_security" defaultaccesstype="1" uniquename="delete_email_additionalEmailAddress_prospectAgencyDetails_security">
+ <businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0"/>
+ </businessrole>
+</protectedresource>
+
+<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show market information tab for agency" operator="OR" uniquename="isMarketInformationApplicableToAgency">
+ <businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="1"/>
+ </businessrole>	
+</protectedresource>
+
+<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show modify button on agent page" operator="OR" uniquename="contact_modify_security">
+ <businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="1"/>
+ </businessrole>
+</protectedresource>
+
+<protectedresource  deltaind="M" description="Hide/Show add new button" uniquename="isShowDeleteLinkOnProducerNumberList">
+ <businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0"/>
+ </businessrole>
+</protectedresource>
+
 <!-- Phase 3- Marketing Group- end -->
 
     
