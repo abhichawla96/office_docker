@@ -24,7 +24,7 @@
 	<!-- Phase 2 - Email to Agency Admin once the request is Declined -->
 	<action deltaind="M" name="declineRequests">
 	  	<workflow deltaind="M" eval="ProducerOneRule.assignDateFields" name="disapprvoveRequests" seq="0">
-	  		<storedprocedureoperation dbspname="getDataForEmailNotificationForSelfService_p" eval="ProducerOneRule.checkEmailNotificationSentOnApprovalSecurity" executionsequence="2" id="getDataForEmailNotificationForSelfService_p" metaobject="agency_master_ss" name="getDataForEmailNotificationForSelfService_p" operation="3">
+	  		<storedprocedureoperation deltaind="M" dbspname="getDataForEmailNotificationForSelfService_p" eval="ProducerOneRule.checkEmailNotificationSentOnApprovalSecurity" executionsequence="2" id="getDataForEmailNotificationForSelfService_p" metaobject="agency_master_ss" name="getDataForEmailNotificationForSelfService_p" operation="3">
           		<parameteroperation indexno="1" mode="IN" property="email_notification_event_name" seq="2"/>
           		<parameteroperation indexno="0" mode="IN" property="request_ss_id" seq="1"/>
           		<resultsetoperation indexno="0" mappingclass="java.util.HashMap" seq="1"/>
