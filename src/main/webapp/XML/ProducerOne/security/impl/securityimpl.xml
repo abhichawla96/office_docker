@@ -3355,5 +3355,14 @@
 
 <!-- Phase 3- Marketing Group- end -->
 
+<!-- Task Id- 30025 -->
+<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show incentive statement sub tab" operator="or" uniquename="incentivestatement_tab_security">
+<businessrole deltaind="M" roleid="MarketingRep">
+  <roleaccesslevel accesstype="0"/>
+ </businessrole>
+<businessrole deltaind="I" roleid="Accounting">
+  <roleaccesslevel accesstype="0"/>
+ </businessrole> 
+</protectedresource>
     
 </security> 
