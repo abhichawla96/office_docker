@@ -3365,4 +3365,15 @@
  </businessrole> 
 </protectedresource>
     
+<!-- Task Id- 30036-->
+ <protectedresource deltaind="M" defaultaccesstype="0" description="Hide Show Button On Incentive Statement" uniquename="compensationIncentiveStatement.hideShowButtonOnCompenationIncentiveStatement">
+ <businessrole deltaind="I" roleid="CarrierAdmin">
+ <roleaccesslevel accesstype="1"/>
+ </businessrole>
+ <businessrole deltaind="I" roleid="MarketingAssistant">
+ <roleaccesslevel accesstype="1"/>
+ </businessrole>
+ </protectedresource>
+    
+    
 </security> 
