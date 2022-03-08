@@ -785,12 +785,12 @@
 <!-- Feature List 107740 adding Trash Onboarded Bucket end -->
 	
 <!-- UAT2 Bug Id - 007 Agency Demo Market Info start -->
-	<tabsconfigurationresource deltaind="M" accesslevel="1" description="premium_volume_commitment_to_sample_security" name="premium_volume_commitment_to_sample_security"/>
+	<!--  <tabsconfigurationresource deltaind="M" accesslevel="1" description="premium_volume_commitment_to_sample_security" name="premium_volume_commitment_to_sample_security"/>
 	
 	<tabsconfigurationresource deltaind="M" description="atleastOneLOBRequiredSecurity" name="atleastOneLOBRequiredSecurity" accesslevel="0"/>
 	
 	<tabsconfigurationresource deltaind="M" accesslevel="0" description="premium_volume_by_lob_security" name="premium_volume_by_lob_security"/>
-	
+	-->
 	<!-- UAT2 Bug Id - 007 Agency Demo Market Info end -->
 
 </tabsconfiguration>

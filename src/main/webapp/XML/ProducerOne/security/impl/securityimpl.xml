@@ -1329,11 +1329,11 @@
     </businessrole>
   </protectedresource>
   
-  <!-- <protectedresource deltaind="M" description="premium_volume_by_lob_security" uniquename="premium_volume_by_lob_security">
+   <protectedresource deltaind="M" description="premium_volume_by_lob_security" uniquename="premium_volume_by_lob_security">
     <businessrole deltaind="I" roleid="MarketingRep">
       <roleaccesslevel accesstype="1"/>
     </businessrole>
-  </protectedresource> -->
+  </protectedresource> 
   
   <protectedresource deltaind="M" description="top_companies_appointed_security" uniquename="top_companies_appointed_security">
     <businessrole deltaind="I" roleid="MarketingRep">
