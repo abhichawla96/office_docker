@@ -915,5 +915,8 @@
 <!-- Phase 3- Bug Id- 28330 -->  
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide earned premium" name="incentiveStatements_premium_earned_security"/>
 
+<!-- Phase 3- Hide Pdf icon on contingency commission statement -->
+<tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/show pdf on  form" name="incentiveStatement_pdf"/>
+
 
 </tabsconfiguration>
