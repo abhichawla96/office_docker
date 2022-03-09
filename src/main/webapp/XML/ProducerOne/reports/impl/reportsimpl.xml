@@ -12,6 +12,9 @@
 	<!-- start - phase 3 BMIC - added collected premium columns in reports -->
 	<reportdef name="AIM100-1" description="Cash Control Details (AIM100-1)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y">
 		<columnset name="AIM100-1set">
+		<!-- OOB issue fixed -->
+		 <column deltaind="M" name="actual_written_premium" columnlabel="Written Premium" metaproperty="actual_written_premium" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+        
 			<column deltaind="I" name="Collected_PREMIUM" columnlabel="Collected Premium" metaproperty="PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="8" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 	       </columnset>
 	       <reportworkflow deltaind="M" name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,ispaginationrequired,reportID,reportoutputtype,groupby,company_id_V,state_id_V,lob_id_A,business_segment_V,Period_D,agency_code_V">
