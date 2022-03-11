@@ -3375,5 +3375,36 @@
  </businessrole>
  </protectedresource>
     
+<!-- Phase 3- Adjustments- Security Matrix -->  
+<protectedresource deltaind="I" defaultaccesstype="0" description="check bonus Statement  for Rising Star" uniquename="incentiveStatement_adjustmenticon2">
+ <businessrole deltaind="I" roleid="CarrierAdmin">
+ <roleaccesslevel accesstype="1"/>
+ </businessrole>    	
+ </protectedresource> 
+ 
+ <protectedresource deltaind="M" description="Show Recalculation Button in CCB Statement" uniquename="compensationIncentiveStatement.hideRecalculationButtonPanel">
+ <businessrole deltaind="M" roleid="CarrierAdmin">
+ <roleaccesslevel accesstype="1"/>
+ </businessrole>  
+ <businessrole deltaind="M" roleid="MarketingAssistant">
+ <roleaccesslevel accesstype="0"/>
+ </businessrole>
+</protectedresource>
+  
+<protectedresource deltaind="M" description="Show hide Approve Button" uniquename="incentiveStatement.showHideCCbApproveButton"> 
+<businessrole deltaind="M" roleid="SalesDirector">
+<roleaccesslevel accesstype="1"/>
+</businessrole>    
+<businessrole deltaind="M" roleid="CarrierAdmin">
+ <roleaccesslevel accesstype="0"/>
+</businessrole>      
+</protectedresource>   
+
+<protectedresource deltaind="M" description="Show hide Approve Button for Acoounting analyst without link" uniquename="incentiveStatement.showHideCCbApproveButtonForAccountinganalyst">
+<businessrole deltaind="M" roleid="CarrierAdmin">
+  <roleaccesslevel accesstype="1"/>
+</businessrole>
+</protectedresource>    
+    
     
 </security> 
