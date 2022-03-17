@@ -3406,5 +3406,24 @@
 </businessrole>
 </protectedresource>    
     
+<!-- Bug Id- 32505,32506 and 32502  -->
+<protectedresource  deltaind="M" description="Hide/Show location tab" uniquename="locationtab_security">
+ <businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0"/>
+ </businessrole>
+</protectedresource>
+
+<protectedresource  deltaind="M" description="Hide/Show contact tab" uniquename="checkIsShowProducerNumberTab">
+ <businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0"/>
+ </businessrole>
+</protectedresource>
+
+<protectedresource  deltaind="M" description="Hide/Show contact list tab" uniquename="agenttab_security">
+ <businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0"/>
+ </businessrole>
+</protectedresource>
+
     
 </security> 
