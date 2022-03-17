@@ -918,5 +918,8 @@
 <!-- Phase 3- Hide Pdf icon on contingency commission statement -->
 <tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/show pdf on  form" name="incentiveStatement_pdf"/>
 
+<!-- Phase 3- IVANS section --> 
+ <tabsconfigurationresource deltaind="M" name="ivans_download_type_security" accesslevel="1" description="Hide/Show Ivans Download Type Lookup" />
+
 
 </tabsconfiguration>
