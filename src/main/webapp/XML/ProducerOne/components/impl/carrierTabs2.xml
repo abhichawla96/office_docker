@@ -1,0 +1,12 @@
+<projectcomponents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/components_XSD.xsd">
+  <component name="carrierTabs2" displayname="Tabs2">
+  	<action deltaind="M" name="view">
+<!--    Phase 3- Adjustments -->  
+ <actionparam deltaind="I" executionsequence="0" form="Y" name="hide" paramid="hide" post="Y" session="Y" val="1"/>
+   <workflow name="prehistory" seq="0">
+    	<function executionsequence="0" functionid="setObjectTypeForHistory" name="setObjectTypeForHistory" parameters="context"/>
+    	<businessobject executionsequence="1" name="generateTabs" obj="com.userbo.common.Tabs"/>
+    </workflow>   
+     </action>
+      </component>
+</projectcomponents>
