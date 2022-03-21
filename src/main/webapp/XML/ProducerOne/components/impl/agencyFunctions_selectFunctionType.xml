@@ -96,6 +96,9 @@
 	   
 	      
 	    	<workflowevent deltaind="D" eval="AgencyFunctionsRule.isShowAgencyFunctionsTypeDeactivateContact" ajaxcontainerid="contentTableDiv" event="declineAgencyFunctionDC" isgetuser="Y" name="declineAgencyFunctionDC" userfield="workflow_user" workflow="agencyFunctions" executionsequence="3"/>
+	    	<!-- Changes done for prod bug 31110  -->
+   			<!-- <workflowevent deltaind="I" eval="ProducerOneRule.commentAssignment2" ajaxcontainerid="contentTableDiv" event="declineSelfService" isgetuser="Y" name="declineSelfService" userfield="workflow_user" workflow="selfServiceWorkFlow" executionsequence="0"/> -->
+	    	<workflowevent deltaind="I" eval="AgencyFunctionsRule.isShowAgencyFunctionsTypeDeactivateContact" ajaxcontainerid="contentTableDiv" event="declineAgencyFunctionDCNew" isgetuser="Y" name="declineAgencyFunctionDCNew" userfield="workflow_user" workflow="agencyFunctions" executionsequence="7"/>
 	    	
 	    	
 	    	<workflow deltaind="I" name="selfServiceDeclineEmail" seq="14">
@@ -105,17 +108,19 @@
 				<!-- Changes done for prod bug 31110  -->
 	    	    <databaseoperation deltaind="I" executionsequence="1" metaobject="userprofiles" name="getAgencyAdminApproverEmail" operation="3" sqlstmt="select user_name as user_name_app from userprofiles where user_id=#workflow_assignee#"/>
 			    <databaseoperation deltaind="I" executionsequence="2" eval="ProducerOneRule.isUserNameEmpty" metaobject="person" name="getApproverNameEmail" operation="3" sqlstmt="Select prdcr_first_name +' '+ prdcr_last_name as user_name_app from person where person_id in (Select person_id from agency_person where agency_id in (Select agency_id from requests_ss where request_ss_id = #request_ss_id#) and isadmin='1')"/>
-			    <databaseoperation deltaind="I" executionsequence="3" eval="AgencyFunctionsRule.checkisFunctionTypeOtherThanDC" metaobject="userprofiles" name="getAgencyAdminApproverEmailName" operation="3" sqlstmt="select e_mail as e_mail_name from userprofiles where user_id=#workflow_assignee#"/>
-			    <email deltaind="I" eval="AgencyFunctionsRule.checkisFunctionTypeOtherThanDC"  eventname="declineSelfServiceRequest" executionsequence="12" name="declineSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail_name"/>
+			    <databaseoperation deltaind="I" executionsequence="3" metaobject="userprofiles" name="getAgencyAdminApproverEmailName" operation="3" sqlstmt="select e_mail as e_mail_name from userprofiles where user_id=#workflow_assignee#"/>
+			    <databaseoperation deltaind="I" executionsequence="4" eval="AgencyFunctionsRule.checkisFunctionTypeDCselfservice" metaobject="additional_address_emails" name="getAgencyAdminApproverEmailNameDC" operation="3" sqlstmt="select email_id as e_mail_name from additional_address_emails 
+                                   where object_id=(select person_id from person where login_id=(select top 1 created_by from workflowrequests where objectid =#request_ss_id# and objecttype = 'Agency Function'))
+                                   and object_type_code='I' and email_category=(
+                                   select master_lookup_data_id from master_lookup_data_lku where master_lookup_data_code ='PreferredEmail' and 
+                                   master_lookup_detail_id =(select master_lookup_detail_id from master_lookup_detail_lku where lookup_table_name='email_category_lku'))"/>
+			    <email deltaind="I" eventname="declineSelfServiceRequest" executionsequence="12" name="declineSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail_name"/>
 			</workflow>
 	    	 <!-- Upgrade bug Id-029 start -->
 	    	 <actionparam deltaind="I" executionsequence="0" form="Y" name="workflow_assignee" paramid="workflow_assignee" viewparam="Y"/>
    			<!-- Upgrade bug Id-029 end -->
    			
-   			<!-- Changes done for prod bug 31110  -->
-   			<workflowevent deltaind="I" eval="ProducerOneRule.commentAssignment2" ajaxcontainerid="contentTableDiv" event="declineSelfService" isgetuser="Y" name="declineSelfService" userfield="workflow_user" workflow="selfServiceWorkFlow" executionsequence="0"/>
-	    	<workflowevent deltaind="I" eval="AgencyFunctionsRule.isShowAgencyFunctionsTypeDeactivateContact" ajaxcontainerid="contentTableDiv" event="declineAgencyFunctionDCNew" isgetuser="Y" name="declineAgencyFunctionDCNew" userfield="workflow_user" workflow="agencyFunctions" executionsequence="7"/>
-	    	</action>
+   			</action>
 	    	 <!--BMIC req request not moved to Declined bucket end -->
 	    	 
 	    	 

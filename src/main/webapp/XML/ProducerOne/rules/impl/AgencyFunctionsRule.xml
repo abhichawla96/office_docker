@@ -17,6 +17,7 @@ method="isShowTemplateAndDocumentForAgencyFunction" />
 
 <!-- Changes done for prod bug 31110  -->
 <rule id="checkisFunctionTypeOtherThanDC" deltaind="I" expression="if(isNot(call_rule(AgencyFunctionsRule.isShowAgencyFunctionsTypeDeactivateContact)))=>isEqual(1,1))" obj="ruleobjs.AgencyFunctionsRule" method="checkisFunctionTypeOtherThanDC" />
+<rule id="checkisFunctionTypeDCselfservice" deltaind="I" expression="andCondition(isEqual(:selectFunctionType_code,functionDC),isEmpty(:e_mail_name));"/>
 
   </ruleset>
 </evalrules>
