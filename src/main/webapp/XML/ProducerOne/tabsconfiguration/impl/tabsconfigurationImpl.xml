@@ -921,5 +921,9 @@
 <!-- Phase 3- IVANS section --> 
  <tabsconfigurationresource deltaind="M" name="ivans_download_type_security" accesslevel="1" description="Hide/Show Ivans Download Type Lookup" />
 
+<!-- Phase 3- Hide Calculation factors section -->
+<tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/show factors grid" name="bonusCalculationFactor_freeform_contextdata_01"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide Show WRITTEN PREMIUM GROWTH CALCULATIONand GROWTH RATE FACTOR CHART (GRF) security" name="compIncentiveStmnt_wpg_grf_security"/>
+
 
 </tabsconfiguration>
