@@ -20,7 +20,7 @@
 			<databaseoperation deltaind="I" executionsequence="1" metaobject="requests" name="getAgencyAdminApproverName" operation="3" sqlstmt="select top 1 req.assignee as workflow_assignee from workflowrequests as req join tbl_invitation_status_lku as status on req.workflowstatus_id=status.invitation_status_id join workflowrequestsstatus as reqsts on reqsts.workflowrequests_id=req.workflowrequests_id where req.objectid=#request_ss_id# order by workflowrequestsstatus_id desc"/>
 			<!-- Changes done for prod bug 31110  -->
 			<databaseoperation deltaind="I" executionsequence="1" metaobject="userprofiles" name="getAgencyAdminApproverEmail" operation="3" sqlstmt="select user_name as user_name_app from userprofiles where user_id=#workflow_assignee#"/>
-			<databaseoperation deltaind="I" executionsequence="2" eval="ProducerOneRule.isUserNameEmpty" metaobject="person" name="getApproverNameEmail" operation="3" sqlstmt="Select prdcr_first_name +' '+ prdcr_last_name as user_name_app from person where person_id in (Select person_id from agency_person where agency_id in (Select agency_id from requests_ss where request_ss_id = #request_ss_id#) and isadmin='1')"/>
+			<databaseoperation deltaind="I" executionsequence="2" eval="ProducerOneRule.isUserNameEmpty" metaobject="person" name="getApproverNameEmail" operation="3" sqlstmt="select prdcr_first_name +' '+ prdcr_last_name as user_name_app from person where login_id=(select top 1 created_by from workflowrequests where objectid =#request_ss_id#)"/>
 			<!-- <email deltaind="I" eventname="ApproveSelfServiceRequest" executionsequence="2" name="ApproveSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail"/> -->
 		</workflow>
 		<!-- Phase 2 - Bug ID- P2-103 - Changed the name of workflowevent as the earlier one contained the 'parentevent' attribute - Start -->
@@ -52,7 +52,7 @@
 	    	
 	    	<!-- Changes done for prod bug 31110  -->
 	    	<databaseoperation deltaind="I" executionsequence="1" metaobject="userprofiles" name="getAgencyAdminApproverEmail" operation="3" sqlstmt="select user_name as user_name_app from userprofiles where user_id=#workflow_assignee#"/>
-			<databaseoperation deltaind="I" executionsequence="2" eval="ProducerOneRule.isUserNameEmpty" metaobject="person" name="getApproverNameEmail" operation="3" sqlstmt="Select prdcr_first_name +' '+ prdcr_last_name as user_name_app from person where person_id in (Select person_id from agency_person where agency_id in (Select agency_id from requests_ss where request_ss_id = #request_ss_id#) and isadmin='1')"/>
+			<databaseoperation deltaind="I" executionsequence="2" eval="ProducerOneRule.isUserNameEmpty" metaobject="person" name="getApproverNameEmail" operation="3" sqlstmt="select prdcr_first_name +' '+ prdcr_last_name as user_name_app from person where login_id=(select top 1 created_by from workflowrequests where objectid =#request_ss_id#)"/>
 		
 		</workflow>
 	  </action>
