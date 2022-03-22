@@ -3407,23 +3407,11 @@
 </protectedresource>    
     
 <!-- Bug Id- 32505,32506 and 32502  -->
-<protectedresource  deltaind="M" description="Hide/Show location tab" uniquename="locationtab_security">
- <businessrole deltaind="I" roleid="MarketingGroup">
+<protectedresource deltaind="M"  defaultaccesstype="1" description="Hide/Show agent list tab" operator="OR" uniquename="agenttab_security">
+<businessrole deltaind="I" roleid="MarketingGroup">
 <roleaccesslevel accesstype="0"/>
- </businessrole>
-</protectedresource>
-
-<protectedresource  deltaind="M" description="Hide/Show contact tab" uniquename="checkIsShowProducerNumberTab">
- <businessrole deltaind="I" roleid="MarketingGroup">
-<roleaccesslevel accesstype="0"/>
- </businessrole>
-</protectedresource>
-
-<protectedresource  deltaind="M" description="Hide/Show contact list tab" uniquename="agenttab_security">
- <businessrole deltaind="I" roleid="MarketingGroup">
-<roleaccesslevel accesstype="0"/>
- </businessrole>
-</protectedresource>
+ </businessrole>   
+ </protectedresource>
 
 <!-- Phase 3- Adjustments -->
 <protectedresource deltaind="I" description="adjustment_approve_section" uniquename="approval_freeform_contextdata_1">
