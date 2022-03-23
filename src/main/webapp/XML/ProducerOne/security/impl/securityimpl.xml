@@ -3414,10 +3414,10 @@
  </protectedresource>
 
 <!-- Phase 3- Adjustments -->
-<protectedresource deltaind="I" description="adjustment_approve_section" uniquename="approval_freeform_contextdata_1">
+<!-- <protectedresource deltaind="I" description="adjustment_approve_section" uniquename="approval_freeform_contextdata_1">
 <userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.hideApprove">
 <userdefinedaccesslevel accesstype="0" />
 </userdefined>
-</protectedresource>
+</protectedresource> -->
     
 </security> 
