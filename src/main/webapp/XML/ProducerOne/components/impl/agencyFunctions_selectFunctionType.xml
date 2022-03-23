@@ -84,8 +84,13 @@
 				<!-- Changes done for prod bug 31110  -->
 			   <databaseoperation deltaind="I" executionsequence="1" metaobject="userprofiles" name="getAgencyAdminApproverEmail" operation="3" sqlstmt="select user_name as user_name_app from userprofiles where user_id=#workflow_assignee#"/>
 			   <databaseoperation deltaind="I" executionsequence="2" eval="ProducerOneRule.isUserNameEmpty" metaobject="person" name="getApproverNameEmail" operation="3" sqlstmt="select prdcr_first_name +' '+ prdcr_last_name as user_name_app from person where login_id=(select top 1 created_by from workflowrequests where objectid =#request_ss_id#)"/>
-			   <databaseoperation deltaind="I" executionsequence="3" eval="AgencyFunctionsRule.checkisFunctionTypeOtherThanDC" metaobject="userprofiles" name="getAgencyAdminApproverEmailName" operation="3" sqlstmt="select e_mail as e_mail_name from userprofiles where user_id=#workflow_assignee#"/>
-			   <email deltaind="I" eval="AgencyFunctionsRule.checkisFunctionTypeOtherThanDC" eventname="ApproveSelfServiceRequest" executionsequence="2" name="ApproveSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail_name"/>
+			   <databaseoperation deltaind="I" executionsequence="3" metaobject="userprofiles" name="getAgencyAdminApproverEmailName" operation="3" sqlstmt="select e_mail as e_mail_name from userprofiles where user_id=#workflow_assignee#"/>
+			   <databaseoperation deltaind="I" executionsequence="4" eval="AgencyFunctionsRule.checkisFunctionTypeDCselfservice" metaobject="additional_address_emails" name="getAgencyAdminApproverEmailNameDC" operation="3" sqlstmt="select email_id as e_mail_name from additional_address_emails 
+                                   where object_id=(select person_id from person where login_id=(select top 1 created_by from workflowrequests where objectid =#request_ss_id# and objecttype = 'Agency Function'))
+                                   and object_type_code='I' and email_category=(
+                                   select master_lookup_data_id from master_lookup_data_lku where master_lookup_data_code ='PreferredEmail' and 
+                                   master_lookup_detail_id =(select master_lookup_detail_id from master_lookup_detail_lku where lookup_table_name='email_category_lku'))"/>
+			   <email deltaind="I" eventname="ApproveSelfServiceRequest" executionsequence="2" name="ApproveSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail_name"/>
 	            </workflow>
 	            <!-- Upgrade bug Id-029 end -->
 	            </action>
