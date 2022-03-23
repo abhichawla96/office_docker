@@ -90,7 +90,7 @@
                                    and object_type_code='I' and email_category=(
                                    select master_lookup_data_id from master_lookup_data_lku where master_lookup_data_code ='PreferredEmail' and 
                                    master_lookup_detail_id =(select master_lookup_detail_id from master_lookup_detail_lku where lookup_table_name='email_category_lku'))"/>
-			   <email deltaind="I" eventname="ApproveSelfServiceRequest" executionsequence="2" name="ApproveSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail_name"/>
+			   <email deltaind="I" eventname="ApproveSelfServiceRequest" executionsequence="12" name="ApproveSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail_name"/>
 	            </workflow>
 	            <!-- Upgrade bug Id-029 end -->
 	            </action>

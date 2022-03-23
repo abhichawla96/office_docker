@@ -910,11 +910,11 @@
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				forward="agencyFunctions" isapproval="Y" assignee="user_id">
 				<!-- Changes done for prod bug 31110  -->
-				<email deltaind="I" name="ApproveSelfServiceRequest" eventname="ApproveSelfServiceRequest"  objectid="request_ss_id" objecttype="Self Service" executionsequence="1">
+				<!-- <email deltaind="I" name="ApproveSelfServiceRequest" eventname="ApproveSelfServiceRequest"  objectid="request_ss_id" objecttype="Self Service" executionsequence="1">
 					<parameter name="comment" value="comment" executionsequence="0"></parameter>
 					<parameter name="request_ss_id" value="request_ss_id" executionsequence="1"></parameter>
 					<parameter name="status" value="Approve" executionsequence="3"></parameter>
-				</email>
+				</email> -->
 			</status>
 			</event>
 		
