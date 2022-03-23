@@ -69,7 +69,10 @@
 	  	<!--BMIC req request not moved to approved bucket start -->
 	  <action deltaind="M" name="approveAgencyFunction">
 	  <workflowevent deltaind="D" eval="AgencyFunctionsRule.isShowAgencyFunctionsTypeDeactivateContact" ajaxcontainerid="contentTableDiv" event="approveAgencyFunctionDC" isgetuser="Y" name="approveAgencyFunctionDC" userfield="workflow_user" workflow="agencyFunctions" executionsequence="3"/>
-	  
+	  <!-- Changes done for prod bug 31110  -->
+	           <!--  <workflowevent deltaind="I" eval="ProducerOneRule.commentAssignment2" ajaxcontainerid="divComplete" event="approveSelfService" isgetuser="Y" name="approveSelfService" userfield="workflow_user" workflow="selfServiceWorkFlow" executionsequence="0"/> -->
+	           <workflowevent deltaind="I" eval="AgencyFunctionsRule.isShowAgencyFunctionsTypeDeactivateContact" ajaxcontainerid="contentTableDiv" event="approveAgencyFunctionDCNew" isgetuser="Y" name="approveAgencyFunctionDCNew" userfield="workflow_user" workflow="agencyFunctions" executionsequence="7"/>
+	    
 	    	
 	    	<!-- Upgrade bug Id-029 start -->
 	    	<actionparam deltaind="I" executionsequence="6" form="Y" name="workflow_assignee" paramid="workflow_assignee" viewparam="Y"/>
@@ -85,10 +88,7 @@
 			   <email deltaind="I" eval="AgencyFunctionsRule.checkisFunctionTypeOtherThanDC" eventname="ApproveSelfServiceRequest" executionsequence="2" name="ApproveSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail_name"/>
 	            </workflow>
 	            <!-- Upgrade bug Id-029 end -->
-	            <!-- Changes done for prod bug 31110  -->
-	            <workflowevent deltaind="I" eval="ProducerOneRule.commentAssignment2" ajaxcontainerid="divComplete" event="approveSelfService" isgetuser="Y" name="approveSelfService" userfield="workflow_user" workflow="selfServiceWorkFlow" executionsequence="0"/>
-	           <workflowevent deltaind="I" eval="AgencyFunctionsRule.isShowAgencyFunctionsTypeDeactivateContact" ajaxcontainerid="contentTableDiv" event="approveAgencyFunctionDCNew" isgetuser="Y" name="approveAgencyFunctionDCNew" userfield="workflow_user" workflow="agencyFunctions" executionsequence="7"/>
-	    </action>
+	            </action>
 	    <!--BMIC req request not moved to approved bucket end -->
 	    
 	    <!--BMIC req request not moved to Declined bucket start -->
