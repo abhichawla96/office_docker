@@ -619,25 +619,5 @@ protectedresourceuniquename="eno_question_aa_security" id="eno_question_aa" posi
     <field deltaind="M" isrequired="N" id="addNewBankInformation_account_owner" name="account_owner" screen="carrier/addNewBankInformation.html" section="addNewBankInformationNew1_freeform_contextdata_01" labelkey="account_owner_label" tabsconfigurationresourcename="account_owner_security" protectedresourceuniquename="account_owner_security" />
   <!-- UAT2 0069 Agency Demo end -->
   
-  <!-- UAT2 Bug-27510 Onboarding Step 1 validation message start -->
-	<field deltaind="M" name="taxpayer_name" screen="adminBrokerageDetailsStep1" objectcolumn="aar_requestid" labeldesc="W-9 Legal Name" 
-	isrequired="Y" labelkey="public1_tax_payer_name_label" tabsconfigurationresourcename="isShowTaxPayerName" 
-	protectedresourceuniquename="isShowTaxPayerName" id="adminBrokerageDetailsStep1_taxpayer_name">
-	</field>
-	<!-- UAT2 Bug-27510 Onboarding Step 1 validation message end -->
-	
-	<!-- UAT2 Bug 27510 Onboarding Step 1 Expiration Date start -->
-	
-	 <field deltaind="M" name="cyber_liability_effective_date" screen="adminBrokerageDetailsStep1" objectcolumn="aar_requestid" 
-	isrequired="Y" labelkey="cyber_liability_effective_date_label" tabsconfigurationresourcename="adminBrokerageDetailsStep1_cyber_liability_Effective_date_security" 
-	protectedresourceuniquename="adminBrokerageDetailsStep1_cyber_liability_Effective_date_security" id="cyber_liability_effective_date">
-	</field>
-	<field deltaind="M" name="cyber_liability_expiration_date" screen="adminBrokerageDetailsStep1" objectcolumn="aar_requestid" 
-	isrequired="Y" labelkey="cyber_liability_expiration_date_label" tabsconfigurationresourcename="adminBrokerageDetailsStep1_cyber_liability_Expiration_date_security" 
-	protectedresourceuniquename="adminBrokerageDetailsStep1_cyber_liability_Expiration_date_security" id="cyber_liability_expiration_date" >
-	<validation name="checkExpirationDateGreaterThanEffectiveDateCyberliability" executionsequence="2" expression="if(orCondition(isEmpty(:cyber_liability_expiration_date),orCondition(isDateEqual(:cyber_liability_effective_date,:cyber_liability_expiration_date),isDateBefore(:cyber_liability_effective_date,:cyber_liability_expiration_date)))=>isEqual(1,1);->isEqual(1,2));" message="ENOExpirationDateErrorKey"/>
-	</field> 
-	 
-	<!-- UAT2 Bug 27510 Onboarding Step 1 Expiration Date end -->
   
  </fields>
