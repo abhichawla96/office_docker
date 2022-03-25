@@ -2430,6 +2430,7 @@
   </protectedresource>
 
 <!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Add New Task Button - Agency General Details Page -->    
+<!--  Phase 3- Bug Id- 33992 -->  
 <protectedresource deltaind="I" defaultaccesstype="1" uniquename="relatioshipTask_addNewTask">
     <businessrole deltaind="I" roleid="CarrierAdmin">
       	<roleaccesslevel accesstype="0"/>
@@ -2446,6 +2447,9 @@
     <businessrole deltaind="I" roleid="Accounting">
     	<roleaccesslevel accesstype="0"/>
     </businessrole>
+  <businessrole deltaind="I" roleid="MarketingGroup">
+    	<roleaccesslevel accesstype="0"/>
+    </businessrole>  
   </protectedresource>
 
 <!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Delete Button - Prospect - Notepad Page -->    
