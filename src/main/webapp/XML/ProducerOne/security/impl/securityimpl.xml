@@ -3425,4 +3425,8 @@
  </businessrole>
 </protectedresource>  
     
+<!-- Phase 3- Bug Id- 22882 -->
+<protectedresource deltaind="M" defaultaccesstype="1" uniquename="isCheckCommissionScheduleModify">
+</protectedresource>    
+    
 </security> 
