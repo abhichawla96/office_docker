@@ -936,6 +936,7 @@
 <tabsconfigurationresource deltaind="I" accesslevel="0" description="block_field_cy_profit" name="block_field_cy_profit"/>
 <tabsconfigurationresource deltaind="I" accesslevel="0" description="block_field_py_losses" name="block_field_py_losses"/>
 <tabsconfigurationresource deltaind="I" accesslevel="0" description="block_field_net_profit" name="block_field_net_profit"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="earned_commission_amount_payout_detail_security" name="earned_commission_amount_payout_detail_security"/>
 
 
 </tabsconfiguration>
