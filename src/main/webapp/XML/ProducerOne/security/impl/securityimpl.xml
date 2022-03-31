@@ -1874,7 +1874,11 @@
     <!-- Phase 2 - Task Id- SS-005-11 -->
      <userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.checkIsNewRequest">
       <userdefinedaccesslevel accesstype="1"/>
-    </userdefined>    
+    </userdefined>  
+     <!-- Phase 3- Bug Id- 35975 --> 
+    <businessrole deltaind="I" roleid="MarketingGroup">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>   
   </protectedresource>
   
   <!-- Phase 2 - Bug Id- P2-042 --> 
@@ -3428,5 +3432,12 @@
 <!-- Phase 3- Bug Id- 22882 -->
 <protectedresource deltaind="M" defaultaccesstype="1" uniquename="isCheckCommissionScheduleModify">
 </protectedresource>    
+
+<!-- Phase 3- Bug Id- 35975 -->
+<protectedresource deltaind="I" uniquename="uploadDocument_delete">
+ <businessrole deltaind="I" roleid="MarketingGroup">
+ <roleaccesslevel accesstype="0"/>
+ </businessrole>
+</protectedresource>
     
 </security> 
