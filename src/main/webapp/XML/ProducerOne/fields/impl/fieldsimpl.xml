@@ -619,5 +619,10 @@ protectedresourceuniquename="eno_question_aa_security" id="eno_question_aa" posi
     <field deltaind="M" isrequired="N" id="addNewBankInformation_account_owner" name="account_owner" screen="carrier/addNewBankInformation.html" section="addNewBankInformationNew1_freeform_contextdata_01" labelkey="account_owner_label" tabsconfigurationresourcename="account_owner_security" protectedresourceuniquename="account_owner_security" />
   <!-- UAT2 0069 Agency Demo end -->
   
+  <!-- START - ADO 33153 - Prod Issue - Asterisk Mark - Pending E-Sign - Agency General Details -->
+  <field deltaind="I" id="agencyListPublicSubmitNInvitationEdit_agencyestablished_date" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" name="agencyestablished_date" isrequired="Y" labelkey="agencyListEdit_agency_in_business_since_label" tabsconfigurationresourcename="agencyListEdit_agencyestablisheddate_security" protectedresourceuniquename="agencyListEdit_agencyestablisheddate_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_1" />
+  <!-- END - ADO 33153 - Prod Issue - Asterisk Mark - Pending E-Sign - Agency General Details -->
+
+  
   
  </fields>
