@@ -628,7 +628,7 @@
 			 forward="agencyTerminationList">
 			</status>
 		</event>
-		<event deltaind="M" name="sendForApproval" approverrole="SalesDirector">
+		<event deltaind="M" name="sendForApproval" approverrole="vpmarketing">
 			<status name="sendForApproval" workflowstatus="Pending Review" workflowfunction="Agency Termination" executionsequence="1"
 				statuscomment="comment" usergroup="MarketingAssistant" statusgroup="Agency Termination" objectid="termination_log_id" objecttype="Agency Termination"
 				approver="workflow_user" forward="agencyTerminationList">
@@ -637,7 +637,7 @@
 					attachmentcontent="attachmentContent" executionsequence="0"></email>
 			</status>
 																								 
-	      <approver deltaind="M" name="approver1" approverrole="SalesDirector" executionsequence="1"></approver> 										   
+	      <approver deltaind="M" name="approver1" approverrole="vpmarketing" executionsequence="1"></approver> 										   
 		</event>
 		<event name="approved" assigneerole="MarketingAssistant" parentevent="sendForApproval">
 
