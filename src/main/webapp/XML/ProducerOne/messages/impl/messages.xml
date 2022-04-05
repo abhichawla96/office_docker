@@ -10,5 +10,8 @@
  <!-- START bug id U-081 - double asterisk sign for close agency code -->
  <message deltaind="I" message="Please enter Agency Code" msgkey="agencyCodeMendatoryErrorMsg" msglevel="W "/>
  <!-- END bug id U-081 - double asterisk sign for close agency code -->
-  
+  	<message deltaind="M" message="From Agency Code does not exists" msgkey="fromagentNumberNotExistsErrorKey" msglevel="W " />
+	<message deltaind="M" message="Destination Agency Code does not exists" msgkey="agentNumberNotExistsErrorKey" msglevel="W " />
+	<message deltaind="M" message="From Agency Code and Destination Agency Code can not be same" msgkey="fromToAgentNumberCanNotSameErrorKey" msglevel="W " />
+
  </messages>
