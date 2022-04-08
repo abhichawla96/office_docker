@@ -93,6 +93,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 									<destFileName>Product.war</destFileName>
 									<includes>**</includes>
 									<excludes>templates/commissionStatementTemplate.xlsx,temp.xml,css/**,images/**,js/impl/**,create.txt,WEB-INF/*,htmltoxmllog/keepme,**/ibatis/**,**/processflow.xml,XML/ProducerOne/*/impl,XML/ProducerOne/ibatis/maps/*,ProducerOneClient/*,XML/ProducerOneClient/ibatis/maps/*,XML/ProducerOne/applicationworkflow/*,foxsl/*,emailTemplate.html,**/userbo/*/*,WEB-INF/classes/com/processor/TabsConfiguration.class,WEB-INF/classes/com/esign/docusgindirect/util/DocuSignUtil.class,WEB-INF/classes/com/userbo/ValidateTransfersStep1BO.class,XML/ProducerOne/includes/*</excludes>
+									<excludes>templates/contingencyCommissionBonusStatement.xls</excludes>
 								</artifactItem>
 							</artifactItems>
 						</configuration>

@@ -16,6 +16,10 @@
 	<!-- Phase 3- Commission Statement -->
   <resource name="templates/commissionStatementTemplate.xlsx" type="xlsx" path="templates/commissionStatementTemplate.xlsx" executionsequence="34"/>
 	
+	<!-- Phase 3- Contingency Commission Statement -->	
+  <resource name="templates/contingencyCommissionBonusStatement.xls" type="xls" path="templates/contingencyCommissionBonusStatement.xls" executionsequence="35"/>
+	
+	
 	<resource name="js/jquery-1.10.2.js" type="javascript" path="js/jquery-1.10.2.js" executionsequence="9"/>
 	<resource name="js/jquery.tabelizer.js" type="javascript" path="js/jquery.tabelizer.js" executionsequence="10"/>
 	<resource name="js/jquery.dataTables1.10.19.js" type="javascript" path="js/jquery.dataTables1.10.19.js" executionsequence="11"/>
