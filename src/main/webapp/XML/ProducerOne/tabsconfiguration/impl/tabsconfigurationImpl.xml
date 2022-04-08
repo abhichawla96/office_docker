@@ -929,7 +929,6 @@
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="net_profit_payout_detail_security" name="net_profit_payout_detail_security"/>
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="py_losses_payout_detail_security" name="py_losses_payout_detail_security"/>
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="cy_profit_payout_detail_security" name="cy_profit_payout_detail_security"/>
-<tabsconfigurationresource deltaind="I" accesslevel="0" description="block_field_current_written_premium" name="block_field_current_written_premium"/>
 <tabsconfigurationresource deltaind="I" accesslevel="0" description="block_field_earned_premium" name="block_field_earned_premium"/>
 <tabsconfigurationresource deltaind="I" accesslevel="0" description="block_field_loss_adjustment_expense" name="block_field_loss_adjustment_expense"/>
 <tabsconfigurationresource deltaind="I" accesslevel="0" description="block_field_earned_commission_amount" name="block_field_earned_commission_amount"/>
