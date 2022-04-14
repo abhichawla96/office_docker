@@ -1,4 +1,7 @@
 <structure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="ProducerOne" xsi:noNamespaceSchemaLocation="../../schemas/metadata_XSD.xsd">
-
+  
+  <!-- START - Self Service - Upload W9 Show/Hide -->
+  <field deltaind="I" decimallength="0" displayname="hideShow_w9section" length="0" name="hideShow_w9section" seq="68071" type="V" viewlength="2500"/>
+  <!-- END - Self Service - Upload W9 Show/Hide -->
   
   </structure>
