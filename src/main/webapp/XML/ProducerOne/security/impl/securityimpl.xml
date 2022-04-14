@@ -941,7 +941,7 @@
     </userdefined>
     
     <businessrole deltaind="M" roleid="vpmarketing">
-			<roleaccesslevel accesstype="1" />
+			<roleaccesslevel accesstype="0" />
 		</businessrole>
     </protectedresource>
     
@@ -2449,7 +2449,7 @@
   	
   	<!-- upgrade bugs for display Decline button on Agency Termination page-->
   	<protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show decline button on agencyTerminationStep2 page" uniquename="agencyTerminationStep2_decline_security">
-  	<businessrole roleid="vpmarketing" accesstype="1"></businessrole>
+  	<businessrole roleid="vpmarketing" accesstype="0"></businessrole>
   	<userdefined executionsequence="0" ruleid="WorkflowRule.isShowApproveButtonOnAgencyTermination" >
       <userdefinedaccesslevel accesstype="1"/>
     </userdefined>
