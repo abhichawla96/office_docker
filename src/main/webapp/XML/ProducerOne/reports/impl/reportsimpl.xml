@@ -15,6 +15,10 @@
 		<!-- OOB issue fixed -->
 		 <column deltaind="M" name="actual_written_premium" columnlabel="Written Premium" metaproperty="actual_written_premium" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
         
+        <!-- Phase 3- Bug for report AIM-100-1-start -->
+         <column deltaind="D" name="PREMIUM" columnlabel="Written Premium" metaproperty="PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+          <!-- Phase 3- Bug for report AIM-100-1-end -->
+ 
 			<column deltaind="I" name="Collected_PREMIUM" columnlabel="Collected Premium" metaproperty="PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="8" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 	       </columnset>
 	       <reportworkflow deltaind="M" name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,ispaginationrequired,reportID,reportoutputtype,groupby,company_id_V,state_id_V,lob_id_A,business_segment_V,Period_D,agency_code_V">
@@ -41,6 +45,14 @@
 	<reportdef name="CommissionBalance" description="Commission Balance and Adjustment (AIM104)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y">
 		<columnset name="CommissionBalanceset">
 			<column deltaind="I" name="Premium" columnlabel="Collected Premium" metaproperty="Premium" isreportfilter="N" isreportdisplay="Y" executionsequence="33" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+	 <!-- Phase 3- Bug for reports-AIM104-start -->
+	 <column deltaind="D" name="MVR_CLUE" columnlabel="MVR/CLUE" metaproperty="MVR_CLUE" isreportfilter="N" isreportdisplay="Y" executionsequence="11" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+	 <column deltaind="D" name="Write_Off" columnlabel="Write-Off" metaproperty="Write_Off" isreportfilter="N" isreportdisplay="Y" executionsequence="14" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+	 <column deltaind="D" name="Advertising_costs" columnlabel="Advertising Costs" metaproperty="Advertising_costs" isreportfilter="N" isreportdisplay="Y" executionsequence="12" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+	 <column deltaind="D" name="Serv_Fee" columnlabel="poliserveFeeLable" metaproperty="Serv_Fee" isreportfilter="N" isreportdisplay="Y" executionsequence="16" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+	 <!-- Phase 3- Bug for reports-AIM104-end -->
+	
+		
 		</columnset>
 	</reportdef>
 	<reportdef name="commissionBalance104-1" description="Commission Balance and Adjustment with Producer Code(AIM104-1)" isshowsortordersearch="N" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowresetbutton="Y" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y">
