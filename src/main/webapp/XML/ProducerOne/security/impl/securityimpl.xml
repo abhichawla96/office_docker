@@ -2615,7 +2615,10 @@
   <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Add New W9 Section" uniquename="addNewW9ForSelfService_w9_security">
 	<userdefined executionsequence="0" ruleid="ProducerOneRule.hideShowW9Section">
       <userdefinedaccesslevel accesstype="1"/>
-    </userdefined>
+  	</userdefined>
+  	<userdefined executionsequence="0" ruleid="ProducerOneRule.hideShowW9SectionSalesSupportRequests">
+      <userdefinedaccesslevel accesstype="2"/>
+  	</userdefined>
   </protectedresource>
   <!-- END - Self Service - Upload W9 Show/Hide -->
 </security> 
