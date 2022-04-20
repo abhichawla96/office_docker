@@ -9479,8 +9479,9 @@
           <valuefield field="audit_type"/>
         </dropdown>
       </property>
-      <property autoincrement="IDENTITY" contextfield="N" deleteind="N" field="lob_id_R" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="N" propertylength="50" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="6542" viewlength="50">
-        <dropdown dropdowntype="sql" isrowlink="N" metaobject="report_search_columns" name="getLOBListReport" sqlstmt="select lob_id,description from lob_lku where isnull(applicableto,0) !=2 order by description asc">
+       <!-- Phase 3- AIM101-1-report bug --> 
+      <property deltaind="M" autoincrement="IDENTITY" contextfield="N" deleteind="N" field="lob_id_R" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="N" propertylength="50" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="6542" viewlength="50">
+        <dropdown deltaind="M" dropdowntype="sql" isrowlink="N" metaobject="report_search_columns" name="getLOBListReport" sqlstmt="select lob_id,description from lob_lku where isnull(applicableto,0) =2 order by description asc">
           <displayfield field="description"/>
           <valuefield field="lob_id"/>
         </dropdown>
