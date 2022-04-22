@@ -676,7 +676,7 @@
  
   <!-- Sprint 4 -->
  <!-- 39089 decline and approve buttons agency function start -->
- <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show decline button on agency functions page" uniquename="agencyFunctions_selectFunctionType_decline_security">
+ <!-- <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show decline button on agency functions page" uniquename="agencyFunctions_selectFunctionType_decline_security"> -->
 
    <!-- <businessrole deltaind="I" roleid="vpmarketing">
   <roleaccesslevel accesstype="0"/>
@@ -684,9 +684,9 @@
   <businessrole deltaind="M" roleid="MarketingRep">
   <roleaccesslevel accesstype="0"/>
   </businessrole> -->
-  <businessrole roleid="SalesDirector">
+  <!-- <businessrole roleid="SalesDirector">
   <roleaccesslevel accesstype="1"/>
-  </businessrole>
+  </businessrole> -->
   
   <!-- <businessrole deltaind="M" roleid="CarrierAdmin">
   <roleaccesslevel accesstype="0"/>
@@ -701,15 +701,19 @@
   </userdefined> -->
   </protectedresource>
   
-  <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show decline button on agency functions page" uniquename="agencyFunctions_selectFunctionType_decline_security">
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show decline button on agency functions page" uniquename="agencyFunctions_selectFunctionType_decline_security">
 
   <userdefined deltaind="I" ruleid="ProducerOneRule.hideShowApproveSalesSupportDC" executionsequence="0">
+<userdefinedaccesslevel accesstype="1"/>
+  </userdefined>
+  
+  <userdefined deltaind="I" ruleid="ProducerOneRule.hideShowApproveSalesDirector" executionsequence="0">
 <userdefinedaccesslevel accesstype="1"/>
   </userdefined>
  
   </protectedresource>
   
-  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show approve button on agency functions page"  uniquename="agencyFunctions_selectFunctionType_approve_security">
+  <!-- <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show approve button on agency functions page"  uniquename="agencyFunctions_selectFunctionType_approve_security"> -->
  
   <!-- <businessrole deltaind="I" roleid="vpmarketing">
   <roleaccesslevel accesstype="0"/>
@@ -717,9 +721,9 @@
   <businessrole deltaind="M" roleid="MarketingRep">
   <roleaccesslevel accesstype="0"/>
   </businessrole> -->
-  <businessrole roleid="SalesDirector">
+  <!-- <businessrole roleid="SalesDirector">
   <roleaccesslevel accesstype="1"/>
-  </businessrole>
+  </businessrole> -->
   
   <!-- <businessrole deltaind="M" roleid="CarrierAdmin">
   <roleaccesslevel accesstype="0"/>
@@ -734,9 +738,13 @@
   </userdefined> -->
   </protectedresource>
  
- <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show approve button on agency functions page"  uniquename="agencyFunctions_selectFunctionType_approve_security">
+ <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show approve button on agency functions page"  uniquename="agencyFunctions_selectFunctionType_approve_security">
 
   <userdefined deltaind="I" ruleid="ProducerOneRule.hideShowApproveSalesSupportDC" executionsequence="0">
+<userdefinedaccesslevel accesstype="1"/>
+  </userdefined>
+  
+  <userdefined deltaind="I" ruleid="ProducerOneRule.hideShowApproveSalesDirector" executionsequence="0">
 <userdefinedaccesslevel accesstype="1"/>
   </userdefined>
   

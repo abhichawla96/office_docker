@@ -39,6 +39,7 @@
 	
 	<!-- Prod Bug - 39089 changes -->
 	<rule deltaind="I" id="hideShowApproveSalesSupportDC" expression="andCondition(isEqual(:selectFunctionType_code,functionDC),isEqualsIgnoreCase(:roles,MarketingAssistant));"></rule>
+	<rule deltaind="I" id="hideShowApproveSalesDirector" expression="isEqualsIgnoreCase(:roles,SalesDirector);"></rule>
 				
 		
 	</ruleset>
