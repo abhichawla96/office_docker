@@ -796,8 +796,6 @@
 	<!-- UAT2 Bug Id - 27509 -->
 	<tabsconfigurationresource deltaind="M" accesslevel="1" description="entityCyberLiabilityExpirationListing_security" name="entityCyberLiabilityExpirationListing_security"/>
 	
-	<!-- 39089 disapprove functions start-->
-	<tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/Show disapprove button on agency functions page" name="agencyFunctions_selectFunctionType_disapprove_security"/>
 	
 
 </tabsconfiguration>

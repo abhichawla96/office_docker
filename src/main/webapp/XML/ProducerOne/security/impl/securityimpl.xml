@@ -707,7 +707,7 @@
 <userdefinedaccesslevel accesstype="1"/>
   </userdefined>
   
-  <userdefined deltaind="I" ruleid="ProducerOneRule.hideShowApproveSalesDirector" executionsequence="1">
+  <userdefined deltaind="I" ruleid="ProducerOneRule.hideShowApproveSalesDirector" executionsequence="0">
 <userdefinedaccesslevel accesstype="1"/>
   </userdefined>
  
@@ -744,7 +744,7 @@
 <userdefinedaccesslevel accesstype="1"/>
   </userdefined>
   
-  <userdefined deltaind="I" ruleid="ProducerOneRule.hideShowApproveSalesDirector" executionsequence="1">
+  <userdefined deltaind="I" ruleid="ProducerOneRule.hideShowApproveSalesDirector" executionsequence="0">
 <userdefinedaccesslevel accesstype="1"/>
   </userdefined>
   
@@ -2674,7 +2674,7 @@
   <!-- 39089 disapprove termination end -->
   
   <!-- 39089 disapprove functions start-->
-     <protectedresource deltaind="D" defaultaccesstype="0" description="Hide/Show disapprove button on agency functions page" uniquename="agencyFunctions_selectFunctionType_disapprove_security">
+     <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show disapprove button on agency functions page" uniquename="agencyFunctions_selectFunctionType_disapprove_security">
   	<businessrole deltaind="M" roleid="MarketingRep">
   		<roleaccesslevel accesstype="0"/>
   	</businessrole>
