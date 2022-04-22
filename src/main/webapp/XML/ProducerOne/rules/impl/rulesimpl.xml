@@ -89,7 +89,7 @@
 	<!-- END - Self Service - Upload W9 Show/Hide -->
 	
 	<!-- 39089 decline and approve buttons deactivate contact start --> 
-	<!-- <rule deltaind="I" id="hideShowApproveSalesSupportDC" expression="andCondition(isEqual(:selectFunctionType_code,functionDC),isEqualsIgnoreCase(:roles,MarketingAssistant));"></rule> -->
+	<rule deltaind="I" id="hideShowApproveSalesSupportDC" expression="andCondition(isEqual(:selectFunctionType_code,functionDC),isEqualsIgnoreCase(:roles,MarketingAssistant));"></rule>
 	<!-- 39089 decline and approve buttons deactivate contact end -->
 </ruleset>
 
