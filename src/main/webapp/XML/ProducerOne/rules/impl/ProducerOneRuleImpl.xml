@@ -36,7 +36,10 @@
 		
 	<!-- Changes done for prod bug 31110  -->	
 	<rule deltaind="I" id="isUserNameEmpty" expression="isEmpty(:user_name_app);" />
-			
+	
+	<!-- Prod Bug - 39089 changes -->
+	<rule deltaind="I" id="hideShowApproveSalesSupportDC" expression="andCondition(isEqual(:selectFunctionType_code,functionDC),isEqualsIgnoreCase(:roles,MarketingAssistant));"></rule>
+				
 		
 	</ruleset>
 </evalrules>
