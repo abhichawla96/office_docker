@@ -139,5 +139,11 @@
      <actionparam deltaind="I" executionsequence="0" name="is_agency_share_contingency_prospect" paramid="is_agency_share_contingency_prospect" pre="Y"/>
    </action> -->
    
+   <!-- START - UAT2 Bug Id 0004 - Remove Final Questions in PPRM Market Information -->
+	<action deltaind="M" name="view">
+  		<actionparam deltaind="I" executionsequence="0" form="Y" name="remove_final_questions" paramid="remove_final_questions" val="Y" post="Y" session="Y"/>
+	</action>
+   <!-- END - UAT2 Bug Id 0004 - Remove Final Questions in PPRM Market Information -->
+   
   </component>
 </projectcomponents>

@@ -9,5 +9,163 @@
       </columnset>
       
    </reportdef>
-    
+	<!-- start - phase 3 BMIC - added collected premium columns in reports -->
+	<reportdef name="AIM100-1" description="Cash Control Details (AIM100-1)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y">
+		<columnset name="AIM100-1set">
+		<!-- OOB issue fixed -->
+		 <column deltaind="M" name="actual_written_premium" columnlabel="Written Premium" metaproperty="actual_written_premium" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+        
+        <!-- Phase 3- Bug for report AIM-100-1-start -->
+         <column deltaind="D" name="PREMIUM" columnlabel="Written Premium" metaproperty="PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+          <!-- Phase 3- Bug for report AIM-100-1-end -->
+ 
+			<column deltaind="I" name="Collected_PREMIUM" columnlabel="Collected Premium" metaproperty="PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="8" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+	       </columnset>
+	       <reportworkflow deltaind="M" name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,ispaginationrequired,reportID,reportoutputtype,groupby,company_id_V,state_id_V,lob_id_A,business_segment_V,Period_D,agency_code_V">
+          <function deltaind="I" name="displayCollectedPremium" functionid="displayCollectedPremium" parameters="context,report_data_list_1,PREMIUM" executionsequence="1" />
+      </reportworkflow>
+	</reportdef>
+	<reportdef name="ACH113-1" description="Paid Commissions by ACH and Check ACH100 (ACH113-1)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="N" isshowoutputcolumns="Y" isshowresetbutton="Y">
+		<columnset name="ACH113-1set">
+			<column deltaind="I" name="Collected_PREMIUM" columnlabel="Collected Premium" metaproperty="written_premium" isreportfilter="N" isreportdisplay="Y" executionsequence="16" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+	        <!-- phase 3 bug id 22248 -->
+	        <column deltaind="M" name="BOA_ACH" columnlabel="ACH" metaproperty="BOA_ACH" isreportfilter="N" isreportdisplay="Y" executionsequence="4" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+            <column deltaind="M" name="BOA_Check" columnlabel="Check" metaproperty="BOA_Check" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		</columnset>
+		  <reportworkflow deltaind="M" name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,state_id,reportoutputtype,reportID,ispaginationrequired,Period_D,state_id_V">
+           <function deltaind="I" name="displayCollectedPremium" functionid="displayCollectedPremium" parameters="context,report_data_list_1,written_premium" executionsequence="1" />
+       </reportworkflow>
+   
+	</reportdef>
+	<reportdef name="ACH113-2" description="Monthly Producer Commission Validation ACH200 (ACH113-2)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="N" isshowoutputcolumns="Y" isshowresetbutton="Y">
+		<columnset name="ACH113-2set">
+			<column deltaind="I" name="CURRENT_MONTH_PREMIUM" columnlabel="Current Month Collected Premium" metaproperty="CURRENT_MONTH_PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="16" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		</columnset>
+	</reportdef>
+	<reportdef name="CommissionBalance" description="Commission Balance and Adjustment (AIM104)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y">
+		<columnset name="CommissionBalanceset">
+			<column deltaind="I" name="Premium" columnlabel="Collected Premium" metaproperty="Premium" isreportfilter="N" isreportdisplay="Y" executionsequence="33" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+	 <!-- Phase 3- Bug for reports-AIM104-start -->
+	 <column deltaind="D" name="MVR_CLUE" columnlabel="MVR/CLUE" metaproperty="MVR_CLUE" isreportfilter="N" isreportdisplay="Y" executionsequence="11" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+	 <column deltaind="D" name="Write_Off" columnlabel="Write-Off" metaproperty="Write_Off" isreportfilter="N" isreportdisplay="Y" executionsequence="14" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+	 <column deltaind="D" name="Advertising_costs" columnlabel="Advertising Costs" metaproperty="Advertising_costs" isreportfilter="N" isreportdisplay="Y" executionsequence="12" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+	 <column deltaind="D" name="Serv_Fee" columnlabel="poliserveFeeLable" metaproperty="Serv_Fee" isreportfilter="N" isreportdisplay="Y" executionsequence="16" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+	 <!-- Phase 3- Bug for reports-AIM104-end -->
+	
+		
+		</columnset>
+	</reportdef>
+	<reportdef name="commissionBalance104-1" description="Commission Balance and Adjustment with Producer Code(AIM104-1)" isshowsortordersearch="N" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowresetbutton="Y" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y">
+		<columnset name="commissionBalance104-1set">
+			<column deltaind="I" name="Premium" columnlabel="Collected Premium" metaproperty="Premium" isreportfilter="N" isreportdisplay="Y" executionsequence="33" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		</columnset>
+	</reportdef>
+	<reportdef name="AIM105-1" description="Producer Premium and Commission Expenses (AIM105-1)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y">
+		<columnset name="AIM105-1set">
+			<column deltaind="I" name="Collected_PREMIUM" columnlabel="Collected Premium" metaproperty="WRITTEN_PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="23" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+  		  <!-- phase 3 bug 22034- --> 
+		 <column deltaind="D" name="ADVT_COST" columnlabel="Advertising Cost" metaproperty="ADVT_COST" isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+         <column deltaind="D" name="MVR_CLUE" columnlabel="MVR/CLUE" metaproperty="MVR_CLUE" isreportfilter="N" isreportdisplay="Y" executionsequence="8" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+         <column deltaind="D" name="Poliserver_fee" columnlabel="poliserveFeeLable" metaproperty="Poliserver_fee" isreportfilter="N" isreportdisplay="Y" executionsequence="6" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+        
+		</columnset>
+		<reportworkflow deltaind="M" name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,business_segment_V,reportoutputtype,state_id_V,business_segment_V,lob_id,company_id,reportID,ispaginationrequired,Period_D">
+           <function deltaind="I" name="displayCollectedPremium" functionid="displayCollectedPremium" parameters="context,report_data_list_1,WRITTEN_PREMIUM" executionsequence="1" />
+         
+      </reportworkflow>
+	</reportdef>
+	<reportdef name="AIM105-2" description="Premium and Additional Commission for Policies (AIM105-2)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y">
+		<columnset name="AIM105-2set">
+			<column deltaind="I" name="WRITTEN_PREMIUM" columnlabel="Collected Premium" metaproperty="WRITTEN_PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="23" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		</columnset>
+	</reportdef>
+	 <reportdef name="CommissionExpense" description="Commission Expense (AIM109)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y" drilldownreport="CommissionExpenseDrilldown">
+       <columnset name="CommissionExpenseset">
+       	<column deltaind="I" name="Collected_PREMIUM" columnlabel="Collected Premium" metaproperty="PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="26" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		</columnset>
+		<reportworkflow deltaind="M" name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,ispaginationrequired,reportID,groupby,company_id_V,state_id_V,lob_id_V,business_segment_V,Period_D,system_id_V,policy_term,asl_code_V,reportoutputtype">
+          <function deltaind="I" name="displayCollectedPremium" functionid="displayCollectedPremium" parameters="context,report_data_list_1,PREMIUM" executionsequence="1" />
+       </reportworkflow>
+	</reportdef>
+	<reportdef name="AIM110" description="Commission Paid Details (AIM110)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y">
+		<columnset name="AIM110set">
+			<column deltaind="I" name="COMMISSION_AMOUNT" columnlabel="Collected Premium" metaproperty="COMMISSION_AMOUNT" isreportfilter="N" isreportdisplay="Y" executionsequence="22" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		</columnset>
+	</reportdef>
+	<reportdef name="AIM111" description="Amount Paid By Payment Type (AIM111)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="N" isshowoutputcolumns="Y" isshowresetbutton="Y">
+		<columnset name="AIM111set">
+			<column deltaind="I" name="COMMISSION_AMOUNT" columnlabel="Collected Premium" metaproperty="COMMISSION_AMOUNT" isreportfilter="N" isreportdisplay="Y" executionsequence="31" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		</columnset>
+	</reportdef>
+	<reportdef name="policyLevel" description="Payment Details At Policy Level (AIM170)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y">
+		<columnset name="policyLevelset">
+			<column deltaind="I" name="Collected_PREMIUM" columnlabel="Collected Premium" metaproperty="WRITTEN_PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="18" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		</columnset>
+		 <reportworkflow name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,reportoutputtype,reportID,ispaginationrequired,Period_D,agency_code_V">
+        <function deltaind="I" name="displayCollectedPremium" functionid="displayCollectedPremium" parameters="context,report_data_list_1,WRITTEN_PREMIUM" executionsequence="1" />
+       
+      </reportworkflow>
+		
+	</reportdef>
+
+	<!-- New report for BMIC -->   	
+   	 <reportdef deltaind="I" name="TerminatedAgenciesReport" description="Terminated Agencies Report" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="N" isshowoutputcolumns="Y" isshowresetbutton="Y">
+      <columnset name="TerminatedAgenciesReportset">
+       	<column name="Period_D" columnlabel="Statement Run Date" metaproperty="report_search_columns.Period_D" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="select" executionsequence="17" ispopupsearch="N" isdefaultdisplay="Y" isrequired="Y" issortdisplay="N" isgroupbydisplay="N" href="managereportajaxpageblocklink('','','INET_REFRESH_MANAGE_REPORT','MANAGE_REPORTING','refreshFilter')" />
+ 		<column name="Agency_number" columnlabel="Agency Number" metaproperty="Agency_number" isreportfilter="N" isreportdisplay="Y" executionsequence="2" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		<column name="Agency_name" columnlabel="Agency Name" metaproperty="Agency_name" isreportfilter="N" isreportdisplay="Y" executionsequence="3" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		<column name="Agency_status" columnlabel="Agency Status" metaproperty="Agency_status" isreportfilter="N" isreportdisplay="Y" executionsequence="4" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		<column name="Statement_date" columnlabel="Statement Date" metaproperty="Statement_date" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+	 </columnset>
+      <reportworkflow name="reportworkflow" executionsequence="0" outputtype="1xml" checkfornullparams="Period_D,PAGE_SIZE,PAGE_NUMBER,ispaginationrequired,reportID">
+         <storedprocedureoperation name="getTerminatedAgenciesReport_p" id="getTerminatedAgenciesReport_p" dbspname="getTerminatedAgenciesReport_p" viewid="report_data_list_1" applid="ProducerOne" executionsequence="0" operation="5" metaobject="report_search_columns">
+            <parameteroperation property="Period_D" mode="IN" indexno="0" seq="1" />
+            <parameteroperation property="PAGE_SIZE" mode="IN" indexno="1" seq="2" />
+            <parameteroperation property="PAGE_NUMBER" mode="IN" indexno="2" seq="3" />
+            <parameteroperation property="ispaginationrequired" mode="IN" indexno="3" seq="4" />
+            <parameteroperation property="reportID" mode="IN" indexno="4" seq="5" />
+            <resultsetoperation indexno="0" mappingclass="java.util.HashMap" />
+            <resultsetoperation indexno="1" mappingclass="java.util.HashMap" />
+         </storedprocedureoperation>
+      </reportworkflow>
+   </reportdef>
+   
+	<!-- end - phase 3 BMIC - added collected premium columns in reports -->
+	
+<!-- Phase 3: Report filtration criteria change -->  
+ <reportdef deltaind="M" name="AIM110-Master" description="Commission Paid at Master level exceeding $50,000 (AIM168)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="N" isshowoutputcolumns="Y" isshowresetbutton="Y">
+ <columnset name="AIM110-Masterset">
+ 		 <column deltaind="I" name="reports_filter_amount" columnlabel="Filter Amount" metaproperty="report_search_columns.reports_filter_amount" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="select" executionsequence="18" ispopupsearch="N" isdefaultdisplay="Y" isrequired="Y" issortdisplay="N" />  
+         <column name="Period_D" columnlabel="Statement Run Date" metaproperty="report_search_columns.Period_D" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="select" executionsequence="16" ispopupsearch="N" isdefaultdisplay="Y" isrequired="Y" issortdisplay="N" isgroupbydisplay="N" href="managereportajaxpageblocklink('','','INET_REFRESH_MANAGE_REPORT','MANAGE_REPORTING','refreshFilter')" />
+         <column name="state_id_V" columnlabel="statefieldlabel" metaproperty="report_search_columns.state_id_V" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="select" executionsequence="17" ispopupsearch="N" isdefaultdisplay="Y" isrequired="N" issortdisplay="Y" isgroupbydisplay="N" />
+         <column name="isdownloadlink" metaproperty="isdownloadlink" isreportfilter="N" executionsequence="14" isreportdefaultdisplay="Y" />
+         <column name="archive_date" columnlabel="Archive Date" metaproperty="archive_date" isreportfilter="N" executionsequence="13" isreportdefaultdisplay="Y" />
+         <column name="AGENCY_CODE" columnlabel="producerlabel" metaproperty="report_search_columns.agency_code_V" isreportfilter="N" isreportdisplay="Y" executionsequence="1" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+         <column name="batchreport_id" columnlabel="Batch Report ID" metaproperty="batchreport_id" isreportfilter="N" executionsequence="9" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+         <column name="AGENCY_NAME" columnlabel="entitytablabel Name" metaproperty="report_search_columns.agency_name_V" isreportfilter="N" isreportdisplay="Y" executionsequence="2" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+         <column name="request_date" columnlabel="Request Date" metaproperty="request_date" isreportfilter="N" executionsequence="10" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+         <column name="STATE" columnlabel="statefieldlabel" metaproperty="report_search_columns.state_id_V" isreportfilter="N" isreportdisplay="Y" executionsequence="0" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+         <column name="search_xml_desc" columnlabel="Search Criteria" metaproperty="search_xml_desc" isreportfilter="N" executionsequence="12" isreportdefaultdisplay="Y" />
+         <column name="COMMISSION_AMOUNT" columnlabel="Commission" metaproperty="COMMISSION_AMOUNT" isreportfilter="N" isreportdisplay="Y" executionsequence="3" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+         <column name="last_updated_by" columnlabel="Last Updated By" metaproperty="last_updated_by" isreportfilter="N" executionsequence="11" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+      </columnset>
+      <reportworkflow name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,state_id_V,lob_id,business_segment_V,reportoutputtype,company_id,reportID,ispaginationrequired,Period_D">
+         <storedprocedureoperation deltaind="M" name="GetAIM110AtMasterReport_P" id="GetAIM110AtMasterReport_P" dbspname="GetAIM110AtMasterReport_P" viewid="report_data_list_1" applid="ProducerOnePerformance" executionsequence="0" operation="5" metaobject="report_search_columns">
+            <parameteroperation property="reportoutputtype" mode="IN" indexno="7" seq="8" />
+            <parameteroperation property="Period_D" mode="IN" indexno="6" seq="7" />
+            <parameteroperation property="PAGE_SIZE" mode="IN" indexno="0" seq="1" />
+            <parameteroperation property="PAGE_NUMBER" mode="IN" indexno="1" seq="2" />
+            <parameteroperation property="reportID" mode="IN" indexno="3" seq="4" />
+            <parameteroperation property="groupby" mode="IN" indexno="4" seq="5" />
+            <parameteroperation property="ispaginationrequired" mode="IN" indexno="2" seq="3" />
+            <parameteroperation property="state_id_V" mode="IN" indexno="5" seq="6" />
+            <parameteroperation deltaind="I" property="reports_filter_amount" mode="IN" indexno="8" seq="9" />   
+            <resultsetoperation indexno="0" mappingclass="java.util.HashMap" />
+            <resultsetoperation indexno="1" mappingclass="java.util.HashMap" />
+         </storedprocedureoperation>
+      </reportworkflow>
+ </reportdef>
+ 
+	
+	
 </reports>

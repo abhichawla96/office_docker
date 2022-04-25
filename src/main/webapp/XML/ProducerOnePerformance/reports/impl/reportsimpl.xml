@@ -3031,6 +3031,31 @@
 		</reportworkflow>
 	</reportdef>
 	
+<!-- New report for BMIC -->   	
+   	 <reportdef deltaind="I" name="TerminatedAgenciesReport" description="Terminated Agencies Report" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="N" isshowoutputcolumns="Y" isshowresetbutton="Y">
+      <columnset name="TerminatedAgenciesReportset">
+       	<column name="Period_D" columnlabel="Statement Run Date" metaproperty="report_search_columns.Period_D" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="select" executionsequence="17" ispopupsearch="N" isdefaultdisplay="Y" isrequired="Y" issortdisplay="N" isgroupbydisplay="N" href="managereportajaxpageblocklink('','','INET_REFRESH_MANAGE_REPORT','MANAGE_REPORTING','refreshFilter')" />
+ 		<column name="Agency_number" columnlabel="Agency Number" metaproperty="Agency_number" isreportfilter="N" isreportdisplay="Y" executionsequence="2" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		<column name="Agency_name" columnlabel="Agency Name" metaproperty="Agency_name" isreportfilter="N" isreportdisplay="Y" executionsequence="3" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		<column name="Agency_status" columnlabel="Agency Status" metaproperty="Agency_status" isreportfilter="N" isreportdisplay="Y" executionsequence="4" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		<column name="Statement_date" columnlabel="Statement Date" metaproperty="Statement_date" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+	 </columnset>
+      <reportworkflow name="reportworkflow" executionsequence="0" outputtype="1xml" checkfornullparams="Period_D,PAGE_SIZE,PAGE_NUMBER,ispaginationrequired,reportID">
+         <storedprocedureoperation name="getTerminatedAgenciesReport_p" id="getTerminatedAgenciesReport_p" dbspname="getTerminatedAgenciesReport_p" viewid="report_data_list_1" applid="ProducerOnePerformance" executionsequence="0" operation="5" metaobject="report_search_columns">
+            <parameteroperation property="Period_D" mode="IN" indexno="0" seq="1" />
+            <parameteroperation property="PAGE_SIZE" mode="IN" indexno="1" seq="2" />
+            <parameteroperation property="PAGE_NUMBER" mode="IN" indexno="2" seq="3" />
+            <parameteroperation property="ispaginationrequired" mode="IN" indexno="3" seq="4" />
+            <parameteroperation property="reportID" mode="IN" indexno="4" seq="5" />
+            <resultsetoperation indexno="0" mappingclass="java.util.HashMap" />
+            <resultsetoperation indexno="1" mappingclass="java.util.HashMap" />
+         </storedprocedureoperation>
+      </reportworkflow>
+   </reportdef>
+   
+	<!-- end - phase 3 BMIC - added collected premium columns in reports -->
+
+	
 	<reportdef deltaind="I" name="policyLevel" description="Payment Details At Policy Level" isshowsortordersearch="N" isshowsavedsearch="Y" 
 		isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowresetbutton="Y" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y">
 		<columnset name="policyLevelset">

@@ -734,4 +734,79 @@ public static String attachAndSendEmail (Context ctx)
 	
 	/* Existing Agency Appointed to New Location - Dynamic Row Function - End*/
 	
+	/*Hiding agent checkbox for self service*/
+	public static void showContactTypeList(Context ctx)
+	{
+		try
+		{
+			List<Map<String,String>> newList=new ArrayList<Map<String,String>>();
+			List<Map<String,String>> contactTypeList=new ArrayList<Map<String,String>>();
+
+			contactTypeList=(ArrayList<Map<String,String>>) ctx.get("contacttype_lku_mom_list_1");
+				for (Map<String, String> map : contactTypeList) {
+				if(!map.get("contact_typ_desc").equals("Agent"))																																											{
+					newList.add(map);
+				}
+			}
+			
+			for (Map<String, String> map : newList) {
+			System.out.println(map.get("contact_typ_desc"));	
+			}
+			ctx.put("contacttype_lku_mom_list_1",newList);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return;
+	}	
+
+	public static void getToSubProdCodeForIndTransfer(Context ctx) {
+		try {
+			String subProdNum=null;
+			List spData =(List)ctx.get("transfersStep2_list_mom_2");
+			if(spData !=null && spData.size()>0){
+				/*for (Object object : spData) {
+					
+				}*/
+				for (int i = 0; i < spData.size(); i++) 
+				{
+					Map map = (Map) spData.get(i);
+					if(map.get("bobtransfersStep2_dest_producer_code")!=null){
+						subProdNum=map.get("bobtransfersStep2_dest_producer_code").toString();
+						break;
+					}
+				}
+				ctx.put("bobtransfersStep2_dest_producer_code",subProdNum );
+			
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+	
+//phase 3 - reports 
+	public static void displayCollectedPremium(Context ctx,String key,String value)
+	{
+		try
+		{
+		logger.debug("inside displayCollectedPremium function ");
+			List<Map<String,String>> newList=new ArrayList<Map<String,String>>();
+			List<Map<String,String>> spOutputList=new ArrayList<Map<String,String>>();
+
+			spOutputList=(ArrayList<Map<String,String>>) ctx.get(key);
+				for (Map<String, String> map : spOutputList) {				
+				map.put("Collected_PREMIUM", map.get(value));
+				newList.add(map);
+			}
+			ctx.put(key, newList);	
+			logger.debug("list size :"+newList.size());		
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}	
+	
 }

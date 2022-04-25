@@ -148,7 +148,7 @@
 	</protectedresource>
 
 	<!-- Bug Id- CR-0060 Showing Decline button on received bucket start-->
-	<!--  <protectedresource deltaind="I" defaultaccesstype="0" operator="and"
+	  <protectedresource deltaind="I" defaultaccesstype="0" operator="and"
 		description="Hide/Show decline button on summary page"
 		uniquename="agencyListPublicSubmitNInvitationEdit_decline">
 	<businessrole roleid="MarketingAssistant">
@@ -159,7 +159,7 @@
 	<userdefinedaccesslevel accesstype="1" />
 	</userdefined>
 		
-	</protectedresource>  -->
+	</protectedresource>  
 <!-- Bug Id- CR-0060 Showing Decline button on received bucket end-->
 
 	<protectedresource deltaind="M" defaultaccesstype="0"
@@ -728,13 +728,50 @@
     </userdefined>
   </protectedresource>
   <!-- Phase 3 : Administration : Compensation Management -->
- <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show admin compensation tab" uniquename="adminTabs_compensationmgt"/>
+  <!--  Phase 3 -Task Id- 30035  -->
+ <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show admin compensation tab" uniquename="adminTabs_compensationmgt">
+ <businessrole deltaind="I" roleid="Underwriter">
+  <roleaccesslevel accesstype="0"/>
+ </businessrole>
+  <businessrole deltaind="I" roleid="MarketingGroup">
+  <roleaccesslevel accesstype="0"/>
+   </businessrole>
+   <businessrole deltaind="I" roleid="ReadOnly">
+  <roleaccesslevel accesstype="0"/>
+   </businessrole> 
+ </protectedresource>
+ 
  <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/Show custom events tab" uniquename="isShowCustomEventsTab"/>
  
  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show adminTabs2_transfer_security" uniquename="adminTabs2_transfer_security"/>
 
 <!-- Phase 3 : Administration : Agency Acquisition : BOB Transfer  -->
-<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show adminTabs2_bobtransfers_security" uniquename="adminTabs2_bobtransfers_security"/>
+<!-- Phase 3- Task Id-25094-start -->
+<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show adminTabs2_bobtransfers_security" uniquename="adminTabs2_bobtransfers_security">
+<businessrole deltaind="I" roleid="Accounting">
+      <roleaccesslevel accesstype="0"/>
+ </businessrole>
+ <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="0"/>
+ </businessrole>
+ <businessrole deltaind="I" roleid="MarketingRep">
+      <roleaccesslevel accesstype="0"/>
+ </businessrole>
+ <businessrole deltaind="I" roleid="Underwriter">
+      <roleaccesslevel accesstype="0"/>
+ </businessrole>
+  <businessrole deltaind="I" roleid="MarketingGroup">
+      <roleaccesslevel accesstype="0"/>
+   </businessrole>
+    <businessrole deltaind="I" roleid="vpmarketing">
+      <roleaccesslevel accesstype="0"/>
+   </businessrole>
+    <businessrole deltaind="I" roleid="SalesDirector">
+      <roleaccesslevel accesstype="0"/>
+   </businessrole>
+</protectedresource>
+<!-- Phase 3- Task Id-25094-end -->
+
  
  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show admin accounts tab" uniquename="adminTabs_accountstab">
     <businessrole deltaind="D" roleid="accountantadmin">
@@ -946,7 +983,7 @@
     </userdefined>
     
     <businessrole deltaind="M" roleid="vpmarketing">
-			<roleaccesslevel accesstype="1" />
+			<roleaccesslevel accesstype="0" />
 		</businessrole>
     </protectedresource>
     
@@ -1169,10 +1206,15 @@
   </protectedresource>
   
   <!-- Territory Manager Role Configuration -->
-  <protectedresource description="send_invite_page_level_paradigm" uniquename="send_invite_page_level_paradigm">    
+    <!-- Phase 3- Marketing Group -->
+  
+  <protectedresource deltaind="M" description="send_invite_page_level_paradigm" uniquename="send_invite_page_level_paradigm">    
     <businessrole deltaind="M" roleid="MarketingRep">
       <roleaccesslevel accesstype="0"/>
     </businessrole>   
+    <businessrole deltaind="I" roleid="MarketingGroup">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole> 
   </protectedresource>
   
   <!--Territory Manager Agency Code Association  -->
@@ -1209,10 +1251,13 @@
   
   <!-- User Details Link Read only for Territory Manager -->
   
-  <protectedresource defaultaccesstype="1" description="contact_spinn_security" operator="AND" uniquename="contact_spinn_security">
+  <protectedresource deltaind="M" defaultaccesstype="1" description="contact_spinn_security" operator="AND" uniquename="contact_spinn_security">
     <businessrole deltaind="M" roleid="MarketingRep">
       <roleaccesslevel accesstype="0"/>
     </businessrole>
+    <businessrole deltaind="I" roleid="MarketingGroup">
+	<roleaccesslevel accesstype="0" />
+	</businessrole> 
   </protectedresource>
   
   <!-- Hiding Gateway Transactions for Territory Manager -->
@@ -1334,11 +1379,11 @@
     </businessrole>
   </protectedresource>
   
-  <protectedresource deltaind="M" description="premium_volume_by_lob_security" uniquename="premium_volume_by_lob_security">
+   <protectedresource deltaind="M" description="premium_volume_by_lob_security" uniquename="premium_volume_by_lob_security">
     <businessrole deltaind="I" roleid="MarketingRep">
       <roleaccesslevel accesstype="1"/>
     </businessrole>
-  </protectedresource>
+  </protectedresource> 
   
   <protectedresource deltaind="M" description="top_companies_appointed_security" uniquename="top_companies_appointed_security">
     <businessrole deltaind="I" roleid="MarketingRep">
@@ -1492,8 +1537,10 @@
   
   <protectedresource deltaind="M" defaultaccesstype="1" description="show/hide requests tab on home action" uniquename="isAddUpdateSelfServiceDocW9Applicable_security"/>
   <!-- Phase 3 : Show request individual transfer link on dashboard -->
+  <!-- Task Id-23441- individual transfer link on dashboard-->
   <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show request individual transfer link on dashboard" uniquename="isDashboardRequestIndividualTransfer"/>
   <!-- Phase 3 : Show request wholesale transfer link on dashboard -->
+  <!-- Task Id-23441- wholesale transfer link on dashboard-->  
   <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show request wholesale transfer link on dashboard" uniquename="isDashboardRequestWholesaleTransfer"/>
   
   <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/Show Add Bank Information request link on dashboard" uniquename="isAddUpdateSelfServiceBankInformationApplicable"/>
@@ -1630,6 +1677,9 @@
     <userdefined  ruleid="ProducerOneRule.isDisplayWelcomeButton" executionsequence="0">
 			<userdefinedaccesslevel accesstype="1" />
 		</userdefined>
+	<businessrole deltaind="I" roleid="MarketingGroup">
+		<roleaccesslevel accesstype="0" />
+		</businessrole>	
   </protectedresource>
     <!-- display delete icon -->
   <protectedresource deltaind="I" defaultaccesstype="0" operator="and" uniquename="deleteApplication_security">
@@ -1710,6 +1760,9 @@
   <!-- Phase 2- Bug Id- P2-105- Hiding Add New Prospect Button for Accounting -->
    
   <protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Add New Prospect Button" uniquename="prospectDetailSeacrhResults_addNewProspect1">
+    <businessrole deltaind="I" roleid="MarketingGroup">
+	<roleaccesslevel accesstype="0"/>
+ 	</businessrole>
     <businessrole deltaind="I" roleid="MarketingAssistant">
     	<roleaccesslevel accesstype="0"/>
     </businessrole>
@@ -1760,6 +1813,9 @@
   <!-- Phase 2- Bug Id- P2-106- Hiding Add New Note Button for Accounting -->
   
   <protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Add New Note Button Prospect" uniquename="prospectNotepad_addNewNote">
+    <businessrole deltaind="I" roleid="MarketingGroup">
+	<roleaccesslevel accesstype="0"/>
+ 	</businessrole> 
     <businessrole deltaind="I" roleid="MarketingAssistant">
       	<roleaccesslevel accesstype="0"/>
     </businessrole>
@@ -1818,7 +1874,11 @@
     <!-- Phase 2 - Task Id- SS-005-11 -->
      <userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.checkIsNewRequest">
       <userdefinedaccesslevel accesstype="1"/>
-    </userdefined>    
+    </userdefined>  
+     <!-- Phase 3- Bug Id- 35975 --> 
+    <businessrole deltaind="I" roleid="MarketingGroup">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>   
   </protectedresource>
   
   <!-- Phase 2 - Bug Id- P2-042 --> 
@@ -2287,6 +2347,9 @@
   
 <!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Delete Button - Agency General Details - Relationship Mgmt Tab -->  
 <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show callreport_block_delete_row_security" uniquename="callreport_block_delete_row_security">
+	<businessrole deltaind="I" roleid="MarketingGroup">
+	<roleaccesslevel accesstype="0"/>
+ 	</businessrole>	
 	<businessrole deltaind="I" roleid="CarrierAdmin">
       	<roleaccesslevel accesstype="0"/>
     </businessrole>
@@ -2321,10 +2384,16 @@
     <businessrole deltaind="I" roleid="Accounting">
     	<roleaccesslevel accesstype="0"/>
     </businessrole>
+    <businessrole deltaind="I" roleid="MarketingGroup">
+	<roleaccesslevel accesstype="0"/>
+ 	</businessrole>	
 </protectedresource> 
 
 <!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Delete Button - Prospect Details Search Results Page -->  
 <protectedresource deltaind="I" defaultaccesstype="1" description="Hide/show Delete Button - Prospect Details Search Results Page" uniquename="delete_row_link_security">
+	<businessrole deltaind="I" roleid="MarketingGroup">
+	<roleaccesslevel accesstype="0"/>
+ 	</businessrole>	
 	<businessrole deltaind="I" roleid="CarrierAdmin">
       	<roleaccesslevel accesstype="0"/>
     </businessrole>
@@ -2344,6 +2413,9 @@
 
 <!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Modify Button - Prospect Details Search Results Page -->
 <protectedresource deltaind="M" defaultaccesstype="1" uniquename="isProspectStatusConvertedToAgency">
+    <businessrole deltaind="I" roleid="MarketingGroup">
+	<roleaccesslevel accesstype="0"/>
+ 	</businessrole>
     <businessrole deltaind="I" roleid="CarrierAdmin">
       	<roleaccesslevel accesstype="0"/>
     </businessrole>
@@ -2361,23 +2433,19 @@
     </businessrole>
   </protectedresource>
 
-<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Add New Task Button - Agency General Details Page -->    
-<protectedresource deltaind="I" defaultaccesstype="1" uniquename="relatioshipTask_addNewTask">
-    <businessrole deltaind="I" roleid="CarrierAdmin">
-      	<roleaccesslevel accesstype="0"/>
-    </businessrole>
-    <businessrole deltaind="I" roleid="ReadOnly">
-		<roleaccesslevel accesstype="0" />
-	</businessrole>
-	<businessrole deltaind="I" roleid="Underwriter">
-      	<roleaccesslevel accesstype="0"/>
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Add New Task Button - Agency General Details Page -->
+<!-- Pord Bug -33896 changes -->    
+<protectedresource deltaind="I" defaultaccesstype="0" uniquename="relatioshipTask_addNewTask">    
+   <businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="1"/>
     </businessrole>
     <businessrole deltaind="I" roleid="MarketingAssistant">
-    	<roleaccesslevel accesstype="0"/>
+    	<roleaccesslevel accesstype="1"/>
     </businessrole>
-    <businessrole deltaind="I" roleid="Accounting">
-    	<roleaccesslevel accesstype="0"/>
-    </businessrole>
+
+     <businessrole deltaind="I" roleid="MarketingRep">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>  
   </protectedresource>
 
 <!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Delete Button - Prospect - Notepad Page -->    
@@ -2407,6 +2475,9 @@
     <businessrole deltaind="M" roleid="MarketingAssistant">
       <roleaccesslevel accesstype="0"/>
     </businessrole>
+    <businessrole deltaind="I" roleid="MarketingGroup">
+	<roleaccesslevel accesstype="1"/>
+ 	</businessrole>
   </protectedresource>
   
    <!-- Phase 2- Bug Id- P2-072 -->
@@ -2424,20 +2495,14 @@
 	  		<userdefinedaccesslevel accesstype="1" />
 		</userdefined>
 	</protectedresource>
-	
 
-		<!-- phase 2 - start - extended field -->
-	<protectedresource deltaind="I" defaultaccesstype="0" description="entity_gen_det_hba_dropdown_ss" uniquename="entityGeneralDeetails_hba_ss_dropdown_security">
-		<userdefined deltaind="I" ruleid="ProducerOneRule.isHBAYesNOSS" executionsequence="0">
-			<userdefinedaccesslevel accesstype="1" />
-		</userdefined>
-	</protectedresource>
-
-	<protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show year field" uniquename="ss_year_recieved_security">
+<!-- phase 2 - start - extended field -->  
+	<!-- <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show year field" uniquename="ss_year_recieved_security">
 		<userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.isCBIAYesNoSS">
 			<userdefinedaccesslevel accesstype="1" />
 		</userdefined>
-	</protectedresource>
+	</protectedresource> -->
+	
 	<!-- phase 2 - end - extended field -->
   <!-- Maintenance Bug- Main-001 -->
    <protectedresource deltaind="I" defaultaccesstype="1" description="show validation for insurance section" uniquename="attachment_security">
@@ -2488,14 +2553,14 @@
   	
   	<!-- upgrade bugs for display Decline button on Agency Termination page-->
   	<protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show decline button on agencyTerminationStep2 page" uniquename="agencyTerminationStep2_decline_security">
-  	<businessrole roleid="vpmarketing" accesstype="1"></businessrole>
+  	<businessrole roleid="vpmarketing" accesstype="0"></businessrole>
   	<userdefined executionsequence="0" ruleid="WorkflowRule.isShowApproveButtonOnAgencyTermination" >
       <userdefinedaccesslevel accesstype="1"/>
     </userdefined>
   </protectedresource>
   
   <!-- Bug ID U-032, U-062 to U-066 Upgrade Bug Start -->
-	<protectedresource defaultaccesstype="0" description="Hide/Show agencyFuntions_letterTemplateList_security" operator="or" uniquename="agencyFuntions_letterTemplateList_security">
+	<!-- <protectedresource defaultaccesstype="0" description="Hide/Show agencyFuntions_letterTemplateList_security" operator="or" uniquename="agencyFuntions_letterTemplateList_security">
 	  	<userdefined deltaind="I" ruleid="ProducerOneRule.isFunctionDC" executionsequence="0">
 			<userdefinedaccesslevel accesstype="0" />
 		</userdefined>
@@ -2504,12 +2569,16 @@
   	 	<userdefined deltaind="I" ruleid="ProducerOneRule.isFunctionDC" executionsequence="0">
 			<userdefinedaccesslevel accesstype="0" />
 		</userdefined>
-    </protectedresource>
+    </protectedresource> -->
   <!-- Bug ID U-032, U-062 to U-066 Upgrade Bug End -->
   
-  <!-- START - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
-  <protectedresource deltaind="I" defaultaccesstype="2" description="Grey out CBIA Designation" uniquename="ss_cbia_security"> </protectedresource>
-  <!-- END - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
+  <!-- START - UAT2 Bug Id 0004 - Remove Final Questions in PPRM Market Information -->
+  <protectedresource deltaind="I" description="Hide/Show PPRM Final Questions section" uniquename="final_questions_security">
+  	 	<userdefined deltaind="I" ruleid="ProducerOneRule.removePPRMFinalQuestions" executionsequence="0">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+  </protectedresource>
+  <!-- END - UAT2 Bug Id 0004 - Remove Final Questions in PPRM Market Information -->
   
 	<!--Prod Issue- Display delete icon on bank information page -->
    <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show  bankinformation_delete_security" uniquename="bankinformation_delete_security">
@@ -2533,6 +2602,17 @@
     </userdefined>
   </protectedresource>
 
+  
+  <!-- START - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->
+  
+  <protectedresource deltaind="I" defaultaccesstype="0" description="entity_gen_det_hba_dropdown_ss" uniquename="entityGeneralDeetails_hba_ss_dropdown_security">
+		<userdefined ruleid="ProducerOneRule.isHBAYesNOSS" executionsequence="0">
+			<userdefinedaccesslevel accesstype="1"/>
+		</userdefined>
+		<userdefined ruleid="ProducerOneRule.greyOutHBADropDownSalesSupportRequests" executionsequence="0">
+			<userdefinedaccesslevel accesstype="2" />
+		</userdefined>
+	</protectedresource>
 	
 	<!-- Phase 3- History of commission schedule icon -->
 <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show history button"  uniquename="commissonSch_block_history_link_security">
@@ -2759,21 +2839,22 @@
 </protectedresource>	
 	
 <!--Phase 3- Commission Schedule tab from Compensation management menu  -->
+ <!-- Phase 3-Task Id- 30035 -->
 <protectedresource deltaind="M" description="Hide/Show compensation tab" operator="or" uniquename="checkIsShowCompensationMgmtTab">
 <businessrole deltaind="I" roleid="Accounting">
   <roleaccesslevel accesstype="1"/>
  </businessrole>
 <businessrole deltaind="I" roleid="Underwriter">
- <roleaccesslevel accesstype="1"/>
+ <roleaccesslevel accesstype="0"/>
  </businessrole>
  <businessrole deltaind="I" roleid="MarketingGroup">
-  <roleaccesslevel accesstype="1"/>
+  <roleaccesslevel accesstype="0"/>
  </businessrole>
  <businessrole deltaind="I" roleid="Agent">
   <roleaccesslevel accesstype="1"/> 
 </businessrole> 
 <businessrole deltaind="I" roleid="ReadOnly">
- <roleaccesslevel accesstype="1"/> 
+ <roleaccesslevel accesstype="0"/> 
  </businessrole>
  <businessrole deltaind="I" roleid="AgencyAdmin">
  <roleaccesslevel accesstype="1"/>
@@ -2845,5 +2926,522 @@
  <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show commissionStmt_export_row_security" uniquename="commissionStmt_export_row_security"/>
  <protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show commissionStmt_exportpdf_security" uniquename="commissionStmt_exportpdf_security"/> 
  
-</security> 
+<!-- Phase 3- Hide Modify Button for adjustment page -->
+<protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show modify button" uniquename="addNewCompensationCommissionAdjustment_modify">
+<businessrole deltaind="I" roleid="CarrierAdmin">
+<roleaccesslevel accesstype="1"/>
+</businessrole>
+<businessrole deltaind="I" roleid="Accounting">
+<roleaccesslevel accesstype="1"/>
+</businessrole>
+</protectedresource>
+
+ <!-- Phase 3- Hide Send for approval Button for adjustment page -->
+<protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show send for approval button" uniquename="addNewCompensationCommissionAdjustment_sendforApproval">
+</protectedresource> 
  
+ 
+<!-- Phase 3: Bug Id-23304-Statement tab --> 
+<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show commission statement tab" operator="OR" uniquename="commissionstatement_tab_security">
+<businessrole deltaind="I" roleid="Accounting">
+<roleaccesslevel accesstype="1"/>
+</businessrole>
+</protectedresource> 
+ 
+<!-- Phase 3: Task 23046- Modify Button  -->
+ <protectedresource deltaind="M" operator="OR" uniquename="addNewCompensationCommissionAdjustment_sendforApproval_security">
+ <businessrole deltaind="I" roleid="Accounting">
+ <roleaccesslevel accesstype="1"/>
+ </businessrole>
+ <userdefined deltaind="I" executionsequence="2" ruleid="ProducerOneRule.checkModifyforCa">
+ <userdefinedaccesslevel accesstype="1"/>
+ </userdefined>
+ <userdefined deltaind="I" executionsequence="3" ruleid="ProducerOneRule.checkModifyforAcc">
+ <userdefinedaccesslevel accesstype="1"/>
+ </userdefined>
+ </protectedresource> 
+  
+<!-- Phase 3- Bug Id-23455: Display modify button only for Accounting role --> 
+<protectedresource deltaind="M" defaultaccesstype="0" uniquename="editEvent"> 
+<businessrole deltaind="I" roleid="Accounting">
+<roleaccesslevel accesstype="1">
+</roleaccesslevel>
+</businessrole>
+</protectedresource> 
+ 
+ <!-- Phase 3: Task Id-23399-Security Matrix- Bonus dashboard-->
+ <!-- Phase 3 - Agent Role -->	
+ <protectedresource deltaind="I" uniquename="agencyadmindashboard_contingent_commission_bonus_statement_security">
+ <userdefined deltaind="I" ruleid="ProducerOneRule.getAgentChecked">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+</protectedresource>
+
+<!-- Phase 3:Task Id-23397-Security Matrix- Display commission dashboard-->
+<!-- Phase 3 - Agent Role -->	
+ <protectedresource deltaind="M" uniquename="agencyadmindashboard_commission_security">
+  <userdefined deltaind="I" ruleid="ProducerOneRule.getAgentChecked">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+</protectedresource>
+
+<!-- Task Id-23402- Hiding/Showing Request dashboard -->
+<protectedresource deltaind="M" description="Hide/Show request block on agencyadmin dashboard" uniquename="requests_security">
+<businessrole deltaind="I" roleid="AgencyAdmin">
+<roleaccesslevel accesstype="1"/>
+</businessrole>
+</protectedresource>
+
+  
+<!-- Phase 3- Task Id- 25094 --> 
+<protectedresource deltaind="M" defaultaccesstype="0" description="Hide Inititate New Transfer Button" uniquename="hideintiatenewbobtransfer">
+ <businessrole deltaind="I" roleid="CarrierAdmin">
+      <roleaccesslevel accesstype="1"/>
+ </businessrole>
+</protectedresource>
+
+<!-- Phase 3- Bug Id- 27237- PDF icon -->
+<protectedresource deltaind="M" defaultaccesstype="0" uniquename="checkCommissionStatementPdfButtonHideShow">
+<businessrole deltaind="I" roleid="AgencyAdmin">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+<!-- Phase 3- Delete icon- Bonus Schedules  -->
+<protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show delete button" uniquename="hideDeleteButton">
+<businessrole deltaind="I" roleid="CarrierAdmin">
+<roleaccesslevel accesstype="1" />
+</businessrole>
+<businessrole deltaind="I" roleid="Accounting">
+<roleaccesslevel accesstype="1" />
+</businessrole>
+</protectedresource>
+ 
+	<protectedresource deltaind="I" defaultaccesstype="1" description="entity_gen_det_hba_dropdown_ss" uniquename="entityGeneralDeetails_hba_que_ss_security">
+		<businessrole roleid="MarketingAssistant" executionsequence="0">
+			<roleaccesslevel accesstype="2" />
+		</businessrole>
+	</protectedresource>
+	
+	<protectedresource deltaind="I" defaultaccesstype="1" description="Grey out Dividend Dist section for Sales Support Requests" uniquename="divDividendDist" operator="and">
+  		<userdefined ruleid="ProducerOneRule.greyOutHBASalesSupportRequests" executionsequence="0">
+			<userdefinedaccesslevel accesstype="2" />
+		</userdefined>
+		<businessrole roleid="MarketingAssistant" executionsequence="0">
+			<roleaccesslevel accesstype="2" />
+		</businessrole>
+  </protectedresource>
+  
+  <protectedresource deltaind="I" defaultaccesstype="1" description="Grey out Policy Holder section for Sales Support Requests" uniquename="divPolicyHolder" operator="and">
+  		<userdefined ruleid="ProducerOneRule.greyOutHBASalesSupportRequests" executionsequence="0">
+			<userdefinedaccesslevel accesstype="2" />
+		</userdefined>
+		<businessrole roleid="MarketingAssistant" executionsequence="0">
+			<roleaccesslevel accesstype="2" />
+		</businessrole>
+  </protectedresource>
+  
+  <protectedresource deltaind="I" defaultaccesstype="1" description="Grey out Agent Copies section for Sales Support Requests" uniquename="divAgentCopies" operator="and">
+  		<userdefined ruleid="ProducerOneRule.greyOutHBASalesSupportRequests" executionsequence="0">
+			<userdefinedaccesslevel accesstype="2" />
+		</userdefined>
+		<businessrole roleid="MarketingAssistant" executionsequence="0">
+			<roleaccesslevel accesstype="2" />
+		</businessrole>
+  </protectedresource>
+  
+  <!-- END - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->
+  
+  <!-- START - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
+  <protectedresource deltaind="I" defaultaccesstype="1" description="CBIA Designation" uniquename="ss_cbia_security">
+		<businessrole deltaind="I" roleid="MarketingAssistant" executionsequence="0">
+			<roleaccesslevel accesstype="2" />
+		</businessrole>
+  </protectedresource>
+  
+  <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show year field" uniquename="ss_year_recieved_security">
+		<userdefined ruleid="ProducerOneRule.isCBIAYesNoSS" executionsequence="0">
+			<userdefinedaccesslevel accesstype="1"/>
+		</userdefined>
+		<userdefined ruleid="ProducerOneRule.greyOutCBIAYrReceivedSalesSupportRequests" executionsequence="0">
+			<userdefinedaccesslevel accesstype="2" />
+		</userdefined>
+	</protectedresource>
+  <!-- END - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
+  
+  <!-- QA2-0004 Fix -->
+	<protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Complete Transaction button on agency functions page" uniquename="agencyFuntions_letterTemplateList_security">
+   		<businessrole deltaind="I" roleid="AgencyAdmin">
+    		<roleaccesslevel accesstype="0"/>
+    	</businessrole>
+ 		<businessrole deltaind="I" roleid="MarketingAssistant">
+      		<roleaccesslevel accesstype="1"/>
+    	</businessrole>
+    	
+    	 <userdefined deltaind="I" executionsequence="1" ruleid="ProducerOneRule.isHideCompleteTransactionButtonOnAgencyFunction">
+  		<userdefinedaccesslevel accesstype="1"/>
+  	</userdefined> 
+  </protectedresource>
+  
+  <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Complete Transaction button on agency functions page" uniquename="agencyFuntions_documentAttachment_security">
+   		<businessrole deltaind="I" roleid="AgencyAdmin">
+    		<roleaccesslevel accesstype="0"/>
+    	</businessrole>
+ 		<businessrole deltaind="I" roleid="MarketingAssistant">
+      		<roleaccesslevel accesstype="1"/>
+    	</businessrole>
+    	
+    	 <userdefined deltaind="I" executionsequence="1" ruleid="ProducerOneRule.isHideCompleteTransactionButtonOnAgencyFunction">
+  		<userdefinedaccesslevel accesstype="1"/>
+  	</userdefined> 
+  </protectedresource>
+  
+  <!-- Self Service-W-9 Does not display descriptions when edited -->
+  <protectedresource deltaind="D" defaultaccesstype="0" description="isAddingNewDocW9ForSelfserviceApproval" uniquename="isAddingNewDocW9ForSelfserviceApproval">
+    <userdefined executionsequence="0" ruleid="docW9DetailsForSelfServiceRule.isAddingNewDocW9ForSelfserviceApproval">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+  </protectedresource>
+  
+  <!-- START - UAT2 0054 - Hide Reports on Admin Dashboard Self Service -->
+  <protectedresource deltaind="I" defaultaccesstype="1" description="isShowReportsOnAgencyAdminDashboard" uniquename="isShowReportsOnAgencyAdminDashboard">
+   		<businessrole deltaind="I" roleid="AgencyAdmin">
+    		<roleaccesslevel accesstype="0"/>
+    	</businessrole>
+  </protectedresource>
+  <!-- END - UAT2 0054 - Hide Reports on Admin Dashboard Self Service -->
+  
+  <!-- START - UAT2 0055 - Contact Status Grey out in Self Service -->
+  <protectedresource deltaind="I" defaultaccesstype="1" description="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security" uniquename="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security">
+		<businessrole roleid="AgencyAdmin" executionsequence="0">
+			<roleaccesslevel accesstype="2" />
+		</businessrole>
+	</protectedresource>
+  <!-- END - UAT2 0055 - Contact Status Grey out in Self Service -->
+  
+  <!-- Phase 3- Expire button- bonus  --> 
+<protectedresource deltaind="M" uniquename="checkIncentiveExpireButtonHideShow" defaultaccesstype="1">
+<businessrole deltaind="I" roleid="MarketingAssistant">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+<businessrole deltaind="I" roleid="Accounting">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+<businessrole deltaind="I" roleid="ReadOnly">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+<businessrole deltaind="I" roleid="MarketingRep">
+ <roleaccesslevel accesstype="0"/>
+</businessrole>
+<businessrole deltaind="I" roleid="vpmarketing">
+ <roleaccesslevel accesstype="0"/>
+</businessrole>
+<businessrole deltaind="I" roleid="SalesDirector">
+<roleaccesslevel accesstype="0"/>
+</businessrole>
+</protectedresource>
+
+<!-- Phase 3- Security matrix- Contingency commission dashboard -->
+<protectedresource deltaind="M" description="Hide/show isShowDashboardCCBStatmentHideShow" uniquename="isShowDashboardCCBStatmentHideShow">
+<businessrole deltaind="I" roleid="Underwriter">
+<roleaccesslevel accesstype="0"/>
+</businessrole>
+ <businessrole deltaind="I" roleid="MarketingGroup">
+  <roleaccesslevel accesstype="0"/>
+ </businessrole>
+</protectedresource>
+
+<!-- Phase 3- Security matrix- Contingency commission- Modify button -->
+<protectedresource deltaind="M" description="Hide/Show modify button" uniquename="common.hideShowModifyButton">	
+<businessrole deltaind="I" roleid="Accounting">
+<roleaccesslevel accesstype="0" />
+</businessrole>	
+ <businessrole deltaind="I" roleid="MarketingGroup">
+  <roleaccesslevel accesstype="0"/>
+ </businessrole>
+</protectedresource>
+
+<!-- Phase 3- Security matrix- Contingency commission- Add button -->		
+<protectedresource deltaind="M" description="Hide/Show add new button" uniquename="common.hideShowAddNewButton">
+ <businessrole deltaind="M" roleid="MarketingAssistant">
+<roleaccesslevel accesstype="0" />
+</businessrole>	
+<businessrole deltaind="I" roleid="Accounting">
+<roleaccesslevel accesstype="0" />
+</businessrole>	
+<businessrole deltaind="I" roleid="vpmarketing">
+ <roleaccesslevel accesstype="0"/>
+</businessrole>
+ <businessrole deltaind="I" roleid="MarketingGroup">
+  <roleaccesslevel accesstype="0"/>
+ </businessrole>
+</protectedresource>		
+
+<!-- Phase 3- Security matrix- Contingency commission- Attach button -->		
+<protectedresource deltaind="M" uniquename="common.showButtonsForMarketingAssistant">
+<businessrole deltaind="M" roleid="CarrierAdmin">
+<roleaccesslevel accesstype="1" />
+</businessrole>
+</protectedresource>
+
+<!-- Phase 3- Security Matrix- Delete attached schedule -->
+<protectedresource deltaind="M" description="Hide/show bounsAttached_delete_row_security" uniquename="bounsAttached_delete_row_security">
+<businessrole deltaind="M" roleid="CarrierAdmin">
+<roleaccesslevel accesstype="1" />
+</businessrole>
+</protectedresource>
+
+<!-- phase 3 bob transfer -->
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide Inititate New Transfer Button" uniquename="bobtransfersStep2_dest_producer_code_security">
+ <businessrole roleid="CarrierAdmin">
+      <roleaccesslevel accesstype="2"/>
+ </businessrole>
+ <businessrole roleid="SalesDirector">
+      <roleaccesslevel accesstype="2"/>
+ </businessrole> 
+</protectedresource>
+
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide Inititate New Transfer Button" uniquename="wholesale_from_producer_security">
+ <businessrole roleid="CarrierAdmin">
+      <roleaccesslevel accesstype="2"/>
+ </businessrole>
+ <businessrole roleid="SalesDirector">
+      <roleaccesslevel accesstype="2"/>
+ </businessrole> 
+</protectedresource>
+
+<protectedresource deltaind="I" defaultaccesstype="1" description="Hide Inititate New Transfer Button" uniquename="wholesale_to_producer_security">
+ <businessrole roleid="CarrierAdmin">
+      <roleaccesslevel accesstype="2"/>
+ </businessrole>
+ <businessrole roleid="SalesDirector">
+      <roleaccesslevel accesstype="2"/>
+ </businessrole> 
+</protectedresource>
+
+<protectedresource deltaind="I" defaultaccesstype="2" description="Hide Inititate New Transfer Button" uniquename="bobtransfersStep3_dest_producer_code_step3_security">
+</protectedresource>
+
+
+<!-- Phase 3- Marketing Group- start -->
+<protectedresource deltaind="M" description="Hide/show homeActionAnalyticsAndReportingHideShow" uniquename="homeActionAnalyticsAndReportingHideShow">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+ <businessrole deltaind="I" roleid="Underwriter">
+  <roleaccesslevel accesstype="0"/>
+ </businessrole>
+</protectedresource>
+
+<protectedresource deltaind="I" description="Hide/show agency functions tab" uniquename="agency_functions_tab_security">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show rirs tab under agency nipr tab" operator="or" uniquename="checkIsShowAgencyAppointRIRSTab">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/Show competitor appointments under agency nipr tab" operator="or" uniquename="checkIsShowAgencyCompetitorsAppointmentTab">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+<protectedresource deltaind="M" description="Hide/show Agency Claim/Policy sub tab" defaultaccesstype="1" uniquename="claim_policy_security">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+<protectedresource deltaind="M" description="common.hideDeleteLinkForAgencyAdmin" uniquename="common.hideDeleteLinkForAgencyAdmin">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+<protectedresource deltaind="M" description="Hide/Show ivansScreenListing_addNewIvans_security" defaultaccesstype="1" uniquename="ivansScreenListing_addNewIvans_security">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/Show documents insurance sub tab" uniquename="checkIsShowDocumentInsuranceTab">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/Show documents Cyber Liability sub tab" uniquename="carrierTabs_cyberliabilitytab">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+<protectedresource deltaind="M" description="Hide/show Bank Information tab" operator="OR" uniquename="isShowAgencyBankInformationTab">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+<protectedresource deltaind="M" description="Hide/Show reassign user link on onboarding workq" uniquename="reassign_user_role_based_security">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+<protectedresource deltaind="I" description="Hide/Show RIRS tab" uniquename="checkIsShowAgentAppointRIRSTab">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+<protectedresource deltaind="M" uniquename="agencyListPublicSubmitNInvitation.public_url_onboarding_list_security">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0" />
+</businessrole>
+</protectedresource>
+
+ <protectedresource deltaind="M" description="Hide/Show reassign user button for read only role" uniquename="agencyListPublicSubmitNInvitation.reassign_user_role_based_security">
+ <businessrole deltaind="I" roleid="MarketingGroup">
+  <roleaccesslevel accesstype="0"/>
+ </businessrole>
+ </protectedresource>
+
+<protectedresource deltaind="M" description="Hide/Show show comments link on onboarding workq" uniquename="agencyList_block_comments_row_security">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0"/>
+ </businessrole>
+</protectedresource>
+
+<protectedresource deltaind="M" description="Hide/Show Agency Termination request link on dashboard" uniquename="isAgencyTerminationApplicable">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0"/>
+ </businessrole>
+</protectedresource>
+
+ <protectedresource deltaind="M" defaultaccesstype="0" uniquename="isCallReportActive">
+ <businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="1"/>
+ </businessrole>
+</protectedresource>
+
+ <protectedresource deltaind="M" description="Hide/Show delete_email_additionalEmailAddress_prospectAgencyDetails_security" defaultaccesstype="1" uniquename="delete_email_additionalEmailAddress_prospectAgencyDetails_security">
+ <businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0"/>
+ </businessrole>
+</protectedresource>
+
+<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show market information tab for agency" operator="OR" uniquename="isMarketInformationApplicableToAgency">
+ <businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="1"/>
+ </businessrole>	
+</protectedresource>
+
+<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show modify button on agent page" operator="OR" uniquename="contact_modify_security">
+ <businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="1"/>
+ </businessrole>
+</protectedresource>
+
+<protectedresource  deltaind="M" description="Hide/Show add new button" uniquename="isShowDeleteLinkOnProducerNumberList">
+ <businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0"/>
+ </businessrole>
+</protectedresource>
+
+<!-- Phase 3- Marketing Group- end -->
+
+<!-- Task Id- 30025 -->
+<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show incentive statement sub tab" operator="or" uniquename="incentivestatement_tab_security">
+<businessrole deltaind="M" roleid="MarketingRep">
+  <roleaccesslevel accesstype="0"/>
+ </businessrole>
+<businessrole deltaind="I" roleid="Accounting">
+  <roleaccesslevel accesstype="0"/>
+ </businessrole> 
+</protectedresource>
+    
+<!-- Task Id- 30036-->
+ <protectedresource deltaind="M" defaultaccesstype="0" description="Hide Show Button On Incentive Statement" uniquename="compensationIncentiveStatement.hideShowButtonOnCompenationIncentiveStatement">
+ <businessrole deltaind="I" roleid="CarrierAdmin">
+ <roleaccesslevel accesstype="1"/>
+ </businessrole>
+ <businessrole deltaind="I" roleid="MarketingAssistant">
+ <roleaccesslevel accesstype="1"/>
+ </businessrole>
+ </protectedresource>
+    
+<!-- Phase 3- Adjustments- Security Matrix -->  
+<protectedresource deltaind="I" defaultaccesstype="0" description="check bonus Statement  for Rising Star" uniquename="incentiveStatement_adjustmenticon2">
+ <businessrole deltaind="I" roleid="CarrierAdmin">
+ <roleaccesslevel accesstype="1"/>
+ </businessrole>    	
+ </protectedresource> 
+ 
+ <protectedresource deltaind="M" description="Show Recalculation Button in CCB Statement" uniquename="compensationIncentiveStatement.hideRecalculationButtonPanel">
+ <businessrole deltaind="M" roleid="CarrierAdmin">
+ <roleaccesslevel accesstype="1"/>
+ </businessrole>  
+ <businessrole deltaind="M" roleid="MarketingAssistant">
+ <roleaccesslevel accesstype="0"/>
+ </businessrole>
+</protectedresource>
+  
+<protectedresource deltaind="M" description="Show hide Approve Button" uniquename="incentiveStatement.showHideCCbApproveButton"> 
+<businessrole deltaind="M" roleid="SalesDirector">
+<roleaccesslevel accesstype="1"/>
+</businessrole>    
+<businessrole deltaind="M" roleid="CarrierAdmin">
+ <roleaccesslevel accesstype="0"/>
+</businessrole>      
+</protectedresource>   
+
+<protectedresource deltaind="M" description="Show hide Approve Button for Acoounting analyst without link" uniquename="incentiveStatement.showHideCCbApproveButtonForAccountinganalyst">
+<businessrole deltaind="M" roleid="CarrierAdmin">
+  <roleaccesslevel accesstype="1"/>
+</businessrole>
+</protectedresource>    
+    
+<!-- Bug Id- 32505,32506 and 32502  -->
+<protectedresource deltaind="M"  defaultaccesstype="1" description="Hide/Show agent list tab" operator="OR" uniquename="agenttab_security">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="0"/>
+ </businessrole>   
+ </protectedresource>
+
+
+<!-- Phase 3- Bug-Id 33414 -->   
+<protectedresource deltaind="M" description="Hide/Show contracts tab" operator="or" uniquename="checkIsShowDocumentContractsTab">
+ <businessrole deltaind="I" roleid="MarketingGroup">
+ <roleaccesslevel accesstype="1"/>
+ </businessrole>
+</protectedresource>  
+    
+<!-- Phase 3- Bug Id- 22882 -->
+<protectedresource deltaind="M" defaultaccesstype="1" uniquename="isCheckCommissionScheduleModify">
+</protectedresource>    
+
+<!-- Phase 3- Bug Id- 35975 -->
+<protectedresource deltaind="I" uniquename="uploadDocument_delete">
+ <businessrole deltaind="I" roleid="MarketingGroup">
+ <roleaccesslevel accesstype="0"/>
+ </businessrole>
+</protectedresource>
+    
+
+  <!-- START - Self Service - Upload W9 Show/Hide -->
+  <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Add New W9 Section" uniquename="addNewW9ForSelfService_w9_security">
+	<userdefined executionsequence="0" ruleid="ProducerOneRule.hideShowW9Section">
+      <userdefinedaccesslevel accesstype="1"/>
+  	</userdefined>
+  	<userdefined executionsequence="0" ruleid="ProducerOneRule.hideShowW9SectionSalesSupportRequests">
+      <userdefinedaccesslevel accesstype="2"/>
+  	</userdefined>
+  </protectedresource>
+  <!-- END - Self Service - Upload W9 Show/Hide -->
+
+</security> 

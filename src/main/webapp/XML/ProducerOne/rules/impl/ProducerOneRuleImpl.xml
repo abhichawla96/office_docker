@@ -28,7 +28,15 @@
 			obj="ruleobjs.ProducerOneRule" method="isHidingAdditionalEmail" />
 
 			<!-- Bug Id- CR-0060 Showing Decline button on received bucket start-->
-		<!-- <rule deltaind="I" id="isRecivedBucket" expression="isEqual(:Status,Approved);" obj="ruleobjs.ProducerOneRule" method="isRecivedBucket" />	 -->
+		 <rule deltaind="I" id="isRecivedBucket" expression="isEqual(:Status,Approved);" obj="ruleobjs.ProducerOneRule" method="isRecivedBucket" />	 
 			<!-- Bug Id- CR-0060 Showing Decline button on received bucket end-->
+			
+	 <!-- UAT2 0035 & 0036 DOB and SSN make mandatory -->	
+	<rule deltaind="I" id="isLicensedProducerChecked" expression="isGreaterThan(getBeanProperty(executeDBOperation(context,a,3,SqlStmts.sqlStatementsviewgetLicensedProducerChecked),licensedProducerChecked),0);" />
+		
+	<!-- Changes done for prod bug 31110  -->	
+	<rule deltaind="I" id="isUserNameEmpty" expression="isEmpty(:user_name_app);" />
+			
+		
 	</ruleset>
 </evalrules>

@@ -3,7 +3,8 @@
 	<component name="sqlStatements">
 		<action name="view">
 			<workflow name="view" seq="0">
-				<storedprocedureoperation name="GetCompensationCommissionStatementSummaryList_p" id="GetCompensationCommissionStatementSummaryList_p" dbspname="GetCompensationCommissionStatementSummaryList_p" metaobject="commission_type_lku" operation="5" executionsequence="0">
+			<!-- Phase 3- Generate Commission Statement -->
+				<!-- <storedprocedureoperation name="GetCompensationCommissionStatementSummaryList_p" id="GetCompensationCommissionStatementSummaryList_p" dbspname="GetCompensationCommissionStatementSummaryList_p" metaobject="commission_type_lku" operation="5" executionsequence="0">
 					<resultsetoperation deltaind="D" indexno="21" mappingclass="java.util.HashMap" seq="21" />
 					<resultsetoperation deltaind="D" indexno="22" mappingclass="java.util.HashMap" seq="22" />
 					<resultsetoperation deltaind="D" indexno="23" mappingclass="java.util.HashMap" seq="23" />
@@ -18,7 +19,7 @@
 					<resultsetoperation deltaind="D" indexno="32" mappingclass="java.util.HashMap" seq="32" />
 					<resultsetoperation deltaind="D" indexno="33" mappingclass="java.util.HashMap" seq="33" />
 					<resultsetoperation deltaind="D" indexno="34" mappingclass="java.util.HashMap" seq="34" />
-				</storedprocedureoperation>
+				</storedprocedureoperation> -->
 				
 				
 				<storedprocedureoperation name="getAgencyProfileReport_agency_p" id="getAgencyProfileReport_agency_p"

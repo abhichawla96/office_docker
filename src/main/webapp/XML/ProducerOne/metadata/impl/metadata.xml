@@ -8794,7 +8794,7 @@
       <property autoincrement="NOT NULL" contextfield="N" deleteind="N" field="last_updated_ts" formdisplay="Y" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="Y" persistent="Y" propertylength="10" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="6078" viewlength="10"/>
     </propertyversion>
   </metaobject>
-  <metaobject active="Y" name="report_search_columns" persistent="N" seq="6079">
+  <metaobject deltaind="M" active="Y" name="report_search_columns" persistent="N" seq="6079">
     <propertyversion seq="0" versionname="0">
       <property autoincrement="NOT NULL" contextfield="N" deleteind="N" field="company_AF" formdisplay="Y" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="Y" persistent="N" propertylength="10" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="6081" viewlength="10">
         <dropdown dropdowntype="sql" isrowlink="N" metaobject="carriercompanies_lku" name="getCompanies" sqlstmt="select company_id,description,carriercompany_code from carriercompanies_lku order by description asc">
@@ -8802,6 +8802,15 @@
           <valuefield field="company_id"/>
         </dropdown>
       </property>
+      
+       <!-- Phase 3: Report filtration criteria change -->
+ 		<property deltaind="I" initcap="N" searchfield="N" isEncrypt="N" listdisplay="N" formdisplay="N" deleteind="N" resolvedisplay="N" length="0" contextfield="N" searchrule="N" isrequired="N" searchmodify="N" field="reports_filter_amount" viewlength="10" persistent="N" propertylength="10" autoincrement="IDENTITY" seq="6511">
+        <dropdown name="getFilterAmount" metaobject="report_search_columns" dropdowntype="sql" sqlstmt="select master_lookup_data_code,master_lookup_data_desc as reports_filter_amount from master_lookup_data_lku where master_lookup_detail_id in (select master_lookup_detail_id from master_lookup_detail_lku where master_lookup_detail_code='report_filter_amount_lku')">
+          <valuefield field="master_lookup_data_code" />
+          <displayfield field="master_lookup_data_code" />
+        </dropdown>
+      </property>
+      
       <property autoincrement="IDENTITY" contextfield="N" deleteind="N" field="lob_id" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="N" propertylength="4" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="6085" viewlength="4">
         <dropdown dropdowntype="sql" isrowlink="N" metaobject="person" name="getLOBList" sqlstmt="select lob_id,description from lob_lku where isnull(applicableto,0) !=2 order by description asc">
           <displayfield field="description"/>
@@ -9470,8 +9479,9 @@
           <valuefield field="audit_type"/>
         </dropdown>
       </property>
-      <property autoincrement="IDENTITY" contextfield="N" deleteind="N" field="lob_id_R" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="N" propertylength="50" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="6542" viewlength="50">
-        <dropdown dropdowntype="sql" isrowlink="N" metaobject="report_search_columns" name="getLOBListReport" sqlstmt="select lob_id,description from lob_lku where isnull(applicableto,0) !=2 order by description asc">
+       <!-- Phase 3- AIM101-1-report bug --> 
+      <property deltaind="M" autoincrement="IDENTITY" contextfield="N" deleteind="N" field="lob_id_R" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="N" propertylength="50" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="6542" viewlength="50">
+        <dropdown deltaind="M" dropdowntype="sql" isrowlink="N" metaobject="report_search_columns" name="getLOBListReport" sqlstmt="select lob_id,description from lob_lku where isnull(applicableto,0) =2 order by description asc">
           <displayfield field="description"/>
           <valuefield field="lob_id"/>
         </dropdown>
@@ -10228,7 +10238,7 @@
       <property contextfield="N" deleteind="N" field="last_updated_ts" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="N" propertylength="10" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="6963" viewlength="10"/>
     </propertyversion>
   </metaobject>
-  <metaobject active="Y" name="requests" persistent="Y" seq="6964">
+  <metaobject deltaind="M" active="Y" name="requests" persistent="Y" seq="6964">
     <depobject identifying="N" metaobject="req_comments" navigate="Y" seq="6965"/>
     <propertyversion seq="0" versionname="0">
       <property contextfield="N" deleteind="N" field="agency_id" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="Y" propertylength="4" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="6967" viewlength="4"/>
@@ -10295,8 +10305,8 @@
           <valuefield field="agency_id"/>
         </dropdown>
       </property>
-      <property contextfield="N" deleteind="N" field="request_person_id" formdisplay="Y" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="Y" persistent="Y" propertylength="200" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="7012" viewlength="200">
-        <dropdown dropdowntype="sql" isrowlink="N" metaobject="requests" name="getPersonListByAgencyId" sqlstmt="select person_id, prdcr_last_name + ' ' + prdcr_first_name as name  from person where person_id in(select person_id from agency_person ap where ap.agency_id=#request_agency_id#)">
+      <property deltaind="M" contextfield="N" deleteind="N" field="request_person_id" formdisplay="Y" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="Y" persistent="Y" propertylength="200" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="7012" viewlength="200">
+        <dropdown deltaind="M" dropdowntype="sql" isrowlink="N" metaobject="requests" name="getPersonListByAgencyId" sqlstmt="select person_id, prdcr_last_name + ' ' + prdcr_first_name as name  from person where isactive='1' and person_id in(select person_id from agency_person ap where ap.agency_id=#request_agency_id#)">
           <displayfield field="name"/>
           <valuefield field="person_id"/>
         </dropdown>
@@ -10308,7 +10318,7 @@
         </dropdown>
       </property>
       <property contextfield="N" deleteind="N" field="request_period" formdisplay="Y" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="Y" persistent="Y" propertylength="200" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="7020" viewlength="200">
-        <dropdown dropdowntype="sql" isrowlink="N" metaobject="requests" name="getCommissionPeriodListByAgencyId" sqlstmt="select distinct (case when month(period) &gt;=10 then cast(month(period) as varchar(10)) else '0'+cast(month(period) as varchar(10)) end) + '-' + cast(year(period) as varchar(10)) as period from Commission_Statement_Summary where agency_id=#request_agency_id#">
+        <dropdown dropdowntype="sql" isrowlink="N" metaobject="requests" name="getCommissionPeriodListByAgencyId" sqlstmt="select distinct (case when month(period) &gt;10 then cast(month(period) as varchar(10)) else '0'+cast(month(period) as varchar(10)) end) + '-' + cast(year(period) as varchar(10)) as period from Commission_Statement_Summary where agency_id=#request_agency_id#">
           <displayfield field="period"/>
           <valuefield field="period"/>
         </dropdown>

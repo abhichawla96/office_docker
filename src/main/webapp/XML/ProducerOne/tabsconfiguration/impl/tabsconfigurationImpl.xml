@@ -206,20 +206,18 @@
   <!-- Sprint 3 : Agency and Agent Demographics- General (creation&main of Agency code) -->
   
   <tabsconfigurationresource deltaind="M" accesslevel="0" name="agencyCodeList_block_surplus_lines_indicator_security"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowIsCommissionable" name="isShowIsCommissionable"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowProdNumSubAgencyCodeTrue" name="isShowProdNumSubAgencyCodeTrue"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="eo_insurance_required_security" name="eo_insurance_required_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowPolicyFeeApplicable" name="isShowPolicyFeeApplicable"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowAL3Applicable" name="isShowAL3Applicable"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowFixedCommissionPlan" name="isShowFixedCommissionPlan"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowCCBOverriddenCheckBox" name="isShowCCBOverriddenCheckBox"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowIsBonusApplicableCheckBox" name="isShowIsBonusApplicableCheckBox"/>
  <!--  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowProdNumDBA" name="isShowProdNumDBA"/> change request 14 -->
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="isShowProdNumDBA" name="isShowProdNumDBA"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="producerDetail_distribution_type_id_security" name="producerDetail_distribution_type_id_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show segmentation_security in producerDetails.html" name="producerDetails_segmentation_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowProdNumVendorTrue" name="isShowProdNumVendorTrue"/>
-  <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowProdNumProbationTrue" name="isShowProdNumProbationTrue"/>
+<!--   <tabsconfigurationresource deltaind="M" accesslevel="0" description="isShowProdNumProbationTrue" name="isShowProdNumProbationTrue"/>
+ --> 
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="producerDetail_isShowProdNumZoneMarketRepDivTrue" name="producerDetail_isShowProdNumZoneMarketRepDivTrue"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="producerDetail_isShowProdNumUnderWriterDivTrue" name="producerDetail_isShowProdNumUnderWriterDivTrue"/>
   <tabsconfigurationresource deltaind="I" accesslevel="0" description="is_commissionableDiv" name="is_commissionableDiv"/>
@@ -576,7 +574,7 @@
 <tabsconfigurationresource deltaind="M" accesslevel="1" name="agencyListPublicSubmitNInvitation_resend_invitation_security" description="agencyListPublicSubmitNInvitation_resend_invitation_security"/>
 
 <!-- Showing Prospect Sign on Homepage - Phase 2 -->
-<tabsconfigurationresource deltaind="M" accesslevel="0" description="hide_show_prospect_section_security" name="hide_show_prospect_section_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="hide_show_prospect_section_security" name="hide_show_prospect_section_security"/>
  
  <!-- Show Cyber Liability Carrier Name -->
  <tabsconfigurationresource deltaind="M" accesslevel="1" description="Agency_declarationCyberLiability_security" name="Agency_declarationCyberLiability_security"/>
@@ -587,7 +585,7 @@
  
  <!-- Hiding Report from Producer Compliance 14/04/2021 -->
  <!-- Phase 2 - Bug Id- P2-057 - Report Dashboard - List Of producer Code Addresses -->
- <tabsconfigurationresource deltaind="M" accesslevel="1" name="isShowReportsOnAgencyAdminDashboard"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" name="isShowReportsOnAgencyAdminDashboard"/>
  
  <!-- Hiding Other Report Tabs -->
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide Show Adhoc report" name="showAdhocReport"/>
@@ -722,7 +720,7 @@
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="bank_effective_date_self_service_security" name="bank_effective_date_self_service_security"/>
 
 <!-- Phase 2 - Feedback From BMIC - Hiding Contact Status in Update Agency Location  -->
-<tabsconfigurationresource deltaind="M" accesslevel="0" description="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security" name="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security"/>
+<!-- <tabsconfigurationresource deltaind="M" accesslevel="0" description="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security" name="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security"/> -->
 
 <!-- Phase 2- Bug Id- P2-097- Add Bank Information- Account Type column -->
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="bankInformationForSelfServiceApproval_account_type_checking_saving_security" name="bankInformationForSelfServiceApproval_account_type_checking_saving_security"/>
@@ -885,11 +883,76 @@
 
 <!-- START - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
 <tabsconfigurationresource deltaind="I" accesslevel="1" description="Grey out CBIA Designation" name="ss_cbia_security"/>
+<tabsconfigurationresource deltaind="I" accesslevel="1" description="Grey out CBIA Designation" name="ss_year_recieved_security"/>
 <!-- END - UAT2 Bug Id 0017 - Grey out CBIA Designation field in SS -->
 
 <!--Prod Issue- Display History icon on bank information page -->
 <tabsconfigurationresource deltaind="I" accesslevel="1" description="Hide/show bankinformation icon on addbankinformation screen" name="bankinformation_history_security"/>
 
+<!-- Phase 3: Hiding Pdf icon for commission statement -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="commissionStmt_exportpdf_security" name="commissionStmt_exportpdf_security"/>
 
+<!-- Phase 3- Extra fields for Requests Page -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="hide/show Request Period on Requests Page" name="request_period_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="hide/show Request License Num on Requests Page" name="request_license_num_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="hide/show Request Commission Statement on Requests Page" name="request_commission_statements_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="hide/show Request Policy Number on Requests Page" name="request_policy_number_security"/>
+
+<!-- Phase 3- Task Id- 25086- BOB Step 2 -->
+<tabsconfigurationresource  deltaind="M" accesslevel="0" description="Hide/Show bobtransfersStep2_LifePolicyTransferMessage_security" name="bobtransfersStep2_LifePolicyTransferMessage_security"/>
+ 
+<!-- Phase 3- Bug Id-25684- Hide Bob Id -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/show transfer bob id" name="bobtransferStep2_bobid"/>
+
+<!-- Phase 3- Hide Life Policy Transfer Form -->
+<tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/show download life form" name="bobtransferstep2_filedownload"/>
+    
+<!-- START - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->
+<tabsconfigurationresource deltaind="I" accesslevel="1" description="Grey out HBA Designation" name="entityGeneralDeetails_hba_que_ss_security"/>
+<tabsconfigurationresource deltaind="I" accesslevel="1" description="Grey out HBA Designation" name="entityGeneralDeetails_hba_ss_dropdown_security"/>
+<!-- END - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->
+
+<!-- Phase 3- Bug Id- 28330 -->  
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide earned premium" name="incentiveStatements_premium_earned_security"/>
+
+<!-- Phase 3- Hide Pdf icon on contingency commission statement -->
+<tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/show pdf on  form" name="incentiveStatement_pdf"/>
+
+<!-- Phase 3- IVANS section --> 
+ <tabsconfigurationresource deltaind="M" name="ivans_download_type_security" accesslevel="1" description="Hide/Show Ivans Download Type Lookup" />
+
+<!-- Phase 3- Hide Calculation factors section -->
+<tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/show factors grid" name="bonusCalculationFactor_freeform_contextdata_01"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide Show WRITTEN PREMIUM GROWTH CALCULATIONand GROWTH RATE FACTOR CHART (GRF) security" name="compIncentiveStmnt_wpg_grf_security"/>
+
+<!-- Phase 3- Payout detail and summary section -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="net_profit_payout_detail_security" name="net_profit_payout_detail_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="py_losses_payout_detail_security" name="py_losses_payout_detail_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="cy_profit_payout_detail_security" name="cy_profit_payout_detail_security"/>
+<tabsconfigurationresource deltaind="I" accesslevel="0" description="block_field_earned_premium" name="block_field_earned_premium"/>
+<tabsconfigurationresource deltaind="I" accesslevel="0" description="block_field_loss_adjustment_expense" name="block_field_loss_adjustment_expense"/>
+<tabsconfigurationresource deltaind="I" accesslevel="0" description="block_field_earned_commission_amount" name="block_field_earned_commission_amount"/>
+<tabsconfigurationresource deltaind="I" accesslevel="0" description="block_field_cy_profit" name="block_field_cy_profit"/>
+<tabsconfigurationresource deltaind="I" accesslevel="0" description="block_field_py_losses" name="block_field_py_losses"/>
+<tabsconfigurationresource deltaind="I" accesslevel="0" description="block_field_net_profit" name="block_field_net_profit"/>
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="earned_commission_amount_payout_detail_security" name="earned_commission_amount_payout_detail_security"/>
+
+<!-- Feature List 107740 adding Trash Onboarded Bucket start -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show  trashed_Onboarded_application_security" name="trashed_Onboarded_application_security"/>
+<!-- Feature List 107740 adding Trash Onboarded Bucket end -->
+	
+<!-- UAT2 Bug Id - 007 Agency Demo Market Info start -->
+	<!--  <tabsconfigurationresource deltaind="M" accesslevel="1" description="premium_volume_commitment_to_sample_security" name="premium_volume_commitment_to_sample_security"/>
+	
+	<tabsconfigurationresource deltaind="M" description="atleastOneLOBRequiredSecurity" name="atleastOneLOBRequiredSecurity" accesslevel="0"/>
+	
+	<tabsconfigurationresource deltaind="M" accesslevel="0" description="premium_volume_by_lob_security" name="premium_volume_by_lob_security"/>
+	-->
+	<!-- UAT2 Bug Id - 007 Agency Demo Market Info end -->
+	
+	<!-- UAT2 Bug Id - 27509 -->
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="entityCyberLiabilityExpirationListing_security" name="entityCyberLiabilityExpirationListing_security"/>
+	
+	
 
 </tabsconfiguration>

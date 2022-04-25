@@ -253,5 +253,71 @@
 
  <!-- Upgrade- Bug Id- U077- Email in Agency Termination -->
  <label deltaind="M" labelkey="email_businessaddress_label" labeldesc="Email" />
+
    
+<!-- Phase 3- Reports label change to 50,000 -->  
+<label deltaind="M" labelkey="commission_masterLevelExceeding_report_label" labeldesc="Commission Paid at Master level exceeding $50,000 (AIM168)"/>
+    
+<!-- Phase 3: Task 23400- Rename the dashboard  -->
+<label deltaind="M" labeldesc="Contingency Commission Dashboard" labelkey="contingentCommissionBonusDashboardlabel"/>
+<label deltaind="M" labeldesc="Contingency Commission Statement" labelkey="contingentCommissionBonusMapPortallabel"/>
+   
+<!-- Phase 3- Bug Id- 25140- Product filter -->  
+<label deltaind="M"  labeldesc="Agency Code" labelkey="agencyadmindashboard_commission_productid_label"/>
+
+
+<!-- Phase 3- Contingency Commission Schedules -->  
+<label deltaind="M" labeldesc="Contingency Commission" labelkey="incentiveIDlabel"/>
+<label deltaind="M" labeldesc="Add New Contingency Commission Schedule" labelkey="addNewIncentiveSchedulelabel"/>
+<label deltaind="M" labeldesc="Contingency Commission Schedule" labelkey="incentivelabel"/>
+<label deltaind="M" labelkey="adminTabs2_incentive_schedule_security_menulabel" labeldesc="Contingency Commission Schedule"></label>
+<label deltaind="M" labelkey="incentive_schedule_filter_label" labeldesc="Contingency Commission"/>
+<label deltaind="I" labelkey="incentiveID_label" labeldesc="Contingency Commission"/>
+   
+<!-- Phase 3- Task Id-26329 -->
+<label deltaind="I" labelkey="bobtransfersStep1_enterfromagentnumberlabel" labeldesc="Enter From Agency Code"/>
+<label deltaind="I" labelkey="bobtransfersStep2_fromagentnumberlabel" labeldesc="From Agency Code"/>
+<label deltaind="I" labelkey="bobtransfersStep1_entertoagentnumberlabel" labeldesc="Enter To Agency Code"/>
+<label deltaind="I" labelkey="bobtransfersStep2_toagentnumberlabel" labeldesc="To Agency Code"/>
+<label deltaind="I" labelkey="bobtransferStep2_toagentnumberlabel" labeldesc="Enter Destination Agency Code"/>
+
+
+<!-- Phase 3- Task Id-26332 -->
+<label deltaind="M" labeldesc="Agency Code" labelkey="bobtransferStep2_agentnumberlabel"/>
+<label deltaind="M" labeldesc="Agency Code" labelkey="bobtransfersStep2_searchagentnumberlabel"/>
+<label deltaind="M"  labeldesc="Agency Code" labelkey="bobtransfersStep1_searchagentnumberlabel"/>
+ 
+<!-- Phase 3- Renaming Bonus to Commission Contingency in Schedule, Hierarchy and Statement --> 
+<label deltaind="M" labeldesc="Master Agency Code" labelkey="attachment_master_producer_number_label"/>
+<label deltaind="M" labelkey="isShowIncentiveHierarchyTab_menulabel" labeldesc="Contingency Commission Hierarchy"></label>
+<label deltaind="M" labeldesc="Contingency Commission Hierarchy" labelkey="incentivehierarchylabel"/>
+<label deltaind="M" labeldesc="Contingency Commission Hierarchy" labelkey="incentivehierarchylabel"/>
+<label deltaind="M" labeldesc="Contingency Commission Statements" labelkey="incentive_statements_label"/>
+<label deltaind="M" labeldesc="Contingency Commission Statement" labelkey="incentiveStatementlabel"/>
+<label deltaind="M" labeldesc="Contingency Commission Year" labelkey="incentiveStatements_bonus_year_label"/>
+<label deltaind="M"  labeldesc="Contingency Commission" labelkey="incentiveStatements_payment_label"/>
+<label deltaind="M" labeldesc="Contingency Commission Sch ID" labelkey="bounsAttached_incentive_schedule_id_label"/>
+<label deltaind="M" labeldesc="Contingency Commission Sch ID" labelkey="bounsAvailable_incentive_schedule_id_label"/>
+   
+<!-- Phase 3- Renaming Commission Reports- 25,000 to 50,000 --> 
+<label deltaind="I"  labeldesc="This report displays commission paid details at master level which exceeding $50000." labelkey="branch19"/>
+   
+<!-- Phase 3: Bonus Type -->
+<label deltaind="M" labelkey="statement_bonus_type_label" labeldesc="Contingency Commission Type"/>
+   
+
+  <!-- Customization to configuration changes -->
+  <label deltaind="M" labeldesc="How did you learn about Company" labelkey="learn_about_label"/>
+  
+	<!-- Phase 3: On hold process -->
+<label deltaind="M" labeldesc="Is Contingency Commission Applicable" labelkey="producerDetail_isBonusApplicablelabel"/>
+  
+  <!-- bob -->
+  <label deltaind="M" labeldesc="From Agency Code" labelkey="bobtransfersStep1_fromagentnumberlabel"/>
+  <label deltaind="M" labeldesc="To Agency Code" labelkey="bobtransfersStep1_toagentnumberlabel"/>
+ 
+ <!-- Phase 3- Update Statement Summary -->
+<label deltaind="I" labelkey="clientFullName" labeldesc="BUILDERS MUTUAL INSURANCE COMPANY"/>
+  
+  
 </labelconf>

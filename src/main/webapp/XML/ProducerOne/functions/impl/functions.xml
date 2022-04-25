@@ -26,4 +26,21 @@
   </functiondefinition>
   
   <!-- Existing Agency Appointed to New Location - Dynamic Row Function - End -->
+  
+  
+   <!-- Phase 3: Contact type list -->
+  <functiondefinition deltaind="I" classname="com.userbo.common.impl.ProducerOneUtilsImpl" method="showContactTypeList" name="showContactTypeList" returntype="V">
+    <argument datatype="com.util.Context" name="context" seq="0"/>
+  </functiondefinition>
+    <!-- phase 3 - indivdual transfer  -->
+   <functiondefinition deltaind="I" classname="com.userbo.common.impl.ProducerOneUtilsImpl" method="getToSubProdCodeForIndTransfer" name="getToSubProdCodeForIndTransfer" returntype="V">
+    <argument datatype="com.util.Context" name="context" seq="0"/>
+  </functiondefinition>
+  
+   <functiondefinition deltaind="I" classname="com.userbo.common.impl.ProducerOneUtilsImpl" method="displayCollectedPremium" name="displayCollectedPremium" returntype="V">
+    <argument datatype="com.util.Context" name="context" seq="0"/>
+    <argument seq="1" name="key" datatype="java.lang.String"/>	
+    <argument seq="2" name="value" datatype="java.lang.String"/>	
+  </functiondefinition>
+  
 </functionsdef>
