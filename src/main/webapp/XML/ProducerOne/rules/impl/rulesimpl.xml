@@ -50,52 +50,52 @@
 
 <rule deltaind="I" id="isCBIAYesNoSS" expression="isEqual(:ss_cbia_designation,Y);"></rule>
 <!-- phase 2 end- extended fields -->
-
-<!-- BMIC req hide complete transaction/Generate letter button start -->
-
-<rule deltaind="I" id="isHideCompleteTransactionButtonOnAgencyFunction" expression="andCondition(isNotEqual(:AgencySetupOBStatus_desc,Pending Review),isNotEqual(:AgencySetupOBUser_id,:user_id));" />
-
-<!-- BMIC req hide complete transaction/Generate letter button end -->
-
-<!-- START - UAT2 Bug Id 0004 - Remove Final Questions in PPRM Market Information -->
-<rule deltaind="I" id="removePPRMFinalQuestions" expression="isEqual(:remove_final_questions,Y);"></rule>
-<!-- END - UAT2 Bug Id 0004 - Remove Final Questions in PPRM Market Information -->
-
-<!-- START - UAT2 Bug Id 0017 - Grey out CBIA Designation -->
-<rule deltaind="I" id="greyOutCBIAAgencyDemoGraphics" expression="isEqual(:greyout_CBIA_AgencyDemoGraphics,Y);"></rule>
-<rule deltaind="I" id="greyOutCBIAYrReceivedSalesSupportRequests" expression="andCondition(isEqual(:ss_cbia_designation,Y),isEqualsIgnoreCase(:roles,MarketingAssistant));"></rule>
-<!-- END - UAT2 Bug Id 0017 - Grey out CBIA Designation -->
-
-<!-- START - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->
-<rule deltaind="I" id="greyOutHBASalesSupportRequests" expression="isEqual(:greyout_HBA_SalesSupportRequests,Y);"></rule>
-<rule deltaind="I" id="greyOutHBADropDownSalesSupportRequests" expression="andCondition(isEqual(:member_of_hba_ss,Y),isEqualsIgnoreCase(:roles,MarketingAssistant));"></rule>
-<!-- END - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->
-
-<!-- START - UAT2 0033 - Preloading Business Address -->
-<rule deltaind="I" id="isPersonIdNull" expression="isEmpty(:person_id);" />
-<!-- END - UAT2 0033 - Preloading Business Address -->
+<!-- BMIC req  hide complete transaction/Generate letter button start -->
+  
+  <rule deltaind="I" id="isHideCompleteTransactionButtonOnAgencyFunction" expression="andCondition(isNotEqual(:AgencySetupOBStatus_desc,Pending Review),isNotEqual(:AgencySetupOBUser_id,:user_id));"/>
+  
+   <!-- BMIC req  hide complete transaction/Generate letter button end -->
+   
+   <!-- START - UAT2 Bug Id 0004 - Remove Final Questions in PPRM Market Information -->
+   <rule deltaind="I" id="removePPRMFinalQuestions" expression="isEqual(:remove_final_questions,Y);"></rule>
+   <!-- END - UAT2 Bug Id 0004 - Remove Final Questions in PPRM Market Information -->
+   
+   	<!-- START - UAT2 Bug Id 0017 - Grey out CBIA Designation -->
+   	<rule deltaind="I" id="greyOutCBIAAgencyDemoGraphics" expression="isEqual(:greyout_CBIA_AgencyDemoGraphics,Y);"></rule>
+   	<rule deltaind="I" id="greyOutCBIAYrReceivedSalesSupportRequests" expression="andCondition(isEqual(:ss_cbia_designation,Y),isEqualsIgnoreCase(:roles,MarketingAssistant));"></rule>
+	<!-- END - UAT2 Bug Id 0017 - Grey out CBIA Designation -->
+	
+	<!-- START - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->
+	<rule deltaind="I" id="greyOutHBASalesSupportRequests" expression="isEqual(:greyout_HBA_SalesSupportRequests,Y);"></rule>
+	<rule deltaind="I" id="greyOutHBADropDownSalesSupportRequests" expression="andCondition(isEqual(:member_of_hba_ss,Y),isEqualsIgnoreCase(:roles,MarketingAssistant));"></rule>
+	<!-- END - UAT2 Bug Id - 0039 - Grey out HBA, Dividend Dist, Agent Copies, Policyholder Copies -->
+	
+	<!-- START - UAT2 0033 - Preloading Business Address -->
+	<rule deltaind="I" id="isPersonIdNull" expression="isEmpty(:person_id);"/>
+	<!-- END - UAT2 0033 - Preloading Business Address -->
+	
+	<!-- START - Self Service - Upload W9 Show/Hide -->
+	<rule deltaind="I" id="hideShowW9Section" expression="isEqual(:hideShow_w9section,Y);"/>
+	<rule deltaind="I" id="hideShowW9SectionSalesSupportRequests" expression="isEqualsIgnoreCase(:roles,MarketingAssistant);"></rule>
+	<!-- END - Self Service - Upload W9 Show/Hide -->
 </ruleset>
 
+	<!-- Agency funtions rules - deactivate date CR -->
+	<ruleset name="AgencyFunctionsRule">
+		<rule deltaind="M" id="isDateBeforeCurrentDate"
+			expression="if(andCondition(isNotEqual(:selectFunctionType_code,functionDC),andCondition(isNot(isEmpty(:suspension_date)),isDateBefore(:suspension_date,convertDateToString(getTodayDate(),MM/dd/yyyy))))=>populateError(context,suspension_date,invalidAgencyFucntionDateErrorKey););" />
 
-
-<!-- Agency funtions rules - deactivate date CR -->
-<ruleset name="AgencyFunctionsRule">
-	<rule deltaind="M" id="isDateBeforeCurrentDate" expression="if(andCondition(isNotEqual(:selectFunctionType_code,functionDC),andCondition(isNot(isEmpty(:suspension_date)),isDateBefore(:suspension_date,convertDateToString(getTodayDate(),MM/dd/yyyy))))=>populateError(context,suspension_date,invalidAgencyFucntionDateErrorKey););" />
-
-</ruleset>
-
-<!-- START - UAT2 Bug 0013 - Editing Hierarchy Contact in SS -->
-<ruleset name="EntityRequestsRule">
-	<rule deltaind="D" id="isCheckForPersonInHierarchy" expression="if(isEmpty(:inHierarchy)=>populateError(context,person_name_ss_filter,personRestrictedHierarchyMsg););" obj="ruleobjs.EntityRequestsRule" method="isCheckForPersonInHierarchy" />
-</ruleset>
-<!-- END - UAT2 Bug 0013 - Editing Hierarchy Contact in SS -->
-
+	</ruleset>
+	
+	<!-- START - UAT2 Bug 0013 - Editing Hierarchy Contact in SS -->
+	<ruleset name="EntityRequestsRule">
+		<rule deltaind="D" id="isCheckForPersonInHierarchy" expression="if(isEmpty(:inHierarchy)=>populateError(context,person_name_ss_filter,personRestrictedHierarchyMsg););" obj="ruleobjs.EntityRequestsRule" method="isCheckForPersonInHierarchy" />
+	</ruleset>
+	<!-- END - UAT2 Bug 0013 - Editing Hierarchy Contact in SS -->
 <!-- Phase 3: Task 23046 -->
 	<ruleset name="ProducerOneRule">
 		<rule deltaind="I" id="checkModifyforCa" expression="isEqualsIgnoreCase(:roles,CarrierAdmin);" />
 		<rule deltaind="I" id="checkModifyforAcc" expression="isEqualsIgnoreCase(:roles,Accounting);" />
 	</ruleset>
-
-
+	<!-- END - UAT2 Bug 0013 - Editing Hierarchy Contact in SS -->
 </evalrules>	
-	

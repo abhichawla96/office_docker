@@ -34,5 +34,9 @@
 	 <!-- UAT2 0035 & 0036 DOB and SSN make mandatory -->	
 	<rule deltaind="I" id="isLicensedProducerChecked" expression="isGreaterThan(getBeanProperty(executeDBOperation(context,a,3,SqlStmts.sqlStatementsviewgetLicensedProducerChecked),licensedProducerChecked),0);" />
 		
+	<!-- Changes done for prod bug 31110  -->	
+	<rule deltaind="I" id="isUserNameEmpty" expression="isEmpty(:user_name_app);" />
+			
+		
 	</ruleset>
 </evalrules>

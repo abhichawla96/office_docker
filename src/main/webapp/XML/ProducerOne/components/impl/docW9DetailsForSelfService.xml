@@ -6,5 +6,11 @@
     	<actionparam deltaind="I" executionsequence="0" pre="Y" form="Y" name="attachflag" paramid="attachflag" val="Y"/>
     </action>
     
+    <!-- START - Self Service - Upload W9 Show/Hide -->
+    <action deltaind="M" name="addDocW9ForSelfServiceApproval">
+      <actionparam deltaind="I" executionsequence="0" form="Y" name="hideShow_w9section" paramid="hideShow_w9section" val="Y" viewparam="Y"/>
+    </action>
+    <!-- END - Self Service - Upload W9 Show/Hide -->
+    
   </component>
 </projectcomponents>

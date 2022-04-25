@@ -983,7 +983,7 @@
     </userdefined>
     
     <businessrole deltaind="M" roleid="vpmarketing">
-			<roleaccesslevel accesstype="1" />
+			<roleaccesslevel accesstype="0" />
 		</businessrole>
     </protectedresource>
     
@@ -1379,11 +1379,11 @@
     </businessrole>
   </protectedresource>
   
-  <protectedresource deltaind="M" description="premium_volume_by_lob_security" uniquename="premium_volume_by_lob_security">
+   <protectedresource deltaind="M" description="premium_volume_by_lob_security" uniquename="premium_volume_by_lob_security">
     <businessrole deltaind="I" roleid="MarketingRep">
       <roleaccesslevel accesstype="1"/>
     </businessrole>
-  </protectedresource>
+  </protectedresource> 
   
   <protectedresource deltaind="M" description="top_companies_appointed_security" uniquename="top_companies_appointed_security">
     <businessrole deltaind="I" roleid="MarketingRep">
@@ -2433,26 +2433,18 @@
     </businessrole>
   </protectedresource>
 
-<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Add New Task Button - Agency General Details Page -->    
-<!--  Phase 3- Bug Id- 33992 -->  
-<protectedresource deltaind="I" defaultaccesstype="1" uniquename="relatioshipTask_addNewTask">
-    <businessrole deltaind="I" roleid="CarrierAdmin">
-      	<roleaccesslevel accesstype="0"/>
-    </businessrole>
-    <businessrole deltaind="I" roleid="ReadOnly">
-		<roleaccesslevel accesstype="0" />
-	</businessrole>
-	<businessrole deltaind="I" roleid="Underwriter">
-      	<roleaccesslevel accesstype="0"/>
+<!-- Phase 2 - 19/08/2021 - Security Matrix PPRM - Revised - Hide Add New Task Button - Agency General Details Page -->
+<!-- Pord Bug -33896 changes -->    
+<protectedresource deltaind="I" defaultaccesstype="0" uniquename="relatioshipTask_addNewTask">    
+   <businessrole deltaind="I" roleid="CarrierAdmin">
+      	<roleaccesslevel accesstype="1"/>
     </businessrole>
     <businessrole deltaind="I" roleid="MarketingAssistant">
-    	<roleaccesslevel accesstype="0"/>
+    	<roleaccesslevel accesstype="1"/>
     </businessrole>
-    <businessrole deltaind="I" roleid="Accounting">
-    	<roleaccesslevel accesstype="0"/>
-    </businessrole>
-  <businessrole deltaind="I" roleid="MarketingGroup">
-    	<roleaccesslevel accesstype="0"/>
+
+     <businessrole deltaind="I" roleid="MarketingRep">
+      <roleaccesslevel accesstype="1"/>
     </businessrole>  
   </protectedresource>
 
@@ -2561,7 +2553,7 @@
   	
   	<!-- upgrade bugs for display Decline button on Agency Termination page-->
   	<protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show decline button on agencyTerminationStep2 page" uniquename="agencyTerminationStep2_decline_security">
-  	<businessrole roleid="vpmarketing" accesstype="1"></businessrole>
+  	<businessrole roleid="vpmarketing" accesstype="0"></businessrole>
   	<userdefined executionsequence="0" ruleid="WorkflowRule.isShowApproveButtonOnAgencyTermination" >
       <userdefinedaccesslevel accesstype="1"/>
     </userdefined>
@@ -3440,4 +3432,16 @@
  </businessrole>
 </protectedresource>
     
+
+  <!-- START - Self Service - Upload W9 Show/Hide -->
+  <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Add New W9 Section" uniquename="addNewW9ForSelfService_w9_security">
+	<userdefined executionsequence="0" ruleid="ProducerOneRule.hideShowW9Section">
+      <userdefinedaccesslevel accesstype="1"/>
+  	</userdefined>
+  	<userdefined executionsequence="0" ruleid="ProducerOneRule.hideShowW9SectionSalesSupportRequests">
+      <userdefinedaccesslevel accesstype="2"/>
+  	</userdefined>
+  </protectedresource>
+  <!-- END - Self Service - Upload W9 Show/Hide -->
+
 </security> 

@@ -321,7 +321,7 @@
   <!-- new field -->
   
 	<field deltaind="I" isextendedfield="Y" name="Agency_in_business_since" screen="carrier/entityGeneralDetails.html" objectcolumn="person_id" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="text" 
-	isrequired="N" labelkey="Agency_in_business_since_label" labeldesc="Agency in business since" accesslevel="1" tabsconfigurationresourcename="Agency_in_business_since_security" mappedto="f20" datatype="D"
+	isrequired="Y" labelkey="Agency_in_business_since_label" labeldesc="Agency in business since" accesslevel="1" tabsconfigurationresourcename="Agency_in_business_since_security" mappedto="f20" datatype="D"
 	protectedresourceuniquename="Agency_in_business_since_security" id="Agency_in_business_since" position="#url_after#">
   </field>
   
@@ -439,10 +439,10 @@
     <!-- <validation name="isBusinessEmailRequiredForProspect" expression="if(andCondition(isEqual(:business_email_id_prospect_address_security,Y),andCondition(isEqual(:prospect_business_email_address_security,Y),andCondition(isEmpty(:e_mail_business),isEqual(:tabs1next_page,prospectAgencyDetails))))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="emailEmptyErrorKey" ruleid="EntityGeneralDetailsRule.isBusinessEmailRequiredForPrincipal" executionsequence="2" /> -->
     <validation name="checkValidProspectBusinessEmail" expression="validateMultipleEmailIds(context,e_mail_business);" message="ValidEmailIdErrorKey" ruleid="EntityGeneralDetailsRule.checkValidAgencyBusinessEmail" executionsequence="4" />
   </field>
-   
+   <!-- Phase 2 Bug Id - 29380 PPRM - Business Email ID showing Mandatory field -->
   <field deltaind="I" id="entityGeneralDetails_e_mail_business" screen="carrier/prospectAgencyDetails.html" name="e_mail_business" isrequired="N" requiredeval="ProducerOneRule.checkAgencyBusinessEmailIdMandatory" labelkey="email_businessaddress_label" tabsconfigurationresourcename="business_email_id_agency_address_security" protectedresourceuniquename="business_email_id_agency_address_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
-    <validation deltaind="D" name="isBusinessEmailRequiredForProspect" expression="if(andCondition(isEqual(:business_email_id_prospect_address_security,Y),andCondition(isEqual(:prospect_business_email_address_security,Y),andCondition(isEmpty(:e_mail_business),isEqual(:tabs1next_page,prospectAgencyDetails))))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="emailEmptyErrorKey" ruleid="EntityGeneralDetailsRule.isBusinessEmailRequiredForPrincipal" executionsequence="2" />
-    <validation name="checkValidProspectBusinessEmail" expression="validateMultipleEmailIds(context,e_mail_business);" message="ValidEmailIdErrorKey" ruleid="EntityGeneralDetailsRule.checkValidAgencyBusinessEmail" executionsequence="4" />
+    <!-- <validation deltaind="D" name="isBusinessEmailRequiredForProspect" expression="if(andCondition(isEqual(:business_email_id_prospect_address_security,Y),andCondition(isEqual(:prospect_business_email_address_security,Y),andCondition(isEmpty(:e_mail_business),isEqual(:tabs1next_page,prospectAgencyDetails))))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="emailEmptyErrorKey" ruleid="EntityGeneralDetailsRule.isBusinessEmailRequiredForPrincipal" executionsequence="2" />
+     --><validation name="checkValidProspectBusinessEmail" expression="validateMultipleEmailIds(context,e_mail_business);" message="ValidEmailIdErrorKey" ruleid="EntityGeneralDetailsRule.checkValidAgencyBusinessEmail" executionsequence="4" />
   </field>
   
   <!-- Phase 2 - Bug Id- P2-018 -->
@@ -638,5 +638,15 @@ protectedresourceuniquename="eno_question_aa_security" id="eno_question_aa" posi
    <field deltaind="M" name="ispersoncontact" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" labeldesc="Contact Type" isrequired="N" labelkey="Contact Type" id="adminBrokerageDetailsStep2_ispersoncontact">
     <event deltaind="I" id="onchange" name="onchange" actiontype="ajaxpageblocklink" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" action="refreshdob_ssn" actiontypeid="contact_ssn_security" executionsequence="0"/>
   </field>
+  
+  <!-- UAT2 0069 Agency Demo start -->
+    <field deltaind="M" isrequired="N" id="addNewBankInformation_account_owner" name="account_owner" screen="carrier/addNewBankInformation.html" section="addNewBankInformationNew1_freeform_contextdata_01" labelkey="account_owner_label" tabsconfigurationresourcename="account_owner_security" protectedresourceuniquename="account_owner_security" />
+  <!-- UAT2 0069 Agency Demo end -->
+  
+  <!-- START - ADO 33153 - Prod Issue - Asterisk Mark - Pending E-Sign - Agency General Details -->
+  <field deltaind="I" id="agencyListPublicSubmitNInvitationEdit_agencyestablished_date" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" name="agencyestablished_date" isrequired="Y" labelkey="agencyListEdit_agency_in_business_since_label" tabsconfigurationresourcename="agencyListEdit_agencyestablisheddate_security" protectedresourceuniquename="agencyListEdit_agencyestablisheddate_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_1" />
+  <!-- END - ADO 33153 - Prod Issue - Asterisk Mark - Pending E-Sign - Agency General Details -->
+
+  
   
  </fields>

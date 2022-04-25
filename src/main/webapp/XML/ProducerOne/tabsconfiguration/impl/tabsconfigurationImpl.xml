@@ -937,5 +937,22 @@
 <tabsconfigurationresource deltaind="I" accesslevel="0" description="block_field_net_profit" name="block_field_net_profit"/>
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="earned_commission_amount_payout_detail_security" name="earned_commission_amount_payout_detail_security"/>
 
+<!-- Feature List 107740 adding Trash Onboarded Bucket start -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show  trashed_Onboarded_application_security" name="trashed_Onboarded_application_security"/>
+<!-- Feature List 107740 adding Trash Onboarded Bucket end -->
+	
+<!-- UAT2 Bug Id - 007 Agency Demo Market Info start -->
+	<!--  <tabsconfigurationresource deltaind="M" accesslevel="1" description="premium_volume_commitment_to_sample_security" name="premium_volume_commitment_to_sample_security"/>
+	
+	<tabsconfigurationresource deltaind="M" description="atleastOneLOBRequiredSecurity" name="atleastOneLOBRequiredSecurity" accesslevel="0"/>
+	
+	<tabsconfigurationresource deltaind="M" accesslevel="0" description="premium_volume_by_lob_security" name="premium_volume_by_lob_security"/>
+	-->
+	<!-- UAT2 Bug Id - 007 Agency Demo Market Info end -->
+	
+	<!-- UAT2 Bug Id - 27509 -->
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="entityCyberLiabilityExpirationListing_security" name="entityCyberLiabilityExpirationListing_security"/>
+	
+	
 
 </tabsconfiguration>
