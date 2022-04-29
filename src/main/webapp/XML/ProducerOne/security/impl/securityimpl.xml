@@ -2611,14 +2611,18 @@
 	</protectedresource>
   <!-- END - UAT2 0055 - Contact Status Grey out in Self Service -->
   
-  <!-- START - Self Service - Upload W9 Show/Hide -->
-  <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Add New W9 Section" uniquename="addNewW9ForSelfService_w9_security">
-	<userdefined executionsequence="0" ruleid="ProducerOneRule.hideShowW9Section">
-      <userdefinedaccesslevel accesstype="1"/>
-  	</userdefined>
+  
+    <!-- Bug-40448 START - Self Service - Upload W9 Show/Hide -->
+    <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Add New W9 Section" uniquename="addNewW9ForSelfService_w9_security">
+ 	<userdefined executionsequence="0" ruleid="ProducerOneRule.hideShowW9Section">
+       <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
   	<userdefined executionsequence="0" ruleid="ProducerOneRule.hideShowW9SectionSalesSupportRequests">
-      <userdefinedaccesslevel accesstype="2"/>
+     <userdefinedaccesslevel accesstype="2"/>
   	</userdefined>
-  </protectedresource>
-  <!-- END - Self Service - Upload W9 Show/Hide -->
+  	<userdefined executionsequence="0" ruleid="ProducerOneRule.hideShowW9SectionEdit">
+       <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    </protectedresource>
+   <!-- Bug-40448 END - Self Service - Upload W9 Show/Hide -->
 </security> 
