@@ -3281,7 +3281,7 @@
 </businessrole>
 </protectedresource>
 
-<protectedresource deltaind="M" description="Hide/show Bank Information tab" operator="OR" uniquename="isShowAgencyBankInformationTab">
+<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show Bank Information tab" operator="OR" uniquename="isShowAgencyBankInformationTab">
 <businessrole deltaind="I" roleid="MarketingGroup">
 <roleaccesslevel accesstype="0" />
 </businessrole>
