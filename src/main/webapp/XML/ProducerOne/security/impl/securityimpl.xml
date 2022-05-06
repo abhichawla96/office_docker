@@ -1486,9 +1486,6 @@
     <businessrole deltaind="M" roleid="accountinganalyst">
       <roleaccesslevel accesstype="0"/>
     </businessrole>
-    <businessrole deltaind="M" roleid="MarketingRep">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
     <businessrole deltaind="M" roleid="MarketingAssistant">
       <roleaccesslevel accesstype="1"/>
     </businessrole>
@@ -1878,6 +1875,10 @@
      <!-- Phase 3- Bug Id- 35975 --> 
     <businessrole deltaind="I" roleid="MarketingGroup">
       <roleaccesslevel accesstype="0"/>
+    </businessrole> 
+    <!-- Phase 3- Bug Id-40690 --> 
+    <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="1"/>
     </businessrole>   
   </protectedresource>
   
