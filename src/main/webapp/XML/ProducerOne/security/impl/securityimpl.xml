@@ -3445,4 +3445,8 @@
   </protectedresource>
   <!-- END - Self Service - Upload W9 Show/Hide -->
 
+<!-- Phase 3- Probation section -->
+<protectedresource  deltaind="M" defaultaccesstype="0" description="Hide/show isShowPercentageAmountforProbation"
+uniquename="isShowPercentageAmountforProbation" />
+
 </security> 
