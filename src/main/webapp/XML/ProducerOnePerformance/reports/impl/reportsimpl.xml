@@ -1,5 +1,31 @@
 <reports project="ProducerOne">
 
+<!-- Phase 3: Report filtration criteria change  --> 
+  <reportdef deltaind="M" name="AIM110-Master" description="Commission Paid at Master level exceeding $50000" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="N" isshowoutputcolumns="Y" isshowresetbutton="Y">
+    <columnset name="AIM110-Masterset">
+    <column deltaind="I" name="reports_filter_amount" columnlabel="Filter Amount" metaproperty="report_search_columns.reports_filter_amount" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="select" executionsequence="18" ispopupsearch="N" isdefaultdisplay="Y" isrequired="Y" issortdisplay="N" />  
+  	 <column name="archive_date" columnlabel="Archive Date" metaproperty="archive_date" isreportfilter="N" executionsequence="13" isreportdefaultdisplay="Y" />
+      <column name="isdownloadlink" metaproperty="isdownloadlink" isreportfilter="N" executionsequence="14" isreportdefaultdisplay="Y" />
+      <column name="search_xml_desc" columnlabel="Search Criteria" metaproperty="search_xml_desc" isreportfilter="N" executionsequence="12" isreportdefaultdisplay="Y" />
+      <column name="Period_D" columnlabel="Statement Run Date" metaproperty="report_search_columns.Period_D" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="select" executionsequence="16" ispopupsearch="N" isdefaultdisplay="Y" isrequired="Y" issortdisplay="N" isgroupbydisplay="N" href="managereportajaxpageblocklink('','','INET_REFRESH_MANAGE_REPORT','MANAGE_REPORTING','refreshFilter')" />      
+      <column name="state_id_V" columnlabel="statefieldlabel" metaproperty="report_search_columns.state_id_V" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="select" executionsequence="17" ispopupsearch="N" isdefaultdisplay="Y" isrequired="N" issortdisplay="Y" isgroupbydisplay="N" />
+      <column name="last_updated_by" columnlabel="Last Updated By" metaproperty="last_updated_by" isreportfilter="N" executionsequence="11" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+      <column name="COMMISSION_AMOUNT" columnlabel="Commission" metaproperty="COMMISSION_AMOUNT" isreportfilter="N" isreportdisplay="Y" executionsequence="3" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+      <column name="batchreport_id" columnlabel="Batch Report ID" metaproperty="batchreport_id" isreportfilter="N" executionsequence="9" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+      <column name="STATE" columnlabel="statefieldlabel" metaproperty="report_search_columns.state_id_V" isreportfilter="N" isreportdisplay="Y" executionsequence="0" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+      <column name="AGENCY_NAME" columnlabel="Agency Name" metaproperty="report_search_columns.agency_name_V" isreportfilter="N" isreportdisplay="Y" executionsequence="2" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+      <column name="request_date" columnlabel="Request Date" metaproperty="request_date" isreportfilter="N" executionsequence="10" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+      <column name="AGENCY_CODE" columnlabel="Agency Code" metaproperty="report_search_columns.agency_code_V" isreportfilter="N" isreportdisplay="Y" executionsequence="1" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+    </columnset>
+    <reportworkflow deltaind="M" name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,state_id_V,lob_id,business_segment_V,reportoutputtype,company_id,reportID,ispaginationrequired,Period_D,reports_filter_amount">
+      <storedprocedureoperation deltaind="M" name="GetAIM110AtMasterReport_P" id="GetAIM110AtMasterReport_P" dbspname="GetAIM110AtMasterReport_P" viewid="report_data_list_1" applid="ProducerOnePerformance" executionsequence="0" operation="5" metaobject="report_search_columns">        
+     <parameteroperation deltaind="I" property="reports_filter_amount" mode="IN" indexno="8" seq="9" />
+          </storedprocedureoperation>
+    </reportworkflow>
+  </reportdef>
+
+
+
   <reportdef deltaind="I" name="AIM301" description="Agency Production &amp; Experience Report (AIM301)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y">
     <columnset name="AIM301set">
       <column name="TERMINATION_DATE" columnlabel="Termination Date" metaproperty="report_search_columns.termination_date" isreportfilter="N" isreportdisplay="Y" executionsequence="18" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
@@ -2850,7 +2876,7 @@
 		</reportworkflow>
 	</reportdef>
 	
-	<reportdef deltaind="I" name="AIM110-Master" description="Commission Paid at Master level exceeding $25000" isshowsortordersearch="N" isshowsavedsearch="Y" 
+	<!-- <reportdef deltaind="I" name="AIM110-Master" description="Commission Paid at Master level exceeding $25000" isshowsortordersearch="N" isshowsavedsearch="Y" 
 		isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowresetbutton="Y" isreportdatapagination="Y" isshowgroupbysearch="N" isshowoutputcolumns="Y">
 		<columnset name="AIM110-Masterset">
 			<column name="STATE" columnlabel="State" metaproperty="report_search_columns.state_id_V" isreportfilter="N" isreportdisplay="Y" executionsequence="0" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
@@ -2892,15 +2918,15 @@
                   <parameteroperation indexno="5" seq="6"
                         property="state_id_V" mode="IN">
                   </parameteroperation> 
-                 <!--  <parameteroperation indexno="6" seq="7"
+                  <parameteroperation indexno="6" seq="7"
                         property="company_id_V" mode="IN">
-                  </parameteroperation>  -->
+                  </parameteroperation> 
                   <parameteroperation indexno="6" seq="7"
                         property="Period_D" mode="IN">
                   </parameteroperation> 
-                 <!--  <parameteroperation indexno="8" seq="9"
+                  <parameteroperation indexno="8" seq="9"
                         property="business_segment_V" mode="IN">
-                  </parameteroperation>  -->
+                  </parameteroperation> 
                    <parameteroperation indexno="7" seq="8"
                         property="reportoutputtype" mode="IN">
                   </parameteroperation> 
@@ -2910,20 +2936,22 @@
                   <resultsetoperation indexno="1" 
                         mappingclass="java.util.HashMap">
                   </resultsetoperation>
-                   <!-- For XML Format -->
-                 <!--  <resultsetoperation indexno="0" 
+                   For XML Format
+                  <resultsetoperation indexno="0" 
                         mappingclass="java.util.HashMap">
                          <result indexno="0" property="xml" column="xml" javaType="java.lang.String"></result>
                   </resultsetoperation>
                   <resultsetoperation indexno="1" 
                         mappingclass="java.util.HashMap">
                          <result indexno="0" property="xml" column="xml" javaType="java.lang.String"></result>
-                  </resultsetoperation> -->
+                  </resultsetoperation>
             </storedprocedureoperation>
 		</reportworkflow>
 	</reportdef>
 	
-	<reportdef deltaind="I" name="AIM111" description="Amount Paid By Payment Type (AIM111)" isshowsortordersearch="N" isshowsavedsearch="Y" 
+	 -->
+	 
+	 <reportdef deltaind="I" name="AIM111" description="Amount Paid By Payment Type (AIM111)" isshowsortordersearch="N" isshowsavedsearch="Y" 
 		isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowresetbutton="Y" isreportdatapagination="Y" isshowgroupbysearch="N" isshowoutputcolumns="Y">
 		<columnset name="AIM111set">
 			<column name="COMPANY" columnlabel="Company" metaproperty="report_search_columns.company_id_V" isreportfilter="N" isreportdisplay="Y" executionsequence="0" isgrandtotaldisplay="N"  isdefaultoutputcolumn="Y"></column>
