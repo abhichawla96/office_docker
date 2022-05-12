@@ -3449,4 +3449,25 @@
 <protectedresource  deltaind="M" defaultaccesstype="0" description="Hide/show isShowPercentageAmountforProbation"
 uniquename="isShowPercentageAmountforProbation" />
 
+<!-- Phase 3 -Recalculation-start -->
+<protectedresource deltaind="I" defaultaccesstype="0" uniquename="isCYEvalChanged">
+<userdefined executionsequence="0" ruleid="ProducerOneRule.isCYEvalChanged">
+<userdefinedaccesslevel accesstype="1"/>
+</userdefined>
+</protectedresource>
+  
+<protectedresource deltaind="I" defaultaccesstype="0" uniquename="isPYEvalChanged">
+<userdefined executionsequence="0" ruleid="ProducerOneRule.isPYEvalChanged">
+<userdefinedaccesslevel accesstype="1"/>
+</userdefined>
+</protectedresource>
+
+ <protectedresource deltaind="I" defaultaccesstype="0" uniquename="isLossAmountChanged">
+ <userdefined executionsequence="0" ruleid="ProducerOneRule.isLossAmountChanged">
+ <userdefinedaccesslevel accesstype="1"/>
+ </userdefined>
+</protectedresource> 
+<!-- Phase 3 -Recalculation-end -->
+
+
 </security> 

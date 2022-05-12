@@ -9,6 +9,12 @@
   <field deltaind="I" decimallength="0" displayname="reports_filter_amount" length="0" name="reports_filter_amount" seq="1410" type="I" viewlength="10"/>
   
   
+  <!-- Phase 3- Adjustment Recalculation -->
+ <field deltaind="I" decimallength="0" displayname="CY_Eval" length="0" name="CY_Eval" seq="6808" type="N" viewlength="20"/>
+ <field deltaind="I" decimallength="0" displayname="PY_Eval" length="0" name="PY_Eval" seq="6808" type="N" viewlength="20"/>
+ <field deltaind="I" decimallength="0" displayname="Loss_amt_Cont_Comm" length="0" name="Loss_amt_Cont_Comm" seq="6808" type="N" viewlength="20"/>
+  
+  
   <!-- START - Self Service - Upload W9 Show/Hide -->
   <field deltaind="I" decimallength="0" displayname="hideShow_w9section" length="0" name="hideShow_w9section" seq="68071" type="V" viewlength="2500"/>
   <!-- END - Self Service - Upload W9 Show/Hide -->

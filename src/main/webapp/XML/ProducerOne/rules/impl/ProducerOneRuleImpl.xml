@@ -37,6 +37,11 @@
 	<!-- Changes done for prod bug 31110  -->	
 	<rule deltaind="I" id="isUserNameEmpty" expression="isEmpty(:user_name_app);" />
 			
+	<!-- Phase 3- Adjustments Recalculation -->
+   <rule deltaind="I" id="isCYEvalChanged" expression="isEqual(:is_CYEval_changed,Y);" obj="ruleobjs.ProducerOneRule" method="isCYEvalChanged" />
+	<rule deltaind="I" id="isPYEvalChanged" expression="isEqual(:is_PYEval_changed,Y);" obj="ruleobjs.ProducerOneRule" method="isPYEvalChanged" />
+	<rule deltaind="I" id="isLossAmountChanged" expression="isEqual(:is_LossAmount_changed,Y);" obj="ruleobjs.ProducerOneRule" method="isLossAmountChanged" />
+		
 		
 	</ruleset>
 </evalrules>
