@@ -623,6 +623,11 @@ protectedresourceuniquename="eno_question_aa_security" id="eno_question_aa" posi
   <field deltaind="I" id="agencyListPublicSubmitNInvitationEdit_agencyestablished_date" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" name="agencyestablished_date" isrequired="Y" labelkey="agencyListEdit_agency_in_business_since_label" tabsconfigurationresourcename="agencyListEdit_agencyestablisheddate_security" protectedresourceuniquename="agencyListEdit_agencyestablisheddate_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_1" />
   <!-- END - ADO 33153 - Prod Issue - Asterisk Mark - Pending E-Sign - Agency General Details -->
 
-  
+  <!-- CR 55 - START -->
+   <field deltaind="M" id="agentGeneralDetails_e_mail_business" screen="carrier/agentGeneralDetails.html" name="e_mail_business" isrequired="Y" labelkey="email_business_field_label" tabsconfigurationresourcename="business_email_id_agent_address_security" protectedresourceuniquename="business_email_id_agent_address_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="agentGeneralDetailsResult_freeform_contextdata_4">
+    	<validation name="isBusinessEmailRequiredForPrincipal" expression="if(andCondition(isEqual(:isEmailRequiredForPrincipal,Y),andCondition(isEqual(:contacttype_code,:contactTypeCodeRequiredForOnBoarding),andCondition(isEmpty(:e_mail_business),isEqual(:carrier_tab,Agent))))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="emailEmptyErrorKey" ruleid="EntityGeneralDetailsRule.isBusinessEmailRequiredForPrincipal" executionsequence="2" />
+    	<validation name="checkValidAgencyBusinessEmail" expression="validateMultipleEmailIds(context,e_mail_business);" message="ValidEmailIdErrorKey" ruleid="EntityGeneralDetailsRule.checkValidAgencyBusinessEmail" executionsequence="4" />
+   </field>
+   <!-- CR 55 - END -->
   
  </fields>

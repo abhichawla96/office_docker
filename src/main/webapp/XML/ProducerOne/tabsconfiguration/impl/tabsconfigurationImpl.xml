@@ -799,5 +799,7 @@
 	<!-- 39089 disapporve button hide  start --> 
 	<tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/Show disapprove button on agency functions page" name="agencyFunctions_selectFunctionType_disapprove_security"/>
 	
-
+	<!-- CR 055 -->
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="agent_business_email_address_security" name="agent_business_email_address_security"/>
+  
 </tabsconfiguration>
