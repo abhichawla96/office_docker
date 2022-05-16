@@ -684,12 +684,12 @@
 	</workflow>
 	
 	<workflow deltaind="M" name="agencyFunctions">
-		<event deltaind="M" name="sendForApprovalAgencyFunctionAS" approverrole="vpmarketing">
+		<event deltaind="M" name="sendForApprovalAgencyFunctionAS" approverrole="SalesDirector">
 			<status deltaind="M" name="sendForApprovalAgencyFunctionAS" workflowstatus="Pending Review" workflowfunction="Agency Function" executionsequence="1"
 				statuscomment="comment" usergroup="vpmarketing" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				approver="workflow_user" forward="agencyFunctions">
 			</status>
-			<approver deltaind="M" name="approver1" approverrole="vpmarketing" executionsequence="0"></approver>
+			<approver deltaind="M" name="approver1" approverrole="SalesDirector" executionsequence="0"></approver>
 			<approver deltaind="D" name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver> 
 		</event>
 		<event name="saveApprovalAgencyFunctionAS" approverrole="SalesDirector">
@@ -728,12 +728,12 @@
 				forward="agencyFunctions" isapproval="Y">
 			</status>
 		</event>
-		<event deltaind="M" name="sendForApprovalAgencyFunctionRS" approverrole="vpmarketing">
+		<event deltaind="M" name="sendForApprovalAgencyFunctionRS" approverrole="SalesDirector">
 			<status name="sendForApprovalAgencyFunction" workflowstatus="Pending Review" workflowfunction="Agency Function" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				approver="workflow_user" forward="agencyFunctions">
 			</status>
-			<approver deltaind="M" name="approver1" approverrole="vpmarketing" executionsequence="0"></approver>
+			<approver deltaind="M" name="approver1" approverrole="SalesDirector" executionsequence="0"></approver>
 <approver deltaind="D" name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver>
 
 			</event>
