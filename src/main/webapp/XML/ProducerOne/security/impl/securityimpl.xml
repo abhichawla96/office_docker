@@ -1511,14 +1511,37 @@
   </protectedresource>
   
   <!-- Phase 3 : Administration : Compensation Mgmt : Release Statements -->
-  <protectedresource defaultaccesstype="0" description="Hide/show commission release statements sub tab in admin" uniquename="adminTabs2_releasestatementtab">
+    <!-- Phase 3- Task Id 40875-start -->
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show commission release statements sub tab in admin" uniquename="adminTabs2_releasestatementtab">
     <businessrole deltaind="M" roleid="MarketingAssistant">
-      <roleaccesslevel accesstype="1"/>
+      <roleaccesslevel accesstype="0"/>
     </businessrole>
     <businessrole deltaind="I" roleid="CarrierAdmin">
       <roleaccesslevel accesstype="1"/>
     </businessrole>
+    <businessrole deltaind="I" roleid="SalesDirector">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="vpmarketing">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
   </protectedresource>
+  
+  
+  <protectedresource  deltaind="M" defaultaccesstype="0" description="check is Show Release Button" uniquename="isShowReleaseButton">
+    <businessrole deltaind="I" roleid="CarrierAdmin">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
+ </protectedresource>
+ 
+  <protectedresource deltaind="M" defaultaccesstype="0" description="check is Show UnRelease Button" uniquename="isShowUnReleaseButton">
+    <businessrole deltaind="I" roleid="CarrierAdmin">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole> 
+ </protectedresource>
+   <!-- Phase 3- Task Id 40875-end --> 
+ 
   
   <!-- Dashboard Request List -->
   <!-- Phase Upgrade Bug U56 -->
