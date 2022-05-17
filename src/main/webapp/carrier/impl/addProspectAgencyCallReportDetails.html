@@ -365,7 +365,11 @@
                                 </div>
                               </div>
                             </li>
-                 <!-- BMIC Specific-->          <li class="inlineBlock_2" id="#addProspectCallReport_date_time_security_after#"/> <!-- Added by Sudhir for BMIC phase II -->
+                             <!-- BMIC Specific-->          <li class="inlineBlock_2" id="#addProspectCallReport_date_time_security_after#"/> <!-- Added by Sudhir for BMIC phase II -->
+
+			    <li class="inlineBlock_2" id="#location_description_after#"></li>
+                            
+                            <li class="inlineBlock_2" id="#creation_date_before#"></li>
                           <li class="inlineBlock_2" id="addProspectCallReport_created_date_security">
                               <div class="freeFormList form-group">
                                 <div class="freeFormListTr">
@@ -1797,7 +1801,7 @@ Employee(s)</span>
                                           </td>
                                         </tr>
                                         <tr id="addActionPlan_list_header_listfreeform_1">
-                                          <td class="HeaderStyle" width="29%" id="block_field_action_plan_name">Action Plan</td>
+                                          <td class="HeaderStyle" width="29%" id="block_field_action_plan_name_desc">Action Plan</td>
                                           <td class="HeaderStyle" width="25%" id="block_field_Action_items">Description</td>
                                           <td class="HeaderStyle" width="25%" id="block_field_Assigned_to">Assigned To</td>
                                           <td class="HeaderStyle" width="15%" id="block_field_Due_date">Due
@@ -1811,7 +1815,7 @@ Date</td>
                                           </td>
                                         </tr>
                                         <tr id="addActionPlan_list_data_listfreeform_1">
-                                          <td id="block_field_action_plan_name" width="29%" class="paddingLeft3" />
+                                          <td id="block_field_action_plan_name_desc" width="29%" class="paddingLeft3" />
                                           <td id="block_field_Action_items" width="25%" class="paddingLeft3" />
                                           <td id="block_field_Assigned_to" width="25%" class="paddingLeft3" />
                                           <td id="block_field_Due_date" width="15%" class="paddingLeft3" />
@@ -1864,9 +1868,9 @@ Date</td>
                                                                                                             src="images/Spacer.gif" width="12px"
                                                                                                             height="12px" title="Select Date" />
                                                                                                     </a> -->
-                                              <select name="action_plan_name" id="ajax_field_action_plan_name" style="width:200px">
+                                              <select name="action_plan_name" id="ajax_field_action_plan_name" onchange="javascript:setDescInListFreeformDropDown(this);" style="width:200px">
                                                 <option value="">Select</option>
-                                   <!-- BMIC Specific-->           <!--  <option value="Compensation">Compensation</option>
+                                   <!-- BMIC Specific-->           <!--  <option value="Compensation1234">Compensation</option>
                                                  <option value="Claim">Claim</option> -->
                                                  <option value="RAF">Research Agency Further</option>
 								                 <option value="GAI">Gather Agency Information</option>
@@ -1908,6 +1912,11 @@ Date</td>
                                                 </div>
                                              
                                             </td>
+                                            
+                                            
+                                             <td id="block_field_action_plan_name_desc" style="display:none">
+                                  <input type="hidden" name="action_plan_name_desc" id="ajax_field_action_plan_name_desc" />
+                                </td> 
                                             <td width="2%" align="right" class="add-cell">
                                               <span id="hideSaveModifyRelationShipCallReport">
                                                 <span>
@@ -2422,10 +2431,10 @@ Prospects</td>
                                     src="images/Spacer.gif" width="12px" height="12px"
                                     title="Select Date" />
                             </a> -->
-                    <select name="action_plan_name" id="ajax_field_action_plan_name" class="selectDetail">
+                    <select name="action_plan_name" id="ajax_field_action_plan_name" onchange="javascript:setDescInListFreeformDropDown(this);" class="selectDetail">
                       <option value="">Select</option>
-                      <option value="Compensation">Compensation</option>
-                      <option value="Claim">Claim</option>
+                    <!--   <option value="Compensation">Compensation</option>
+                      <option value="Claim">Claim</option> -->
                     </select>
                   </td>
                   <td width="32%">
@@ -2458,6 +2467,9 @@ Prospects</td>
                       
                     </div>
                   </td>
+                          <td id="block_field_action_plan_name_desc" style="display:none">
+                                  <input type="hidden" name="action_plan_name_desc" id="ajax_field_action_plan_name_desc" />
+                                </td> 
                   <td width="2%" align="right">
                     <span id="isAgencyStatusNotInactive">
                       <span id="block_field_addnew_row_link">
