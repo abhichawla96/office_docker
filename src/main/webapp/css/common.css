@@ -5841,3 +5841,9 @@ ul.split-list li .freeFormListTr .freeFormListTd.labelAlign, ul.inline-blocks li
 .dynamicvarianceamountattachment{
 	width:65px !important;
 }
+#callReport_emailBodyDiv{
+	min-height: 200px;
+}
+#callReportProspect_emailBodyDiv{
+	min-height: 200px;
+}
