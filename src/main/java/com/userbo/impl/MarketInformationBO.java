@@ -1,4 +1,4 @@
-package com.userbo;
+package com.userbo.impl;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,8 +9,6 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.apache.log4j.Logger;
-
 import com.manage.managecomponent.components.Businessobject;
 import com.manage.managecomponent.components.SetParametersForStoredProcedures;
 import com.manage.managemetadata.functions.commonfunctions.DataUtils;
@@ -20,10 +18,11 @@ import com.util.Context;
 import com.util.DateUtils;
 import com.util.HtmlConstants;
 import com.util.IContext;
+import com.util.InetLogger;
 import com.util.StringUtils;
 
 public class MarketInformationBO extends Businessobject {
-	private Logger logger = Logger.getLogger(MarketInformationBO.class);
+	private InetLogger logger = InetLogger.getLogger(MarketInformationBO.class);
 	private String LIST_NAME = "agencyMarketInformation_list_1"; 
 	private String perosnalInformationListName = "personalinformation_list_listfreeform_1"; 
 	private String agencyMergersListName = "agencymergers_list_listfreeform_1"; 
@@ -920,7 +919,6 @@ public class MarketInformationBO extends Businessobject {
 							newCtx.put("class1volume", ctx.get("class1volume_"+i));
 							//newCtx.put("total_volume", ctx.get("total_volume"+i));
 							newCtx.put("PY_written_premium", ctx.get("PY_written_premium_"+i));
-							
 							newCtx.put("years_represented", ctx.get("years_represented_"+i));
 							newCtx.put("is_cl_auto_lsc_carrier",ctx.get("is_cl_auto_lsc_carrier_"+i) != null && !HtmlConstants.EMPTY.equals(ctx.get("is_cl_auto_lsc_carrier_"+i)) && ctx.get("is_cl_auto_lsc_carrier_"+i).toString().equals("Y") ? 1 : 0);
 							rowMap.putAll(newCtx);
@@ -964,6 +962,7 @@ public class MarketInformationBO extends Businessobject {
 							if(ctx.get("PY_written_premium_"+i) != null 
 									&& !ctx.get("PY_written_premium_"+i).toString().equals(HtmlConstants.EMPTY))
 								newCtx.put("PY_written_premium", DataUtils.removeAmountFormat(ctx.get("PY_written_premium_"+i)));
+							
 							
 							newCtx.put("last_updated_by", ctx.get("last_updated_by"));
 							newCtx.put("last_updated_ts", ctx.get("last_updated_ts"));
