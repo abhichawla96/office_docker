@@ -802,4 +802,7 @@
 	<!-- CR 055 -->
 	<tabsconfigurationresource deltaind="M" accesslevel="1" description="agent_business_email_address_security" name="agent_business_email_address_security"/>
   
+  <!-- Hiding languages section on header which had accesslevel=1 in 2.10.3.8 -->
+	<tabsconfigurationresource deltaind="M" name="configuration_language_security" accesslevel="0" description="Hide/show configuration language on header page"/>
+	
 </tabsconfiguration>
