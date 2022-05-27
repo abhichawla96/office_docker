@@ -11,14 +11,13 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.TreeMap;
 
-import org.apache.log4j.Logger;
-
 import com.manage.managecomponent.tabsconfiguration.TabsConfigurationResources;
 import com.manage.managecomponent.tabsconfiguration.TabsconfigurationresourceImpl;
 import com.manage.managemetadata.functions.commonfunctions.DataUtils;
 import com.util.CacheManager;
 import com.util.Context;
 import com.util.HtmlConstants;
+import com.util.InetLogger;
 import com.util.StringUtils;
 import com.util.SystemProperties;
 
@@ -27,7 +26,7 @@ import com.util.SystemProperties;
  * @Created on Oct 27, 2011
  */
 public class TabsConfiguration {
-	private static Logger logger = Logger.getLogger(TabsConfiguration.class);
+	private static InetLogger logger = InetLogger.getLogger(TabsConfiguration.class);
 	
 	//Client ID For Accident Fund
 	public static final int Client_ID=1025;//1023;  //1009

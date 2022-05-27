@@ -536,9 +536,35 @@
                                                                             </div>
                                                                         </li>
                                                                         
-                                                                          <!-- Phase 2 Customization  -->
-                                                                         <li id="#addInsuranceDetailsForSelfServiceApproval_assigned_to_security_after#"></li>
-                            
+							<li class="inlineBlock_1 extendedFieldHide"
+								id="#eo_claims_before#"></li>
+							<li class="inlineBlock_1 paddingTopEO"
+								style="width: 100% !important;"
+								id="docInsuranceDetail_ss_eo_claims_security">
+								<div id="error_eo_claims" class="error"></div>
+								<div id="ajax_error_eo_claims" class="error"></div>
+								<div>
+									<span id="docInsuranceDetail_ss_eo_claims_label">Have any E & O claims been made during the past five
+															years against the agency, agency partners, officers, or
+															any members of the staff?</span>
+									<div style="padding-left: 10px; display: inline;" >
+										<input type="radio" name="eo_claims"
+											id="ajax_field_eo_claims" value="1"
+											onchange="javascript:ajaxpageblocklink('carrier/addNewInsuranceDetailForSelfService.html','addNewInsuranceDetailForSelfService.refreshEoClaimsGrid','','','addInsuranceDetailsForSelfServiceApproval_doc_insurance_comment_security');" />
+										Yes&nbsp;&nbsp;<input type="radio" name="eo_claims"
+											id="ajax_field_eo_claims" value="0"
+											onchange="javascript:ajaxpageblocklink('carrier/addNewInsuranceDetailForSelfService.html','addNewInsuranceDetailForSelfService.refreshEoClaimsGrid','','','addInsuranceDetailsForSelfServiceApproval_doc_insurance_comment_security');" />
+										No
+									</div>
+								</div>
+								<label class="oldValue" name="eo_claims_old" id="eo_claims_old" />
+							</li>
+							<li class="inlineBlock_1 extendedFieldHide"
+								id="#eo_claims_after#"></li>
+							
+							 <!-- Phase 2 Customization  -->
+							 <li id="#addInsuranceDetailsForSelfServiceApproval_assigned_to_security_after#"></li>
+							 
                             <li id="addInsuranceDetailsForSelfServiceApproval_doc_insurance_comment_security" class="inlineBlock_1_fix">
                               <div class="freeFormList form-group">
                                 <div class="freeFormListTr">
