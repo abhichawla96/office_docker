@@ -18,4 +18,12 @@
   <!-- START - Self Service - Upload W9 Show/Hide -->
   <field deltaind="I" decimallength="0" displayname="hideShow_w9section" length="0" name="hideShow_w9section" seq="68071" type="V" viewlength="2500"/>
   <!-- END - Self Service - Upload W9 Show/Hide -->
+  
+  
+  <field deltaind="I" decimallength="0" displayname="AgencyTerminationPolicyReviewRPT_agency_code" length="0" name="AgencyTerminationPolicyReviewRPT_agency_code" seq="14454" type="I" viewlength="10"/>
+  <field deltaind="I" decimallength="0" displayname="AgencyTerminationPolicyReviewRPT_sub_prod_code" length="0" name="AgencyTerminationPolicyReviewRPT_sub_prod_code" seq="14455" type="I" viewlength="10"/>
+  <field deltaind="I" decimallength="0" displayname="AgencyTerminationPolicyReviewRPT_inforce" length="0" name="AgencyTerminationPolicyReviewRPT_inforce" seq="14456" type="V" viewlength="10"/>
+  <field deltaind="I" decimallength="0" displayname="AgencyTerminationPolicyReviewRPT_agency_status" length="0" name="AgencyTerminationPolicyReviewRPT_agency_status" seq="14457" type="V" viewlength="10"/>
+  
+  
   </structure>
