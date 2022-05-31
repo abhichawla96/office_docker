@@ -66,8 +66,8 @@
 		</event>
 		<!-- Upgrade Bug- U-002- Producer Reg not showing in Sent for Invitation bucket- end -->
 		
-		<!-- ADO - 42208, Commenting below code as new event(ResendInvitationForAgent) added by base in 2.10.3.8 -->
-		<!-- <event name="ResendInvitation" assigneerole="MarketingAssistant" deltaind="M">
+		
+		<event name="ResendInvitation" assigneerole="MarketingAssistant" deltaind="M">
 			<status deltaind="M" eval="ProducerOneRule.isRegistrationTypePrimarySecondary" name="ResendInvitation" workflowstatus="Invited" workflowfunction="Public Submission" executionsequence="0"
 				statuscomment="comments" usergroup="MarketingAssistant" statusgroup="Onboarding" assignee="user_id"
 				objectid="aar_requestid" objecttype="Onboarding">
@@ -76,7 +76,7 @@
 					<parameter name="Entity_Name" value="Entity_Name" executionsequence="1"></parameter>
 				</email>
 			</status>
-			Bmic req
+			<!-- Bmic req -->
 			<status deltaind="I" eval="ProducerOneRule.isRegistrationTypeProducerRegistrationAgencyDetailScreen" name="ResendInvitationProducer" workflowstatus="Invited" workflowfunction="Public Submission" executionsequence="0"
 				statuscomment="comments" usergroup="MarketingAssistant" statusgroup="Onboarding" assignee="user_id"
 				objectid="aar_requestid" objecttype="Onboarding">
@@ -85,7 +85,7 @@
 					<parameter name="Entity_Name" value="Entity_Name" executionsequence="1"></parameter>
 				</email>
 			</status>
-		</event> -->
+		</event>
 		
 		<event name="signInvitation">
 			<status name="signInvitation" workflowstatus="Pending Review" workflowfunction="Public Submission" executionsequence="1"
