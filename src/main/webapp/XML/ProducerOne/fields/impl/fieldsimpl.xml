@@ -319,8 +319,9 @@
   </field>
   
   <!-- new field -->
-  
-	<field deltaind="I" isextendedfield="Y" name="Agency_in_business_since" screen="carrier/entityGeneralDetails.html" objectcolumn="person_id" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="text" 
+  	
+  	<!-- UAT2 Bug Id - 41973 -->
+	<field deltaind="I" isextendedfield="Y" name="Agency_in_business_since" screen="carrier/entityGeneralDetails.html" objectcolumn="agency_id" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="text" 
 	isrequired="Y" labelkey="Agency_in_business_since_label" labeldesc="Agency in business since" accesslevel="1" tabsconfigurationresourcename="Agency_in_business_since_security" mappedto="f20" datatype="D"
 	protectedresourceuniquename="Agency_in_business_since_security" id="Agency_in_business_since" position="#url_after#">
   </field>
