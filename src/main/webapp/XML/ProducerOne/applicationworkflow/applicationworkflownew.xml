@@ -3,9 +3,17 @@
 	<workflow name="auditDashoboard" description="Audit Dashboard" securitykey="homeActionAgencyAuditDashboardHideShow" accesslevel="1">
 		<event name="annualAuditDue" description="annualAuditDue" securitykey="agency_audit_dashboard_freeform_contextdata_16" 
 			forward="annualAuditDasboardListing" accesslevel="1">
+			<!-- <actionparam pre="Y" name="admin_tab" paramid="admin_tab" val="Configuration" form="Y" session="Y" executionsequence="1" />
+		    <actionparam pre="Y" eval="ConfigurationRule.isShowManageScreensTab" name="tabs2next_page" paramid="tabs2next_page" val="manageScreens" form="Y" session="Y" executionsequence="2" />
+		    <actionparam pre="Y" eval="ConfigurationRule.isShowManageTemplateTab" name="tabs2next_page" paramid="tabs2next_page1" val="manageTemplate" form="Y" session="Y" executionsequence="2" />
+		    <actionparam post="Y" name="client_id" paramid="client_id" val="1" form="Y" executionsequence="3" />
+		    <actionparam post="Y" name="releaseno_id" paramid="releaseno_id" val="1" form="Y" executionsequence="4" />
+		    <actionparam post="Y" name="releaseversionno_id" paramid="releaseversionno_id" val="1" form="Y" executionsequence="5" /> -->
 		</event>	
+			
 		<event name="annualAuditInitiated" description="annualAuditInitiated" securitykey="agency_audit_dashboard_freeform_contextdata_17" 
 			forward="annualAuditDasboardListing"/>
+			
 		<event name="initiateAudit" description="annualAuditDetail" securitykey="block_field_initiate_audit_row_link" accesslevel="1"
 			forward="homeAction">
 			<status name="initiateAudit" workflowstatus="Audit Initiated" workflowfunction="Audit" assignee="user_id" approver="assignto_id"
@@ -48,25 +56,16 @@
 				objectid="aar_requestid" objecttype="Onboarding">
 			</status>
 		</event>
-		
-		<event name="sendInvitationForAgent" assigneerole="MarketingAssistant">
-			<status name="sendInvitationForAgent" workflowstatus="Invited" workflowfunction="Public Submission" executionsequence="0"
-				statuscomment="comments" usergroup="MarketingAssistant" statusgroup="Onboarding" assignee="user_id"
-				objectid="aar_requestid" objecttype="Onboarding">
-			</status>
-		</event>
-		
 		<event name="ResendInvitation" assigneerole="MarketingAssistant">
 			<status name="ResendInvitation" workflowstatus="Invited" workflowfunction="Public Submission" executionsequence="0"
 				statuscomment="comments" usergroup="MarketingAssistant" statusgroup="Onboarding" assignee="user_id"
 				objectid="aar_requestid" objecttype="Onboarding">
-				<email mailto="mailto" name="ResendInvitation" eventname="ResendInvitation" objectid="aar_requestid" objecttype="Onboarding">
+				<email name="ResendInvitation" eventname="ResendInvitation" objectid="aar_requestid" objecttype="Onboarding">
 					<parameter name="System_Name" value="clientName" executionsequence="0"></parameter>
 					<parameter name="Entity_Name" value="Entity_Name" executionsequence="1"></parameter>
 				</email>
 			</status>
 		</event>
-		
 		<event name="ResendInvitationForAgent" assigneerole="MarketingAssistant">
 			<status name="ResendInvitationForAgent" workflowstatus="Invited" workflowfunction="Public Submission" executionsequence="0"
 				statuscomment="comments" usergroup="MarketingAssistant" statusgroup="Onboarding" assignee="user_id"
@@ -98,15 +97,15 @@
 			<approver name="approver1" approverrole="MarketingRep,SalesDirector" executionsequence="0"></approver>
 			<approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver> 
 		</event>
-		<event name="approveInvitation" assigneerole="MarketingAssistant" parentevent="sendInvitationToApproval" type="approve">
-			<status name="sendInvitationToApproval" workflowstatus="Pending Review" workflowfunction="Public Submission" executionsequence="1"
-				statuscomment="comment" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding"
-				approver="workflow_user">
-				<email name="PublicSubmissionSendforAproval" eventname="PublicSubmissionSendforAproval" objectid="aar_requestid" objecttype="Onboarding">
-					<parameter name="System_Name" value="clientName" executionsequence="0"></parameter>
-					<parameter name="Entity_Name" value="Entity_Name" executionsequence="1"></parameter>
-				</email>
-			</status>
+		<event name="approveInvitation" assigneerole="MarketingAssistant" parentevent="sendInvitationToApproval">
+																																	 
+																																	
+							 
+																																			 
+																						
+																						 
+			
+			
 			<status name="approveInvitation" workflowstatus="Approved" workflowfunction="Public Submission" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding"
 				assignee="workflow_user" forward="homeAction">
@@ -115,25 +114,18 @@
 					<parameter name="Entity_Name" value="Entity_Name" executionsequence="1"></parameter>
 				</email>
 			</status>
-			<approver name="approver1" status="sendInvitationToApproval" executionsequence="0"></approver>
-			<approver name="approver2" status="approveInvitation" executionsequence="1"></approver> 
-		</event>
-		<event name="disApprovePublicSubmission" parentevent="sendInvitationToApproval" type="disapprove">
-			<status name="sendInvitationToApproval" workflowstatus="Pending Review" workflowfunction="Public Submission" executionsequence="1"
-				statuscomment="comment" usergroup="workflow_assignto_usergroup" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding"
-				approver="workflow_user">
-				<email name="PublicSubmissionSendforAproval" eventname="PublicSubmissionSendforAproval" objectid="aar_requestid" objecttype="Onboarding">
-					<parameter name="System_Name" value="clientName" executionsequence="0"></parameter>
-					<parameter name="Entity_Name" value="Entity_Name" executionsequence="1"></parameter>
-				</email>
-			</status>
-			<status name="disApprovePublicSubmission" workflowstatus="Pending Review" workflowfunction="Public Submission" executionsequence="1"
-				statuscomment="comment" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding">
-			</status>
-			<approver name="approver1" status="disApprovePublicSubmission" executionsequence="0"></approver>
-			<approver name="approver2" status="sendInvitationToApproval" executionsequence="1"></approver> 
+																								 
+																						   
 		</event>
 		<event name="disapprove" assigneerole="MarketingAssistant" parentevent="sendInvitationToApproval">
+																																	 
+																																	
+							 
+																																			 
+																						
+																						 
+			
+			
 			<status name="disapprove" workflowstatus="Disapproved" workflowfunction="Public Submission" executionsequence="0"
 				statuscomment="comment" usergroup="roles" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding">
 				<email name="PublicSubmissonDeclined" eventname="PublicSubmissonDeclined" objectid="aar_requestid" objecttype="Onboarding">
@@ -141,11 +133,28 @@
 					<parameter name="Entity_Name" value="Entity_Name" executionsequence="1"></parameter>
 				</email>
 			</status>
+																				   
+																								  
 		</event>
+		<!-- <event name="approveInvitation" assigneerole="MarketingAssistant">
+			<status name="approveInvitation" workflowstatus="Approved" workflowfunction="Public Submission" executionsequence="1"
+				statuscomment="comment" usergroup="MarketingRep" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding"
+				isapproval="Y" assignee="workflow_user">
+				<email name="PublicSubmissonApproved" eventname="PublicSubmissonApproved" objectid="aar_requestid" objecttype="Onboarding">
+					<parameter name="System_Name" value="clientName" executionsequence="0"></parameter>
+					<parameter name="Entity_Name" value="Entity_Name" executionsequence="1"></parameter>
+				</email>
+			</status>
+		</event> -->
 		<event name="approveInvitationByAssignee">
 			<status name="approveInvitationByAssignee" workflowstatus="Approved" workflowfunction="Public Submission" executionsequence="1"
 				usergroup="roles" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding"
 				assignee="user_id">
+			</status>
+		</event>
+		<event name="disApprovePublicSubmission" parentevent="sendInvitationToApproval">
+			<status name="disApprovePublicSubmission" workflowstatus="Pending Review" workflowfunction="Public Submission" executionsequence="1"
+				statuscomment="comment" usergroup="roles" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding">
 			</status>
 		</event>
 		<event name="disapproveInvitation" assigneerole="MarketingAssistant">
@@ -179,7 +188,7 @@
 				forward="homeAction">
 				<email name="PublicSubmissonDeclined" eventname="PublicSubmissonDeclined" objectid="aar_requestid" objecttype="Onboarding">
 					<parameter name="System_Name" value="clientName" executionsequence="0"></parameter>
-					<parameter name="Entity_Name" value="Entity_Name" executionsequence="1"></parameter>
+					 <parameter name="Entity_Name" value="Entity_Name" executionsequence="1"></parameter> 
 				</email>
 			</status>
 		</event>
@@ -198,18 +207,18 @@
 			</status>
 		</event>
 		<event name="importInvitation">
-			<status eval="ProducerOneRule.isExecuteBGCheck" name="importInvitation" workflowstatus="BG Check Submitted" workflowfunction="Background Check" executionsequence="0"
-				statuscomment="import_comment" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding" 
-				forward="entityGeneralDetails">
+			<status eval="WorkflowRule.isSkipBGCheckboxCheckedNot" name="importInvitation" workflowstatus="BG Check Submitted" workflowfunction="Background Check" executionsequence="0"
+				statuscomment="import_comment" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding" forward="entityGeneralDetails"
+				>
 				<email name="importInvitation" eventname="importInvitation" objectid="aar_requestid" objecttype="Onboarding" executionsequence="1">
 					<parameter name="System_Name" value="clientName" executionsequence="0"></parameter>
 				</email>
 				<actionparam post="Y" name="carrier_tab" paramid="carrier_tab" val="Agency" form="Y" session="Y" executionsequence="1" />
 				<actionparam post="Y" name="tabs1next_page" paramid="tabs1next_page" val="entityGeneralDetails" form="Y" session="Y" executionsequence="1" />
 			</status>
-			<status eval="ProducerOneRule.isSkipBGCheck" name="importInvitation1" workflowstatus="Pending Appointments" workflowfunction="Appointment" executionsequence="1"
-				statuscomment="import_comment" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding" 
-				forward="bulkEntityAppointNew">
+			<status eval="WorkflowRule.isSkipBGCheckboxChecked" name="importInvitation1" workflowstatus="Pending Appointments" workflowfunction="Appointment" executionsequence="1"
+				statuscomment="import_comment" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding" forward="bulkEntityAppointNew"
+				>
 				<email name="importInvitation" eventname="importInvitation" objectid="aar_requestid" objecttype="Onboarding" executionsequence="1">
 					<parameter name="System_Name" value="clientName" executionsequence="0"></parameter>
 				</email>
@@ -221,6 +230,11 @@
 		<event name="reconsiderInvitation">
 			<status name="reconsiderInvitation" workflowstatus="Pending Review" workflowfunction="Public Submission" executionsequence="1"
 				usergroup="roles" statusgroup="Onboarding" objectid="aar_requestid" objecttype="Onboarding" approver="user_id">
+																																				
+																						
+																						 
+																					  
+			
 			</status>
 		</event>
 		<event name="reviewBackgroundCheck">
@@ -308,12 +322,15 @@
 		<event name="submittedAppointments">
 			<status name="submittedAppointments" workflowstatus="Submitted Appointments" workflowfunction="Appointment" executionsequence="1"
 				statuscomment="Appointment Submitted" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="agency_id" objecttype="Appointment">
+				
+				
 			</status>
 		</event>
 		<event name="sendForReviewAppointment" approverrole="SalesDirector">
 			<status name="sendForReviewAppointment" workflowstatus="Pending Review" workflowfunction="Appointment" executionsequence="1"
 				statuscomment="comment" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="agency_id" objecttype="Appointment"
 				approver="workflow_user">
+				
 			</status>
 		</event>
 		<event name="approveAppointment" assigneerole="MarketingAssistant">
@@ -334,12 +351,14 @@
 				isapproval="Y" assignee="workflow_user">
 			</status>
 		</event>
+		
 		<event name="declineAgentAppointment" assigneerole="MarketingAssistant">
 			<status name="declineAgentAppointment" workflowstatus="Declined" workflowfunction="Appointment" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Onboarding" objectid="agency_id" objecttype="Appointment"
 				isapproval="Y" assignee="workflow_user">
 			</status>
 		</event>
+		
 		<event name="reconsiderAppointments">
 			<status name="reconsiderAppointments" workflowstatus="Pending Review" workflowfunction="Appointment" executionsequence="1"
 				usergroup="MarketingRep" statusgroup="Onboarding" objectid="agency_id" objecttype="Appointment">
@@ -360,6 +379,7 @@
 				statuscomment="Appointment Skipped" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="agency_id" objecttype="Agency Setup">
 			</status>
 		</event>
+		
 		<event name="skipContractsFromAgentAppointmentPage">
 			<status name="skipContractsFromAgentAppointmentPage" workflowstatus="Pending Agency Setup" workflowfunction="Agency Setup" executionsequence="1"
 				statuscomment="Appointment Skipped" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="agency_id" objecttype="Agency Setup">
@@ -390,7 +410,7 @@
 		</event>
 		<event name="disapproveContracts" assigneerole="MarketingAssistant">
 			<status name="disapproveContracts" workflowstatus="Pending Contract Generation" workflowfunction="Contract" executionsequence="1"
-				statuscomment="comment" usergroup="CarrierAdmin" statusgroup="Onboarding" objectid="agency_id" objecttype="Contract"
+				statuscomment="comment" usergroup="SalesDirector" statusgroup="Onboarding" objectid="agency_id" objecttype="Contract"
 				isapproval="Y" assignee="workflow_user" forward="agencyListPublicSubmitNInvitation">
 				<email name="RejectContract" eventname="RejectContract" objectid="agency_id" objecttype="Contract">
 					<parameter name="System_Name" value="clientName" executionsequence="0"></parameter>
@@ -407,7 +427,10 @@
             	statuscomment="comment" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="agency_id" objecttype="Agency Setup" assignee="user_id">
             </status>
         </event>
-		<event name="approveContracts" assigneerole="MarketingAssistant" parentevent="sendForReviewContracts" type="approve">
+		
+  
+		<event name="approveContracts" assigneerole="MarketingAssistant" parentevent="sendForReviewContracts">
+			
 			<status name="approveContracts" workflowstatus="Sent for ESignature" workflowfunction="Contract" executionsequence="1"
 				statuscomment="comment" usergroup="SalesDirector" statusgroup="Onboarding" objectid="agency_id" objecttype="Contract"
 				isapproval="Y" assignee="workflow_user" forward="agencyListPublicSubmitNInvitation">
@@ -417,7 +440,7 @@
 					<parameter name="Entity_State" value="Entity_State" executionsequence="2"></parameter>
 				</email>
 				<statusworkflow name="sendInvitationToApproval" executionsequence="0">
-					<businessobject name="SendDocForESign" obj="com.userbo.integration.SendDocForESign" objectid="contract_id" doccategory="31" />
+				<businessobject name="SendDocForESign" obj="com.userbo.integration.SendDocForESign" objectid="contract_id" doccategory="31" />
 				</statusworkflow>
 			</status>
 			<approver name="approver1" status="approveContracts" executionsequence="1"></approver>
@@ -429,14 +452,24 @@
 			<signer name="signer1" isgetuser="Y" type="carrier" attachtoapprover="" labelkey="Agency Termination Template Signer(s)" 
 				templatecategory="contract" templatecodekey="hidden_contract_Template_Type_code" templatecodevalue="11" 
 				approverrole="MarketingAssistant" objectid="agency_id" objecttype="Agency" executionsequence="0"/>
-			<!-- 				
-			<signer name="signer3" isgetuser="Y" type="agent" attachtoapprover="" labelkey="Contract"
-				templatecategory="contract" templatecodekey="hidden_contract_Template_Type_code"
-				templatecodevalue="8" approverrole="agenthrp" objectid="agency_id" objecttype="Agency" executionsequence="0" />
-			 -->
-			<signer name="signer2" isgetuser="Y" type="carrier" attachtoapprover="" labelkey="Commitment Letter"
-				templatecategory="contract" templatecodekey="hidden_contract_Template_Type_code" templatecodevalue="23" 
-				approverrole="CarrierAdmin" objectid="agency_id" objecttype="Agency" executionsequence="1" />
+<!-- 				
+					<signer name="signer3" isgetuser="Y" type="agent"
+	attachtoapprover=""
+	labelkey="Contract"
+	templatecategory="contract"
+	templatecodekey="hidden_contract_Template_Type_code"
+	templatecodevalue="8" approverrole="agenthrp" objectid="agency_id"
+	objecttype="Agency" executionsequence="0" />
+ -->
+	<signer name="signer2" isgetuser="Y" type="carrier"
+		attachtoapprover=""
+		labelkey="Commitment Letter"
+		templatecategory="contract"
+		templatecodekey="hidden_contract_Template_Type_code"
+		templatecodevalue="23" approverrole="CarrierAdmin"
+		objectid="agency_id" objecttype="Agency"
+		executionsequence="1" />
+			
 		</event>
 		<event name="signContracts">
 			<status eval="WorkflowRule.isOnboardingFlowFound" name="signContracts" workflowstatus="Pending Agency Setup" workflowfunction="Agency Setup" executionsequence="0"
@@ -455,8 +488,7 @@
 		<event name="reassignApplication" assigneerole="usergroup">
 			<status eval="WorkflowRule.checkWorkflowStatusForReassign" name="checkWorkflowStatusForReassign" executionsequence="0" />
 			<status eval="WorkflowRule.isPublicSubmissionWorkflowFoundWithStatusESignExpiredOrCancelled" name="reassignApplication11" workflowstatus="workflowstatus" executionsequence="1" 
-				statuscomment="comment" statusgroup="Onboarding" assignee="reassign_workflow_user" assigneeeval="WorkflowRule.isAssignToUserTypeAssignee"
-				approver="reassign_workflow_user" approvereval="WorkflowRule.isAssignToUserTypeApprover"
+				statuscomment="comment" statusgroup="Onboarding" assignee="reassign_workflow_user"
                 objectid="workflow_object_id" objecttype="Onboarding" workflowfunction="Public Submission" usergroup="usergroup">
                 <email name="PublicSubmissionReassign" notificationid="PublicSubmissionReassign" objectid="workflow_object_id" objecttype="Onboarding">
                 	<parameter name="System_Name" value="clientName" executionsequence="0"></parameter>
@@ -465,8 +497,7 @@
                 </email>
             </status>
 			<status eval="WorkflowRule.isPublicSubmissionWorkflowFound" name="reassignApplication1" workflowstatus="workflowstatus" executionsequence="2" 
-				statuscomment="comment" statusgroup="Onboarding" assignee="reassign_workflow_user" assigneeeval="WorkflowRule.isAssignToUserTypeAssignee"
-				approver="reassign_workflow_user" approvereval="WorkflowRule.isAssignToUserTypeApprover"
+				statuscomment="comment" statusgroup="Onboarding" assignee="reassign_workflow_user"
 				objectid="workflow_object_id" objecttype="Onboarding" workflowfunction="Public Submission" usergroup="usergroup">
 				<email name="PublicSubmissionReassign" eventname="PublicSubmissionReassign" objectid="workflow_object_id" objecttype="Onboarding">
 					<parameter name="System_Name" value="clientName" executionsequence="0"></parameter>
@@ -475,8 +506,7 @@
 				</email>
 			</status>
 			<status eval="WorkflowRule.isBackgroundCheckWorkflowFound" name="reassignApplication2" workflowstatus="workflowstatus" executionsequence="3" 
-				statuscomment="comment" statusgroup="Onboarding" assignee="reassign_workflow_user" assigneeeval="WorkflowRule.isAssignToUserTypeAssignee"
-				approver="reassign_workflow_user" approvereval="WorkflowRule.isAssignToUserTypeApprover"
+				statuscomment="comment" statusgroup="Onboarding" assignee="reassign_workflow_user"
 				objectid="workflow_object_id" objecttype="BG Check" workflowfunction="Background Check" usergroup="usergroup">
 				<email name="PublicSubmissionReassign" eventname="PublicSubmissionReassign" objectid="workflow_object_id" objecttype="BG Check">
 					<parameter name="System_Name" value="clientName" executionsequence="0"></parameter>
@@ -485,8 +515,7 @@
 				</email>
 			</status>
 			<status eval="WorkflowRule.isAppointmentWorkflowFound" name="reassignApplication3" workflowstatus="workflowstatus" executionsequence="4" 
-				statuscomment="comment" statusgroup="Onboarding" assignee="reassign_workflow_user" assigneeeval="WorkflowRule.isAssignToUserTypeAssignee"
-				approver="reassign_workflow_user" approvereval="WorkflowRule.isAssignToUserTypeApprover"
+				statuscomment="comment" statusgroup="Onboarding" assignee="reassign_workflow_user"
 				objectid="workflow_object_id" objecttype="Appointment" workflowfunction="Appointment" usergroup="usergroup">
 				<email name="PublicSubmissionReassign" eventname="PublicSubmissionReassign" objectid="workflow_object_id" objecttype="Appointment">
 					<parameter name="System_Name" value="clientName" executionsequence="0"></parameter>
@@ -495,8 +524,7 @@
 				</email>
 			</status>
 			<status eval="WorkflowRule.isContractWorkflowFound" name="reassignApplication4" workflowstatus="workflowstatus" executionsequence="5" 
-				statuscomment="comment" statusgroup="Onboarding" assignee="reassign_workflow_user" assigneeeval="WorkflowRule.isAssignToUserTypeAssignee"
-				approver="reassign_workflow_user" approvereval="WorkflowRule.isAssignToUserTypeApprover"
+				statuscomment="comment" statusgroup="Onboarding" assignee="reassign_workflow_user"
 				objectid="workflow_object_id" objecttype="Contract" workflowfunction="Contract" usergroup="usergroup">
 				<email name="PublicSubmissionReassign" eventname="PublicSubmissionReassign" objectid="workflow_object_id" objecttype="Contract">
 					<parameter name="System_Name" value="clientName" executionsequence="0"></parameter>
@@ -505,8 +533,7 @@
 				</email>
 			</status>
 			<status eval="WorkflowRule.isAgencySetupWorkflowFound" name="reassignApplication5" workflowstatus="workflowstatus" executionsequence="6" 
-				statuscomment="comment" statusgroup="Onboarding" assignee="reassign_workflow_user" assigneeeval="WorkflowRule.isAssignToUserTypeAssignee"
-				approver="reassign_workflow_user" approvereval="WorkflowRule.isAssignToUserTypeApprover"
+				statuscomment="comment" statusgroup="Onboarding" assignee="reassign_workflow_user"
 				objectid="workflow_object_id" objecttype="Agency Setup" workflowfunction="Agency Setup" usergroup="usergroup">
 				<email name="PublicSubmissionReassign" eventname="PublicSubmissionReassign" objectid="workflow_object_id" objecttype="Agency Setup">
 					<parameter name="System_Name" value="clientName" executionsequence="0"></parameter>
@@ -515,6 +542,7 @@
 				</email>
 			</status>
 		</event>
+  
 		<event name="submitExternalRequestForESign" assigneerole="MarketingAssistant">
 			<status name="submitExternalRequestForESign" workflowstatus="Sent for ESignature" workflowfunction="Public Submission" executionsequence="0"
 				statuscomment="Application Submitted"  statusgroup="Onboarding"
@@ -564,20 +592,7 @@
 					<businessobject name="SendDocForESign" obj="com.userbo.integration.SendDocForESign"/>
 				</statusworkflow> -->
 			</status>
-		 </event>
-		 <event name="reGenerateContractForExipredOrCancelled">
-			<status name="generateContractForExipredOrCancelled" workflowstatus="Pending Contract Generation" workflowfunction="Contract" executionsequence="1"
-				statuscomment="comment" usergroup="MarketingAssistant" statusgroup="Onboarding" objectid="agency_id" objecttype="Contract">
-			</status>
-		</event>
-		 		
-		<event name="trashOnboardedApplication" assigneerole="MarketingAssistant">
-			<status name="trashOnboardedApplication" workflowstatus="Junk" workflowfunction="Public Submission" executionsequence="0"
-				usergroup="MarketingAssistant" statusgroup="Onboarding" assignee="user_id"
-				objectid="aar_requestid" objecttype="Onboarding">
-			</status>
-		</event> 		
-		 		
+		 </event>		
 	</workflow>
 	
 	<workflow name="selfService">
@@ -599,38 +614,68 @@
 				<email name="sendAgencyTerminationLetterToAgency" eventname="sendAgencyTerminationLetterToAgency" mailto="mailTo" objectid="termination_log_id" objecttype="Agency Termination" 
 					attachmentcontent="attachmentContent" executionsequence="0"></email>
 			</status>
-	      	<approver name="approver1" approverrole="CarrierAdmin" executionsequence="1"></approver> 										   
+																								 
+	      <approver name="approver1" approverrole="CarrierAdmin" executionsequence="1"></approver> 										   
 		</event>
-		<event name="approved" assigneerole="MarketingAssistant" parentevent="sendForApproval" type="approve">
+		<event name="approved" assigneerole="MarketingAssistant" parentevent="sendForApproval">
+																														   
+																																						 
+															 
+																																													
+																		 
+			
 			<status name="approved" workflowstatus="Pending ESignature" workflowfunction="Agency Termination" executionsequence="1"
 				usergroup="SalesDirector" statusgroup="Agency Termination" objectid="termination_log_id" objecttype="Agency Termination"
-				forward="agencyTerminationList" isapproval="Y" assignee="workflow_user" statuscomment="comment">
+				forward="agencyTerminationList" isapproval="Y">
 				<statusworkflow name="approved">
 					<businessobject name="SendDocForESign" obj="com.userbo.integration.SendDocForESign" objectid="termination_log_id" doccategory="39"></businessobject>					
 				</statusworkflow> 
 			</status>
-			<!-- <approver name="approver1" status="sendForApproval" executionsequence="0"></approver> -->
-			<approver name="approver1" status="approved" executionsequence="1"></approver>
-			<signer name="signer1" isgetuser="Y" type="agent" attachtoapprover="approver1" labelkey="Agency Termination Template Signer(s)" 
+			<approver name="approver1" status="sendForApproval" executionsequence="0"></approver>
+																					 
+			<approver name="approver2" status="approved" executionsequence="1"></approver>
+																				 
+			
+			<signer name="signer1" isgetuser="Y" type="agent" attachtoapprover="" labelkey="Agency Termination Template Signer(s)" 
 				templatecategory="Agency Termination" templatecodekey="selected_producer_number_ids" templatecodevalue="Agency Termination Template,Agency Termination Template1" 
 				approverrole="agenthrp" objectid="from_object_id" objecttype="NationalCode" executionsequence="0"/>
-			<signer name="signer2" isgetuser="Y" type="carrier" attachtoapprover="approver1" labelkey="Agency Termination Template Signer(s)" 
+			
+			<signer name="signer2" isgetuser="Y" type="carrier" attachtoapprover="" labelkey="Agency Termination Template Signer(s)" 
 				templatecategory="Agency Termination" templatecodekey="selected_producer_number_ids" templatecodevalue="Agency Termination Template,Agency Termination Template1" 
-				approverrole="CarrierAdmin" objectid="from_object_id" objecttype="NationalCode" executionsequence="1"/>
+				approverrole="CarrierAdmin" objectid="4462" objecttype="NationalCode" executionsequence="1"/>
+			
+																																		 
+																																									   
+																													  
+   
+																																		  
+																																		  
+																											 
+   
+																											 
+																												
+																													
+																												
 		</event>
-		<event name="disapproved" parentevent="sendForApproval" type="disapprove">
+		<event name="disapproved" parentevent="sendForApproval">
 			<status name="disapproved" workflowstatus="Disapproved" workflowfunction="Agency Termination" executionsequence="1"
-				usergroup="MarketingAssistant" statusgroup="Agency Termination" objectid="termination_log_id" objecttype="Agency Termination"
-				forward="agencyTerminationList" isapproval="Y" statuscomment="comment">
+				usergroup="SalesDirector" statusgroup="Agency Termination" objectid="termination_log_id" objecttype="Agency Termination"
+				forward="agencyTerminationList" isapproval="Y">
 			</status>
-			<approver name="approver1" status="disapproved" executionsequence="1"></approver>
+																														  
+																																		 
+																			
+			
+																					
+																														
+																					
 		</event>
 		<event name="declined" >
 			<status name="declined" workflowstatus="Declined" workflowfunction="Agency Termination" executionsequence="1"
 				usergroup="roles" statusgroup="Agency Termination" objectid="termination_log_id" objecttype="Agency Termination"
-				forward="agencyTerminationList" isapproval="Y" statuscomment="comment">
+				forward="agencyTerminationList" isapproval="Y">
 			</status>
-		</event>
+			</event>
 	</workflow>
 	
 	<workflow name="agencyFunctions">
@@ -643,7 +688,7 @@
 			<approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver> 
 		</event>
 		<event name="saveApprovalAgencyFunctionAS" approverrole="SalesDirector">
-		<status name="saveApprovalAgencyFunctionAS" workflowstatus="Pending Review" workflowfunction="Agency Function" executionsequence="1"
+			<status name="saveApprovalAgencyFunctionAS" workflowstatus="Pending Review" workflowfunction="Agency Function" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				approver="user_id" forward="agencyFunctions">
 			</status>
@@ -757,7 +802,7 @@
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				approver="workflow_user" forward="agencyFunctions">
 			</status>
-			<status name="disApproveAgencyFunction" workflowstatus="Pending Review" workflowfunction="Agency Function" executionsequence="1"
+			<status name="disApproveAgencyFunction" workflowstatus="Disapproved" workflowfunction="Agency Function" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				forward="agencyFunctions" isapproval="Y">
 			</status>
@@ -770,6 +815,7 @@
 				forward="agencyFunctions" isapproval="Y">
 			</status>
 		</event>
+		
 		<event name="sendForApprovalAgencyFunctionCAC" approverrole="SalesDirector">
 			<status name="sendForApprovalAgencyFunction" workflowstatus="Pending Review" workflowfunction="Agency Function" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function" eval="ProducerOneRule.isAgencyAdminNotLoggedIn"
@@ -805,7 +851,7 @@
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				approver="workflow_user" forward="agencyFunctions">
 			</status>
-			<status name="disApproveAgencyFunction" workflowstatus="Pending Review" workflowfunction="Agency Function" executionsequence="1"
+			<status name="disApproveAgencyFunction" workflowstatus="Disapproved" workflowfunction="Agency Function" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				forward="agencyFunctions" isapproval="Y">
 			</status>
@@ -818,6 +864,7 @@
 				forward="agencyFunctions" isapproval="Y">
 			</status>
 		</event>
+		
 		<event name="saveApprovalAgencyFunctionDC" approverrole="SalesDirector">
 			<status name="saveApprovalAgencyFunctionDC" workflowstatus="Pending Review" workflowfunction="Agency Function" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
@@ -834,22 +881,16 @@
 				approver="workflow_user" forward="agencyAdminDashboard">
 			</status>
 			<approver name="approver1" approverrole="MarketingRep,SalesDirector" executionsequence="0"></approver>
-			<approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver>
+			<approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver> 
 		</event>
 		<event name="approveAgencyFunctionDC" parentevent="sendForApprovalAgencyFunctionDC" type="approve">
-			<status name="sendForApprovalAgencyFunction" workflowstatus="Pending Review" workflowfunction="Agency Function" executionsequence="1"
-				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
-				approver="workflow_user" forward="agencyFunctions">
-			</status>
 			<status name="approveAgencyFunction" workflowstatus="Approved" workflowfunction="Agency Function" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				forward="agencyFunctions" isapproval="Y">
 			</status>
-			<approver name="approver1" status="sendForApprovalAgencyFunction" executionsequence="0"></approver>
-			<approver name="approver2" status="approveAgencyFunction" executionsequence="1"></approver> 
 		</event>
 		<event name="disApproveAgencyFunctionDC" parentevent="sendForApprovalAgencyFunctionDC" type="disapprove">
-			<status name="disApproveAgencyFunction" workflowstatus="Pending Review" workflowfunction="Agency Function" executionsequence="1"
+			<status name="disApproveAgencyFunction" workflowstatus="Disapproved" workflowfunction="Agency Function" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				forward="agencyFunctions" isapproval="Y">
 			</status>
@@ -880,12 +921,6 @@
 		</event> -->
 		<event name="submitApprovedAgencyFunctionCloseAgencyCode" >
 			<status name="submitApprovedAgencyFunctionCloseAgencyCode" workflowstatus="Approved" workflowfunction="Agency Function" executionsequence="1"
-				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
-				forward="agencyFunctions">
-			</status>
-		</event>
-		<event name="submitApprovedAgencyFunctionCloseAgencyCodeOnRealTime" >
-			<status name="submitApprovedAgencyFunctionCloseAgencyCode" workflowstatus="Completed" workflowfunction="Agency Function" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Agency Termination" objectid="request_ss_id" objecttype="Agency Function"
 				forward="agencyFunctions">
 			</status>
@@ -942,7 +977,6 @@
 			<approver name="approver1" status="disApproveCommissionRateApprovalNew" executionsequence="0"></approver>
 		</event>
 	</workflow>
-	
 	<workflow name="commissionAdjustmentApprovalWorkFlow">
 		<event name="sendForCommissionAdjustmentApproval">
 			<status name="sendForCommissionAdjustmentApproval" workflowstatus="Pending Review" workflowfunction="Comm Adjustment" executionsequence="1"
@@ -1000,9 +1034,10 @@
 			workflowfunction="Self Service" executionsequence="1" statuscomment="comment" usergroup="roles" 
 			statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
 				approver="workflow_user" forward="homeAction">
+
 			</status>
 			<approver name="approver1" approverrole="MarketingAssistant" executionsequence="0"></approver>
-			<!-- <approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver>  -->
+<!-- 			<approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver>  -->
 		</event>
 		<event name="sendForApprovalBankRequestSelfService" approverrole="MarketingAssistant" >
 			<status name="sendForApprovalSelfServiceforAgencyAdmin" workflowstatus="pendingESign" eval="ProducerOneRule.checkSelfServicePrivilege" 
@@ -1023,22 +1058,15 @@
 			</status>
 			<approver name="approver1" approverrole="MarketingAssistant" executionsequence="0"></approver>
 		</event>
-		<event name="reAssignRequestForSelfService" approverrole="usergroup">
-			<status name="reAssignRequestForSelfService" eval="ProducerOneRule.isReassignRequestForSelfService" workflowstatus="workflowstatus"
+		<event name="reAssignRequestForSelfService" approverrole="MarketingAssistant" >
+			<status name="reAssignRequestForSelfService" workflowstatus="description"
 				workflowfunction="Self Service" executionsequence="0" statuscomment="comment" usergroup="roles" 
 				statusgroup="Self Service" objectid="request_ss_id" objecttype="workflowRequest_object_type"
-				assignee="reassign_workflow_user" assigneeeval="WorkflowRule.isAssignToUserTypeAssignee" 
-				approver="reassign_workflow_user" approvereval="WorkflowRule.isAssignToUserTypeApprover" forward="entityRequests" >
+				assignee="reassign_workflow_user" approver="reassign_workflow_user" forward="entityRequests" >
 			</status>
-			
-			<status name="reAssignRequestForSelfServiceAgencyFunction" eval="ProducerOneRule.isReassignRequestForAgencyFunction" workflowstatus="workflowstatus"
-				workflowfunction="Agency Function" executionsequence="0" statuscomment="comment" usergroup="roles" 
-				statusgroup="Agency Termination" objectid="request_ss_id" objecttype="workflowRequest_object_type"
-				assignee="reassign_workflow_user" assigneeeval="WorkflowRule.isAssignToUserTypeAssignee" 
-				approver="reassign_workflow_user" approvereval="WorkflowRule.isAssignToUserTypeApprover" forward="entityRequests" >
-			</status>
-			<!-- <approver name="approver1" approverrole="MarketingAssistant" executionsequence="0"></approver> -->
-			<!-- <approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver>  -->
+
+<!-- 			<approver name="approver1" approverrole="MarketingAssistant" executionsequence="0"></approver> -->
+<!-- 			<approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver>  -->
 		</event>
 		<event name="approveSelfService" parentevent="sendForApprovalSelfService" type="approve" >
 			<status executionsequence="0" eval="ProducerOneRule.executeSelfServiceApproval" name="approveSelfService0" workflowstatus="Approved" workflowfunction="Self Service" 
@@ -1066,25 +1094,28 @@
 				statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service" assignee="user_id" 
 				forward="homeAction" isapproval="Y">
 			</status>
+		
 		</event> -->
 		<event name="approveSelfServiceBankRequestSelfService" parentevent="sendForApprovalBankRequestSelfService" type="approve">
 			<status executionsequence="0" name="approveSelfService0" workflowstatus="Approved" workflowfunction="Self Service" 
 				statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service" assignee="user_id" 
 				forward="homeAction" isapproval="Y">
 			</status>
+		
 		</event>
-		<event name="disApproveSelfService">
+		<event type="disapprove" name="disApproveSelfService" parentevent="sendForApprovalSelfService">
 			<status name="disApproveSelfService" workflowstatus="Pending Review" workflowfunction="Self Service" executionsequence="1"
-				statuscomment="comment" usergroup="workflow_assignee_usergroup" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
+				statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
 				forward="homeAction" isapproval="Y">
 				<email name="sendDisApproveNotificationToAgency" eventname="sendDisApproveNotificationToAgency" mailto="mailTo" objectid="request_ss_id" objecttype="Self Service" 
 					attachmentcontent="attachmentContent" executionsequence="0"></email>
 			</status>
 		</event>
+		
 		<event name="disApproveSelfServiceBankRequestSelfService" parentevent="sendForApprovalBankRequestSelfService">
-			<status name="disApproveSelfService" workflowstatus="Pending Review" workflowfunction="Self Service" executionsequence="1"
+			<status name="disApproveSelfService" workflowstatus="DisApproved" workflowfunction="Self Service" executionsequence="1"
 				statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
-				forward="homeAction" isapproval="Y">
+				forward="homeAction" isapproval="Y" assignee="user_id">
 				<email name="sendDisApproveNotificationToAgency" eventname="sendDisApproveNotificationToAgency" mailto="mailTo" objectid="request_ss_id" objecttype="Self Service" 
 					attachmentcontent="attachmentContent" executionsequence="0"></email>
 			</status>
@@ -1100,7 +1131,7 @@
 				</email>
 			</status>
 		</event>
-		<event name="sendInvitationForAgent" >
+		<event name="sendInvitation" >
 			<status name="sendForApprovalSelfService" workflowstatus="Completed" eval="ProducerOneRule.checkSelfServicePrivilege" workflowfunction="Self Service" executionsequence="0" 
 				usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service" >
 			</status>
@@ -1109,91 +1140,90 @@
 			</status>
 		</event>
 	</workflow>
-	
 	<workflow name="BOBTransferApprovalWorkFlow">
-    	<event name="sendForbobTransferApproval">
-        	<status name="sendForBOBTransferApproval" workflowstatus="Pending Review" workflowfunction="Self Service" executionsequence="1"
-            	statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
-                approver="workflow_user" forward="homeAction" isapproval="Y" >
-                <email name="BOBTransferSendforApproval" eventname="BOBTransferSendforApproval" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
-            </status>
-            <approver name="approver1" approverrole="SalesDirector" executionsequence="0"></approver>   
-            <approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver>
-        </event>
-        <event name="approveBOBTransferApproval" parentevent="sendForbobTransferApproval" type="approve">
-            <status name="approveBOBTransferApproval" workflowstatus="Pending Review" workflowfunction="Self Service" executionsequence="1"
-            	statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
-                approver="workflow_user" forward="homeAction" isapproval="Y">
-                <email name="BOBTransferApprove" eventname="BOBTransferApprove" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
-            </status>
-            <status name="approved" workflowstatus="Approved" workflowfunction="Self Service" executionsequence="1"
-            	statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
-                approver="workflow_user" forward="homeAction" isapproval="Y">
-                <email name="BOBTransferApprove" eventname="BOBTransferApprove" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
-            </status>
-            <approver name="approver1" status="approveBOBTransferApproval" executionsequence="0"></approver>   
-            <approver name="approver2" status="approved" executionsequence="1"></approver>
-        </event>
-        <event name="disApproveBOBTransferApproval" parentevent="sendForbobTransferApproval" type="disapprove">
-           	<status name="disApproveBOBTransferApproval" workflowstatus="Disapproved" workflowfunction="Self Service" executionsequence="1"
-                statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
-                approver="workflow_user" forward="homeAction" isapproval="Y">
-                <email name="BOBTransferReject" eventname="BOBTransferReject" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
-            </status>
-            <status name="disApproveBOBTransferApproval1" workflowstatus="Disapproved" workflowfunction="Self Service" executionsequence="1"
-                statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
-                approver="workflow_user" forward="homeAction" isapproval="Y">
-                <email name="BOBTransferReject" eventname="BOBTransferReject" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
-            </status>
-            <approver name="approver1" status="disApproveBOBTransferApproval" executionsequence="0"></approver>      
-            <approver name="approver2" status="disApproveBOBTransferApproval1" executionsequence="1"></approver>
-        </event>
-        <event name="companyBOBTransferApproval">
-          	<status name="approveSelfService" workflowstatus="Approved" workflowfunction="Self Service" executionsequence="1"
-              	statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service" assignee="user_id" 
-              	forward="homeAction" isapproval="Y" approver="user_id">
-              	<email name="BOBTransferApprove" eventname="BOBTransferApprove" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>                   
-          	</status>
-        </event>
-    </workflow>
-    
-    <workflow name="individualTransferApprovalWorkFlow">
-        <event name="sendForIndividualTransferApproval">
-          	<status name="sendForIndividualTransferApproval" workflowstatus="Pending Review" workflowfunction="Self Service" executionsequence="1"
-                statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
-                approver="workflow_user" forward="homeAction" isapproval="Y" >
-                <email name="individualTransferSendforApproval" eventname="individualTransferSendforApproval" mailto="e_mail" objectid="producer_number_transfer_id" objecttype="Self Service" executionsequence="0"/>
-          	</status>
-          	<approver name="approver1" approverrole="SalesDirector" executionsequence="0"></approver>   
-          	<approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver>
-        </event>
-        <event name="approveIndividualTransferApproval" parentevent="sendForIndividualTransferApproval" type="approve">
-            <status name="approveIndividualTransferApproval" workflowstatus="Pending Review" workflowfunction="Self Service" executionsequence="1"
-                statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
-                approver="workflow_user" forward="homeAction" isapproval="Y">
-                <email name="IndividualTransferApprove" eventname="IndividualTransferApprove" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
-            </status>
-            <status name="approved" workflowstatus="Approved" workflowfunction="Self Service" executionsequence="1"
-                statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
-                approver="workflow_user" forward="homeAction" isapproval="Y">
-                <email name="IndividualTransferApprove" eventname="IndividualTransferApprove" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
-            </status>
-            <approver name="approver1" status="approveIndividualTransferApproval" executionsequence="0"></approver>   
-            <approver name="approver2" status="approved" executionsequence="1"></approver>
-        </event>
-        <event name="disApproveIndividualTransferApproval" parentevent="sendForIndividualTransferApproval" type="disapprove">
-            <status name="disApproveIndividualTransferApproval" workflowstatus="Disapproved" workflowfunction="Self Service" executionsequence="1"
-                statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
-                approver="workflow_user" forward="homeAction" isapproval="Y">
-                <email name="IndividualTransferReject" eventname="IndividualTransferReject" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
-            </status>
-            <status name="disApproveIndividualTransferApproval1" workflowstatus="Disapproved" workflowfunction="Self Service" executionsequence="1"
-                statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
-                approver="workflow_user" forward="homeAction" isapproval="Y">
-                <email name="IndividualTransferReject1" eventname="IndividualTransferReject1" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
-            </status>
-            <approver name="approver1" status="disApproveIndividualTransferApproval" executionsequence="0"></approver>     
-            <approver name="approver2" status="disApproveIndividualTransferApproval1" executionsequence="1"></approver>
-        </event>
-    </workflow>
+            <event name="sendForbobTransferApproval">
+                  <status name="sendForBOBTransferApproval" workflowstatus="Pending Review" workflowfunction="Self Service" executionsequence="1"
+                        statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
+                        approver="workflow_user" forward="homeAction" isapproval="Y" >
+                        <email name="BOBTransferSendforApproval" eventname="BOBTransferSendforApproval" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
+                  </status>
+                  <approver name="approver1" approverrole="SalesDirector" executionsequence="0"></approver>   
+                  <approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver>
+            </event>
+            <event name="approveBOBTransferApproval" parentevent="sendForbobTransferApproval" type="approve">
+                  <status name="approveBOBTransferApproval" workflowstatus="Pending Review" workflowfunction="Self Service" executionsequence="1"
+                        statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
+                        approver="workflow_user" forward="homeAction" isapproval="Y">
+                        <email name="BOBTransferApprove" eventname="BOBTransferApprove" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
+                  </status>
+                  <status name="approved" workflowstatus="Approved" workflowfunction="Self Service" executionsequence="1"
+                        statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
+                        approver="workflow_user" forward="homeAction" isapproval="Y">
+                        <email name="BOBTransferApprove" eventname="BOBTransferApprove" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
+                  </status>
+                  <approver name="approver1" status="approveBOBTransferApproval" executionsequence="0"></approver>   
+                  <approver name="approver2" status="approved" executionsequence="1"></approver>
+            </event>
+            <event name="disApproveBOBTransferApproval" parentevent="sendForbobTransferApproval" type="disapprove">
+                  <status name="disApproveBOBTransferApproval" workflowstatus="Disapproved" workflowfunction="Self Service" executionsequence="1"
+                        statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
+                        approver="workflow_user" forward="homeAction" isapproval="Y">
+                        <email name="BOBTransferReject" eventname="BOBTransferReject" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
+                  </status>
+                  <status name="disApproveBOBTransferApproval1" workflowstatus="Disapproved" workflowfunction="Self Service" executionsequence="1"
+                        statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
+                        approver="workflow_user" forward="homeAction" isapproval="Y">
+                        <email name="BOBTransferReject" eventname="BOBTransferReject" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
+                  </status>
+                        <approver name="approver1" status="disApproveBOBTransferApproval" executionsequence="0"></approver>      
+                      <approver name="approver2" status="disApproveBOBTransferApproval1" executionsequence="1"></approver>
+            </event>
+            
+            <event name="companyBOBTransferApproval">
+                  <status name="approveSelfService" workflowstatus="Approved" workflowfunction="Self Service" executionsequence="1"
+                        statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service" assignee="user_id" 
+                        forward="homeAction" isapproval="Y" approver="user_id">
+                        <email name="BOBTransferApprove" eventname="BOBTransferApprove" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>                   
+                  </status>
+            </event>
+      </workflow>
+      <workflow name="individualTransferApprovalWorkFlow">
+            <event name="sendForIndividualTransferApproval">
+                  <status name="sendForIndividualTransferApproval" workflowstatus="Pending Review" workflowfunction="Self Service" executionsequence="1"
+                        statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
+                        approver="workflow_user" forward="homeAction" isapproval="Y" >
+                        <email name="individualTransferSendforApproval" eventname="individualTransferSendforApproval" mailto="e_mail" objectid="producer_number_transfer_id" objecttype="Self Service" executionsequence="0"/>
+                  </status>
+                  <approver name="approver1" approverrole="SalesDirector" executionsequence="0"></approver>   
+                  <approver name="approver2" approverrole="CarrierAdmin" executionsequence="1"></approver>
+            </event>
+            <event name="approveIndividualTransferApproval" parentevent="sendForIndividualTransferApproval" type="approve">
+                  <status name="approveIndividualTransferApproval" workflowstatus="Pending Review" workflowfunction="Self Service" executionsequence="1"
+                        statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
+                        approver="workflow_user" forward="homeAction" isapproval="Y">
+                        <email name="IndividualTransferApprove" eventname="IndividualTransferApprove" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
+                  </status>
+                  <status name="approved" workflowstatus="Approved" workflowfunction="Self Service" executionsequence="1"
+                        statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
+                        approver="workflow_user" forward="homeAction" isapproval="Y">
+                        <email name="IndividualTransferApprove" eventname="IndividualTransferApprove" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
+                  </status>
+                  <approver name="approver1" status="approveIndividualTransferApproval" executionsequence="0"></approver>   
+                  <approver name="approver2" status="approved" executionsequence="1"></approver>
+            </event>
+            <event name="disApproveIndividualTransferApproval" parentevent="sendForIndividualTransferApproval" type="disapprove">
+                  <status name="disApproveIndividualTransferApproval" workflowstatus="Disapproved" workflowfunction="Self Service" executionsequence="1"
+                        statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
+                        approver="workflow_user" forward="homeAction" isapproval="Y">
+                        <email name="IndividualTransferReject" eventname="IndividualTransferReject" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
+                  </status>
+                  <status name="disApproveIndividualTransferApproval1" workflowstatus="Disapproved" workflowfunction="Self Service" executionsequence="1"
+                        statuscomment="comment" usergroup="roles" statusgroup="Self Service" objectid="request_ss_id" objecttype="Self Service"
+                        approver="workflow_user" forward="homeAction" isapproval="Y">
+                        <email name="IndividualTransferReject1" eventname="IndividualTransferReject1" mailto="e_mail" objectid="request_ss_id" objecttype="Self Service" executionsequence="0"/>
+                  </status>
+                        <approver name="approver1" status="disApproveIndividualTransferApproval" executionsequence="0"></approver>     
+                      <approver name="approver2" status="disApproveIndividualTransferApproval1" executionsequence="1"></approver>
+            </event>
+      </workflow>
 </applicationworkflow>
