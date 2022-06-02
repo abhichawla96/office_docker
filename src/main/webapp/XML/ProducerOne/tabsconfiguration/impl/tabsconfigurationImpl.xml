@@ -805,4 +805,7 @@
   <!-- Hiding languages section on header which had accesslevel=1 in 2.10.3.8 -->
 	<tabsconfigurationresource deltaind="M" name="configuration_language_security" accesslevel="0" description="Hide/show configuration language on header page"/>
 	
+	<!-- Prod Bug Id - 43025 -->
+	<tabsconfigurationresource deltaind="M" accesslevel="0" description="addNewContract_docContractDetails_onboarding_security" name="addNewContract_docContractDetails_security"/>
+	
 </tabsconfiguration>
