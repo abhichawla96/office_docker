@@ -76,12 +76,13 @@
 	    </event>
   </field>
 
+<!-- commenting below code as field added by product in 2.10.3.8 -->
 <!-- Sprint 3 : Agency and Agent Demographics- General (Documents - E&O ) : Extended Field --> 
   	
-  <field deltaind="I" isextendedfield="Y" name="eno_question" screen="carrier/addNewInsuranceDetail.html" objectcolumn="insurance_certificate_id" section="docInsuranceDetail_freeform_contextdata_1" displaytype="radio" 
+  <!-- <field deltaind="I" isextendedfield="Y" name="eno_question" screen="carrier/addNewInsuranceDetail.html" objectcolumn="insurance_certificate_id" section="docInsuranceDetail_freeform_contextdata_1" displaytype="radio" 
 	isrequired="N" labelkey="eno_question_label" labeldesc="Have any E &amp; O claims been made during the past five years against the agency, agency partners, officers, or any members of the staff?" accesslevel="1" tabsconfigurationresourcename="eno_question_security" 
 	protectedresourceuniquename="eno_question_security" id="eno_question" position="#comments_before#" mappedto="f24">	 
-  </field>
+  </field> -->
 	
 <!-- Sprint 3 : Agency and Agent Demographics- General (Bank Information ) : Extended Field --> 
 	
@@ -585,11 +586,12 @@
   </field> 
   <!-- Upgrade Bug Id- 031 Self Service end --> 
   
+   <!-- commenting below code as field added by product directly in HTML - 2.10.3.8 -->
     <!-- Phase 2 UpgradeHF customization bug id : U-069-->
-  <field deltaind="I" isextendedfield="Y" name="eno_question_aa" screen="carrier/addNewInsuranceDetailForSelfService.html" objectcolumn="request_ss_id" section="addEntityRequests_freeform_contextdata_20" displaytype="radio" 
+  <!-- <field deltaind="I" isextendedfield="Y" name="eno_question_aa" screen="carrier/addNewInsuranceDetailForSelfService.html" objectcolumn="request_ss_id" section="addEntityRequests_freeform_contextdata_20" displaytype="radio" 
 isrequired="N" labelkey="eno_question_aa_label" labeldesc="Have any E &amp; O claims been made during the past five years against the agency, agency partners, officers, or any members of the staff?" accesslevel="1" tabsconfigurationresourcename="eno_question_aa_security" 
 protectedresourceuniquename="eno_question_aa_security" id="eno_question_aa" position="#addInsuranceDetailsForSelfServiceApproval_assigned_to_security_after#" mappedto="f24"> 
-  </field>
+  </field> -->
   
   <!-- START - UAT Bug 16175 - Needed specific TM names only -->
 

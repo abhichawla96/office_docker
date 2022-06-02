@@ -808,4 +808,9 @@
 	<!-- Prod Bug Id - 43025 -->
 	<tabsconfigurationresource deltaind="I" accesslevel="0" description="docContract_addNewAgencyCode_security" name="docContract_addNewAgencyCode_security"/>
 	
+	<!-- Demographics-For showing E&O claim Y/N option added by product in 2.10.3.8 -->
+	<tabsconfigurationresource deltaind="M" accesslevel="1" name="docInsuranceDetail_Demographics_eo_claims_security" description="Hide/Show of agency drop down in docInsuranceDetail_ss_comments_req_security for demographics" />
+	
+	<!-- SS-For showing E&O claim Y/N option added by product in 2.10.3.8 -->
+	<tabsconfigurationresource deltaind="M" accesslevel="1" name="docInsuranceDetail_ss_eo_claims_security" description="Hide/Show of agency drop down in docInsuranceDetail_ss_comments_req_security for SS" />
 </tabsconfiguration>
