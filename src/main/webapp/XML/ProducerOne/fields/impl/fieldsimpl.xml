@@ -613,10 +613,18 @@ protectedresourceuniquename="eno_question_aa_security" id="eno_question_aa" posi
   
   <!-- UAT2 0035 & 0036 DOB and SSN make mandatory -->  
    <field deltaind="M" requiredeval="ProducerOneRule.isLicensedProducerChecked" id="agentGeneralDetailsForSelfServiceApproval_ssn_num" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" name="ssn_num" isrequired="E" labelkey="contact_ssn_label" tabsconfigurationresourcename="contact_ssn_security" protectedresourceuniquename="contact_ssn_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="entityPersonDetails_freeform_contextdata_2"/>
-	
-   <field deltaind="M" name="ispersoncontact" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" labeldesc="Contact Type" isrequired="N" labelkey="Contact Type" id="adminBrokerageDetailsStep2_ispersoncontact">
+	<!-- ADO 43041-start -->
+	<field deltaind="M" requiredeval="ProducerOneRule.isLicensedProducerChecked" id="agentGeneralDetailsForSelfServiceApproval_decrypted_ssn_num" name="decrypted_ssn_num" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" section="entityPersonDetails_freeform_contextdata_2" isrequired="E" labelkey="contact_ssn_label" tabsconfigurationresourcename="contact_ssn_security" protectedresourceuniquename="contact_ssn_security" />
+	<field deltaind="M" requiredeval="ProducerOneRule.isLicensedProducerChecked" id="agentGeneralDetailsForSelfServiceApproval_prdcr_cde" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" name="prdcr_cde" isrequired="E" labelkey="showdivnpn_label" tabsconfigurationresourcename="showdivnpn" protectedresourceuniquename="showdivnpn" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="entityPersonDetails_freeform_contextdata_2" />
+	<field deltaind="I" name="ispersoncontact" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" labeldesc="Contact Type" isrequired="N" labelkey="Contact Type" id="adminBrokerageDetailsStep2_ispersoncontact">
+		<event deltaind="I" id="onchange" name="onchange" actiontype="ajaxpageblocklink" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" action="refreshdob_ssn" actiontypeid="showdivnpn#contact_ssn_security" executionsequence="0">
+		</event>
+	</field>
+	<!-- ADO 43041-end -->
+
+   <!-- <field deltaind="M" name="ispersoncontact" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" labeldesc="Contact Type" isrequired="N" labelkey="Contact Type" id="adminBrokerageDetailsStep2_ispersoncontact">
     <event deltaind="I" id="onchange" name="onchange" actiontype="ajaxpageblocklink" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" action="refreshdob_ssn" actiontypeid="contact_ssn_security" executionsequence="0"/>
-  </field>
+  </field> -->
   
   <!-- UAT2 0069 Agency Demo start -->
     <field deltaind="M" isrequired="N" id="addNewBankInformation_account_owner" name="account_owner" screen="carrier/addNewBankInformation.html" section="addNewBankInformationNew1_freeform_contextdata_01" labelkey="account_owner_label" tabsconfigurationresourcename="account_owner_security" protectedresourceuniquename="account_owner_security" />
