@@ -700,9 +700,9 @@
   
   <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show decline button on agency functions page" uniquename="agencyFunctions_selectFunctionType_decline_security">
 
-  <userdefined deltaind="I" ruleid="ProducerOneRule.hideShowApproveSalesSupportDC" executionsequence="0">
+  <!-- <userdefined deltaind="I" ruleid="ProducerOneRule.hideShowApproveSalesSupportDC" executionsequence="0">
 <userdefinedaccesslevel accesstype="1"/>
-  </userdefined>
+  </userdefined> -->
   
   <userdefined deltaind="I" ruleid="ProducerOneRule.hideShowApproveSalesDirector" executionsequence="1">
 <userdefinedaccesslevel accesstype="1"/>
@@ -733,9 +733,9 @@
  
  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show approve button on agency functions page"  uniquename="agencyFunctions_selectFunctionType_approve_security">
 
-  <userdefined deltaind="I" ruleid="ProducerOneRule.hideShowApproveSalesSupportDC" executionsequence="0">
+  <!-- <userdefined deltaind="I" ruleid="ProducerOneRule.hideShowApproveSalesSupportDC" executionsequence="0">
 <userdefinedaccesslevel accesstype="1"/>
-  </userdefined>
+  </userdefined> -->
   
   <userdefined deltaind="I" ruleid="ProducerOneRule.hideShowApproveSalesDirector" executionsequence="1">
 <userdefinedaccesslevel accesstype="1"/>
@@ -2691,5 +2691,51 @@
     </userdefined>
   </protectedresource>
   <!-- 39089 disapprove termination end -->
-   
+  
+  <!-- UAT2 Bug Id - 40696 -->
+   <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show under review button on agent bg inquiry page" operator="and" uniquename="agentbackgroundlist_underreview">
+    <businessrole deltaind="M" roleid="PrimaryMarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <userdefined deltaind="M" executionsequence="0" ruleid="WorkflowRule.isShowReviewButtonBackgroundCheck">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+     <userdefined deltaind="M" executionsequence="1" ruleid="WorkflowRule.isShowBgCheckReviewButton">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+  </protectedresource>
+  
+  <!-- Prod Bug Id - 43412 -->
+  <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Approv/Decline button on DC agency functions page " operator="and" uniquename="agencyFunctions_selectFunctionType_decline_security">
+   		<businessrole deltaind="I" roleid="MarketingAssistant">
+        <roleaccesslevel seq="0" accesstype="1">
+        </roleaccesslevel>
+     </businessrole>
+    <userdefined deltaind="I" seq="0" executionsequence="1" ruleid="AgencyFunctionsRule.isAgencyFunctionsIDAndRequestIdNotEmpty">
+       <userdefinedaccesslevel seq="0" accesstype="1">
+    </userdefinedaccesslevel>
+    </userdefined>
+    <userdefined deltaind="I" ruleid="ProducerOneRule.isFunctionDC" executionsequence="2">
+			<userdefinedaccesslevel accesstype="1" />
+	</userdefined> 
+  </protectedresource>
+  
+  <!-- Prod Bug Id - 43412 -->
+  <protectedresource deltaind="I" description="Hide/Show generate letter button on agency functions page" operator="and" uniquename="agencyFunctions_selectFunctionType_approve_security" defaultaccesstype="0">
+      <businessrole deltaind="I" roleid="MarketingAssistant">
+        <roleaccesslevel seq="0" accesstype="1">
+        </roleaccesslevel>
+     </businessrole>
+    <userdefined deltaind="I" seq="0" executionsequence="1" ruleid="AgencyFunctionsRule.isAgencyFunctionsIDAndRequestIdNotEmpty">
+       <userdefinedaccesslevel seq="0" accesstype="1">
+    </userdefinedaccesslevel>
+    </userdefined>
+    <userdefined deltaind="I" ruleid="ProducerOneRule.isFunctionDC" executionsequence="2">
+			<userdefinedaccesslevel accesstype="1" />
+	</userdefined>
+  </protectedresource>
+  
 </security> 
