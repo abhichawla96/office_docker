@@ -262,4 +262,7 @@
   
   <label deltaind="I" labeldesc="FEIN/TaxID#" labelkey="feinFieldLabel1"/>
   
+  <!--  ADO - 42207 - Adding label in xml, removed from html -->
+  <label deltaind="M" labelkey="agencyTerminationStep2_phone_businessaddress_label" labeldesc="Residence Phone" />
+  
 </labelconf>
