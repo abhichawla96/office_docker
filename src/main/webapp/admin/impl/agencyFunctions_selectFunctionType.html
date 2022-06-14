@@ -1749,7 +1749,11 @@
 
 											<div id="ajax_error_selectedTemplateType" class="error" align="center" />
 											<div id="error_selectedTemplateType" class="error" align="center" />
-											<div class="text-heading txtbold mendatoryInput">
+											<!-- Changes to make optional for DC  -->
+											<div id="selectlettermandatory_security" class="text-heading txtbold mendatoryInput">
+												&nbsp;<label id="agencyFunctions_letterTemplateList_label">Select Letter Template</label>
+											</div>
+											<div id="selectletternonmandatory_security" class="text-heading txtbold">
 												&nbsp;<label id="agencyFunctions_letterTemplateList_label">Select Letter Template</label>
 											</div>
 											<div id="ajax_sorting_15" class="gridTopPadding4">
@@ -1853,6 +1857,14 @@
 													class="ovalbutton"> <span
 													id="agencyFunctions_selectFunctionType_sendforapprovallabel">Send For Approval</span>
 												</a>
+												<!-- BMIC Req. change request -->
+												<a id="agencyFunctions_selectFunctionType_complete_transaction_security"
+												fullid="page(page.page).agencyFunctions_selectFunctionType_complete_transaction_security.agencyFunctions_selectFunctionType_complete_transaction_label.agencyFunctions_selectFunctionType_complete_transaction_security"
+													href="javascript:submitform('admin/agencyFunctions.html','agencyFunctions_selectFunctionType.completeTransactionDeactivateContact','','');"
+													class="ovalbutton"> <span
+													id="agencyFunctions_selectFunctionType_complete_transaction_label">Complete Transaction</span>
+												</a>
+												<!-- end BIC Req. change request -->
 												<a id="agencyFunctions_selectFunctionType_approve_security"
 												fullid="page(page.page).agencyFunctions_selectFunctionType_approve_security.agencyFunctions_selectFunctionType_sendforapprovallabel.agencyFunctions_selectFunctionType_approve_security"
 													href="javascript:submitform('carrier/workflowPopup.html','agencyFunctions_selectFunctionType.approveAgencyFunction','','');"
