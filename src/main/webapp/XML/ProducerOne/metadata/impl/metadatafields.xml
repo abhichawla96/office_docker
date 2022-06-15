@@ -25,5 +25,11 @@
   <field deltaind="I" decimallength="0" displayname="AgencyTerminationPolicyReviewRPT_inforce" length="0" name="AgencyTerminationPolicyReviewRPT_inforce" seq="14456" type="V" viewlength="10"/>
   <field deltaind="I" decimallength="0" displayname="AgencyTerminationPolicyReviewRPT_agency_status" length="0" name="AgencyTerminationPolicyReviewRPT_agency_status" seq="14457" type="V" viewlength="10"/>
   
+  <field deltaind="I" decimallength="0" displayname="RPT582_from_date" length="10" name="RPT582_from_date" seq="14458" type="D" viewlength="10"/>
+  <field deltaind="I" decimallength="0" displayname="RPT582_to_date" length="10" name="RPT582_to_date" seq="14459" type="D" viewlength="10"/>
+  
+  <field deltaind="I" decimallength="0" displayname="from_accident_date" length="10" name="from_accident_date" seq="14460" type="D" viewlength="10"/>
+  <field deltaind="I" decimallength="0" displayname="to_accident_date" length="10" name="to_accident_date" seq="14461" type="D" viewlength="10"/>
+  
   
   </structure>
