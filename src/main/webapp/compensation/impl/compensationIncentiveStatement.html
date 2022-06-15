@@ -2917,8 +2917,10 @@
 																																							<tr>
 																																								<!-- Phase 3- Year -->
 																																								<td
-																																									class="labelAlign divAddInfoLabel">
-																																									Contingency Commission Year :</td>
+																																								class="labelAlign divAddInfoLabel">Contingency
+																																									Commission Year :</td>
+																																									 
+																																									
 																																								<td class="tdInput">&nbsp;<label
 																																									id="plan_period"
 																																									name="plan_period"></label></td>
@@ -3299,18 +3301,18 @@
 																																															<td
 																																																id="block_field_company_product"
 																																																class="HeaderStyle"
-																																																width="100px" style="text-align: left">Line
+																																																width="140px" style="text-align: left">Line
 																																																of Business</td>
 																																															<td
 																																																id="block_field_product_desc"
-																																																class="HeaderStyle" width="100px" style="text-align: left">
+																																																class="HeaderStyle" width="140px" style="text-align: left">
 																																																Product</td>
 																																																
 																																																		
 																																															<td
 																																																id="block_field_producer_number"
 																																																class="HeaderStyle"
-																																																width="100px" style="text-align: left"><span
+																																																width="140px" style="text-align: left"><span
 																																																id="producerlabel">Agency
 																																																	Code</span></td>
 																																															<td
@@ -3322,7 +3324,7 @@
 																																															<td
 																																																id="block_field_loss_ratio"
 																																																class="HeaderStyle amountHeaderCarrier"
-																																																width="100px" style="text-align: left">Loss
+																																																width="140px" style="text-align: left">Loss
 																																																Ratio</td>
 																																																
 																																														<td
@@ -3402,27 +3404,41 @@
 																																															</span>
 																																															</td>
 																																															
+																																																<!-- Phase 3- Adjustments and Statement --> 
 																																																
 																																															<td
 																																																id="block_field_CY_Eval"
 																																																class="HeaderStyle amountHeaderCarrier"
-																																																width="140px" style="text-align: left">Current Year Evaluation</td>
+																																																width="140px" style="text-align: left">Current Year Evaluation
+																																															<span
+																																																id="block_field_CY_Eval_row_link"/>	
+																																																</td>
 																																																
+																																																	 
 																																															<td
 																																																id="block_field_PY_Eval"
 																																																class="HeaderStyle amountHeaderCarrier"
-																																																width="120px" style="text-align: left">Prior Year Evaluation</td>	
+																																																width="140px" style="text-align: left">Prior Year Evaluation
+																																															<span
+																																																id="block_field_PY_Eval_row_link"/>		
+																																																</td>	
 																																														
 																																														 <td
 																																																id="block_field_Loss_amt_Cont_Comm"
 																																																class="HeaderStyle amountHeaderCarrier"
-																																																width="140px" style="text-align: left">Loss Amount</td>
+																																																width="140px" style="text-align: left">Loss Amount
+																																														<span
+																																																id="block_field_Loss_amt_Cont_Comm_row_link"/>			
+																																																</td>
 																																																
 																																													
 																																													<td
 																																																id="block_field_cont_comm_pay"
 																																																class="HeaderStyle amountHeaderCarrier"
-																																																width="140px" style="text-align: left">Contingency Commission</td>	
+																																																width="140px" style="text-align: left">Contingency Commission
+																																													<span
+																																																id="block_field_cont_comm_pay_row_link"/>			
+																																																</td>	
 																																																
 																																															
 																																														<!-- Phase 3- Payout Detail end -->					
@@ -3645,7 +3661,7 @@
 																																																						<input
 																																																						name="incurred_losses"
 																																																						type="text"
-																																																						style="text-align: right;"
+																																																						style="text-align: left;"
 																																																						id="ajax_field_incurred_losses"
 																																																						size="9"
 																																																						maxlength="15" />
@@ -3750,32 +3766,170 @@
 																																															</td>
 																																													
 																																															
-																																												<td
-																																																id="block_field_CY_Eval"
-																																																align="center"
-																																																style="padding: 0px 5px !important; white-space: nowrap;"	></td>
-																																														
-																																														<td
-																																																id="block_field_PY_Eval"
-																																																align="center"
-																																																style="padding: 0px 5px !important; white-space: nowrap;"	></td>
-																																														
-																																														<td
-																																																id="block_field_Loss_amt_Cont_Comm"
-																																																align="center"
-																																																style="padding: 0px 5px !important; white-space: nowrap;"></td>
-																																														
-																																														
-																																														<td
+																																												
+																																																
+																																															<!-- Phase 3- Adjustment and Statement -->	
+																																														<td align="center"
+																																																style="padding: 0px 5px !important; white-space: nowrap;">
+																																																<table cellpadding="0"
+																																																	cellspacing="0">
+																																																	<tr>
+																																																		<td><span
+																																																			id="eval:ProducerOneRule.checkShowAdjustmentEdit">
+																																																				<span
+																																																				id="eval:ProducerOneRule.checkShowCCBTextfieldPremium">
+																																																					<span
+																																																					id="block_field_CY_Eval">
+																																																						<input
+																																																						name="CY_Eval"
+																																																						type="text"
+																																																						style="text-align: left;"
+																																																						id="ajax_field_CY_Eval"
+																																																						size="9"
+																																																						maxlength="15" />
+																																																				</span>
+																																																			</span> <span
+																																																				id="eval:ProducerOneRule.checkShowCCBLabelPremium">
+																																																					<span
+																																																					id="block_field_CY_Eval">
+																																																				</span>
+																																																			</span>
+																																																		</span> <span
+																																																			id="eval:ProducerOneRule.checkNotShowAdjustmentEdit">
+																																																				<span
+																																																				id="block_field_CY_Eval"
+																																																				style="white-space: nowrap;"></span>
+																																																		</span></td>
+																																																		<td width="15px">
+																																																			<span
+																																																			id="block_field_CY_Eval_row_link">
+																																																				<span
+																																																				id="eval:ProducerOneRule.isCYEvalChanged">
+																																																					<span
+																																																					id="block_field_CY_Eval_row_link">
+																																																						<a href="#"
+																																																						title="context_CY_Eval_old">
+																																																							<img
+																																																							src="images/buttons/appointment_history-ccb.gif" />
+																																																					</a>
+																																																				</span>
+																																																			</span>
+																																																		</span>
+																																																		</td>
+																																																	</tr>
+																																																</table>
+																																															</td>  
+																																													
+																																															<td align="center"
+																																																style="padding: 0px 5px !important; white-space: nowrap;">
+																																																<table cellpadding="0"
+																																																	cellspacing="0">
+																																																	<tr>
+																																																		<td><span
+																																																			id="eval:ProducerOneRule.checkShowAdjustmentEdit">
+																																																				<span
+																																																				id="eval:ProducerOneRule.checkShowCCBTextfieldPremium">
+																																																					<span
+																																																					id="block_field_PY_Eval">
+																																																						<input
+																																																						name="PY_Eval"
+																																																						type="text"
+																																																						style="text-align: left;"
+																																																						id="ajax_field_PY_Eval"
+																																																						size="9"
+																																																						maxlength="15" />
+																																																				</span>
+																																																			</span> <span
+																																																				id="eval:ProducerOneRule.checkShowCCBLabelPremium">
+																																																					<span
+																																																					id="block_field_PY_Eval">
+																																																				</span>
+																																																			</span>
+																																																		</span> <span
+																																																			id="eval:ProducerOneRule.checkNotShowAdjustmentEdit">
+																																																				<span
+																																																				id="block_field_PY_Eval"
+																																																				style="white-space: nowrap;"></span>
+																																																		</span></td>
+																																																		<td width="15px">
+																																																			<span
+																																																			id="block_field_PY_Eval_row_link">
+																																																				<span
+																																																				id="eval:ProducerOneRule.isIncurredLossesChanged">
+																																																					<span
+																																																					id="block_field_PY_Eval_row_link">
+																																																						<a href="#"
+																																																						title="context_PY_Eval_old">
+																																																							<img
+																																																							src="images/buttons/appointment_history-ccb.gif" />
+																																																					</a>
+																																																				</span>
+																																																			</span>
+																																																		</span>
+																																																		</td>
+																																																	</tr>
+																																																</table>
+																																															</td>  	
+																																															
+																																																<td align="center"
+																																																style="padding: 0px 5px !important; white-space: nowrap;">
+																																																<table cellpadding="0"
+																																																	cellspacing="0">
+																																																	<tr>
+																																																		<td><span
+																																																			id="eval:ProducerOneRule.checkShowAdjustmentEdit">
+																																																				<span
+																																																				id="eval:ProducerOneRule.checkShowCCBTextfieldPremium">
+																																																					<span
+																																																					id="block_field_Loss_amt_Cont_Comm">
+																																																						<input
+																																																						name="Loss_amt_Cont_Comm"
+																																																						type="text"
+																																																						style="text-align: left;"
+																																																						id="ajax_field_Loss_amt_Cont_Comm"
+																																																						size="9"
+																																																						maxlength="15" />
+																																																				</span>
+																																																			</span> <span
+																																																				id="eval:ProducerOneRule.checkShowCCBLabelPremium">
+																																																					<span
+																																																					id="block_field_Loss_amt_Cont_Comm">
+																																																				</span>
+																																																			</span>
+																																																		</span> <span
+																																																			id="eval:ProducerOneRule.checkNotShowAdjustmentEdit">
+																																																				<span
+																																																				id="block_field_Loss_amt_Cont_Comm"
+																																																				style="white-space: nowrap;"></span>
+																																																		</span></td>
+																																																		<td width="15px">
+																																																			<span
+																																																			id="block_field_Loss_amt_Cont_Comm_link">
+																																																				<span
+																																																				id="eval:ProducerOneRule.isIncurredLossesChanged">
+																																																					<span
+																																																					id="block_field_Loss_amt_Cont_Comm_row_link">
+																																																						<a href="#"
+																																																						title="context_Loss_amt_Cont_Comm_old">
+																																																							<img
+																																																							src="images/buttons/appointment_history-ccb.gif" />
+																																																					</a>
+																																																				</span>
+																																																			</span>
+																																																		</span>
+																																																		</td>
+																																																	</tr>
+																																																</table>
+																																															</td>
+																																															
+																																															<td
 																																																id="block_field_cont_comm_pay"
 																																																align="center"
-																																																style="padding: 0px 5px !important; white-space: nowrap;"></td>
-																																														
-																																														
-																																														
-																																														<!-- Phase 3- Payout detail-end -->			
+																																																height="24px"
+																																																style="padding-left: 4px !important">
+																																															</td>  	
+																																																
 																																															
-
 																																														</tr>
 																																													</tbody>
 																																												</table>
@@ -3991,19 +4145,7 @@
 
 																																																			</tr>	
 																																																			
-																								
-																																																			<tr>
-																																																				<td width="77%"
-																																																					align="left">
-																																																					LOSS RATIO FOR CONTINGENCY COMMISSION AMOUNT :</td>
-																																																				<td width="20%"
-																																																					align=right><span>
-																																																						<label
-																																																						name="Loss_ratio_Cont_Comm"
-																																																						id="Loss_ratio_Cont_Comm"></label>
-																																																				</span></td>
-
-																																																			</tr>	
+																
 																																																			
 																																																			<tr>
 																																																				<td width="77%"
@@ -4018,9 +4160,20 @@
 
 																																																			</tr>	
 																				
-																								
+																																	
+																																																			<tr>
+																																																				<td width="77%"
+																																																					align="left">
+																																																					LOSS RATIO FOR CONTINGENCY COMMISSION AMOUNT :</td>
+																																																				<td width="20%"
+																																																					align=right><span>
+																																																						<label
+																																																						name="Loss_ratio_Cont_Comm"
+																																																						id="Loss_ratio_Cont_Comm"></label>
+																																																				</span></td>
+
+																																																			</tr>
 																	
-																																																			
 																																																			
 																																																			
 																																																			<tr>

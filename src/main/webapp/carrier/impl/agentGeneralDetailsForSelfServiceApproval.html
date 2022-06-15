@@ -814,8 +814,7 @@ already exists.</div>
                                 </div>
                                 <div class="freeFormListTd tdInput">
                                   <select class="form-control selectWidth" id="ajax_field_persontype_id" name="persontype_id" 
-								  fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).agentGeneralDetailsForSelfServiceApproval_contact_producer_type_security.agentGeneralDetailsForSelfServiceApproval_contact_producer_type_label.persontype_id"
-								  onchange="javascript:showSSNAndNPN();hideforNonLicenseProducer();javascript:ajaxpageblocklink('carrier/agentGeneralDetailsForSelfServiceApproval.html','agentGeneralDetailsForSelfServiceApproval.showorHideSSNnNiprDiv','','','addressdiv');javascript:loadagentGeneralDetail();">
+								  fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).agentGeneralDetailsForSelfServiceApproval_contact_producer_type_security.agentGeneralDetailsForSelfServiceApproval_contact_producer_type_label.persontype_id">
                                     <option value="1">Licensed Producer</option>
                                     <option value="2">Non Licensed Producer</option>
                                   </select>
@@ -3224,13 +3223,14 @@ already exists.</div>
                           <label id="residence_address_agent_selfService_label">Residence Address</label>
                         </legend>
                         
-                          <!--     test -->
+                          <!--     BMIC specific -->
              <div class="freeFormListTd tdInput text-nowrap" id="selfService_copy_business_to_agent_w9_security" >
                                                 <input name="copy_business_to_agent_w9" id="ajax_field_copy_business_to_w9" type="checkbox" class="checkboxMargins" value="true"
 													fullid="agentGeneralDetailsResult_freeform_contextdata_6(agent_w9_address_security.residence_address_label).selfService_copy_business_to_agent_w9_security.copy_business_to_agent_w9_label.copy_business_to_agent_w9"
                                                 	onclick="javascript:ajaxsubmitform('carrier/agentGeneralDetailsForSelfServiceApproval.html','agentGeneralDetailsForSelfServiceApproval.copyAgentBusinessToW9','','','agent_w9_address_div');" />
                                                 <span id="copy_business_to_agent_w9_label">Copy Agent Business Address to W9 Address</span>
                                              </div> 
+					      <!--     BMIC specific -->
                                              
                         <div id="error_w9Address" align="center" class="error"></div>
 						<div id="ajax_error_w9Address"  align="center" class="error"></div>

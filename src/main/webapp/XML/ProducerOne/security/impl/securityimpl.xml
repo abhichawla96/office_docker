@@ -20,6 +20,9 @@
 		<businessrole deltaind="I" roleid="MarketingAssistant" executionsequence="3">
 			<roleaccesslevel accesstype="1" />
 		</businessrole>
+		<businessrole deltaind="I" roleid="SalesDirector" executionsequence="4">
+			<roleaccesslevel accesstype="0" />
+		</businessrole>
 	</protectedresource>
 	<protectedresource deltaind="I" defaultaccesstype="1"
 		description="Hide/show Menu Bar" uniquename="menu1">
@@ -675,51 +678,72 @@
  </protectedresource>
  
  <!-- Sprint 4 -->
- <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show decline button on agency functions page" uniquename="agencyFunctions_selectFunctionType_decline_security">
-  	<businessrole deltaind="I" roleid="vpmarketing">
+ <!-- 39089 decline buttons agency function start -->
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show decline button on agency functions page" uniquename="agencyFunctions_selectFunctionType_decline_security">
+  	<businessrole deltaind="D" roleid="MarketingRep">
   		<roleaccesslevel accesstype="1"/>
   	</businessrole>
-  	<businessrole roleid="MarketingRep">
+  	<businessrole deltaind="D" roleid="SalesDirector">
   		<roleaccesslevel accesstype="1"/>
   	</businessrole>
-  	<businessrole roleid="SalesDirector">
+  	<businessrole deltaind="D" roleid="CarrierAdmin">
   		<roleaccesslevel accesstype="1"/>
   	</businessrole>
-  	<businessrole roleid="CarrierAdmin">
-  		<roleaccesslevel accesstype="1"/>
-  	</businessrole>
-  	<!-- BMIC req decline button show -start -->
-  	<businessrole deltaind="I" roleid="MarketingAssistant">
-  		<roleaccesslevel accesstype="1"/>
-  	</businessrole>
-  	<!-- BMIC req decline button show -end -->
-  	<userdefined executionsequence="1" ruleid="WorkflowRule.isShowApproveButtonOnAgencyFunction">
+  	<userdefined deltaind="D" executionsequence="1" ruleid="AgencyFunctionsRule.isRequestStatusNotCompleted">
+  		<userdefinedaccesslevel accesstype="1"/>
+	</userdefined>
+  	<userdefined deltaind="D" executionsequence="1" ruleid="WorkflowRule.isShowApproveButtonOnAgencyFunction">
   		<userdefinedaccesslevel accesstype="1"/>
   	</userdefined>
   </protectedresource>
+
   
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show decline button on agency functions page" uniquename="agencyFunctions_selectFunctionType_decline_security">
+
+  <!-- <userdefined deltaind="I" ruleid="ProducerOneRule.hideShowApproveSalesSupportDC" executionsequence="0">
+<userdefinedaccesslevel accesstype="1"/>
+  </userdefined> -->
+  
+  <userdefined deltaind="I" ruleid="ProducerOneRule.hideShowApproveSalesDirector" executionsequence="1">
+<userdefinedaccesslevel accesstype="1"/>
+  </userdefined>
+ 
+  </protectedresource>
+  <!-- 39089 decline buttons agency function end -->
+  
+  <!-- 39089 approve buttons agency function end -->
   <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show approve button on agency functions page"  uniquename="agencyFunctions_selectFunctionType_approve_security">
-  	<businessrole deltaind="I" roleid="vpmarketing">
-  		<roleaccesslevel accesstype="1"/>
-  	</businessrole>	
-  	<businessrole roleid="MarketingRep">
+  	<businessrole deltaind="D" roleid="MarketingRep">
   		<roleaccesslevel accesstype="1"/>
   	</businessrole>
-  	<businessrole roleid="SalesDirector">
+  	<businessrole deltaind="D" roleid="SalesDirector">
   		<roleaccesslevel accesstype="1"/>
   	</businessrole>
-  	<businessrole roleid="CarrierAdmin">
+  	<businessrole deltaind="D" roleid="CarrierAdmin">
   		<roleaccesslevel accesstype="1"/>
   	</businessrole>
-  	<!-- BMIC req approve button visible-start -->
-  	<businessrole deltaind="I" roleid="MarketingAssistant">
-  		<roleaccesslevel accesstype="1"/>
-  	</businessrole>
-  	<!-- BMIC req approve button visible-end -->
-  	<userdefined executionsequence="1" ruleid="WorkflowRule.isShowApproveButtonOnAgencyFunction">
+  	<userdefined deltaind="D" executionsequence="1" ruleid="AgencyFunctionsRule.isRequestStatusNotCompleted">
+  		<userdefinedaccesslevel accesstype="1"/>
+	</userdefined>
+  	<userdefined deltaind="D" executionsequence="1" ruleid="WorkflowRule.isShowApproveButtonOnAgencyFunction">
   		<userdefinedaccesslevel accesstype="1"/>
   	</userdefined>
   </protectedresource>
+
+ 
+ <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show approve button on agency functions page"  uniquename="agencyFunctions_selectFunctionType_approve_security">
+
+  <!-- <userdefined deltaind="I" ruleid="ProducerOneRule.hideShowApproveSalesSupportDC" executionsequence="0">
+<userdefinedaccesslevel accesstype="1"/>
+  </userdefined> -->
+  
+  <userdefined deltaind="I" ruleid="ProducerOneRule.hideShowApproveSalesDirector" executionsequence="1">
+<userdefinedaccesslevel accesstype="1"/>
+  </userdefined>
+  
+  </protectedresource>
+ 
+  <!-- 39089 approve buttons agency function end -->
  
  
  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show commission reduction date field on agencyTerminationStep1 page" uniquename="agencyTerminationStep1_commission_reduction_date_security">
@@ -973,19 +997,22 @@
   </protectedresource>
   
   	<!-- approve termination  -->
+  	<!-- 39089 approve termination start -->
   <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show approve button on agencyTerminationStep2 page" uniquename="agencyTerminationStep2_approve_security">
-  	<businessrole roleid="MarketingRep" accesstype="1"></businessrole>
-  	<businessrole roleid="SalesDirector" accesstype="1"></businessrole>
-  	<businessrole roleid="CarrierAdmin" accesstype="1"></businessrole>
-  	<businessrole roleid="MarketingAssistant" accesstype="1"></businessrole>
+  	<businessrole deltaind="M" roleid="MarketingRep" accesstype="0"></businessrole>
+  	<businessrole deltaind="M" roleid="SalesDirector" accesstype="1"></businessrole>
+  	<businessrole deltaind="M" roleid="CarrierAdmin" accesstype="0"></businessrole>
+  	<businessrole deltaind="M" roleid="MarketingAssistant" accesstype="0"></businessrole>
    <userdefined executionsequence="0" ruleid="WorkflowRule.isShowApproveButtonOnAgencyTermination">
       <userdefinedaccesslevel accesstype="1"/>
     </userdefined>
     
-    <businessrole deltaind="M" roleid="vpmarketing">
+    <businessrole deltaind="I" roleid="vpmarketing">
 			<roleaccesslevel accesstype="0" />
 		</businessrole>
     </protectedresource>
+    
+    <!-- 39089 approve termination end -->
     
     <!-- Bug Id : 0030 : Rajshree-->
 <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show send For Review button on contract page" operator="AND" uniquename="addNewDocContract_sendForReview">
@@ -1486,9 +1513,6 @@
     <businessrole deltaind="M" roleid="accountinganalyst">
       <roleaccesslevel accesstype="0"/>
     </businessrole>
-    <businessrole deltaind="M" roleid="MarketingRep">
-      <roleaccesslevel accesstype="0"/>
-    </businessrole>
     <businessrole deltaind="M" roleid="MarketingAssistant">
       <roleaccesslevel accesstype="1"/>
     </businessrole>
@@ -1514,14 +1538,37 @@
   </protectedresource>
   
   <!-- Phase 3 : Administration : Compensation Mgmt : Release Statements -->
-  <protectedresource defaultaccesstype="0" description="Hide/show commission release statements sub tab in admin" uniquename="adminTabs2_releasestatementtab">
+    <!-- Phase 3- Task Id 40875-start -->
+  
+  <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/show commission release statements sub tab in admin" uniquename="adminTabs2_releasestatementtab">
     <businessrole deltaind="M" roleid="MarketingAssistant">
-      <roleaccesslevel accesstype="1"/>
+      <roleaccesslevel accesstype="0"/>
     </businessrole>
     <businessrole deltaind="I" roleid="CarrierAdmin">
       <roleaccesslevel accesstype="1"/>
     </businessrole>
+    <businessrole deltaind="I" roleid="SalesDirector">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
+    <businessrole deltaind="I" roleid="vpmarketing">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
   </protectedresource>
+  
+  
+  <protectedresource  deltaind="M" defaultaccesstype="0" description="check is Show Release Button" uniquename="isShowReleaseButton">
+    <businessrole deltaind="I" roleid="CarrierAdmin">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole>
+ </protectedresource>
+ 
+  <protectedresource deltaind="M" defaultaccesstype="0" description="check is Show UnRelease Button" uniquename="isShowUnReleaseButton">
+    <businessrole deltaind="I" roleid="CarrierAdmin">
+      <roleaccesslevel accesstype="1"/>
+    </businessrole> 
+ </protectedresource>
+   <!-- Phase 3- Task Id 40875-end --> 
+ 
   
   <!-- Dashboard Request List -->
   <!-- Phase Upgrade Bug U56 -->
@@ -1878,6 +1925,10 @@
      <!-- Phase 3- Bug Id- 35975 --> 
     <businessrole deltaind="I" roleid="MarketingGroup">
       <roleaccesslevel accesstype="0"/>
+    </businessrole> 
+    <!-- Phase 3- Bug Id-40690 --> 
+    <businessrole deltaind="I" roleid="AgencyAdmin">
+      <roleaccesslevel accesstype="1"/>
     </businessrole>   
   </protectedresource>
   
@@ -2552,12 +2603,18 @@
   	<!-- upgrade bugs Top Three Companies Appointed end-->
   	
   	<!-- upgrade bugs for display Decline button on Agency Termination page-->
-  	<protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show decline button on agencyTerminationStep2 page" uniquename="agencyTerminationStep2_decline_security">
-  	<businessrole roleid="vpmarketing" accesstype="0"></businessrole>
+  	<!-- 39089 decline termination start-->
+  	<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show decline button on agencyTerminationStep2 page" uniquename="agencyTerminationStep2_decline_security">
+  	<!-- <businessrole roleid="vpmarketing" accesstype="1"></businessrole> -->
+  	  	<businessrole deltaind="M" roleid="SalesDirector" accesstype="1"></businessrole>
+  	  	<businessrole deltaind="I" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
   	<userdefined executionsequence="0" ruleid="WorkflowRule.isShowApproveButtonOnAgencyTermination" >
       <userdefinedaccesslevel accesstype="1"/>
     </userdefined>
   </protectedresource>
+  <!-- 39089 decline termination end-->
   
   <!-- Bug ID U-032, U-062 to U-066 Upgrade Bug Start -->
 	<!-- <protectedresource defaultaccesstype="0" description="Hide/Show agencyFuntions_letterTemplateList_security" operator="or" uniquename="agencyFuntions_letterTemplateList_security">
@@ -3119,6 +3176,7 @@
 	</protectedresource>
   <!-- END - UAT2 0055 - Contact Status Grey out in Self Service -->
   
+<<<<<<< HEAD
   <!-- Phase 3- Expire button- bonus  --> 
 <protectedresource deltaind="M" uniquename="checkIncentiveExpireButtonHideShow" defaultaccesstype="1">
 <businessrole deltaind="I" roleid="MarketingAssistant">
@@ -3281,7 +3339,7 @@
 </businessrole>
 </protectedresource>
 
-<protectedresource deltaind="M" description="Hide/show Bank Information tab" operator="OR" uniquename="isShowAgencyBankInformationTab">
+<protectedresource deltaind="M" defaultaccesstype="1" description="Hide/show Bank Information tab" operator="OR" uniquename="isShowAgencyBankInformationTab">
 <businessrole deltaind="I" roleid="MarketingGroup">
 <roleaccesslevel accesstype="0" />
 </businessrole>
@@ -3433,15 +3491,125 @@
 </protectedresource>
     
 
-  <!-- START - Self Service - Upload W9 Show/Hide -->
-  <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Add New W9 Section" uniquename="addNewW9ForSelfService_w9_security">
-	<userdefined executionsequence="0" ruleid="ProducerOneRule.hideShowW9Section">
-      <userdefinedaccesslevel accesstype="1"/>
-  	</userdefined>
+  
+    <!-- Bug-40448 START - Self Service - Upload W9 Show/Hide -->
+    <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Add New W9 Section" uniquename="addNewW9ForSelfService_w9_security">
+ 	<userdefined executionsequence="0" ruleid="ProducerOneRule.hideShowW9Section">
+       <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
   	<userdefined executionsequence="0" ruleid="ProducerOneRule.hideShowW9SectionSalesSupportRequests">
-      <userdefinedaccesslevel accesstype="2"/>
+     <userdefinedaccesslevel accesstype="2"/>
+  	</userdefined>
+  	<userdefined executionsequence="0" ruleid="ProducerOneRule.hideShowW9SectionEdit">
+       <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+    </protectedresource>
+   <!-- Bug-40448 END - Self Service - Upload W9 Show/Hide -->
+   
+   <!-- 39089 disapprove functions start-->
+     <protectedresource deltaind="D" defaultaccesstype="0" description="Hide/Show disapprove button on agency functions page" uniquename="agencyFunctions_selectFunctionType_disapprove_security">
+  	<businessrole deltaind="M" roleid="MarketingRep">
+  		<roleaccesslevel accesstype="0"/>
+  	</businessrole>
+  	<businessrole deltaind="M" roleid="SalesDirector">
+  		<roleaccesslevel accesstype="0"/>
+  	</businessrole>
+  	<businessrole deltaind="M" roleid="CarrierAdmin">
+  		<roleaccesslevel accesstype="0"/>
+  	</businessrole>
+  	<businessrole deltaind="I" roleid="vpmarketing" accesstype="0"></businessrole>
+  	<businessrole deltaind="I" roleid="MarketingAssistant" accesstype="0"></businessrole>
+<!--   	<userdefined executionsequence="1" ruleid="AgencyFunctionsRule.isRequestStatusNotCompleted">
+  		<userdefinedaccesslevel accesstype="1"/>
+	</userdefined> -->
+  	<userdefined executionsequence="1" ruleid="WorkflowRule.isShowApproveButtonOnAgencyFunction">
+  		<userdefinedaccesslevel accesstype="1"/>
   	</userdefined>
   </protectedresource>
   <!-- END - Self Service - Upload W9 Show/Hide -->
 
+<!-- Phase 3- Probation section -->
+<protectedresource  deltaind="M" defaultaccesstype="0" description="Hide/show isShowPercentageAmountforProbation"
+uniquename="isShowPercentageAmountforProbation" />
+
+<!-- Phase 3 -Recalculation-start -->
+<protectedresource deltaind="I" defaultaccesstype="0" uniquename="isCYEvalChanged">
+<userdefined executionsequence="0" ruleid="ProducerOneRule.isCYEvalChanged">
+<userdefinedaccesslevel accesstype="1"/>
+</userdefined>
+</protectedresource>
+  
+<protectedresource deltaind="I" defaultaccesstype="0" uniquename="isPYEvalChanged">
+<userdefined executionsequence="0" ruleid="ProducerOneRule.isPYEvalChanged">
+<userdefinedaccesslevel accesstype="1"/>
+</userdefined>
+</protectedresource>
+
+ <protectedresource deltaind="I" defaultaccesstype="0" uniquename="isLossAmountChanged">
+ <userdefined executionsequence="0" ruleid="ProducerOneRule.isLossAmountChanged">
+ <userdefinedaccesslevel accesstype="1"/>
+ </userdefined>
+</protectedresource> 
+<!-- Phase 3 -Recalculation-end -->
+
+
+    <!-- 39089 disapprove functions end-->
+   
+   <!-- 39089 disapprove termination start -->
+    <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show disapprove button on agencyTerminationStep2 page" uniquename="agencyTerminationStep2_disapprove_security">
+  	<businessrole deltaind="M" roleid="MarketingRep" accesstype="0"></businessrole>
+  	<businessrole deltaind="M" roleid="SalesDirector" accesstype="0"></businessrole>
+  	<businessrole deltaind="M" roleid="CarrierAdmin" accesstype="0"></businessrole>
+   <userdefined executionsequence="0" ruleid="WorkflowRule.isShowApproveButtonOnAgencyTermination">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+  </protectedresource>
+  <!-- 39089 disapprove termination end -->
+  
+  <!-- UAT2 Bug Id - 40696 -->
+   <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show under review button on agent bg inquiry page" operator="and" uniquename="agentbackgroundlist_underreview">
+    <businessrole deltaind="M" roleid="PrimaryMarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <businessrole deltaind="M" roleid="MarketingAssistant">
+      <roleaccesslevel accesstype="0"/>
+    </businessrole>
+    <userdefined deltaind="M" executionsequence="0" ruleid="WorkflowRule.isShowReviewButtonBackgroundCheck">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+     <userdefined deltaind="M" executionsequence="1" ruleid="WorkflowRule.isShowBgCheckReviewButton">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined>
+  </protectedresource>
+  
+  <!-- Prod Bug Id - 43412 -->
+  <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Approv/Decline button on DC agency functions page " operator="and" uniquename="agencyFunctions_selectFunctionType_decline_security">
+   		<businessrole deltaind="I" roleid="MarketingAssistant">
+        <roleaccesslevel seq="0" accesstype="1">
+        </roleaccesslevel>
+     </businessrole>
+    <userdefined deltaind="I" seq="0" executionsequence="1" ruleid="AgencyFunctionsRule.isAgencyFunctionsIDAndRequestIdNotEmpty">
+       <userdefinedaccesslevel seq="0" accesstype="1">
+    </userdefinedaccesslevel>
+    </userdefined>
+    <userdefined deltaind="I" ruleid="ProducerOneRule.isFunctionDC" executionsequence="2">
+			<userdefinedaccesslevel accesstype="1" />
+	</userdefined> 
+  </protectedresource>
+  
+  <!-- Prod Bug Id - 43412 -->
+  <protectedresource deltaind="I" description="Hide/Show generate letter button on agency functions page" operator="and" uniquename="agencyFunctions_selectFunctionType_approve_security" defaultaccesstype="0">
+      <businessrole deltaind="I" roleid="MarketingAssistant">
+        <roleaccesslevel seq="0" accesstype="1">
+        </roleaccesslevel>
+     </businessrole>
+    <userdefined deltaind="I" seq="0" executionsequence="1" ruleid="AgencyFunctionsRule.isAgencyFunctionsIDAndRequestIdNotEmpty">
+       <userdefinedaccesslevel seq="0" accesstype="1">
+    </userdefinedaccesslevel>
+    </userdefined>
+    <userdefined deltaind="I" ruleid="ProducerOneRule.isFunctionDC" executionsequence="2">
+			<userdefinedaccesslevel accesstype="1" />
+	</userdefined>
+  </protectedresource>
+  
 </security> 
