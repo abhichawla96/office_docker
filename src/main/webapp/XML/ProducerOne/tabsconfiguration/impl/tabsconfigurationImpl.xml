@@ -953,6 +953,21 @@
 	<!-- UAT2 Bug Id - 27509 -->
 	<tabsconfigurationresource deltaind="M" accesslevel="1" description="entityCyberLiabilityExpirationListing_security" name="entityCyberLiabilityExpirationListing_security"/>
 	
+	<!-- 39089 disapporve button hide  start --> 
+	<tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/Show disapprove button on agency functions page" name="agencyFunctions_selectFunctionType_disapprove_security"/>
 	
-
+	<!-- CR 055 -->
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="agent_business_email_address_security" name="agent_business_email_address_security"/>
+  
+  <!-- Hiding languages section on header which had accesslevel=1 in 2.10.3.8 -->
+	<tabsconfigurationresource deltaind="M" name="configuration_language_security" accesslevel="0" description="Hide/show configuration language on header page"/>
+	
+	<!-- Prod Bug Id - 43025 -->
+	<tabsconfigurationresource deltaind="I" accesslevel="0" description="docContract_addNewAgencyCode_security" name="docContract_addNewAgencyCode_security"/>
+	
+	<!-- Demographics-For showing E&O claim Y/N option added by product in 2.10.3.8 -->
+	<tabsconfigurationresource deltaind="M" accesslevel="1" name="docInsuranceDetail_Demographics_eo_claims_security" description="Hide/Show of agency drop down in docInsuranceDetail_ss_comments_req_security for demographics" />
+	
+	<!-- SS-For showing E&O claim Y/N option added by product in 2.10.3.8 -->
+	<tabsconfigurationresource deltaind="M" accesslevel="1" name="docInsuranceDetail_ss_eo_claims_security" description="Hide/Show of agency drop down in docInsuranceDetail_ss_comments_req_security for SS" />
 </tabsconfiguration>

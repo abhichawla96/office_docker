@@ -78,6 +78,11 @@
 	<rule deltaind="I" id="hideShowW9Section" expression="isEqual(:hideShow_w9section,Y);"/>
 	<rule deltaind="I" id="hideShowW9SectionSalesSupportRequests" expression="isEqualsIgnoreCase(:roles,MarketingAssistant);"></rule>
 	<!-- END - Self Service - Upload W9 Show/Hide -->
+	
+	<!-- Bug-40448 W9 doc Self Service start -->
+	<rule deltaind="I" id="hideShowW9SectionEdit" expression="isEqual(:hideShow_w9section,Y);"/>
+	<!-- Bug-40448 W9 doc Self Service end -->
+	
 </ruleset>
 
 	<!-- Agency funtions rules - deactivate date CR -->
@@ -92,10 +97,14 @@
 		<rule deltaind="D" id="isCheckForPersonInHierarchy" expression="if(isEmpty(:inHierarchy)=>populateError(context,person_name_ss_filter,personRestrictedHierarchyMsg););" obj="ruleobjs.EntityRequestsRule" method="isCheckForPersonInHierarchy" />
 	</ruleset>
 	<!-- END - UAT2 Bug 0013 - Editing Hierarchy Contact in SS -->
+
 <!-- Phase 3: Task 23046 -->
 	<ruleset name="ProducerOneRule">
 		<rule deltaind="I" id="checkModifyforCa" expression="isEqualsIgnoreCase(:roles,CarrierAdmin);" />
 		<rule deltaind="I" id="checkModifyforAcc" expression="isEqualsIgnoreCase(:roles,Accounting);" />
 	</ruleset>
 	<!-- END - UAT2 Bug 0013 - Editing Hierarchy Contact in SS -->
-</evalrules>	
+
+	
+</evalrules>
+>>>>>>> refs/remotes/origin/prodSupport_may22

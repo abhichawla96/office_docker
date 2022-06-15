@@ -76,12 +76,13 @@
 	    </event>
   </field>
 
+<!-- commenting below code as field added by product in 2.10.3.8 -->
 <!-- Sprint 3 : Agency and Agent Demographics- General (Documents - E&O ) : Extended Field --> 
   	
-  <field deltaind="I" isextendedfield="Y" name="eno_question" screen="carrier/addNewInsuranceDetail.html" objectcolumn="insurance_certificate_id" section="docInsuranceDetail_freeform_contextdata_1" displaytype="radio" 
+  <!-- <field deltaind="I" isextendedfield="Y" name="eno_question" screen="carrier/addNewInsuranceDetail.html" objectcolumn="insurance_certificate_id" section="docInsuranceDetail_freeform_contextdata_1" displaytype="radio" 
 	isrequired="N" labelkey="eno_question_label" labeldesc="Have any E &amp; O claims been made during the past five years against the agency, agency partners, officers, or any members of the staff?" accesslevel="1" tabsconfigurationresourcename="eno_question_security" 
 	protectedresourceuniquename="eno_question_security" id="eno_question" position="#comments_before#" mappedto="f24">	 
-  </field>
+  </field> -->
 	
 <!-- Sprint 3 : Agency and Agent Demographics- General (Bank Information ) : Extended Field --> 
 	
@@ -319,9 +320,10 @@
   </field>
   
   <!-- new field -->
-  
-	<field deltaind="I" isextendedfield="Y" name="Agency_in_business_since" screen="carrier/entityGeneralDetails.html" objectcolumn="person_id" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="text" 
-	isrequired="Y" labelkey="Agency_in_business_since_label" labeldesc="Agency in business since" accesslevel="1" tabsconfigurationresourcename="Agency_in_business_since_security" mappedto="f20" datatype="D"
+  	
+  	<!-- UAT2 Bug Id - 41973 -->
+	<field deltaind="I" isextendedfield="Y" name="Agency_in_business_since" screen="carrier/entityGeneralDetails.html" objectcolumn="agency_id" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="text" 
+	isrequired="N" labelkey="Agency_in_business_since_label" labeldesc="Agency in business since" accesslevel="1" tabsconfigurationresourcename="Agency_in_business_since_security" mappedto="f20" datatype="D"
 	protectedresourceuniquename="Agency_in_business_since_security" id="Agency_in_business_since" position="#url_after#">
   </field>
   
@@ -584,11 +586,12 @@
   </field> 
   <!-- Upgrade Bug Id- 031 Self Service end --> 
   
+   <!-- commenting below code as field added by product directly in HTML - 2.10.3.8 -->
     <!-- Phase 2 UpgradeHF customization bug id : U-069-->
-  <field deltaind="I" isextendedfield="Y" name="eno_question_aa" screen="carrier/addNewInsuranceDetailForSelfService.html" objectcolumn="request_ss_id" section="addEntityRequests_freeform_contextdata_20" displaytype="radio" 
+  <!-- <field deltaind="I" isextendedfield="Y" name="eno_question_aa" screen="carrier/addNewInsuranceDetailForSelfService.html" objectcolumn="request_ss_id" section="addEntityRequests_freeform_contextdata_20" displaytype="radio" 
 isrequired="N" labelkey="eno_question_aa_label" labeldesc="Have any E &amp; O claims been made during the past five years against the agency, agency partners, officers, or any members of the staff?" accesslevel="1" tabsconfigurationresourcename="eno_question_aa_security" 
 protectedresourceuniquename="eno_question_aa_security" id="eno_question_aa" position="#addInsuranceDetailsForSelfServiceApproval_assigned_to_security_after#" mappedto="f24"> 
-  </field>
+  </field> -->
   
   <!-- START - UAT Bug 16175 - Needed specific TM names only -->
 
@@ -634,19 +637,29 @@ protectedresourceuniquename="eno_question_aa_security" id="eno_question_aa" posi
   
   <!-- UAT2 0035 & 0036 DOB and SSN make mandatory -->  
    <field deltaind="M" requiredeval="ProducerOneRule.isLicensedProducerChecked" id="agentGeneralDetailsForSelfServiceApproval_ssn_num" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" name="ssn_num" isrequired="E" labelkey="contact_ssn_label" tabsconfigurationresourcename="contact_ssn_security" protectedresourceuniquename="contact_ssn_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="entityPersonDetails_freeform_contextdata_2"/>
-	
-   <field deltaind="M" name="ispersoncontact" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" labeldesc="Contact Type" isrequired="N" labelkey="Contact Type" id="adminBrokerageDetailsStep2_ispersoncontact">
-    <event deltaind="I" id="onchange" name="onchange" actiontype="ajaxpageblocklink" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" action="refreshdob_ssn" actiontypeid="contact_ssn_security" executionsequence="0"/>
-  </field>
+	<!-- ADO 43041-start -->
+	<field deltaind="M" requiredeval="ProducerOneRule.isLicensedProducerChecked" id="agentGeneralDetailsForSelfServiceApproval_decrypted_ssn_num" name="decrypted_ssn_num" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" section="entityPersonDetails_freeform_contextdata_2" isrequired="E" labelkey="contact_ssn_label" tabsconfigurationresourcename="contact_ssn_security" protectedresourceuniquename="contact_ssn_security" />
+	<field deltaind="M" requiredeval="ProducerOneRule.isLicensedProducerChecked" id="agentGeneralDetailsForSelfServiceApproval_prdcr_cde" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" name="prdcr_cde" isrequired="E" labelkey="showdivnpn_label" tabsconfigurationresourcename="showdivnpn" protectedresourceuniquename="showdivnpn" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="entityPersonDetails_freeform_contextdata_2" />
+	<field deltaind="I" name="ispersoncontact" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" labeldesc="Contact Type" isrequired="N" labelkey="Contact Type" id="adminBrokerageDetailsStep2_ispersoncontact">
+		<event deltaind="I" id="onchange" name="onchange" actiontype="ajaxpageblocklink" screen="carrier/agentGeneralDetailsForSelfServiceApproval.html" action="refreshdob_ssn" actiontypeid="showdivnpn#contact_ssn_security" executionsequence="0">
+		</event>
+	</field>
+	<!-- ADO 43041-end -->
+
   
   <!-- UAT2 0069 Agency Demo start -->
     <field deltaind="M" isrequired="N" id="addNewBankInformation_account_owner" name="account_owner" screen="carrier/addNewBankInformation.html" section="addNewBankInformationNew1_freeform_contextdata_01" labelkey="account_owner_label" tabsconfigurationresourcename="account_owner_security" protectedresourceuniquename="account_owner_security" />
   <!-- UAT2 0069 Agency Demo end -->
   
   <!-- START - ADO 33153 - Prod Issue - Asterisk Mark - Pending E-Sign - Agency General Details -->
-  <field deltaind="I" id="agencyListPublicSubmitNInvitationEdit_agencyestablished_date" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" name="agencyestablished_date" isrequired="Y" labelkey="agencyListEdit_agency_in_business_since_label" tabsconfigurationresourcename="agencyListEdit_agencyestablisheddate_security" protectedresourceuniquename="agencyListEdit_agencyestablisheddate_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_1" />
+  <field deltaind="I" id="agencyListPublicSubmitNInvitationEdit_agencyestablished_date" screen="carrier/agencyListPublicSubmitNInvitationEdit.html" name="agencyestablished_date" isrequired="N" labelkey="agencyListEdit_agency_in_business_since_label" tabsconfigurationresourcename="agencyListEdit_agencyestablisheddate_security" protectedresourceuniquename="agencyListEdit_agencyestablisheddate_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_1" />
   <!-- END - ADO 33153 - Prod Issue - Asterisk Mark - Pending E-Sign - Agency General Details -->
 
-  
+  <!-- CR 55 - START -->
+   <field deltaind="M" id="agentGeneralDetails_e_mail_business" screen="carrier/agentGeneralDetails.html" name="e_mail_business" isrequired="Y" labelkey="email_business_field_label" tabsconfigurationresourcename="business_email_id_agent_address_security" protectedresourceuniquename="business_email_id_agent_address_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="agentGeneralDetailsResult_freeform_contextdata_4">
+    	<validation name="isBusinessEmailRequiredForPrincipal" expression="if(andCondition(isEqual(:isEmailRequiredForPrincipal,Y),andCondition(isEqual(:contacttype_code,:contactTypeCodeRequiredForOnBoarding),andCondition(isEmpty(:e_mail_business),isEqual(:carrier_tab,Agent))))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="emailEmptyErrorKey" ruleid="EntityGeneralDetailsRule.isBusinessEmailRequiredForPrincipal" executionsequence="2" />
+    	<validation name="checkValidAgencyBusinessEmail" expression="validateMultipleEmailIds(context,e_mail_business);" message="ValidEmailIdErrorKey" ruleid="EntityGeneralDetailsRule.checkValidAgencyBusinessEmail" executionsequence="4" />
+   </field>
+   <!-- CR 55 - END -->
   
  </fields>
