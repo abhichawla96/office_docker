@@ -5847,3 +5847,6 @@ ul.split-list li .freeFormListTr .freeFormListTd.labelAlign, ul.inline-blocks li
 #callReportProspect_emailBodyDiv{
 	min-height: 200px;
 }
+.kitDelivery .freeFormList.form-group{width: 100%;}
+
+.kitDelivery .freeFormListTd.labelAlign{width: 14%;}
