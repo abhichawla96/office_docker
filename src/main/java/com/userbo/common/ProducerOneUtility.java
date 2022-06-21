@@ -1,7 +1,5 @@
 package com.userbo.common;
 
-import static org.hamcrest.CoreMatchers.instanceOf;
-
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -82,6 +80,7 @@ import org.w3c.dom.ls.DOMImplementationLS;
 import org.w3c.dom.ls.LSSerializer;
 
 import com.esign.docusgindirect.valueObjects.DocuSignRequest;
+import com.esign.docusignrest.valueObjects.RestDocuSignRequest;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Rectangle;
 import com.itextpdf.text.pdf.PdfFormField;
@@ -133,7 +132,6 @@ import com.osi.nipr.TransEntitiesStatus;
 import com.osi.nipr.TransactionEntityStatus;
 import com.osi.nipr.TransactionInfo;
 import com.processor.TabsConfiguration;
-import com.userbo.TemplateBuilderBO;
 import com.userbo.compliance.LicensingConstant;
 import com.userbo.compliance.NIPRONEService;
 import com.userbo.integration.SendDocForESign;
@@ -6405,10 +6403,22 @@ public static void getCommissionScheduleAttachmentHeaderDynamic(Context ctx) thr
                 		DataUtils.populateError((Context)ctx, "effective_date", "awardEffectiveDateErrorKey");
                 		checkError=true;
                 	}
+                	if(ctx.get("awardsNRecognitionsTab_effective_date_security").equals("Y") && ctx.get("awardsNRecognitionsTab_effective_date_mandatory_security").equals("Y") && (ctx.get("effective_date") != null && !HtmlConstants.EMPTY.equals(ctx.get("effective_date")))){
+	               		 if((DateUtils.isDateBefore(ctx.get("effective_date"),DateUtils.convertDateToString(DateUtils.getTodaysDate(),"MM/dd/yyyy")))){
+	                            DataUtils.populateError((Context)ctx,"effective_date","effectiveDateGreaterThanTodayErrorKey");
+	                        } 
+	               		checkError=true;
+	               	}
                 	if(ctx.get("awardsNRecognitionsTab_expiration_date_security").equals("Y") && ctx.get("awardsNRecognitionsTab_expiration_date_mandatory_security").equals("Y") && (ctx.get("expiration_date") == null || HtmlConstants.EMPTY.equals(ctx.get("expiration_date").toString()))){
                 		DataUtils.populateError((Context)ctx, "expiration_date", "awardExpirationDateErrorKey");
                 		checkError=true;
                 	}
+                	if(ctx.get("awardsNRecognitionsTab_expiration_date_security").equals("Y") && ctx.get("awardsNRecognitionsTab_expiration_date_mandatory_security").equals("Y") && (ctx.get("expiration_date") != null && !HtmlConstants.EMPTY.equals(ctx.get("expiration_date")))){
+                		if(DateUtils.isDateBefore(ctx.get("expiration_date"),ctx.get("effective_date"))){
+                            DataUtils.populateError((Context)ctx,"expiration_date","ExpirationDateGreaterThanEffDateErrorKey");
+						 }
+	               		checkError=true;
+	               	}
                 	if(checkError)
                     	return null;
 
@@ -8702,6 +8712,33 @@ public static Object getAttachmentListForSendInvitationEmail(Context ctx) throws
 			e.printStackTrace();
 		}
 	}
+	
+	public void getSubjectLineForRest(RestDocuSignRequest restDocuSignRequest,IContext ctx)
+	{
+		try {
+			String subjectline="e-Signature";
+			logger.debug("Set subjectline:"+ctx.get("eSignSubjectLine"));
+			if(ctx.get("eSignSubjectLine")!=null)
+			{
+				subjectline=ctx.get("eSignSubjectLine").toString();
+				if(subjectline.isEmpty())
+				{
+					subjectline=getPropSubject();
+				}
+			}
+			else
+			{
+				subjectline=getPropSubject();
+			}
+			restDocuSignRequest.setSubjectline(subjectline);
+		}
+		catch(Exception e) {
+			restDocuSignRequest.setSubjectline("e-Signature");
+			logger.error("Error in setting getSubjectLineForRest eSign setting default value ='e-Signature' " + e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
 	private String getPropSubject()
 	{
 		String esignemailsubject = null;
@@ -8720,4 +8757,299 @@ public static Object getAttachmentListForSendInvitationEmail(Context ctx) throws
 		}
 	}
 	
+	public static void checkAgencyCodeStatusFromLookup(Context ctx) throws Exception{
+    	try {
+	    		
+	    		String closedProducerNumberStatus = "N",terminatedProducerNumberStatus ="N",suspendedProducerNumberStatus="N",
+	    				activeProducerNumberStatus="N",pendingProducerNumberStatus="N",pendingTerminationProducerNumberStatus="N",mergedProducerNumberStatus="N";
+	    		
+	    		if(DataUtils.getAccessType((Context)ctx,"isClosedProducerNumberStatus")!=SecurityResources.HIDE) {
+	    			closedProducerNumberStatus = "Y";
+				}
+				
+	    		
+	    		if(DataUtils.getAccessType((Context)ctx,"isShowTerminatedProducerNumberStatus")!=SecurityResources.HIDE) {
+	    			terminatedProducerNumberStatus = "Y";
+				}
+				
+	    		
+	    		if(DataUtils.getAccessType((Context)ctx,"isShowSuspendedProducerNumberStatus")!=SecurityResources.HIDE) {
+	    			suspendedProducerNumberStatus = "Y";
+				}
+				
+	    		
+	    		if(DataUtils.getAccessType((Context)ctx,"isActiveProducerNumberStatus")!=SecurityResources.HIDE) {
+	    			activeProducerNumberStatus = "Y";
+				}
+				
+	    		
+	    		if(DataUtils.getAccessType((Context)ctx,"isPendingProducerNumberStatus")!=SecurityResources.HIDE) {
+	    			pendingProducerNumberStatus = "Y";
+				}
+				
+	    		if(DataUtils.getAccessType((Context)ctx,"isShowMergedProducerNumberStatus")!=SecurityResources.HIDE) {
+	    			mergedProducerNumberStatus = "Y";
+				}
+	    		
+    			String isOnboardingWorkflowFound = ctx.get("isOnboardingWorkflowFound") != null ? ctx.get("isOnboardingWorkflowFound").toString() : "N";
+	    		
+    			if(DataUtils.getAccessType((Context)ctx,"isSaveEvent")!=SecurityResources.HIDE)
+    			{
+    				if(DataUtils.getAccessType((Context)ctx,"few_producer_status_cde_security")!=SecurityResources.HIDE)
+		    		{
+    					if(isOnboardingWorkflowFound.equalsIgnoreCase("Y"))
+    					{
+		    				ctx.put("activeProducerNumberStatus", "N");
+		    				ctx.put("pendingProducerNumberStatus", "Y");
+		    				ctx.put("closedProducerNumberStatus", "N");
+		    				ctx.put("terminatedProducerNumberStatus", "N");
+		    				ctx.put("suspendedProducerNumberStatus", "N");
+		    				ctx.put("pendingTerminationProducerNumberStatus", "N");
+		    				ctx.put("mergedProducerNumberStatus", "N");
+		    				return;
+    					}
+    					else
+    					{
+    						ctx.put("activeProducerNumberStatus", "Y");
+		    				ctx.put("pendingProducerNumberStatus", "Y");
+		    				ctx.put("closedProducerNumberStatus", "N");
+		    				ctx.put("terminatedProducerNumberStatus", "N");
+		    				ctx.put("suspendedProducerNumberStatus", "N");
+		    				ctx.put("pendingTerminationProducerNumberStatus", "N");
+		    				ctx.put("mergedProducerNumberStatus", "N");
+		    				return;
+    					}
+    					
+		    		}
+		    		
+    				if(DataUtils.getAccessType((Context)ctx,"all_producer_status_cde_security")!=SecurityResources.HIDE)
+		    		{
+		    				
+		    				ctx.put("closedProducerNumberStatus", closedProducerNumberStatus);
+		    				ctx.put("terminatedProducerNumberStatus", terminatedProducerNumberStatus);
+		    				ctx.put("suspendedProducerNumberStatus", suspendedProducerNumberStatus);
+		    				ctx.put("activeProducerNumberStatus", "Y");
+		    				ctx.put("pendingProducerNumberStatus", "Y");
+		    				ctx.put("pendingTerminationProducerNumberStatus", "N");
+		    				ctx.put("mergedProducerNumberStatus", "N");
+		    				return;
+		    		}
+    				
+    				
+    				if(DataUtils.getAccessType((Context)ctx,"isHideProdNumProbationTrue")!=SecurityResources.HIDE 
+    						&& DataUtils.getAccessType((Context)ctx,"few_producer_status_cde_security")!=SecurityResources.HIDE 
+    						&& isOnboardingWorkflowFound.equalsIgnoreCase("N"))
+		    		{
+		    				ctx.put("activeProducerNumberStatus", "Y");
+		    				ctx.put("pendingProducerNumberStatus", "N");
+		    				ctx.put("closedProducerNumberStatus", "N");
+		    				ctx.put("terminatedProducerNumberStatus", "N");
+		    				ctx.put("suspendedProducerNumberStatus", "N");
+		    				ctx.put("pendingTerminationProducerNumberStatus", "Y");
+		    				ctx.put("mergedProducerNumberStatus", "N");
+		    				return;
+    					
+		    		}
+    				else if(DataUtils.getAccessType((Context)ctx,"isHideProdNumProbationTrue")!=SecurityResources.HIDE 
+    						&& DataUtils.getAccessType((Context)ctx,"all_producer_status_cde_security")!=SecurityResources.HIDE)
+		    		{
+		    				ctx.put("activeProducerNumberStatus", "Y");
+		    				ctx.put("pendingProducerNumberStatus", "Y");
+		    				ctx.put("closedProducerNumberStatus", "N");
+		    				ctx.put("terminatedProducerNumberStatus", "N");
+		    				ctx.put("suspendedProducerNumberStatus", "N");
+		    				ctx.put("pendingTerminationProducerNumberStatus", "Y");
+		    				ctx.put("mergedProducerNumberStatus", "N");
+		    				return;
+    					
+		    		}
+		    			
+	    		}
+	    		else
+	    		{
+	    			if(DataUtils.getAccessType((Context)ctx,"isValidationClosedRequiredBeforeClosingAgencyCode")!=SecurityResources.HIDE 
+	    					&& DataUtils.getAccessType((Context)ctx,"few_producer_status_cde_security")!=SecurityResources.HIDE) 
+	    			{	
+		    				if(activeProducerNumberStatus.equalsIgnoreCase("Y")){
+		    					ctx.put("activeProducerNumberStatus", "Y");
+			    				ctx.put("pendingProducerNumberStatus", "N");
+			    				ctx.put("closedProducerNumberStatus", "Y");
+			    				ctx.put("terminatedProducerNumberStatus", "N");
+			    				ctx.put("suspendedProducerNumberStatus", "N");
+			    				ctx.put("pendingTerminationProducerNumberStatus", "Y");
+			    				ctx.put("mergedProducerNumberStatus", mergedProducerNumberStatus);
+			    				return;
+		    				}
+		    			
+		    				if(pendingProducerNumberStatus.equalsIgnoreCase("Y")){
+		    					ctx.put("activeProducerNumberStatus", "Y");
+			    				ctx.put("pendingProducerNumberStatus", "Y");
+			    				ctx.put("closedProducerNumberStatus", "N");
+			    				ctx.put("terminatedProducerNumberStatus", "N");
+			    				ctx.put("suspendedProducerNumberStatus", "N");
+			    				ctx.put("pendingTerminationProducerNumberStatus", "N");
+			    				ctx.put("mergedProducerNumberStatus", mergedProducerNumberStatus);
+			    				return;
+		    				}
+		    				
+		    				if(closedProducerNumberStatus.equalsIgnoreCase("Y")){
+		    					ctx.put("activeProducerNumberStatus", "Y");
+			    				ctx.put("pendingProducerNumberStatus", "N");
+			    				ctx.put("closedProducerNumberStatus", "Y");
+			    				ctx.put("terminatedProducerNumberStatus", "N");
+			    				ctx.put("suspendedProducerNumberStatus", "N");
+			    				ctx.put("pendingTerminationProducerNumberStatus", "Y");
+			    				ctx.put("mergedProducerNumberStatus", mergedProducerNumberStatus);
+			    				return;
+		    				}
+	    			} 
+	    			else if(DataUtils.getAccessType((Context)ctx,"isValidationClosedRequiredBeforeClosingAgencyCode")!=SecurityResources.HIDE 
+	    					&& DataUtils.getAccessType((Context)ctx,"all_producer_status_cde_security")!=SecurityResources.HIDE) 
+					{
+		    				
+	    				ctx.put("closedProducerNumberStatus", closedProducerNumberStatus);
+	    				ctx.put("terminatedProducerNumberStatus", terminatedProducerNumberStatus);
+	    				ctx.put("suspendedProducerNumberStatus", suspendedProducerNumberStatus);
+	    				ctx.put("activeProducerNumberStatus", "Y");
+	    				ctx.put("pendingProducerNumberStatus", "Y");
+	    				ctx.put("pendingTerminationProducerNumberStatus", "N");
+	    				ctx.put("mergedProducerNumberStatus", mergedProducerNumberStatus);
+	    				return;
+	    				
+					}
+	    			else if(DataUtils.getAccessType((Context)ctx,"isValidationClosedNotRequiredBeforeClosingAgencyCode")!=SecurityResources.HIDE 
+	    					&& DataUtils.getAccessType((Context)ctx,"few_producer_status_cde_security")!=SecurityResources.HIDE) 
+					{
+		    				
+	    				if(activeProducerNumberStatus.equalsIgnoreCase("Y")){
+	    					ctx.put("activeProducerNumberStatus", "Y");
+		    				ctx.put("pendingProducerNumberStatus", "N");
+		    				ctx.put("closedProducerNumberStatus", "Y");
+		    				ctx.put("terminatedProducerNumberStatus", "N");
+		    				ctx.put("suspendedProducerNumberStatus", "N");
+		    				ctx.put("pendingTerminationProducerNumberStatus", "N");
+		    				ctx.put("mergedProducerNumberStatus", "N");
+		    				return;
+	    				}
+	    			
+	    				if(pendingProducerNumberStatus.equalsIgnoreCase("Y")){
+	    					ctx.put("activeProducerNumberStatus", "Y");
+		    				ctx.put("pendingProducerNumberStatus", "Y");
+		    				ctx.put("closedProducerNumberStatus", "N");
+		    				ctx.put("terminatedProducerNumberStatus", "N");
+		    				ctx.put("suspendedProducerNumberStatus", "N");
+		    				ctx.put("pendingTerminationProducerNumberStatus", "N");
+		    				ctx.put("mergedProducerNumberStatus", "N");
+		    				return;
+	    				}
+	    				
+	    				if(closedProducerNumberStatus.equalsIgnoreCase("Y")){
+	    					ctx.put("activeProducerNumberStatus", "Y");
+		    				ctx.put("pendingProducerNumberStatus", "N");
+		    				ctx.put("closedProducerNumberStatus", "Y");
+		    				ctx.put("terminatedProducerNumberStatus", "N");
+		    				ctx.put("suspendedProducerNumberStatus", "N");
+		    				ctx.put("pendingTerminationProducerNumberStatus", "N");
+		    				ctx.put("mergedProducerNumberStatus", "N");
+		    				return;
+	    				}
+	    				
+					}
+	    			else if(DataUtils.getAccessType((Context)ctx,"isHideProdNumProbationTrue")!=SecurityResources.HIDE 
+	    					&& DataUtils.getAccessType((Context)ctx,"few_producer_status_cde_security")!=SecurityResources.HIDE
+	    					&& isOnboardingWorkflowFound.equalsIgnoreCase("N")) 
+					{
+		    				ctx.put("activeProducerNumberStatus", "Y");
+		    				ctx.put("pendingProducerNumberStatus", "N");
+		    				ctx.put("closedProducerNumberStatus", "Y");
+		    				ctx.put("terminatedProducerNumberStatus", "N");
+		    				ctx.put("suspendedProducerNumberStatus", "N");
+		    				ctx.put("pendingTerminationProducerNumberStatus", "Y");
+		    				ctx.put("mergedProducerNumberStatus", "N");
+		    				return;
+					}
+	    			else if((DataUtils.getAccessType((Context)ctx,"isValidationClosedNotRequiredBeforeClosingAgencyCode")!=SecurityResources.HIDE 
+	    					&& DataUtils.getAccessType((Context)ctx,"all_producer_status_cde_security")!=SecurityResources.HIDE)
+	    					|| (DataUtils.getAccessType((Context)ctx,"isHideProdNumProbationTrue")!=SecurityResources.HIDE 
+	    	    					&& DataUtils.getAccessType((Context)ctx,"all_producer_status_cde_security")!=SecurityResources.HIDE)) 
+					{
+	    				ctx.put("closedProducerNumberStatus", closedProducerNumberStatus);
+	    				ctx.put("terminatedProducerNumberStatus", terminatedProducerNumberStatus);
+	    				ctx.put("suspendedProducerNumberStatus", suspendedProducerNumberStatus);
+	    				ctx.put("activeProducerNumberStatus", "Y");
+	    				ctx.put("pendingProducerNumberStatus", "N");
+	    				ctx.put("pendingTerminationProducerNumberStatus", "N");
+	    				ctx.put("mergedProducerNumberStatus", "N");
+	    				return;
+	    				
+					}
+	    			
+	    			
+	    		}
+    			
+    			if(DataUtils.getAccessType((Context)ctx,"isHideProdNumProbationTrue")!=SecurityResources.HIDE 
+						&& DataUtils.getAccessType((Context)ctx,"few_producer_status_cde_security")!=SecurityResources.HIDE 
+						&& isOnboardingWorkflowFound.equalsIgnoreCase("Y"))
+	    		{
+	    				ctx.put("activeProducerNumberStatus", "N");
+	    				ctx.put("pendingProducerNumberStatus", "Y");
+	    				ctx.put("closedProducerNumberStatus", "N");
+	    				ctx.put("terminatedProducerNumberStatus", "N");
+	    				ctx.put("suspendedProducerNumberStatus", "N");
+	    				ctx.put("pendingTerminationProducerNumberStatus", "N");
+	    				ctx.put("mergedProducerNumberStatus", "N");
+	    				return;
+					
+	    		}
+    			else if(DataUtils.getAccessType((Context)ctx,"default_producer_status_cde_security")!=SecurityResources.HIDE)
+	    		{
+	    				ctx.put("activeProducerNumberStatus", "Y");
+	    				ctx.put("pendingProducerNumberStatus", "N");
+	    				ctx.put("closedProducerNumberStatus", "N");
+	    				ctx.put("terminatedProducerNumberStatus", "Y");
+	    				ctx.put("suspendedProducerNumberStatus", "N");
+	    				ctx.put("pendingTerminationProducerNumberStatus", "N");
+	    				ctx.put("mergedProducerNumberStatus", "N");
+	    				return;
+					
+	    		}
+    			
+	        } catch (Exception e) {
+	        		logger.error("Unable to populate Agency Code Status From Lookup due to error : " + e.getMessage());
+	    	}
+	    }
+	
+	public static void getContactTypesBasedOnPersonId(Context ctx) throws Exception{
+    	try {
+    		Object obj = null;
+    		if (ctx.get("person_id") == null && ctx.get("person_id_requests") != null && !HtmlConstants.EMPTY.equals(ctx.get("person_id_requests")))
+    			ctx.put("person_id", ctx.get("person_id_requests"));
+    		
+    		if(ctx.get("person_id") != null && !HtmlConstants.EMPTY.equals(ctx.get("person_id"))) {
+    			logger.debug(ctx, "In getContactTypesBasedOnPersonId Going to get value for person_id :" + ctx.get("person_id"));
+    			new SetParametersForStoredProcedures().setParametersInContext(ctx, "person_id");
+    			obj = SqlResources.getSqlMapProcessor(ctx).findByKey("SqlStmts.sqlStatementsviewgetContactTypeBasedOnPersonId", ctx);
+    			if (obj != null && obj instanceof Map) {
+    				final Map map = (Map) obj;
+    				if (map != null && map instanceof Map) {
+    					ctx.put("contacttype", map.get("contacttype").toString());
+    					logger.debug(ctx, "In getContactTypesBasedOnPersonId Going to get value for contacttype :" + map.get("contacttype").toString());
+    					new SetParametersForStoredProcedures().setParametersInContext(ctx, "contacttype");
+    					obj = SqlResources.getSqlMapProcessor(ctx).findByKey("SqlStmts.sqlStatementsviewgetContactTypeCodes", ctx);
+
+        	   			if(obj != null && obj instanceof Map){
+    	                   Map map1 = (Map)obj;
+    	                   String contacttypeCode = map1.get("contact_type_code").toString();
+    	                   logger.debug(ctx, "In getContactTypesBasedOnPersonId Going to get value for contacttypeCode :" + contacttypeCode);
+    	                   ctx.put("contact_type_code", contacttypeCode);
+        	                   
+        	            } 
+    				}
+    			}
+    		}
+	
+    	} catch (Exception e) {
+    		logger.error("Unable to get Contact Type Codes from Person table due to error : " + e.getMessage());
+		}
+	}
 }
