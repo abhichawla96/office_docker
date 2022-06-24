@@ -92,6 +92,10 @@
 	<rule deltaind="I" id="hideShowW9SectionEdit" expression="isEqual(:hideShow_w9section,Y);"/>
 	<!-- Bug-40448 W9 doc Self Service end -->
 	
+	<rule deltaind="I" id="MarketingAssistantCheck" expression="isEqualsIgnoreCase(:roles,MarketingAssistant);"></rule>
+	
+	<rule deltaind="I" id="ApproveButtonLatest" expression="andCondition(andCondition(call_rule(ProducerOneRule.isFunctionDC),call_rule(AgencyFunctionsRule.isAgencyFunctionsIDAndRequestIdNotEmpty)),call_rule(ProducerOneRule.MarketingAssistantCheck));" />
+	
 </ruleset>
 
 	<!-- Agency funtions rules - deactivate date CR -->

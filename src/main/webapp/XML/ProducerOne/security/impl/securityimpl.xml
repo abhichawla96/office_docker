@@ -708,6 +708,10 @@
 <userdefinedaccesslevel accesstype="1"/>
   </userdefined>
  
+  <userdefined deltaind="I" ruleid="ProducerOneRule.ApproveButtonLatest" executionsequence="2">
+<userdefinedaccesslevel accesstype="1"/>
+  </userdefined>
+ 
   </protectedresource>
   <!-- 39089 decline buttons agency function end -->
   
@@ -738,6 +742,10 @@
   </userdefined> -->
   
   <userdefined deltaind="I" ruleid="ProducerOneRule.hideShowApproveSalesDirector" executionsequence="1">
+<userdefinedaccesslevel accesstype="1"/>
+  </userdefined>
+  
+  <userdefined deltaind="I" ruleid="ProducerOneRule.ApproveButtonLatest" executionsequence="2">
 <userdefinedaccesslevel accesstype="1"/>
   </userdefined>
   
@@ -2709,7 +2717,7 @@
   </protectedresource>
   
   <!-- Prod Bug Id - 43412 -->
-  <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Approv/Decline button on DC agency functions page " operator="and" uniquename="agencyFunctions_selectFunctionType_decline_security">
+  <!-- <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show Approv/Decline button on DC agency functions page " operator="and" uniquename="agencyFunctions_selectFunctionType_decline_security">
    		<businessrole deltaind="I" roleid="MarketingAssistant">
         <roleaccesslevel seq="0" accesstype="1">
         </roleaccesslevel>
@@ -2721,10 +2729,10 @@
     <userdefined deltaind="I" ruleid="ProducerOneRule.isFunctionDC" executionsequence="2">
 			<userdefinedaccesslevel accesstype="1" />
 	</userdefined> 
-  </protectedresource>
+  </protectedresource> -->
   
   <!-- Prod Bug Id - 43412 -->
-  <protectedresource deltaind="I" description="Hide/Show generate letter button on agency functions page" operator="and" uniquename="agencyFunctions_selectFunctionType_approve_security" defaultaccesstype="0">
+  <!-- <protectedresource deltaind="I" description="Hide/Show generate letter button on agency functions page" operator="and" uniquename="agencyFunctions_selectFunctionType_approve_security" defaultaccesstype="0">
       <businessrole deltaind="I" roleid="MarketingAssistant">
         <roleaccesslevel seq="0" accesstype="1">
         </roleaccesslevel>
@@ -2737,5 +2745,5 @@
 			<userdefinedaccesslevel accesstype="1" />
 	</userdefined>
   </protectedresource>
-  
+   -->
 </security> 
