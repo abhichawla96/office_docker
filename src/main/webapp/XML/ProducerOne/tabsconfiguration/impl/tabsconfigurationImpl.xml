@@ -77,7 +77,9 @@
    
 <!-- Agency Setup -->
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="agency_sales_tax_certificate_nr_securityHeader" name="agency_sales_tax_certificate_nr_securityHeader"/>
- <tabsconfigurationresource deltaind="M" accesslevel="0" description="agencyestablished_date_securityHeader" name="agencyestablished_date_securityHeader"/>
+ 
+ <!-- Prod Bug 42972 -->
+ <tabsconfigurationresource deltaind="M" accesslevel="1" description="agencyestablished_date_securityHeader" name="agencyestablished_date_securityHeader"/>
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="entityGeneralDetails_years_in_business_securityHeader" name="entityGeneralDetails_years_in_business_securityHeader"/>
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="Entity_Type_General_Detail_securityHeader" name="Entity_Type_General_Detail_securityHeader"/>
 <tabsconfigurationresource deltaind="I" accesslevel="0" description="product_agency_License_Number_security" name="product_agency_License_Number_security"/>

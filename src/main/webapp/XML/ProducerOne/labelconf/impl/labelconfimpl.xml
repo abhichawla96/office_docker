@@ -265,4 +265,7 @@
   <!--  ADO - 42207 - Adding label in xml, removed from html -->
   <label deltaind="M" labelkey="agencyTerminationStep2_phone_businessaddress_label" labeldesc="Residence Phone" />
   
+  <!-- Prod Bug 42972 -->
+  <label deltaind="M" labeldesc="Agency in business since" labelkey="agencyHireDateLabel"/>
+  
 </labelconf>
