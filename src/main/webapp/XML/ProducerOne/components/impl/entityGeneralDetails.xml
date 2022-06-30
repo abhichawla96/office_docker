@@ -1643,7 +1643,7 @@
 			<actionparam deltaind="M" executionsequence="15" form="Y"
 				name="agentlicence_agent_fname" paramid="agentlicence_agent_fname4545"
 				pre="Y" remove="Y"
-				removeparams="registration_type_desc,isComingFromPersonPage,agentlicence_appointment_termination_date_to,agentlicence_appointment_termination_date_from,agentlicence_appointment_effective_date_to,agentlicence_appointment_effective_date_from,agent_lic_authorised_status_id,agentappoint_auth_reason_id,agentprocessing_status_id,agent_lic_company_id,agent_auth_state_id,agentlicence_license_exp_date_to,agentlicence_license_exp_date_from,agentlicence_license_issue_date_to,agentlicence_license_issue_date_from,agent_license_reason_id,agent_lic_state_id,agentlicence_license_num,agentlicence_System_Code,agentlicence_npn,agentlicence_agent_ssn_num,agentlicenceagentlname,agentlicence_agent_fname"
+				removeparams="isComingFromPersonPage,agentlicence_appointment_termination_date_to,agentlicence_appointment_termination_date_from,agentlicence_appointment_effective_date_to,agentlicence_appointment_effective_date_from,agent_lic_authorised_status_id,agentappoint_auth_reason_id,agentprocessing_status_id,agent_lic_company_id,agent_auth_state_id,agentlicence_license_exp_date_to,agentlicence_license_exp_date_from,agentlicence_license_issue_date_to,agentlicence_license_issue_date_from,agent_license_reason_id,agent_lic_state_id,agentlicence_license_num,agentlicence_System_Code,agentlicence_npn,agentlicence_agent_ssn_num,agentlicenceagentlname,agentlicence_agent_fname"
 				session="Y" />
 				<!-- PROD Issue Change Ends  -->
 			<actionparam executionsequence="14" form="Y"
@@ -2116,7 +2116,7 @@
 				form="Y" name="agency_location_other" paramid="agency_location_other" post="Y" 
 				/> -->
 				<!-- Prod Bug 42972 -->
-				<workflow deltaind="I" name="view23" seq="23">
+				<workflow deltaind="I" eval="ProducerOneRule.isRegistrationTypeOtherThanProducerRegistration" name="view23" seq="23">
 				<databaseoperation executionsequence="0" metaobject="tbl_agencyappointmentrequest" name="getAgencyEstablished_date" operation="3"
 					sqlstmt="Select convert(varchar, agencyestablished_date, 1) agencyestablished_date from tbl_agencyappointmentrequest where aar_requestid=#aar_requestid#"/>
 			</workflow>
