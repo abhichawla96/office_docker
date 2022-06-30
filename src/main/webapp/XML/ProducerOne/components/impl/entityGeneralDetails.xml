@@ -2115,7 +2115,12 @@
 			<!-- <actionparam executionsequence="2" eval="ProducerOneRule.isAgencyLocationNotOther" 
 				form="Y" name="agency_location_other" paramid="agency_location_other" post="Y" 
 				/> -->
-
+				<!-- Prod Bug 42972 -->
+				<workflow deltaind="I" name="view23" seq="23">
+				<databaseoperation executionsequence="0" metaobject="tbl_agencyappointmentrequest" name="getAgencyEstablished_date" operation="3"
+					sqlstmt="Select convert(varchar, agencyestablished_date, 1) agencyestablished_date from tbl_agencyappointmentrequest where aar_requestid=#aar_requestid#"/>
+			</workflow>
+			 
 		</action>
 		<action name="addCorporationPartnershipDetails">
 			<actionparam eval="ProducerOneRule.isInetErrorListEmpty"
