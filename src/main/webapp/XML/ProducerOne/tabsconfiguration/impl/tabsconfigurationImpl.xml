@@ -18,7 +18,8 @@
  <!-- Agency Onboarding - Send Invitation  -->
 
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="invitationStep1_commission_type_security" name="invitationStep1_commission_type_security"/>
- <tabsconfigurationresource deltaind="M" accesslevel="0" description="invitationStep1_entity_type_general_Detail_security" name="invitationStep1_entity_type_general_Detail_security"/>
+<!-- commented for phase 3 req. 46021 -->
+ <!-- <tabsconfigurationresource deltaind="M" accesslevel="0" description="invitationStep1_entity_type_general_Detail_security" name="invitationStep1_entity_type_general_Detail_security"/> -->
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="invitationStep1_any_rollover_potential_security" name="invitationStep1_any_rollover_potential_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="invitationStep1_commission_to_be_paid_security" name="invitationStep1_commission_to_be_paid_security"/>
   
