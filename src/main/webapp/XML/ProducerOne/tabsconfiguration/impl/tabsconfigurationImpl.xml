@@ -754,7 +754,8 @@
 <!-- UAT Bug -002 end -->
 
 <!-- UAT2 Bug 17971 add/update contact email field start -->
-<tabsconfigurationresource deltaind="M" accesslevel="0" description="email_id_business_agent_ss_security" name="email_id_business_agent_ss_security"/>
+<!-- UAT2 Bug 43047 add/update contact email field -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="email_id_business_agent_ss_security" name="email_id_business_agent_ss_security"/>
 <!-- UAT2 Bug 17971 add/update contact email field end -->
 
 <!-- UAT2 Bug 17971 update agency location email field start -->
