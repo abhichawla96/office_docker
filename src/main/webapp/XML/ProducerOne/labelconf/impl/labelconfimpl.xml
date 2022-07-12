@@ -319,5 +319,8 @@
  <!-- Phase 3- Update Statement Summary -->
 <label deltaind="I" labelkey="clientFullName" labeldesc="BUILDERS MUTUAL INSURANCE COMPANY"/>
   
+<!-- Phase 3-Bug ID- 46417- Cont Commission Reports -->
+ <label  deltaind="M" labeldesc="Contingency Commission" labelkey="ccbTablabel"/> 
+
   
 </labelconf>
