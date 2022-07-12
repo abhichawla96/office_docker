@@ -954,6 +954,23 @@
 	<!-- UAT2 Bug Id - 27509 -->
 	<tabsconfigurationresource deltaind="M" accesslevel="1" description="entityCyberLiabilityExpirationListing_security" name="entityCyberLiabilityExpirationListing_security"/>
 	
+<!-- Phase 3-Bug ID- 46418- Cont Reports -->
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBReports_agentprofit_sharingSchedule_security" name="CCBReports_agentprofit_sharingSchedule_security"/> 
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBReports_agentprofit_ProfileReport_security" name="CCBReports_agentprofit_ProfileReport_security"/> 
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBReports_agentprofit_includedBuyCell_security" name="CCBReports_agentprofit_includedBuyCell_security"/> 
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBReports_agentGroup_security" name="CCBReports_agentGroup_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBreport_agentcontigentCommission_security" name="CCBreport_agentcontigentCommission_security"/>  
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBreport_agentcommission_security" name="CCBreport_agentcommission_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBreport_agentcommissionLoss_security" name="CCBreport_agentcommissionLoss_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBreport_agentcommissionLossDetail_security" name="CCBreport_agentcommissionLossDetail_security"/>
+ <tabsconfigurationresource deltaind="M"  accesslevel="0" description="Hide/Show CCBReports_agentcontigent_reconciliation_security" name="CCBReports_agentcontigent_reconciliation_security"/> 
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBReports_agentcontigent_CCBEligible_security" name="CCBReports_agentcontigent_CCBEligible_security"/>  
+ <tabsconfigurationresource deltaind="M" accesslevel="0"  description="Hide/Show CCBreport_agentcontigent_Commission_security" name="CCBreport_agentcontigent_Commission_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBreport_agentcontigent_adjustment_security" name="CCBreport_agentcontigent_adjustment_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBReports_showAgencyProductionAndExperienceReport" name="CCBReports_showAgencyProductionAndExperienceReport"/>  
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBreport_agentcontigent_Profitsharing_security" name="CCBreport_agentcontigent_Profitsharing_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBReports_agentcontigent_IncuredLoss_security" name="CCBReports_agentcontigent_IncuredLoss_security"/> 
+
 	
 
 </tabsconfiguration>
