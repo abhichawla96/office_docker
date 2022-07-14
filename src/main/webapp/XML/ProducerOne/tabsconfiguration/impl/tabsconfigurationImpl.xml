@@ -702,7 +702,7 @@
 <!-- <tabsconfigurationresource deltaind="M" accesslevel="0" description="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security" name="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security"/> -->
 
 <!-- Phase 2- Bug Id- P2-097- Add Bank Information- Account Type column -->
-<tabsconfigurationresource deltaind="M" accesslevel="0" description="bankInformationForSelfServiceApproval_account_type_checking_saving_security" name="bankInformationForSelfServiceApproval_account_type_checking_saving_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="bankInformationForSelfServiceApproval_account_type_checking_saving_security" name="bankInformationForSelfServiceApproval_account_type_checking_saving_security"/>
 
 <!-- Phase 2- Bug id-P2-028  ‘Other Notes/Questions to be Asked’ & ‘Result of Call’ sections display -->
 <tabsconfigurationresource deltaind="I" accesslevel="1" description="questions_to_be_tasked_security" name="questions_to_be_tasked_security"/>
@@ -816,4 +816,9 @@
 	
 	<!-- SS-For showing E&O claim Y/N option added by product in 2.10.3.8 -->
 	<tabsconfigurationresource deltaind="M" accesslevel="1" name="docInsuranceDetail_ss_eo_claims_security" description="Hide/Show of agency drop down in docInsuranceDetail_ss_comments_req_security for SS" />
+	
+	<!-- CR0065 - START -->
+	<tabsconfigurationresource name="bankInformationForSelfServiceApproval_re_enter_bank_account_security" accesslevel="1" description="Hide/Show re_enter_bank_account on bankInformationForSelfServiceApproval" />
+	<tabsconfigurationresource accesslevel="1" description="bankInformationForSelfServiceApproval_bank_account_name_security" name="bankInformationForSelfServiceApproval_bank_account_name_security"/>
+	<!-- CR0065 - END -->
 </tabsconfiguration>
