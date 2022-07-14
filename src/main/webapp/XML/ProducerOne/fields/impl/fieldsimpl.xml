@@ -642,6 +642,6 @@ protectedresourceuniquename="eno_question_aa_security" id="eno_question_aa" posi
    <!-- CR 55 - END -->
    
    <!-- CR0065 - START -->
-   <field id="bankInformationForSelfServiceApproval_bank_account_name" screen="carrier/bankInformationForSelfServiceApproval.html" name="bank_account_name" isrequired="Y" labelkey="ss_bank_account_name_label" tabsconfigurationresourcename="bankInformationForSelfServiceApproval_bank_account_name_security" protectedresourceuniquename="bankInformationForSelfServiceApproval_bank_account_name_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="bankInformationForSelfServiceApproval_freeform_contextdata_03" />
+   <field deltaind="M" id="bankInformationForSelfServiceApproval_bank_account_name" screen="carrier/bankInformationForSelfServiceApproval.html" name="bank_account_name" isrequired="Y" labelkey="ss_bank_account_name_label" tabsconfigurationresourcename="bankInformationForSelfServiceApproval_bank_account_name_security" protectedresourceuniquename="bankInformationForSelfServiceApproval_bank_account_name_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="bankInformationForSelfServiceApproval_freeform_contextdata_03" />
   <!-- CR0065 - END -->
  </fields>
