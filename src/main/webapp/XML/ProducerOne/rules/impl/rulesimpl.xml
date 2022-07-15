@@ -7,6 +7,11 @@
 
 
 		<rule deltaind="I" id="isCBIAYesNo" expression="isEqual(:cbia_designation,Y);"></rule>
+		
+	<!-- Phase-3-UAT bug- 46677 -->
+   <rule deltaind="I" id="hidemodifymarketinggroup" expression="andCondition(isEqual(:modifbutton,Y),isEqualsIgnoreCase(:roles,MarketingGroup));"></rule>
+    <rule deltaind="I" id="ShowhidemodifybtnCaMa" expression="orCondition(isEqualsIgnoreCase(:roles,CarrierAdmin),isEqualsIgnoreCase(:roles,MarketingAssistant));"></rule>
+   
 
 		<!-- Phase 3- Agent role -->
 <rule deltaind="I" id="getAgentChecked" expression="isGreaterThan(getBeanProperty(executeDBOperation(context,a,3,SqlStmts.sqlStatementsviewgetAgentChecked),agentChecked),0);" />
