@@ -3365,21 +3365,13 @@
  </businessrole>	
 </protectedresource>
 
-<!-- Phase 3- UAT Bug- 46677 -->
+
  
- <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show modify button on agent page" operator="OR" uniquename="contact_modify_security">
- <businessrole deltaind="D" roleid="CarrierAdmin">
-      <roleaccesslevel accesstype="1"/>
-    </businessrole>
-     <businessrole  deltaind="D" roleid="MarketingAssistant">
-      <roleaccesslevel accesstype="1"/>
-    </businessrole> 
- <userdefined deltaind="I" executionsequence="5" ruleid="ProducerOneRule.hidemodifymarketinggroup">
-      <userdefinedaccesslevel accesstype="1"/>
-  	</userdefined>
-  	 <userdefined deltaind="I" executionsequence="6" ruleid="ProducerOneRule.ShowhidemodifybtnCaMa">
-      <userdefinedaccesslevel accesstype="1"/>
-  	</userdefined>
+<protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show modify button on agent page" operator="OR" uniquename="contact_modify_security">
+<businessrole deltaind="I" roleid="MarketingGroup">
+<roleaccesslevel accesstype="1">
+</roleaccesslevel>
+</businessrole>
 </protectedresource>
 
 <protectedresource  deltaind="M" description="Hide/Show add new button" uniquename="isShowDeleteLinkOnProducerNumberList">
