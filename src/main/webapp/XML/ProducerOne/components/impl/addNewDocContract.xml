@@ -9,7 +9,13 @@
 		 	 <email deltaind="D" attachmentcontent="primaryAttachmentContent" eval="addNewDocContractRule.isPrimaryAttachmentContentNotEmpty" eventname="sendContractToAgent" executionsequence="2" ischeckfortemplates="N" mailto="primaryMailTo" name="sendToPrimaryAgent" objectid="agency_id" objecttype="Other"/>
 			<email deltaind="D" attachmentcontent="secondaryAttachmentContent" eval="addNewDocContractRule.isSecondaryAttachmentContentNotEmpty" eventname="sendContractToAgent" executionsequence="3" ischeckfortemplates="N" mailto="secondaryMailTo" name="sendToSecondaryAgent" objectid="agency_id" objecttype="Other"/> 
 		 </workflow>
-    </action>  		     
+    </action>
+    
+    <action name="view" deltaind="M">
+		<actionparam val="1" paramid="contract_type_id" deltaind="I" post="N" remove="N" form="Y" evalute="N" viewparam="Y" ismenuparam="N" isexecuteonsuccess="N" session="N" pre="Y" name="contract_type_id" seq="0" executionsequence="0"/>
+		<actionparam deltaind="I" executionsequence="1" name="contract_id" paramid="contract_id" val="null" viewparam="Y"/>
+	</action>
+	
   </component>
 </projectcomponents>
   

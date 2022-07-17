@@ -80,6 +80,15 @@
 	<rule deltaind="I" id="hideShowW9Section" expression="isEqual(:hideShow_w9section,Y);"/>
 	<rule deltaind="I" id="hideShowW9SectionSalesSupportRequests" expression="isEqualsIgnoreCase(:roles,MarketingAssistant);"></rule>
 	<!-- END - Self Service - Upload W9 Show/Hide -->
+	
+	<!-- Bug-40448 W9 doc Self Service start -->
+	<rule deltaind="I" id="hideShowW9SectionEdit" expression="isEqual(:hideShow_w9section,Y);"/>
+	<!-- Bug-40448 W9 doc Self Service end -->
+	
+	<rule deltaind="I" id="MarketingAssistantCheck" expression="isEqualsIgnoreCase(:roles,MarketingAssistant);"></rule>
+	
+	<rule deltaind="I" id="ApproveButtonLatest" expression="andCondition(andCondition(call_rule(ProducerOneRule.isFunctionDC),call_rule(AgencyFunctionsRule.isAgencyFunctionsIDAndRequestIdNotEmpty)),call_rule(ProducerOneRule.MarketingAssistantCheck));" />
+	
 </ruleset>
 
 	<!-- Agency funtions rules - deactivate date CR -->

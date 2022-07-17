@@ -322,5 +322,21 @@
 <!-- Phase 3-Bug ID- 46417- Cont Commission Reports -->
  <label  deltaind="M" labeldesc="Contingency Commission" labelkey="ccbTablabel"/> 
 
+   <!-- UAT2 Bug Id - 007 Agency Demo Market Info label change start -->
+  
+   <!--<label deltaind="M" labeldesc="Premium Volume and Production Information" labelkey="premium_volume_commitment_to_sample_label"/>
+   <label deltaind="M" labeldesc="Annual Premium Volume" labelkey="premium_volume_monthly_premium_label"/>
+   <label deltaind="M" labeldesc="Monthly Application Written" labelkey="premium_volume_yearly_premium_label"/>
+   <label deltaind="M" labeldesc="Annual Application Written" labelkey="premium_volume_next3year_premium_label"/> -->
+  
+  <!-- UAT2 Bug Id - 007 Agency Demo Market Info label change end --> 
+  
+  <label deltaind="I" labeldesc="FEIN/TaxID#" labelkey="feinFieldLabel1"/>
+  
+  <!--  ADO - 42207 - Adding label in xml, removed from html -->
+  <label deltaind="M" labelkey="agencyTerminationStep2_phone_businessaddress_label" labeldesc="Residence Phone" />
+  
+  <!-- Prod Bug 42972 -->
+  <label deltaind="M" labeldesc="Agency in business since" labelkey="agencyHireDateLabel"/>
   
 </labelconf>

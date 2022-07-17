@@ -12,7 +12,7 @@
 <!-- Scripts -->
 <script type="text/javascript" src="js/all_files.js" />
 </head>
-<body id="divComplete"  onload="javascript:setGetMultiCheckboxValues('contract_Template_Type_code','ajax_field_selected_producer_number_ids','set');showPopUpList('popupworkflowPopup','workflowPopup');setGetMultiCheckboxValues('ajax_field_person_id','ajax_field_personids_csv','set');checkSelectAllCheckBoxOnLoad('ajax_field_select_all','person_id_');setGetMultiCheckboxValues('person_user_detail_id','ajax_field_personUserDetailsId_csv','set');">
+<body id="divComplete"  onload="javascript:setGetMultiCheckboxValues('contract_Template_Type_code','ajax_field_selected_producer_number_ids','set');showPopUpList('popupworkflowPopup','workflowPopup');setGetMultiCheckboxValues('ajax_field_person_id','ajax_field_personids_csv','set');checkSelectAllCheckBoxOnLoad('ajax_field_select_all','person_id_');setGetMultiCheckboxValues('person_user_detail_id','ajax_field_personUserDetailsId_csv','set');checkSelectAllCheckBoxOnLoad('ajax_field_select_all_person_user','person_user_detail_id_');">
 	<form enctype="multipart/form-data">
 		<div id="progressBarDiv" />
 		<div id="cover"></div>
@@ -432,8 +432,8 @@
 																														Status</td>
 																													<td id="block_field_e_mail"
 																														class="HeaderStyle"><span id="email_businessaddress_label">Business Email</span></td>
-																												<!-- BMIC Specific-->	<td id="block_field_phone"
-																														class="HeaderStyle">Residence Phone</td>
+																												<td id="block_field_phone"
+																														class="HeaderStyle"><span id="agencyTerminationStep2_phone_businessaddress_label">Business Phone</span></td>
 																													<td id="block_field_extn"
 																														class="HeaderStyle">Extn</td>
 																												</tr>
@@ -585,7 +585,7 @@
 																													id="agencyTerminationStep2_list_header_1_3">
 																													<td class="HeaderStyle" width="3%" >
 																														<span id="block_field_person_user_detail_id" class="nonMandatory">
-																															<input type="checkbox" name="select_all_person_user" id="ajax_field_select_all_person_user" onclick="javascript:selectAllListItems('ajax_field_select_all_person_user','ajax_field_person_user_detail_id',this);" /> 
+																															<input type="checkbox" name="select_all_person_user" id="ajax_field_select_all_person_user" onclick="javascript:selectAllPersonUsers('');" /> 
 																														</span>
 																													</td>
 																													<td id="block_field_name"
@@ -609,7 +609,7 @@
 																													<td id="block_field_person_user_detail_id">
 																														<span id="block_field_person_user_detail_id">
 																															<input type="checkbox" id="ajax_field_person_user_detail_id" name="person_user_detail_id" 
-																																onclick="javascript:setGetMultiCheckboxValues('person_user_detail_id','ajax_field_personUserDetailsId_csv','get');"/>
+																																onclick="javascript:setGetMultiCheckboxValues('person_user_detail_id','ajax_field_personUserDetailsId_csv','get');selectAllPersonUsers(this);"/>
 																																
 																														</span>
 																													</td>

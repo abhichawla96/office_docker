@@ -42,6 +42,10 @@
 	<rule deltaind="I" id="isPYEvalChanged" expression="isEqual(:is_PYEval_changed,Y);" obj="ruleobjs.ProducerOneRule" method="isPYEvalChanged" />
 	<rule deltaind="I" id="isLossAmountChanged" expression="isEqual(:is_LossAmount_changed,Y);" obj="ruleobjs.ProducerOneRule" method="isLossAmountChanged" />
 		
+		<!-- 39089 decline and approve buttons deactivate contact start --> 
+		<rule deltaind="I" id="hideShowApproveSalesSupportDC" expression="andCondition(isEqual(:selectFunctionType_code,functionDC),isEqualsIgnoreCase(:roles,MarketingAssistant));"></rule>
+		<rule deltaind="I" id="hideShowApproveSalesDirector" expression="isEqualsIgnoreCase(:roles,SalesDirector);"></rule>
+		<!-- 39089 decline and approve buttons deactivate contact end -->
 		
 	</ruleset>
 </evalrules>

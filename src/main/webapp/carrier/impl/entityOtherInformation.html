@@ -11,7 +11,7 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="js/all_files.js" />
   </head>
-  <body onload="findAgencyPremiumVolumeTotal('monthly_premium','monthly_premium');findAgencyPremiumVolumeTotal('yearly_premium','yearly_premium');findAgencyPremiumVolumeTotal('next3year_premium','next3year_premium');findAgencyPremiumVolumeTotal('monthly_application_written','monthly_application_written');findAgencyPremiumVolumeTotal('annual_application_written','annual_application_written');calculateTotalNPercentage();showReasonOtherDiv();assignCarrierIdDesc();loadEntityOtherInformation();setGetMultiCheckboxValues('ajax_field_foreign_language_id','ajax_field_foreign_languages','set');setGetMultiCheckboxValues('ajax_field_current_advertising_method_id','ajax_field_current_advertising_methods_desc','set');setGetMultiCheckboxValues('ajax_field_primary_company_usage_id','ajax_field_primary_company_usage_desc','set');javascript:setGetRadioButtonsFromRadioGroup('kit_delivery_id','ajax_field_kit_delivery','set');setGetMultiCheckboxValues('ajax_field_market_contract_states_id','ajax_field_market_contract_states','set');setGetMultiCheckboxValues('ajax_field_market_contract_company_id','ajax_field_market_contract_company','set');setGetMultiCheckboxValues('ajax_field_market_contract_lob_id','ajax_field_market_contract_lob','set');">
+  <body onload="findAgencyPremiumVolumeTotalFloat('monthly_premium','monthly_premium');findAgencyPremiumVolumeTotalFloat('yearly_premium','yearly_premium');findAgencyPremiumVolumeTotalFloat('next3year_premium','next3year_premium');findAgencyPremiumVolumeTotal('monthly_application_written','monthly_application_written');findAgencyPremiumVolumeTotal('annual_application_written','annual_application_written');calculateTotalNPercentage();showReasonOtherDiv();assignCarrierIdDesc();loadEntityOtherInformation();setGetMultiCheckboxValues('ajax_field_foreign_language_id','ajax_field_foreign_languages','set');setGetMultiCheckboxValues('ajax_field_current_advertising_method_id','ajax_field_current_advertising_methods_desc','set');setGetMultiCheckboxValues('ajax_field_primary_company_usage_id','ajax_field_primary_company_usage_desc','set');javascript:setGetRadioButtonsFromRadioGroup('kit_delivery_id','ajax_field_kit_delivery','set');setGetMultiCheckboxValues('ajax_field_market_contract_states_id','ajax_field_market_contract_states','set');setGetMultiCheckboxValues('ajax_field_market_contract_company_id','ajax_field_market_contract_company','set');setGetMultiCheckboxValues('ajax_field_market_contract_lob_id','ajax_field_market_contract_lob','set');">
     <form>
       <div id="cover" ></div>
       <div id="contextLinks" ></div>
@@ -190,15 +190,13 @@
 				                                <div class="freeFormListTr">
 				                                  <div class="freeFormListTd labelAlign">
 				                                  	<div class="freeFormLabelWidth">
-				                                  	<!-- Customization to configuration changes -->
-				                                   <span id="marketinfo_total_written_premium_previous_year_end_label">Agency's Total P&C Written Premium Previous Year End</span> :
+				                                  		<span id="marketinfo_total_written_premium_previous_year_end_label">Agency's Total P&C Written Premium Previous Year End</span> :
 				                                  	</div>
 				                                  </div>
 				                                  <div class="freeFormListTd valignTop">
 				                                    <input name="total_written_premium_previous_year_end" 
 													fullid="marketinfo_freeform_contextdata_1(market_information_security.market_information_label).marketinfo_total_written_premium_previous_year_end_security.marketinfo_total_written_premium_previous_year_end_label.total_written_premium_previous_year_end"
-													type="text" id="ajax_field_total_written_premium_previous_year_end" maxlength="15" class="form-control" 
-				                                    onkeyup="checkNumericValue(this,event);" onkeypress="checkNumericValue(this,event);" />
+													type="text" id="ajax_field_total_written_premium_previous_year_end" maxlength="15" class="form-control" />
 				                                  </div>
 				                                </div>
 				                              </div>
@@ -377,19 +375,19 @@
                                 <td id="premium_volume_monthly_premium_security">
                                 	<span id="block_field_monthly_premium">
                                   		<input type="text" id="monthly_premium" name="monthly_premium" maxlength="5" class="monthly_premium"
-                                  			onkeyup="applyNumericAmountFormat(this);checkNumericValue(this,event);findAgencyPremiumVolumeTotal('monthly_premium','monthly_premium');" onkeypress="applyNumericAmountFormat(this);checkNumericValue(this,event);findAgencyPremiumVolumeTotal('monthly_premium','monthly_premium');" />
+                                  			onkeyup="findAgencyPremiumVolumeTotalFloat('monthly_premium','monthly_premium');" onkeypress="findAgencyPremiumVolumeTotalFloat('monthly_premium','monthly_premium');" />
                                   	</span>
                                 </td>
                                 <td id="premium_volume_yearly_premium_security">
                                 	<span id="block_field_yearly_premium">
                                   		<input type="text" id="yearly_premium" name="yearly_premium" maxlength="11" class="yearly_premium"
-                                  			onkeyup="applyNumericAmountFormat(this);checkNumericValue(this,event);findAgencyPremiumVolumeTotal('yearly_premium','yearly_premium');" onkeypress="checkNumericValue(this,event);loadEntityOtherInformation();findAgencyPremiumVolumeTotal('yearly_premium','yearly_premium');" />
+                                  			onkeyup="findAgencyPremiumVolumeTotalFloat('yearly_premium','yearly_premium');" onkeypress="findAgencyPremiumVolumeTotalFloat('yearly_premium','yearly_premium');" />
                                   	</span>
                                 </td>
                                 <td id="premium_volume_next3year_premium_security">
                                 	<span id="block_field_next3year_premium">
 	                                	<input type="text" id="next3year_premium" name="next3year_premium" maxlength="15" class="next3year_premium"
-	                                		onkeyup="applyNumericAmountFormat(this);checkNumericValue(this,event);findAgencyPremiumVolumeTotal('next3year_premium','next3year_premium');" onkeypress="applyNumericAmountFormat(this);checkNumericValue(this,event);findAgencyPremiumVolumeTotal('next3year_premium','next3year_premium');"/>
+	                                		onkeyup="findAgencyPremiumVolumeTotalFloat('next3year_premium','next3year_premium');" onkeypress="findAgencyPremiumVolumeTotalFloat('next3year_premium','next3year_premium');"/>
 	                                </span>
                                 </td>
                                 <td id="entityOtherInformation_monthly_application_written_security">
@@ -1080,12 +1078,12 @@
                                 </td>
                                 <td class="add-cell" id="top_companies_written_premium_security">
                                 	<span id="block_field_PY_written_premium">
-                                  		<input type="text" class="form-control-grid" maxlength="15" name="PY_written_premium" id="ajax_field_PY_written_premium" onkeyup="checkNumericValueLossRatio(this,event);applyNumericAmountFormat(this);" onkeypress="checkNumericValueLossRatio(this,event);applyNumericAmountFormat(this);" />
+                                  		<input type="text" class="form-control-grid" maxlength="15" name="PY_written_premium" id="ajax_field_PY_written_premium" />
                                   	</span>
                                 </td>
                                 <td class="add-cell" id="top_companies_class1volume_security">
                                 	<span id="block_field_class1volume">
-                                  		<input type="text" maxlength="15" class="form-control-grid" name="class1volume" id="ajax_field_class1volume" onkeyup="checkNumericValue(this,event);loadEntityOtherInformation();" onkeypress="checkNumericValue(this,event);loadEntityOtherInformation();" />
+                                  		<input type="text" maxlength="15" class="form-control-grid" name="class1volume" id="ajax_field_class1volume" />
                                   	</span>
                                 </td>
                                 <td class="add-cell" id="top_companies_loss_ratio_security" nowrap="nowrap">
@@ -1754,7 +1752,7 @@
                                 	<span id="block_field_annual_premium_volume">
                                   <span id="isRowEditable">
                                     <span id="block_field_annual_premium_volume">
-                                      <input type="text" maxlength="15" class="form-control-grid" name="annual_premium_volume" tabindex="51" style="margin:0px" id="ajax_field_annual_premium_volume" onkeyup="applyNumericAmountFormat(this);checkNumericValue(this,event);" onkeypress="applyNumericAmountFormat(this);checkNumericValue(this,event);" />
+                                      <input type="text" maxlength="15" class="form-control-grid" name="annual_premium_volume" tabindex="51" style="margin:0px" id="ajax_field_annual_premium_volume" />
                                     </span>
                                   </span>
                                   <span id="isRowNotEditable">
@@ -1884,7 +1882,7 @@
                                   </td>
                                   <td class="add-cell" id="companiesTerminated_block_annual_premium_security">
                                   	<span id="block_field_annual_premium_volume">
-                                    	<input type="text" class="form-control-grid" maxlength="15" name="annual_premium_volume" id="ajax_field_annual_premium_volume" onkeyup="loadMarketInfoDetail(this);checkNumericValue(this,event);" onkeypress="loadMarketInfoDetail(this);checkNumericValue(this,event);" />
+                                    	<input type="text" class="form-control-grid" maxlength="15" name="annual_premium_volume" id="ajax_field_annual_premium_volume" />
                                     </span>
                                   </td>
                                   <td class="add-cell" id="companiesTerminated_block_date_closed_security">
@@ -2328,7 +2326,7 @@
                               	<span id="block_field_volume">
                                 <span id="isRowEditable">
                                   <span id="block_field_volume">
-                                    <input type="text" name="volume" class="form-control-grid" maxlength="15" tabindex="64" id="ajax_field_volume" style="margin:0px" onkeyup="applyNumericAmountFormat(this);checkNumericValue(this,event);" onkeypress="applyNumericAmountFormat(this);checkNumericValue(this,event);" />
+                                    <input type="text" name="volume" class="form-control-grid" maxlength="15" tabindex="64" id="ajax_field_volume" style="margin:0px" />
                                   </span>
                                 </span>
                                 <span id="isRowNotEditable">
@@ -2405,7 +2403,7 @@
                                 </td>
                                 <td id="MA_block_volume_security" class="add-cell">
                                 	<span id="block_field_volume">
-	                                  <input type="text" name="volume" maxlength="15" class="form-control-grid" id="ajax_field_volume" onkeyup="loadMarketInfoDetail(this);checkNumericValue(this,event);" onkeypress="loadMarketInfoDetail(this);checkNumericValue(this,event);" />
+	                                  <input type="text" name="volume" maxlength="15" class="form-control-grid" id="ajax_field_volume" />
 	                                  </span>
                                 </td>
                                 <td align="right" class="add-cell" colspan="2" style="padding-right:6px !important">
@@ -3828,7 +3826,7 @@
 							</section>
 							<section class="free-form" id="interest_in_any_other_business_outside_security">
 								<div class="text-heading">
-									<span id="interest_in_other_business_label">Explain any Intersest in any other business or occupation outlside of this agency ?</span>?
+									<span id="interest_in_other_business_label">Explain any Intersest in any other business or occupation outlside of this agency ?</span>
 								</div>
 								<div class="paddingLeft0 clear-both">
 									<textarea name="interest_in_other_business" 
@@ -3839,7 +3837,7 @@
 							</section>
 							<section class="interest_for_appointment_security">
 								<div class="text-heading">
-									<span id="interest_for_appointment_label">Why are you interested in State Auto appointment?</span>?
+									<span id="interest_for_appointment_label">Why are you interested in State Auto appointment?</span>
 								</div>
 								<div class="paddingLeft0 clear-both">
 									<textarea name="interest_for_appointment" 

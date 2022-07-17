@@ -9423,4 +9423,6 @@ tfoot tr th.add-cell, tfoot tr th{padding-left: 3px; padding-right: 3px}
        max-width: 220px;
        word-wrap: break-word;
 }
-
+#mix_of_business_security .freeFormLabelWidth {
+    width: 300px;
+}

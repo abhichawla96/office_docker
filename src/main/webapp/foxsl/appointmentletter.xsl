@@ -106,7 +106,7 @@
 								<fo:table-row>
 									<fo:table-cell>
 										<fo:block font-size="11px" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-										<fo:inline padding-left="15mm"><xsl:value-of select="concat(normalize-space(response/Agent_City), ',', ' ', normalize-space(response/state_code), ' ', normalize-space(response/Agent_Zip))"/>
+										<fo:inline padding-left="15mm"><xsl:value-of select="normalize-space(response/agencyCityStateZip)"/>
 										</fo:inline></fo:block>
 									</fo:table-cell>
 								</fo:table-row>

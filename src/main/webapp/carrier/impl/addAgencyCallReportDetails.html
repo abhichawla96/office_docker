@@ -548,7 +548,8 @@
 	
 											<div
 												id="addNewAgencyCallReportsAddressInfo_security">
-												<ul class="inlineBlock" id="locationAddressDiv">
+												<div id="locationAddressDiv">
+												<ul class="inlineBlock">
 													<li class="inlineBlock_2_fix" id="call_physical_address_security">
 														<div class="freeFormList form-group">
 															<div class="freeFormListTr">
@@ -653,6 +654,7 @@
 													</li>
 													
 												</ul>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -1990,7 +1992,7 @@
 										</tr>
 										<tr id="addActionPlan_list_header_listfreeform_1">
 											<td class="HeaderStyle" width="29%" id="addActionPlan_action_plan_name_security">
-												<span id="block_field_action_plan_name">
+												<span id="block_field_action_plan_name_desc">
 													<span id="addActionPlan_action_plan_name_label">Action Plan</span>
 												</span></td>
 											<td class="HeaderStyle" width="25%" id="addActionPlan_action_items_security">
@@ -2007,6 +2009,7 @@
 												<span id="block_field_Due_date">
 													<span id="addActionPlan_due_date_label">Due Date</span>
 												</span></td>
+												
 											<td class="HeaderStyle" width="1%">
 												<span id="addActionPlan_delete_security">
 													<span id="agencycallreportdeletebutton">
@@ -2017,7 +2020,7 @@
 										</tr>
 										<tr id="addActionPlan_list_data_listfreeform_1">
 											<td id="addActionPlan_action_plan_name_security" class="paddingLeft3">
-												<span id="block_field_action_plan_name"></span>
+												<span id="block_field_action_plan_name_desc"></span>
 											</td>
 											
 											<td id="addActionPlan_action_items_security" style="padding-top:6px !important; padding-bottom:6px !important" class="paddingLeft3">
@@ -2031,7 +2034,7 @@
 												<span id="block_field_Due_date"></span>
 											</td>
 	
-											<td width="2%" class="paddingLeft3"
+											<td width="1%" class="paddingLeft3"
 												align="right">
 												<span id="agencycallreportdeletebutton"><span
 												id="addActionPlan_delete_security">
@@ -2077,7 +2080,10 @@
 													<div id="ajax_error_Due_date" class="error"></div>
 												</td>
 	
+	                                             
 												<td width="2%"></td>
+												
+												
 											</tr>
 											<tr>
 												<td id="addActionPlan_action_plan_name_security"
@@ -2093,18 +2099,18 @@
 														src="images/Spacer.gif" width="12px"
 														height="12px" title="Select Date" />
 												</a> -->
-												<select name="action_plan_name" id="ajax_field_action_plan_name" class="selectDetail">
-	                                             <option value="">Select</option>
+												<select name="action_plan_name" id="ajax_field_action_plan_name" onchange="javascript:setDescInListFreeformDropDown(this);" class="selectDetail">
+	                                                        			<option value="">Select</option>
 	                                                  <!-- Phase 2 Bug ID : P2 043 -->
-	                  
-	                                                  <!--  <option value="Compensation">Compensation</option>
-                                                 <option value="Claim">Claim</option> -->
-                                                 <option value="RAF">Research Agency Further</option>
+	                                                        		<!-- 	<option value="Compensation123">Compensation</option>
+																	<option value="Claim">Claim</option> -->
+													<!-- Commenting below hard coded values, values are fetched through SP -->				
+                                                 <!-- <option value="RAF">Research Agency Further</option>
 								                 <option value="GAI">Gather Agency Information</option>
 								                 <option value="PPV">Plan for Physical Visit</option>
 								                 <option value="DM">Discuss with Management</option>
 								                 <option value="RD">Research a Decision</option>
-								                 <option value="Other">Other</option>
+								                 <option value="Other">Other</option> -->
 	                                                      		</select>
 												</td>
 												<td id="addActionPlan_action_items_security"
@@ -2157,6 +2163,10 @@
 													onkeyup="applyDateFormat(this,event);" /> <span>&nbsp;</span> 
 												</div>
 												</td>
+												
+												   <td  id="block_field_action_plan_name_desc" style="display:none" >
+                                  <input type="hidden" name="action_plan_name_desc" id="ajax_field_action_plan_name_desc" />
+                                </td>    
 	
 	
 												<td class="add-cell">
@@ -2767,10 +2777,10 @@
 									src="images/Spacer.gif" width="12px" height="12px"
 									title="Select Date" />
 							</a> -->
-							<select name="action_plan_name" id="ajax_field_action_plan_name" class="selectDetail">
+							<select name="action_plan_name" id="ajax_field_action_plan_name" onchange="javascript:setDescInListFreeformDropDown(this);" class="selectDetail">
 								     <option value="">Select</option>
-								     <option value="Compensation">Compensation</option>
-								     <option value="Claim">Claim</option>
+								  <!--    <option value="Compensation">Compensation</option>
+								     <option value="Claim">Claim</option> -->
 							</select>
 							</td>
 							<td width="32%">
@@ -2811,6 +2821,9 @@
 							
 							</div>
 							</td>
+										   <td id="block_field_action_plan_name_desc" style="display:none">
+                                  <input type="hidden" name="action_plan_name_desc" id="ajax_field_action_plan_name_desc" />
+                                </td>  
 							<td width="2%" style="paddign-right:5px"><span
 								id="1eval:ProducerOneRule.isAgencyStatusNotInactive"> <span
 									id="block_field_addnew_row_link"> 
