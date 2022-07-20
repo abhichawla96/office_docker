@@ -272,4 +272,82 @@
 		</reportworkflow>
 	</reportdef>
 
+
+	<reportdef isshowallingrid="Y" deltaind="I" name="SalesEstimateContingencyBonus611" description="Agency Contingency Claims Detail- 583" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="N" isshowoutputcolumns="Y" isshowresetbutton="Y" isshowonlygraph="N" isshowmultiplegrid="Y" isshowmultiplesheet="Y">
+		<columnset name="SalesEstimateContingencyBonus611set" description="Grid 0" datasetname="report_data_list_0" executionsequence="0" sheetname="Test" isshowonscreen="N" isshowonexcel="N">
+			<column name="from_accident_date" columnlabel="From Accident Date" metaproperty="report_search_columns.from_accident_date" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="text" executionsequence="1" ispopupsearch="N" isdefaultdisplay="Y" isrequired="Y" issortdisplay="Y" isgroupbydisplay="N" />
+			<column name="to_accident_date" columnlabel="To Accident Date" metaproperty="report_search_columns.to_accident_date" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="text" executionsequence="2" ispopupsearch="N" isdefaultdisplay="Y" isrequired="Y" issortdisplay="Y" isgroupbydisplay="N" />
+			<column name="master_agency_code" columnlabel="Master Agency Code" metaproperty="report_search_columns.master_agency_code" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="multiselect" executionsequence="3" ispopupsearch="Y" isdefaultdisplay="Y" isrequired="N" issortdisplay="Y" isgroupbydisplay="Y" />
+			<column name="agency_code_V" columnlabel="producerlabel" metaproperty="report_search_columns.agency_code_V" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="multiselect" executionsequence="4" ispopupsearch="y" isdefaultdisplay="Y" isrequired="N" issortdisplay="Y" isgroupbydisplay="Y" />
+			<column name="Period_D" columnlabel="Statement Run Date" metaproperty="report_search_columns.Period_D" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="select" executionsequence="5" ispopupsearch="N" isdefaultdisplay="Y" isrequired="Y" issortdisplay="N" isgroupbydisplay="N" href="managereportajaxpageblocklink('','','INET_REFRESH_MANAGE_REPORT','MANAGE_REPORTING','refreshFilter')" />
+			<column name="Agency_Group_Name" columnlabel="Agency Group Name" metaproperty="Agency_Group_Name" isreportfilter="N" isreportdisplay="Y" executionsequence="6" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+			<column name="Agency_Code" columnlabel="Agency Code" metaproperty="Agency_Code" isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+			<column name="Accident_Date" columnlabel="Accident Date" metaproperty="Accident_Date" isreportfilter="N" isreportdisplay="Y" executionsequence="8" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+			<column name="Accident_Year" columnlabel="Accident Year" metaproperty="Accident_Year" isreportfilter="N" isreportdisplay="Y" executionsequence="10" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
+			<column name="Claim_number" columnlabel="Claim Number" metaproperty="Claim_number" isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+			<column name="Claim_Status" columnlabel="Claim Status" metaproperty="Claim_Status" isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+			<column name="State_of_Risk" columnlabel="State of Risk" metaproperty="State_of_Risk" isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+			<column name="Current_Year_Evaluation" columnlabel="Current Year Evaluation" metaproperty="Current_Year_Evaluation" isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
+			<column name="Prior_Year_Evaluation" columnlabel="Prior Year Evaluation" metaproperty="Prior_Year_Evaluation" isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
+			<column name="Loss_Amount_for_Contingency_Commission" columnlabel="Loss Amount for Contingency Commission" metaproperty="Loss_Amount_for_Contingency_Commission" isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
+			<column name="Policyholder" columnlabel="Policyholder" metaproperty="Policyholder" isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+			<column name="Incurred_1st" columnlabel="Incurred 1st" metaproperty="Incurred_1st" isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
+			<column name="Incurred_2nd" columnlabel="Incurred 2nd" metaproperty="Incurred_2nd" isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
+			<column name="Incurred_3rd" columnlabel="Incurred 3rd" metaproperty="Incurred_3rd" isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
+			<column name="Policy_Number" columnlabel="Policy Number" metaproperty="Policy_Number" isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+			<column name="No_Cap_1st_Total_Incurred" columnlabel="No Cap 1st Total Incurred" metaproperty="No_Cap_1st_Total_Incurred" isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
+			<column name="No_Cap_2nd_Total_Incurred" columnlabel="No Cap 2nd Total Incurred" metaproperty="No_Cap_2nd_Total_Incurred" isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
+			<column name="No_Cap_3rd_Total_Incurred" columnlabel="No Cap 3rd Total Incurred" metaproperty="No_Cap_3rd_Total_Incurred" isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
+		</columnset>
+
+		<columnset name="multiplegridreportset1" description="Grid 1" datasetname="report_data_list_1" executionsequence="1" isshowreportdataheader="Y" isreportdatapagination="Y" isshowonscreen="Y" sheetname="Non-Grouped Agencies" outputtype="xml" isdynacolumns="Y">
+		</columnset>
+	<!-- 	<columnset name="multiplegridreportset2" description="Grid 2" datasetname="report_data_list_2" executionsequence="2" isshowreportdataheader="Y" isreportdatapagination="Y" isshowonscreen="Y" sheetname="Grouped Agencies" outputtype="xml" isdynacolumns="Y">
+		</columnset>
+		<columnset name="multiplegridreportset3" description="Grid 3" datasetname="report_data_list_3" executionsequence="3" isshowreportdataheader="Y" isreportdatapagination="Y" isshowonscreen="Y" sheetname="What If No Groups" outputtype="xml" isdynacolumns="Y">
+		</columnset>
+ -->
+		<reportworkflow name="reportworkflow" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,ispaginationrequired">
+			<storedprocedureoperation name="getAgencyContingencyClaimsDetail583RPT_P" id="getAgencyContingencyClaimsDetail583RPT_P" dbspname="getAgencyContingencyClaimsDetail583RPT_P" viewid="report_data_list_1" applid="ProducerOne" executionsequence="1" operation="5" metaobject="report_search_columns">
+				<parameteroperation property="from_accident_date" mode="IN" indexno="0" seq="1" />
+				<parameteroperation property="to_accident_date" mode="IN" indexno="1" seq="2" />
+				<parameteroperation property="master_agency_code" mode="IN" indexno="2" seq="3" />
+				<parameteroperation property="agency_code_V" mode="IN" indexno="3" seq="4" />
+				<parameteroperation property="Period_D" mode="IN" indexno="4" seq="5" />
+				<parameteroperation property="PAGE_SIZE" mode="IN" indexno="5" seq="6" />
+				<parameteroperation property="PAGE_NUMBER" mode="IN" indexno="6" seq="7" />
+				<parameteroperation property="ispaginationrequired" mode="IN" indexno="7" seq="8" />
+				<parameteroperation property="reportID" mode="IN" indexno="8" seq="9" />
+				<resultsetoperation indexno="0" mappingclass="java.util.HashMap" />
+				<resultsetoperation indexno="1" mappingclass="java.util.HashMap" />
+			</storedprocedureoperation>
+	<!-- 		<storedprocedureoperation name="getAgencyContingencyClaimsDetail583RPT_P1" id="getAgencyContingencyClaimsDetail583RPT_P1" dbspname="getAgencyContingencyClaimsDetail583RPT_P" viewid="report_data_list_2" applid="ProducerOne" executionsequence="2" operation="5" metaobject="report_search_columns">
+				<parameteroperation property="from_accident_date" mode="IN" indexno="0" seq="1" />
+				<parameteroperation property="to_accident_date" mode="IN" indexno="1" seq="2" />
+				<parameteroperation property="master_agency_code" mode="IN" indexno="2" seq="3" />
+				<parameteroperation property="agency_code_V" mode="IN" indexno="3" seq="4" />
+				<parameteroperation property="Period_D" mode="IN" indexno="4" seq="5" />
+				<parameteroperation property="PAGE_SIZE" mode="IN" indexno="5" seq="6" />
+				<parameteroperation property="PAGE_NUMBER" mode="IN" indexno="6" seq="7" />
+				<parameteroperation property="ispaginationrequired" mode="IN" indexno="7" seq="8" />
+				<parameteroperation property="reportID" mode="IN" indexno="8" seq="9" />
+				<resultsetoperation indexno="0" mappingclass="java.util.HashMap" />
+				<resultsetoperation indexno="1" mappingclass="java.util.HashMap" />
+			</storedprocedureoperation>
+			<storedprocedureoperation name="getAgencyContingencyClaimsDetail583RPT_P2" id="getAgencyContingencyClaimsDetail583RPT_P2" dbspname="getAgencyContingencyClaimsDetail583RPT_P" viewid="report_data_list_3" applid="ProducerOne" executionsequence="3" operation="5" metaobject="report_search_columns">
+				<parameteroperation property="from_accident_date" mode="IN" indexno="0" seq="1" />
+				<parameteroperation property="to_accident_date" mode="IN" indexno="1" seq="2" />
+				<parameteroperation property="master_agency_code" mode="IN" indexno="2" seq="3" />
+				<parameteroperation property="agency_code_V" mode="IN" indexno="3" seq="4" />
+				<parameteroperation property="Period_D" mode="IN" indexno="4" seq="5" />
+				<parameteroperation property="PAGE_SIZE" mode="IN" indexno="5" seq="6" />
+				<parameteroperation property="PAGE_NUMBER" mode="IN" indexno="6" seq="7" />
+				<parameteroperation property="ispaginationrequired" mode="IN" indexno="7" seq="8" />
+				<parameteroperation property="reportID" mode="IN" indexno="8" seq="9" />
+				<resultsetoperation indexno="0" mappingclass="java.util.HashMap" />
+				<resultsetoperation indexno="1" mappingclass="java.util.HashMap" />
+			</storedprocedureoperation>
+	 -->	</reportworkflow>
+	</reportdef>
+
 </reports>
