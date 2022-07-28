@@ -3232,6 +3232,9 @@
  <businessrole roleid="SalesDirector">
       <roleaccesslevel accesstype="2"/>
  </businessrole> 
+  <userdefined executionsequence="0" ruleid="events.editEvent">
+      <userdefinedaccesslevel accesstype="2"/>
+    </userdefined>
 </protectedresource>
 
 <protectedresource deltaind="I" defaultaccesstype="1" description="Hide Inititate New Transfer Button" uniquename="wholesale_to_producer_security">
@@ -3241,6 +3244,9 @@
  <businessrole roleid="SalesDirector">
       <roleaccesslevel accesstype="2"/>
  </businessrole> 
+  <userdefined executionsequence="0" ruleid="events.editEvent">
+      <userdefinedaccesslevel accesstype="2"/>
+    </userdefined>
 </protectedresource>
 
 <protectedresource deltaind="I" defaultaccesstype="2" description="Hide Inititate New Transfer Button" uniquename="bobtransfersStep3_dest_producer_code_step3_security">
