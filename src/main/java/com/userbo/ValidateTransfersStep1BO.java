@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.log4j.Logger;
+import com.util.InetLogger;
 
 import com.manage.managebusinessrules.rules.RuleImpl;
 import com.manage.managebusinessrules.rules.RulesResources;
@@ -18,6 +18,7 @@ import com.manage.managecomponent.components.Businessobject;
 import com.manage.managecomponent.components.SetParametersForStoredProcedures;
 import com.manage.managemetadata.functions.commonfunctions.DataUtils;
 import com.ormapping.ibatis.SqlResources;
+import com.userbo.integration.SendDocForESign;
 import com.util.Constants;
 import com.util.Context;
 import com.util.DateUtils;
@@ -26,7 +27,8 @@ import com.util.IContext;
 import com.util.StringUtils;
 
 public class ValidateTransfersStep1BO extends Businessobject{
-	private static Logger logger = Logger.getLogger(ValidateTransfersStep1BO.class);
+	/*private static Logger logger = Logger.getLogger(ValidateTransfersStep1BO.class);*/
+	private static InetLogger logger = InetLogger.getInetLogger(ValidateTransfersStep1BO.class);
 
 	public boolean evaluate(IContext arg0) throws Exception {
 		// TODO Auto-generated method stub
