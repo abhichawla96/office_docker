@@ -91,7 +91,87 @@ Appointment/Authorization Letter Wizard</legend>
 Appointment/Authorization Letter Wizard</legend>
                       <legend id="checkDeletionLegend">Failed Appointment/Termination Deletion
 Wizard</legend>
-                      <table cellpadding="0" cellspacing="0" width="100%">
+					  <div id="divAppointmentStep2">
+					  		<div class="confirmationMsgAlign" id="bulkAppintTerminationLetter_freeform_contextdata_100">
+					             <label name="pageMsg" id="ajax_pageMsg" class="conformationMsg" />
+	     					</div>
+				      		<div id="isshowBulkAppointmentTerminationEmailTemplate" class="wizard_border panel-body-wraper">
+												<!-- <div class="wizard_scroll"> -->
+												<div class="wizard_scroll form-inline" id="selectEmailTemplate_freeform_contextdata_1"> 
+														<!-- <span id="#Include:carrier/selectEmailTemplate.html#" /> -->
+														<ul>
+															<li class="inlineBlock_1" id="selectEmailtemplate_email_templates_security">
+										                        <div class="freeFormList form-group">
+										                          <div class="freeFormListTr">
+										                            <div class="freeFormListTdError">
+										                              <h6>#space#</h6>
+										                            </div>
+										                            <div class="freeFormListTdError">
+											                            <div id="ajax_error_template_name" class="error" />
+											                          </div>
+										                          </div>
+										                          <div class="freeFormListTr">
+										                            <div class="freeFormListTd labelAlign valignTop" style="width:500px;">
+										                            	<span id="bulkAppointTerminationLetter_template_name_label">Email Template</span> :</div>
+											                            <div class="freeFormListTd tdInput">
+											                             <!-- <input name="template_name" id="ajax_field_template_name" type="text" maxlength="200" class="full_width" />-->
+											                              <select name="template_name" 
+											                              id="ajax_field_template_name" class="form-control" 
+											                              	onchange="javascript:ajaxpageblocklink('carrier/bulkAppointTerminationLetter.html','bulkAppointTerminationLetter.refresh','','','selectEmailTemplate_freeform_contextdata_1');">
+											                              </select>
+											                            </div>
+										                          </div>
+										                        </div>
+															  </li>
+															<li class="inlineBlock_1 paddingTop10" style="width:100%">
+																<div id="emailEventDetailDiv">
+																   <div id="selectEmailTemplate_readonlybody_security">
+																	 <textarea rows="25" cols="100" name="bodyContent" id="ajax_field_bodyContent" style="width: 100%;display: none;"/>
+																	 <textarea rows="25" cols="100" name="body" id="ajax_field_body" style="width: 100%;display: none;"/>
+																	 <div id="selectEmailTemplate_readonlybody"/>
+																   </div>
+																 </div> 
+															</li>
+														</ul>			                      		
+														<section class="divButton buttons-section paddingTop10 row">
+													                      <div class="buttonwrapper paddingRight10 paddingBottom10">
+													                      		
+													                      		<span id="appointmentletter_sendemail">
+																					<a id="selectEmailTemplate_back_security" class="ovalbutton" 
+																						href="javascript:ajaxpageblocklink('carrier/bulkAppointTerminationLetter.html','bulkAppointTerminationLetter.hideAppointmentTerminationEmailTemplate','','','divAppointmentStep2#bulkappointmentletter_sendemail');">
+																						Cancel
+																					</a>
+																				</span>
+																				
+																				<span id="terminationletter_sendemail">
+																					<a id="selectEmailTemplate_back_security" class="ovalbutton" 
+																						href="javascript:ajaxpageblocklink('carrier/bulkAppointTerminationLetter.html','bulkAppointTerminationLetter.hideAppointmentTerminationEmailTemplate','','','divAppointmentStep2#bulkterminationletter_sendemail');">
+																						Cancel
+																					</a>
+																				</span>
+																				
+																				<a class="ovalbutton editbtnMail">Edit Email</a>
+																				<a class="ovalbutton hidden savebtnMail" onclick="refreshEmailBodyContent();">Preview Mail</a> 
+																				
+																				<span id="appointmentletter_sendemail">  
+																					<a id="selectEmailTemplate_sendemail_security" class="ovalbutton" onclick="refreshEmailBodyContent();"
+																						href="javascript:ajaxpageblocklink('carrier/bulkAppointTerminationLetter.html','bulkAppointTerminationLetter.sendAppointmentLetterWithAttachment','','','divAppointmentStep2#bulkappointmentletter_sendemail');">
+																						<span id="selectEmailTemplate_sendemail_label">Send Email</span>
+																					</a>
+																				</span>
+																				<span id="terminationletter_sendemail">  
+																					<a id="selectEmailTemplate_sendemail_security" class="ovalbutton" onclick="refreshEmailBodyContent();"
+																						href="javascript:ajaxpageblocklink('carrier/bulkAppointTerminationLetter.html','bulkAppointTerminationLetter.sendTerminationLetterWithAttachment','','','divAppointmentStep2#bulkterminationletter_sendemail');">
+																						<span id="selectEmailTemplate_sendemail_label">Send Email</span>
+																					</a>
+																				</span>          
+													                      </div>
+														</section>
+												
+												</div>
+									  </div>
+				      </div>	
+                      <table id="isshowBulkAppointment" cellpadding="0" cellspacing="0" width="100%">
                         <tr>
                           <td class="gridTopPadding">
                             <table cellpadding="0" cellspacing="0" width="100%" border="0">
@@ -159,16 +239,14 @@ Wizard</legend>
 	                                class="ovalbutton" href="javascript:ajaxsubmitform('carrier/bulkAppointTerminationLetter.html','bulkAppointTerminationLetter.downloadAppointmentLetter','','','divAppointmentStep1');">
 	                                  <span id="bulkappointerminationletter_generateletter_label">Generate Letter</span>
 	                                </a>
+	                                 <span id="isshowbulkappointerminationletter_sendemail">
+		                                <span id="bulkappointmentletter_sendemail">
+			                                <a class="ovalbutton" href="javascript:ajaxpageblocklink('carrier/bulkAppointTerminationLetter.html','bulkAppointTerminationLetter.showAppointmentEmailTemplate','','','divAppointmentStep2#bulkappointmentletter_sendemail');">
+				                                  <span id="bulkappointerminationletter_sendemail_label">Send Email</span>
+				                            </a>
+			                            </span>
+			                         </span> 
                                 </span>
-                                <!-- Change request specific for BMIC -->
-                                 <span id="checkBulkAppointmentLetterWithoutAttachment">
-	                                <a id="sendAttachmentInEmail" 
-	                                class="ovalbutton" href="javascript:ajaxsubmitform('carrier/bulkAppointTerminationLetter.html','bulkAppointTerminationLetter.sendAttachmentInEmail','','','divAppointmentStep1');">
-	                                  <span id="">Send Email</span>
-	                                </a>
-                                </span> 
-                                
-                                
                                 <span id="checkBulkAppointmentLetterWithAttachment"> 
                                 	<a id="bulkappointerminationletter_generateletter" 
 	                                	class="ovalbutton" href="javascript:ajaxsubmitform('carrier/bulkAppointTerminationLetter.html','bulkAppointTerminationLetter.downloadAppointmentLetterWithAttachment','','','divAppointmentStep1');">
@@ -194,6 +272,13 @@ Wizard</legend>
 	                                class="ovalbutton" href="javascript:ajaxsubmitform('carrier/bulkAppointTerminationLetter.html','bulkAppointTerminationLetter.downloadTerminationLetter','','','divAppointmentStep1');">
 	                                  <span id="bulkappointerminationletter_generateletter1_label">Generate Letter</span>
 	                                </a>
+	                                <span id="isshowbulkappointerminationletter_sendemail">
+		                                <span id="bulkterminationletter_sendemail">
+			                                <a class="ovalbutton" href="javascript:ajaxpageblocklink('carrier/bulkAppointTerminationLetter.html','bulkAppointTerminationLetter.showTerminationEmailTemplate','','','divAppointmentStep2#bulkterminationletter_sendemail');">
+				                                  <span id="bulkappointerminationletter_sendemail_label">Send Email</span>
+				                            </a>
+			                            </span>
+			                         </span>   
                                 </span>
                                 
                                 <span id="checkBulkAppointmentLetterWithAttachment"> 

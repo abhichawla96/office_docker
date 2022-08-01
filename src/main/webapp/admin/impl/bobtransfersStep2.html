@@ -12,7 +12,7 @@
 <!-- Scripts -->
 <script type="text/javascript" src="js/all_files.js" />
 </head>
-<body id="divComplete" onload="javascript:loadTransfersStep2();javascript:checkTransferOption();getValuesForBobTransfer('ajax_field_is_checked','ajax_field_row_id','ajax_field_is_checked_selected');">
+<body id="divComplete" onload="javascript:loadTransfersStep2();javascript:checkTransferOption();setselectedSubPrdcrCodeDesc();getValuesForBobTransfer('ajax_field_is_checked','ajax_field_row_id','ajax_field_is_checked_selected');">
 	<div id="workflowpopupdiv"></div> 
 	<form enctype="multipart/form-data">
 		<div id="cover"></div>
@@ -204,6 +204,7 @@
                                   <td width="1%" class="HeaderStyle" id="block_field_obj_code">#space#</td>
                                   <td width="1%" class="HeaderStyle" id="block_field_obj_code_desc">#space#</td>
                                   <td width="1%" class="HeaderStyle" id="block_field_producer_status_cde">#space#</td>
+                                  <td width="1%" class="HeaderStyle" id="block_field_producer_number_id">#space#</td>
                                 </tr>
                                 <tbody id="bobtransfers_search_list_mom_data_1">
                                   <tr id="mom_child_data">
@@ -220,6 +221,9 @@
                                     </td>
                                     <td id="block_field_producer_status_cde" style="width: 0px;">
                                       <input type="hidden" name="producer_status_cde" id="producer_status_cde" />
+                                    </td>
+                                    <td id="block_field_producer_number_id" style="width: 0px;">
+                                      <input type="hidden" name="producer_number_id" id="producer_number_id" />
                                     </td>
                                   </tr>
                                 </tbody>
@@ -589,8 +593,7 @@
 														</div>
 													</div>
 												</li>
-												
-								<li class="inlineBlock_2"
+												<li class="inlineBlock_2"
 													id="bobtransfersStep2_producer_number_to_varchar">
 													<div class="freeFormList">
 														<div class="freeFormListTr">
@@ -616,14 +619,44 @@
 														</div>
 													</div>
 												</li>
+												<li class="inlineBlock_2"
+													id="subprdcrcode_security">
+													<div class="freeFormList">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>#space#</h6>
+															</div>
+															<div class="freeFormListTdError">
+																<div id="error_destination_associationid" class="error" />
+																<div id="error_destination_associationid" class="error" />
+																
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth_240">
+																<span id="bobtransferStep2_destination_associationidlabel">Destination Producer Code</span> :
+															</div>
+															<div class="freeFormListTd text-nowrap" id="bobtransfersStep2_select_tosubprdcrcode">
+																<select class="form-control" name="destination_associationid"
+																	onchange="javascript:setselectedSubPrdcrCodeDesc();"
+																	id="ajax_field_destination_associationid">
+																	<option value="">Select</option>
+																</select>
+															</div>
+															<div class="freeFormListTd text-nowrap" id="bobtransfersStep2_tosubprdcrcode">
+																<input name="sub_producer_code_desc_to" type="text" class="form-control" id="ajax_field_sub_producer_code_desc_to" size="25" align="left" readonly="readonly"/>
+															</div>
+														</div>
+													</div>
+												</li>	
+												
 								<!-- PHASE 3 EXTENDED FIELD -->
 								<li id="#bobtransfersStep2_destination_producer_number_security_after#">
 								
 									</li>
 							<!-- PHASE 3 EXTENDED FIELD -->
 							
-								
-								
+
 											</ul>
 										</fieldset>
 
@@ -892,6 +925,7 @@
 																class="freeFormListTd labelAlign freeFormLabelWidth_240">
 																<b><span id="bobtransfersStep2_toagentnumberlabel">To Agent Number</span> :</b>
 															</div>
+															
 															<div class="freeFormListTd tdInput text-nowrap">
 																<label name="producer_number_to_varchar" 
 																fullid="bobtransfersStep2_freeform_contextdata_3(isProducerNumberTransferWholesale.isProducerNumberTransfer_Wholesale_label).bobtransfersStep2_producer_number_to_varchar.bobtransfersStep2_toagentnumberlabel.producer_number_to_varchar"
@@ -900,6 +934,10 @@
 														</div>
 													</div>
 												</li>
+												
+												
+												
+												
 												<li class="inlineBlock_2 paddingTop5"
 													id="bobtransfersStep2_transfer_effective_date" >
 													<div class="freeFormList">
@@ -948,7 +986,8 @@
 													</div>
 												</li>
 
-											</ul>	
+											</ul>
+												
 											<section class="padding10 paddingTop20" id="bobtransferStep2_policies_Security">
 											<fieldset id="bobtransferStep2_policiesfilter">
 												<legend><span id="bobtransferStep2_policiesfilterlabel">Policies Transfer Filter</span></legend>
@@ -1035,7 +1074,7 @@ fullid="bobtransfersStep2_freeform_contextdata_4(bobtransferStep2_policies_Secur
 															
 															<li class="inlineBlock_2"
 																id="bobtransferStep2_filtertransferoption">
-																<div class="freeFormList">
+																<div class="freeFormList paddingTop5">
 																	<div class="freeFormListTr">
 																		<div class="freeFormListTdError">
 																			<h6>#space#</h6>
@@ -1063,7 +1102,7 @@ fullid="bobtransfersStep2_freeform_contextdata_4(bobtransferStep2_policies_Secur
 															</li>
 															<li class="inlineBlock_2"
 																id="bobtransferStep2_filterstate">
-																<div class="freeFormList">
+																<div class="freeFormList paddingTop5">
 																	<div class="freeFormListTr">
 																		<div class="freeFormListTdError">
 																			<h6>#space#</h6>
@@ -1087,6 +1126,107 @@ fullid="bobtransfersStep2_freeform_contextdata_4(bobtransferStep2_policies_Secur
 																	</div>
 																</div>
 															</li>
+															
+															<li class="inlineBlock_2"
+																id="bobtransferStep2_filterfromAgencyCode">
+																<div class="freeFormList paddingTop5">
+																	<div class="freeFormListTr">
+																		<div class="freeFormListTdError">
+																			<h6>#space#</h6>
+																		</div>
+																		<div class="freeFormListTdError">
+																		</div>
+																	</div>
+																	<div class="freeFormListTr">
+																		<div
+																			class="freeFormListTd labelAlign freeFormLabelWidth_240">
+																			<span id="bobtransferStep2_filterfromAgencyCodelabel">From Agency Code</span> :
+																		</div>
+																		<div class="freeFormListTd tdInput text-nowrap">
+																			<input name="producer_code_from" type="text" class="form-control" id="ajax_field_producer_code_from" size="25" align="left" readonly="readonly"/>
+																		</div>
+																	</div>
+																</div>
+															</li>
+															<li class="inlineBlock_2"
+																id="bobtransferStep2_filtertoAgencyCode">
+																<div class="freeFormList paddingTop5">
+																	<div class="freeFormListTr">
+																		<div class="freeFormListTdError">
+																			<h6>#space#</h6>
+																		</div>
+																		<div class="freeFormListTdError">
+																		</div>
+																	</div>
+																	<div class="freeFormListTr">
+																		<div
+																			class="freeFormListTd labelAlign freeFormLabelWidth_240">
+																			<span id="bobtransferStep2_filtertoAgencyCodelabel">To Agency Code</span> :
+																		</div>
+																		<div class="freeFormListTd tdInput text-nowrap">
+																			<input name="producer_code_to" type="text" class="form-control" id="ajax_field_producer_code_to" size="25" align="left" readonly="readonly"/>
+																		</div>
+																	</div>
+																</div>
+															</li>
+															
+															<li class="inlineBlock_2"
+																id="bobtransferStep2_filterfromsubprdcrCode">
+																<div class="freeFormList paddingTop5">
+																	<div class="freeFormListTr">
+																		<div class="freeFormListTdError">
+																			<h6>#space#</h6>
+																		</div>
+																		<div class="freeFormListTdError">
+																		</div>
+																	</div>
+																	<div class="freeFormListTr">
+																		<div
+																			class="freeFormListTd labelAlign freeFormLabelWidth_240">
+																			<span id="bobtransferStep2_filterfromsubprdcrCodelabel">From Producer Code</span> :
+																		</div>
+																		<div class="freeFormListTd tdInput text-nowrap" id="bobtransfersStep2_select_wholesalefromsubprdcrcode">
+																			<select name="sub_producer_association_id_from" id="ajax_field_sub_producer_association_id_from" 
+																			class="form-control">
+																				<option value="">Select</option>
+																			</select>
+																		</div>
+																		<div class="freeFormListTd tdInput text-nowrap" id="bobtransfersStep2_wholesalefromsubprdcrcode">
+																			<input name="sub_producer_code_desc_from" type="text" class="form-control" id="ajax_field_sub_producer_code_desc_from" size="25" align="left" readonly="readonly"/>
+																		</div>
+																	</div>
+																</div>
+															</li>
+															<li class="inlineBlock_2"
+																id="bobtransferStep2_filtertosubprdcrCode">
+																<div class="freeFormList paddingTop5">
+																	<div class="freeFormListTr">
+																		<div class="freeFormListTdError">
+																			<h6>#space#</h6>
+																		</div>
+																		<div class="freeFormListTdError">
+																			<div id="error_sub_producer_association_id_to" class="error" />
+																		    <div id="ajax_error_sub_producer_association_id_to" class="error" />
+																		</div>
+																	</div>
+																	<div class="freeFormListTr">
+																		<div
+																			class="freeFormListTd labelAlign freeFormLabelWidth_240">
+																			<span id="bobtransferStep2_filtertosubprdcrcodelabel">To Producer Code</span> :
+																		</div>
+																		<div class="freeFormListTd tdInput text-nowrap" id="bobtransfersStep2_select_wholesaletosubprdcrcode">
+																			<select name="sub_producer_association_id_to" id="ajax_field_sub_producer_association_id_to" onchange="javascript:setselectedSubPrdcrCodeDesc();"
+																			class="form-control">
+																				<option value="">Select</option>
+																			</select>
+																		</div>
+																		<div class="freeFormListTd tdInput text-nowrap" id="bobtransfersStep2_wholesalefromsubprdcrcode">
+																			<input name="sub_producer_code_desc_to" type="text" class="form-control" id="ajax_field_sub_producer_code_desc_to" size="25" align="left" readonly="readonly"/>
+																		</div>
+																	</div>
+																</div>
+															</li>
+															
 															<li class="inlineBlock_1"
 																id="bobtransferStep2_filtertransferoptionvalue">
 																<div class="freeFormList">
@@ -1143,9 +1283,10 @@ fullid="bobtransfersStep2_freeform_contextdata_4(bobtransferStep2_policies_Secur
 																	</div>
 																</div>
 															</li>
+															
 															<li class="inlineBlock_2"
 																id="bobtransferStep2_filterlob">
-																<div class="freeFormList">
+																<div class="freeFormList paddingTop5">
 																	<div class="freeFormListTr">
 																		<div class="freeFormListTdError">
 																			<h6>#space#</h6>
@@ -1194,38 +1335,58 @@ fullid="bobtransfersStep2_freeform_contextdata_4(bobtransferStep2_policies_Secur
 												<div id="bobtransferStep2_freeform_contextdata_5">
 													<label name="pageMsg" id="pageMsg" class="Confirmation"/>
 													<div id="error_pageError" class="error paddingTop10"></div>
+													<div id="bobtransfersStep2_activeInactiveLicenseMessage" class="error">
+														<span id="bobtransfersStep2_activeInactiveLicenseMessagelabel"/><label name="inactive_license_status" id="inactive_license_status"/>
+													</div>
+													<div id="bobtransfersStep2_DuplicateErrorKey" class="error">
+														<span id="bobtransfersStep2_duplicaterecordlabel"/>
+													</div>
 												</div>
+												
 											</center>
 											<section class="padding10">
 											<fieldset id="bobtransferStep2_policiesdetail">
 												<legend><span id="bobtransferStep2_policiesdetaillabel">Policies Transfer Details</span></legend>
 												<table id="transfersStep2_list_mom_2" width="100%" cellspacing="0" cellpadding="0" class="gridBorder">
 													<tr id="transfersStep2_list_header_2">
-														<td id="bobtransferStep2_gridcompany" class="HeaderStyle" width="15%">
+														<td id="bobtransferStep2_gridcompany" class="HeaderStyle" width="10%">
 															<span id="block_field_company_desc">
 																<span id="bobtransferStep2_gridcompanylabel">Company</span>
 															</span>
 														</td>
-														<td id="bobtransferStep2_gridstate" class="HeaderStyle" width="15%">
+														<td id="bobtransferStep2_gridstate" class="HeaderStyle" width="10%">
 															<span id="block_field_state_desc">
 																<span id="bobtransferStep2_gridstatelabel">State</span>
 															</span>
 														</td>
-														<td id="bobtransferStep2_gridtransferoption" class="HeaderStyle" width="20%">
+														<td id="bobtransferStep2_gridtransferoption" class="HeaderStyle" width="15%">
 															<span id="block_field_transfer_option">
 																<span id="bobtransferStep2_gridtransferoptionlabel">Transfer Option</span>
 															</span>
 														</td>
-														<td id="bobtransferStep2_gridtransferoptionfrom" class="HeaderStyle" width="15%">
+														<td id="bobtransferStep2_gridtransferoptionfrom" class="HeaderStyle" width="10%">
 															<span id="block_field_transfer_option_value">
 																<span id="bobtransferStep2_gridtransferoptionfromlabel">Value</span>
 															</span>
 														</td>
-														<td id="bobtransferStep2_gridlob_id" class="HeaderStyle" width="15%">
+														<td id="bobtransferStep2_gridlob_id" class="HeaderStyle" width="10%">
 															<span id="block_field_lob_desc">
 																<span id="bobtransferStep2_gridlob_id_label">LOB</span>
 															</span>
 														</td>
+														
+														<td id="bobtransferStep2_gridsub_producer_code_from" class="HeaderStyle" width="15%">
+															<span id="block_field_sub_producer_code_from">
+																<span id="bobtransferStep2_gridsub_producer_code_fromlabel">From Producer Code</span>
+															</span>
+														</td>
+														<td id="bobtransferStep2_gridsub_producer_code_to" class="HeaderStyle" width="15%">
+															<span id="block_field_sub_producer_code_to">
+																<span id="bobtransferStep2_gridsub_producer_code_tolabel">To Producer Code</span>
+															</span>
+														</td>
+														
+														
 														<td id="bobtransferStep2_gridnumberofpolicies" class="HeaderStyle" width="15%">
 															<span id="block_field_numberofpolicies">
 																<span id="bobtransferStep2_gridnumberofpolicieslabel">Number of Policies</span>
@@ -1252,6 +1413,15 @@ fullid="bobtransfersStep2_freeform_contextdata_4(bobtransferStep2_policies_Secur
 														<td id="bobtransferStep2_gridlob_id">
 															<span id="block_field_lob_desc"></span>
 														</td>
+														
+														<td id="bobtransferStep2_gridsub_producer_code_from">
+															<span id="block_field_sub_producer_code_from"></span>
+														</td>
+														<td id="bobtransferStep2_gridsub_producer_code_to">
+															<span id="block_field_sub_producer_code_to"></span>
+														</td>
+														
+														
 														<td id="bobtransferStep2_gridnumberofpolicies">
 															<span id="block_field_numberofpolicies">
 																<a id="bobtransferstep2_next" href="javascript:submitform('admin/bobtransfersStep3.html','bobtransfersStep2.showPolicies','','');"/>
@@ -1259,9 +1429,10 @@ fullid="bobtransfersStep2_freeform_contextdata_4(bobtransferStep2_policies_Secur
 														</td>
 														<td id="bobtransferStep2_griddeletelink">
 															<span id="block_field_delete_row_link">
-							                                    <a id="bobtransferstep2_deleteicon" class="delete_ico icons" href="javascript:submitform('admin/bobtransfersStep2.html','bobtransfersStep2.deleteWholesaleTransferFilters','','');" title="Delete" />
+							                                    <a id="bobtransferstep2_deleteicon" class="delete_ico icons" onclick="javascript:setselectedSubPrdcrCodeDesc();" href="javascript:submitform('admin/bobtransfersStep2.html','bobtransfersStep2.deleteWholesaleTransferFilters','','');" title="Delete" />
 							                                 </span>
 														</td>
+														
 													</tr>
 												</table>
 											</fieldset>
@@ -1346,12 +1517,14 @@ fullid="bobtransfersStep2_freeform_contextdata_4(bobtransferStep2_policies_Secur
 	        <input type="hidden" name="htmlSource" 
 	        	fullid="bobtransfersStep2_freeform_contextdata_999(htmlSource_security.htmlSource_label).htmlSource_security.htmlSource_label.htmlSource"
 	        	id="htmlSource" />
-	        <input type="hidden" name="is_checked_selected" id="ajax_field_is_checked_selected" /> 
-			 
+	        <input type="hidden" name="is_checked_selected" id="ajax_field_is_checked_selected" />
+	        <input type="hidden" name="selected_producer_number_id" id="ajax_field_selected_producer_number_id" />
+			<input type="hidden" name="selected_sub_producer_code_desc" id="ajax_field_selected_sub_producer_code_desc" /> 
 			
 			
 		</div>
 	</form>
 </body>
 </html>
+
 

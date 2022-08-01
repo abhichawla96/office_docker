@@ -17,6 +17,8 @@
       <div id="agentGeneralDetailsForSelfServiceApproval">
       <div id="divComplete">
       <div id="workFlowPopUpDiv"></div>
+       <div id="popupEntityList" />
+      
         <div id="popupSSNdiv">
           <!-- Modal -->
           <div class="modal fade modal_popup" id="popupSSN1">
@@ -815,8 +817,9 @@ already exists.</div>
                                 <div class="freeFormListTd tdInput">
                                   <select class="form-control selectWidth" id="ajax_field_persontype_id" name="persontype_id" 
 								  fullid="entityPersonDetails_freeform_contextdata_2(agentGeneralDetails_Selfservice_security.agentGeneralDetails_Selfservice_label).agentGeneralDetailsForSelfServiceApproval_contact_producer_type_security.agentGeneralDetailsForSelfServiceApproval_contact_producer_type_label.persontype_id">
-                                    <option value="1">Licensed Producer</option>
-                                    <option value="2">Non Licensed Producer</option>
+                                          <option value="">Select</option>
+                                  <!--   <option value="1">Licensed Producer</option>
+                                    <option value="2">Non Licensed Producer</option> -->
                                   </select>
                                   <span id="isMarketingAssistantLoggedIn">
                                     <label class="oldValue" name="persontype_id_old" id="persontype_id_old" />
@@ -1962,6 +1965,9 @@ already exists.</div>
                     <legend>
                       <span id="agent_business_ss_label">Business</span>
                     </legend>
+                    <div id="error_businessAddress" align="center" class="error"></div>
+					<div id="ajax_error_businessAddress"  align="center" class="error"></div>
+                    
                     <div class="freeFormDiv form-inline agentSelfservice">
                       <ul class="split-list">
                          <li id="#territory_id_business_before#"></li>
@@ -2016,7 +2022,7 @@ already exists.</div>
                               <div class="freeFormListTd mendatoryInput">
                                 <select class="form-control selectWidth" name="country_code_business" 
 								fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_212(business_addressDiv_security.agent_business_ss_label).country_business_agent_ss_security.agent_business_country_ss_label.country_code_business"
-								id="ajax_field_country_code_business" onchange="javascript:ajaxpageblocklink('carrier/agentGeneralDetailsForSelfServiceApproval.html','agentGeneralDetailsForSelfServiceApproval.refreshBusinessState','','','business_addressDiv_security');showagentaddressdetails();javascript:loadagentGeneralDetail();">
+								id="ajax_field_country_code_business" onchange="setBusinessZipCodeToBlank();javascript:ajaxpageblocklink('carrier/agentGeneralDetailsForSelfServiceApproval.html','agentGeneralDetailsForSelfServiceApproval.refreshBusinessState','','','business_addressDiv_security');">
                                   <option value="">Select</option>
                                 </select>
                                 <span id="isMarketingAssistantLoggedIn">
@@ -2268,7 +2274,7 @@ already exists.</div>
                               <div class="freeFormListTd mendatoryInput">
                                 <input name="zip_business" 
 								fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_212(business_addressDiv_security.agent_business_ss_label).zip_code_business_agent_ss_security.zip_code_business_agent_ss_label.zip_business"
-								id="ajax_field_zip_business" type="text" class="form-control form-control-100" maxlength="10" title="99999-9999" onkeyup="loadagentGeneralDetail();addHyphen(this,event);" onmouseover="setTitleForZipCode(this);" />
+								id="ajax_field_zip_business" type="text" class="form-control form-control-100" maxlength="10" />
                                 <span id="isMarketingAssistantLoggedIn">
                                   <label class="oldValue" name="zip_old_business" id="zip_old_business" />
                                 </span>
@@ -2298,7 +2304,7 @@ already exists.</div>
                               <div class="freeFormListTd tdInput">
                                 <input name="phone_business" 
 								fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_212(business_addressDiv_security.agent_business_ss_label).phone_ext_business_agent_ss_security.agent_business_phone_ss_label.phone_business"
-								id="ajax_field_phone_business" type="text" class="form-control phone-control" maxlength="12" title="999-999-9999" onkeyup="loadagentGeneralDetail();" onkeypress="loadagentGeneralDetail();" />
+								id="ajax_field_phone_business" type="text" class="form-control phone-control" maxlength="12" onkeyup="javascript:checkExtnEditable('ajax_field_phone_business', 'ajax_field_extn_business');"/>
                                 <span id="agent_business_extn_ss_security">
 	                                <label class="ext-label"><span id="agent_business_extn_ss_label">Extn.</span> :</label>
 	                                <input name="extn_business" 
@@ -2336,7 +2342,7 @@ already exists.</div>
                               <div class="freeFormListTd tdInput">
                                 <input name="alt_phone_business" 
 								fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_212(business_addressDiv_security.agent_business_ss_label).alt_phone_business_agent_ss_security.agent_business_alt_phone_ss_label.alt_phone_business"
-								id="ajax_field_alt_phone_business" type="text" class="form-control phone-control" maxlength="12" title="999-999-9999" onkeyup="loadagentGeneralDetail();" onkeypress="loadagentGeneralDetail();" />
+								id="ajax_field_alt_phone_business" type="text" class="form-control phone-control" maxlength="12" onkeyup="javascript:checkExtnEditable('ajax_field_alt_phone_business', 'ajax_field_alt_extn_business');"/>
                                 <span id="isMarketingAssistantLoggedIn">
                                   <label class="oldValue" name="alt_phone_old_business" id="alt_phone_old_business" />
                                 </span>
@@ -2375,7 +2381,7 @@ already exists.</div>
                               <div class="freeFormListTd tdInput">
                                 <input name="misc_phone_business" 
 								fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_212(business_addressDiv_security.agent_business_ss_label).speed_dial_business_ss_security.speed_dial_business_ss_label.misc_phone_business"
-								id="ajax_field_misc_phone_business" type="text" class="form-control form-control-100" maxlength="10" title="99999-9999" onkeyup="loadagentGeneralDetail();addHyphen(this,event);" />
+								id="ajax_field_misc_phone_business" type="text" class="form-control form-control-100" maxlength="10" />
                                 <span id="isMarketingAssistantLoggedIn">
                                   <label class="oldValue" name="misc_phone_old_business" id="misc_phone_old_business" />
                                 </span>
@@ -2597,6 +2603,25 @@ already exists.</div>
                         </li>
                       </ul>
                     </div>
+                    <div id="BusinessVerifyAddressDiv" class="row">
+										<div class="buttonwrapper paddingTop10" id="verify_business_address_agentss_security">
+													<span id="show_verify_business_address_indicator_self_service_security"> 
+																	<input type="hidden" name="is_business_address_verified" id="ajax_field_is_business_address_verified" />												
+																<img
+																				src="images/address_verified_icon.png"
+																				title="Address Verified"
+																				height="30" width="30"  />
+														</span>
+										
+											<span id="checkIsNewRequest">
+										
+												<a  
+												href="javascript:ajaxpageblocklink('carrier/addressSugesstion.html','agentGeneralDetailsForSelfServiceApproval.verifyBusinessAddress','','','popupEntityList');"
+												class="btn btn-primary"> <span id="verify_business_address_label">Verify Business Address</span>
+											</a>
+											</span>
+										</div>
+								</div>
                   </fieldset>
                 </section>
                
@@ -2605,6 +2630,9 @@ already exists.</div>
                     <legend>
                       <span id="agent_mailing_ss_label">Mailing</span>
                     </legend>
+                    <div id="error_mailingAddress" align="center" class="error"></div>
+					<div id="ajax_error_mailingAddress"  align="center" class="error"></div>
+                    
                     <div class="freeFormDiv form-inline agentSelfservice" id="agentGeneralDetailsForSelfServiceApproval_mailing_address_security">
                       <ul class="split-list">
                        
@@ -2910,7 +2938,7 @@ already exists.</div>
                               <div class="freeFormListTd tdInput">
                                 <input name="zip_mailing" 
 								fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_213(mailing_addressDiv_security.agent_mailing_ss_label).zip_code_mailing_agent_ss_security.zip_code_mailing_agent_ss_label.zip_mailing"
-								id="ajax_field_zip_mailing" type="text" class="form-control form-control-100" maxlength="10" title="99999-9999" onkeyup="loadagentGeneralDetail();addHyphen(this,event);" onmouseover="setTitleForZipCode(this);" />
+								id="ajax_field_zip_mailing" type="text" class="form-control form-control-100" maxlength="10"  />
                                 <span id="isMarketingAssistantLoggedIn">
                                   <label class="oldValue" name="zip_old_mailing" id="zip_old_mailing" />
                                 </span>
@@ -2940,7 +2968,7 @@ already exists.</div>
                               <div class="freeFormListTd tdInput">
                                 <input name="phone_mailing" 
 								fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_213(mailing_addressDiv_security.agent_mailing_ss_label).phone_ext_mailing_agent_ss_security.agent_mailing_phone_ss_label.phone_mailing"
-								id="ajax_field_phone_mailing" type="text" class="form-control phone-control" maxlength="12" title="999-999-9999" onkeyup="loadagentGeneralDetail();" onkeypress="loadagentGeneralDetail();" />
+								id="ajax_field_phone_mailing" type="text" class="form-control phone-control" maxlength="12" onkeyup="javascript:checkExtnEditable('ajax_field_phone_mailing', 'ajax_field_extn_mailing');" />
                                 <span id="agent_mailing_extn_ss_security">
                                 <label id="phone_extn" class="ext-label"><span id="agent_mailing_extn_ss_label">Extn.</span> :</label>
                                 <input name="extn_mailing" 
@@ -2978,7 +3006,7 @@ already exists.</div>
                               <div class="freeFormListTd tdInput">
                                 <input name="alt_phone_mailing" 
 								fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_213(mailing_addressDiv_security.agent_mailing_ss_label).alt_phone_mailing_agent_ss_security.agent_mailing_alt_phone_ss_label.alt_phone_mailing"
-								id="ajax_field_alt_phone_mailing" type="text" class="form-control phone-control" maxlength="12" title="999-999-9999" onkeyup="loadagentGeneralDetail();" onkeypress="loadagentGeneralDetail();" />
+								id="ajax_field_alt_phone_mailing" type="text" class="form-control phone-control" maxlength="12" onkeyup="javascript:checkExtnEditable('ajax_field_alt_phone_mailing', 'ajax_field_alt_extn_mailing');" />
                                 <span id="isMarketingAssistantLoggedIn">
                                   <label class="oldValue" name="alt_phone_old_mailing" id="alt_phone_old_mailing" />
                                 </span>
@@ -3017,7 +3045,7 @@ already exists.</div>
                               <div class="freeFormListTd tdInput">
                                 <input name="misc_phone_mailing" 
 								fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_213(mailing_addressDiv_security.agent_mailing_ss_label).speed_dial_mailing_agent_ss_security.speed_dial_mailing_agent_ss_label.misc_phone_mailing"
-								id="ajax_field_misc_phone_mailing" type="text" class="form-control form-control-100" maxlength="10" title="99999-9999" onkeyup="loadagentGeneralDetail();addHyphen(this,event);" />
+								id="ajax_field_misc_phone_mailing" type="text" class="form-control form-control-100" maxlength="10" />
                                 <span id="isMarketingAssistantLoggedIn">
                                   <label class="oldValue" name="misc_phone_old_mailing" id="misc_phone_old_mailing" />
                                 </span>
@@ -3213,6 +3241,26 @@ already exists.</div>
                          <li id="#agency_foreign_addr_in_mailing_after#"></li>
                       </ul>
                     </div>
+                 
+                  <div id="MailingVerifyAddressDiv" class="row">
+										<div class="buttonwrapper paddingTop10" id="verify_mailing_address_agentss_security">
+													<span id="show_verify_mailing_address_indicator_self_service_security"> 
+													              	<input type="hidden" name="is_mailing_address_verified" id="ajax_field_is_mailing_address_verified" />											
+																<img
+																				src="images/address_verified_icon.png"
+																				title="Address Verified"
+																				height="30" width="30"  />
+														</span>
+											<span id="checkIsNewRequest">
+										
+												<a  
+												href="javascript:ajaxpageblocklink('carrier/addressSugesstion.html','agentGeneralDetailsForSelfServiceApproval.verifyMailingAddress','','','popupEntityList');"
+												class="btn btn-primary"> <span id="verify_mailing_address_label">Verify Mailing Address</span>
+											</a>
+											</span>
+										</div>
+								</div>
+                 
                   </fieldset>
                 </section>
                 
@@ -3293,7 +3341,7 @@ already exists.</div>
                                               <div class="freeFormListTd">
                                                 <select class="form-control" name="country_code_w9" 
 												fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_214(w9_addressDiv_agent_selfService_security.residence_address_agent_selfService_label).w9_country_address_agent_selfService_security.country_residence_agent_selfService_field_label.country_code_w9"
-												id="ajax_field_country_code_w9" onchange="javascript:ajaxpageblocklink('carrier/agentGeneralDetailsForSelfServiceApproval.html','agentGeneralDetailsForSelfServiceApproval.refreshW9State','','','agent_w9_address_div');showagentaddressdetails();javascript:loadagentGeneralDetail();">
+												id="ajax_field_country_code_w9" onchange="setW9ZipCodeToBlank();javascript:ajaxpageblocklink('carrier/agentGeneralDetailsForSelfServiceApproval.html','agentGeneralDetailsForSelfServiceApproval.refreshW9State','','','w9_addressDiv_agent_selfService_security')">
                                                   <option value="">Select</option>
                                                 </select>
                                                 <span id="value_difference_selfService_security">
@@ -3557,7 +3605,7 @@ already exists.</div>
                                       <div class="freeFormListTd">
                                         	<input name="zip_w9" 
 											fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_214(w9_addressDiv_agent_selfService_security.residence_address_agent_selfService_label).w9_zip_code_agent_selfservice_security.zipCode_residence_agent_selfservice_Field_Label.zip_w9"
-											id="ajax_field_zip_w9" type="text" class="form-control" maxlength="10" title="99999-9999" onkeyup="loadagentGeneralDetail();addHyphen(this,event);" onmouseover="setTitleForZipCode(this);" />
+											id="ajax_field_zip_w9" type="text" class="form-control" maxlength="10" />
                                         	<span id="value_difference_selfService_security">
 			                                  <label class="oldValue" name="zip_old_w9" id="zip_old_w9" />
 			                                </span>
@@ -3588,7 +3636,7 @@ already exists.</div>
 			                         <div class="freeFormListTd mendatoryInput_address mendatoryPhoneInput_address" id="addressPhoneInput">
 			                           <input name="phone_w9" 
 									   fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_214(w9_addressDiv_agent_selfService_security.residence_address_agent_selfService_label).w9_phone_ext_agent_selfservice_security.phone_residence_agent_selfservice_field_label.phone_w9"
-									   id="ajax_field_phone_w9" type="text" class="form-control phone-control" maxlength="12" title="999-999-9999" onkeyup="loadagentGeneralDetail();" onkeypress="loadagentGeneralDetail();" onchange="loadagentGeneralDetail();" />
+									   id="ajax_field_phone_w9" type="text" class="form-control phone-control" maxlength="12" onkeyup="javascript:checkExtnEditable('ajax_field_phone_w9', 'ajax_field_extn_w9');" />
 			                           <span id="w9_ext_agent_address_security">
 			                           		<label id="w9_agent_extn_label" class="ext-label">Extn. </label> :
 			                           		<input name="extn_w9" 
@@ -3628,7 +3676,7 @@ already exists.</div>
                                      <div class="freeFormListTd tdInput">
                                        <input name="alt_phone_w9" 
 									   fullid="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_214(w9_addressDiv_agent_selfService_security.residence_address_agent_selfService_label).w9_alt_phone_ext_agent_selfservice_security.alt_residence_phone_agent_self_Service_label.alt_phone_w9"
-									   id="ajax_field_alt_phone_w9" type="text" class="form-control phone-control" maxlength="12" title="999-999-9999" onkeyup="loadagentGeneralDetail();" onkeypress="loadagentGeneralDetail();" onchange="loadagentGeneralDetail();" />
+									   id="ajax_field_alt_phone_w9" type="text" class="form-control phone-control" maxlength="12" onkeyup="javascript:checkExtnEditable('ajax_field_alt_phone_w9', 'ajax_field_alt_extn_w9');"/>
                                        
             							<span id="w9_alt_ext_agent_selfservice_security">
             								<label id="w9_alt_ext_agency_address_label" class="ext-label">Extn.</label> :
@@ -3874,7 +3922,27 @@ already exists.</div>
                             </div>
                           </div>
                     	</div>
+					      <div id="W9VerifyAddressDiv" class="row">
+										<div class="buttonwrapper paddingTop10" id="verify_w9_address_agentss_security">
+													<span id="show_verify_w9_address_indicator_self_service_security"> 
+				<input type="hidden" name="is_w9_address_verified" id="ajax_field_is_w9_address_verified" />													
+																<img
+																				src="images/address_verified_icon.png"
+																				title="Address Verified"
+																				height="30" width="30"  />
+														</span>
+										<span id="checkIsNewRequest">
+										
+												<a  
+												href="javascript:ajaxpageblocklink('carrier/addressSugesstion.html','agentGeneralDetailsForSelfServiceApproval.verifyW9Address','','','popupEntityList');"
+												class="btn btn-primary"> <span id="verify_residence_address_label">Verify Residence Address</span>
+											</a>
+											</span>
+										</div>
+						</div>
+					
 					</fieldset>
+             	
              	</section>
               
                <section class="list-grid paddingBottom10" id="agentGeneralDetailsForSelfServiceApproval_additional_email_address_security">
@@ -4457,7 +4525,7 @@ Code</span>
                                                             <td class="mendatoryInput_agent_zip" style="padding-left: 5px">
                                                               <input name="zip" 
 															  fullid="agentGeneralDetailsForSelfServiceApproval_freeform_contextdata_2(contact_address_security.contact_address_label).contact_zip_code_security.zipCodeFieldLabel.zip"
-															  id="ajax_field_zip" type="text" class="inputDetail" maxlength="10" title="99999-9999" onkeyup="loadagentGeneralDetail();addHyphen(this,event);" onmouseover="setTitleForZipCode(this);" />
+															  id="ajax_field_zip" type="text" class="inputDetail" maxlength="10" />
                                                             </td>
                                                           </tr>
                                                         </table>
@@ -4487,7 +4555,7 @@ Code</span>
                                                                   <td class="tdInput" width="32%">
                                                                     <input name="phone" 
 																	fullid="agentGeneralDetailsForSelfServiceApproval_freeform_contextdata_2(contact_address_security.contact_address_label).contact_phone_ext_security.phone_label.phone"
-																	id="ajax_field_phone" type="text" style="width: 117px" maxlength="12" title="999-999-9999" onkeyup="loadagentGeneralDetail();" onkeypress="loadagentGeneralDetail();" />
+																	id="ajax_field_phone" type="text" style="width: 117px" maxlength="12"  />
                                                                   </td>
                                                                   <td width="50px" nowrap="nowrap" class="formLabel" style="text-align: right">
                                                                     <label id="phone_extn">Extn. :</label>
@@ -4519,7 +4587,7 @@ Phone :</label>
                                                                   <td class="tdInput" width="32%">
                                                                     <input name="alt_phone" 
 																	fullid="agentGeneralDetailsForSelfServiceApproval_freeform_contextdata_2(contact_address_security.contact_address_label).agent_alt_phone_security.alt_phone_label.alt_phone"
-																	id="ajax_field_alt_phone" type="text" class="phoneDetail" maxlength="12" style="width: 117px" title="999-999-9999" onkeyup="loadagentGeneralDetail();" onkeypress="loadagentGeneralDetail();" />
+																	id="ajax_field_alt_phone" type="text" class="phoneDetail" maxlength="12" style="width: 117px" />
                                                                   </td>
                                                                   <td width="18%" nowrap="nowrap" class="formLabel" style="text-align: right">
                                                                     <label id="alt_extn_label">Extn.

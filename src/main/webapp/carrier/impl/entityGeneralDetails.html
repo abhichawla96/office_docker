@@ -10,13 +10,11 @@
 <title>ProducerOne - Producer Management Center</title>
 <!-- css -->
 <link href="css/style.css" rel="stylesheet" type="text/css" />
-<link href="css/impl/bmic_specific_style.css" rel="stylesheet" type="text/css" />
 <!-- Scripts -->
 <script type="text/javascript" src="js/all_files.js" />
 
-<link href="css/impl/bmic_specific_style.css" rel="stylesheet" type="text/css" /> <!-- BMIC req -->
 </head>
-<body onload="loadAgencyComparativeRateCheckbox();showHideClusterDiv();showHideBusinessAddressDiv();showHideW9AddressDiv();showHideMailingAddressDiv();getCheckedAgencyComparativeRater1();loadentityGeneralDetail();updateReadonlyFlagBusinessTerminationDatesDiv();showOtherDiv();showPopUpList1('searchCodePopup','checkNationalCodeSearch'); showPopUpList1('searchCodePopup2','checkCombinedCodeSearch');showPopUpList('popupEntityList','verifyWithNIPRPopup'); showPopUpList('popupEntityHistory','showEntityHistoryPopup'); showPopUpList('popupFail','isshowUpdateCommentsOnEntityGeneral'); showaddressdetails(); showPopUpList('popupActiveEntityAppointmentMsg','showActivementPopupOnAppointmentScreen'); showPopUpList('popupChangePDBLookupMsg','showChangePDBLookupPopupOnAppointmentScreen'); showPopUpList('popupInactiveAppointmentPopupMsg','showInActiveAppointmentPopupOnAppointmentScreen'); showPopUpList('popupActiveAppointmentMsg','showActiveAppointmentPopupOnAppointmentScreen');showPopUpList('popupConfirmSelection','showConfirmSelectionPopupOnAppointmentScreen');showHitListLicenseNumberTextField(this.value); showPopUpList('InactiveStatusPopupDiv','isShowInactiveStatusPopup');showPopUpList('popupSendForReview','sendForReviewPopup');loadUploadDiv();showPopUpList('divAgencyCompletePopUp','showDivAgencyCompletePopUp');showPopUpList('popupEntityList','verifyWithDefaultFeinPopup');loadQuestions();showdivOther();showPopUpList1('npnChangedWithActiveAppointments','checkNPNChangedWithActiveAppointments');checkAllStatusChecked();showAgencyLocationOtherDiv();"
+<body onload="loadAgencyComparativeRateCheckbox();showHideClusterDiv();getCheckedAgencyComparativeRater1();loadentityGeneralDetail();updateReadonlyFlagBusinessTerminationDatesDiv();showOtherDiv();showPopUpList1('searchCodePopup','checkNationalCodeSearch'); showPopUpList1('searchCodePopup2','checkCombinedCodeSearch');showPopUpList('popupEntityList','verifyWithNIPRPopup'); showPopUpList('popupEntityHistory','showEntityHistoryPopup'); showPopUpList('popupFail','isshowUpdateCommentsOnEntityGeneral'); showaddressdetails(); showPopUpList('popupActiveEntityAppointmentMsg','showActivementPopupOnAppointmentScreen'); showPopUpList('popupChangePDBLookupMsg','showChangePDBLookupPopupOnAppointmentScreen'); showPopUpList('popupInactiveAppointmentPopupMsg','showInActiveAppointmentPopupOnAppointmentScreen'); showPopUpList('popupActiveAppointmentMsg','showActiveAppointmentPopupOnAppointmentScreen');showPopUpList('popupConfirmSelection','showConfirmSelectionPopupOnAppointmentScreen');showHitListLicenseNumberTextField(this.value); showPopUpList('InactiveStatusPopupDiv','isShowInactiveStatusPopup');showPopUpList('popupSendForReview','sendForReviewPopup');loadUploadDiv();showPopUpList('divAgencyCompletePopUp','showDivAgencyCompletePopUp');showPopUpList('popupEntityList','verifyWithDefaultFeinPopup');loadQuestions();showdivOther();showPopUpList1('npnChangedWithActiveAppointments','checkNPNChangedWithActiveAppointments');checkAllStatusChecked();showAgencyLocationOtherDiv();setGetRadioButtonsFromRadioGroup('dividend_distribution_id','ajax_field_Selecteddividend_distribution_id','set');setGetRadioButtonsFromRadioGroup('agent_copies_id','ajax_field_Selectedagent_copies_id','set');setGetRadioButtonsFromRadioGroup('policyholder_copies_id','ajax_field_Selectedpolicyholder_copies_id','set');"
 	id="divComplete">
 	<div id="updateAgencyChildDataPopup"></div>
 	<div  style="display: none">
@@ -190,6 +188,16 @@ id="ajaxdeletedivid"/>
 <input type="hidden" name="hidden_associated_agency_other_flag"
 fullid="entityGeneralDetails_freeform_contextdata_999(entityGeneralDetails_freeform_contextdata_999_security.hidden).hidden_associated_agency_other_flag_security.hidden_associated_agency_other_flag_label.hidden_associated_agency_other_flag" 
 id="ajax_field_hidden_associated_agency_other_flag" /> 
+
+<input type="hidden" name="Selecteddividend_distribution_id"
+id="ajax_field_Selecteddividend_distribution_id" />
+<input type="hidden" name="Selectedagent_copies_id"
+id="ajax_field_Selectedagent_copies_id" />
+<input type="hidden" name="Selectedpolicyholder_copies_id"
+id="ajax_field_Selectedpolicyholder_copies_id" />
+
+<input type="hidden" name="isShowGenearteWelcomeLetterButton"
+id="ajax_field_isShowGenearteWelcomeLetterButton" />
 
 <!-- <input type="hidden"
 name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLocationValidationofQuestions" /> -->
@@ -1785,12 +1793,12 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 													href="javascript:submitform('carrier/entityGeneralDetails.html','entityGeneralDetails.downloadDeclinationLetter','','');">
 														<span id="entitybackgroundlist_downloaddeclinationletterlabel">Download Declination Letter</span>
 												</a>
-<!-- BMIC Specific-->												<!-- New Agency App Letter  -->
-												<a id="welcomeagencyletter_generateletter" class="btn btn-primary" 
-	                                fullid="page(page.page).welcomeagencyletter_generateletter.welcomeagencyletter_generateletter_label.welcomeagencyletter_generateletter"
-	                                href="javascript:submitform('carrier/entityGeneralDetails.html','entityGeneralDetails.downloadWelcomeLetter','','');">
-	                                  <span id="welcomeagencyletter_generateletter_label">Generate Welcome Letter</span>
-	                                </a>
+												
+												<a id="generatewelcomeletter_entityGeneralDetail_security"
+													fullid="page(page.page).generatewelcomeletter_entityGeneralDetail_generate_agency_welcome_letter_label.generatewelcomeletter_entityGeneralDetail_security"
+													href="javascript:submitform('carrier/entityGeneralDetails.html','entityGeneralDetails.downloadAgencyWelcomeLetter','','');"
+													class="btn btn-primary"> <span id="generate_agency_welcome_letter_label">Generate Welcome Letter</span>
+												</a>
 												
 												<a id="addNewLocation_entityGeneralDetail_security"
 													fullid="page(page.page).addNewLocation_entityGeneralDetail_security.add_new_location_label.addNewLocation_entityGeneralDetail_security"
@@ -3157,9 +3165,66 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 														</div>
 													</li>
 													<li id="#url_after#"></li>
-													
-
-													<li id="#exp_in_years_before#"></li>
+													<li id=entityGeneralDetails_member_of_hba_security>
+												<div class="freeFormList formGroup">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>#space#</h6>
+														
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<div id="ajax_error_member_of_hba" class="error"></div>
+															<div id="error_member_of_hba" class="error"></div> 
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign">
+															<div class="freeFormLabelWidth">
+																<span id="entityGeneralDetails_member_of_hba_label">Are you a member of an HBA?</span>
+																:
+															</div>
+														</div>
+														<div class="freeFormListTd tdInput">
+														<input type="radio" name="member_of_hba"
+																id="ajax_field_member_of_hba" value="1" /> Yes 
+														<input type="radio" name="member_of_hba"
+																id="ajax_field_member_of_hba" value="0" /> No
+														</div>
+													</div>
+												</div>
+												<p style="padding-left: 7px">(It is required for all North Carolina Agencies to be a member of a Sample Insurance Association)</p>
+											</li>
+												
+											<li id="entityGeneralDetails_hba_association_id_security">
+												<div class="freeFormList formGroup">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>#space#</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<div id="ajax_error_hba_association_id" class="error"></div>
+															<div id="error_hba_association_id" class="error"></div>
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign">
+															<div class="freeFormLabelWidth">
+																<span id="entityGeneralDetails_hba_association_id_label">If Yes, please select the HBA Chapter you are a member of</span>
+																:
+															</div>
+														</div>
+														<div class="freeFormListTd mendatoryInput">
+															<select name="hba_association_id" id="ajax_field_hba_association_id" class="form-control">
+																<option value="">Select</option>
+															</select>
+														<!-- 	<span id="hba_association_id_security_oldvaluekey">
+																<label name="hba_association_id_old" id="ajax_field_hba_id_old" class="oldValue"></label>
+															</span> -->
+														</div>
+													</div>
+												</div>
+											</li>
+											<li id="#exp_in_years_before#"></li>
 													<li id="exp_in_years_securityHeader">
 														<div id="exp_in_years_div">
 															<div class="freeFormList form-group">
@@ -3190,7 +3255,10 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 														</div>
 													</li>
 													<li id="#exp_in_years_after#"></li>
-
+													
+													
+													
+													
 													<li id="#num_lcnsd_prdcr_before#"></li>
 													<li id="num_lcnsd_prdcr_securityHeader">
 														<div id="num_lcnsd_prdcr_div">
@@ -3314,6 +3382,8 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 														</div>
 													</li>
 													<li id="#num_csr_after#"></li>
+													
+													
 
 													<li id="#isMasterAssociatedAgency_before#"></li>
 													<li id="isMasterAssociatedAgency_securityHeader">
@@ -3337,12 +3407,12 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 																	<span id="isAssociatedAgencyCountNotGreaterThenZero">
 																		<span id="isMasterClusterApplicable" style="padding-left: 0px !important;"> <input
 																			type="radio" class="checkboxMargins"
-																			onclick="javascript:hideDiv('associatedAgency_idDiv');hideDiv('associatedAgency_id1Div');clearAssociatedAgency_id();"
+																			onclick="javascript:hideDiv('associatedAgency_idDiv');hideDiv('associatedAgency_id1Div');clearAssociatedAgency_id();" onchange="clearClusterDates();"
 																			name="isMasterAssociatedAgency"
 																			fullid="entityGeneralDetailsResult_freeform_contextdata_2(general_information_security.general_details_information_label).isMasterAssociatedAgency_securityHeader.cluster_label.isMasterAssociatedAgency"
 																			id="ajax_field_isMasterAssociatedAgency" value="3" /> <span id="entityGeneralDetails_master_label">Master</span> 
 																			<input type="radio" class="checkboxMargins"
-																			onclick="javascript:showDiv('associatedAgency_idDiv');hideDiv('associatedAgency_id1Div');"
+																			onclick="javascript:showDiv('associatedAgency_idDiv');hideDiv('associatedAgency_id1Div');"  onchange="clearClusterDates();"
 																			name="isMasterAssociatedAgency"
 																			fullid="entityGeneralDetailsResult_freeform_contextdata_2(general_information_security.general_details_information_label).isMasterAssociatedAgency_securityHeader.cluster_label.isMasterAssociatedAgency"
 																			id="ajax_field_isMasterAssociatedAgency" value="1" /> <span id="entityGeneralDetails_network_label">Group</span>
@@ -3350,13 +3420,13 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 																		<span id="isMasterClusterNotApplicable"> <input
 																			type="radio" class="checkboxMargins"
 																			fullid="entityGeneralDetailsResult_freeform_contextdata_2(general_information_security.general_details_information_label).isMasterAssociatedAgency_securityHeader.cluster_label.isMasterAssociatedAgency"
-																			onclick="javascript:showDiv('associatedAgency_idDiv');hideDiv('associatedAgency_id1Div');clearAssociatedAgency_id();"
+																			onclick="javascript:showDiv('associatedAgency_idDiv');hideDiv('associatedAgency_id1Div');clearAssociatedAgency_id();"  onchange="clearClusterDates();"
 																			name="isMasterAssociatedAgency"
 																			id="ajax_field_isMasterAssociatedAgency" value="1" /> <span id="entityGeneralDetails_network_label">Group</span>
 																		</span> 
 																		<input type="radio" class="checkboxMargins"
 																			fullid="entityGeneralDetailsResult_freeform_contextdata_2(general_information_security.general_details_information_label).isMasterAssociatedAgency_securityHeader.cluster_label.isMasterAssociatedAgency"
-																			onclick="javascript:showDiv('associatedAgency_idDiv');hideDiv('associatedAgency_id1Div');"
+																			onclick="javascript:showDiv('associatedAgency_idDiv');hideDiv('associatedAgency_id1Div');"  onchange="clearClusterDates();"
 																			id="ajax_field_isMasterAssociatedAgency"
 																			name="isMasterAssociatedAgency" value="2" /> <span id="entityGeneralDetails_member_label">Member</span> 
 																			<input type="radio" class="checkboxMargins"
@@ -3391,8 +3461,8 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 															</div>
 															<div id="#associatedAgency_id_before#"></div>
 														<div id="associatedAgency_id_securityHeader">
-															<div class="freeFormList form-group"
-																id="associatedAgency_idDiv">
+														<div id="associatedAgency_idDiv">
+															<div class="freeFormList form-group">
 																<div class="freeFormListTr">
 																	<div class="freeFormListTdError">
 																		<h6>#space#</h6>
@@ -3418,10 +3488,76 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 																		</select>
 																	</div>
 																</div>
+																
 															</div>
+															
+														</div>
+															
 														</div>
 														<div id="#associatedAgency_id_after#"></div>
+														
+															
 														</div>
+													</li>
+													<li id="showclusterdate_security">
+														<div >
+																<div class="freeFormList form-group">
+																	<div class="freeFormListTr">
+																			<div class="freeFormListTdError">
+																				<h6>#space#</h6>
+																			</div>
+																			<div class="freeFormListTdError paddingLeft3">
+																				<div id="error_cluster_effective_date" class="error" />
+																				<div id="ajax_error_cluster_effective_date" class="error" />
+																			</div>
+																		</div>
+																		<div class="freeFormListTr">
+																				<div class="freeFormListTd labelAlign">
+																					<div class="freeFormLabelWidth">
+																						<span id="cluster_effective_datelabel">Effective Date</span> :
+																					</div>
+																				</div>
+																				<div class="freeFormListTd text-nowrap">
+																					<div class="input-group date">
+																						<div class="input-group-addon"
+																							id="ico_fa_calender_security">
+																							<i class="fa fa-calendar">&nbsp;</i>
+																						</div>
+																						<input name="cluster_effective_date" type="text" id="ajax_field_cluster_effective_date" onkeyup="applyDateFormat(this);" class="form-control datepicker" maxlength="11" />
+																					</div>
+																					<a id="date_link" class="calender_ico icons" title="Select Date" onclick="show_calendar_widget(this);"> </a>
+																				</div>
+																		</div>
+																	</div>
+																	<div class="freeFormList form-group">
+																		<div class="freeFormListTr">
+																			<div class="freeFormListTdError">
+																				<h6>#space#</h6>
+																			</div>
+																			<div class="freeFormListTdError paddingLeft3">
+																				<div id="error_cluster_expiration_date" class="error" />
+																				<div id="ajax_error_cluster_expiration_date" class="error" />
+																			</div>
+																		</div>
+																		<div class="freeFormListTr">
+																			<div class="freeFormListTd labelAlign">
+																				<div class="freeFormLabelWidth">
+																					<span id="cluster_expiration_datelabel">Expiration Date</span> :
+																				</div>
+																			</div>
+																			<div class="freeFormListTd text-nowrap">
+																				<div class="input-group date">
+																					<div class="input-group-addon"
+																						id="ico_fa_calender_security">
+																						<i class="fa fa-calendar">&nbsp;</i>
+																					</div>
+																					<input name="cluster_expiration_date" type="text" id="ajax_field_cluster_expiration_date" onkeyup="applyDateFormat(this);" class="form-control datepicker" maxlength="11" />
+																				</div>
+																				<a id="date_link" class="calender_ico icons" title="Select Date" onclick="show_calendar_widget(this);"> </a>
+																			</div>
+																		</div>
+																</div>
+															</div>	
 													</li>
 													<li id="#isMasterAssociatedAgency_after#"></li>
 
@@ -3654,6 +3790,7 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 														</div>
 													</li>
 													<li id="#agency_management_after#"></li>
+													
 													<li id="#agency_location_before#"></li>
 														<li id="entityGeneralDetails_agency_location_security">
 															<div class="freeFormList form-group">
@@ -4465,13 +4602,7 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 														</div>
 													</li>
 													<li id="#is_employee_after#"></li>
-                                                       
-                                                       	<!-- Start - Sprint 1 BMIC req -->
-											<li id="entityGeneralDeetails_hba_label_security">
-											<label id="entityGeneralDeetails_hba_desc_label">(It is required for all North Carolina Agencies to be a member of a Home Builders Association)</label>
-											</li>	
-											<!-- End - Sprint 1 BMIC req -->
-													 <li id="#segment_before#"></li>
+                                                       <li id="#segment_before#"></li>
 													   <li id="entityGeneralDetails_segment_security">
 														  <div class="freeFormList form-group">
 															 <div class="freeFormListTr">
@@ -4652,7 +4783,7 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 															</div>
 														</div>
 													</li> -->
-													<li id="isShowAgencyLobCheckbox" class="inlineBlock_2" style="width: 49.7% !important; vertical-align: top;">
+													<li id="isShowAgencyLobCheckbox" class="inlineBlock_2 paddingTop10" style="width: 49.7% !important; vertical-align: top;">
 														<div id="agency_lob_checkbox_list_mom_1" class="row"/>
 													</li>
 													<li id="#agency_lob_after#"></li>
@@ -5095,10 +5226,7 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 																						<input name="zip_business"
 																							fullid="entityGeneralDetailsResult_freeform_contextdata_4(agency_business_address_security.business_address_label).business_zip_code_agency_address_security.business_zip_code_agency_address_label.zip_business"
 																							id="ajax_field_zip_business" type="text"
-																							class="form-control" maxlength="10"
-																							title="99999-9999"
-																							onkeyup="loadentityGeneralDetail();addHyphen(this,event);"
-																							onmouseover="setTitleForZipCode(this);" />
+																							class="form-control" maxlength="10" />
 																					</div>
 																				</div>
 																			</div>
@@ -5130,11 +5258,8 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 																						<input name="phone_business"
 																							fullid="entityGeneralDetailsResult_freeform_contextdata_4(agency_business_address_security.business_address_label).business_phone_ext_agency_address_security.phone_businessaddress_label.phone_business"
 																							id="ajax_field_phone_business" type="text"
-																							class="form-control phone-control" maxlength="12"
-																							title="999-999-9999"
-																							onkeyup="loadentityGeneralDetail();"
-																							onkeypress="loadentityGeneralDetail();"
-																							onchange="loadentityGeneralDetail();" /> <span
+																							class="form-control phone-control" maxlength="12" onkeyup="javascript:checkExtnEditable('ajax_field_phone_business', 'ajax_field_extn_business');"
+																							 /> <span
 																							id="business_ext_agency_address_security" class="extnLabel">
 																							<label id="business_ext_agency_address_label"
 																							class="ext-label">Extn. </label> : <input
@@ -5176,11 +5301,8 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 																						<input name="alt_phone_business"
 																							fullid="entityGeneralDetailsResult_freeform_contextdata_4(agency_business_address_security.business_address_label).business_alt_phone_ext_agency_address_security.alt_business_phone_label.alt_phone_business"
 																							id="ajax_field_alt_phone_business" type="text"
-																							class="form-control phone-control" maxlength="12"
-																							title="999-999-9999"
-																							onkeyup="loadentityGeneralDetail();"
-																							onkeypress="loadentityGeneralDetail();"
-																							onchange="loadentityGeneralDetail();" /> <span
+																							class="form-control phone-control" maxlength="12" onkeyup="javascript:checkExtnEditable('ajax_field_alt_phone_business', 'ajax_field_alt_extn_business');"
+																							 /> <span
 																							id="business_alt_ext_agency_address_security" class="extnLabel"><label
 																							id="alt_businessaddress_phone_extn_label"
 																							class="ext-label"> Extn.</label> : <input
@@ -5400,7 +5522,17 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 																</div>
 															</div>
 															<div id="BusinessVerifyAddressDiv">
+															
+															
 																<div class="buttonwrapper paddingTop10" id="verify_business_address_security">
+																<span id="show_verify_business_address_indicator_security"> 
+																<input type="hidden" name="is_business_address_verified" id="ajax_field_is_business_address_verified" />
+																<img
+																				src="images/address_verified_icon.png"
+																				title="Address Verified"
+																				height="30" width="30"  />
+																			</span>
+															
 																	<a
 																		fullid="entityGeneralDetailsResult_freeform_contextdata_4(agency_business_address_security.business_address_label).verify_business_address_security.verify_business_address_label.verify_business_address_security"
 																		href="javascript:ajaxpageblocklink('carrier/addressSugesstion.html','entityGeneralDetails.verifyBusinessAddress','','','popupEntityList');"
@@ -5790,9 +5922,7 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 																							fullid="entityGeneralDetailsResult_freeform_contextdata_5(agency_mailing_address_security.mailing_address_label).mailing_zip_code_agency_address_security.mailing_zip_code_agency_address_label.zip_mailing"
 																							id="ajax_field_zip_mailing" type="text"
 																							class="form-control" maxlength="10"
-																							title="99999-9999"
-																							onkeyup="loadentityGeneralDetail();addHyphen(this,event);"
-																							onmouseover="setTitleForZipCode(this);" />
+																							 />
 																					</div>
 																				</div>
 																			</div>
@@ -5824,11 +5954,8 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 																						<input name="phone_mailing"
 																							fullid="entityGeneralDetailsResult_freeform_contextdata_5(agency_mailing_address_security.mailing_address_label).mailing_phone_ext_agency_address_security.phone_mailingaddress_label.phone_mailing"
 																							id="ajax_field_phone_mailing" type="text"
-																							class="form-control phone-control" maxlength="12"
-																							title="999-999-9999"
-																							onkeyup="loadentityGeneralDetail();"
-																							onkeypress="loadentityGeneralDetail();"
-																							onchange="loadentityGeneralDetail();" /> <span
+																							class="form-control phone-control" maxlength="12" onkeyup="javascript:checkExtnEditable('ajax_field_phone_mailing', 'ajax_field_extn_mailing');"
+																							 /> <span
 																							id="mailing_ext_agency_address_security" class="extnLabel"><label
 																							id="mailing_ext_agency_address_label"
 																							class="ext-label">Extn. </label> : <input
@@ -5868,11 +5995,8 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 																						<input name="alt_phone_mailing"
 																							fullid="entityGeneralDetailsResult_freeform_contextdata_5(agency_mailing_address_security.mailing_address_label).mailing_alt_phone_ext_agency_address_security.alt_phone_label.alt_phone_mailing"
 																							id="ajax_field_alt_phone_mailing" type="text"
-																							class="form-control phone-control" maxlength="12"
-																							title="999-999-9999"
-																							onkeyup="loadentityGeneralDetail();"
-																							onkeypress="loadentityGeneralDetail();"
-																							onchange="loadentityGeneralDetail();" /> <span
+																							class="form-control phone-control" maxlength="12" onkeyup="javascript:checkExtnEditable('ajax_field_alt_phone_mailing', 'ajax_field_alt_extn_mailing');"
+																							 /> <span
 																							id="mailing_alt_ext_agency_address_security" class="extnLabel"><label
 																							id="mailing_alt_ext_agency_address_label"
 																							class="ext-label"> Extn.</label> : <input
@@ -6088,6 +6212,15 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 															</div>
 															<div id="MailngVerifyAddressDiv">
 																<div class="buttonwrapper paddingTop10" id="verify_mailing_address_security">
+																		<span id="show_verify_mailing_address_indicator_security">
+																			<input type="hidden" name="is_mailing_address_verified" id="ajax_field_is_mailing_address_verified" />
+																		
+																		 <img
+																				src="images/address_verified_icon.png"
+																				title="Address Verified"
+																				height="30" width="30"  />
+																			</span>
+																
 																	<a
 																		fullid="entityGeneralDetailsResult_freeform_contextdata_5(agency_mailing_address_security.mailing_address_label).verify_mailing_address_security.verify_mailing_address_label.verify_mailing_address_security"
 																		href="javascript:ajaxpageblocklink('carrier/addressSugesstion.html','entityGeneralDetails.verifyMailingAddress','','','popupEntityList');"
@@ -6693,9 +6826,7 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 																						<input name="zip_w9" id="ajax_field_zip_w9"
 																							fullid="entityGeneralDetailsResult_freeform_contextdata_6(agency_w9_address_security.w9_address_label).w9_zip_code_agency_address_security.w9_zip_code_agency_address_label.zip_w9"
 																							type="text" class="form-control" maxlength="10"
-																							title="99999-9999"
-																							onkeyup="loadentityGeneralDetail();addHyphen(this,event);"
-																							onmouseover="setTitleForZipCode(this);" />
+																							 />
 																					</div>
 																				</div>
 																			</div>
@@ -6725,11 +6856,8 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 																						id="addressPhoneInput">
 																						<input name="phone_w9" id="ajax_field_phone_w9"
 																							fullid="entityGeneralDetailsResult_freeform_contextdata_6(agency_w9_address_security.w9_address_label).w9_phone_ext_agency_address_security.phone_w9address_label.phone_w9"
-																							type="text" class="form-control phone-control"
-																							maxlength="12" title="999-999-9999"
-																							onkeyup="loadentityGeneralDetail();"
-																							onkeypress="loadentityGeneralDetail();"
-																							onchange="loadentityGeneralDetail();" /> <span
+																							type="text" class="form-control phone-control" onkeyup="javascript:checkExtnEditable('ajax_field_phone_w9', 'ajax_field_extn_w9');"
+																							maxlength="12" /> <span
 																							id="w9_ext_agency_address_security" class="extnLabel"> <label
 																							id="w9_ext_agency_address_label" class="ext-label">Extn.
 																						</label> : <input name="extn_w9" id="ajax_field_extn_w9"
@@ -6768,11 +6896,8 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 																						<input name="alt_phone_w9"
 																							id="ajax_field_alt_phone_w9" type="text"
 																							fullid="entityGeneralDetailsResult_freeform_contextdata_6(agency_w9_address_security.w9_address_label).w9_alt_phone_ext_agency_address_security.alt_w9_phone_label.alt_phone_w9"
-																							class="form-control phone-control" maxlength="12"
-																							title="999-999-9999"
-																							onkeyup="loadentityGeneralDetail();"
-																							onkeypress="loadentityGeneralDetail();"
-																							onchange="loadentityGeneralDetail();" /> <span
+																							class="form-control phone-control" maxlength="12" onkeyup="javascript:checkExtnEditable('ajax_field_alt_phone_w9', 'ajax_field_alt_extn_w9');"
+																							 /> <span
 																							id="w9_alt_ext_agency_address_security" class="extnLabel"> <label
 																							id="w9_alt_ext_agency_address_label"
 																							class="ext-label"> Extn.</label> : <input
@@ -7051,6 +7176,14 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 															</div>
 															<div id="W9VerifyAddressDiv">
 																<div class="buttonwrapper paddingTop10" id="verify_w9_address_security">
+																																<span id="show_verify_w9_address_indicator_security"> 
+																											<input type="hidden" name="is_w9_address_verified" id="ajax_field_is_w9_address_verified" />						
+																																<img
+																				src="images/address_verified_icon.png"
+																				title="Address Verified"
+																				height="30" width="30"  />
+																			</span>
+																
 																	<a
 																		fullid="entityGeneralDetailsResult_freeform_contextdata_6(agency_w9_address_security.w9_address_label).verify_w9_address_security.verify_w9_address_label.verify_w9_address_security"
 																		href="javascript:ajaxpageblocklink('carrier/addressSugesstion.html','entityGeneralDetails.verifyW9Address','','','popupEntityList');"
@@ -7422,9 +7555,7 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 																							fullid="entityGeneralDetailsResult_freeform_contextdata_7(agency_DEC_address_security.DEC_address_label).DEC_zip_code_agency_address_security.DEC_zip_code_agency_address_label.zip_DEC"
 																							id="ajax_field_zip_DEC" type="text"
 																							class="form-control" maxlength="10"
-																							title="99999-9999"
-																							onkeyup="loadentityGeneralDetail();addHyphen(this,event);"
-																							onmouseover="setTitleForZipCode(this);" />
+																							 />
 																					</div>
 																				</div>
 																			</div>
@@ -7456,11 +7587,8 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 																						<input name="phone_DEC"
 																							fullid="entityGeneralDetailsResult_freeform_contextdata_7(agency_DEC_address_security.DEC_address_label).DEC_phone_ext_agency_address_security.phone_DECaddress_label.phone_DEC"
 																							id="ajax_field_phone_DEC" type="text"
-																							class="form-control phone-control" maxlength="12"
-																							title="999-999-9999"
-																							onkeyup="loadentityGeneralDetail();"
-																							onkeypress="loadentityGeneralDetail();"
-																							onchange="loadentityGeneralDetail();" /> <span
+																							class="form-control phone-control" maxlength="12" onkeyup="javascript:checkExtnEditable('ajax_field_phone_DEC', 'ajax_field_extn_DEC');"
+																							title="999-999-9999" /> <span
 																							id="DEC_ext_agency_address_security" class="extnLabel">
 																							<label id="DEC_ext_agency_address_label"
 																							class="ext-label">Extn. </label> : <input
@@ -7502,11 +7630,8 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 																						<input name="alt_phone_DEC"
 																							fullid="entityGeneralDetailsResult_freeform_contextdata_7(agency_DEC_address_security.DEC_address_label).DEC_alt_phone_ext_agency_address_security.alt_DEC_phone_label.alt_phone_DEC"
 																							id="ajax_field_alt_phone_DEC" type="text"
-																							class="form-control phone-control" maxlength="12"
-																							title="999-999-9999"
-																							onkeyup="loadentityGeneralDetail();"
-																							onkeypress="loadentityGeneralDetail();"
-																							onchange="loadentityGeneralDetail();" /> <span
+																							class="form-control phone-control" maxlength="12" onkeyup="javascript:checkExtnEditable('ajax_field_alt_phone_DEC', 'ajax_field_alt_extn_DEC');"
+																							/> <span
 																							id="DEC_alt_ext_agency_address_security" class="extnLabel"><label
 																							id="alt_DECaddress_phone_extn_label"
 																							class="ext-label"> Extn.</label> : <input
@@ -7727,6 +7852,15 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 															</div>
 															<div id="DECVerifyAddressDiv">
 																<div class="buttonwrapper" id="verify_DEC_address_security">
+																 <span id="show_verify_dec_address_indicator_security"> 
+																 <input type="hidden" name="is_dec_address_verified"
+id="ajax_field_is_dec_address_verified" />
+																 <img
+																				src="images/address_verified_icon.png"
+																				title="Address Verified"
+																				height="30" width="30"  />
+																			</span>
+																
 																	<span> <a
 																		fullid="entityGeneralDetailsResult_freeform_contextdata_7(agency_DEC_address_security.DEC_address_label).verify_DEC_address_security.verify_DEC_address_label.verify_DEC_address_security"
 																		href="javascript:ajaxpageblocklink('carrier/addressSugesstion.html','entityGeneralDetails.verifyDECAddress','','','popupEntityList');"
@@ -7740,58 +7874,101 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 														</div>
 													</fieldset>
 												</div>
-<!-- BMIC Specific-->							<!--  Sprint 3 BMIC Req-->					
-							<!-- <section id="secDividendDist"> -->
-							 <div id="divDividendDist" >
-								<fieldset >
-								<legend id="dividendDistLabel">
-								<label id="dividendDistLegendLabel">Dividend Distribution</label> 
-								</legend>
-									<div class="freeFormListTd tdInput">
-									<div id="optFields">
-									<ul id="entityGeneralDetails_freeform_contextdata_3234">
-								 	<li><p id="freeText1Label">Please select from the available options below: </p></li>
-									<li id="#distDistiShow_after#"></li>
-									<li><p>Please note, by electing to have the dividend checks mailed to your agency you must agree to deliver the checks to your eligible clients within 30 days of receipt. </p></li>
+												
+							<section class="list-grid" id="entityGeneralDetails_dividend_distribution_id_security">
+								<div class="row" align="center">
+									<div id="ajax_error_dividend_distribution_id" class="error" />
+									<div id="error_dividend_distribution_id" class="error" />
+								</div>
+								<fieldset>
+									<legend class="mendatoryInput">
+									<span id="entityGeneralDetails_dividend_distribution_id_label">Dividend Distribution</span></legend> 									
+									<p style="padding-left: 7px">Please select from the available options below:</p>
+									<ul class="div_checkbox div_checkbox1" id="dividend_distribution_mom_list_1" style="padding-left: 1px;">
+										<li id="dividend_distribution_mom_list_header_1" style="display: none">
+											<span class="tableinfoheader"
+												id="block_field_radio_group_dividend_distribution_id"
+												width="426"></span>
+											<span class="tableinfoheader"
+												id="block_field_dividend_distribution_description"
+												width="426"></span>
+										</li>
+										<li id="dividend_distribution_mom_list_mom_data_1">
+											<div id="mom_child_data">
+												<span id="block_field_radio_group_dividend_distribution_id">
+													<input type="radio" class="checkboxMargins" id="dividend_distribution_id" name="dividend_distribution_id" onclick="setGetRadioButtonsFromRadioGroup('dividend_distribution_id','ajax_field_Selecteddividend_distribution_id','get');"/>
+												</span>
+												<span id="block_field_dividend_distribution_description"></span>
+												
+											</div>
+										</li>
 									</ul>
+									<p style="padding-left: 7px">Please note, by electing to have the dividend checks mailed to your agency you must agree to deliver the checks to your eligible clients within 30 days of receipt.</p>
+								<fieldset>
+							</section>
+							<section class="list-grid" id="entityGeneralDetails_agent_copies_id_security">
+								<div class="row" align="center">
+									<div id="ajax_error_agent_copies_id" class="error" />
+									<div id="error_agent_copies_id" class="error" />
 								</div>
-								</div>
-								</fieldset>
-							</div>
-							
-							 <div id="divAgentCopies" >
-								<fieldset >
-								<legend id="agentCopiesLabel">
-								 <label id="agentCopiesLegendLabel">Agent Copies</label>
-								</legend>
-									<div class="freeFormListTd tdInput">
-									<div id="optagentCopiesFields1"> 
-									<ul id="entityGeneralDetails_freeform_contextdata_3236">
-								 	<li id="#agentCopies_after#"></li>
+								<fieldset>
+								<legend class="mendatoryInput">
+									<span id="entityGeneralDetails_agent_copies_id_label">Agent Copies</span></legend> 									
+									<ul class="div_checkbox div_checkbox1" id="agent_copies_mom_list_1" style="padding-left: 1px;">
+										<li id="agent_copies_mom_list_header_1" style="display: none">
+											<span class="tableinfoheader"
+												id="block_field_radio_group_agent_copies_id"
+												width="426"></span>
+											<span class="tableinfoheader"
+												id="block_field_agent_copies_description"
+												width="426"></span>
+										</li>
+										<li id="agent_copies_mom_list_mom_data_1">
+											<div id="mom_child_data">
+												<span id="block_field_radio_group_agent_copies_id">
+													<input type="radio" class="checkboxMargins" id="agent_copies_id" name="agent_copies_id" onclick="setGetRadioButtonsFromRadioGroup('agent_copies_id','ajax_field_Selectedagent_copies_id','get');"/>
+												</span>
+												<span id="block_field_agent_copies_description"></span>
+												
+											</div>
+										</li>
 									</ul>
-									</div>
+								<fieldset>
+							</section>
+							<section class="list-grid" id="entityGeneralDetails_policyholder_copies_id_security">
+								<div class="row" align="center">
+									<div id="ajax_error_policyholder_copies_id" class="error" />
+									<div id="error_policyholder_copies_id" class="error" />
 								</div>
-								</fieldset>
-							</div>	
-										
-							 <div id="divPolicyHolder" >
-								<fieldset >
-								<legend id="policyHolderLabel">
-								 <label id="policyHolderLegendLabel">Policyholder Copies</label>
-								</legend>
-									<div class="freeFormListTd tdInput">
-									<div id="optPolicyholderFields1"> 
-									<ul id="entityGeneralDetails_freeform_contextdata_3235">
-								 	<li><p id="freeText1Label1">Your agency can select how you would like Builders Mutual to distribute copies of policyholders' new and renewal policies. If you choose to receive your policyholders'</p></li>
-								 	<li><p id="freeText1Label2"> documents, we will send your agency the documents so you can personalize the delivery.  (Note- If your policyholder selects to Go Paperless, policyholder copies will not print. </p></li>
-								 	<li><p id="freeText1Label3"> Instead, they will receive an email to review their policies online).  Please select one option below:</p></li>
-									<li id="#policyholdercopies_after#"></li>
+								<fieldset>
+								<legend class="mendatoryInput">
+									<span id="entityGeneralDetails_policyholder_copies_id_label">Policyholders Copies</span></legend> 											<p style="padding-left: 7px">Your agency can select how you would like Sample Insurance to distribute copies of policyholders' new and renewal policies. If you choose to receive your policyholders'
+
+documents, we will send your agency the documents so you can personalize the delivery. (Note- If your policyholder selects to Go Paperless, policyholder copies will not print.
+
+Instead, they will receive an email to review their policies online). Please select one option below:</p>
+									<ul class="div_checkbox div_checkbox1" id="policyholder_copies_mom_list_1" style="padding-left: 1px;">
+										<li id="policyholder_copies_mom_list_header_1" style="display: none">
+											<span class="tableinfoheader"
+												id="block_field_radio_group_policyholder_copies_id"
+												width="426"></span>
+											<span class="tableinfoheader"
+												id="block_field_policyholder_copies_description"
+												width="426"></span>
+										</li>
+										<li id="policyholder_copies_mom_list_mom_data_1">
+											<div id="mom_child_data">
+												<span id="block_field_radio_group_policyholder_copies_id">
+													<input type="radio" class="checkboxMargins" id="policyholder_copies_id" name="policyholder_copies_id" onclick="setGetRadioButtonsFromRadioGroup('policyholder_copies_id','ajax_field_Selectedpolicyholder_copies_id','get');" />
+												</span>
+												<span id="block_field_policyholder_copies_description"></span>
+												
+											</div>
+										</li>
 									</ul>
-									</div>
-								</div>
-								</fieldset>
-							</div>		
-							<!-- Sprint 3 BMIC Req -->
+								<fieldset>
+							</section>
+												
 												<div id="entityGeneralDetails_nipr_address_security">
 												<fieldset class="paddingBottom0">
 													<legend>
@@ -7922,6 +8099,18 @@ name="dummyFieldForLocationValidationofQuestions" id="ajax_field_dummyFieldForLo
 
 									</fieldset>
 									</section>
+									
+									<section class="list-grid paddingTop20" id="agency_cluster_history_security">
+										<fieldset>
+											<legend>
+												<span class="text-heading txtbold" id="agency_cluster_history_label">Cluster History</span>
+												<div class="table-responsive">
+													<div id="getAgencyCluster_History_list_01"></div>
+												</div>
+											</legend>
+										</fieldset>
+									</section>
+									
 									<section class="list-grid" id="agency_dba_other_names_security">
 			                          <fieldset>
 			                          <legend>

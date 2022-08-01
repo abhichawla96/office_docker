@@ -12,11 +12,12 @@
 <!-- Scripts -->
 <script type="text/javascript" src="js/all_files.js" />
 </head>
-<body onload="loadUploadDiv();onLoadProducerCodeAssociation();"
+<body onload="loadUploadDiv();onLoadProducerCodeAssociation();setHierarchyObjTypeDescInListFreeformDropDown();"
 	class="node27 carrierSection">
 	<form>
 		<div id="cover" />
 		<div id="contextLinks" />
+		<div id="popupEntityList" />
 		<div id="deleteConfirmation">
 			<!-- Modal -->
 			<div class="modal fade modal_popup">
@@ -392,9 +393,8 @@
 							</div>
 						</fieldset>
 						</section>
-						
-						
-						
+												
+						<div id="sub_producer_and_hiearchy">
 							<section class="list-grid" id="sub_producer_association_security">
 							<fieldset>
 								<legend> 
@@ -457,7 +457,7 @@
 													<span id="subProducerAssociation_delete_row_security">
 														<span id="block_field_delete_row_link">
 															<a class="delete_ico icons" title="Delete"
-																href="javascript:ajaxpageblocklink('carrier/producerAssociationContact.html','producerAssociationContact.deleteSubProducerAssociation','','','subProducerAssociationDiv');" />
+																href="javascript:ajaxpageblocklink('carrier/producerAssociationContact.html','producerAssociationContact.deleteSubProducerAssociation','','','subProducerAssociationDiv#hierarchyDiv');" />
 													</span>
 												</span></td>
 												
@@ -492,7 +492,7 @@
 													</td>
 													<td width="250px" id="subProducerAssociation_effective_date_security"
 														style="padding-top: 5px; padding-bottom: 5px">
-														<div id="block_field_effective_date">
+														<div id="block_field_effective_date" class="mendatoryInput">
 															<div class="input-group date">
 																<div class="input-group-addon"
 																	id="ico_fa_calender_security">
@@ -533,7 +533,7 @@
 														style="padding-right: 5px; padding-top: 2px; padding-left: 5px;">
 														<span id="add_subproducer_link_security">
 														<span id="block_field_addnew_row_link">
-															<a href="javascript:ajaxsubmitform('carrier/producerAssociationContact.html','producerAssociationContact.addNewsubProducerAssociation','','','subProducerAssociationDiv');" onclick="getSelectedSearchContactTypeForAgentAssociation();">
+															<a href="javascript:ajaxsubmitform('carrier/producerAssociationContact.html','producerAssociationContact.addNewsubProducerAssociation','','','subProducerAssociationDiv#hierarchyDiv');" onclick="getSelectedSearchContactTypeForAgentAssociation();">
 																<img src="images/icons/icon_notepadPlus.gif" title="Add" />
 															</a>
 														</span>
@@ -628,6 +628,295 @@
 							</fieldset>
 						</section>
 						
+						<section id="isShowHierarchyAgencyCodeSection" class="list-grid">
+								<fieldset class="fieldset_Level_1">
+									<legend>
+										<span id="masterHierarchyAgencyCodelabel">Vendor</span>
+									</legend>
+									<div id="hierarchyDiv" class="clear-both table-responsive">
+										<div class="errorMsgAlign clear-both"
+											id="producerDetail_freeform_contextdata_20">
+
+											<div id="ajax_error_hierarchyError" class="error" />
+											<div id="error_hierarchyError" class="error" />
+										</div>
+										
+										<div class="ConfirmationAlign clear-both"
+										id="Hierarchy_cnf_freeform_contextdata_100">
+											<label name="hierarchypageMsg" id="hierarchypageMsg" class="conformationMsg" />
+										</div>
+										<table cellspacing="0" cellpadding="0"
+											class="gridTable grid-width vendor-width hideNoRecordFound"
+											id="masterAgencyCodeDiv">
+											<tbody id="masterCodes_list_01">
+												<tr id="masterCodes_list_header_01">
+													<td id="pn_block_hierarchy_type_code_security"
+														class="HeaderStyle header-cell" width="30%"><span
+														id="block_field_hierarchy_type_code_desc"> <span
+															id="pn_block_hierarchy_type_Association_contatct_code_label">Master
+																Type</span>
+													</span></td>
+													<td class="HeaderStyle" width="29%" id="sub_producer_type_masterAgencyCode_security">
+													<span id="block_field_hierarchy_sub_producer">
+														<span id="block_field_hierarchy_sub_producer_desc">
+														<span id="pn_block_hierarchy_sub_producer_type_masterAgencyCode_label">Sub Producer Type</span>
+													</span></td>
+													
+													<td id="pn_block_masterProducer_hierarchy_security"
+														class="HeaderStyle header-cell" width="25%"><span
+														id="block_field_hierarchy_parent_producer_number"> <span
+															id="pn_block_masterProducer_association_hierarchy_label">Master
+																Agency Code</span>
+													</span></td>
+													<td id="pn_block_masterProducer_hierarchy_security"
+														class="HeaderStyle header-cell" width="1%"><span
+														id="block_field_hierarchy_parent_producer_id">
+													</span></td>
+													<td width="15%" class="HeaderStyle"
+													id="hierarchy_object_type_masterAgencyCode_security">
+														<div id="block_field_hierarchy_object_type">
+															<span id="block_field_hierarchy_object_type_desc" />
+															<span id="pn_block_hierarchy_object_type_masterAgencyCode_label">Object Type</span>
+														</div>
+													</td>
+													
+													<td id="pn_block_hierarchy_effective_date_masterAgencyCode_security"
+														class="HeaderStyle header-cell" width="25%"><span
+														id="block_field_hierarchy_effective_date_masterAgencyCode"> <span
+															id="pn_block_hierarchy_effective_date_masterAgencyCode_label">
+																Effective Date</span></span></td>
+													<td
+														id="pn_block_hierarchy_termination_date_masterAgencyCode_security"
+														class="HeaderStyle header-cell" width="25%"><span
+														id="block_field_hierarchy_termination_date_masterAgencyCode">
+															<span
+															id="pn_block_hierarchy_termination_date_masterAgencyCode_label">Termination
+																Date</span>
+													</span></td>
+													<td class="HeaderStyle header-cell" width="2%"
+														style="padding-right: 4px;"><span
+														id="delete_row_role_based_security"><span
+															id="block_field_delete_row_link" /></span></td>
+													<td id="block_field_hierarchy_type_code_desc"
+														style="display: none" />
+													<td id="block_field_masterProducer_hierarchy_desc"
+														style="display: none" />
+												</tr>
+												<tr id="masterCodes_list_data_01">
+													<td class="data-cell"
+														id="pn_block_hierarchy_type_code_security"><span
+														id="block_field_hierarchy_type_code_desc"></span></td>
+													<td class="data-cell"
+														id="sub_producer_type_masterAgencyCode_security"><span id="block_field_hierarchy_sub_producer_desc" />
+														</td>
+													<td class="data-cell"
+														id="hierarchy_parent_producer_number_with_search_option_security"><span
+														id="block_field_hierarchy_parent_producer_number" />
+													</td>
+													<td class="data-cell"
+														id="hierarchy_parent_producer_number_with_search_option_security">
+														<span id="block_field_hierarchy_parent_producer_id">
+														<input name="hierarchy_parent_producer_id" id="hierarchy_parent_producer_id" type="hidden"/></span>
+													</td>	
+													<td class="data-cell"
+														id="hierarchy_object_type_masterAgencyCode_security">
+															<span id="block_field_hierarchy_object_type_desc" />
+													</td>
+														
+													<td class="data-cell"
+														id="pn_block_hierarchy_effective_date_masterAgencyCode_security">
+														<span id="block_field_hierarchy_effective_date_masterAgencyCode"></span>
+													</td>
+													<td class="data-cell"
+														id="pn_block_hierarchy_termination_date_masterAgencyCode_security">
+														<span id="block_field_hierarchy_termination_date_masterAgencyCode"></span>
+													</td>
+													<td class="data-cell last-cell delete-col" align="right">
+														<span id="1delete_row_role_based_security"><span
+															id="block_field_delete_row_link"> <a
+																id="producerDetail_deletehierarchy"
+																href="javascript:ajaxpageblocklink('carrier/producerAssociationContact.html','producerAssociationContact.deleteHierarchyProducerAssociation','','','hierarchyDiv');">
+																	<img src="images/icons/Delete.png" title="Delete" />
+															</a></span> </span>
+													</td>
+												</tr>
+											</tbody>
+											<tbody id="hierarchy_masterCodes_freeform_contextdata_1"
+												class="bgAccordionN">
+												<tr>
+													<td id="pn_block_hierarchy_type_code_security">
+														<div id="ajax_error_hierarchy_type_code"
+															class="error paddingLeft3" />
+														<div id="error_hierarchy_type_code"
+															class="error paddingLeft3" />
+													</td>
+													<td id="sub_producer_type_masterAgencyCode_security">
+														<div id="ajax_error_hierarchy_sub_producer"
+															class="error paddingLeft3" />
+														<div id="error_hierarchy_sub_producer"
+															class="error paddingLeft3" />
+													</td>
+													<td id="pn_block_masterProducer_hierarchy_security">
+														<div id="ajax_error_hierarchy_parent_producer_number"
+															class="error paddingLeft3" />
+														<div id="error_hierarchy_parent_producer_number"
+															class="error paddingLeft3" />
+													</td>
+													<td id="pn_block_masterProducer_hierarchy_security">
+														<div id="ajax_error_hierarchy_parent_producer_id"
+															class="error paddingLeft3" />
+														<div id="error_hierarchy_parent_producer_id"
+															class="error paddingLeft3" />
+													</td>
+													
+													<td id=hierarchy_object_type_masterAgencyCode_security>
+														<div id="ajax_error_hierarchy_object_type"
+															class="error paddingLeft3" />
+														<div id="error_hierarchy_object_type"
+															class="error paddingLeft3" />
+													</td>
+													
+													<td id="pn_block_hierarchy_effective_date_masterAgencyCode_security">
+														<div id="ajax_error_hierarchy_effective_date_masterAgencyCode"
+															class="error paddingLeft3" style="width: 170px" />
+														<div id="error_hierarchy_effective_date_masterAgencyCode"
+															class="error paddingLeft3" style="width: 170px" />
+													</td>
+													
+													<td
+														id="pn_block_hierarchy_termination_date_masterAgencyCode_security">
+														<div id="ajax_error_hierarchy_termination_date_masterAgencyCode"
+															class="error paddingLeft3" style="width: 170px" />
+														<div id="error_hierarchy_termination_date_masterAgencyCode"
+															class="error paddingLeft3" style="width: 170px" />
+													</td>
+													<td />
+												</tr>
+												<tr>
+													<td id="pn_block_hierarchy_type_code_security"
+														height="25px" class="add-cell"><select
+														name="hierarchy_type_code"
+														id="ajax_field_hierarchy_type_code" style="width: 200px"
+														class="form-control-grid" onchange="javascript:setDescInListFreeformDropDown(this);">
+															<option value="">Select</option>
+															<option value="LFH">Marketing Hierarchy</option>															
+													</select></td>
+													<td id="sub_producer_type_masterAgencyCode_security" class="add-cell">
+														<select name="hierarchy_sub_producer" id="ajax_field_hierarchy_sub_producer" class="selectDetail" onchange="javascript:setDescInListFreeformDropDown(this);">
+	                                                        		<option value="">Select</option>
+	                                                    </select>
+													</td>
+													<td id="pn_block_masterProducer_hierarchy_security"
+														class="add-cell">
+														<!-- <div
+															id="hierarchy_parent_producer_number_with_dropdown_option_security">
+															<div style="float: left">
+																<select name="hierarchy_parent_producer_number"
+																	class="form-control-grid"
+																	id="ajax_field_hierarchy_parent_producer_number"
+																	style="width: 200px">
+																	<option value="">Select</option>
+																</select>
+															</div>
+														</div> -->
+														<div
+															id="hierarchy_parent_producer_number_with_search_option_security">
+															<div style="float: left" id="hierarchy_parent_producer_number_editing_security">
+																<input name="hierarchy_parent_producer_number"
+																	id="ajax_field_hierarchy_parent_producer_number"
+																	type="text" class="form-control-grid"
+																	style="width: 150px" />
+															</div>
+															<div>
+																<a id="imghide" href="javascript:ajaxsubmitform('carrier/searchHierarchyForProducerContactbyPopup.html','producerAssociationContact.searchProducerParticipantsBy','','','popupEntityList');" 
+																 style="padding-left: 5px;">  
+																	<img id="iconimg" src="images/icons/search.png" border="0" />
+																</a>
+															</div>
+														</div>
+													</td>
+													
+													<td id="pn_block_masterProducer_hierarchy_security"	class="add-cell">
+														<div
+															id="hierarchy_parent_producer_number_with_search_option_security">
+															<div style="float: left" id="hierarchy_parent_producer_number_editing_security">
+																<input name="hierarchy_parent_producer_id"
+																	id="ajax_field_hierarchy_parent_producer_id"
+																	type="hidden" />
+															</div>
+														</div>
+													</td>
+													
+													<td 
+														id="hierarchy_object_type_masterAgencyCode_security"
+														style="padding-top: 5px; padding-bottom: 5px">
+															<div style="float: left" id="hierarchy_hierarchy_object_type_editing_security">
+																<select name="hierarchy_object_type" id="ajax_field_hierarchy_object_type" style="width: 115px" onchange="javascript:setDescInListFreeformDropDown(this);" >
+																	<option value="">Select</option>
+	                                                      		</select>
+															</div>
+													</td>
+													<td id="pn_block_hierarchy_effective_date_masterAgencyCode_security"
+														class="add-cell">
+														<div class="input-group date">
+															<div class="input-group-addon"
+																id="ico_fa_calender_security">
+																<i class="fa fa-calendar">&nbsp;</i>
+															</div>
+															<input type="text" style="width: 150px;"
+																class="form-control-grid"
+																name="hierarchy_effective_date_masterAgencyCode"
+																onkeyup="applyDateFormat(this);"
+																onkeydown="applyDateFormat(this);"
+																onkeypress="applyDateFormat(this);" maxlength="10"
+																id="ajax_field_hierarchy_effective_date_masterAgencyCode" />
+														</div> <a id="date_link" class="calender_ico icons"
+														title="Select Date" onclick="show_calendar_widget(this);">
+													</a>
+													</td>
+													<td
+														id="pn_block_hierarchy_termination_date_masterAgencyCode_security"
+														class="add-cell">
+														<div class="input-group date">
+															<div class="input-group-addon"
+																id="ico_fa_calender_security">
+																<i class="fa fa-calendar">&nbsp;</i>
+															</div>
+															<input type="text" style="width: 150px;"
+																class="form-control-grid"
+																name="hierarchy_termination_date_masterAgencyCode"
+																onkeyup="applyDateFormat(this);"
+																onkeydown="applyDateFormat(this);"
+																onkeypress="applyDateFormat(this);" maxlength="10"
+																id="ajax_field_hierarchy_termination_date_masterAgencyCode" />
+														</div> <a id="date_link" class="calender_ico icons"
+														title="Select Date" onclick="show_calendar_widget(this);">
+													</a>
+													</td>
+													<td style="display: none;" 	id="pn_block_hierarchy_type_code_security">
+														<input type="hidden" name="hierarchy_type_code_desc" id="ajax_field_hierarchy_type_code_desc" />
+													</td>
+													<td style="display: none;" 	id="hierarchy_object_type_masterAgencyCode_security">
+														<input type="hidden" name="hierarchy_object_type_desc" id="ajax_field_hierarchy_object_type_desc" />
+													</td>
+													<td style="display: none;" 	id="sub_producer_type_masterAgencyCode_security">
+														<input type="hidden" name="hierarchy_sub_producer_desc" id="ajax_field_hierarchy_sub_producer_desc" />
+													</td>
+													<td style="padding: 5px 3px" class="add-cell add-col"
+														align="right"><span
+														id="pn_add_row_hierarchy_security"><span
+															id="common.hideproducerdetailbutton"> <a
+																href="javascript:ajaxsubmitform('carrier/producerAssociationContact.html','producerAssociationContact.addNewHierarchyProducerAssociation','','','hierarchyDiv');">
+																	<img src="images/icons/icon_notepadPlus.gif"
+																	title="Add" />
+															</a></span> </span></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</fieldset>
+							</section>
+						</div>
 							<section id="awardsNRecognitions_security">
 							<fieldset>
 								<legend id="awardNRecognition_grid_label"> Award & Recognition </legend>
@@ -1125,6 +1414,10 @@
 			<input type="hidden" name="ajaxdeletedivid" id="ajaxdeletedivid" />
 			<input type="hidden" name="contactTypeListSize" id="ajax_field_contactTypeListSize" />
 			<input type="hidden" name="selectedContacttype" id="ajax_field_selectedContacttype" />
+			<input type="hidden" name="selected_search_result_id" id="ajax_field_selected_search_result_id" />
+			<input type="hidden" name="selected_search_result_desc" id="ajax_field_selected_search_result_desc" />
+	        <input type="hidden" name="selected_search_result_name" id="ajax_field_selected_search_result_name" />
+			
 		</div>
 		<div class="calendar_widget" id="calendar_widget">
 			<iframe id="calendar_widget_iframe" name="calendar_widget_iframe"

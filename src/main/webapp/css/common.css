@@ -914,7 +914,7 @@ div.coveragesSearchProducerno {
 	#deactivateDDConfirmation, #deactivateConfirmation, #unlinkConfirmation,#affilationConfirmation
 	,#deleteConfirmation3, #popupApproved, #popupDisapproved, #unsavedDataConfirmation,#npnChangedWithActiveAppointments,
 	#agencyListPopup, #reloadPFConfirmation, #reloadIbatisConfirmation, #popupdynamicConfirmationMsgPopup, 
-	#popupdynamicConfirmationMsgAjaxPopup, #popupAttachLookupobjectSql
+	#popupdynamicConfirmationMsgAjaxPopup, #popupAttachLookupobjectSql, #popupAttachBulkDataSql
 	{
 	display: none;
 	position: absolute;
@@ -5120,6 +5120,7 @@ header #header{
 }
 .tab .sidebar-nav .scrollH{
 	margin-top: 3px;
+	min-width: 500px;
 }
 .menu-level-2{
 	xbackground: #fff;
@@ -5841,12 +5842,29 @@ ul.split-list li .freeFormListTr .freeFormListTd.labelAlign, ul.inline-blocks li
 .dynamicvarianceamountattachment{
 	width:65px !important;
 }
+.icoAttachBulkDataSqlMini a {
+	background-image: url(../images/icons/attach_bulkdatasql_icon.png);
+	width: 16px;
+	height: 16px;
+	display: block;
+	background-repeat: no-repeat;
+}
+.drilldown_ico{
+	background-image: url(../images/icons/drilldown.png);	/*------------drilldown------------*/
+}
 #callReport_emailBodyDiv{
 	min-height: 200px;
 }
 #callReportProspect_emailBodyDiv{
 	min-height: 200px;
 }
-.kitDelivery .freeFormList.form-group{width: 100%;}
+.retainliclass{
+width: 45.5%;
+}
 
-.kitDelivery .freeFormListTd.labelAlign{width: 14%;}
+div#navigationHierarchyFilter_security {
+    position: absolute;
+    top: 17px;
+    width: 163px !important;
+    z-index: 99;
+}

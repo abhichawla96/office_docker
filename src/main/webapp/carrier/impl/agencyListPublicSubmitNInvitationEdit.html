@@ -898,6 +898,37 @@
 										</li>
 										<li class="inlineBlock_2 extendedFieldHide" id="#aar_noofliccsr_after#"></li>
 										
+											<li class="inlineBlock_2" id=agencyListEdit_member_of_hba_security>
+												<div class="freeFormList formGroup">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>#space#</h6>
+														
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<div id="ajax_error_member_of_hba" class="error"></div>
+															<div id="error_member_of_hba" class="error"></div> 
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign">
+															<div class="freeFormLabelWidth">
+																<span id="agencyListEdit_member_of_hba_label">Are you a member of an HBA?</span>
+																:
+															</div>
+														</div>
+														<div class="freeFormListTd tdInput">
+														<input type="radio" name="member_of_hba"
+														    fullid="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_1(agencyListEdit_general_info_security.agencyListEdit_general_info_label).agencyListEdit_general_member_of_hba_security.agencyListEdit_general_member_of_hba_label.member_of_hba"
+															disabled="disabled" id="ajax_field_member_of_hba" value="1" /> Yes <input
+																type="radio" name="member_of_hba" disabled="disabled"
+																fullid="adminBrokerageDetailsStep1_freeform_contextdata_1(public1_general_information_security.public1_general_information_label).member_of_hba_security.public1_member_of_hba_label.member_of_hba"
+																id="ajax_field_member_of_hba" value="0" /> No
+														</div>
+													</div>
+												</div>
+											</li>
+										
 										<li class="inlineBlock_2 extendedFieldHide" id="#no_of_staff_before#"></li>
 										<li class="inlineBlock_2"
 											id="agencyListEdit_general_no_of_staff_security">
@@ -928,6 +959,13 @@
 											</div>
 										</li>
 										<li class="inlineBlock_2 extendedFieldHide" id="#no_of_staff_after#"></li>
+										
+											<li class="inlineBlock_2" id="hba_association_label_security">
+												<label id="hba_desc_label">
+													(It is required for all North Carolina Agencies
+to be a member of a Home Builders Association)
+												</label>
+											</li>
 
 										<li class="inlineBlock_2 extendedFieldHide" id="#Entity_Type_General_Detail_before#"></li>
 										<li class="inlineBlock_2"
@@ -1123,6 +1161,36 @@
 											</div>
 										</li>
 										<li class="inlineBlock_2 extendedFieldHide" id="#agency_location_after#"></li>
+										
+										<li class="inlineBlock_2" id="agencyListEdit_hba_association_id_security">
+												<div class="freeFormList formGroup" id="member_of_hba_idDiv">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>#space#</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<div id="ajax_error_hba_association_id" class="error"></div>
+															<div id="error_hba_association_id" class="error"></div>
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign">
+															<div class="freeFormLabelWidth">
+																<span id="agencyListEdit_hba_association_id_label">If Yes, please select the HBA Chapter you are a member of</span>
+																:
+															</div>
+														</div>
+														<div class="freeFormListTd mendatoryInput">
+															<select name="hba_association_id" id="ajax_field_hba_association_id" disabled="disabled" form-control">
+																<option value>Select</option>
+															</select>
+															<span id="hba_association_id_security_oldvaluekey">
+																<label name="hba_association_id_old" id="ajax_field_hba_id_old" class="oldValue"></label>
+															</span>
+														</div>
+													</div>
+												</div>
+											</li>
 										
 										<li class="inlineBlock_2 extendedFieldHide" id="#agency_comparativerate_before#"></li>
 										<li class="inlineBlock_2" id="agencyListPublicSubmitNInvitationEdit_agency_location_system_security">
@@ -2389,7 +2457,15 @@
 
 			</div>
 		</div>
-	</div>
+	
+	<div class="buttonwrapper paddingTop10" id="show_verify_business_address_indicator_security">
+																		
+																		 <img
+																				src="images/address_verified_icon.png"
+																				title="Address Verified"
+																				height="30" width="30"  />																
+			 </div>	
+	</div>         	
 </fieldset>
 									</div>
 									<div id="agency_mailing_address_security">
@@ -3073,11 +3149,15 @@
 
 													</div>
 												</div>
-
+                                              <div class="buttonwrapper paddingTop10" id="show_verify_mailing_address_indicator_security">
+																		
+														           <img
+																				src="images/address_verified_icon.png"
+																				title="Address Verified"
+																				height="30" width="30"  />																
+											 </div>                                           
 											</div>
-
-
-										</fieldset>
+ 										</fieldset>
 									</div>
 									<div id="agencyListPublicSubmitNInvitationEdit_agency_w9_address_security">
 										<fieldset class="paddingBottom0" id="entityGeneralDetailsResult_freeform_contextdata_45">
@@ -4076,6 +4156,14 @@
 
 													</div>
 												</div>
+											<div class="buttonwrapper paddingTop10" id="show_verify_w9_address_indicator_security">
+																		
+																		 <img
+																				src="images/address_verified_icon.png"
+																				title="Address Verified"
+																				height="30" width="30"  />																
+															    </div>
+							
 											</div>
 										</fieldset>
 									</div>
@@ -4433,7 +4521,7 @@
 																			<input name="phone_DEC" 
 																			fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).agencyListPublicSubmitNInvitationEdit_DEC_phone_ext_agency_address_security.phone_DECaddress_label.phone_DEC"
 																			id="ajax_field_phone_DEC" type="text"
-																				class="form-control phone-control" maxlength="12"
+																				class="form-control phone-control" maxlength="12" onkeyup="javascript:checkExtnEditable('ajax_field_phone_DEC', 'ajax_field_extn_DEC');"
 																				title="999-999-9999"/> 
 																				<span id="DEC_ext_agency_address_security" class="extnLabel">
 																				<label id="DEC_ext_agency_address_label"
@@ -4472,7 +4560,7 @@
 																			<input name="alt_phone_DEC" 
 																			fullid="entityGeneralDetailsResult_freeform_contextdata_46(agencyListPublicSubmitNInvitationEdit_agency_DEC_address_security.agencyListPublicSubmitNInvitationEdit_DEC_address_label).agencyListPublicSubmitNInvitationEdit_DEC_alt_phone_ext_agency_address_security.alt_DEC_phone_label.alt_phone_DEC"
 																				id="ajax_field_alt_phone_DEC" type="text"
-																				class="form-control phone-control" maxlength="12"
+																				class="form-control phone-control" maxlength="12" onkeyup="javascript:checkExtnEditable('ajax_field_alt_phone_DEC', 'ajax_field_alt_extn_DEC');"
 																				title="999-999-9999" /> 
 																				<span id="DEC_alt_ext_agency_address_security" class="extnLabel">
 																				<label id="alt_DECaddress_phone_extn_label"
@@ -4669,10 +4757,18 @@
 													</div>
 												  </div>
 												</div>
+									<div class="buttonwrapper paddingTop10" id="show_verify_dec_address_indicator_security">
+																		
+																		 <img
+																				src="images/address_verified_icon.png"
+																				title="Address Verified"
+																				height="30" width="30"  />																
+															    </div>
+									
+									</div>	
+											
 											</div>
 										</fieldset>
-									</div>	
-
 								</div>
 							</section>
 
@@ -6466,7 +6562,99 @@
 
 						</section> 
 						
-						<!-- Sprint 1 implementation - section added  -->
+						<section class="list-grid" id="agencyListEdit_dividend_distribution_id_security">
+								<div class="row" align="center">
+									<div id="ajax_error_dividend_distribution" class="error" />
+									<div id="error_dividend_distribution" class="error" />
+								</div>
+								<fieldset>
+									<legend class="mendatoryInput" id="dividend_distribution_label">Dividend Distribution </legend>
+									
+									<p style="padding-left: 7px">Please select from the available options below:</p>
+									<ul class="div_checkbox div_checkbox1" id="dividend_distribution_mom_list_1" style="padding-left: 1px;">
+										<li id="dividend_distribution_mom_list_header_1" style="display: none">
+											<span class="tableinfoheader"
+												id="block_field_radio_group_dividend_distribution_id"
+												width="426"></span>
+											<span class="tableinfoheader"
+												id="block_field_dividend_distribution_description"
+												width="426"></span>
+										</li>
+										<li id="dividend_distribution_mom_list_mom_data_1">
+											<div id="mom_child_data">
+												<span id="block_field_radio_group_dividend_distribution_id">
+													<input type="radio" class="checkboxMargins" id="dividend_distribution_id" name="dividend_distribution_id" disabled="disabled" />
+												</span>
+												<span id="block_field_dividend_distribution_description"></span>
+												
+											</div>
+										</li>
+									</ul>
+									<p style="padding-left: 7px">Please note, by electing to have the dividend checks mailed to your agency you must agree to deliver the checks to your eligible clients within 30 days of receipt.</p>
+								<fieldset>
+							</section>
+							<section class="list-grid" id="agencyListEdit_agent_copies_id_security">
+								<div class="row" align="center">
+									<div id="ajax_error_agent_copies" class="error" />
+									<div id="error_agent_copies" class="error" />
+								</div>
+								<fieldset>
+									<legend class="mendatoryInput" id="agent_copies_label">Agent Copies </legend>
+									<ul class="div_checkbox div_checkbox1" id="agent_copies_mom_list_1" style="padding-left: 1px;">
+										<li id="agent_copies_mom_list_header_1" style="display: none">
+											<span class="tableinfoheader"
+												id="block_field_radio_group_agent_copies_id"
+												width="426"></span>
+											<span class="tableinfoheader"
+												id="block_field_agent_copies_description"
+												width="426"></span>
+										</li>
+										<li id="agent_copies_mom_list_mom_data_1">
+											<div id="mom_child_data">
+												<span id="block_field_radio_group_agent_copies_id">
+													<input type="radio" class="checkboxMargins" id="agent_copies_id" name="agent_copies_id" disabled="disabled" />
+												</span>
+												<span id="block_field_agent_copies_description"></span>
+												
+											</div>
+										</li>
+									</ul>
+								<fieldset>
+							</section>
+							<section class="list-grid" id="agencyListEdit_policyholder_copies_id_security">
+								<div class="row" align="center">
+									<div id="ajax_error_policyholder_copies" class="error" />
+									<div id="error_policyholder_copies" class="error" />
+								</div>
+								<fieldset>
+									<legend class="mendatoryInput" id="policyholder_copies_label">Policyholder Copies </legend>
+									<p style="padding-left: 7px">Your agency can select how you would like Sample Insurance to distribute copies of policyholders' new and renewal policies. If you choose to receive your policyholders'
+
+documents, we will send your agency the documents so you can personalize the delivery. (Note- If your policyholder selects to Go Paperless, policyholder copies will not print.
+
+Instead, they will receive an email to review their policies online). Please select one option below:</p>
+									<ul class="div_checkbox div_checkbox1" id="policyholder_copies_mom_list_1" style="padding-left: 1px;">
+										<li id="policyholder_copies_mom_list_header_1" style="display: none">
+											<span class="tableinfoheader"
+												id="block_field_radio_group_policyholder_copies_id"
+												width="426"></span>
+											<span class="tableinfoheader"
+												id="block_field_policyholder_copies_description"
+												width="426"></span>
+										</li>
+										<li id="policyholder_copies_mom_list_mom_data_1">
+											<div id="mom_child_data">
+												<span id="block_field_radio_group_policyholder_copies_id">
+													<input type="radio" class="checkboxMargins" id="policyholder_copies_id" name="policyholder_copies_id" disabled="disabled" />
+												</span>
+												<span id="block_field_policyholder_copies_description"></span>
+												
+											</div>
+										</li>
+									</ul>
+								<fieldset>
+							</section>
+							<!-- Sprint 1 implementation - section added  -->
 						<section id="secDividendDist" class="free-form" >
 							 <div id="divDividendDist" >
 								<fieldset>
@@ -6504,6 +6692,7 @@
 							</div>
 							</section>
 									<!-- Sprint 1 implementation - section added  -->
+					
 						<section class="list-grid" id="isShowStatesInOnboarding">
 						<div class="text-heading txtbold mendatoryInput">
 							&nbsp;<span id="isShowStatesInOnboarding_label">States
@@ -6719,6 +6908,7 @@
 								Location Address</span>
 						</div>
 						<div class="clear-both table-responsive">
+							<!-- 
 							<table cellspacing="0" cellpadding="0"
 								class="gridTable grid-width bankRefrence_width"
 								id="additional_location_address_list_1">
@@ -6954,7 +7144,7 @@
 
 									</td>
 								</tr>
-							</table>
+							</table>-->
 						</div>
 						</section> 
 						<section class="list-grid"
@@ -7193,15 +7383,7 @@
 											
 					<!-- BMIC Specific-->							<td id="npn_security"><span id="block_field_npn">  <!-- Added by Aashutosh  -->
 												
-												<!-- <span id=""> <span
-														id="block_field_npn"> <input type="password" 
-															id="ajax_field_npn" name="npn" maxlength="11"
-															style="width: 130px;" value="XXXXXXXX"  readonly="readonly"
-															ondblclick="javascript:ajaxpageblocklink('carrier/taxidPopup.html','entityGeneralDetails.showTaxIdPopup','','','popupTaxId');" />	
-															
-															 
-													</span>
-												</span>  -->
+										
 											</span></td>
 											
 											
@@ -7910,7 +8092,7 @@
 								<div class="padding-left-form">
 									<ul class="inlineBlock" id="mix_of_personal_business_security">
 										<li class="inlineBlock_2 extendedFieldHide" id="#mix_of_personal_business_before#"></li>
-										<li class="inlineBlock_2" style="width: 48.7% !important;">
+										<li class="inlineBlock_2">
 											<div class="freeFormList form-group">
 												<div class="freeFormListTr">
 													<div class="freeFormListTdError">
@@ -7965,7 +8147,7 @@
 												</div>
 											</div>
 										</li>
-										<li class="inlineBlock_2 extendedFieldHide" id="#mix_of_commercial_business_after#"></li>
+										<li class="inlineBlock_2 extendedFieldHide" id="#mix_of_commercial_business_before#"></li>
 									</ul>
 								</div>
 							</div>
@@ -10314,11 +10496,9 @@
 								
 								</div>
 							
-							<section id="agencyListPublicSubmitNInvitationEdit_narrative_kit_delivery_security" >								
-								<ul class="inlineBlock kitDelivery">
-								       <li class="inlineBlock_1"><div id="kitDelivery_mom_list_1"></div></li>
-							    </ul>
-							<!-- 	<div class="freeFormList form-group width100">
+							<section 
+								id="agencyListPublicSubmitNInvitationEdit_narrative_kit_delivery_security" >
+								<div class="freeFormList form-group width100">
 									<div class="freeFormListTr">
 										<div class="freeFormListTdError">
 											<h6>#space#</h6>
@@ -10356,7 +10536,7 @@
 											</ul>
 										</div>
 									</div>
-								</div> -->
+								</div>
 							</section>
 
 
@@ -12687,7 +12867,8 @@
 					<input type="hidden"
 					name="state_ids" id="state_ids" /> <input type="hidden"
 					name="agency_comparativerate_security"
-					id="ajax_field_agency_comparativerate_security" /> <input
+					id="ajax_field_agency_comparativerate_security" /> <input type="hidden" name="Selecteddividend_distribution_id"
+					id="ajax_field_Selecteddividend_distribution_id" /> <input
 					type="hidden" name="agency_lob" id="ajax_field_agency_lob"
 					style="width: 250px" />
 					<input type="hidden" name="kit_delivery" id="ajax_field_kit_delivery" />
@@ -12699,7 +12880,7 @@
 					<input type="hidden" name="market_contract_states" id="ajax_field_market_contract_states" />
 					<input type="hidden" name="workflow_object_type" id="ajax_field_workflow_object_type" />
 					<input type="hidden" name="registration_type_code" id="ajax_field_registration_type_code" />
-					
+	
 			</div>
 		</div>
 	</form>

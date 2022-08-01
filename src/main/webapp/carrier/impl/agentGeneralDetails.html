@@ -16,7 +16,7 @@
   </head>
   <body id="divComplete" class="contact_1" 
   onclick="toggleDivDisplay('ajaxxmlname_ajax_field_prdcr_first_name_search','ajaxxmlname_ajax_field_prdcr_last_name_search');" 
-  onload="loadagentGeneralDetail();showHideBusinessAddressDiv();setGetMultiCheckboxValues('ajax_field_agent_state_id','ajax_field_agent_state','set'); ;showHideW9AddressDiv();showHideMailingAddressDiv();loadContactType();hideforNonLicenseProducer();showSSNAndNPN();showPopUpList('popupAgentHistory','showAgentHistoryPopup');showagentaddressdetails();showHitListLicenseNumberTextField(this.value);loadQuestions();ownerShipMasking();showselectedNewsLetter();getOtherContactTypeDiv();showHideAgentTerminationDiv();isContactTypeMandatory();setGetMultiCheckboxValues('ajax_field_distribution_group_id','ajax_field_selectedobjectids','set');">
+  onload="loadagentGeneralDetail();setGetMultiCheckboxValues('ajax_field_agent_state_id','ajax_field_agent_state','set'); ;loadContactType();hideforNonLicenseProducer();showSSNAndNPN();showPopUpList('popupAgentHistory','showAgentHistoryPopup');showagentaddressdetails();showHitListLicenseNumberTextField(this.value);loadQuestions();ownerShipMasking();showselectedNewsLetter();getOtherContactTypeDiv();showHideAgentTerminationDiv();isContactTypeMandatory();setGetMultiCheckboxValues('ajax_field_distribution_group_id','ajax_field_selectedobjectids','set');">
     <form>
     	<div id="completeContentDiv">
     	<div id="progressBarDiv"></div>
@@ -1046,8 +1046,7 @@ Location</span>
                                       <select class="form-control selectWidth" id="ajax_field_persontype_id" 
 									  fullid="entityPersonDetails_freeform_contextdata_2(agent_general_information_security.agent_general_information_label).contact_producer_type_security.contact_producer_type_label.persontype_id"
 									  name="persontype_id">
-                                        <option value="1">Licensed Producer</option>
-                                        <option value="2">Non Licensed Producer</option>
+                                        
                                       </select>
                                     </div>
                                   </div>
@@ -2203,7 +2202,7 @@ Location</span>
 	                                              <div class="freeFormListTd">
 	                                                <input name="zip_business" id="ajax_field_zip_business" 
 													fullid="agentGeneralDetailsResult_freeform_contextdata_4(agent_business_address_security.agent_business_address_label).business_zip_code_agent_address_security.zipCode_business_Field_Label.zip_business"
-													type="text" class="form-control" maxlength="10" title="99999-9999" onkeyup="loadagentGeneralDetail();addHyphen(this,event);" onmouseover="setTitleForZipCode(this);" />
+													type="text" class="form-control" maxlength="10" />
 	                                              </div>
 	                                            </div>
 	                                          </div>
@@ -2259,7 +2258,7 @@ Location</span>
 	                                              <div class="freeFormListTd mendatoryInput_address mendatoryPhoneInput_address" id="addressPhoneInput">
 	                                                <input name="phone_business" id="ajax_field_phone_business" 
 													fullid="agentGeneralDetailsResult_freeform_contextdata_4(agent_business_address_security.agent_business_address_label).business_phone_ext_agent_address_security.phone_label.phone_business"
-													type="text" class="form-control phone-control" maxlength="12" title="999-999-9999" onkeyup="loadagentGeneralDetail();" onkeypress="loadagentGeneralDetail();" onchange="loadagentGeneralDetail();" />
+													type="text" class="form-control phone-control" maxlength="12" onkeyup="javascript:checkExtnEditable('ajax_field_phone_business', 'ajax_field_extn_business');" />
 	                                                <span id="business_ext_agent_address_security" class="extnLabel">
 	                                                	<label id="business_ext_agent_address_label" class="ext-label">Extn. </label> :
 	                                                	<input name="extn_business" id="ajax_field_extn_business" 
@@ -2410,7 +2409,7 @@ Location</span>
 	                                              <div class="freeFormListTd tdInput">
 	                                                <input name="alt_phone_business" id="ajax_field_alt_phone_business" 
 													fullid="agentGeneralDetailsResult_freeform_contextdata_4(agent_business_address_security.agent_business_address_label).business_alt_phone_ext_agent_address_security.alt_business_phone_field_label.alt_phone_business"
-													type="text" class="form-control phone-control" maxlength="12" title="999-999-9999" onkeyup="loadagentGeneralDetail();" onkeypress="loadagentGeneralDetail();" onchange="loadagentGeneralDetail();" />
+													type="text" class="form-control phone-control" maxlength="12" onkeyup="javascript:checkExtnEditable('ajax_field_alt_phone_business', 'ajax_field_alt_extn_business');"  />
 	                                                <span id="business_alt_ext_agent_address_security">
 	                                                	<label id="business_alt_ext_agent_address_label" class="ext-label">Extn.</label> :
 	                                                <input name="alt_extn_business" id="ajax_field_alt_extn_business" 
@@ -2582,13 +2581,19 @@ Location</span>
 	                                  </div>
 	                                  <div id="BusinessVerifyAddressDiv" class="row">
 										<div class="buttonwrapper paddingTop10" id="verify_person_business_address_security">
-											<div> 
+																										<span id="show_verify_business_address_indicator_security"> 
+																<input type="hidden" name="is_business_address_verified" id="ajax_field_is_business_address_verified" />
+																<img
+																				src="images/address_verified_icon.png"
+																				title="Address Verified"
+																				height="30" width="30"  />
+																			</span>
+										
 												<a onclick="getSelectedContactType();" 
 												fullid="agentGeneralDetailsResult_freeform_contextdata_4(agent_business_address_security.agent_business_address_label).verify_person_business_address_security.verify_person_business_address_label.verify_person_business_address_security"
 												href="javascript:ajaxpageblocklink('carrier/addressSugesstion.html','agentGeneralDetails.verifyBusinessAddress','','','popupEntityList');"
 												class="btn btn-primary"> <span id="verify_person_business_address_label">Verify Business Address</span>
 											</a>
-											</div>
 										</div>
 									</div>
 	                                </div>
@@ -2840,7 +2845,7 @@ Location</span>
 	                                              <div class="freeFormListTd">
 	                                                <input name="zip_mailing" id="ajax_field_zip_mailing" type="text" 
 													fullid="agentGeneralDetailsResult_freeform_contextdata_5(agent_mailing_address_security.agent_mailing_address_label).mailing_zip_code_agent_address_security.zipCode_mailing_Field_Label.zip_mailing"
-													class="form-control" maxlength="10" title="99999-9999" onkeyup="loadagentGeneralDetail();addHyphen(this,event);" onmouseover="setTitleForZipCode(this);" />
+													class="form-control" maxlength="10" title="99999-9999" />
 	                                              </div>
 	                                            </div>
 	                                          </div>
@@ -2962,7 +2967,7 @@ Location</span>
 	                                              <div class="freeFormListTd mendatoryInput_address mendatoryPhoneInput_address" id="addressPhoneInput">
 	                                                <input name="phone_mailing" id="ajax_field_phone_mailing" 
 													fullid="agentGeneralDetailsResult_freeform_contextdata_5(agent_mailing_address_security.agent_mailing_address_label).mailing_phone_ext_agent_address_security.phone_mailing_field_label.phone_mailing"
-													type="text" class="form-control phone-control" maxlength="12" title="999-999-9999" onkeyup="loadagentGeneralDetail();" onkeypress="loadagentGeneralDetail();" onchange="loadagentGeneralDetail();" />
+													type="text" class="form-control phone-control" maxlength="12" onkeyup="javascript:checkExtnEditable('ajax_field_phone_mailing', 'ajax_field_extn_mailing');"  />
 	                                                <span id="mailing_ext_agent_address_security" class="extnLabel">
 		                                                <label id="mailing_ext_agent_address_label" class="ext-label">Extn. </label> :
 		                                                <input name="extn_mailing" id="ajax_field_extn_mailing" type="text" 
@@ -2998,7 +3003,7 @@ Location</span>
 	                                              <div class="freeFormListTd tdInput">
 	                                                <input name="alt_phone_mailing" id="ajax_field_alt_phone_mailing" 
 													fullid="agentGeneralDetailsResult_freeform_contextdata_5(agent_mailing_address_security.agent_mailing_address_label).mailing_alt_phone_ext_agent_address_security.alt_mailing_phone_label.alt_phone_mailing"
-													type="text" class="form-control phone-control" maxlength="12" title="999-999-9999" onkeyup="loadagentGeneralDetail();" onkeypress="loadagentGeneralDetail();" onchange="loadagentGeneralDetail();" />
+													type="text" class="form-control phone-control" maxlength="12" onkeyup="javascript:checkExtnEditable('ajax_field_alt_phone_mailing', 'ajax_field_alt_extn_mailing');" />
 	                                                <span id="mailing_alt_ext_agent_address_security">
 	                                                <label id="mailing_alt_ext_agent_address_label" class="ext-label">Extn.</label>
 	                                                :
@@ -3221,6 +3226,15 @@ Location</span>
 	                                  </div>
 	                                <div id="MailngVerifyAddressDiv" class="row">
 										<div class="buttonwrapper paddingTop10" id="verify_person_mailing_address_security">
+										     <span id="show_verify_mailing_address_indicator_security">
+													<input type="hidden" name="is_mailing_address_verified" id="ajax_field_is_mailing_address_verified" />
+																		
+																		 <img
+																				src="images/address_verified_icon.png"
+																				title="Address Verified"
+																				height="30" width="30"  />
+													</span>
+																
 											<a onclick="getSelectedContactType();" 
 												fullid="agentGeneralDetailsResult_freeform_contextdata_5(agent_mailing_address_security.agent_mailing_address_label).verify_person_mailing_address_security.verify_person_mailing_address_label.verify_person_mailing_address_security"
 												href="javascript:ajaxpageblocklink('carrier/addressSugesstion.html','agentGeneralDetails.verifyMailingAddress','','','popupEntityList');"
@@ -3473,7 +3487,7 @@ Location</span>
 	                                              <div class="freeFormListTd">
 	                                                <input name="zip_w9" id="ajax_field_zip_w9" type="text" 
 													fullid="agentGeneralDetailsResult_freeform_contextdata_6(agent_w9_address_security.residence_address_label).w9_zip_code_agent_address_security.zipCode_residence_Field_Label.zip_w9"
-													class="form-control" maxlength="10" title="99999-9999" onkeyup="loadagentGeneralDetail();addHyphen(this,event);" onmouseover="setTitleForZipCode(this);" />
+													class="form-control" maxlength="10" title="99999-9999" />
 	                                              </div>
 	                                            </div>
 	                                          </div>
@@ -3594,7 +3608,7 @@ Location</span>
 	                                              <div class="freeFormListTd mendatoryInput_address mendatoryPhoneInput_address" id="addressPhoneInput">
 	                                                <input name="phone_w9" id="ajax_field_phone_w9" type="text" 
 													fullid="agentGeneralDetailsResult_freeform_contextdata_6(agent_w9_address_security.residence_address_label).w9_phone_ext_agent_address_security.phone_residence_field_label.phone_w9"
-													class="form-control phone-control" maxlength="12" title="999-999-9999" onkeyup="loadagentGeneralDetail();" onkeypress="loadagentGeneralDetail();" onchange="loadagentGeneralDetail();" />
+													class="form-control phone-control" maxlength="12" onkeyup="javascript:checkExtnEditable('ajax_field_phone_w9', 'ajax_field_extn_w9');" />
 	                                                <span id="w9_ext_agent_address_security" class="extnLabel">
 	                                                <label id="w9_agent_extn_label" class="ext-label">Extn. </label> :
 	                                                <input name="extn_w9" id="ajax_field_extn_w9" type="text" class="form-control ext-control" 
@@ -3630,7 +3644,7 @@ Location</span>
 	                                              <div class="freeFormListTd tdInput">
 	                                                <input name="alt_phone_w9" id="ajax_field_alt_phone_w9" type="text" 
 													fullid="agentGeneralDetailsResult_freeform_contextdata_6(agent_w9_address_security.residence_address_label).w9_alt_phone_ext_agent_address_security.alt_residence_phone_label.alt_phone_w9"
-													class="form-control phone-control" maxlength="12" title="999-999-9999" onkeyup="loadagentGeneralDetail();" onkeypress="loadagentGeneralDetail();" onchange="loadagentGeneralDetail();" />
+													class="form-control phone-control" maxlength="12" onkeyup="javascript:checkExtnEditable('ajax_field_alt_phone_w9', 'ajax_field_alt_extn_w9');"/>
 	                                                <span id="w9_alt_ext_agent_address_security">
 	                                                <label id="w9_agent_alt_extn_label" class="ext-label">Extn.</label>
 	                                                :
@@ -3854,6 +3868,12 @@ Location</span>
 	                                  </div>
 	                            	<div id="W9VerifyAddressDiv" class="row">
 										<div class="buttonwrapper paddingTop10" id="verify_person_w9_address_security"> 
+										<span id="show_verify_w9_address_indicator_security"> 
+										 <input type="hidden" name="is_w9_address_verified" id="ajax_field_is_w9_address_verified" />																																						<img
+																				src="images/address_verified_icon.png"
+																				title="Address Verified"
+																				height="30" width="30"  />
+																			</span>
 												<a onclick="getSelectedContactType();" 
 												fullid="agentGeneralDetailsResult_freeform_contextdata_6(agent_w9_address_security.residence_address_label).verify_person_w9_address_security.verify_person_w9_address_label.verify_person_w9_address_security"
 												href="javascript:ajaxpageblocklink('carrier/addressSugesstion.html','agentGeneralDetails.verifyW9Address','','','popupEntityList');"
@@ -3969,6 +3989,114 @@ Location</span>
                       </div>
                     </fieldset>
                   </section>
+                  
+                                   <section id="isShowHierarchyAgencyCodeSectionForAgentGenDtls" class="list-grid">
+								<fieldset class="fieldset_Level_1">
+									<legend>
+										<span id="masterHierarchyAgencyCodelabel">Vendor</span>
+									</legend>
+									<div id="hierarchyDiv" class="clear-both table-responsive">
+										<div class="errorMsgAlign clear-both"
+											id="producerDetail_freeform_contextdata_20">
+
+											<div id="ajax_error_hierarchyError" class="error" />
+											<div id="error_hierarchyError" class="error" />
+										</div>
+										
+										<div class="ConfirmationAlign clear-both"
+										id="Hierarchy_cnf_freeform_contextdata_100">
+											<label name="hierarchypageMsg" id="hierarchypageMsg" class="conformationMsg" />
+										</div>
+										<table cellspacing="0" cellpadding="0"
+											class="gridTable grid-width vendor-width hideNoRecordFound"
+											id="masterAgencyCodeDiv">
+											<tbody id="masterCodes_list_01">
+												<tr id="masterCodes_list_header_01">
+													<td class="HeaderStyle" width="29%" id="sub_producer_type_masterAgencyCode_security">
+													<span id="block_field_hierarchy_sub_producer">
+														<span id="pn_block_hierarchy_sub_producer_type_masterAgencyCode_label">Sub Producer Type</span>
+													</span></td>
+													<td id="pn_block_hierarchy_type_code_for_agent_gen_dtls_security"
+														class="HeaderStyle header-cell" width="30%"><span
+														id="block_field_hierarchy_type_code_desc"> <span
+															id="pn_block_hierarchy_type_Association_contatct_code_label">Hierarchy
+																Type</span>
+													</span></td>
+													<td id="pn_block_masterProducer_hierarchy_security"
+														class="HeaderStyle header-cell" width="25%"><span
+														id="block_field_hierarchy_parent_producer_number"> <span
+															id="pn_block_masterProducer_association_hierarchy_label">Master
+																Agency Code</span>
+													</span></td>
+													<td id="pn_block_masterProducer_hierarchy_security"
+														class="HeaderStyle header-cell" width="1%"><span
+														id="block_field_hierarchy_parent_producer_id">
+													</span></td>
+													<td width="15%" class="HeaderStyle"
+													id="hierarchy_object_type_masterAgencyCode_security">
+														<div id="block_field_hierarchy_object_type">
+															<span
+																id="pn_block_hierarchy_object_type_masterAgencyCode_label">Object Type</span>
+														</div>
+													</td>
+													
+													<td id="pn_block_hierarchy_effective_date_masterAgencyCode_security"
+														class="HeaderStyle header-cell" width="25%"><span
+														id="block_field_hierarchy_effective_date_masterAgencyCode"> <span
+															id="pn_block_hierarchy_effective_date_masterAgencyCode_label">
+																Effective Date</span></span></td>
+													<td
+														id="pn_block_hierarchy_termination_date_masterAgencyCode_security"
+														class="HeaderStyle header-cell" width="25%"><span
+														id="block_field_hierarchy_termination_date_masterAgencyCode">
+															<span
+															id="pn_block_hierarchy_termination_date_masterAgencyCode_label">Termination
+																Date</span>
+													</span></td>
+													<td class="HeaderStyle header-cell" width="2%"
+														style="padding-right: 4px;"><span
+														id="delete_row_role_based_security"><span
+															id="block_field_delete_row_link" /></span></td>
+													<td id="block_field_masterProducer_hierarchy_desc"
+														style="display: none" />
+													<td id="block_field_hierarchy_type_code_desc"
+														style="display: none" />
+												</tr>
+												<tr id="masterCodes_list_data_01">
+													<td class="data-cell"
+														id="sub_producer_type_masterAgencyCode_security"><span
+														id="block_field_hierarchy_sub_producer"></span></td>
+													<td class="data-cell"
+														id="pn_block_hierarchy_type_code_for_agent_gen_dtls_security"><span
+														id="block_field_hierarchy_type_code_desc"></span></td>
+													<td class="data-cell"
+														id="hierarchy_parent_producer_number_with_search_option_security"><span
+														id="block_field_hierarchy_parent_producer_number" />
+													</td>
+													<td class="data-cell"
+														id="hierarchy_parent_producer_number_with_search_option_security">
+														<span id="block_field_hierarchy_parent_producer_id">
+														<input name="hierarchy_parent_producer_id" id="hierarchy_parent_producer_id" type="hidden"/></span>
+													</td>	
+													<td class="data-cell"
+														id="hierarchy_object_type_masterAgencyCode_security"><span
+														id="block_field_hierarchy_object_type" /></td>
+													<td class="data-cell"
+														id="pn_block_hierarchy_effective_date_masterAgencyCode_security">
+														<span id="block_field_hierarchy_effective_date_masterAgencyCode"></span>
+													</td>
+													<td class="data-cell"
+														id="pn_block_hierarchy_termination_date_masterAgencyCode_security">
+														<span id="block_field_hierarchy_termination_date_masterAgencyCode"></span>
+													</td>
+													<td class="data-cell last-cell delete-col" align="right">
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</fieldset>
+							</section>
                   
                   <section class="list-grid paddingBottom10" id="additional_email_address_security">
                     <fieldset>

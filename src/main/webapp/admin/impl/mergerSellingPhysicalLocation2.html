@@ -12,7 +12,7 @@
     <!-- Scripts -->
     <script type="text/javascript" src="js/all_files.js" />
   </head>
-  <body>
+  <body onload="javascript:setGetMultiCheckboxValues('ajax_field_contract_template_type_code','ajax_field_selectedTemplateType','set');">
     <form enctype="multipart/form-data">
       <div id="cover" />
       <div id="contextLinks" />
@@ -291,7 +291,7 @@ Phone</td>
 
 
 
-                        <section class="free-form">
+                        <section id="isshowDefaultAttachmentMNA" class="free-form">
 							<fieldset class="fieldsetTop">
 								<legend>
 									<span>Attachment Files</span>
@@ -453,7 +453,79 @@ Phone</td>
 							</section>
 
 
-
+						<section id="isshowMNASelecttemplate">
+							   <div id="agencymergernaquisition_letterTemplateList_security">
+							      <div id="ajax_error_selectedTemplateType" class="error" align="center"></div>
+							      <div id="error_selectedTemplateType" class="error" align="center"></div>
+							      <div class="text-heading txtbold mendatoryInput">&nbsp;<label id="agencymna_letterTemplateList_label">Select Letter Template</label>
+							      </div>
+							      <div id="ajax_sorting_15" class="gridTopPadding4">
+							         <div class="table-responsive">
+							            <table class="gridTable" border="0" cellpadding="0" cellspacing="0" id="agency_letterTemplate_list_1" width="100%">
+							               <tbody>
+							                  <tr id="agencymna_letterTemplate_list_header_1">
+							                     <td id="agencymnasLetterTemplateListing_template_id_security" class="HeaderStyle" width="1%"><span id="block_field_contract_template_type_code"></span> </td>
+							                     <td id="agencymnaLetterTemplateListing_templateDescription_security" class="HeaderStyle"><span id="block_field_templateDescription"><label id="agencyFunctions_template_label">Template</label></span> </td>
+							                     <td id="agencymnaLetterTemplateListing_templateName_security" class="HeaderStyle"><span id="block_field_templateName"></span></td>
+							                  </tr>
+							                  <tr id="agencymna_letterTemplate_list_mom_data_1" class="listRow2CSS">
+							                     <td width="10" id="block_field_contract_template_type_code">
+							                        <span id="block_field_contract_template_type_code">
+							                        <input type="checkbox" name="contract_template_type_code" id="ajax_field_contract_template_type_code" onclick="javascript:setGetMultiCheckboxValues('ajax_field_contract_template_type_code','ajax_field_selectedTemplateType','get');" />
+							                        </span>
+							                     </td>
+							                     <td id="agencymnaLetterTemplateListing_templateDescription_security">
+							                        <span id="block_field_templateDescription"/>
+							                     </td>
+							                  </tr>
+							               </tbody>
+							            </table>
+							         </div>
+							      </div>
+							   </div>
+							   <div id="error_agencyMnADocumentUploadError" name="error_agencyMnADocumentUploadError" class="error" align="center"></div>
+							   <div id="agencymna_documentAttachment_security">
+							      <div id="attachmentDivContentStart"></div>
+							      <div id="attachmentDiv">
+							         <span id="#Include:carrier/uploadDocument.html#"> </span>
+							      </div>
+							      <div id="attachmentDivContentEnd"></div>
+							      <div id="deleteDocument">
+							         <!-- Modal -->
+							         <div class="modal fade modal_popup">
+							            <div class="modal-dialog modal-dialog-width_350">
+							               <div class="modal-content">
+							                  <div class="modal-header">
+							                     <h4 class="modal-title">
+							                        <a href="#" class="close" id="agencyCallReportDetails_close3" onclick="closePopUp('deleteDocument')">
+							                        <img src="images/close.png" />
+							                        </a>
+							                        Delete Document
+							                     </h4>
+							                  </div>
+							                  <div class="modal-body">
+							                     <div class="modal-body-scroll popup_small_height">
+							                        <span class="delete_ico icons">#space#</span>
+							                        Are you sure you want to delete this item?
+							                     </div>
+							                  </div>
+							                  <div class="modal-footer">
+							                     <div class="buttonwrapper">
+							                        <a onclick="closePopUp('deleteDocument');" id="agencyCallReportDetails_yes3"
+							                           href="javascript:callAjaxDelete('attachmentDiv');"
+							                           class="btn btn-primary"><span>Yes</span> </a> 
+							                        <a href="#" id="agencyCallReportDetails_no3"
+							                           onclick="clean();closePopUp('deleteDocument');"
+							                           class="btn btn-default"><span>No</span> </a>
+							                     </div>
+							                  </div>
+							               </div>
+							            </div>
+							         </div>
+							         <!-- Modal End -->
+							      </div>
+							   </div>
+						</section>
 
                         <section class="divButton buttons-section">
                           <div class="buttonwrapper">
@@ -463,6 +535,12 @@ Phone</td>
                               <span id="mergerselling_back_label"
 >Back</span>
                             </a>
+                            <span id="isshowMNAGenerateLetter">
+									<a id="agencymna_generateLetter_link_security"
+									   href="javascript:submitform('carrier/selectPdfTemplate.html','mergerSellingPhysicalLocation2.generateLetter','','');" class="ovalbutton">
+									   <span id="agencymna_generateLetter_link_label">Generate Letter</span>
+									</a>                            
+                            </span>
                             <span id="isMergerTransIdEmpty">
                               <a id="mergerselectionlocation_completetransaction"
 								fullid="page(page.page).mergerselectionlocation_completetransaction.mergerselling_completetrans_label.mergerselectionlocation_completetransaction"
@@ -534,6 +612,81 @@ Phone</td>
                             </table>
                           </div>
                         </section>
+                        
+                        <section id="isshowMNASelecttemplate">
+								   <div id="agencymergernaquisition_letterTemplateList_security">
+								      <div id="ajax_error_selectedTemplateType" class="error" align="center"></div>
+								      <div id="error_selectedTemplateType" class="error" align="center"></div>
+								      <div class="text-heading txtbold mendatoryInput">&nbsp;<label id="agencymna_letterTemplateList_label">Select Letter Template</label>
+								      </div>
+								      <div id="ajax_sorting_15" class="gridTopPadding4">
+								         <div class="table-responsive">
+								            <table class="gridTable" border="0" cellpadding="0" cellspacing="0" id="agency_letterTemplate_list_1" width="100%">
+								               <tbody>
+								                  <tr id="agencymna_letterTemplate_list_header_1">
+								                     <td id="agencymnasLetterTemplateListing_template_id_security" class="HeaderStyle" width="1%"><span id="block_field_contract_template_type_code"></span> </td>
+								                     <td id="agencymnaLetterTemplateListing_templateDescription_security" class="HeaderStyle"><span id="block_field_templateDescription"><label id="agencyFunctions_template_label">Template</label></span> </td>
+								                     <td id="agencymnaLetterTemplateListing_templateName_security" class="HeaderStyle"><span id="block_field_templateName"></span></td>
+								                  </tr>
+								                  <tr id="agencymna_letterTemplate_list_mom_data_1" class="listRow2CSS">
+								                     <td width="10" id="block_field_contract_template_type_code">
+								                        <span id="block_field_contract_template_type_code">
+								                        <input type="checkbox" name="contract_template_type_code" id="ajax_field_contract_template_type_code" onclick="javascript:setGetMultiCheckboxValues('ajax_field_contract_template_type_code','ajax_field_selectedTemplateType','get');" />
+								                        </span>
+								                     </td>
+								                     <td id="agencymnaLetterTemplateListing_templateDescription_security">
+								                        <span id="block_field_templateDescription"/>
+								                     </td>
+								                  </tr>
+								               </tbody>
+								            </table>
+								         </div>
+								      </div>
+								   </div>
+								   <div id="error_agencyMnADocumentUploadError" name="error_agencyMnADocumentUploadError" class="error" align="center"></div>
+								   <div id="agencymna_documentAttachment_security">
+								      <div id="attachmentDivContentStart"></div>
+								      <div id="attachmentDiv">
+								         <span id="#Include:carrier/uploadDocument.html#"> </span>
+								      </div>
+								      <div id="attachmentDivContentEnd"></div>
+								      <div id="deleteDocument">
+								         <!-- Modal -->
+								         <div class="modal fade modal_popup">
+								            <div class="modal-dialog modal-dialog-width_350">
+								               <div class="modal-content">
+								                  <div class="modal-header">
+								                     <h4 class="modal-title">
+								                        <a href="#" class="close" id="agencyCallReportDetails_close3" onclick="closePopUp('deleteDocument')">
+								                        <img src="images/close.png" />
+								                        </a>
+								                        Delete Document
+								                     </h4>
+								                  </div>
+								                  <div class="modal-body">
+								                     <div class="modal-body-scroll popup_small_height">
+								                        <span class="delete_ico icons">#space#</span>
+								                        Are you sure you want to delete this item?
+								                     </div>
+								                  </div>
+								                  <div class="modal-footer">
+								                     <div class="buttonwrapper">
+								                        <a onclick="closePopUp('deleteDocument');" id="agencyCallReportDetails_yes3"
+								                           href="javascript:callAjaxDelete('attachmentDiv');"
+								                           class="btn btn-primary"><span>Yes</span> </a> 
+								                        <a href="#" id="agencyCallReportDetails_no3"
+								                           onclick="clean();closePopUp('deleteDocument');"
+								                           class="btn btn-default"><span>No</span> </a>
+								                     </div>
+								                  </div>
+								               </div>
+								            </div>
+								         </div>
+								         <!-- Modal End -->
+								      </div>
+								   </div>
+						</section>
+                        
                         <section class="divButton buttons-section">
                           <div class="buttonwrapper">
                             <a id="mergerselectionlocation_back1"
@@ -541,6 +694,12 @@ fullid="page(page.page).mergerselectionlocation_back1.mergerselling_back1_label.
 							href="javascript:submitform('admin/mergeracquistionssellingphysical.html','mergerSellingPhysicalLocation2.mergeracquistionssellingphysical','','');" class="ovalbutton">
                               <span id="mergerselling_back1_label">Back</span>
                             </a>
+                            <span id="isshowMNAGenerateLetter">
+									<a id="agencymna_generateLetter_link_security"
+									   href="javascript:submitform('carrier/selectPdfTemplate.html','mergerSellingPhysicalLocation2.generateLetter','','');" class="ovalbutton">
+									   <span id="agencymna_generateLetter_link_label">Generate Letter</span>
+									</a>                            
+                            </span>
                             <span id="isMergerTransIdEmpty">
                               <a id="mergerselectionlocation_completetransaction1"
 							  fullid="page(page.page).mergerselectionlocation_completetransaction1.mergerselling_completetrans1_label.mergerselectionlocation_completetransaction1"
@@ -1161,7 +1320,7 @@ Code</td>
 
 
                         <section class="free-form" id="isShowMNAAttachmentFilesGrids">
-							<fieldset class="fieldsetTop">
+							<fieldset id="isshowDefaultAttachmentMNA" class="fieldsetTop">
 								<legend>
 									<span>Attachment Files</span>
 								</legend>
@@ -1319,7 +1478,79 @@ Code</td>
 							</fieldset>
 							</section>
 
-
+						<section id="isshowMNASelecttemplate">
+								   <div id="agencymergernaquisition_letterTemplateList_security">
+								      <div id="ajax_error_selectedTemplateType" class="error" align="center"></div>
+								      <div id="error_selectedTemplateType" class="error" align="center"></div>
+								      <div class="text-heading txtbold mendatoryInput">&nbsp;<label id="agencymna_letterTemplateList_label">Select Letter Template</label>
+								      </div>
+								      <div id="ajax_sorting_15" class="gridTopPadding4">
+								         <div class="table-responsive">
+								            <table class="gridTable" border="0" cellpadding="0" cellspacing="0" id="agency_letterTemplate_list_1" width="100%">
+								               <tbody>
+								                  <tr id="agencymna_letterTemplate_list_header_1">
+								                     <td id="agencymnasLetterTemplateListing_template_id_security" class="HeaderStyle" width="1%"><span id="block_field_contract_template_type_code"></span> </td>
+								                     <td id="agencymnaLetterTemplateListing_templateDescription_security" class="HeaderStyle"><span id="block_field_templateDescription"><label id="agencyFunctions_template_label">Template</label></span> </td>
+								                     <td id="agencymnaLetterTemplateListing_templateName_security" class="HeaderStyle"><span id="block_field_templateName"></span></td>
+								                  </tr>
+								                  <tr id="agencymna_letterTemplate_list_mom_data_1" class="listRow2CSS">
+								                     <td width="10" id="block_field_contract_template_type_code">
+								                        <span id="block_field_contract_template_type_code">
+								                        <input type="checkbox" name="contract_template_type_code" id="ajax_field_contract_template_type_code" onclick="javascript:setGetMultiCheckboxValues('ajax_field_contract_template_type_code','ajax_field_selectedTemplateType','get');" />
+								                        </span>
+								                     </td>
+								                     <td id="agencymnaLetterTemplateListing_templateDescription_security">
+								                        <span id="block_field_templateDescription"/>
+								                     </td>
+								                  </tr>
+								               </tbody>
+								            </table>
+								         </div>
+								      </div>
+								   </div>
+								   <div id="error_agencyMnADocumentUploadError" name="error_agencyMnADocumentUploadError" class="error" align="center"></div>
+								   <div id="agencymna_documentAttachment_security">
+								      <div id="attachmentDivContentStart"></div>
+								      <div id="attachmentDiv">
+								         <span id="#Include:carrier/uploadDocument.html#"> </span>
+								      </div>
+								      <div id="attachmentDivContentEnd"></div>
+								      <div id="deleteDocument">
+								         <!-- Modal -->
+								         <div class="modal fade modal_popup">
+								            <div class="modal-dialog modal-dialog-width_350">
+								               <div class="modal-content">
+								                  <div class="modal-header">
+								                     <h4 class="modal-title">
+								                        <a href="#" class="close" id="agencyCallReportDetails_close3" onclick="closePopUp('deleteDocument')">
+								                        <img src="images/close.png" />
+								                        </a>
+								                        Delete Document
+								                     </h4>
+								                  </div>
+								                  <div class="modal-body">
+								                     <div class="modal-body-scroll popup_small_height">
+								                        <span class="delete_ico icons">#space#</span>
+								                        Are you sure you want to delete this item?
+								                     </div>
+								                  </div>
+								                  <div class="modal-footer">
+								                     <div class="buttonwrapper">
+								                        <a onclick="closePopUp('deleteDocument');" id="agencyCallReportDetails_yes3"
+								                           href="javascript:callAjaxDelete('attachmentDiv');"
+								                           class="btn btn-primary"><span>Yes</span> </a> 
+								                        <a href="#" id="agencyCallReportDetails_no3"
+								                           onclick="clean();closePopUp('deleteDocument');"
+								                           class="btn btn-default"><span>No</span> </a>
+								                     </div>
+								                  </div>
+								               </div>
+								            </div>
+								         </div>
+								         <!-- Modal End -->
+								      </div>
+								   </div>
+						</section>
 
                         <section class="divButton buttons-section">
                           <div class="buttonwrapper">
@@ -1334,6 +1565,12 @@ Code</td>
                               <span id="mergerselling_completetrans2_label"
 >Next</span>
                             </a>
+                            <span id="isshowMNAGenerateLetter">
+									<a id="agencymna_generateLetter_link_security"
+									   href="javascript:submitform('carrier/selectPdfTemplate.html','mergerSellingPhysicalLocation2.generateLetter','','');" class="ovalbutton">
+									   <span id="agencymna_generateLetter_link_label">Generate Letter</span>
+									</a>                            
+                            </span>
                             <span id="isMergerTransIdEmpty">
                                                 <a id="mergerselectionlocation2_complete_transaction"
                                                 onclick="javascript:showPopUp('transferDiv',400,300);"
@@ -1891,7 +2128,7 @@ Code</td>
                           </section>
                         </fieldset>
 
-                        <section class="free-form">
+                        <section class="free-form" id="isshowDefaultAttachmentMNA">
 							<fieldset class="fieldsetTop">
 								<legend>
 									<span>Attachment Files</span>
@@ -2050,7 +2287,79 @@ Code</td>
 							</fieldset>
 							</section>
 
-
+						<section id="isshowMNASelecttemplate">
+								   <div id="agencymergernaquisition_letterTemplateList_security">
+								      <div id="ajax_error_selectedTemplateType" class="error" align="center"></div>
+								      <div id="error_selectedTemplateType" class="error" align="center"></div>
+								      <div class="text-heading txtbold mendatoryInput">&nbsp;<label id="agencymna_letterTemplateList_label">Select Letter Template</label>
+								      </div>
+								      <div id="ajax_sorting_15" class="gridTopPadding4">
+								         <div class="table-responsive">
+								            <table class="gridTable" border="0" cellpadding="0" cellspacing="0" id="agency_letterTemplate_list_1" width="100%">
+								               <tbody>
+								                  <tr id="agencymna_letterTemplate_list_header_1">
+								                     <td id="agencymnasLetterTemplateListing_template_id_security" class="HeaderStyle" width="1%"><span id="block_field_contract_template_type_code"></span> </td>
+								                     <td id="agencymnaLetterTemplateListing_templateDescription_security" class="HeaderStyle"><span id="block_field_templateDescription"><label id="agencyFunctions_template_label">Template</label></span> </td>
+								                     <td id="agencymnaLetterTemplateListing_templateName_security" class="HeaderStyle"><span id="block_field_templateName"></span></td>
+								                  </tr>
+								                  <tr id="agencymna_letterTemplate_list_mom_data_1" class="listRow2CSS">
+								                     <td width="10" id="block_field_contract_template_type_code">
+								                        <span id="block_field_contract_template_type_code">
+								                        <input type="checkbox" name="contract_template_type_code" id="ajax_field_contract_template_type_code" onclick="javascript:setGetMultiCheckboxValues('ajax_field_contract_template_type_code','ajax_field_selectedTemplateType','get');" />
+								                        </span>
+								                     </td>
+								                     <td id="agencymnaLetterTemplateListing_templateDescription_security">
+								                        <span id="block_field_templateDescription"/>
+								                     </td>
+								                  </tr>
+								               </tbody>
+								            </table>
+								         </div>
+								      </div>
+								   </div>
+								   <div id="error_agencyMnADocumentUploadError" name="error_agencyMnADocumentUploadError" class="error" align="center"></div>
+								   <div id="agencymna_documentAttachment_security">
+								      <div id="attachmentDivContentStart"></div>
+								      <div id="attachmentDiv">
+								         <span id="#Include:carrier/uploadDocument.html#"> </span>
+								      </div>
+								      <div id="attachmentDivContentEnd"></div>
+								      <div id="deleteDocument">
+								         <!-- Modal -->
+								         <div class="modal fade modal_popup">
+								            <div class="modal-dialog modal-dialog-width_350">
+								               <div class="modal-content">
+								                  <div class="modal-header">
+								                     <h4 class="modal-title">
+								                        <a href="#" class="close" id="agencyCallReportDetails_close3" onclick="closePopUp('deleteDocument')">
+								                        <img src="images/close.png" />
+								                        </a>
+								                        Delete Document
+								                     </h4>
+								                  </div>
+								                  <div class="modal-body">
+								                     <div class="modal-body-scroll popup_small_height">
+								                        <span class="delete_ico icons">#space#</span>
+								                        Are you sure you want to delete this item?
+								                     </div>
+								                  </div>
+								                  <div class="modal-footer">
+								                     <div class="buttonwrapper">
+								                        <a onclick="closePopUp('deleteDocument');" id="agencyCallReportDetails_yes3"
+								                           href="javascript:callAjaxDelete('attachmentDiv');"
+								                           class="btn btn-primary"><span>Yes</span> </a> 
+								                        <a href="#" id="agencyCallReportDetails_no3"
+								                           onclick="clean();closePopUp('deleteDocument');"
+								                           class="btn btn-default"><span>No</span> </a>
+								                     </div>
+								                  </div>
+								               </div>
+								            </div>
+								         </div>
+								         <!-- Modal End -->
+								      </div>
+								   </div>
+						</section>
                         <section class="divButton buttons-section">
                           <div class="buttonwrapper">
                             <a id="mergerselectionlocation2_back5"
@@ -2058,6 +2367,12 @@ Code</td>
 							href="javascript:submitform('admin/mergeracquistionssellingphysical.html','mergerSellingPhysicalLocation2.mergeracquistionssellingphysical','','');" class="ovalbutton">
                               <span id="mergerselling_back3_label">Back</span>
                             </a>
+                            <span id="isshowMNAGenerateLetter">
+									<a id="agencymna_generateLetter_link_security"
+									   href="javascript:submitform('carrier/selectPdfTemplate.html','mergerSellingPhysicalLocation2.generateLetter','','');" class="ovalbutton">
+									   <span id="agencymna_generateLetter_link_label">Generate Letter</span>
+									</a>                            
+                            </span>
                             <span id="isMergerTransIdEmpty">
                               <a id="mergerselectionlocation2_completetransaction5"
 							  fullid="page(page.page).mergerselectionlocation2_completetransaction5.mergerselling_completetrans3_label.mergerselectionlocation2_completetransaction5"
@@ -2612,6 +2927,81 @@ Number Status</span>
                             </div>
                           </fieldset>
                         </section>
+                        
+                        <section id="isshowMNASelecttemplate">
+								   <div id="agencymergernaquisition_letterTemplateList_security">
+								      <div id="ajax_error_selectedTemplateType" class="error" align="center"></div>
+								      <div id="error_selectedTemplateType" class="error" align="center"></div>
+								      <div class="text-heading txtbold mendatoryInput">&nbsp;<label id="agencymna_letterTemplateList_label">Select Letter Template</label>
+								      </div>
+								      <div id="ajax_sorting_15" class="gridTopPadding4">
+								         <div class="table-responsive">
+								            <table class="gridTable" border="0" cellpadding="0" cellspacing="0" id="agency_letterTemplate_list_1" width="100%">
+								               <tbody>
+								                  <tr id="agencymna_letterTemplate_list_header_1">
+								                     <td id="agencymnasLetterTemplateListing_template_id_security" class="HeaderStyle" width="1%"><span id="block_field_contract_template_type_code"></span> </td>
+								                     <td id="agencymnaLetterTemplateListing_templateDescription_security" class="HeaderStyle"><span id="block_field_templateDescription"><label id="agencyFunctions_template_label">Template</label></span> </td>
+								                     <td id="agencymnaLetterTemplateListing_templateName_security" class="HeaderStyle"><span id="block_field_templateName"></span></td>
+								                  </tr>
+								                  <tr id="agencymna_letterTemplate_list_mom_data_1" class="listRow2CSS">
+								                     <td width="10" id="block_field_contract_template_type_code">
+								                        <span id="block_field_contract_template_type_code">
+								                        <input type="checkbox" name="contract_template_type_code" id="ajax_field_contract_template_type_code" onclick="javascript:setGetMultiCheckboxValues('ajax_field_contract_template_type_code','ajax_field_selectedTemplateType','get');" />
+								                        </span>
+								                     </td>
+								                     <td id="agencymnaLetterTemplateListing_templateDescription_security">
+								                        <span id="block_field_templateDescription"/>
+								                     </td>
+								                  </tr>
+								               </tbody>
+								            </table>
+								         </div>
+								      </div>
+								   </div>
+								   <div id="error_agencyMnADocumentUploadError" name="error_agencyMnADocumentUploadError" class="error" align="center"></div>
+								   <div id="agencymna_documentAttachment_security">
+								      <div id="attachmentDivContentStart"></div>
+								      <div id="attachmentDiv">
+								         <span id="#Include:carrier/uploadDocument.html#"> </span>
+								      </div>
+								      <div id="attachmentDivContentEnd"></div>
+								      <div id="deleteDocument">
+								         <!-- Modal -->
+								         <div class="modal fade modal_popup">
+								            <div class="modal-dialog modal-dialog-width_350">
+								               <div class="modal-content">
+								                  <div class="modal-header">
+								                     <h4 class="modal-title">
+								                        <a href="#" class="close" id="agencyCallReportDetails_close3" onclick="closePopUp('deleteDocument')">
+								                        <img src="images/close.png" />
+								                        </a>
+								                        Delete Document
+								                     </h4>
+								                  </div>
+								                  <div class="modal-body">
+								                     <div class="modal-body-scroll popup_small_height">
+								                        <span class="delete_ico icons">#space#</span>
+								                        Are you sure you want to delete this item?
+								                     </div>
+								                  </div>
+								                  <div class="modal-footer">
+								                     <div class="buttonwrapper">
+								                        <a onclick="closePopUp('deleteDocument');" id="agencyCallReportDetails_yes3"
+								                           href="javascript:callAjaxDelete('attachmentDiv');"
+								                           class="btn btn-primary"><span>Yes</span> </a> 
+								                        <a href="#" id="agencyCallReportDetails_no3"
+								                           onclick="clean();closePopUp('deleteDocument');"
+								                           class="btn btn-default"><span>No</span> </a>
+								                     </div>
+								                  </div>
+								               </div>
+								            </div>
+								         </div>
+								         <!-- Modal End -->
+								      </div>
+								   </div>
+						</section>
+                        
                         <section class="divButton buttons-section">
                           <div class="buttonwrapper">
                             <a id="mergerselectionlocation2_back6"
@@ -2619,6 +3009,12 @@ Number Status</span>
 							href="javascript:submitform('admin/mergeracquistionssellingphysical.html','mergerSellingPhysicalLocation2.mergeracquistionssellingphysical','','');" class="ovalbutton">
                               <span  id="mergerselling_back4_label">Back</span>
                             </a>
+                            <span id="isshowMNAGenerateLetter">
+									<a id="agencymna_generateLetter_link_security"
+									   href="javascript:submitform('carrier/selectPdfTemplate.html','mergerSellingPhysicalLocation2.generateLetter','','');" class="ovalbutton">
+									   <span id="agencymna_generateLetter_link_label">Generate Letter</span>
+									</a>                            
+                            </span>
                             <span id="isMergerTransIdEmpty">
                               <a id="mergerselectionlocation2_completetransaction"
 							  fullid="page(page.page).mergerselectionlocation2_completetransaction.mergerselling_completetrans4_label.mergerselectionlocation2_completetransaction"
@@ -3091,63 +3487,82 @@ Agency</span>
                             </section>
                           </fieldset>
                         </section>
-  <!-- start - BMIC Specific Customization - Generate letter -->
-                            	<div id="agencymergernaquisition_letterTemplateList_security">
 
-											<div id="ajax_error_selectedTemplateType" class="error" align="center" />
-											<div id="error_selectedTemplateType" class="error" align="center" />
-											<div class="text-heading txtbold mendatoryInput">
-												&nbsp;<label id="agencymna_letterTemplateList_label">Select Letter Template</label>
-											</div>
-											<div id="ajax_sorting_15" class="gridTopPadding4">
-												<div class="table-responsive">
-													<table class="gridTable" border="0" cellpadding="0"
-														cellspacing="0" id="agencymna_letterTemplate_list_1" width="100%">
-														<tr id="agencymna_letterTemplate_list_header_1">
-															<td id="agencymnasLetterTemplateListing_template_id_security" class="HeaderStyle" width="1%">
-																<span id="block_field_contract_template_type_code"></span>
-															</td>
-															<td id="agencymnaLetterTemplateListing_templateDescription_security" class="HeaderStyle">
-																<span id="block_field_templateDescription">
-																	<label id="agencyFunctions_template_label">Template</label>
-
-																</span>
-															</td>
-															<td id="agencymnaLetterTemplateListing_templateName_security" class="HeaderStyle" >
-																<span id="block_field_templateName"></span>
-															</td>
-														</tr>
-														<tr id="agencymna_letterTemplate_list_mom_data_1">
-															<td width="10" id="agencymnasLetterTemplateListing_template_id_security">
-                                                     			<span id="block_field_contract_template_type_code">
-                                                      				<input type="checkbox" id="ajax_field_contract_template_type_code" name="contract_template_type_code"
-                                                      					onclick="javascript:setGetMultiCheckboxValues('ajax_field_contract_template_type_code','ajax_field_selectedTemplateType','get');"
-                                                      				/>
-                                                    			</span>
-                                                  			</td>
-                                                  			<td id="agencymnaLetterTemplateListing_templateDescription_security">
-																<span id="block_field_templateDescription"></span>
-															</td>
-															<td id="agencymnaLetterTemplateListing_templateName_security">
-																<span id="block_field_templateName">
-																	<input type="hidden" id="ajax_field_templateName" name="templateName" />
-																</span>
-															</td>
-														</tr>
-													</table>
-												</div>
-											</div>
-											</div>
-											<div id="error_agencyMnADocumentUploadError" name="error_agencyMnADocumentUploadError" class="error" align="center"></div>
-											<div id="agencymna_documentAttachment_security">
-												<div id="attachmentDivContentStart" />
-													<div id="attachmentDiv">
-														<span id="#Include:carrier/uploadDocument.html#" />
-													</div>
-												<div id="attachmentDivContentEnd" />
-											</div>
-											
-                            <!-- end - BMIC Specific Customization - Generate letter --> 
+                      <section id="isshowMNASelecttemplate">
+							   <div id="agencymergernaquisition_letterTemplateList_security">
+							      <div id="ajax_error_selectedTemplateType" class="error" align="center"></div>
+							      <div id="error_selectedTemplateType" class="error" align="center"></div>
+							      <div class="text-heading txtbold mendatoryInput">&nbsp;<label id="agencymna_letterTemplateList_label">Select Letter Template</label>
+							      </div>
+							      <div id="ajax_sorting_15" class="gridTopPadding4">
+							         <div class="table-responsive">
+							            <table class="gridTable" border="0" cellpadding="0" cellspacing="0" id="agency_letterTemplate_list_1" width="100%">
+							               <tbody>
+							                  <tr id="agencymna_letterTemplate_list_header_1">
+							                     <td id="agencymnasLetterTemplateListing_template_id_security" class="HeaderStyle" width="1%"><span id="block_field_contract_template_type_code"></span> </td>
+							                     <td id="agencymnaLetterTemplateListing_templateDescription_security" class="HeaderStyle"><span id="block_field_templateDescription"><label id="agencyFunctions_template_label">Template</label></span> </td>
+							                     <td id="agencymnaLetterTemplateListing_templateName_security" class="HeaderStyle"><span id="block_field_templateName"></span></td>
+							                  </tr>
+							                  <tr id="agencymna_letterTemplate_list_mom_data_1" class="listRow2CSS">
+							                     <td width="10" id="block_field_contract_template_type_code">
+							                        <span id="block_field_contract_template_type_code">
+							                        <input type="checkbox" name="contract_template_type_code" id="ajax_field_contract_template_type_code" onclick="javascript:setGetMultiCheckboxValues('ajax_field_contract_template_type_code','ajax_field_selectedTemplateType','get');" />
+							                        </span>
+							                     </td>
+							                     <td id="agencymnaLetterTemplateListing_templateDescription_security">
+							                        <span id="block_field_templateDescription"/>
+							                     </td>
+							                  </tr>
+							               </tbody>
+							            </table>
+							         </div>
+							      </div>
+							   </div>
+							   <div id="error_agencyMnADocumentUploadError" name="error_agencyMnADocumentUploadError" class="error" align="center"></div>
+							   <div id="agencymna_documentAttachment_security">
+							      <div id="attachmentDivContentStart"></div>
+							      <div id="attachmentDiv">
+							         <span id="#Include:carrier/uploadDocument.html#"> </span>
+							      </div>
+							      <div id="attachmentDivContentEnd"></div>
+							      <div id="deleteDocument">
+							         <!-- Modal -->
+							         <div class="modal fade modal_popup">
+							            <div class="modal-dialog modal-dialog-width_350">
+							               <div class="modal-content">
+							                  <div class="modal-header">
+							                     <h4 class="modal-title">
+							                        <a href="#" class="close" id="agencyCallReportDetails_close3" onclick="closePopUp('deleteDocument')">
+							                        <img src="images/close.png" />
+							                        </a>
+							                        Delete Document
+							                     </h4>
+							                  </div>
+							                  <div class="modal-body">
+							                     <div class="modal-body-scroll popup_small_height">
+							                        <span class="delete_ico icons">#space#</span>
+							                        Are you sure you want to delete this item?
+							                     </div>
+							                  </div>
+							                  <div class="modal-footer">
+							                     <div class="buttonwrapper">
+							                        <a onclick="closePopUp('deleteDocument');" id="agencyCallReportDetails_yes3"
+							                           href="javascript:callAjaxDelete('attachmentDiv');"
+							                           class="btn btn-primary"><span>Yes</span> </a> 
+							                        <a href="#" id="agencyCallReportDetails_no3"
+							                           onclick="clean();closePopUp('deleteDocument');"
+							                           class="btn btn-default"><span>No</span> </a>
+							                     </div>
+							                  </div>
+							               </div>
+							            </div>
+							         </div>
+							         <!-- Modal End -->
+							      </div>
+							   </div>
+					 </section>
+                      
+                      
                       <section class="divButton buttons-section">
                         <div class="buttonwrapper">
                           <a id="mergerselectionlocation2_back6"
@@ -3155,15 +3570,15 @@ Agency</span>
 						  href="javascript:submitform('admin/mergeracquistionssellingphysical.html','mergerSellingPhysicalLocation2.mergeracquistionssellingphysical','','');" class="ovalbutton">
                             <span id="mergerselling_back5_label">Back</span>
                           </a>
-                          
+                           <span id="isshowMNAGenerateLetter">
                           <!-- start - BMIC specific customization  -->
                           <a id="agencymna_generateLetter_link_security"
 												fullid="page(page.page).agencymna_generateLetter_link_security.agencymna_generateLetter_link_label.agencymna_generateLetter_link_security"
 													href="javascript:submitform('admin/mergerSellingPhysicalLocation2.html','mergerSellingPhysicalLocation2.generateLetter','','');"
 													class="ovalbutton">
-													<span id="agencymna_generateLetter_link_label">Generate Letter</span>
-												</a>
-								
+									   <span id="agencymna_generateLetter_link_label">Generate Letter</span>
+									</a>                            
+                            </span>
                           <!-- start - BMIC specific customization  -->				
                           <span id="isMergerTransIdEmpty">
                             <a id="mergerselectionlocation2_completetransaction6"
@@ -3618,7 +4033,7 @@ Agency</span>
                       </div>
 
 
-                      <section class="free-form">
+                      <section class="free-form" id="isshowDefaultAttachmentMNA">
 							<fieldset class="fieldsetTop">
 								<legend>
 									<span>Attachment Files</span>
@@ -3776,7 +4191,79 @@ Agency</span>
 								</div>
 							</fieldset>
 							</section>
-
+					  <section id="isshowMNASelecttemplate">
+							   <div id="agencymergernaquisition_letterTemplateList_security">
+							      <div id="ajax_error_selectedTemplateType" class="error" align="center"></div>
+							      <div id="error_selectedTemplateType" class="error" align="center"></div>
+							      <div class="text-heading txtbold mendatoryInput">&nbsp;<label id="agencymna_letterTemplateList_label">Select Letter Template</label>
+							      </div>
+							      <div id="ajax_sorting_15" class="gridTopPadding4">
+							         <div class="table-responsive">
+							            <table class="gridTable" border="0" cellpadding="0" cellspacing="0" id="agency_letterTemplate_list_1" width="100%">
+							               <tbody>
+							                  <tr id="agencymna_letterTemplate_list_header_1">
+							                     <td id="agencymnasLetterTemplateListing_template_id_security" class="HeaderStyle" width="1%"><span id="block_field_contract_template_type_code"></span> </td>
+							                     <td id="agencymnaLetterTemplateListing_templateDescription_security" class="HeaderStyle"><span id="block_field_templateDescription"><label id="agencyFunctions_template_label">Template</label></span> </td>
+							                     <td id="agencymnaLetterTemplateListing_templateName_security" class="HeaderStyle"><span id="block_field_templateName"></span></td>
+							                  </tr>
+							                  <tr id="agencymna_letterTemplate_list_mom_data_1" class="listRow2CSS">
+							                     <td width="10" id="block_field_contract_template_type_code">
+							                        <span id="block_field_contract_template_type_code">
+							                        <input type="checkbox" name="contract_template_type_code" id="ajax_field_contract_template_type_code" onclick="javascript:setGetMultiCheckboxValues('ajax_field_contract_template_type_code','ajax_field_selectedTemplateType','get');" />
+							                        </span>
+							                     </td>
+							                     <td id="agencymnaLetterTemplateListing_templateDescription_security">
+							                        <span id="block_field_templateDescription"/>
+							                     </td>
+							                  </tr>
+							               </tbody>
+							            </table>
+							         </div>
+							      </div>
+							   </div>
+							   <div id="error_agencyMnADocumentUploadError" name="error_agencyMnADocumentUploadError" class="error" align="center"></div>
+							   <div id="agencymna_documentAttachment_security">
+							      <div id="attachmentDivContentStart"></div>
+							      <div id="attachmentDiv">
+							         <span id="#Include:carrier/uploadDocument.html#"> </span>
+							      </div>
+							      <div id="attachmentDivContentEnd"></div>
+							      <div id="deleteDocument">
+							         <!-- Modal -->
+							         <div class="modal fade modal_popup">
+							            <div class="modal-dialog modal-dialog-width_350">
+							               <div class="modal-content">
+							                  <div class="modal-header">
+							                     <h4 class="modal-title">
+							                        <a href="#" class="close" id="agencyCallReportDetails_close3" onclick="closePopUp('deleteDocument')">
+							                        <img src="images/close.png" />
+							                        </a>
+							                        Delete Document
+							                     </h4>
+							                  </div>
+							                  <div class="modal-body">
+							                     <div class="modal-body-scroll popup_small_height">
+							                        <span class="delete_ico icons">#space#</span>
+							                        Are you sure you want to delete this item?
+							                     </div>
+							                  </div>
+							                  <div class="modal-footer">
+							                     <div class="buttonwrapper">
+							                        <a onclick="closePopUp('deleteDocument');" id="agencyCallReportDetails_yes3"
+							                           href="javascript:callAjaxDelete('attachmentDiv');"
+							                           class="btn btn-primary"><span>Yes</span> </a> 
+							                        <a href="#" id="agencyCallReportDetails_no3"
+							                           onclick="clean();closePopUp('deleteDocument');"
+							                           class="btn btn-default"><span>No</span> </a>
+							                     </div>
+							                  </div>
+							               </div>
+							            </div>
+							         </div>
+							         <!-- Modal End -->
+							      </div>
+							   </div>
+					  </section>
                       <section class="divButton buttons-section">
                         <div class="buttonwrapper">
                           <a id="mergerselectionlocation2_back7"
@@ -3785,6 +4272,12 @@ Agency</span>
 						  href="javascript:submitform('admin/mergeracquistionssellingphysical.html','mergerSellingPhysicalLocation2.mergeracquistionssellingphysical','','');" class="ovalbutton">
                             <span id="mergerselling_back6_label">Back</span>
                           </a>
+                          <span id="isshowMNAGenerateLetter">
+									<a id="agencymna_generateLetter_link_security"
+									   href="javascript:submitform('carrier/selectPdfTemplate.html','mergerSellingPhysicalLocation2.generateLetter','','');" class="ovalbutton">
+									   <span id="agencymna_generateLetter_link_label">Generate Letter</span>
+									</a>                            
+                            </span>
                           <span id="isMergerTransIdEmpty">
                             <a id="mergerselectionlocation2_completetransaction7"
 							  fullid="page(page.page).mergerselectionlocation2_completetransaction7.mergerselling_completetrans6_label.mergerselectionlocation2_completetransaction7"
@@ -3887,7 +4380,7 @@ Name</span>
                       </div>
 
 
-                      <section class="free-form">
+                      <section class="free-form" id="isshowDefaultAttachmentMNA">
 							<fieldset class="fieldsetTop">
 								<legend>
 									<span>Attachment Files</span>
@@ -4053,6 +4546,12 @@ Name</span>
 						  href="javascript:submitform('admin/mergeracquistionssellingphysical.html','mergerSellingPhysicalLocation2.mergeracquistionssellingphysical','','');" class="ovalbutton">
                             <span id="mergerselling_back9_label">Back</span>
                           </a>
+                          <span id="isshowMNAGenerateLetter">
+									<a id="agencymna_generateLetter_link_security"
+									   href="javascript:submitform('carrier/selectPdfTemplate.html','mergerSellingPhysicalLocation2.generateLetter','','');" class="ovalbutton">
+									   <span id="agencymna_generateLetter_link_label">Generate Letter</span>
+									</a>                            
+                            </span>
                           <span id="isMergerTransIdEmpty">
                             <a id="mergerselectionlocation2_completetransaction8"
 						 fullid="page(page.page).mergerselectionlocation2_completetransaction8.mergerselling_completetrans9_label.mergerselectionlocation2_completetransaction8"
@@ -4106,6 +4605,79 @@ Name</span>
                             </tr>
                           </table>
                         </section>
+                        <section id="isshowMNASelecttemplate">
+							   <div id="agencymergernaquisition_letterTemplateList_security">
+							      <div id="ajax_error_selectedTemplateType" class="error" align="center"></div>
+							      <div id="error_selectedTemplateType" class="error" align="center"></div>
+							      <div class="text-heading txtbold mendatoryInput">&nbsp;<label id="agencymna_letterTemplateList_label">Select Letter Template</label>
+							      </div>
+							      <div id="ajax_sorting_15" class="gridTopPadding4">
+							         <div class="table-responsive">
+							            <table class="gridTable" border="0" cellpadding="0" cellspacing="0" id="agency_letterTemplate_list_1" width="100%">
+							               <tbody>
+							                  <tr id="agencymna_letterTemplate_list_header_1">
+							                     <td id="agencymnasLetterTemplateListing_template_id_security" class="HeaderStyle" width="1%"><span id="block_field_contract_template_type_code"></span> </td>
+							                     <td id="agencymnaLetterTemplateListing_templateDescription_security" class="HeaderStyle"><span id="block_field_templateDescription"><label id="agencyFunctions_template_label">Template</label></span> </td>
+							                     <td id="agencymnaLetterTemplateListing_templateName_security" class="HeaderStyle"><span id="block_field_templateName"></span></td>
+							                  </tr>
+							                  <tr id="agencymna_letterTemplate_list_mom_data_1" class="listRow2CSS">
+							                     <td width="10" id="block_field_contract_template_type_code">
+							                        <span id="block_field_contract_template_type_code">
+							                        <input type="checkbox" name="contract_template_type_code" id="ajax_field_contract_template_type_code" onclick="javascript:setGetMultiCheckboxValues('ajax_field_contract_template_type_code','ajax_field_selectedTemplateType','get');" />
+							                        </span>
+							                     </td>
+							                     <td id="agencymnaLetterTemplateListing_templateDescription_security">
+							                        <span id="block_field_templateDescription"/>
+							                     </td>
+							                  </tr>
+							               </tbody>
+							            </table>
+							         </div>
+							      </div>
+							   </div>
+							   <div id="error_agencyMnADocumentUploadError" name="error_agencyMnADocumentUploadError" class="error" align="center"></div>
+							   <div id="agencymna_documentAttachment_security">
+							      <div id="attachmentDivContentStart"></div>
+							      <div id="attachmentDiv">
+							         <span id="#Include:carrier/uploadDocument.html#"> </span>
+							      </div>
+							      <div id="attachmentDivContentEnd"></div>
+							      <div id="deleteDocument">
+							         <!-- Modal -->
+							         <div class="modal fade modal_popup">
+							            <div class="modal-dialog modal-dialog-width_350">
+							               <div class="modal-content">
+							                  <div class="modal-header">
+							                     <h4 class="modal-title">
+							                        <a href="#" class="close" id="agencyCallReportDetails_close3" onclick="closePopUp('deleteDocument')">
+							                        <img src="images/close.png" />
+							                        </a>
+							                        Delete Document
+							                     </h4>
+							                  </div>
+							                  <div class="modal-body">
+							                     <div class="modal-body-scroll popup_small_height">
+							                        <span class="delete_ico icons">#space#</span>
+							                        Are you sure you want to delete this item?
+							                     </div>
+							                  </div>
+							                  <div class="modal-footer">
+							                     <div class="buttonwrapper">
+							                        <a onclick="closePopUp('deleteDocument');" id="agencyCallReportDetails_yes3"
+							                           href="javascript:callAjaxDelete('attachmentDiv');"
+							                           class="btn btn-primary"><span>Yes</span> </a> 
+							                        <a href="#" id="agencyCallReportDetails_no3"
+							                           onclick="clean();closePopUp('deleteDocument');"
+							                           class="btn btn-default"><span>No</span> </a>
+							                     </div>
+							                  </div>
+							               </div>
+							            </div>
+							         </div>
+							         <!-- Modal End -->
+							      </div>
+							   </div>
+						</section>
                         <section>
                           <div class="buttonwrapper">
                             <a id="mergerselectionlocation2_back9"
@@ -4113,6 +4685,12 @@ Name</span>
 							href="javascript:submitform('admin/mergeracquistionssellingphysical.html','mergerSellingPhysicalLocation2.mergeracquistionssellingphysical','','');" class="ovalbutton">
                               <span id="mergerselling_back7_label">Back</span>
                             </a>
+                            <span id="isshowMNAGenerateLetter">
+									<a id="agencymna_generateLetter_link_security"
+									   href="javascript:submitform('carrier/selectPdfTemplate.html','mergerSellingPhysicalLocation2.generateLetter','','');" class="ovalbutton">
+									   <span id="agencymna_generateLetter_link_label">Generate Letter</span>
+									</a>                            
+                            </span>
                             <span id="isMergerTransIdEmpty">
                               <a id="mergerselectionlocation2_completetransaction9"
 							  fullid="page(page.page).mergerselectionlocation2_completetransaction9.mergerselling_completetrans7_label.mergerselectionlocation2_completetransaction9"
@@ -4387,7 +4965,7 @@ Date</td>
                             </div>
                           </div>
 
-                        <section class="free-form">
+                        <section id="isshowDefaultAttachmentMNA" class="free-form">
 							<fieldset class="fieldsetTop">
 								<legend>
 									<span>Attachment Files</span>
@@ -4554,6 +5132,12 @@ fullid="page(page.page).mergerselectionlocation2_back10.mergerselling_back8_labe
 							href="javascript:submitform('admin/mergeracquistionssellingphysical.html|admin/mergeracquistionssellingproducernumbers.html','mergerSellingPhysicalLocation2.mergeracquistionssellingphysical','forwardeval','ProducerOneRule.isMultipleProducerNumbersNotMoved|ProducerOneRule.isMultipleProducerNumbersMoved');" class="ovalbutton">
                               <span id="mergerselling_back8_label">Back</span>
                             </a>
+                            <span id="isshowMNAGenerateLetter">
+									<a id="agencymna_generateLetter_link_security"
+									   href="javascript:submitform('carrier/selectPdfTemplate.html','mergerSellingPhysicalLocation2.generateLetter','','');" class="ovalbutton">
+									   <span id="agencymna_generateLetter_link_label">Generate Letter</span>
+									</a>                            
+                            </span>
                             <span id="isMergerTransIdEmpty">
                               <a id="mergerselectionlocation2_completetransaction10"
 							  fullid="page(page.page).mergerselectionlocation2_completetransaction10.mergerselling_completetrans8_label.mergerselectionlocation2_completetransaction10"
@@ -4592,9 +5176,8 @@ fullid="page(page.page).mergerselectionlocation2_cancel11.mergerselling_cancel8_
         <input type="hidden" name="jsessionid" id="jsessionid" />
         <input type="hidden" name="isCommissionStatementsMoving" id="isCommissionStatementsMoving" />
         <input type="hidden" name="selectedSellingProducerNumberIds" id="selectedSellingProducerNumberIds" />
-<!-- BMIC Specific-->        <input type="hidden" name="selectedTemplateType" id="ajax_field_selectedTemplateType" />
+        <input type="hidden" name="selectedTemplateType" id="ajax_field_selectedTemplateType" />
 <!-- BMIC Specific-->		<input type="hidden" name="templateTypeListSize" id="ajax_field_templateTypeListSize" />
-		
       </div>
     </form>
   </body>

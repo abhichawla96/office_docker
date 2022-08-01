@@ -8236,7 +8236,7 @@ background-color: transparent!important;
 
 .historyPage .dynamicWidth {
     min-width: 120px;
-    xpadding-left: 8px;
+    padding-right: 8px;
 }
 .historyPage .obj_code_desc, .historyPage .name, .historyPage .dba, .historyPage .taxpayer_name, .historyPage .name_NIPR{min-width: 160px;}
 .historyPage .listReportRow2CSS td, .historyPage .listReportRow1CSS td{
@@ -9423,6 +9423,4 @@ tfoot tr th.add-cell, tfoot tr th{padding-left: 3px; padding-right: 3px}
        max-width: 220px;
        word-wrap: break-word;
 }
-#mix_of_business_security .freeFormLabelWidth {
-    width: 300px;
-}
+
