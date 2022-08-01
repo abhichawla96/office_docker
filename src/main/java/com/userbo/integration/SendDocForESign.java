@@ -6,27 +6,25 @@ import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletContext;
+import com.docusign.esign.model.EnvelopeSummary;
 
+import org.apache.commons.collections.map.HashedMap;
 import org.apache.fop.servlet.ServletContextURIResolver;
 
-import com.docusign.esign.model.EnvelopeSummary;
-import com.esign.docusgindirect.client.EnvelopeStatus;
-import com.esign.docusgindirect.util.CustomTabUtil;
-import com.esign.docusgindirect.util.DocuSignUtil;
-import com.esign.docusgindirect.valueObjects.DocuSignRequest;
-import com.esign.docusgindirect.valueObjects.RecipientInfoBean;
 import com.esign.docusign.info.DocRequest;
 import com.esign.docusign.info.DocResponse;
 import com.esign.docusign.info.SignerInfoBean;
 import com.esign.docusign.util.ESignatureUtil;
-import com.esign.docusignrest.util.RestCustomTabUtil;
-import com.esign.docusignrest.util.RestDocuSignUtil;
-import com.esign.docusignrest.valueObjects.RestDocuSignRequest;
-import com.esign.docusignrest.valueObjects.RestRecipientInfoBean;
+import com.esign.docusignrest.util.CustomTab;
+import com.esign.docusignrest.util.CustomTabUtil;
+import com.esign.docusignrest.util.DocuSignUtil;
+import com.esign.docusignrest.valueObjects.DocuSignRequest;
+import com.esign.docusignrest.valueObjects.RecipientInfoBean;
 import com.manage.managecomponent.applicationworkflownew.ApplicationWorkflowResources;
 import com.manage.managecomponent.applicationworkflownew.Businessobject;
 import com.manage.managecomponent.applicationworkflownew.EventImpl;
@@ -77,7 +75,6 @@ public class SendDocForESign extends Businessobject {
 		}
 		
 		String esign_provider = ctx.get("esign_provider") != null ? ctx.get("esign_provider").toString() : null;
-		String isEnabledDocuEsignRest = ctx.get("isEnabledDocuEsignRest") != null ? ctx.get("isEnabledDocuEsignRest").toString() : null;
 		if(esign_provider != null){
 			if(esign_provider.equalsIgnoreCase("AssureEsign")){
 				sendForAssureSign(ctx, new ByteArrayOutputStream(), HtmlConstants.EMPTY, HtmlConstants.EMPTY);
@@ -87,33 +84,18 @@ public class SendDocForESign extends Businessobject {
 				return null;
 			}else if(esign_provider.equalsIgnoreCase("DocuEsignDirect")){
 				if(ctx.get("inet_page").toString().equals("agentBackgroundInquiry") && ctx.get("inet_method").toString().endsWith("sendBGCheckAuthorization")){
-					
-					if(isEnabledDocuEsignRest != null && isEnabledDocuEsignRest.equals("Y"))
-						setDataForDocuESignRest(ctx); //Applicationform and bgcheck
-					else
-						setDataForDocuESignDirect(ctx); //Applicationform and bgcheck
+					setDataForDocuESignDirect(ctx); //Applicationform and bgcheck
 				}
 				//else if(ctx.get("inet_page").toString().equals("bankInformationForSelfServiceApproval") && ctx.get("inet_method").toString().endsWith("submit")){
 				else if((ctx.get("workflow_event_name_context").toString().equals("sendForApprovalBankRequestSelfService") || ctx.get("workflow_event_name_context").toString().equals("sendForApprovalSelfService")) && ctx.get("inet_method").toString().endsWith("submit")){
-					
-					if(isEnabledDocuEsignRest != null && isEnabledDocuEsignRest.equals("Y"))
-						setDataForDocuESignRestForSelfService(ctx);
-					else
-						setDataForDocuESignDirectForSelfService(ctx);
+					setDataForDocuESignDirectForSelfService(ctx);
 				}else if(ctx.get("workflow_name_context") != null && ctx.get("workflow_name_context").toString().equals("agencyTermination") && 
 						((ctx.get("workflow_disapproved_status_event_name_context") != null && ctx.get("workflow_disapproved_status_event_name_context").toString().equals("approved")) || 
 						(ctx.get("workflow_event_name_context") != null && ctx.get("workflow_event_name_context").toString().equals("approved"))) 
 						&& ctx.get("inet_method").toString().endsWith("submit")){
-						
-						if(isEnabledDocuEsignRest != null && isEnabledDocuEsignRest.equals("Y"))
-							sendApplicationWorkflowDocuESignRest((Context)ctx); //termination
-						else
-							sendApplicationWorkflowDocuESign((Context)ctx); //termination
+					sendApplicationWorkflowDocuESign((Context)ctx); //termination
 				}else{
-						if(isEnabledDocuEsignRest != null && isEnabledDocuEsignRest.equals("Y"))
-							setDataForDocuESignRestForContract(ctx); //contract
-						else
-							setDataForDocuESignDirectForContract(ctx); //contract
+					setDataForDocuESignDirectForContract(ctx); //contract
 				}
 				
 				return null;
@@ -288,8 +270,7 @@ public class SendDocForESign extends Businessobject {
 			newCtx.put("operationType", "I");
 			newCtx.put("aar_requestid", ctx.get("aar_requestid"));
 			newCtx.put("onboarding_method", ctx.get("onboarding_method")); 
-			newCtx.put("isEnabledDocuEsignRest", ctx.get("isEnabledDocuEsignRest"));
-			new SetParametersForStoredProcedures().setParametersInContext(newCtx, "status,aar_requestid,onboarding_method,workflowrequeststatus_comment,agent_ss_workflowrequeststatus_desc,esignResponseXML,esign_iseditable,isEnabledDocuEsignRest");
+			new SetParametersForStoredProcedures().setParametersInContext(newCtx, "status,aar_requestid,onboarding_method,workflowrequeststatus_comment,agent_ss_workflowrequeststatus_desc,esignResponseXML,esign_iseditable");
 			SqlResources.getSqlMapProcessor(ctx).insert("agency_contracts.insert_update_esign_status_p_java", newCtx);
 			
 			logger.debug("Pdf Doc has sent to agency for esign.");
@@ -495,8 +476,7 @@ public class SendDocForESign extends Businessobject {
 				newCtx.put("object_id", ctx.get("contract_id"));
 			}
 			newCtx.put("onboarding_method", ctx.get("onboarding_method"));
-			newCtx.put("isEnabledDocuEsignRest", ctx.get("isEnabledDocuEsignRest"));
-			new SetParametersForStoredProcedures().setParametersInContext(newCtx, "status,aar_requestid,onboarding_method,workflowrequeststatus_comment,agent_ss_workflowrequeststatus_desc,esignResponseXML,esign_iseditable,isEnabledDocuEsignRest");
+			new SetParametersForStoredProcedures().setParametersInContext(newCtx, "status,aar_requestid,onboarding_method,workflowrequeststatus_comment,agent_ss_workflowrequeststatus_desc,esignResponseXML,esign_iseditable");
 			SqlResources.getSqlMapProcessor(ctx).insert("agency_contracts.insert_update_esign_status_p_java", newCtx);
 		}catch (Throwable e1) {
 			logger.error("Got error while DocuSign" + DataUtils.getExceptionStackTrace(e1));
@@ -640,7 +620,7 @@ public class SendDocForESign extends Businessobject {
 			}
 			
 			
-			EnvelopeStatus docRes = null; 
+			EnvelopeSummary docRes = null; 
 			String errorMsg = "";
 			try{
 				if(ctx.get("inet_errors_list")!=null && !"".equals(ctx.get("inet_errors_list")))
@@ -668,7 +648,7 @@ public class SendDocForESign extends Businessobject {
 			Context newCtx = new Context();
 			newCtx.setProject(ctx.getProject());
 			
-			newCtx.put("document_id_var", docRes.getEnvelopeID());
+			newCtx.put("document_id_var", docRes.getEnvelopeId());
 			//newCtx.put("doc_auth_token", docRes.);
 			newCtx.put("document_type", "BGAuthorizationInPone");
 			newCtx.put("last_updated_by", ctx.get("last_updated_by").toString());
@@ -688,9 +668,8 @@ public class SendDocForESign extends Businessobject {
 				newCtx.put("status_comment", "SENT");
 			}
 			newCtx.put("onboarding_method", ctx.get("onboarding_method"));
-			newCtx.put("isEnabledDocuEsignRest", ctx.get("isEnabledDocuEsignRest"));
 			//going to insert in database
-			new SetParametersForStoredProcedures().setParametersInContext(newCtx, "status,agency_id,person_id,aar_requestid,onboarding_method,workflowrequeststatus_comment,agent_ss_workflowrequeststatus_desc,esignResponseXML,esign_iseditable,isEnabledDocuEsignRest");
+			new SetParametersForStoredProcedures().setParametersInContext(newCtx, "status,agency_id,person_id,aar_requestid,onboarding_method,workflowrequeststatus_comment,agent_ss_workflowrequeststatus_desc,esignResponseXML,esign_iseditable");
 			SqlResources.getSqlMapProcessor(ctx).insert("agency_contracts.insert_update_esign_status_p_java", newCtx);
 			
 			logger.debug("Pdf Doc has sent to agency for esign.");
@@ -754,6 +733,7 @@ public class SendDocForESign extends Businessobject {
 			
 			//DocRequest docRequests = new DocRequest();
 			//List<DocRequest> docRequestsList = new ArrayList<DocRequest>();
+
 			DocuSignUtil docuSign = new DocuSignUtil();
 			List<DocuSignRequest> docuSignRequestList = new ArrayList<DocuSignRequest>();
 			
@@ -1175,7 +1155,7 @@ public class SendDocForESign extends Businessobject {
 						docuSignRequestList.add(docuSignRequest);
 					}//ended for loop
 					
-					EnvelopeStatus docRes = null; 
+					EnvelopeSummary docRes = null; 
 					String errorMsg = "";
 					boolean isErrorFound= false;
 					try{
@@ -1219,7 +1199,7 @@ public class SendDocForESign extends Businessobject {
 					//going to insert into database
 					Context newCtx = new Context();
 					newCtx.setProject(ctx.getProject());
-					newCtx.put("document_id_var", docRes.getEnvelopeID());
+					newCtx.put("document_id_var", docRes.getEnvelopeId());
 					//newCtx.put("doc_auth_token", docRes.);
 					newCtx.put("document_type", "Contract");
 					newCtx.put("last_updated_by", ctx.get("user_id").toString());
@@ -1242,9 +1222,8 @@ public class SendDocForESign extends Businessobject {
 					}
 					
 					newCtx.put("onboarding_method", ctx.get("onboarding_method"));
-					newCtx.put("isEnabledDocuEsignRest", ctx.get("isEnabledDocuEsignRest"));
 					logger.debug("Going to insert in database.");
-					new SetParametersForStoredProcedures().setParametersInContext(newCtx, "object_id,status,agency_id,person_id,aar_requestid,onboarding_method,workflowrequeststatus_comment,agent_ss_workflowrequeststatus_desc,esignResponseXML,esign_iseditable,isEnabledDocuEsignRest");
+					new SetParametersForStoredProcedures().setParametersInContext(newCtx, "object_id,status,agency_id,person_id,aar_requestid,onboarding_method,workflowrequeststatus_comment,agent_ss_workflowrequeststatus_desc,esignResponseXML,esign_iseditable");
 					SqlResources.getSqlMapProcessor(ctx).insert("agency_contracts.insert_update_esign_status_p_java", newCtx);
 					
 					ctx.put("generatedContractList",generatedContractList);
@@ -1502,7 +1481,7 @@ public class SendDocForESign extends Businessobject {
 									
 							
 						}
-						EnvelopeStatus docRes = null; 
+						EnvelopeSummary docRes = null; 
 						String errorMsg = "";
 						try{
 							if(ctx.get("inet_errors_list")!=null && !"".equals(ctx.get("inet_errors_list")))
@@ -1529,7 +1508,7 @@ public class SendDocForESign extends Businessobject {
 						//going to insert int database
 						Context newCtx = new Context();
 						newCtx.setProject(ctx.getProject());
-						newCtx.put("document_id_var", docRes.getEnvelopeID());
+						newCtx.put("document_id_var", docRes.getEnvelopeId());
 						//newCtx.put("doc_auth_token", docRes.);
 						newCtx.put("document_type", "Self Service");
 						newCtx.put("last_updated_by", ctx.get("user_id").toString());
@@ -1552,9 +1531,8 @@ public class SendDocForESign extends Businessobject {
 							newCtx.put("status_comment", "SENT");
 						}
 						newCtx.put("onboarding_method", ctx.get("onboarding_method"));
-						newCtx.put("isEnabledDocuEsignRest", ctx.get("isEnabledDocuEsignRest"));
 						logger.debug("Going to insert in database.");
-						new SetParametersForStoredProcedures().setParametersInContext(newCtx, "object_id,status,agency_id,person_id,aar_requestid,onboarding_method,workflowrequeststatus_comment,agent_ss_workflowrequeststatus_desc,esignResponseXML,esign_iseditable,isEnabledDocuEsignRest");
+						new SetParametersForStoredProcedures().setParametersInContext(newCtx, "object_id,status,agency_id,person_id,aar_requestid,onboarding_method,workflowrequeststatus_comment,agent_ss_workflowrequeststatus_desc,esignResponseXML,esign_iseditable");
 						SqlResources.getSqlMapProcessor(ctx).insert("agency_contracts.insert_update_esign_status_p_java", newCtx);
 						
 						newCtx.get("document_type");
@@ -1700,7 +1678,7 @@ public class SendDocForESign extends Businessobject {
 				}//ended doc loop
 				
 				if(docuSignRequestList != null && docuSignRequestList.size() > 0){
-					EnvelopeStatus docRes = null; 
+					EnvelopeSummary docRes = null; 
 					String errorMsg = "";
 					try{
 						if(ctx.get("inet_errors_list")!=null && !"".equals(ctx.get("inet_errors_list")))
@@ -1725,7 +1703,7 @@ public class SendDocForESign extends Businessobject {
 					//going to insert into database
 					newCtx = new Context();
 					newCtx.setProject(ctx.getProject());
-					newCtx.put("document_id_var", docRes.getEnvelopeID());
+					newCtx.put("document_id_var", docRes.getEnvelopeId());
 					//newCtx.put("doc_auth_token", docRes.);
 					newCtx.put("document_type", "Agency Termination");
 					newCtx.put("last_updated_by", ctx.get("user_id").toString());
@@ -1748,9 +1726,8 @@ public class SendDocForESign extends Businessobject {
 					}
 					
 					newCtx.put("onboarding_method", ctx.get("onboarding_method"));
-					newCtx.put("isEnabledDocuEsignRest", ctx.get("isEnabledDocuEsignRest"));
 					logger.debug("Going to insert in database.");
-					new SetParametersForStoredProcedures().setParametersInContext(newCtx, "object_id,status,agency_id,person_id,aar_requestid,onboarding_method,workflowrequeststatus_comment,agent_ss_workflowrequeststatus_desc,esignResponseXML,esign_iseditable,isEnabledDocuEsignRest");
+					new SetParametersForStoredProcedures().setParametersInContext(newCtx, "object_id,status,agency_id,person_id,aar_requestid,onboarding_method,workflowrequeststatus_comment,agent_ss_workflowrequeststatus_desc,esignResponseXML,esign_iseditable");
 					SqlResources.getSqlMapProcessor(ctx).insert("agency_contracts.insert_update_esign_status_p_java", newCtx);
 					
 					ctx.put("generatedContractList", docsList);
@@ -2120,7 +2097,7 @@ public class SendDocForESign extends Businessobject {
 			for(int i= 0; i<generatedPublicSubmissionAttachmentsList.size(); i++){
 				rb =  null;
 				fileName =  null;
-				
+				boolean isApplicationForm=false;
 				Map generateddPublicSubmissionAttachmentsMap = (Map) generatedPublicSubmissionAttachmentsList.get(i);
 				if(generateddPublicSubmissionAttachmentsMap != null && !HtmlConstants.EMPTY.equals(generateddPublicSubmissionAttachmentsMap)){
 					if(generateddPublicSubmissionAttachmentsMap.get("document_name") != null && !HtmlConstants.EMPTY.equals(generateddPublicSubmissionAttachmentsMap.get("document_name"))){
@@ -2140,6 +2117,7 @@ public class SendDocForESign extends Businessobject {
 								P_AGENT_SIGNER_IDENTIFIER=AGENT_SIGNER_IDENTIFIER+""+1;
 								P_DATE_IDENTIFIER= DATE_IDENTIFIER+"_"+1;
 								DOC_IDENTIFIER= ESignConstants.DOCUMENT_IDENTIFIER_APPFORM;
+								isApplicationForm=true;
 								
 							}
 							else if(fileName.contains(personFileName)) {
@@ -2212,16 +2190,28 @@ public class SendDocForESign extends Businessobject {
 					recipientAgentInfo.setRecipientDoc(docuSignRequest.getIdentifier());
 					if(DataUtils.getAccessType((Context)ctx, "esign_custom_tab_security")==1)
 					{
-						ctx.put("customtab_template_code","bgcheckForm");
 						ctx.put("person_id", personId);
 						ctx.put("personid", personId);
 						CustomTabUtil custtab=new CustomTabUtil();
+				
+						if(isApplicationForm) {
+							ctx.put("customtab_template_code","applicationForm");
+
+							recipientAgentInfo.setCustomtabmap(custtab.getCustomTabList(ctx,""+docuSignRequest.getDocumentId()));
+							if(recipientAgentInfo.getCustomtabmap()==null)
+							{
+								DataUtils.populateError((Context)ctx, "carrierError", "Unable to send document for ESignature");
+								return;
+							}
+						}else {
+						ctx.put("customtab_template_code","bgcheckForm");
 						recipientAgentInfo.setCustomtabmap(custtab.getCustomTabList(ctx,""+docuSignRequest.getDocumentId()));
 						if(recipientAgentInfo.getCustomtabmap()==null)
 						{
 							DataUtils.populateError((Context)ctx, "carrierError", "Unable to send document for ESignature");
 							return;
 						}
+					}
 						recipientAgentInfo.setObjectidentifier(""+recipientAgentInfo.getRecipientId());
 					}
 					recipientInfoList.add(recipientAgentInfo);
@@ -2242,7 +2232,7 @@ public class SendDocForESign extends Businessobject {
 				}
 		}
 					
-		EnvelopeStatus docRes = null; 
+		EnvelopeSummary docRes = null; 
 		String errorMsg = "";
 		try{
 			if(ctx.get("inet_errors_list")!=null && !"".equals(ctx.get("inet_errors_list")))
@@ -2268,585 +2258,6 @@ public class SendDocForESign extends Businessobject {
 		Context newCtx = new Context();
 		newCtx.setProject(ctx.getProject());
 		
-		newCtx.put("document_id_var", docRes.getEnvelopeID());
-		newCtx.put("document_type", "BGAuthorization");
-		newCtx.put("last_updated_by", ctx.get("last_updated_by").toString());
-		newCtx.put("operationType", "I");
-		newCtx.put("aar_requestid",  ctx.get("aar_requestid").toString());
-		if(docRes.getStatus() != null && "SENT".equalsIgnoreCase(docRes.getStatus().toString())){
-			newCtx.put("status_comment", "SENT");
-		}
-		
-		Map requestIdMap = (Map)SqlResources.getSqlMapProcessor(ctx).findByKey("SqlStmts.sqlStatementsviewgetRequestIdFromAgencyMaster", newCtx);
-		if(requestIdMap != null && !HtmlConstants.EMPTY.equals(requestIdMap)){
-			if(requestIdMap.get("requestid") != null && !HtmlConstants.EMPTY.equals(requestIdMap.get("requestid").toString()))
-				newCtx.put("aar_requestid", requestIdMap.get("requestid"));
-			else
-				newCtx.put("aar_requestid", "-1");
-		}
-		if(docRes.getStatus() != null && "SENT".equalsIgnoreCase(docRes.getStatus().toString())){
-			newCtx.put("status_comment", "SENT");
-		}
-		newCtx.put("onboarding_method", ctx.get("onboarding_method"));
-		newCtx.put("isEnabledDocuEsignRest", ctx.get("isEnabledDocuEsignRest"));
-		//going to insert in database
-		new SetParametersForStoredProcedures().setParametersInContext(newCtx, "status,agency_id,person_id,aar_requestid,onboarding_method,workflowrequeststatus_comment,agent_ss_workflowrequeststatus_desc,esignResponseXML,esign_iseditable,isEnabledDocuEsignRest");
-		SqlResources.getSqlMapProcessor(ctx).insert("agency_contracts.insert_update_esign_status_p_java", newCtx);
-		
-		logger.debug("Pdf Doc has sent to agency for esign.");
-		
-	}catch (Exception e) {
-		DataUtils.populateError((Context)ctx, "bgPageError","Error in Sending document for ESign");
-		logger.error("Unable to send document for ESignature due to error : " + e.getMessage());
-	}
-}
-}
-	
-	public void sendApplicationWorkflowDocuESignRest(Context ctx) throws Exception {
-	try{
-		if(logger.isDebugEnabled(ctx))
-			logger.debug(ctx, "Going to send document for ESign for termination");
-		
-		String className = this.getClass().getName();
-		if(className.contains("."))
-			className = className.substring(className.lastIndexOf(".")+1, className.length());
-		
-		String objectId = className+"_objectid";
-		String docCategory = className+"_doccategory";
-		
-		objectId = ctx.get(objectId) != null ? ctx.get(objectId).toString() : objectId;
-		docCategory = ctx.get(docCategory) != null ? ctx.get(docCategory).toString() : docCategory;
-		
-		if(StringUtils.isBlank(objectId)){
-			if(logger.isDebugEnabled(ctx)){
-				logger.debug(ctx, "No objectid attribute found");
-				return;
-			}
-		}
-		
-		if(StringUtils.isBlank(docCategory)){
-			if(logger.isDebugEnabled(ctx)){
-				logger.debug(ctx, "No doccategory attribute found");
-				return;
-			}
-		}
-			
-		objectId = ctx.get(objectId) != null ? ctx.get(objectId).toString() : objectId;
-		docCategory = ctx.get(docCategory) != null ? ctx.get(docCategory).toString() : docCategory;
-		
-		//if(ctx.get("termination_log_id") != null && !ctx.get("termination_log_id").toString().equals(HtmlConstants.EMPTY)){
-		if(objectId != null){
-			RestDocuSignUtil restDocuSign = new RestDocuSignUtil();
-			List<RestDocuSignRequest> restDocuSignRequestList = new ArrayList<RestDocuSignRequest>();
-			
-			//ctx.put("document_category", "39");
-			
-			Context newCtx = new Context();
-			newCtx.setProject(ctx.getProject());
-			
-			newCtx.put("object_id", objectId);
-			newCtx.put("document_category", docCategory);
-			//List docsList = SqlResources.getSqlMapProcessor(ctx).select("agency_document_attachments.getAgencyTerminationDocuments_p", ctx);
-
-			XMLUtils.generateRequestXml(newCtx, "object_id,document_category", "inputXml");
-			new SetParametersForStoredProcedures().setParametersInContext(newCtx, "inputXml");
-			List docsList = SqlResources.getSqlMapProcessor(newCtx).select("framework.getAttachedDocumentsListByObjectId_p", newCtx);
-			if(docsList != null && docsList.size() > 0){
-				for(int i=0; i<docsList.size(); i++){
-					Map map = (Map)docsList.get(i);
-					
-					if(map.get("esign_required") == null || !map.get("esign_required").toString().equals("1"))
-						continue;
-					
-					String documentCategory = map.get("document_category") != null ? map.get("document_category").toString() : null;
-					String templateCode = map.get("document_template_type_code") != null ? map.get("document_template_type_code").toString() : null;
-					
-					String identifier = documentCategory + '_' + templateCode+"_"+ESignConstants.DOCUMENT_IDENTIFIER_AGENCY_CONTRACT;
-					
-					RestDocuSignRequest restDocuSignRequest = new RestDocuSignRequest();
-					ProducerOneUtility obj=new ProducerOneUtility();
-					obj.getSubjectLineForRest(restDocuSignRequest,ctx);
-					newCtx.put("document_id", map.get("document_id"));
-	  				newCtx.put("document_name", map.get("document_name"));
-	  				newCtx.put("file_name", map.get("document_name"));
-	  				
-	  				//reading file
-	  				byte[] rb = new DataUtils().getDocumentFromDMS(newCtx);
-	  				
-	  				restDocuSignRequest.setContent(rb); 
-	  				restDocuSignRequest.setDocumentId(i+1);
-					
-	  				restDocuSignRequest.setIdentifier(identifier);
-					
-					
-					List<RestRecipientInfoBean> restRecipientInfoList = new ArrayList<RestRecipientInfoBean>();
-					List<String> identiferListForAnchorTab = new ArrayList<String>();
-					
-					String workflowName = ctx.get("workflow_name_context").toString();
-					String eventName = ctx.get("workflow_event_name_context").toString(); 
-					
-					//in case of <approver> nodes given
-					if(ctx.get("workflow_disapproved_status_event_name_context") != null && !ctx.get("workflow_disapproved_status_event_name_context").toString().equals(HtmlConstants.EMPTY)){
-						eventName =	ctx.get("workflow_disapproved_status_event_name_context").toString();
-						if(logger.isDebugEnabled(ctx)) logger.debug("Inside If Condition");
-						if(logger.isDebugEnabled(ctx)) logger.debug("workflowName " + workflowName);
-						if(logger.isDebugEnabled(ctx)) logger.debug("eventName " + eventName);
-						EventImpl eventImpl = ApplicationWorkflowResources.getInstance(ctx).getWorkflow(workflowName).getEvent(eventName);
-						if(eventImpl.getSortedSignerList() != null && eventImpl.getSortedSignerList().size() > 0){
-							//checking for templatecode
-							setRestSigner(ctx, eventImpl, restRecipientInfoList, identiferListForAnchorTab, templateCode, ctx.get("workflow_approvername_context").toString(), true, true,restDocuSignRequest);
-							
-							//checking w/o templatecode
-							setRestSigner(ctx, eventImpl, restRecipientInfoList, identiferListForAnchorTab, null, ctx.get("workflow_approvername_context").toString(), true, false,restDocuSignRequest);
-						}
-						
-						
-						
-						restDocuSignRequest.setRecipientInfoList(restRecipientInfoList);
-						restDocuSignRequest.setDocAnchorInfo(identiferListForAnchorTab);
-					
-						restDocuSignRequestList.add(restDocuSignRequest);
-					}else{ //when no <approver> nodes given
-						if(logger.isDebugEnabled(ctx)) logger.debug("Inside else Condition");
-						if(logger.isDebugEnabled(ctx)) logger.debug("workflowName " + workflowName);
-						if(logger.isDebugEnabled(ctx)) logger.debug("eventName " + eventName);
-						
-						EventImpl eventImpl = ApplicationWorkflowResources.getInstance(ctx).getWorkflow(workflowName).getEvent(eventName);
-						if(eventImpl.getSortedSignerList() != null && eventImpl.getSortedSignerList().size() > 0){
-							//checking for templatecode
-							setRestSigner(ctx, eventImpl, restRecipientInfoList, identiferListForAnchorTab, templateCode, null, false, true,restDocuSignRequest);
-							
-							//checking w/o templatecode
-							setRestSigner(ctx, eventImpl, restRecipientInfoList, identiferListForAnchorTab, null, null, false, false,restDocuSignRequest);
-							
-							restDocuSignRequest.setRecipientInfoList(restRecipientInfoList);
-							restDocuSignRequest.setDocAnchorInfo(identiferListForAnchorTab);
-							restDocuSignRequestList.add(restDocuSignRequest);
-						}
-					}
-				}
-			}//ended doc loop
-			
-			if(restDocuSignRequestList != null && restDocuSignRequestList.size() > 0){
-				EnvelopeSummary docRes = null; 
-				String errorMsg = "";
-				try{
-					if(ctx.get("inet_errors_list")!=null && !"".equals(ctx.get("inet_errors_list")))
-					{
-						return;
-					}
-					logger.debug("Going to hit DocuSign");
-					logger.debug("Values of docuSignRequestList : "+restDocuSignRequestList);
-					docRes = restDocuSign.sendDocument(restDocuSignRequestList);
-					logger.debug("Response got from DocuSign " + docRes);
-				}catch (Throwable e1) {
-					logger.error("Unable to execute setDataForDocuESignDirectForContract method due to error : " + DataUtils.getExceptionStackTrace(e1));
-				}
-				
-				if(docRes == null || docRes.getStatus().equals(HtmlConstants.EMPTY) || 
-						("ERROR".equalsIgnoreCase(docRes.getStatus().toString()) || "FAILURE".equalsIgnoreCase(docRes.getStatus().toString()))){
-					DataUtils.populateError((Context)ctx, "carrierError", "Unable to send document for ESignature");
-					logger.error("Unable to send document for ESignature due to error : "+ errorMsg);
-					return;
-				}
-				
-				//going to insert into database
-				newCtx = new Context();
-				newCtx.setProject(ctx.getProject());
-				newCtx.put("document_id_var", docRes.getEnvelopeId());
-				//newCtx.put("doc_auth_token", docRes.);
-				newCtx.put("document_type", "Agency Termination");
-				newCtx.put("last_updated_by", ctx.get("user_id").toString());
-				newCtx.put("operationType", "I");
-				newCtx.put("object_id", ctx.get("termination_log_id"));
-				
-				if(ctx.get("agency_id") != null && !HtmlConstants.EMPTY.equals(ctx.get("agency_id")))
-					newCtx.put("agency_id", ctx.get("agency_id"));
-				
-				Map requestIdMap = (Map)SqlResources.getSqlMapProcessor(ctx).findByKey("SqlStmts.sqlStatementsviewgetRequestIdFromAgencyMaster", newCtx);
-				if(requestIdMap != null && !HtmlConstants.EMPTY.equals(requestIdMap)){
-					if(requestIdMap.get("requestid") != null && !HtmlConstants.EMPTY.equals(requestIdMap.get("requestid").toString()))
-						newCtx.put("aar_requestid", requestIdMap.get("requestid"));
-					else
-						newCtx.put("aar_requestid", null);
-				}
-				
-				if(docRes.getStatus() != null && "SENT".equalsIgnoreCase(docRes.getStatus().toString())){
-					newCtx.put("status_comment", "SENT");
-				}
-				
-				newCtx.put("onboarding_method", ctx.get("onboarding_method"));
-				newCtx.put("isEnabledDocuEsignRest", ctx.get("isEnabledDocuEsignRest"));
-				logger.debug("Going to insert in database.");
-				new SetParametersForStoredProcedures().setParametersInContext(newCtx, "object_id,status,agency_id,person_id,aar_requestid,onboarding_method,workflowrequeststatus_comment,agent_ss_workflowrequeststatus_desc,esignResponseXML,esign_iseditable,isEnabledDocuEsignRest");
-				SqlResources.getSqlMapProcessor(ctx).insert("agency_contracts.insert_update_esign_status_p_java", newCtx);
-				
-				ctx.put("generatedContractList", docsList);
-				ProducerOneUtils.convertFieldNListStringToXMLWithCustomRootElement((Context)ctx,"generatedContractList" , "Root", "Root1", "outputXML");
-				newCtx.put("outputXML",ctx.get("outputXML"));
-				new SetParametersForStoredProcedures().setParametersInContext(newCtx, "outputXML");
-				SqlResources.getSqlMapProcessor(ctx).update("agency_contracts.updateSentForEsignatureFlagInContracts_p", newCtx);
-				
-				logger.debug("Pdf Doc has sent to agency for esign.");
-			}
-		}
-	}catch(Exception e){
-		logger.error("Unable to send document for ESign for termination due to error : " + e.getMessage());
-	}
-}
-	
-	//Method created to set 
-	private void setRestSigner(Context ctx, EventImpl eventImpl, List recipientInfoList, List identiferListForAnchorTab, String templateCode, 
-			String approverName, boolean isCheckApprover, boolean isCheckTemplate,RestDocuSignRequest docuSignRequest){
-		try{
-			
-			if(logger.isDebugEnabled(ctx)) logger.debug("Inside Set Signer");
-			
-			
-			Context newCtx = new Context();
-			
-			for(int j=0; j<eventImpl.getSortedSignerList().size(); j++){
-				SignerImpl signerImpl = (SignerImpl)eventImpl.getSortedSignerList().get(j);
-				
-				if(StringUtils.isNotBlank(signerImpl.getEval())){
-					if(DataUtils.getAccessType(ctx, signerImpl.getEval()) == 0)
-						continue;
-				}
-				
-				String templateCodeValue = signerImpl.getTemplatecodevalue();
-				
-				if(StringUtils.isBlank(templateCodeValue))
-					continue;
-				
-				if(isCheckApprover){
-					String attachedToApprover = signerImpl.getAttachtoapprover();
-					
-					if(StringUtils.isBlank(attachedToApprover))
-						continue;
-					
-					if(!approverName.equals(attachedToApprover))
-						continue;
-				}else{
-					if(StringUtils.isNotBlank(signerImpl.getAttachtoapprover()))
-						continue;
-				}
-					
-				
-				if(isCheckTemplate){
-					if(StringUtils.isBlank(templateCodeValue))
-						continue;
-					
-					templateCodeValue = "," + templateCodeValue + ",";
-					
-					if(!templateCodeValue.contains(","+templateCode+","))
-						continue;
-				}else{
-					if(StringUtils.isNotBlank(signerImpl.getTemplatecodevalue()))
-						continue;
-				}
-				
-				boolean isGetUser = signerImpl.getIsgetuser();
-				String name = signerImpl.getName();
-				String type = signerImpl.getType();
-				
-				String userId = null;
-				if(isGetUser) //getting value from online selection
-					userId = ctx.get(name) != null ? ctx.get(name).toString() : null;
-				else{
-					String approverrole = signerImpl.getApproverrole();
-					if(StringUtils.isBlank(approverrole)){
-						if(logger.isDebugEnabled(ctx))
-							logger.debug(ctx, "No approverrole attribute found");
-						
-						continue;
-					}
-					
-					if(approverrole.equalsIgnoreCase("roles"))
-						userId = ctx.get("user_id") != null ? ctx.get("user_id").toString() : approverrole;
-					else{
-						approverrole = ctx.get(approverrole) != null ? ctx.get(approverrole).toString() : approverrole;
-						
-						newCtx.putAll(ctx);
-						new DataUtils().getWorkflowAssignedToUserData(newCtx, signerImpl.getObjectid(), signerImpl.getObjecttype(), signerImpl.getObjectfunction(), "user_id", approverrole);
-						userId = newCtx.get("user_id") != null ? newCtx.get("user_id").toString() : null; 
-					}
-				}
-				
-				if(StringUtils.isBlank(userId)){
-					if(logger.isDebugEnabled(ctx))
-						logger.debug(ctx, "No userId found");
-					
-					continue;
-				}
-				
-				//going to get username, email, initials for signer
-				newCtx = new Context();
-				newCtx.setProject(ctx.getProject());
-				newCtx.put("userid", userId);
-				newCtx.put("agentEmailTypeForDocusignInContract", ctx.get("agentEmailTypeForDocusignInContract"));
-				
-				String params = "userid,agentEmailTypeForDocusignInContract";
-				
-				params = new DataUtils().checkForAdditionalParameters(ctx, newCtx, params, "getDocuSignDataByUserId_p_additionalparameters");
-				
-				XMLUtils.generateRequestXml(newCtx, params, "inputXml");
-				Map dataMap = (Map)SqlResources.getSqlMapProcessor(newCtx).findByKey("framework.getDocuSignDataByUserId_p", newCtx);
-				new DataUtils().populateClobValue(dataMap);
-	            DataUtils.parseDataXML(newCtx, dataMap);
-				
-	            String userName = newCtx.get("user_name") != null ? newCtx.get("user_name").toString() : null;
-	            String email = newCtx.get("e_mail") != null ? newCtx.get("e_mail").toString() : null;
-	            String initials = newCtx.get("initials") != null ? newCtx.get("initials").toString() : null;
-				
-				//adding signer
-				RestRecipientInfoBean restRecipientInfo = new RestRecipientInfoBean();
-				List<String> identiferList = new ArrayList<String>();
-				
-				if(type.equals("agent")){
-					identiferList.add(ESignConstants.AGENT_SIGNER_IDENTIFIER);
-					identiferList.add(DATE_IDENTIFIER);
-					if(DataUtils.getAccessType((Context)ctx, "esign_custom_tab_security")==1)
-					{
-						identiferList.add(ESignConstants.CUSTOM_TAB_IDENTFIER);
-						identiferListForAnchorTab.add(ESignConstants.CUSTOM_TAB_IDENTFIER);
-					}
-					identiferListForAnchorTab.add(ESignConstants.AGENT_SIGNER_IDENTIFIER);
-					identiferListForAnchorTab.add(DATE_IDENTIFIER);
-					ctx.put("signertype", "agent");
-	            }else if(type.equals("carrier")){
-	            	identiferList.add(ESignConstants.CARRIER_SIGNER_IDENTIFIER);
-					identiferList.add(ESignConstants.DATE_SIGNER_IDENTFIER_1);	
-					if(DataUtils.getAccessType((Context)ctx, "esign_custom_tab_security")==1)
-					{
-						identiferList.add(ESignConstants.CUSTOM_TAB_IDENTFIER);
-						identiferListForAnchorTab.add(ESignConstants.CUSTOM_TAB_IDENTFIER);
-					}
-	            	identiferListForAnchorTab.add(ESignConstants.CARRIER_SIGNER_IDENTIFIER);
-					identiferListForAnchorTab.add(ESignConstants.DATE_SIGNER_IDENTFIER_1);
-					ctx.put("signertype", "carrier");
-	            }
-				logger.debug("customtab objectidentifier value set as ::"+ctx.get("user_id").toString());
-				ctx.put("objectidentifier",ctx.get("user_id").toString());
-				restRecipientInfo.setRecipientIdentifierList(identiferList);
-				
-				restRecipientInfo.setRecipientId(j+1);
-				restRecipientInfo.setEmailAddress(email);
-				restRecipientInfo.setName(userName);
-				restRecipientInfo.setInitials(initials);
-					
-				restRecipientInfo.setRoutingOrder(1);
-				if(DataUtils.getAccessType((Context)ctx, "esign_custom_tab_security")==1)
-				{
-					RestCustomTabUtil custtab=new RestCustomTabUtil();
-					ctx.put("customtab_template_code",templateCode);
-					restRecipientInfo.setCustomtabmap(custtab.getCustomTabList(ctx,""+docuSignRequest.getDocumentId()));
-					if(restRecipientInfo.getCustomtabmap()==null)
-					{
-						DataUtils.populateError((Context)ctx, "carrierError", "Unable to send document for ESignature");
-						return;
-					}
-					restRecipientInfo.setObjectidentifier(""+restRecipientInfo.getRecipientId());
-				}
-				
-				recipientInfoList.add(restRecipientInfo);
-			}//ended signers loop
-		}catch(Exception e){
-			
-			logger.error("Exception  : " + e.getMessage());
-			
-			e.printStackTrace();
-		}
-	}
-	
-	public void setDataForDocuESignRestForPublicSubmission(IContext ctx) throws Exception {
-		
-		logger.debug("Going to set data for DocuSign in method setDataForDocuESignRestForPublicSubmission");
-		
-		List generatedPublicSubmissionAttachmentsList = null;
-		List agentList = null;
-		
-		String agentEmail = null;
-		String personName = null;
-		String personId = null;
-		String agentInitials = null;
-		
-		String adminMailURL = null;
-		String adminName = null;
-		String adminInitials = null;
-		
-		
-		String identifier = null;
-		String userId = null;
-		 
-		byte[] rb = null;
-		String fileName = null;
-		String personFileName=null;
-		
-		
-		String P_AGENT_SIGNER_IDENTIFIER= ESignConstants.AGENT_SIGNER_IDENTIFIER;
-		String P_DATE_IDENTIFIER= DATE_IDENTIFIER;
-		String DOC_IDENTIFIER= null;
-		
-		logger.debug("Going to get aar_requestid.");
-		String aar_requestid = ctx.get("aar_requestid") != null ? ctx.get("aar_requestid").toString() : HtmlConstants.EMPTY; 
-		
-		if(aar_requestid != null && !HtmlConstants.EMPTY.equals(aar_requestid)){ 
-		logger.debug("aar_requestid found."+aar_requestid);
-		
-		int appendedLength = (aar_requestid).length() + 25; // 24 length of time format and extension;
-		int personNameLength=65-appendedLength;
-
-		try{
-			logger.debug("Going to get Agent Info and mail ID");
-			RestDocuSignUtil restDocuSign = new RestDocuSignUtil();
-			List<RestDocuSignRequest> restDocuSignRequestList = new ArrayList<RestDocuSignRequest>();
-			
-			new SetParametersForStoredProcedures().setParametersInContext(ctx, "aar_requestid,AgentAddresType");
-			agentList=	SqlResources.getSqlMapProcessor(ctx).select("agencyListPublicSubmitNInvitation.GetAgencyPersonInfoForPublicSubmission_p",ctx);
-			generatedPublicSubmissionAttachmentsList = SqlResources.getSqlMapProcessor(ctx).select("agency_document_attachments.GetPublicSubmissionAttachmentsDataForDocusign_p", ctx);
-			
-			if(agentList != null && agentList.size() > 0){
-				for(int k= 0; k<agentList.size(); k++){
-				
-					
-					Map agentMap = (Map) agentList.get(k);
-					
-					personFileName="backgroundCheckESign_"+agentMap.get("person_name").toString();	
-					
-					if(personFileName.length()>personNameLength) {
-					   personFileName = personFileName.substring(0, personNameLength);
-					 }
-
-		            logger.debug("Going to get Public Submission attachments List");
-		
-		if(generatedPublicSubmissionAttachmentsList != null && generatedPublicSubmissionAttachmentsList.size() > 0){
-			for(int i= 0; i<generatedPublicSubmissionAttachmentsList.size(); i++){
-				rb =  null;
-				fileName =  null;
-				
-				Map generateddPublicSubmissionAttachmentsMap = (Map) generatedPublicSubmissionAttachmentsList.get(i);
-				if(generateddPublicSubmissionAttachmentsMap != null && !HtmlConstants.EMPTY.equals(generateddPublicSubmissionAttachmentsMap)){
-					if(generateddPublicSubmissionAttachmentsMap.get("document_name") != null && !HtmlConstants.EMPTY.equals(generateddPublicSubmissionAttachmentsMap.get("document_name"))){
-						fileName = generateddPublicSubmissionAttachmentsMap.get("document_name").toString();
-						
-						if(fileName != null && !HtmlConstants.EMPTY.equals(fileName)){
-							
-							if((k == 0 && fileName.contains("applicationESign")) ) {
-								agentEmail = agentMap.get("e_mail") != null ? agentMap.get("e_mail").toString() : HtmlConstants.EMPTY;
-								personName = agentMap.get("printName") != null ? agentMap.get("printName").toString() : HtmlConstants.EMPTY;
-								personId = agentMap.get("person_id") != null ? agentMap.get("person_id").toString() : HtmlConstants.EMPTY;
-								agentInitials = agentMap.get("personInitial") != null ? agentMap.get("personInitial").toString() : HtmlConstants.EMPTY;
-								
-								P_AGENT_SIGNER_IDENTIFIER=AGENT_SIGNER_IDENTIFIER+""+1;
-								P_DATE_IDENTIFIER= DATE_IDENTIFIER+"_"+1;
-								DOC_IDENTIFIER= ESignConstants.DOCUMENT_IDENTIFIER_APPFORM;
-								
-							}
-							else if(fileName.contains(personFileName)) {
-								agentEmail = agentMap.get("e_mail") != null ? agentMap.get("e_mail").toString() : HtmlConstants.EMPTY;
-								personName = agentMap.get("printName") != null ? agentMap.get("printName").toString() : HtmlConstants.EMPTY;
-								personId = agentMap.get("person_id") != null ? agentMap.get("person_id").toString() : HtmlConstants.EMPTY;
-								agentInitials = agentMap.get("personInitial") != null ? agentMap.get("personInitial").toString() : HtmlConstants.EMPTY;
-								ctx.put("person_id", personId);
-								
-								P_AGENT_SIGNER_IDENTIFIER=AGENT_SIGNER_IDENTIFIER+""+(k+2);
-								P_DATE_IDENTIFIER= DATE_IDENTIFIER+"_"+(k+2);
-								DOC_IDENTIFIER= ESignConstants.DOCUMENT_IDENTIFIER_APPBG;
-							}
-							else {
-								continue;
-							}
-							
-							ctx.put("file_name", fileName);
-							ctx.put("document_id", generateddPublicSubmissionAttachmentsMap.get("document_id").toString());
-							logger.debug("Going to download file from DMS: " + fileName);
-							rb = downloadContractFromDMS((Context)ctx);
-							logger.debug("file downloaded from DMS : " + fileName);
-						}
-					}
-					
-					RestDocuSignRequest restDocuSignRequest = new RestDocuSignRequest();
-					ProducerOneUtility obj=new ProducerOneUtility();
-					obj.getSubjectLineForRest(restDocuSignRequest,ctx);
-					restDocuSignRequest.setContent(rb); 
-					restDocuSignRequest.setDocumentId(i+1);
-					restDocuSignRequest.setIdentifier(DOC_IDENTIFIER);
-					
-					List<RestRecipientInfoBean> restRecipientInfoList = new ArrayList<RestRecipientInfoBean>();
-					List<String> identiferList = new ArrayList<String>();
-					List<String> identiferListForAnchorTab = new ArrayList<String>();
-					
-					
-					RestRecipientInfoBean restRecipientAgentInfo = new RestRecipientInfoBean();
-					
-					identiferList.add(P_AGENT_SIGNER_IDENTIFIER);
-					identiferList.add(P_DATE_IDENTIFIER);
-					if(DataUtils.getAccessType((Context)ctx, "esign_custom_tab_security")==1)
-						identiferList.add(ESignConstants.CUSTOM_TAB_IDENTFIER);
-					identiferListForAnchorTab.addAll(identiferList);
-					
-					
-					restRecipientAgentInfo.setRecipientIdentifierList(identiferList);
-					restRecipientAgentInfo.setRecipientId(i+1);
-					restRecipientAgentInfo.setEmailAddress(agentEmail);
-					restRecipientAgentInfo.setRoutingOrder(1);
-					restRecipientAgentInfo.setName(personName);
-					restRecipientAgentInfo.setInitials(agentInitials);
-					restRecipientAgentInfo.setRecipientDoc(restDocuSignRequest.getIdentifier());
-					if(DataUtils.getAccessType((Context)ctx, "esign_custom_tab_security")==1)
-					{
-						ctx.put("customtab_template_code","bgcheckForm");
-						ctx.put("person_id", personId);
-						ctx.put("personid", personId);
-						RestCustomTabUtil restcusttab=new RestCustomTabUtil();
-						restRecipientAgentInfo.setCustomtabmap(restcusttab.getCustomTabList(ctx,""+restDocuSignRequest.getDocumentId()));
-						if(restRecipientAgentInfo.getCustomtabmap()==null)
-						{
-							DataUtils.populateError((Context)ctx, "carrierError", "Unable to send document for ESignature");
-							return;
-						}
-						restRecipientAgentInfo.setObjectidentifier(""+restRecipientAgentInfo.getRecipientId());
-					}
-					restRecipientInfoList.add(restRecipientAgentInfo);
-					
-					restDocuSignRequest.setRecipientInfoList(restRecipientInfoList);
-					
-					restDocuSignRequest.setDocAnchorInfo(identiferListForAnchorTab);
-					restDocuSignRequestList.add(restDocuSignRequest);
-				}
-				
-			}//ended for loop	
-			
-		}
-				}
-		}
-					
-		EnvelopeSummary docRes = null; 
-		String errorMsg = "";
-		try{
-			if(ctx.get("inet_errors_list")!=null && !"".equals(ctx.get("inet_errors_list")))
-			{
-				return;
-			}
-			logger.debug("Going to hit DocuSign");
-			docRes = restDocuSign.sendDocument(restDocuSignRequestList);
-			logger.debug("Response got from DocuSign " + docRes);
-		}catch (Throwable e1) {
-			logger.error("Unable to execute setDataForDocuESignDirect method due to error : " + DataUtils.getExceptionStackTrace(e1));
-		}
-		
-		if(docRes == null || docRes.getStatus().equals(HtmlConstants.EMPTY) || 
-				("ERROR".equalsIgnoreCase(docRes.getStatus().toString()) || "FAILURE".equalsIgnoreCase(docRes.getStatus().toString()))){
-			
-			DataUtils.populateError((Context)ctx, "bgPageError", "Unable to send document for ESignature");
-			logger.error("Unable to send document for ESignature due to error : "+ errorMsg);
-			return;
-		}
-		
-		//going to insert int database
-		Context newCtx = new Context();
-		newCtx.setProject(ctx.getProject());
-		
 		newCtx.put("document_id_var", docRes.getEnvelopeId());
 		newCtx.put("document_type", "BGAuthorization");
 		newCtx.put("last_updated_by", ctx.get("last_updated_by").toString());
@@ -2867,9 +2278,8 @@ public class SendDocForESign extends Businessobject {
 			newCtx.put("status_comment", "SENT");
 		}
 		newCtx.put("onboarding_method", ctx.get("onboarding_method"));
-		newCtx.put("isEnabledDocuEsignRest", ctx.get("isEnabledDocuEsignRest"));
 		//going to insert in database
-		new SetParametersForStoredProcedures().setParametersInContext(newCtx, "status,agency_id,person_id,aar_requestid,onboarding_method,workflowrequeststatus_comment,agent_ss_workflowrequeststatus_desc,esignResponseXML,esign_iseditable,isEnabledDocuEsignRest");
+		new SetParametersForStoredProcedures().setParametersInContext(newCtx, "status,agency_id,person_id,aar_requestid,onboarding_method,workflowrequeststatus_comment,agent_ss_workflowrequeststatus_desc,esignResponseXML,esign_iseditable");
 		SqlResources.getSqlMapProcessor(ctx).insert("agency_contracts.insert_update_esign_status_p_java", newCtx);
 		
 		logger.debug("Pdf Doc has sent to agency for esign.");
@@ -2878,992 +2288,9 @@ public class SendDocForESign extends Businessobject {
 		DataUtils.populateError((Context)ctx, "bgPageError","Error in Sending document for ESign");
 		logger.error("Unable to send document for ESignature due to error : " + e.getMessage());
 	}
-  }
+}
 }
 	
-@SuppressWarnings("unchecked")
-public void setDataForDocuESignRestForContract(IContext ctx) throws Exception {
-	logger.debug("Going to set data for DocuSign in method setDataForDocuESignRestForContract");
-	
-	List generatedContractList = null;
-	String agentEmail = null;
-	String personName = null;
-	String agentInitials = null;
-	
-	String adminMailURL = null;
-	String adminName = null;
-	String adminInitials = null;
-	
-	boolean isSignerIsGiven=false;
-	
-	String identifier = null;
-	String userId = null;
-	 
-	byte[] rb = null;
-	String fileName = null;
-	
-	logger.debug("Going to get Contract Id.");
-	
-	if(ctx.get("contract_id") == null || HtmlConstants.EMPTY.equals(ctx.get("contract_id"))){
-		logger.debug("Contract Id not found.");
-		String contractStatus = ctx.get("aar_statusid_desc") != null ? ctx.get("aar_statusid_desc").toString() : HtmlConstants.EMPTY;
-
-		new SetParametersForStoredProcedures().setParametersInContext(ctx, "agency_id,AgentAddresType");
-        Object ob=	null;
-		if(contractStatus.equalsIgnoreCase("ESignature Expired")) {
-			 ob = SqlResources.getSqlMapProcessor(ctx).findByKey("SqlStmts.sqlStatementsviewGetContractIDForESignatureExpired",ctx);
-		}else if(contractStatus.equalsIgnoreCase("Cancelled")) {
-			 ob = SqlResources.getSqlMapProcessor(ctx).findByKey("SqlStmts.sqlStatementsviewGetContractIDForESignatureCancelled",ctx);
-		}else {
-			 ob = SqlResources.getSqlMapProcessor(ctx).findByKey("SqlStmts.sqlStatementsviewGetContractIDForApproval",ctx);
-		}
-		if(ob instanceof Map){
-			Map map = (Map)ob;
-			if(map != null && !map.isEmpty()){
-				if(map.get("contract_id") != null && !HtmlConstants.EMPTY.equals(map.get("contract_id"))){
-					ctx.put("contract_id", Integer.parseInt(map.get("contract_id").toString()));
-					logger.debug("Going to get Contract Id :-"+map.get("contract_id"));
-				}
-			}
-		}
-	}
-	
-	if(ctx.get("contract_id") != null && !HtmlConstants.EMPTY.equals(ctx.get("contract_id"))){ 
-		logger.debug("Contract Id found.");
-		
-		String contractCode = null;
-		RestDocuSignUtil restDocuSign = new RestDocuSignUtil();
-		List<RestDocuSignRequest> restDocuSignRequestList = new ArrayList<RestDocuSignRequest>();
-		
-		try{
-			logger.debug("Going to get Agent Info and mail ID");
-			new SetParametersForStoredProcedures().setParametersInContext(ctx, "agency_id,AgentAddresType,contract_id,isSendContractToPersonSelectedInContract,contactTypeRequiredForContractDocusign");
-			Object obj=	SqlResources.getSqlMapProcessor(ctx).findByKey("agency_contracts.GetAgencyPersonInfoForContract_p",ctx);
-			if(obj instanceof Map){
-				Map infoMap = (Map)obj;
-				if(infoMap != null && !infoMap.isEmpty()){
-					agentEmail = infoMap.get("email") != null ? infoMap.get("email").toString() : null;
-					personName = infoMap.get("person_name") != null ? infoMap.get("person_name").toString() : null;
-					agentInitials = infoMap.get("person_initials") != null ? infoMap.get("person_initials").toString() : null;
-					ctx.put("person_id", infoMap.get("person_id") != null ? infoMap.get("person_id").toString() : null);
-				}
-			}
-					
-			String workflowName = ctx.get("workflow_name_context") != null ? ctx.get("workflow_name_context").toString() : null;
-			String eventName = ctx.get("workflow_event_name_context") != null ? ctx.get("workflow_event_name_context").toString() : null;
-			EventImpl eventImpl = ApplicationWorkflowResources.getInstance(ctx).getWorkflow(workflowName).getEvent(eventName);
-			
-			//in case of <approver> nodes given
-			if(ctx.get("workflow_disapproved_status_event_name_context") != null && !ctx.get("workflow_disapproved_status_event_name_context").toString().equals(HtmlConstants.EMPTY)){
-				eventName =	ctx.get("workflow_disapproved_status_event_name_context").toString();
-				logger.debug("Inside If Condition");
-				logger.debug("workflowName " + workflowName);
-				logger.debug("eventName " + eventName);
-				eventImpl = ApplicationWorkflowResources.getInstance(ctx).getWorkflow(workflowName).getEvent(eventName);
-				if(eventImpl.getSortedSignerList() != null && eventImpl.getSortedSignerList().size() > 0){
-					isSignerIsGiven=eventImpl.getSortedSignerList() != null && eventImpl.getSortedSignerList().size() > 0 ? true : false;
-				}
-			
-			}else{ //when no <approver> nodes given
-				logger.debug("Inside else Condition");
-				logger.debug("workflowName " + workflowName);
-				logger.debug("eventName " + eventName);
-				
-				eventImpl = ApplicationWorkflowResources.getInstance(ctx).getWorkflow(workflowName).getEvent(eventName);
-				if(eventImpl.getSortedSignerList() != null && eventImpl.getSortedSignerList().size() > 0){
-					isSignerIsGiven=eventImpl.getSortedSignerList() != null && eventImpl.getSortedSignerList().size() > 0 ? true : false;
-				}
-			
-	}//ended doc loop
-			
-		    if(!isSignerIsGiven) {
-		    	//Getting default carrier info
-				if(ctx.get("user_id") != null && !HtmlConstants.EMPTY.equals(ctx.get("user_id"))){
-					String aar_statusid_desc = ctx.get("aar_statusid_desc") != null ? ctx.get("aar_statusid_desc").toString() : HtmlConstants.EMPTY;
-				
-					if(aar_statusid_desc.equals("ESignature Expired")){
-						userId = ctx.get("user_id").toString();
-						ctx.put("workflow_user_login", userId);
-					}
-					logger.debug("Going to get Login User mail ID");
-					new SetParametersForStoredProcedures().setParametersInContext(ctx, "workflow_user_login,agency_id,carrier_based_on_mapping_for_contract_esign");
-					Object obj1 = SqlResources.getSqlMapProcessor(ctx).findByKey("agencymaster_type.GetCarrierBasedOnMappingForContractEsign_p",ctx);
-					if(obj1 instanceof Map){
-						Map userMailMap = (Map)obj1;
-						if(userMailMap != null && !userMailMap.isEmpty()){
-							if(userMailMap.get("e_mail") != null && !HtmlConstants.EMPTY.equals(userMailMap.get("e_mail"))){
-								adminMailURL = userMailMap.get("e_mail").toString();
-								adminName = userMailMap.get("user_name") != null ? userMailMap.get("user_name").toString() : null;
-							}
-						}
-					}
-				}
-				
-				if(StringUtils.isBlank(adminMailURL)){
-					if(SystemProperties.getInstance().getString("mail.admin.address") != null && !HtmlConstants.EMPTY.equals(SystemProperties.getInstance().getString("mail.admin.address"))) {
-						adminMailURL = SystemProperties.getInstance().getString("mail.admin.address");
-					}
-				}
-				
-				if(StringUtils.isBlank(adminName)){
-					adminName = ctx.get("clientName").toString();
-				}
-				
-				adminInitials="AIM";
-		    }
-			
-			logger.debug("Going to get Contract attachments List");
-			
-			new SetParametersForStoredProcedures().setParametersInContext(ctx, "contract_id");
-			//generatedContractList = SqlResources.getSqlMapProcessor(ctx).select("SqlStmts.sqlStatementsviewgetContractAttachments", ctx);
-			
-			generatedContractList = SqlResources.getSqlMapProcessor(ctx).select("agency_document_attachments.getContractAttachmentsDataForDocusign_p", ctx);
-			int esignRequiredDoc_count = 0;
-			if(generatedContractList != null && generatedContractList.size() > 0){
-				for(int i= 0; i<generatedContractList.size(); i++){
-					contractCode = null;
-					rb =  null;
-					fileName =  null;
-					
-					Map generatedContractMap = (Map) generatedContractList.get(i);
-					if(generatedContractMap != null && !HtmlConstants.EMPTY.equals(generatedContractMap)){
-						if((generatedContractMap.get("esign_required") == null || HtmlConstants.EMPTY.equals(generatedContractMap.get("esign_required"))
-								|| "N".equals(generatedContractMap.get("esign_required").toString()) || "0".equals(generatedContractMap.get("esign_required").toString()))
-								&& (ctx.get("isSendingOnlyESignRequiredContractToDocuSign") == null || HtmlConstants.EMPTY.equals(ctx.get("isSendingOnlyESignRequiredContractToDocuSign"))
-										|| ctx.get("isSendingOnlyESignRequiredContractToDocuSign").equals("Y")) ){
-							
-							if(!(ctx.get("isSendManuallyAttachedContractDocumentForEsign").equals("Y") && generatedContractMap.get("document_name").toString().toLowerCase().contains(".pdf")))
-								continue;
-						}
-						
-						if(generatedContractMap.get("esign_required") != null && ("Y".equals(generatedContractMap.get("esign_required")) || "1".equals(generatedContractMap.get("esign_required")))) {
-							esignRequiredDoc_count = esignRequiredDoc_count + 1;
-						}
-						
-						if(generatedContractMap.get("document_name") != null && !HtmlConstants.EMPTY.equals(generatedContractMap.get("document_name"))){
-							fileName = generatedContractMap.get("document_name").toString();
-							
-							if(generatedContractMap.get("contractCode") != null && !HtmlConstants.EMPTY.equals(generatedContractMap.get("contractCode")))
-								contractCode = generatedContractMap.get("contractCode").toString();
-							
-							if(fileName != null && !HtmlConstants.EMPTY.equals(fileName)){ 
-								ctx.put("file_name", fileName);
-								
-								if(generatedContractMap.get("document_id") != null && !HtmlConstants.EMPTY.equals(generatedContractMap.get("document_id").toString()))
-									ctx.put("document_id", generatedContractMap.get("document_id").toString());
-								else
-									ctx.put("document_id", null);
-								
-								if(generatedContractMap.get("is_uploaded_on_dms") != null && !HtmlConstants.EMPTY.equals(generatedContractMap.get("is_uploaded_on_dms").toString()))
-									ctx.put("is_uploaded_on_dms", generatedContractMap.get("is_uploaded_on_dms").toString());
-								else
-									ctx.put("is_uploaded_on_dms", null);
-								
-								ctx.put("contractCode", contractCode);
-								
-								logger.debug("Going to download contract from DMS for ContractCode : " + ctx.get("contractCode"));
-								rb = downloadContractFromDMS((Context)ctx);
-								logger.debug("Contract downloaded from DMD for ContractCode : " + ctx.get("contractCode"));
-							}
-						}
-					}
-					
-				    logger.debug("Going to set data for DocuESign");
-					
-				    if(ctx.get("contractCode") != null && !HtmlConstants.EMPTY.equals(ctx.get("contractCode"))){
-						contractCode = ctx.get("contractCode").toString();
-					}
-				    identifier = contractCode+"_"+ESignConstants.DOCUMENT_IDENTIFIER_AGENCY_CONTRACT;
-				    
-					logger.debug("Identifier found "+identifier); 
-					
-					RestDocuSignRequest restDocuSignRequest = new RestDocuSignRequest();
-					ProducerOneUtility obj1=new ProducerOneUtility();
-					obj1.getSubjectLineForRest(restDocuSignRequest,ctx);
-					restDocuSignRequest.setContent(rb); 
-					restDocuSignRequest.setDocumentId(i+1);
-					restDocuSignRequest.setIdentifier(identifier);
-					
-					List<RestRecipientInfoBean> restRecipientInfoList = new ArrayList<RestRecipientInfoBean>();
-					List<String> identiferList = new ArrayList<String>();
-					List<String> identiferListForAnchorTab = new ArrayList<String>();
-					
-					//adding Agent recipient
-					RestRecipientInfoBean restRecipientAgentInfo = new RestRecipientInfoBean();
-					
-					identiferList.add(ESignConstants.AGENT_SIGNER_IDENTIFIER);
-					identiferList.add(DATE_IDENTIFIER);
-					if(DataUtils.getAccessType((Context)ctx, "esign_custom_tab_security")==1)
-					{
-						identiferList.add(CUSTOM_TAB_IDENTFIER);
-						identiferListForAnchorTab.add(CUSTOM_TAB_IDENTFIER);
-					}
-					identiferListForAnchorTab.add(ESignConstants.AGENT_SIGNER_IDENTIFIER);
-					identiferListForAnchorTab.add(DATE_IDENTIFIER);
-					
-					
-					
-					if(generatedContractMap.get("esign_required") == null || HtmlConstants.EMPTY.equals(generatedContractMap.get("esign_required"))
-							|| "N".equals(generatedContractMap.get("esign_required").toString()) || "0".equals(generatedContractMap.get("esign_required").toString())){
-						if(!(ctx.get("isSendManuallyAttachedContractDocumentForEsign").equals("Y") && generatedContractMap.get("document_name").toString().toLowerCase().contains(".pdf")))
-							identiferList = new ArrayList<String>();
-					}
-					
-					restRecipientAgentInfo.setRecipientIdentifierList(identiferList);
-					
-					restRecipientAgentInfo.setRecipientId(1);
-					restRecipientAgentInfo.setEmailAddress(agentEmail);
-					restRecipientAgentInfo.setName(personName);
-					restRecipientAgentInfo.setInitials(agentInitials);
-						
-					if(ctx.get("isDocuSignFlowSequential") == null  || HtmlConstants.EMPTY.equals(ctx.get("isDocuSignFlowSequential"))
-							|| "N".equals(ctx.get("isDocuSignFlowSequential").toString())) 
-						restRecipientAgentInfo.setRoutingOrder(1);
-					else if(ctx.get("isSendingDocuEsignToAgencyFirst") == null  || HtmlConstants.EMPTY.equals(ctx.get("isSendingDocuEsignToAgencyFirst"))
-						|| "Y".equals(ctx.get("isSendingDocuEsignToAgencyFirst").toString())) {
-						restRecipientAgentInfo.setRoutingOrder(1);
-					}else {
-						restRecipientAgentInfo.setRoutingOrder(2);
-					}
-					RestCustomTabUtil custtab=new RestCustomTabUtil();
-					if(DataUtils.getAccessType((Context)ctx, "esign_custom_tab_security")==1)
-					{
-						ctx.put("customtab_template_code",ctx.get("contractCode").toString());
-						ctx.put("signertype", "agent");
-						restRecipientAgentInfo.setCustomtabmap(custtab.getCustomTabList(ctx,""+restDocuSignRequest.getDocumentId()));
-						if(restRecipientAgentInfo.getCustomtabmap()==null)
-						{
-							DataUtils.populateError((Context)ctx, "carrierError", "Unable to send document for ESignature");
-							return;
-						}
-						restRecipientAgentInfo.setObjectidentifier(""+restRecipientAgentInfo.getRecipientId());	
-					}
-					//Agent recipient Added
-					restRecipientInfoList.add(restRecipientAgentInfo);
-				
-				    //adding carrier recipients
-					if(isSignerIsGiven) {
-						//adding carrier recipients from signer node
-						setContractRecipientsFromSignerForRest((Context)ctx, eventImpl, restRecipientInfoList, identiferListForAnchorTab, contractCode,restDocuSignRequest);
-					}
-					else {
-						//adding default carrier recipients
-						ctx.put("signertype", "carrier");
-						RestRecipientInfoBean recipientInfo_Carrier = new RestRecipientInfoBean();
-						
-						List<String> identiferList2 = new ArrayList<String>();
-						
-						if(ctx.get("isCarrierESignRequiredonContract") == null || HtmlConstants.EMPTY.equals("isCarrierESignRequiredonContract")
-								|| SecurityResources.getInstance(ctx).getAccessType("isCarrierESignRequiredonContract", (Context) ctx)==SecurityResources.SHOW){
-							
-							identiferListForAnchorTab.add(ESignConstants.CARRIER_SIGNER_IDENTIFIER);
-							identiferListForAnchorTab.add(ESignConstants.DATE_SIGNER_IDENTFIER_1);
-							if(DataUtils.getAccessType((Context)ctx, "esign_custom_tab_security")==1)
-							{
-								identiferListForAnchorTab.add(ESignConstants.CUSTOM_TAB_IDENTFIER);
-								identiferList2.add(ESignConstants.CUSTOM_TAB_IDENTFIER);
-							}
-							
-							identiferList2.add(ESignConstants.CARRIER_SIGNER_IDENTIFIER);
-							identiferList2.add(ESignConstants.DATE_SIGNER_IDENTFIER_1);	
-							recipientInfo_Carrier.setRecipientId(2);
-							recipientInfo_Carrier.setEmailAddress(adminMailURL);
-							recipientInfo_Carrier.setName(adminName);
-							
-							if(generatedContractMap.get("esign_required") == null || HtmlConstants.EMPTY.equals(generatedContractMap.get("esign_required"))
-									|| "N".equals(generatedContractMap.get("esign_required").toString()) || "0".equals(generatedContractMap.get("esign_required").toString())){
-							
-								if(!(ctx.get("isSendManuallyAttachedContractDocumentForEsign").equals("Y") && generatedContractMap.get("document_name").toString().toLowerCase().contains(".pdf")))
-								identiferList2 = new ArrayList<String>();
-							}
-							
-							recipientInfo_Carrier.setRecipientIdentifierList(identiferList2);
-							
-							if(ctx.get("isDocuSignFlowSequential") == null || HtmlConstants.EMPTY.equals(ctx.get("isDocuSignFlowSequential"))
-									|| "N".equals(ctx.get("isDocuSignFlowSequential").toString())) 
-								recipientInfo_Carrier.setRoutingOrder(1);
-							else {
-								if(ctx.get("isSendingDocuEsignToAgencyFirst") == null || HtmlConstants.EMPTY.equals(ctx.get("isSendingDocuEsignToAgencyFirst"))
-										|| "Y".equals(ctx.get("isSendingDocuEsignToAgencyFirst").toString())) {
-									recipientInfo_Carrier.setRoutingOrder(2);
-								}else {
-									recipientInfo_Carrier.setRoutingOrder(1);
-								}
-							}
-								
-							recipientInfo_Carrier.setInitials(adminInitials);
-							
-							if(DataUtils.getAccessType((Context)ctx, "esign_custom_tab_security")==1)
-							{
-								ctx.put("customtab_template_code",ctx.get("contractCode").toString());
-								recipientInfo_Carrier.setCustomtabmap(custtab.getCustomTabList(ctx,""+restDocuSignRequest.getDocumentId()));
-								recipientInfo_Carrier.setObjectidentifier(""+recipientInfo_Carrier.getRecipientId());
-							}
-							restRecipientInfoList.add(recipientInfo_Carrier);
-						}	
-					}	
-				
-					restDocuSignRequest.setRecipientInfoList(restRecipientInfoList);
-					restDocuSignRequest.setDocAnchorInfo(identiferListForAnchorTab);
-					restDocuSignRequestList.add(restDocuSignRequest);
-				}//ended for loop
-				
-				EnvelopeSummary docRes = null; 
-				String errorMsg = "";
-				boolean isErrorFound= false;
-				try{
-					
-					if(esignRequiredDoc_count != 0 && restDocuSignRequestList != null && restDocuSignRequestList.size() > 0) {
-						if(ctx.get("inet_errors_list")!=null && !"".equals(ctx.get("inet_errors_list")))
-						{
-							return;
-						}
-						logger.debug("Going to hit DocuSign");
-						logger.debug("Values of docuSignRequestList : "+restDocuSignRequestList);
-						docRes = restDocuSign.sendDocument(restDocuSignRequestList);
-						logger.debug("Response got from DocuSign " + docRes);
-					}else {
-						logger.debug("No Document found for Esign OR Docusign Request List is Empty");
-						logger.debug("Document not send for esign");
-						ctx.put("isMailSentforEsign", "N");
-						return;
-						
-					}
-					
-				}catch (Throwable e1) {
-					logger.error("Unable to execute setDataForDocuESignDirectForContract method due to error : " + DataUtils.getExceptionStackTrace(e1));
-					isErrorFound =  true;
-					
-				}
-				
-				if(docRes == null || docRes.getStatus().equals(HtmlConstants.EMPTY) || 
-						("ERROR".equalsIgnoreCase(docRes.getStatus().toString()) || "FAILURE".equalsIgnoreCase(docRes.getStatus().toString()))){
-					if(ctx.get("inet_page").toString().equals("workflowPopup"))
-							DataUtils.populateError((Context)ctx, "carrierError", "Unable to send document for ESignature");
-					if(ctx.get("inet_page").toString().equals("addNewDocContract"))
-							DataUtils.populateError((Context)ctx, "carrierError1", "Unable to send document for ESignature");
-					logger.error("Unable to send document for ESignature due to error : "+ errorMsg);
-					isErrorFound =  true;
-					return;
-				}
-				
-				
-				
-				//going to insert into database
-				Context newCtx = new Context();
-				newCtx.setProject(ctx.getProject());
-				newCtx.put("document_id_var", docRes.getEnvelopeId());
-				//newCtx.put("doc_auth_token", docRes.);
-				newCtx.put("document_type", "Contract");
-				newCtx.put("last_updated_by", ctx.get("user_id").toString());
-				newCtx.put("operationType", "I");
-				newCtx.put("object_id", ctx.get("contract_id"));
-				
-				if(ctx.get("agency_id") != null && !HtmlConstants.EMPTY.equals(ctx.get("agency_id")))
-					newCtx.put("agency_id", ctx.get("agency_id"));
-				
-				Map requestIdMap = (Map)SqlResources.getSqlMapProcessor(ctx).findByKey("SqlStmts.sqlStatementsviewgetRequestIdFromAgencyMaster", newCtx);
-				if(requestIdMap != null && !HtmlConstants.EMPTY.equals(requestIdMap)){
-					if(requestIdMap.get("requestid") != null && !HtmlConstants.EMPTY.equals(requestIdMap.get("requestid").toString()))
-						newCtx.put("aar_requestid", requestIdMap.get("requestid"));
-					else
-						newCtx.put("aar_requestid", null);
-				}
-				
-				if(docRes.getStatus() != null && "SENT".equalsIgnoreCase(docRes.getStatus().toString())){
-					newCtx.put("status_comment", "SENT");
-				}
-				
-				newCtx.put("onboarding_method", ctx.get("onboarding_method"));
-				newCtx.put("isEnabledDocuEsignRest", ctx.get("isEnabledDocuEsignRest"));
-				logger.debug("Going to insert in database.");
-				new SetParametersForStoredProcedures().setParametersInContext(newCtx, "object_id,status,agency_id,person_id,aar_requestid,onboarding_method,workflowrequeststatus_comment,agent_ss_workflowrequeststatus_desc,esignResponseXML,esign_iseditable,isEnabledDocuEsignRest");
-				SqlResources.getSqlMapProcessor(ctx).insert("agency_contracts.insert_update_esign_status_p_java", newCtx);
-				
-				ctx.put("generatedContractList",generatedContractList);
-				ProducerOneUtils.convertFieldNListStringToXMLWithCustomRootElement((Context)ctx,"generatedContractList" , "Root", "Root1", "outputXML");
-				newCtx.put("outputXML",ctx.get("outputXML"));
-				new SetParametersForStoredProcedures().setParametersInContext(newCtx, "outputXML");
-				SqlResources.getSqlMapProcessor(ctx).update("agency_contracts.updateSentForEsignatureFlagInContracts_p", newCtx);
-				
-				if(!isErrorFound && ctx.get("inet_errors_list") == null) {
-					ctx.put("isMailSentforEsign", "Y");
-				}
-				logger.debug("Pdf Doc has sent to agency for esign.");
-			}
-		}catch(Exception ex){
-			if(ctx.get("inet_page").toString().equals("workflowPopup"))
-				DataUtils.populateError((Context)ctx, "carrierError", "Unable to send document for ESignature");
-			if(ctx.get("inet_page").toString().equals("addNewDocContract"))
-				DataUtils.populateError((Context)ctx, "carrierError1", "Unable to send document for ESignature");
-			logger.error("Unable to send document for ESignature due to error : " + DataUtils.getExceptionStackTrace(ex));
-		}
-	}
-}
-
-private void setContractRecipientsFromSignerForRest(Context ctx, EventImpl eventImpl, List recipientInfoList, List identiferListForAnchorTab, String templateCode,RestDocuSignRequest docuSignRequest) {
-	
-	Context newCtx = new Context();
-	
-	try{
-	for(int j=0; j<eventImpl.getSortedSignerList().size(); j++){
-
-		SignerImpl signerImpl = (SignerImpl)eventImpl.getSortedSignerList().get(j);
-		
-		
-		String templateCodeValue = signerImpl.getTemplatecodevalue();
-		
-		if(StringUtils.isBlank(templateCodeValue))
-			continue;
-		
-			
-		if(!templateCodeValue.equalsIgnoreCase(templateCode)) continue;
-			 
-		
-		
-		boolean isGetUser = signerImpl.getIsgetuser();
-		String name = signerImpl.getName();
-		String type = signerImpl.getType();
-		
-		if(!type.equalsIgnoreCase("carrier"))
-			continue;
-		
-		String carrierId = null;
-		if(isGetUser) //getting value from online selection
-			carrierId = ctx.get(name) != null ? ctx.get(name).toString() : null;
-		else{
-			String approverrole = signerImpl.getApproverrole();
-			if(StringUtils.isBlank(approverrole)){
-				continue;
-			}
-			
-			if(approverrole.equalsIgnoreCase("roles"))
-				carrierId = ctx.get("user_id") != null ? ctx.get("user_id").toString() : approverrole;
-			else{
-				approverrole = ctx.get(approverrole) != null ? ctx.get(approverrole).toString() : approverrole;
-				
-				newCtx.putAll(ctx);
-				new DataUtils().getWorkflowAssignedToUserData(newCtx, signerImpl.getObjectid(), signerImpl.getObjecttype(), signerImpl.getObjectfunction(), "user_id", approverrole);
-				carrierId = newCtx.get("user_id") != null ? newCtx.get("user_id").toString() : null; 
-			}
-		}
-		
-		if(StringUtils.isBlank(carrierId))
-			continue;
-		
-		
-		//going to get username, email, initials for signer
-		newCtx = new Context();
-		newCtx.setProject(ctx.getProject());
-		newCtx.put("userid", carrierId);
-		newCtx.put("agentEmailTypeForDocusignInContract", ctx.get("agentEmailTypeForDocusignInContract"));
-		
-		String params = "userid,agentEmailTypeForDocusignInContract";
-		
-		params = new DataUtils().checkForAdditionalParameters((Context) ctx, newCtx, params, "getDocuSignDataByUserId_p_additionalparameters");
-		
-		XMLUtils.generateRequestXml(newCtx, params, "inputXml");
-		Map dataMap = (Map)SqlResources.getSqlMapProcessor(newCtx).findByKey("framework.getDocuSignDataByUserId_p", newCtx);
-		new DataUtils().populateClobValue(dataMap);
-        DataUtils.parseDataXML(newCtx, dataMap);
-		
-        String userName = newCtx.get("user_name") != null ? newCtx.get("user_name").toString() : null;
-        String email = newCtx.get("e_mail") != null ? newCtx.get("e_mail").toString() : null;
-        String initials = newCtx.get("initials") != null ? newCtx.get("initials").toString() : null;
-		
-		//adding signer
-		RestRecipientInfoBean recipientInfo = new RestRecipientInfoBean();
-		List<String> identist = new ArrayList<String>();
-		
-		if(templateCodeValue.equalsIgnoreCase(templateCode)) {
-		identist.add("P1_"+templateCodeValue+"_CARRIER_SIGNER_");
-			if(DataUtils.getAccessType((Context)ctx, "esign_custom_tab_security")==1)
-			{
-				identist.add(ESignConstants.CUSTOM_TAB_IDENTFIER);
-				identiferListForAnchorTab.add(ESignConstants.CUSTOM_TAB_IDENTFIER);
-			}
-		//identist.add(ESignConstants.DATE_SIGNER_IDENTFIER_1);	
-		}
-		
-		
-        identiferListForAnchorTab.add("P1_"+templateCodeValue+"_CARRIER_SIGNER_");
-        if(DataUtils.getAccessType((Context)ctx, "esign_custom_tab_security")==1)
-        	identiferListForAnchorTab.add(CUSTOM_TAB_IDENTFIER);
-		//identiferListForAnchorTab.add(ESignConstants.DATE_SIGNER_IDENTFIER_1);
-        
-		
-		recipientInfo.setRecipientIdentifierList(identist);
-		
-		recipientInfo.setRecipientId(j+2);
-		recipientInfo.setEmailAddress(email);
-		recipientInfo.setName(userName);
-		recipientInfo.setInitials(initials);
-			
-		recipientInfo.setRoutingOrder(1);
-		if(DataUtils.getAccessType((Context)ctx, "esign_custom_tab_security")==1)
-		{
-			RestCustomTabUtil custtab=new RestCustomTabUtil();
-			ctx.put("customtab_template_code",ctx.get("contractCode").toString());
-			ctx.put("signertype", "carrier");
-			recipientInfo.setCustomtabmap(custtab.getCustomTabList(ctx,""+docuSignRequest.getDocumentId()));
-			if(recipientInfo.getCustomtabmap()==null)
-			{
-				DataUtils.populateError((Context)ctx, "carrierError", "Unable to send document for ESignature");
-				return;
-			}
-			recipientInfo.setObjectidentifier(""+recipientInfo.getRecipientId());
-		}
-		recipientInfoList.add(recipientInfo);
-		
-	}//end for loop
-	
-     }catch(Exception e){
-		
-	}
-}
-
-public void setDataForDocuESignRestForSelfService(IContext ctx) throws Exception {
-	logger.debug("Method Calling for Self Service.");
-
-	logger.debug("Going to set data for DocuSign in method setDataForDocuESignRestForSelfService");
-	List generatedContractList = null;
-	String agentEmail = null;
-	String personName = null;
-	String personInitial = null;
-	String adminMailURL = null;
-	String identifier = null;
-	String userId = null;
-	String adminName = null; 
-	byte[] rb = null;
-	String fileName = null;
-	
-	
-	if(ctx.get("request_ss_id") != null && !HtmlConstants.EMPTY.equals(ctx.get("request_ss_id"))){ 
-		logger.debug("Request_ss Id found.");
-		String contractCode = null;
-		DocRequest docRequests = new DocRequest();
-		List<DocRequest> docRequestsList = new ArrayList<DocRequest>();
-		RestDocuSignUtil restDocuSign = new RestDocuSignUtil();
-		List<RestDocuSignRequest> restDocuSignRequestList = new ArrayList<RestDocuSignRequest>();
-		try{
-			logger.debug("Going to get Agent Info and mail ID");
-//			new SetParametersForStoredProcedures().setParametersInContext(ctx, "request_ss_id");
-//			Object obj=	SqlResources.getSqlMapProcessor(ctx).findByKey("agency_contracts.GetAgencyPersonInfoForContract_p",ctx);
-			
-			if(ctx.get("requestTypeForDefaultopen") !=null && !HtmlConstants.EMPTY.equals(ctx.get("requestTypeForDefaultopen").toString()) && ctx.get("requestTypeForDefaultopen").equals("AgentRequest")){
-			
-				ctx.put("document_category", "51");
-				Context newContext = new Context();
-	    		newContext.setProject(ctx.getProject());
-	    		newContext.put("agency_id", ctx.get("agency_id"));
-	    		newContext.put("agentEmailAddressType", ctx.get("agentEmailAddressType"));
-	    		
-	    		
-	    		new SetParametersForStoredProcedures().setParametersInContext(newContext, "agency_id,agentEmailAddressType");
-	    		Map agentEmailDetailMap= (Map)SqlResources.getSqlMapProcessor(newContext).findByKey("person_ss.getHighestRankingPrincipalEmailSelfServiceByAgencyID_p_java", newContext);
-	    		
-	    		if(agentEmailDetailMap.get("email_additionalAddress") !=null && !HtmlConstants.EMPTY.equals(agentEmailDetailMap.get("email_additionalAddress").toString()))
-	    			agentEmail=agentEmailDetailMap.get("email_additionalAddress").toString();
-	    		
-	    		if(agentEmailDetailMap.get("contact_fullName") !=null && !HtmlConstants.EMPTY.equals(agentEmailDetailMap.get("contact_fullName").toString()))
-	    			personName=agentEmailDetailMap.get("contact_fullName").toString();
-	    			
-	    		
-	    		
-				
-			}else if(ctx.get("requestTypeForDefaultopen") !=null && !HtmlConstants.EMPTY.equals(ctx.get("requestTypeForDefaultopen").toString()) && ctx.get("requestTypeForDefaultopen").equals("FloodInsuranceRequest")){
-			
-				ctx.put("document_category", "55");
-				Context newContext = new Context();
-	    		newContext.setProject(ctx.getProject());
-	    		newContext.put("agency_id", ctx.get("agency_id"));
-	    		newContext.put("agentEmailAddressType", ctx.get("agentEmailAddressType"));
-	    		
-	    		
-	    		new SetParametersForStoredProcedures().setParametersInContext(newContext, "agency_id,agentEmailAddressType");
-	    		Map agentEmailDetailMap= (Map)SqlResources.getSqlMapProcessor(newContext).findByKey("person_ss.getHighestRankingPrincipalEmailSelfServiceByAgencyID_p_java", newContext);
-	    		
-	    		if(agentEmailDetailMap.get("email_additionalAddress") !=null && !HtmlConstants.EMPTY.equals(agentEmailDetailMap.get("email_additionalAddress").toString()))
-	    			agentEmail=agentEmailDetailMap.get("email_additionalAddress").toString();
-	    		
-	    		if(agentEmailDetailMap.get("contact_fullName") !=null && !HtmlConstants.EMPTY.equals(agentEmailDetailMap.get("contact_fullName").toString()))
-	    			personName=agentEmailDetailMap.get("contact_fullName").toString();
-	    			
-	    		
-	    		
-				
-			}else if(ctx.get("requestTypeForDefaultopen") !=null && !HtmlConstants.EMPTY.equals(ctx.get("requestTypeForDefaultopen").toString()) && ctx.get("requestTypeForDefaultopen").equals("AgencyBankRequest")){
-				agentEmail = ctx.get("esign_email_address") != null ? ctx.get("esign_email_address").toString() : null;
-				personName = ctx.get("bank_contact_name") != null ? ctx.get("bank_contact_name").toString() : null;
-				ctx.remove("bank_contact_name");
-				ctx.put("document_category", "59");
-			}
-			
-			
-			personInitial = "A G";
-			
-			
-			if(StringUtils.isBlank(adminMailURL)){
-				if(SystemProperties.getInstance().getString("mail.admin.address") != null && !HtmlConstants.EMPTY.equals(SystemProperties.getInstance().getString("mail.admin.address"))) {
-					adminMailURL = SystemProperties.getInstance().getString("mail.admin.address");
-				}
-			}
-			
-			logger.debug("Going to get Requests attachments List");
-			new SetParametersForStoredProcedures().setParametersInContext(ctx, "request_ss_id,document_category");
-			//generatedContractList = SqlResources.getSqlMapProcessor(ctx).select("SqlStmts.sqlStatementsviewgetContractAttachments", ctx);
-			
-			generatedContractList = SqlResources.getSqlMapProcessor(ctx).select("agency_document_attachments.getBankInformationForSelfServiceAttachmentsDataForDocusign_p", ctx);
-			
-			if(generatedContractList != null && generatedContractList.size() > 0){
-				for(int i= 0; i<generatedContractList.size(); i++){
-					contractCode = null;
-					rb =  null;
-					fileName =  null;
-					Map generatedContractMap = (Map) generatedContractList.get(i);
-					if(generatedContractMap != null && !HtmlConstants.EMPTY.equals(generatedContractMap)){
-						
-						generatedContractMap.put("esign_required","Y");
-						if(generatedContractMap.get("contractCode") ==  null || "".equals(generatedContractMap.get("contractCode")))
-							generatedContractMap.put("contractCode",(i+1)+"_code");
-						if((generatedContractMap.get("esign_required") == null || HtmlConstants.EMPTY.equals(generatedContractMap.get("esign_required"))
-								|| "N".equals(generatedContractMap.get("esign_required").toString()) || "0".equals(generatedContractMap.get("esign_required").toString()))
-								&& (ctx.get("isSendingOnlyESignRequiredContractToDocuSign") == null || HtmlConstants.EMPTY.equals(ctx.get("isSendingOnlyESignRequiredContractToDocuSign"))
-										|| ctx.get("isSendingOnlyESignRequiredContractToDocuSign").equals("Y")) ){
-							continue;
-						}
-						
-						
-						if(generatedContractMap.get("document_name") != null && !HtmlConstants.EMPTY.equals(generatedContractMap.get("document_name"))){
-							fileName = generatedContractMap.get("document_name").toString();
-							if(generatedContractMap.get("contractCode") != null && !HtmlConstants.EMPTY.equals(generatedContractMap.get("contractCode")))
-								contractCode = generatedContractMap.get("contractCode").toString();
-							
-							if(fileName != null && !HtmlConstants.EMPTY.equals(fileName)){ 
-								ctx.put("file_name", fileName);
-								
-								if(generatedContractMap.get("document_id") != null && !HtmlConstants.EMPTY.equals(generatedContractMap.get("document_id").toString()))
-									ctx.put("document_id", generatedContractMap.get("document_id").toString());
-								else
-									ctx.put("document_id", null);
-								
-								if(generatedContractMap.get("is_uploaded_on_dms") != null && !HtmlConstants.EMPTY.equals(generatedContractMap.get("is_uploaded_on_dms").toString()))
-									ctx.put("is_uploaded_on_dms", generatedContractMap.get("is_uploaded_on_dms").toString());
-								else
-									ctx.put("is_uploaded_on_dms", null);
-								
-								
-								ctx.put("contractCode", contractCode);
-								
-								logger.debug("Going to download contract from DMS for ContractCode : " + ctx.get("contractCode"));
-								rb = downloadContractFromDMS((Context)ctx);
-								logger.debug("Contract downloaded from DMD for ContractCode : " + ctx.get("contractCode"));
-								}
-							}
-						}
-					    logger.debug("Going to set data for DocuESign");
-						
-					    if(ctx.get("contractCode") != null && !HtmlConstants.EMPTY.equals(ctx.get("contractCode"))){
-							contractCode = ctx.get("contractCode").toString();
-						}
-						//identifier = getDocumentIdentifierForContract(contractCode);
-					    
-					    identifier =  contractCode+"_"+ESignConstants.DOCUMENT_IDENTIFIER_AGENCY_REQUEST;
-					    
-						logger.debug("Identifier found "+identifier); 
-						RestDocuSignRequest restDocuSignRequest = new RestDocuSignRequest();
-						ProducerOneUtility obj=new ProducerOneUtility();
-						obj.getSubjectLineForRest(restDocuSignRequest,ctx);
-						List<RestRecipientInfoBean> restRecipientInfoList = new ArrayList<RestRecipientInfoBean>();
-						RestRecipientInfoBean restRecipientInfo = new RestRecipientInfoBean();
-						
-						restDocuSignRequest.setContent(rb); 
-						restDocuSignRequest.setDocumentId(i+1);
-						
-						restDocuSignRequest.setIdentifier(identifier);
-						List<String> identiferList = new ArrayList<String>();
-						//identiferList.add(ESignConstants.AGENT_SIGNER_IDENTIFIER+""+(i+1));
-						identiferList.add(ESignConstants.AGENT_SIGNER_IDENTIFIER);
-						//identiferList.add(DATE_IDENTIFIER+"_"+(i+1));
-						identiferList.add(DATE_IDENTIFIER);
-						if(DataUtils.getAccessType((Context)ctx, "esign_custom_tab_security")==1)
-							identiferList.add(ESignConstants.CUSTOM_TAB_IDENTFIER);
-						
-						//identiferList.add(ESignConstants.CARRIER_SIGNER_IDENTIFIER+""+(i+1));
-						//identiferList.add(ESignConstants.CARRIER_SIGNER_IDENTIFIER);
-						
-						if(generatedContractMap.get("esign_required") == null || HtmlConstants.EMPTY.equals(generatedContractMap.get("esign_required"))
-								|| "N".equals(generatedContractMap.get("esign_required").toString()) || "0".equals(generatedContractMap.get("esign_required").toString())){
-							identiferList = new ArrayList<String>();
-						}
-						restRecipientInfo.setRecipientIdentifierList(identiferList);
-						
-						restRecipientInfo.setRecipientId(1);
-						restRecipientInfo.setEmailAddress(agentEmail);
-						restRecipientInfo.setName(personName);
-						restRecipientInfo.setInitials(personInitial);
-						
-						if(ctx.get("isDocuSignFlowSequential") == null  || HtmlConstants.EMPTY.equals(ctx.get("isDocuSignFlowSequential"))
-								|| "N".equals(ctx.get("isDocuSignFlowSequential").toString())) 
-							restRecipientInfo.setRoutingOrder(1);
-						else if(ctx.get("isSendingDocuEsignToAgencyFirst") == null  || HtmlConstants.EMPTY.equals(ctx.get("isSendingDocuEsignToAgencyFirst"))
-							|| "Y".equals(ctx.get("isSendingDocuEsignToAgencyFirst").toString())) {
-							restRecipientInfo.setRoutingOrder(1);
-							}else {
-								restRecipientInfo.setRoutingOrder(2);
-							}
-						
-						if(DataUtils.getAccessType((Context)ctx, "esign_custom_tab_security")==1)
-						{
-							CustomTabUtil custtab=new CustomTabUtil();
-							ctx.put("customtab_template_code",ctx.get("contractCode").toString());
-							restRecipientInfo.setCustomtabmap(custtab.getCustomTabList(ctx,""+restDocuSignRequest.getDocumentId()));
-							if(restRecipientInfo.getCustomtabmap()==null)
-							{
-								DataUtils.populateError((Context)ctx, "carrierError", "Unable to send document for ESignature");
-								return;
-							}
-							restRecipientInfo.setObjectidentifier(""+restRecipientInfo.getRecipientId());
-						}
-						restRecipientInfoList.add(restRecipientInfo);
-						restDocuSignRequest.setDocAnchorInfo(identiferList);
-						restDocuSignRequest.setRecipientInfoList(restRecipientInfoList);
-						restDocuSignRequestList.add(restDocuSignRequest);
-							
-					
-				}
-				EnvelopeSummary docRes = null; 
-				String errorMsg = "";
-				try{
-					if(ctx.get("inet_errors_list")!=null && !"".equals(ctx.get("inet_errors_list")))
-					{
-						return;
-					}
-					logger.debug("Going to hit DocuSign");
-					logger.debug("Values of docuSignRequestList : "+restDocuSignRequestList);
-					docRes = restDocuSign.sendDocument(restDocuSignRequestList);
-					logger.debug("Response got from DocuSign " + docRes);
-				}catch (Throwable e1) {
-					
-					//e1.printStackTrace();
-					logger.error("Unable to execute setDataForDocuESignRestForSelfService method due to error : " + DataUtils.getExceptionStackTrace(e1));
-				}
-				if(docRes == null || docRes.getStatus().equals(HtmlConstants.EMPTY) || 
-						("ERROR".equalsIgnoreCase(docRes.getStatus().toString()) || "FAILURE".equalsIgnoreCase(docRes.getStatus().toString()))){
-					
-					DataUtils.populateError((Context)ctx, "carrierError", "Unable to send document for ESignature");
-					logger.error("Unable to send document for ESignature due to error : "+ errorMsg);
-					return;
-				}
-				
-				//going to insert int database
-				Context newCtx = new Context();
-				newCtx.setProject(ctx.getProject());
-				newCtx.put("document_id_var", docRes.getEnvelopeId());
-				//newCtx.put("doc_auth_token", docRes.);
-				newCtx.put("document_type", "Self Service");
-				newCtx.put("last_updated_by", ctx.get("user_id").toString());
-				newCtx.put("operationType", "I");
-
-				newCtx.put("object_id", ctx.get("request_ss_id"));
-
-				
-				if(ctx.get("agency_id") != null && !HtmlConstants.EMPTY.equals(ctx.get("agency_id")))
-					newCtx.put("agency_id", ctx.get("agency_id"));
-				
-				Map requestIdMap = (Map)SqlResources.getSqlMapProcessor(ctx).findByKey("SqlStmts.sqlStatementsviewgetRequestIdFromAgencyMaster", newCtx);
-				if(requestIdMap != null && !HtmlConstants.EMPTY.equals(requestIdMap)){
-					if(requestIdMap.get("requestid") != null && !HtmlConstants.EMPTY.equals(requestIdMap.get("requestid").toString()))
-						newCtx.put("aar_requestid", requestIdMap.get("requestid"));
-					else
-						newCtx.put("aar_requestid", null);
-				}
-				if(docRes.getStatus() != null && "SENT".equalsIgnoreCase(docRes.getStatus().toString())){
-					newCtx.put("status_comment", "SENT");
-				}
-				newCtx.put("onboarding_method", ctx.get("onboarding_method"));
-				newCtx.put("isEnabledDocuEsignRest", ctx.get("isEnabledDocuEsignRest"));
-				logger.debug("Going to insert in database.");
-				new SetParametersForStoredProcedures().setParametersInContext(newCtx, "object_id,status,agency_id,person_id,aar_requestid,onboarding_method,workflowrequeststatus_comment,agent_ss_workflowrequeststatus_desc,esignResponseXML,esign_iseditable,isEnabledDocuEsignRest");
-				SqlResources.getSqlMapProcessor(ctx).insert("agency_contracts.insert_update_esign_status_p_java", newCtx);
-				
-				newCtx.get("document_type");
-				
-				ctx.put("generatedContractList",generatedContractList);
-				ProducerOneUtils.convertFieldNListStringToXMLWithCustomRootElement((Context)ctx,"generatedContractList" , "Root", "Root1", "outputXML");
-				newCtx.put("outputXML",ctx.get("outputXML"));
-				new SetParametersForStoredProcedures().setParametersInContext(newCtx, "outputXML");
-				SqlResources.getSqlMapProcessor(ctx).update("agency_contracts.updateSentForEsignatureFlagInContracts_p", newCtx);
-				logger.debug("Pdf Doc has sent to agency for esign.");
-			}
-		}catch(Exception ex){
-			DataUtils.populateError((Context)ctx, "carrierError", "Unable to send document for ESignature");
-			logger.error("Unable to send document for ESignature due to error : " + DataUtils.getExceptionStackTrace(ex));
-		}
-	}
-
-}
-
-//Method created to set data for DocuSignRest
-public void setDataForDocuESignRest(IContext ctx) throws Exception {
-	
-			
-	String htmlDir = SystemProperties.getInstance().getString("html.basedir");
-	String templateFile = htmlDir + "foxsl/public";
-	
-	ctx.put("AGENT_SIGNER_IDENTIFIER", AGENT_SIGNER_IDENTIFIER+"1");
-	ctx.put("DATE_IDENTIFIER", DATE_IDENTIFIER+"_"+1);
-	ctx.put("applicationFormFlag", "N");
-	ctx.put("backgroundCheckFormFlag", "Y");
-	ctx.put("backgroundCheckFormMultipleFlag", "N");
-		
-	templateFile = templateFile + ".xsl"; 
-	String xmlFile = htmlDir + "documenttempxml.xml";
-	File file = new File(xmlFile);
-	if(file.exists()){
-		file.delete();
-		file.createNewFile();
-	}
-	ProducerOneUtils.populateDataXml((Context)ctx, xmlFile);
-	ByteArrayOutputStream bout = ProducerOneUtils.convertPOToPDF(templateFile, xmlFile, (Context)ctx, (ServletContextURIResolver)ctx.get("DocumentUriResolver"), (ServletContext)ctx.get("DocumentServletContext"));
-				
-	String personName = "";
-	if(ctx.get("personName")!=null && !HtmlConstants.EMPTY.equals(ctx.get("personName").toString()))
-		personName = ctx.get("personName").toString();
-	
-	personName = new ProducerOneUtils().excludeSpecialCharacters(personName);
-	
-	SimpleDateFormat sdf = new SimpleDateFormat("_yyyy-MM-dd_hh-mm-ss");
-	String documentName =  "backgroundCheckESign_"+personName+sdf.format(new Date()) +".pdf"; 
-	file = new File(htmlDir + documentName);
-	if(file.exists()){
-		file.delete();
-		file.createNewFile();
-	}
-	FileOutputStream fout = new FileOutputStream(file);
-	fout.write(bout.toByteArray());
-	fout.close();
-	
-	logger.debug("Going to set data for DocuESign");
-	try{
-		RestDocuSignUtil restDocuSign = new RestDocuSignUtil();
-		List<RestDocuSignRequest> restDocuSignRequestList = new ArrayList<RestDocuSignRequest>();
-		if(ctx.get("bgEmail")!=null && !HtmlConstants.EMPTY.equals(ctx.get("bgEmail").toString())){
-			String bgEmail = ctx.get("bgEmail").toString();
-			String printName = ctx.get("printname").toString();
-			String personInitial = ctx.get("personInitial").toString();
-			
-			RestDocuSignRequest restDocuSignRequest = new RestDocuSignRequest();
-			ProducerOneUtility obj=new ProducerOneUtility();
-			obj.getSubjectLineForRest(restDocuSignRequest,ctx);
-			List<RestRecipientInfoBean> restRecipientInfoList = new ArrayList<RestRecipientInfoBean>();
-			RestRecipientInfoBean restRecipientInfo = new RestRecipientInfoBean();
-			
-			restDocuSignRequest.setContent(bout.toByteArray());
-			restDocuSignRequest.setDocumentId(1);
-			restDocuSignRequest.setIdentifier(ESignConstants.DOCUMENT_IDENTIFIER_APPBG);
-
-			List<String> identiferList = new ArrayList<String>();
-			identiferList.add(ESignConstants.AGENT_SIGNER_IDENTIFIER+""+1);
-			identiferList.add(DATE_IDENTIFIER+"_"+1);
-			if(DataUtils.getAccessType((Context)ctx, "esign_custom_tab_security")==1)
-				identiferList.add(ESignConstants.CUSTOM_TAB_IDENTFIER+""+1);
-			restRecipientInfo.setRecipientIdentifierList(identiferList);
-			
-			restRecipientInfo.setRecipientId(1);
-			restRecipientInfo.setEmailAddress(bgEmail);
-			restRecipientInfo.setName(printName);
-			restRecipientInfo.setInitials(personInitial);
-			if(DataUtils.getAccessType((Context)ctx, "esign_custom_tab_security")==1)
-			{
-				CustomTabUtil custtab=new CustomTabUtil();
-				ctx.put("customtab_template_code","bgcheckForm");
-				if(ctx.get("person_id") != null && !HtmlConstants.EMPTY.equals(ctx.get("person_id"))) {
-					ctx.put("person_id", ctx.get("person_id").toString());
-					ctx.put("personid", ctx.get("person_id").toString());
-				}
-				
-				restRecipientInfo.setCustomtabmap(custtab.getCustomTabList(ctx,""+restDocuSignRequest.getDocumentId()));
-				if(restRecipientInfo.getCustomtabmap()==null)
-				{
-					DataUtils.populateError((Context)ctx, "carrierError", "Unable to send document for ESignature");
-					return;
-				}
-				restRecipientInfo.setObjectidentifier(""+restRecipientInfo.getRecipientId());
-			}
-			restRecipientInfoList.add(restRecipientInfo);
-			
-			restDocuSignRequest.setRecipientInfoList(restRecipientInfoList);
-			
-			restDocuSignRequest.setDocAnchorInfo(identiferList);
-			
-			restDocuSignRequestList.add(restDocuSignRequest);
-				
-		}else{
-			logger.error("No Agent found with valid email");
-		}
-		
-		
-		EnvelopeSummary docRes = null; 
-		String errorMsg = "";
-		try{
-			if(ctx.get("inet_errors_list")!=null && !"".equals(ctx.get("inet_errors_list")))
-			{
-				return;
-			}
-			logger.debug("Going to hit DocuSign");
-			docRes = restDocuSign.sendDocument(restDocuSignRequestList);
-			logger.debug("Response got from DocuSign " + docRes);
-		}catch (Throwable e1) {
-			
-			//e1.printStackTrace();
-			logger.error("Unable to execute setDataForDocuESignDirect method due to error : " + DataUtils.getExceptionStackTrace(e1));
-		}
-		
-		if(docRes == null || docRes.getStatus().equals(HtmlConstants.EMPTY) || 
-				("ERROR".equalsIgnoreCase(docRes.getStatus().toString()) || "FAILURE".equalsIgnoreCase(docRes.getStatus().toString()))){
-			
-			DataUtils.populateError((Context)ctx, "bgPageError", "Unable to send document for ESignature");
-			logger.error("Unable to send document for ESignature due to error : "+ errorMsg);
-			return;
-		}
-		
-		//going to insert int database
-		Context newCtx = new Context();
-		newCtx.setProject(ctx.getProject());
-		
-		newCtx.put("document_id_var", docRes.getEnvelopeId());
-		//newCtx.put("doc_auth_token", docRes.);
-		newCtx.put("document_type", "BGAuthorizationInPone");
-		newCtx.put("last_updated_by", ctx.get("last_updated_by").toString());
-		newCtx.put("operationType", "I");
-		newCtx.put("object_id", ctx.get("person_id"));
-		if(ctx.get("agency_id") != null && !HtmlConstants.EMPTY.equals(ctx.get("agency_id")))
-			newCtx.put("agency_id", ctx.get("agency_id"));
-		
-		Map requestIdMap = (Map)SqlResources.getSqlMapProcessor(ctx).findByKey("SqlStmts.sqlStatementsviewgetRequestIdFromAgencyMaster", newCtx);
-		if(requestIdMap != null && !HtmlConstants.EMPTY.equals(requestIdMap)){
-			if(requestIdMap.get("requestid") != null && !HtmlConstants.EMPTY.equals(requestIdMap.get("requestid").toString()))
-				newCtx.put("aar_requestid", requestIdMap.get("requestid"));
-			else
-				newCtx.put("aar_requestid", "-1");
-		}
-		if(docRes.getStatus() != null && "SENT".equalsIgnoreCase(docRes.getStatus().toString())){
-			newCtx.put("status_comment", "SENT");
-		}
-		newCtx.put("onboarding_method", ctx.get("onboarding_method"));
-		newCtx.put("isEnabledDocuEsignRest", ctx.get("isEnabledDocuEsignRest"));
-		//going to insert in database
-		new SetParametersForStoredProcedures().setParametersInContext(newCtx, "status,agency_id,person_id,aar_requestid,onboarding_method,workflowrequeststatus_comment,agent_ss_workflowrequeststatus_desc,esignResponseXML,esign_iseditable,isEnabledDocuEsignRest");
-		SqlResources.getSqlMapProcessor(ctx).insert("agency_contracts.insert_update_esign_status_p_java", newCtx);
-		
-		logger.debug("Pdf Doc has sent to agency for esign.");
-	}catch (Exception e) {
-		DataUtils.populateError((Context)ctx, "bgPageError","Error in Sending document for ESign");
-		logger.error("Unable to send document for ESignature due to error : " + e.getMessage());
-	}
-}
-
 	@Override
 	public String getMetaobject() {
 		// TODO Auto-generated method stub
