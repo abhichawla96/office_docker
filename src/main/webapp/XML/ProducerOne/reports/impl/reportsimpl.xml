@@ -196,6 +196,13 @@
 			<column name="coverage_state" columnlabel="Coverage States" metaproperty="coverage_state" isreportfilter="N" isreportdisplay="Y" executionsequence="14" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			<column name="pernding_claims" columnlabel="Pending Claims" metaproperty="pernding_claims" isreportfilter="N" isreportdisplay="Y" executionsequence="15" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			<column name="territory_manager" columnlabel="Territory Manager" metaproperty="territory_manager" isreportfilter="N" isreportdisplay="Y" executionsequence="16" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+			<column name="batchreport_id" columnlabel="Batch Report ID" metaproperty="batchreport_id" isreportfilter="N" executionsequence="17" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+			<column name="request_date" columnlabel="Request Date" metaproperty="request_date" isreportfilter="N" executionsequence="18" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+			<column name="last_updated_by" columnlabel="Last Updated By" metaproperty="last_updated_by" isreportfilter="N" executionsequence="19" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+			<column name="search_xml_desc" columnlabel="Search Criteria" metaproperty="search_xml_desc" isreportfilter="N" executionsequence="20" isreportdefaultdisplay="Y" />
+			<column name="archive_date" columnlabel="Archive Date" metaproperty="archive_date" isreportfilter="N" executionsequence="21" isreportdefaultdisplay="Y" />
+			<column name="isdownloadlink" metaproperty="isdownloadlink" isreportfilter="N" executionsequence="22" isreportdefaultdisplay="Y" />
+		
 		</columnset>
 		<reportworkflow name="reportworkflow" executionsequence="0" outputtype="1xml" checkfornullparams="Period_D,PAGE_SIZE,PAGE_NUMBER,ispaginationrequired">
 			<storedprocedureoperation name="getTerminatedAgenciesPolicyReport_p" id="getTerminatedAgenciesPolicyReport_p" dbspname="getTerminatedAgenciesPolicyReport_p" viewid="report_data_list_1" applid="ProducerOne" executionsequence="0" operation="5" metaobject="report_search_columns">
