@@ -91,7 +91,13 @@
 
 	<reportdef name="policyLevel" description="Payment Details At Policy Level (AIM170)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y">
 		<columnset name="policyLevelset">
-			<column deltaind="I" name="Collected_PREMIUM" columnlabel="Collected Premium" metaproperty="WRITTEN_PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="18" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		<!-- Reports new changes-start  -->
+	         <column deltaind="M" name="actual_written_premium" columnlabel="Written Premium" metaproperty="actual_written_premium" isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+	         <column deltaind="M" name="WRITTEN_PREMIUM" columnlabel="Collected Premium" metaproperty="WRITTEN_PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		 
+		 
+			<!-- Reports new changes-end  -->
+		 
 		</columnset>
 		 <reportworkflow name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,reportoutputtype,reportID,ispaginationrequired,Period_D,agency_code_V">
         <function deltaind="I" name="displayCollectedPremium" functionid="displayCollectedPremium" parameters="context,report_data_list_1,WRITTEN_PREMIUM" executionsequence="1" />
@@ -108,6 +114,14 @@
 		<column name="Agency_name" columnlabel="Agency Name" metaproperty="Agency_name" isreportfilter="N" isreportdisplay="Y" executionsequence="3" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 		<column name="Agency_status" columnlabel="Agency Status" metaproperty="Agency_status" isreportfilter="N" isreportdisplay="Y" executionsequence="4" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 		<column name="Statement_date" columnlabel="Statement Date" metaproperty="Statement_date" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+	 <!-- batch section -->
+	 <column name="batchreport_id" columnlabel="Batch Report ID" metaproperty="batchreport_id" isreportfilter="N" executionsequence="6" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+	<column name="request_date" columnlabel="Request Date" metaproperty="request_date" isreportfilter="N" executionsequence="7" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+	<column name="last_updated_by" columnlabel="Last Updated By" metaproperty="last_updated_by" isreportfilter="N" executionsequence="8" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+	<column name="search_xml_desc" columnlabel="Search Criteria" metaproperty="search_xml_desc" isreportfilter="N" executionsequence="9" isreportdefaultdisplay="Y" />
+	<column name="archive_date" columnlabel="Archive Date" metaproperty="archive_date" isreportfilter="N" executionsequence="10" isreportdefaultdisplay="Y" />
+	<column name="isdownloadlink" metaproperty="isdownloadlink" isreportfilter="N" executionsequence="11" isreportdefaultdisplay="Y" />
+		 <!-- batch section -->
 	 </columnset>
       <reportworkflow name="reportworkflow" executionsequence="0" outputtype="1xml" checkfornullparams="Period_D,PAGE_SIZE,PAGE_NUMBER,ispaginationrequired,reportID">
          <storedprocedureoperation name="getTerminatedAgenciesReport_p" id="getTerminatedAgenciesReport_p" dbspname="getTerminatedAgenciesReport_p" viewid="report_data_list_1" applid="ProducerOne" executionsequence="0" operation="5" metaobject="report_search_columns">
@@ -212,6 +226,16 @@
 			 <column name="Policy_Number" columnlabel="Policy Number" metaproperty="Policy_Number" isreportfilter="N" isreportdisplay="Y" executionsequence="6" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			<column name="Policyholder" columnlabel="Policyholder" metaproperty="Policyholder" isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			<column name="Collected_Premium" columnlabel="Collected Premium" metaproperty="Collected_Premium" isreportfilter="N" isreportdisplay="Y" executionsequence="8" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
+			<!-- Bug 48401- batch section -->
+			
+			<column name="batchreport_id" columnlabel="Batch Report ID" metaproperty="batchreport_id" isreportfilter="N" executionsequence="9" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+			<column name="request_date" columnlabel="Request Date" metaproperty="request_date" isreportfilter="N" executionsequence="10" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+			<column name="last_updated_by" columnlabel="Last Updated By" metaproperty="last_updated_by" isreportfilter="N" executionsequence="11" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+			<column name="search_xml_desc" columnlabel="Search Criteria" metaproperty="search_xml_desc" isreportfilter="N" executionsequence="12" isreportdefaultdisplay="Y" />
+			<column name="archive_date" columnlabel="Archive Date" metaproperty="archive_date" isreportfilter="N" executionsequence="13" isreportdefaultdisplay="Y" />
+			<column name="isdownloadlink" metaproperty="isdownloadlink" isreportfilter="N" executionsequence="14" isreportdefaultdisplay="Y" />
+			
+			<!-- Bug 48401-batch section  -->
 		</columnset>
 		<reportworkflow name="reportworkflow" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,ispaginationrequired">
 			<storedprocedureoperation name="getAgencyContCollectedPremium582Report_p" id="getAgencyContCollectedPremium582Report_p" dbspname="getAgencyContCollectedPremium582Report_p" viewid="report_data_list_1" applid="ProducerOne" executionsequence="0" operation="5" metaobject="report_search_columns">
@@ -254,6 +278,15 @@
 			<column name="No_Cap_1st_Total_Incurred" columnlabel="No Cap 1st Total Incurred" metaproperty="No_Cap_1st_Total_Incurred" isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
 			<column name="No_Cap_2nd_Total_Incurred" columnlabel="No Cap 2nd Total Incurred" metaproperty="No_Cap_2nd_Total_Incurred" isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
 			<column name="No_Cap_3rd_Total_Incurred" columnlabel="No Cap 3rd Total Incurred" metaproperty="No_Cap_3rd_Total_Incurred" isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
+		<!-- batch section -->
+		<column name="batchreport_id" columnlabel="Batch Report ID" metaproperty="batchreport_id" isreportfilter="N" executionsequence="10" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+			<column name="request_date" columnlabel="Request Date" metaproperty="request_date" isreportfilter="N" executionsequence="11" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+			<column name="last_updated_by" columnlabel="Last Updated By" metaproperty="last_updated_by" isreportfilter="N" executionsequence="12" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+			<column name="search_xml_desc" columnlabel="Search Criteria" metaproperty="search_xml_desc" isreportfilter="N" executionsequence="13" isreportdefaultdisplay="Y" />
+			<column name="archive_date" columnlabel="Archive Date" metaproperty="archive_date" isreportfilter="N" executionsequence="14" isreportdefaultdisplay="Y" />
+			<column name="isdownloadlink" metaproperty="isdownloadlink" isreportfilter="N" executionsequence="15" isreportdefaultdisplay="Y" />
+			
+		
 		</columnset>
 		<reportworkflow name="reportworkflow" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,ispaginationrequired">
 			<storedprocedureoperation name="getAgencyContingencyClaimsDetail583RPT_P" id="getAgencyContingencyClaimsDetail583RPT_P" dbspname="getAgencyContingencyClaimsDetail583RPT_P" viewid="report_data_list_1" applid="ProducerOne" executionsequence="0" operation="5" metaobject="report_search_columns">
@@ -304,7 +337,14 @@
 			<column name="Bonus_Amount" columnlabel="Bonus Amount" metaproperty="Bonus_Amount" isreportfilter="N" isreportdisplay="Y" executionsequence="28" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			<column name="Eligible_For_Bonus_Flag" columnlabel="Eligible For Bonus Flag" metaproperty="Eligible_For_Bonus_Flag" isreportfilter="N" isreportdisplay="Y" executionsequence="29" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			<column name="Ineligibility_Reason" columnlabel="Ineligibility Reason" metaproperty="Ineligibility_Reason" isreportfilter="N" isreportdisplay="Y" executionsequence="30" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-
+			 <!-- batch section -->
+	 		<column name="batchreport_id" columnlabel="Batch Report ID" metaproperty="batchreport_id" isreportfilter="N" executionsequence="31" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+			<column name="request_date" columnlabel="Request Date" metaproperty="request_date" isreportfilter="N" executionsequence="32" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+			<column name="last_updated_by" columnlabel="Last Updated By" metaproperty="last_updated_by" isreportfilter="N" executionsequence="33" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+			<column name="search_xml_desc" columnlabel="Search Criteria" metaproperty="search_xml_desc" isreportfilter="N" executionsequence="34" isreportdefaultdisplay="Y" />
+			<column name="archive_date" columnlabel="Archive Date" metaproperty="archive_date" isreportfilter="N" executionsequence="35" isreportdefaultdisplay="Y" />
+			<column name="isdownloadlink" metaproperty="isdownloadlink" isreportfilter="N" executionsequence="36" isreportdefaultdisplay="Y" />
+		 <!-- batch section -->
 		</columnset>
 
 		<columnset name="multiplegridreportset1" description="Grid 1" datasetname="report_data_list_1" executionsequence="1" isshowreportdataheader="Y" isreportdatapagination="Y" isshowonscreen="Y" sheetname="Non-Grouped Agencies" outputtype="xml" isdynacolumns="Y">
@@ -384,7 +424,14 @@
 			<column name="Bonus_Amount" columnlabel="Bonus Amount" metaproperty="Bonus_Amount" isreportfilter="N" isreportdisplay="Y" executionsequence="28" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			<column name="Eligible_For_Bonus_Flag" columnlabel="Eligible For Bonus Flag" metaproperty="Eligible_For_Bonus_Flag" isreportfilter="N" isreportdisplay="Y" executionsequence="29" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			<column name="Ineligibility_Reason" columnlabel="Ineligibility Reason" metaproperty="Ineligibility_Reason" isreportfilter="N" isreportdisplay="Y" executionsequence="30" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-
+			<!-- batch section -->
+	 		<column name="batchreport_id" columnlabel="Batch Report ID" metaproperty="batchreport_id" isreportfilter="N" executionsequence="31" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+			<column name="request_date" columnlabel="Request Date" metaproperty="request_date" isreportfilter="N" executionsequence="32" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+			<column name="last_updated_by" columnlabel="Last Updated By" metaproperty="last_updated_by" isreportfilter="N" executionsequence="33" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+			<column name="search_xml_desc" columnlabel="Search Criteria" metaproperty="search_xml_desc" isreportfilter="N" executionsequence="34" isreportdefaultdisplay="Y" />
+			<column name="archive_date" columnlabel="Archive Date" metaproperty="archive_date" isreportfilter="N" executionsequence="35" isreportdefaultdisplay="Y" />
+			<column name="isdownloadlink" metaproperty="isdownloadlink" isreportfilter="N" executionsequence="36" isreportdefaultdisplay="Y" />
+			 <!-- batch section -->
 		</columnset>
 
 		<columnset name="multiplegridreportset1" description="Grid 1" datasetname="report_data_list_1" executionsequence="1" isshowreportdataheader="Y" isreportdatapagination="Y" isshowonscreen="Y" sheetname="Non-Grouped Agencies" outputtype="xml" isdynacolumns="Y">
@@ -463,7 +510,14 @@
 			<column name="Bonus_Amount" columnlabel="Bonus Amount" metaproperty="Bonus_Amount" isreportfilter="N" isreportdisplay="Y" executionsequence="28" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			<column name="Eligible_For_Bonus_Flag" columnlabel="Eligible For Bonus Flag" metaproperty="Eligible_For_Bonus_Flag" isreportfilter="N" isreportdisplay="Y" executionsequence="29" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			<column name="Ineligibility_Reason" columnlabel="Ineligibility Reason" metaproperty="Ineligibility_Reason" isreportfilter="N" isreportdisplay="Y" executionsequence="30" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-
+			<!-- batch section-->
+	 		<column name="batchreport_id" columnlabel="Batch Report ID" metaproperty="batchreport_id" isreportfilter="N" executionsequence="31" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+			<column name="request_date" columnlabel="Request Date" metaproperty="request_date" isreportfilter="N" executionsequence="32" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+			<column name="last_updated_by" columnlabel="Last Updated By" metaproperty="last_updated_by" isreportfilter="N" executionsequence="33" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+			<column name="search_xml_desc" columnlabel="Search Criteria" metaproperty="search_xml_desc" isreportfilter="N" executionsequence="34" isreportdefaultdisplay="Y" />
+			<column name="archive_date" columnlabel="Archive Date" metaproperty="archive_date" isreportfilter="N" executionsequence="35" isreportdefaultdisplay="Y" />
+			<column name="isdownloadlink" metaproperty="isdownloadlink" isreportfilter="N" executionsequence="36" isreportdefaultdisplay="Y" />
+			 <!-- batch section -->
 		</columnset>
 
 		<columnset name="multiplegridreportset1" description="Grid 1" datasetname="report_data_list_1" executionsequence="1" isshowreportdataheader="Y" isreportdatapagination="Y" isshowonscreen="Y" sheetname="Non-Grouped Agencies" outputtype="xml" isdynacolumns="Y">
