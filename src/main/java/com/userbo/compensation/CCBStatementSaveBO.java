@@ -396,7 +396,9 @@ public class CCBStatementSaveBO extends Businessobject{
 					if(ctx.get("checkRecalculation") != null && !HtmlConstants.EMPTY.equals(ctx.get("checkRecalculation")) && "Y".equals(ctx.get("checkRecalculation").toString())){ 
 						SqlResources.getSqlMapProcessor(ctx).update("producer_number.UpdateCCBProfitSharingDetail_Temp",ctx);
 					}
-					/*else{
+					/*
+					Commented for BMIC
+					else{
 							SqlResources.getSqlMapProcessor(ctx).update("producer_number.UpdateCCBProfitSharingDetail_p",ctx);
 							}*/
 					}

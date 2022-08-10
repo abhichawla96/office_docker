@@ -51,7 +51,7 @@ where pn.producer_number =#AgencyTerminationPolicyReviewRPT_agency_code#">
 	  
         <property deltaind="I" initcap="N" searchfield="N" isEncrypt="N" listdisplay="N" formdisplay="N" deleteind="N" resolvedisplay="N" length="0" contextfield="N" searchrule="N" isrequired="N" searchmodify="N" field="AgencyTerminationPolicyReviewRPT_agency_status" viewlength="10" persistent="N" propertylength="10" seq="65115">
         <dropdown name="AgencyTerminationPolicyReviewRPT_agency_status" metaobject="report_search_columns" dropdowntype="sql" 
-        sqlstmt="Select master_lookup_data_code,master_lookup_data_desc from master_lookup_data_lku WHERE master_lookup_detail_id in (Select master_lookup_detail_id from master_lookup_detail_lku WHERE lookup_table_name='ActiveInactiveLku')">
+        sqlstmt="Select master_lookup_data_code,master_lookup_data_desc from master_lookup_data_lku WHERE master_lookup_detail_id in (Select master_lookup_detail_id from master_lookup_detail_lku WHERE lookup_table_name='terminated_agency_report_status_lku')">
           <valuefield field="master_lookup_data_code" />
           <displayfield field="master_lookup_data_desc" />
         </dropdown>
