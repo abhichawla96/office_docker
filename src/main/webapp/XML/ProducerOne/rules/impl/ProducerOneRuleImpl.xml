@@ -36,16 +36,14 @@
 		
 	<!-- Changes done for prod bug 31110  -->	
 	<rule deltaind="I" id="isUserNameEmpty" expression="isEmpty(:user_name_app);" />
-			
+
 	<!-- Phase 3- Adjustments Recalculation -->
    <rule deltaind="I" id="isCYEvalChanged" expression="isEqual(:is_CYEval_changed,Y);" obj="ruleobjs.ProducerOneRule" method="isCYEvalChanged" />
 	<rule deltaind="I" id="isPYEvalChanged" expression="isEqual(:is_PYEval_changed,Y);" obj="ruleobjs.ProducerOneRule" method="isPYEvalChanged" />
 	<rule deltaind="I" id="isLossAmountChanged" expression="isEqual(:is_LossAmount_changed,Y);" obj="ruleobjs.ProducerOneRule" method="isLossAmountChanged" />
-		
 		<!-- 39089 decline and approve buttons deactivate contact start --> 
 		<rule deltaind="I" id="hideShowApproveSalesSupportDC" expression="andCondition(isEqual(:selectFunctionType_code,functionDC),isEqualsIgnoreCase(:roles,MarketingAssistant));"></rule>
 		<rule deltaind="I" id="hideShowApproveSalesDirector" expression="isEqualsIgnoreCase(:roles,SalesDirector);"></rule>
 		<!-- 39089 decline and approve buttons deactivate contact end -->
-
 	</ruleset>
 </evalrules>

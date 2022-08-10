@@ -215,6 +215,7 @@ delete this item?
                                   <td width="1%" class="HeaderStyle" id="block_field_obj_code">#space#</td>
                                   <td width="1%" class="HeaderStyle" id="block_field_obj_code_desc">#space#</td>
                                   <td width="1%" class="HeaderStyle" id="block_field_producer_status_cde">#space#</td>
+                                  <td width="1%" class="HeaderStyle" id="block_field_producer_number_id">#space#</td>
                                 </tr>
                                 <tbody id="bobtransfers_search_list_mom_data_1">
                                   <tr id="mom_child_data">
@@ -231,6 +232,9 @@ delete this item?
                                     </td>
                                     <td id="block_field_producer_status_cde" style="width: 0px;">
                                       <input type="hidden" name="producer_status_cde" id="producer_status_cde" />
+                                    </td>
+                                    <td id="block_field_producer_number_id" style="width: 0px;">
+                                      <input type="hidden" name="producer_number_id" id="producer_number_id" />
                                     </td>
                                   </tr>
                                 </tbody>
@@ -529,7 +533,7 @@ fullid="bobtransfersStep1_freeform_contextdata_2(isProducerNumberTransferWholesa
 					                          </div>
 					                        </div>
 					                        <div class="freeFormListTr">
-					                          <div class="freeFormListTd labelAlign freeFormLabelWidth"><span id="bobtransfersStep1_enterfromagentnumberlabel">From Agent Number</span> : </div>
+					                          <div class="freeFormListTd labelAlign"><span id="bobtransfersStep1_enterfromagentnumberlabel">From Agent Number</span> : </div>
 					                          <div class="freeFormListTd mendatoryInput text-nowrap">
 					                          		<input name="producer_number_from_varchar" type="text" id="producer_number_from_varchar" 
 													fullid="bobtransfersStep1_freeform_contextdata_4(bobtransfersStep1_fromagentnumber_security.bobtransfersStep1_fromagentnumberlabel).bobtransfersStep1_producer_number_from_varchar.bobtransfersStep1_enterfromagentnumberlabel.producer_number_from_varchar"
@@ -545,7 +549,35 @@ fullid="bobtransfersStep1_freeform_contextdata_2(isProducerNumberTransferWholesa
 								
 									</li>
 							<!-- PHASE 3- From producer code- EXTENDED FIELD -->
-					                </ul> 
+					                </ul>
+					                <!-- <ul class="inlineBlock form-inline" id="bobtransfersStep1_enterfromagentnumber_security">
+					                    <li class="inlineBlock_1" id="bobtransfersStep1_enterfromagentnumber_subprdcrcode_security">
+											<div class="freeFormList">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError">
+														<h6>#space#</h6>
+													</div>
+													<div class="freeFormListTdError">
+														<div id="error_enterfromagentnumber_subprdcrcode" class="error" />
+														<div id="error_enterfromagentnumber_subprdcrcode" class="error" />
+														
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign">
+														<span id="bobtransfersStep1_enterfromagentnumber_subprdcrcodelabel">Enter From Producer Code</span> :
+													</div>
+													<div class="freeFormListTd text-nowrap">
+														<select class="form-control" name="enterfromagentnumber_subprdcrcode"
+															id="ajax_field_enterfromagentnumber_subprdcrcode">
+															<option value="">Select</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</li>
+					                </ul>  -->
+					                 
 	                			</fieldset>
 	                		</td>
 	                		<td id="bobtransfersStep1_fromagentnumber_security" nowrap="nowrap">&nbsp;&nbsp;</td>
@@ -577,18 +609,37 @@ fullid="bobtransfersStep1_freeform_contextdata_2(isProducerNumberTransferWholesa
 					                        </div>
 					                      </div>
 					                    </li>
-					
-															
-															
-															
 							<!-- PHASE 3- To producer code- EXTENDED FIELD -->
 								<li id="#bobtransfersStep1_wholesale_to_producer_security_after#">
 								
 									</li>
 							<!-- PHASE 3- To producer code- EXTENDED FIELD -->	
 					                    
-					                 
-					                </ul> 
+					                </ul>
+					                <!-- <ul class="inlineBlock form-inline" id="bobtransfersStep1_entertoagentnumber_security">
+					                    <li class="inlineBlock_1">
+										  <div class="freeFormList">
+											<div class="freeFormListTr">
+											  <div class="freeFormListTdError">
+												<h6>#space#</h6>
+											  </div>
+											  <div class="freeFormListTdError">
+												<div id="error_entertoagentnumber_subprdcrcode" class="error"/>
+												<div id="error_entertoagentnumber_subprdcrcode" class="error"/>
+											  </div>
+											</div>
+											<div class="freeFormListTr">
+											  <div class="freeFormListTd labelAlign freeFormLabelWidth"><span id="bobtransfersStep1_entertoagentnumber_subprdcrcodelabel">Enter To Producer Number</span> : </div>
+											  <div class="freeFormListTd text-nowrap">
+														<select class="form-control" name="entertoagentnumber_subprdcrcode"
+															id="ajax_field_entertoagentnumber_subprdcrcode">
+															<option value="">Select</option>
+														</select>
+											  </div>
+											</div>
+										  </div>
+										</li>
+					                </ul>  -->
 	                			</fieldset>
 	                		</td>
 	                	</tr>
@@ -975,6 +1026,8 @@ fullid="bobtransfersStep1_freeform_contextdata_2(isProducerNumberTransferWholesa
         <input type="hidden" name="htmlSource" id="htmlSource" />
         <input type="hidden" name="coming_page" id="coming_page" />
         <input type="hidden" name="divHideShow" id="divHideShow" />
+        <input type="hidden" name="selected_from_producer_number_id" id="ajax_field_selected_from_producer_number_id" />
+        <input type="hidden" name="selected_producer_number_id" id="ajax_field_selected_producer_number_id" />
       </div>
       </div>
     </form>

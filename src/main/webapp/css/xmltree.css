@@ -172,7 +172,9 @@ Specify the child Icon
 #xmlMenuTree .bonusScheduleIcon {background: url(../images/icons/ico_bonusSchedule.png) no-repeat 0px 2px;margin-top:1px; float:left; padding-left: 20px;}
 #xmlMenuTree .subProducerNumberOutsideIcon {background: url(../images/icons/ico_subProducerNumber.png) no-repeat 0px 2px;margin-top:1px; float:left; padding-left: 13px;}
 #xmlMenuTree .subProducerNumberOutsideIcon:after{background: url(../images/icons/ico_location-other-2.png) no-repeat 0px 2px;margin-top:1px; position:absolute;right:-5px;top:0px; float:left; content: '';height:18px;width:16px;}
-/* #xmlMenuTree .nationalCodeIcon {background: url(../images/icons/ico_National_xyz.png) no-repeat 0px 2px;margin-top:1px; float:left}
+/* 
+BMIC Specific - remove icon
+#xmlMenuTree .nationalCodeIcon {background: url(../images/icons/ico_National_xyz.png) no-repeat 0px 2px;margin-top:1px; float:left}
  */ 
 #xmlMenuTree .combinedCodeIcon {background: url(../images/icons/ico_Combined.png) no-repeat 0px 2px;margin-top:1px; float:left}
 #xmlMenuTree .subProducerNumberIcon a {padding-left: 15px;}

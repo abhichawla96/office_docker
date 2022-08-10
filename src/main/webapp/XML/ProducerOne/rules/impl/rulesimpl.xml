@@ -7,6 +7,8 @@
 
 
 		<rule deltaind="I" id="isCBIAYesNo" expression="isEqual(:cbia_designation,Y);"></rule>
+		
+	
 
 		<!-- Phase 3- Agent role -->
 <rule deltaind="I" id="getAgentChecked" expression="isGreaterThan(getBeanProperty(executeDBOperation(context,a,3,SqlStmts.sqlStatementsviewgetAgentChecked),agentChecked),0);" />
@@ -83,6 +85,10 @@
 	<rule deltaind="I" id="hideShowW9SectionEdit" expression="isEqual(:hideShow_w9section,Y);"/>
 	<!-- Bug-40448 W9 doc Self Service end -->
 	
+	<rule deltaind="I" id="MarketingAssistantCheck" expression="isEqualsIgnoreCase(:roles,MarketingAssistant);"></rule>
+	
+	<rule deltaind="I" id="ApproveButtonLatest" expression="andCondition(andCondition(call_rule(ProducerOneRule.isFunctionDC),call_rule(AgencyFunctionsRule.isAgencyFunctionsIDAndRequestIdNotEmpty)),call_rule(ProducerOneRule.MarketingAssistantCheck));" />
+	
 </ruleset>
 
 	<!-- Agency funtions rules - deactivate date CR -->
@@ -104,7 +110,4 @@
 		<rule deltaind="I" id="checkModifyforAcc" expression="isEqualsIgnoreCase(:roles,Accounting);" />
 	</ruleset>
 	<!-- END - UAT2 Bug 0013 - Editing Hierarchy Contact in SS -->
-
-	
-</evalrules>
->>>>>>> refs/remotes/origin/prodSupport_may22
+</evalrules>	

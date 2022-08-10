@@ -18,7 +18,8 @@
  <!-- Agency Onboarding - Send Invitation  -->
 
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="invitationStep1_commission_type_security" name="invitationStep1_commission_type_security"/>
- <tabsconfigurationresource deltaind="M" accesslevel="0" description="invitationStep1_entity_type_general_Detail_security" name="invitationStep1_entity_type_general_Detail_security"/>
+<!-- commented for phase 3 req. 46021 -->
+ <!-- <tabsconfigurationresource deltaind="M" accesslevel="0" description="invitationStep1_entity_type_general_Detail_security" name="invitationStep1_entity_type_general_Detail_security"/> -->
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="invitationStep1_any_rollover_potential_security" name="invitationStep1_any_rollover_potential_security"/>
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="invitationStep1_commission_to_be_paid_security" name="invitationStep1_commission_to_be_paid_security"/>
   
@@ -77,7 +78,9 @@
    
 <!-- Agency Setup -->
   <tabsconfigurationresource deltaind="M" accesslevel="0" description="agency_sales_tax_certificate_nr_securityHeader" name="agency_sales_tax_certificate_nr_securityHeader"/>
- <tabsconfigurationresource deltaind="M" accesslevel="0" description="agencyestablished_date_securityHeader" name="agencyestablished_date_securityHeader"/>
+ 
+ <!-- Prod Bug 42972 -->
+ <tabsconfigurationresource deltaind="M" accesslevel="1" description="agencyestablished_date_securityHeader" name="agencyestablished_date_securityHeader"/>
  <tabsconfigurationresource deltaind="M" accesslevel="0" description="entityGeneralDetails_years_in_business_securityHeader" name="entityGeneralDetails_years_in_business_securityHeader"/>
   <!-- phase 3-Agency Setup -->
  <tabsconfigurationresource deltaind="M" accesslevel="1" description="Entity_Type_General_Detail_securityHeader" name="Entity_Type_General_Detail_securityHeader"/>
@@ -723,7 +726,7 @@
 <!-- <tabsconfigurationresource deltaind="M" accesslevel="0" description="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security" name="agentGeneralDetailsForSelfServiceApproval_agent_isactive_security"/> -->
 
 <!-- Phase 2- Bug Id- P2-097- Add Bank Information- Account Type column -->
-<tabsconfigurationresource deltaind="M" accesslevel="0" description="bankInformationForSelfServiceApproval_account_type_checking_saving_security" name="bankInformationForSelfServiceApproval_account_type_checking_saving_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="bankInformationForSelfServiceApproval_account_type_checking_saving_security" name="bankInformationForSelfServiceApproval_account_type_checking_saving_security"/>
 
 <!-- Phase 2- Bug id-P2-028  ‘Other Notes/Questions to be Asked’ & ‘Result of Call’ sections display -->
 <tabsconfigurationresource deltaind="I" accesslevel="1" description="questions_to_be_tasked_security" name="questions_to_be_tasked_security"/>
@@ -866,7 +869,8 @@
 <!-- UAT Bug -002 end -->
 
 <!-- UAT2 Bug 17971 add/update contact email field start -->
-<tabsconfigurationresource deltaind="M" accesslevel="0" description="email_id_business_agent_ss_security" name="email_id_business_agent_ss_security"/>
+<!-- UAT2 Bug 43047 add/update contact email field -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="email_id_business_agent_ss_security" name="email_id_business_agent_ss_security"/>
 <!-- UAT2 Bug 17971 add/update contact email field end -->
 
 <!-- UAT2 Bug 17971 update agency location email field start -->
@@ -953,6 +957,23 @@
 	<!-- UAT2 Bug Id - 27509 -->
 	<tabsconfigurationresource deltaind="M" accesslevel="1" description="entityCyberLiabilityExpirationListing_security" name="entityCyberLiabilityExpirationListing_security"/>
 	
+<!-- Phase 3-Bug ID- 46418- Cont Reports -->
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBReports_agentprofit_sharingSchedule_security" name="CCBReports_agentprofit_sharingSchedule_security"/> 
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBReports_agentprofit_ProfileReport_security" name="CCBReports_agentprofit_ProfileReport_security"/> 
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBReports_agentprofit_includedBuyCell_security" name="CCBReports_agentprofit_includedBuyCell_security"/> 
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBReports_agentGroup_security" name="CCBReports_agentGroup_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBreport_agentcontigentCommission_security" name="CCBreport_agentcontigentCommission_security"/>  
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBreport_agentcommission_security" name="CCBreport_agentcommission_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBreport_agentcommissionLoss_security" name="CCBreport_agentcommissionLoss_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBreport_agentcommissionLossDetail_security" name="CCBreport_agentcommissionLossDetail_security"/>
+ <tabsconfigurationresource deltaind="M"  accesslevel="0" description="Hide/Show CCBReports_agentcontigent_reconciliation_security" name="CCBReports_agentcontigent_reconciliation_security"/> 
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBReports_agentcontigent_CCBEligible_security" name="CCBReports_agentcontigent_CCBEligible_security"/>  
+ <tabsconfigurationresource deltaind="M" accesslevel="0"  description="Hide/Show CCBreport_agentcontigent_Commission_security" name="CCBreport_agentcontigent_Commission_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBreport_agentcontigent_adjustment_security" name="CCBreport_agentcontigent_adjustment_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBReports_showAgencyProductionAndExperienceReport" name="CCBReports_showAgencyProductionAndExperienceReport"/>  
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBreport_agentcontigent_Profitsharing_security" name="CCBreport_agentcontigent_Profitsharing_security"/>
+ <tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show CCBReports_agentcontigent_IncuredLoss_security" name="CCBReports_agentcontigent_IncuredLoss_security"/> 
+
 	<!-- 39089 disapporve button hide  start --> 
 	<tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/Show disapprove button on agency functions page" name="agencyFunctions_selectFunctionType_disapprove_security"/>
 	
@@ -970,4 +991,9 @@
 	
 	<!-- SS-For showing E&O claim Y/N option added by product in 2.10.3.8 -->
 	<tabsconfigurationresource deltaind="M" accesslevel="1" name="docInsuranceDetail_ss_eo_claims_security" description="Hide/Show of agency drop down in docInsuranceDetail_ss_comments_req_security for SS" />
+	
+	<!-- CR0065 - START -->
+	<tabsconfigurationresource deltaind="M" name="bankInformationForSelfServiceApproval_re_enter_bank_account_security" accesslevel="1" description="Hide/Show re_enter_bank_account on bankInformationForSelfServiceApproval" />
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="bankInformationForSelfServiceApproval_bank_account_name_security" name="bankInformationForSelfServiceApproval_bank_account_name_security"/>
+	<!-- CR0065 - END -->
 </tabsconfiguration>

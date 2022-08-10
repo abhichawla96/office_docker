@@ -192,9 +192,30 @@
 							                                  </div>
 							                                </div>
 							                              </li>
-							                              <!-- BMIC phase 3 - extended fields  -->
-							                              <li class="inlineBlock_3" id="#bobtransfersStep3_to_sub_prod_code_security_after#">
+							                              
+							                              
+							                              <li class="inlineBlock_3" id="bobtransfersStep3_subproducercode_security">
+							                                <div class="freeFormList form-group">
+							                                  <div class="freeFormListTr">
+							                                    <div class="freeFormListTdError">
+							                                      <h6>#space#</h6>
+							                                    </div>
+							                                    <div class="freeFormListTdError paddingLeft3">
+							                                      <div id="error_destination_associationid" class="error" />
+							                                    </div>
+							                                  </div>
+							                                  <div class="freeFormListTr">
+							                                    <div class="freeFormListTd labelAlign freeFormLabelWidth txtbold">
+							                                      <span id="bobtransfersStep3_DestinationProducerCodelabel">To Producer Code</span> :
+							                                    </div>
+							                                    <div class="freeFormListTd tdInput">
+							                                      <label name="sub_producer_code_desc_to" id="ajax_field_sub_producer_code_desc_to"></label>
+							                                    </div>
+							                                  </div>
+							                                </div>
 							                              </li>
+														    <!-- BMIC phase 3 - extended fields  -->
+							                              <li class="inlineBlock_3" id="#bobtransfersStep3_to_sub_prod_code_security_after#"></li>
 							                              
 							                              <li class="inlineBlock_3" id="bobtransfersStep3_transfer_effective_date_security">
 							                                <div class="freeFormList form-group">
@@ -520,7 +541,9 @@
 						 <input type="hidden" name="lob_code" id="ajax_field_lob_code" /> 
 						 <input type="hidden" name="company_abbreviation" id="ajax_field_company_abbreviation" /> 
 						 <input type="hidden" name="state_abbreviation" id="ajax_field_state_abbreviation" /> 
-						 <input type="hidden" name="transfer_option" id="ajax_field_transfer_option" /> 
+						 <input type="hidden" name="transfer_option" id="ajax_field_transfer_option" />
+						 <input type="hidden" name="sub_producer_association_id_to" id="ajax_field_sub_producer_association_id_to" />
+						 <input type="hidden" name="sub_producer_association_id_from" id="ajax_field_sub_producer_association_id_from" /> 
 				</div>
 	</form>
 </body>

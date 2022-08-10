@@ -249,14 +249,25 @@
 							</div>
                             <a id="date_link" class="calender_ico icons" title="Select Date" onclick="show_calendar_widget(this);" />
                           </div>
-                          <div class="freeFormListTd mendatoryInput nowrapDiv" id="checkIsExistingRequest">
+                            <div class="freeFormListTd nowrapDiv" id="checkIsExistingRequest">
+							<div class="input-group date mendatoryInput">
+								<div class="input-group-addon" id="ico_fa_calender_security"> <i class="fa fa-calendar">&nbsp;</i> </div>
+								<input name="expiration_date" 
+								fullid="addEntityRequests_freeform_contextdata_20(ajax_insurance_detail_security.ajax_insurance_detail_label).addInsuranceDetailsForSelfServiceApproval_doc_insurance_expiration_date_to_security.addInsuranceDetailsForSelfServiceApproval_expiration_date_label.expiration_date"
+								maxlength="10" type="text" id="ajax_field_expiration_date" class="form-control form-control-date datepicker" onkeyup="applyDateFormat(this);" />
+							</div>
+                            <div id="isMarketingAssistantLoggedIn">
+                               <label class="oldValue" name="expiration_date_old" id="expiration_date_old" />
+                             </div>
+                          </div>                          
+                       <!--    <div class="freeFormListTd mendatoryInput nowrapDiv" id="checkIsExistingRequest">
                             <input name="expiration_date" 
 							fullid="addEntityRequests_freeform_contextdata_20(ajax_insurance_detail_security.ajax_insurance_detail_label).addInsuranceDetailsForSelfServiceApproval_doc_insurance_expiration_date_to_security.addInsuranceDetailsForSelfServiceApproval_expiration_date_label.expiration_date"
 							maxlength="10" type="text" id="ajax_field_expiration_date" class="form-control form-control-date" onkeyup="applyDateFormat(this);" />
                              <div id="isMarketingAssistantLoggedIn">
                                <label class="oldValue" name="expiration_date_old" id="expiration_date_old" />
                              </div>
-                            </div>
+                            </div> -->
                            </div>
                          </div>
                         </li>
@@ -535,33 +546,6 @@
                                                                                 </div>
                                                                             </div>
                                                                         </li>
-                                                                        
-							<li class="inlineBlock_1 extendedFieldHide"
-								id="#eo_claims_before#"></li>
-							<li class="inlineBlock_1 paddingTopEO"
-								style="width: 100% !important;"
-								id="docInsuranceDetail_ss_eo_claims_security">
-								<div id="error_eo_claims" class="error"></div>
-								<div id="ajax_error_eo_claims" class="error"></div>
-								<div>
-									<span id="docInsuranceDetail_ss_eo_claims_label">Have any E & O claims been made during the past five
-															years against the agency, agency partners, officers, or
-															any members of the staff?</span>
-									<div style="padding-left: 10px; display: inline;" >
-										<input type="radio" name="eo_claims"
-											id="ajax_field_eo_claims" value="1"
-											onchange="javascript:ajaxpageblocklink('carrier/addNewInsuranceDetailForSelfService.html','addNewInsuranceDetailForSelfService.refreshEoClaimsGrid','','','addInsuranceDetailsForSelfServiceApproval_doc_insurance_comment_security');" />
-										Yes&nbsp;&nbsp;<input type="radio" name="eo_claims"
-											id="ajax_field_eo_claims" value="0"
-											onchange="javascript:ajaxpageblocklink('carrier/addNewInsuranceDetailForSelfService.html','addNewInsuranceDetailForSelfService.refreshEoClaimsGrid','','','addInsuranceDetailsForSelfServiceApproval_doc_insurance_comment_security');" />
-										No
-									</div>
-								</div>
-								<label class="oldValue" name="eo_claims_old" id="eo_claims_old" />
-							</li>
-							<li class="inlineBlock_1 extendedFieldHide"
-								id="#eo_claims_after#"></li>
-							
 							 <!-- Phase 2 Customization  -->
 							 <li id="#addInsuranceDetailsForSelfServiceApproval_assigned_to_security_after#"></li>
 							 
@@ -779,7 +763,7 @@
 	                           </a>
 	                         </span>
 	                         <span>
-<!-- BMIC Specific-->	                         <a id="addNewInsuranceDetailForSelfService_decline" href="javascript:ajaxsubmitform('carrier/entityRequests.html','addNewInsuranceDetailForSelfService.declineRequests','','','divComplete');" class="ovalbutton">
+	                         <a id="addNewInsuranceDetailForSelfService_decline" href="javascript:ajaxsubmitform('carrier/entityRequests.html','addNewInsuranceDetailForSelfService.declineRequests','','','divComplete');" class="ovalbutton">
 	                             <span>Decline</span>
 	                           </a>
 	                         </span>

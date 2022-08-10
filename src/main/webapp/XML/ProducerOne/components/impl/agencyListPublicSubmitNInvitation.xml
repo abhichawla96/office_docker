@@ -3,6 +3,7 @@
 		<action deltaind="M" name="editNew">
 			<actionparam deltaind="I" executionsequence="7" session="Y" post="Y" form="Y" name="npn_check" paramid="npn_check" val="npn_flag" />  <!-- Added by Aashutosh -->
 		</action>
+		
 
 		<action name="resendInvitation" deltaind="M">
 		
@@ -11,7 +12,7 @@
 			<actionparam deltaind="M" executionsequence="9" eval="ProducerOneRule.isRegistrationTypePrimarySecondary" form="Y" name="event_name" paramid="event_name" pre="Y" val="ResendInvitation" session="Y" />
 			<actionparam deltaind="I" executionsequence="10" eval="ProducerOneRule.isRegistrationTypeProducerRegistrationAgencyDetailScreen" form="Y" name="event_name_agent" paramid="event_name" pre="Y" val="ResendInvitationForAgent" session="Y" />
 			<!-- Prod bug-0078 changes -->
-			<workflow deltaind="I" name="reSendAgencyName" seq="4">
+			<workflow deltaind="I" name="reSendAgencyName" seq="6">
 				<databaseoperation deltaind="I" executionsequence="0" metaobject="tbl_agencyappointmentrequest" name="resendAgencyNameforMail" operation="3" sqlstmt="Select  aar_agencyname as Entity_Name from tbl_agencyappointmentrequest where aar_requestid=#aar_requestid#"/>	
 			</workflow>
 		</action>

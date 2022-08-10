@@ -225,7 +225,7 @@
 		</field>
 	
 	<!-- Agency general details hba field -->
-	<field deltaind="I" isextendedfield="Y" name="member_of_hba" screen="carrier/entityGeneralDetails.html" objectcolumn="agency_id" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="radio" 
+	<field deltaind="I" isextendedfield="Y" name="member_of_hba2" screen="carrier/entityGeneralDetails.html" objectcolumn="agency_id" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="radio" 
 	isrequired="Y" labelkey="entityGeneralDeetails_member_of_hba_label" labeldesc="Are you a member of an HBA?" accesslevel="1" tabsconfigurationresourcename="entityGeneralDeetails_hba_que_security" 
 	protectedresourceuniquename="entityGeneralDeetails_hba_que_security" id="member_of_hba" position="#is_employee_after#" mappedto="f29">
 	<event id="onchange" name="onchange" screen="carrier/entityGeneralDetails.html" actiontype="ajaxpageblocklink" action="refreshCounty_business" actiontypeid="entityGeneralDeetails_hba_dropdown_security" executionsequence="0">
@@ -321,11 +321,11 @@
   
   <!-- new field -->
   	
-  	<!-- UAT2 Bug Id - 41973 -->
-	<field deltaind="I" isextendedfield="Y" name="Agency_in_business_since" screen="carrier/entityGeneralDetails.html" objectcolumn="agency_id" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="text" 
+  	<!-- UAT2 Bug Id - 41973 --><!-- Prod Bug 42972 -->
+	<!-- <field deltaind="I" isextendedfield="Y" name="Agency_in_business_since" screen="carrier/entityGeneralDetails.html" objectcolumn="agency_id" section="entityGeneralDetailsResult_freeform_contextdata_2" displaytype="text" 
 	isrequired="N" labelkey="Agency_in_business_since_label" labeldesc="Agency in business since" accesslevel="1" tabsconfigurationresourcename="Agency_in_business_since_security" mappedto="f20" datatype="D"
 	protectedresourceuniquename="Agency_in_business_since_security" id="Agency_in_business_since" position="#url_after#">
-  </field>
+  </field> -->
   
   
   
@@ -455,7 +455,7 @@
   <field deltaind="I" id="addProspectAgencyCallReportDetails_date_time" screen="carrier/addProspectAgencyCallReportDetails.html" name="date_time" isrequired="Y" labelkey="callreport_block_date_time_label" tabsconfigurationresourcename="callreport_block_date_time_security" protectedresourceuniquename="callreport_block_date_time_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
  
  <!-- Mandatory Reason for Action Taken - Other - Phase 2  -->
-  <field deltaind="M" id="entityOtherInformation_reason_for_action_taken_desc" screen="carrier/entityOtherInformation.html" name="reason_for_action_taken_desc" isrequired="Y" labelkey="companiesTerminated_block_action_taken_label" tabsconfigurationresourcename="companiesTerminated_block_action_taken_security" protectedresourceuniquename="companiesTerminated_block_action_taken_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
+  <field deltaind="M" id="entityOtherInformation_reason_for_action_taken_desc" screen="carrier/entityOtherInformation.html" name="reason_for_action_taken_desc" isrequired="N" labelkey="companiesTerminated_block_action_taken_label" tabsconfigurationresourcename="companiesTerminated_block_action_taken_security" protectedresourceuniquename="companiesTerminated_block_action_taken_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" />
   
  <!-- Phase 2 - Bug Id- P2-019 -->
 <field deltaind="I" id="addProspectAgencyCallReportDetails_call_purpose" screen="carrier/addProspectAgencyCallReportDetails.html" name="call_purpose" isrequired="Y" labelkey="purpose_of_call_label" tabsconfigurationresourcename="hide_show_purpose_of_call_security" protectedresourceuniquename="hide_show_purpose_of_call_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0">
@@ -623,9 +623,10 @@ protectedresourceuniquename="eno_question_aa_security" id="eno_question_aa" posi
 	<!-- Phase 3- Extended field- Individual Transfer-end -->
 
 	<!-- Phase 3- Extended field- Wholesale Transfer- start -->
-<field deltaind="I" isextendedfield="Y" name="wholesale_from_producer" screen="admin/bobtransfersStep2.html" section="bobtransferStep2_policies_Security" isrequired="N" labelkey="wholesale_from_producer_label" labeldesc="From Producer Code" accesslevel="1" tabsconfigurationresourcename="wholesale_from_producer_security" protectedresourceuniquename="wholesale_from_producer_security" id="wholesale_from_producer_security" position="#bobtransfersStep2_wholesale_from_subproducer_security_after#" lookupobjectsql="select distinct c.Policy_attribute_3 as person_id,   p.prdcr_first_name+' '+p.prdcr_last_name+'('+spa.sub_producer+')'  as person_name  from commission_statement_details c  inner join sub_producer_association spa on c.Policy_attribute_3=spa.person_id and c.producer_number_id =spa.producer_number_id  inner join person p on p.person_id =c.Policy_attribute_3  inner join producer_number pn on pn.producer_number_id=c.producer_number_id and pn.producer_number=#producer_number_from_varchar#" displayfield="person_name" valuefield="person_id"
-		lookupobjecttype="sql" displaytype="select" lookupmetaobject="sub_producer_association" mappedto="f22" objectcolumn="request_ss_id">
-	</field>
+<field deltaind="I" isextendedfield="Y" name="wholesale_from_producer" screen="admin/bobtransfersStep2.html" section="bobtransferStep2_policies_Security" isrequired="N" labelkey="wholesale_from_producer_label" labeldesc="From Producer Code" accesslevel="1" tabsconfigurationresourcename="wholesale_from_producer_security" protectedresourceuniquename="wholesale_from_producer_security" id="wholesale_from_producer_security" position="#bobtransfersStep2_wholesale_from_subproducer_security_after#" 
+lookupobjectsql="select distinct c.Policy_attribute_3 as person_id,   p.prdcr_first_name+' '+p.prdcr_last_name+'('+spa.sub_producer+')'  as person_name  from commission_statement_details c  inner join sub_producer_association spa on c.Policy_attribute_3=spa.person_id and c.producer_number_id =spa.producer_number_id  inner join person p on p.person_id =c.Policy_attribute_3 inner join producer_number pn on pn.producer_number_id=c.producer_number_id and pn.producer_number=#producer_number_from_varchar# where isnumeric(c.Policy_attribute_3)=1" 
+displayfield="person_name" valuefield="person_id" lookupobjecttype="sql" displaytype="select" lookupmetaobject="sub_producer_association" mappedto="f22" objectcolumn="request_ss_id">
+</field>
 
 	<field deltaind="I" isextendedfield="Y" name="wholesale_to_producer" screen="admin/bobtransfersStep2.html" section="bobtransferStep2_policies_Security" isrequired="Y" labelkey="wholesale_to_producer_label" labeldesc="To Producer Code" accesslevel="1" tabsconfigurationresourcename="wholesale_to_producer_security" protectedresourceuniquename="wholesale_to_producer_security" id="wholesale_to_producer_security" position="#bobtransfersStep2_wholesale_to_producer_security_before#" lookupobjectsql="select p.person_id as sub_producer_key, p.prdcr_first_name+' '+p.prdcr_last_name+' ('+spa.sub_producer+')' as sub_producer_value from sub_producer_association spa inner join person p on spa.person_id=p.person_id where producer_number_id in (select producer_number_id from producer_number where producer_number= #producer_number_to_varchar# )" displayfield="sub_producer_value" valuefield="sub_producer_key"  lookupobjecttype="sql"
 		displaytype="select" lookupmetaobject="sub_producer_association" mappedto="f23" objectcolumn="request_ss_id">
@@ -646,6 +647,7 @@ protectedresourceuniquename="eno_question_aa_security" id="eno_question_aa" posi
 	</field>
 	<!-- ADO 43041-end -->
 
+
   
   <!-- UAT2 0069 Agency Demo start -->
     <field deltaind="M" isrequired="N" id="addNewBankInformation_account_owner" name="account_owner" screen="carrier/addNewBankInformation.html" section="addNewBankInformationNew1_freeform_contextdata_01" labelkey="account_owner_label" tabsconfigurationresourcename="account_owner_security" protectedresourceuniquename="account_owner_security" />
@@ -661,5 +663,8 @@ protectedresourceuniquename="eno_question_aa_security" id="eno_question_aa" posi
     	<validation name="checkValidAgencyBusinessEmail" expression="validateMultipleEmailIds(context,e_mail_business);" message="ValidEmailIdErrorKey" ruleid="EntityGeneralDetailsRule.checkValidAgencyBusinessEmail" executionsequence="4" />
    </field>
    <!-- CR 55 - END -->
-  
+   
+   <!-- CR0065 - START -->
+   <field deltaind="M" id="bankInformationForSelfServiceApproval_bank_account_name" screen="carrier/bankInformationForSelfServiceApproval.html" name="bank_account_name" isrequired="Y" labelkey="ss_bank_account_name_label" tabsconfigurationresourcename="bankInformationForSelfServiceApproval_bank_account_name_security" protectedresourceuniquename="bankInformationForSelfServiceApproval_bank_account_name_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="bankInformationForSelfServiceApproval_freeform_contextdata_03" />
+  <!-- CR0065 - END -->
  </fields>

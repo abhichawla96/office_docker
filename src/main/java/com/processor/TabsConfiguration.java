@@ -26,7 +26,7 @@ import com.util.SystemProperties;
  * @Created on Oct 27, 2011
  */
 public class TabsConfiguration {
-	private static InetLogger logger = InetLogger.getLogger(TabsConfiguration.class);
+	private static InetLogger logger = InetLogger.getInetLogger(TabsConfiguration.class);
 	
 	//Client ID For Accident Fund
 	public static final int Client_ID=1025;//1023;  //1009

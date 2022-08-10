@@ -13,7 +13,7 @@
 <script type="text/javascript" src="js/all_files.js" />
 </head>
 <body id="contentTableDiv"
-	onload="loadSelectedDeactivatePersonIdList();setGetMultiCheckboxValues('ajax_field_contract_template_type_code','ajax_field_selectedTemplateType','set');setGetMultiCheckboxValues('ajax_field_state_id','ajax_field_selected_state_ids','set');setGetMultiCheckboxValues('ajax_field_lob_id','ajax_field_selected_lob_ids','set');setGetMultiCheckboxValues('ajax_field_business_segment_code','ajax_field_selected_product_ids','set');">
+	onload="checkErrorInSusspensionReq();loadSelectedDeactivatePersonIdList();setGetMultiCheckboxValues('ajax_field_contract_template_type_code','ajax_field_selectedTemplateType','set');setGetMultiCheckboxValues('ajax_field_state_id','ajax_field_selected_state_ids','set');setGetMultiCheckboxValues('ajax_field_lob_id','ajax_field_selected_lob_ids','set');setGetMultiCheckboxValues('ajax_field_business_segment_code','ajax_field_selected_product_ids','set');">
 	<form >
 		<div id="cover" />
 		<div id="popupEntityList" />
@@ -116,7 +116,10 @@
 						<!---------Sidebar End----------> <!---------Body content Start---------->
 						<div class="panel-body-wraper" id="tdContent">
 							<!---------page Level msg Start---------->
-							<div class="errorMsgAlign clear-both"></div>
+							<div class="errorMsgAlign clear-both">
+								<div id="error_pageError" class="error"></div>
+								<div id="error_duplicateAgencySuspensionAlertKey" class="error"></div>
+							</div>
 							<div class="ConfirmationAlign clear-both"
 								id="agencyFunctions_freeform_contextdata_3">
 								<label name="pageMsg" id="pageMsg" class="Confirmation" />
