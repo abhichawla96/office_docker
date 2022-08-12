@@ -1631,7 +1631,7 @@
 			<column name="SYSTEM" columnlabel="System" metaproperty="report_search_columns.system_id_V" isreportfilter="N" isreportdisplay="Y" executionsequence="4" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			<column name="ASL" columnlabel="ASL" metaproperty="report_search_columns.asl_code_V" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			<column name="TERM" columnlabel="Term" metaproperty="report_search_columns.policy_term" isreportfilter="N" isreportdisplay="Y" executionsequence="6" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
-			<column name="PREMIUM" columnlabel="Written Premium" metaproperty="PREMIUM"  isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<column deltaind="M" name="PREMIUM" columnlabel="Collected Premium" metaproperty="PREMIUM"  isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			<column name="FEES" columnlabel="Commissionable Fees" metaproperty="FEES" drilldownreport="CommissionableFee"  isreportfilter="N" isreportdisplay="Y" executionsequence="8" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			<!-- <column name="Subject_Premium" columnlabel="Subject Premium" metaproperty="Subject_Premium"  isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column> -->
 			<column name="COMMISSION" columnlabel="Net Commission Due" metaproperty="COMMISSION"   isreportfilter="N" isreportdisplay="Y" executionsequence="10" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
@@ -1651,7 +1651,8 @@
 			<column name="policy_term" columnlabel="Term" metaproperty="report_search_columns.policy_term" isreportfilter="N" isreportdisplay="N" issortdisplay="Y" filterdisplaytype="text" ispopupsearch="N" isrequired="N" isgroupbydisplay="Y" isdefaultdisplay="N" executionsequence="22"></column>
 			<column name="asl_code_V" columnlabel="ASL" metaproperty="report_search_columns.asl_code_V" isreportfilter="Y" isreportdisplay="N" issortdisplay="Y" filterdisplaytype="select" ispopupsearch="N" isrequired="N" isgroupbydisplay="Y" isdefaultdisplay="Y" executionsequence="23"></column>
 			<column name="business_segment_V" columnlabel="Product" metaproperty="report_search_columns.business_segment_V" isreportfilter="N" isreportdisplay="N" issortdisplay="N" filterdisplaytype="select" ispopupsearch="N" isrequired="N" isgroupbydisplay="N" isdefaultdisplay="N" executionsequence="24"></column>
-			
+			<column deltaind="I" name="actual_written_premium" columnlabel="Written Premium" metaproperty="actual_written_premium" isreportfilter="N" isreportdisplay="Y" executionsequence="30" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+     
 		</columnset>
 		<reportworkflow name="reportworkflow" executionsequence="0" outputtype="1xml" eval="ProducerOneRule.checkExpenseReportData"
 			checkfornullparams="PAGE_SIZE,PAGE_NUMBER,ispaginationrequired,reportID,groupby,company_id_V,state_id_V,lob_id_V,business_segment_V,Period_D,system_id_V,policy_term,asl_code_V,reportoutputtype">
@@ -1732,7 +1733,7 @@
 			<column name="SYSTEM" columnlabel="System" metaproperty="report_search_columns.system_id_V" isreportfilter="N" isreportdisplay="Y" executionsequence="4" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			<column name="Agent_Code" columnlabel="Agency Code" metaproperty="report_search_columns.agency_code_V" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			<column name="Beg_Bal" columnlabel="Beginning Balance" metaproperty="Beg_Bal"  isreportfilter="N" isreportdisplay="Y" executionsequence="6" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
-			<column name="Premium" columnlabel="Written Premium" metaproperty="Premium"   isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<column deltaind="M" name="Premium" columnlabel="Collected Premium" metaproperty="Premium"   isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			<column name="FEES" columnlabel="Commissionable Fees" metaproperty="FEES"  isreportfilter="N" isreportdisplay="Y" executionsequence="8" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			<column name="Subject_Premium" columnlabel="Premium" metaproperty="Subject_Premium"  isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			<column name="Comm_Prod" columnlabel="Commission" metaproperty="Comm_Prod"  isreportfilter="N" isreportdisplay="Y" executionsequence="10" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
@@ -1762,6 +1763,7 @@
 			<column name="agency_code_V" columnlabel="Agency Code" metaproperty="report_search_columns.agency_code_V" isreportfilter="Y" isreportdisplay="N" issortdisplay="Y" filterdisplaytype="multiselect" ispopupsearch="y" isdefaultdisplay="Y" isgroupbydisplay="Y" executionsequence="30"></column> 		
 			<column name="system_id_V" columnlabel="System" metaproperty="report_search_columns.system_id_V" isreportfilter="Y" isreportdisplay="N" issortdisplay="N" filterdisplaytype="select" ispopupsearch="N" isdefaultdisplay="Y" isgroupbydisplay="Y" executionsequence="31"></column>
 			<column name="business_segment_V" columnlabel="Product" metaproperty="report_search_columns.business_segment_V" isreportfilter="N" isreportdisplay="N" issortdisplay="N" filterdisplaytype="select" ispopupsearch="N" isrequired="N" isgroupbydisplay="N" isdefaultdisplay="N" executionsequence="32"></column>
+			<column deltaind="I" name="actual_written_premium" columnlabel="Written Premium" metaproperty="actual_written_premium" isreportfilter="N" isreportdisplay="Y" executionsequence="33" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			
 		</columnset>
 		<reportworkflow name="reportworkflow" executionsequence="0" outputtype="1xml" eval="ProducerOneRule.checkExpenseReportData"
@@ -1924,7 +1926,7 @@
 			<column name="LOB" columnlabel="LOB" metaproperty="report_search_columns.lob_id_A" isreportfilter="N" isreportdisplay="Y" executionsequence="2" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			<column name="BUSINESS_SEGMENT" columnlabel="Product" metaproperty="report_search_columns.business_segment_V" isreportfilter="N" isreportdisplay="Y" executionsequence="3" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column> 
 			<column name="AGENCY_CODE" columnlabel="Agency Code" metaproperty="report_search_columns.agency_code_V" isreportfilter="N" isreportdisplay="Y" executionsequence="4" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
-			<column name="PREMIUM" columnlabel="Written Premium" metaproperty="PREMIUM"  isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<column  deltaind="M" name="PREMIUM" columnlabel="Collected Premium" metaproperty="PREMIUM"  isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			<column name="COMMISSION" columnlabel="Commission" metaproperty="COMMISSION"  isreportfilter="N" isreportdisplay="Y" executionsequence="6" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			<column name="Paid" columnlabel="Disbursement" metaproperty="Paid" isreportfilter="N"  isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			
@@ -1941,6 +1943,8 @@
 			<column name="lob_id_A" columnlabel="LOB" metaproperty="report_search_columns.lob_id_A" isreportfilter="Y" isreportdisplay="N" issortdisplay="Y" filterdisplaytype="select" ispopupsearch="N" isdefaultdisplay="Y" isgroupbydisplay="Y" executionsequence="17"></column>		
 			<column name="agency_code_V" columnlabel="Agency Code" metaproperty="report_search_columns.agency_code_V" isreportfilter="Y" isreportdisplay="N" issortdisplay="Y" filterdisplaytype="multiselect" ispopupsearch="y" isdefaultdisplay="Y" isgroupbydisplay="Y" executionsequence="18"></column> 		
 			<column name="business_segment_V" columnlabel="Product" metaproperty="report_search_columns.business_segment_V" isreportfilter="Y" isreportdisplay="N" issortdisplay="Y" filterdisplaytype="select" ispopupsearch="N" isrequired="N" isgroupbydisplay="Y" isdefaultdisplay="Y" executionsequence="19"></column>
+			
+			<column deltaind="I" name="actual_written_premium" columnlabel="Written Premium" metaproperty="actual_written_premium" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			
 			</columnset>
 		<reportworkflow name="reportworkflow" executionsequence="0" outputtype="1xml" eval="ProducerOneRule.checkExpenseReportData"
@@ -2166,7 +2170,7 @@
 			<column name="AGENT_CODE" columnlabel="Agency Code" metaproperty="report_search_columns.agency_code_V" isreportfilter="N" isreportdisplay="Y" executionsequence="4" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			<column name="AGENCY_NAME" columnlabel="Agency Name" metaproperty="report_search_columns.agency_name_V" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			<column name="TEMPLATE_CODE" columnlabel="Template Code" metaproperty="report_search_columns.template_type_id" isreportfilter="N" isreportdisplay="Y" executionsequence="6" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
-			<column name="WRITTEN_PREMIUM" columnlabel="Written Premium" metaproperty="WRITTEN_PREMIUM"  isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<column deltaind="M" name="WRITTEN_PREMIUM" columnlabel="Collected Premium" metaproperty="WRITTEN_PREMIUM"  isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			<column name="COMMISSION" columnlabel="Net Commission Due" metaproperty="COMMISSION"  isreportfilter="N" isreportdisplay="Y" executionsequence="8" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			
 			<column name="batchreport_id" columnlabel="Batch Report ID" metaproperty="batchreport_id" isreportfilter="N" isreportdefaultdisplay="Y" executionsequence="9" isgrandtotaldisplay="N"></column>
@@ -2184,6 +2188,7 @@
 			<column name="agency_name_V" columnlabel="Agency Name" metaproperty="report_search_columns.agency_name_V" isreportfilter="Y" isreportdisplay="N" issortdisplay="Y" filterdisplaytype="multiselect" ispopupsearch="y" isdefaultdisplay="Y" isgroupbydisplay="Y" executionsequence="20"></column> 		
 			<column name="template_type_id" columnlabel="Template Code" metaproperty="report_search_columns.template_type_id" isreportfilter="Y" isreportdisplay="N" issortdisplay="Y" filterdisplaytype="select" ispopupsearch="N" isrequired="N" isgroupbydisplay="Y" isdefaultdisplay="Y" executionsequence="21"></column>
 			<column name="business_segment_V" columnlabel="Product" metaproperty="report_search_columns.business_segment_V" isreportfilter="Y" isreportdisplay="N" issortdisplay="Y" filterdisplaytype="select" ispopupsearch="N" isrequired="N" isgroupbydisplay="Y" isdefaultdisplay="Y" executionsequence="22"></column>
+			<column deltaind="I" name="actual_written_premium" columnlabel="Written Premium" metaproperty="actual_written_premium" isreportfilter="N" isreportdisplay="Y" executionsequence="23" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			
 			</columnset>
 		<reportworkflow name="reportworkflow" executionsequence="0" outputtype="2xml" eval="ProducerOneRule.checkExpenseReportData"
@@ -2794,7 +2799,7 @@
 			<column name="STATE" columnlabel="State" metaproperty="report_search_columns.state_id_V" isreportfilter="N" isreportdisplay="Y" executionsequence="1"  isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			<column name="LOB" columnlabel="LOB" metaproperty="report_search_columns.lob_id_A" isreportfilter="N" isreportdisplay="Y" executionsequence="2" isgrandtotaldisplay="N"  isdefaultoutputcolumn="Y"></column>
 			<column name="BUSINESS_SEGMENT" columnlabel="Product" metaproperty="report_search_columns.business_segment_V" isreportfilter="N" isreportdisplay="Y" executionsequence="3" isgrandtotaldisplay="N"  isdefaultoutputcolumn="Y"></column> 
-			<column name="WRITTEN_PREMIUM" columnlabel="Written Premium" metaproperty="WRITTEN_PREMIUM"  isreportfilter="N" isreportdisplay="Y" executionsequence="4" isgrandtotaldisplay="N"  isdefaultoutputcolumn="Y"></column>
+			<column deltaind="M" name="WRITTEN_PREMIUM" columnlabel="Collected Premium" metaproperty="WRITTEN_PREMIUM"  isreportfilter="N" isreportdisplay="Y" executionsequence="4" isgrandtotaldisplay="N"  isdefaultoutputcolumn="Y"></column>
 			<column name="COMMISSION" columnlabel="Commission" metaproperty="COMMISSION"  isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			<column name="Poliserver_fee" columnlabel="poliserveFeeLable" metaproperty="Poliserver_fee"  isreportfilter="N" isreportdisplay="Y" executionsequence="6" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			<column name="ADVT_COST" columnlabel="Advertising Cost" metaproperty="ADVT_COST"  isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
@@ -2817,6 +2822,7 @@
 			<column name="state_id_V" columnlabel="State" metaproperty="report_search_columns.state_id_V" isreportfilter="Y" isreportdisplay="N" issortdisplay="Y" filterdisplaytype="select" ispopupsearch="N" isrequired="N" isgroupbydisplay="Y" isdefaultdisplay="Y" executionsequence="18"></column>
 			<column name="lob_id_A" columnlabel="LOB" metaproperty="report_search_columns.lob_id_A" isreportfilter="Y" isreportdisplay="N" issortdisplay="Y" filterdisplaytype="select" ispopupsearch="N" isdefaultdisplay="Y" isgroupbydisplay="Y" executionsequence="19"></column>		
 			<column name="business_segment_V" columnlabel="Product" metaproperty="report_search_columns.business_segment_V" isreportfilter="Y" isreportdisplay="N" issortdisplay="Y" filterdisplaytype="select" ispopupsearch="N" isrequired="N" isgroupbydisplay="Y" isdefaultdisplay="Y" executionsequence="20"></column>
+			<column deltaind="I" name="actual_written_premium" columnlabel="Written Premium" metaproperty="actual_written_premium" isreportfilter="N" isreportdisplay="Y" executionsequence="33" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			
 		</columnset>
 		<reportworkflow name="reportworkflow" executionsequence="0" outputtype="1xml" eval="ProducerOneRule.checkExpenseReportData"
@@ -3094,7 +3100,7 @@
 			<column name="transaction_type" columnlabel="Transaction Type" metaproperty="transaction_type" isreportfilter="N" isreportdisplay="Y" executionsequence="4" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			<column name="transaction_date" columnlabel="Transaction Date" metaproperty="transaction_date" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			<column name="rate_t" columnlabel="Rate" metaproperty="rate_t" isreportfilter="N" isreportdisplay="Y" executionsequence="6" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
-			<column name="WRITTEN_PREMIUM" columnlabel="Written Premium" metaproperty="WRITTEN_PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<column deltaind="M" name="WRITTEN_PREMIUM" columnlabel="Collected Premium" metaproperty="WRITTEN_PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			<column name="Commissionable_Fee" columnlabel="Commissionable Fee" metaproperty="Commissionable_Fee"  isreportfilter="N" isreportdisplay="Y" executionsequence="8" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			<column name="COMMISSION" columnlabel="Commission" metaproperty="COMMISSION" isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 			
@@ -3107,6 +3113,7 @@
 			
 			<column name="Period_D" columnlabel="Statement Run Date" metaproperty="report_search_columns.Period_D" isreportfilter="Y" isreportdisplay="N" issortdisplay="N" filterdisplaytype="select" isrequired="Y" ispopupsearch="N" isdefaultdisplay="Y" isgroupbydisplay="N" executionsequence="16" ></column>
 			<column name="agency_code_V" columnlabel="Agency Code" metaproperty="report_search_columns.agency_code_V" isreportfilter="Y" isreportdisplay="N" issortdisplay="Y" filterdisplaytype="multiselect" ispopupsearch="y" isrequired="Y" isdefaultdisplay="Y" isgroupbydisplay="Y" executionsequence="17"></column> 		
+			<column deltaind="I" name="actual_written_premium" columnlabel="Written Premium" metaproperty="actual_written_premium" isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			
 		</columnset>
 		<reportworkflow name="reportworkflow" executionsequence="0" outputtype="1xml" eval="ProducerOneRule.checkExpenseReportData"
@@ -4199,4 +4206,150 @@
             </storedprocedureoperation>
 		</reportworkflow>
 	</reportdef>
+	
+	<reportdef deltaind="I" name="commissionBalance104-1" description="Commission Balance and Adjustment with Producer Code(AIM104-1)" isshowsortordersearch="N" isshowsavedsearch="Y" 
+		isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowresetbutton="Y" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y">
+		<columnset name="commissionBalance104-1set">
+			<column name="COMPANY" columnlabel="Company" metaproperty="report_search_columns.company_id_V" isreportfilter="N" isreportdisplay="Y" executionsequence="0" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<column name="STATE" columnlabel="State" metaproperty="report_search_columns.state_id_V" isreportfilter="N" isreportdisplay="Y" executionsequence="1" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<column name="LOB" columnlabel="Accounting LOB" metaproperty="report_search_columns.lob_id_V" isreportfilter="N" isreportdisplay="Y" executionsequence="2" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<!-- <column name="BUSINESS_SEGMENT" columnlabel="Product" metaproperty="report_search_columns.business_segment_V" isreportfilter="N" isreportdisplay="Y" executionsequence="3" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>  -->
+			<column name="SYSTEM" columnlabel="System" metaproperty="report_search_columns.system_id_V" isreportfilter="N" isreportdisplay="Y" executionsequence="4" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<column name="Agent_Code" columnlabel="Agency Code" metaproperty="report_search_columns.agency_code_V" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<column name="Beg_Bal" columnlabel="Beginning Balance" metaproperty="Beg_Bal"  isreportfilter="N" isreportdisplay="Y" executionsequence="6" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<column deltaind="M" name="Premium" columnlabel="Collected Premium" metaproperty="Premium"   isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<column name="FEES" columnlabel="Commissionable Fees" metaproperty="FEES"  isreportfilter="N" isreportdisplay="Y" executionsequence="8" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<column name="Subject_Premium" columnlabel="Premium" metaproperty="Subject_Premium"  isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<column name="Comm_Prod" columnlabel="Commission" metaproperty="Comm_Prod"  isreportfilter="N" isreportdisplay="Y" executionsequence="10" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<column name="MVR_CLUE" columnlabel="MVR/CLUE" metaproperty="MVR_CLUE" isreportfilter="N"  isreportdisplay="Y" executionsequence="11" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<column name="Advertising_costs" columnlabel="Advertising Costs" metaproperty="Advertising_costs"  isreportfilter="N" isreportdisplay="Y" executionsequence="12" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<column name="Comm_Adj" columnlabel="Commission Adjustment" metaproperty="Comm_Adj"  isreportfilter="N" isreportdisplay="Y" executionsequence="13" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<column name="Write_Off" columnlabel="miscellaneousfieldlabel" metaproperty="Write_Off" isreportfilter="N"  isreportdisplay="Y" executionsequence="14" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<column name="Uncollected_Charges" columnlabel="Commission Chargeback" metaproperty="Uncollected_Charges" isreportfilter="N"  isreportdisplay="Y" executionsequence="15" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<column name="Received" columnlabel="Agent Payment Received" metaproperty="Received"  isreportfilter="N" isreportdisplay="Y" executionsequence="16" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<column name="Serv_Fee" columnlabel="poliserveFeeLable" metaproperty="Serv_Fee" isreportfilter="N"  isreportdisplay="Y" executionsequence="17" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<column name="Net_Commission" columnlabel="Net Commission Due" metaproperty="Net_Commission"  isreportfilter="N" isreportdisplay="Y" executionsequence="18" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<column name="Paid" columnlabel="Disbursement" metaproperty="Paid" isreportfilter="N"  isreportdisplay="Y" executionsequence="19" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			<column name="End_Bal" columnlabel="Ending Balance" metaproperty="End_Bal" isreportfilter="N"  isreportdisplay="Y" executionsequence="20" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+		<!-- <column name="End_Bal" columnlabel="Disbursment" metaproperty="Disbursment" isreportfilter="N" isreportdisplay="Y" executionsequence="17" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+			  -->
+			<column name="batchreport_id" columnlabel="Batch Report ID" metaproperty="batchreport_id" isreportfilter="N" isreportdefaultdisplay="Y" executionsequence="20" isgrandtotaldisplay="N"></column>
+			<column name="request_date" columnlabel="Request Date" metaproperty="request_date" isreportfilter="N" isreportdefaultdisplay="Y" executionsequence="21" isgrandtotaldisplay="N"></column>
+			<column name="last_updated_by" columnlabel="Last Updated By" metaproperty="last_updated_by" isreportfilter="N" isreportdefaultdisplay="Y" executionsequence="22" isgrandtotaldisplay="N"></column>
+			<column name="search_xml_desc" columnlabel="Search Criteria" metaproperty="search_xml_desc" isreportfilter="N" isreportdefaultdisplay="Y" executionsequence="23"></column>
+			<column name="archive_date" columnlabel="Archive Date" metaproperty="archive_date" isreportfilter="N" isreportdefaultdisplay="Y" executionsequence="24"></column>
+			<column name="isdownloadlink" columnlabel="" metaproperty="isdownloadlink" isreportfilter="N" isreportdefaultdisplay="Y" executionsequence="25"></column>
+			
+			<column name="Period_D" columnlabel="Statement Run Date" metaproperty="report_search_columns.Period_D" isreportfilter="Y" isreportdisplay="N" issortdisplay="N" filterdisplaytype="select" ispopupsearch="N" isrequired="Y" isdefaultdisplay="Y" isgroupbydisplay="N" executionsequence="26" href="managereportajaxpageblocklink('','','INET_REFRESH_MANAGE_REPORT','MANAGE_REPORTING','refreshFilter')"></column>
+			<column name="company_id_V" columnlabel="Company" metaproperty="report_search_columns.company_id_V" isreportfilter="Y" isreportdisplay="N" issortdisplay="Y" filterdisplaytype="select" ispopupsearch="N" isdefaultdisplay="Y" isgroupbydisplay="Y" executionsequence="27"></column>
+			<column name="state_id_V" columnlabel="State" metaproperty="report_search_columns.state_id_V" isreportfilter="Y" isreportdisplay="N" issortdisplay="Y" filterdisplaytype="select" ispopupsearch="N" isrequired="N" isgroupbydisplay="Y" isdefaultdisplay="Y" executionsequence="28"></column>
+			<column name="lob_id_V" columnlabel="Accounting LOB" metaproperty="report_search_columns.lob_id_V" isreportfilter="Y" isreportdisplay="N" issortdisplay="Y" filterdisplaytype="select" ispopupsearch="N" isrequired="N" isgroupbydisplay="Y" isdefaultdisplay="Y" executionsequence="29"></column>		
+			<column name="agency_code_V" columnlabel="Agency Code" metaproperty="report_search_columns.agency_code_V" isreportfilter="Y" isreportdisplay="N" issortdisplay="Y" filterdisplaytype="multiselect" ispopupsearch="y" isdefaultdisplay="Y" isgroupbydisplay="Y" executionsequence="30"></column> 		
+			<column name="system_id_V" columnlabel="System" metaproperty="report_search_columns.system_id_V" isreportfilter="Y" isreportdisplay="N" issortdisplay="N" filterdisplaytype="select" ispopupsearch="N" isdefaultdisplay="Y" isgroupbydisplay="Y" executionsequence="31"></column>
+			<column name="business_segment_V" columnlabel="Product" metaproperty="report_search_columns.business_segment_V" isreportfilter="N" isreportdisplay="N" issortdisplay="N" filterdisplaytype="select" ispopupsearch="N" isrequired="N" isgroupbydisplay="N" isdefaultdisplay="N" executionsequence="32"></column>
+			<column deltaind="I" name="actual_written_premium" columnlabel="Written Premium" metaproperty="actual_written_premium"   isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+		
+		</columnset>
+		<reportworkflow name="reportworkflow" executionsequence="0" outputtype="1xml" eval="ProducerOneRule.checkExpenseReportData"
+			checkfornullparams="PAGE_SIZE,PAGE_NUMBER,ispaginationrequired,reportID,reportoutputtype,groupby,company_id_V,state_id_V,lob_id_V,business_segment_V,Period_D,agency_code_V,system_id_V">
+			<storedprocedureoperation id="GetCommissionBalanceadjustmentReportByPrdcrcode_p" applid="ProducerOnePerformance"
+				name="GetCommissionBalanceadjustmentReportByPrdcrcode_p" dbspname="GetCommissionBalanceadjustmentReportByPrdcrcode_p"
+				executionsequence="0" operation="5" viewid="report_data_list_1" metaobject="report_search_columns">
+				 <parameteroperation indexno="0" seq="1"
+                        property="PAGE_SIZE" mode="IN">
+                  </parameteroperation> 
+                  <parameteroperation indexno="1" seq="2"
+                        property="PAGE_NUMBER" mode="IN">
+                  </parameteroperation> 
+                  <parameteroperation indexno="2" seq="3"
+                        property="ispaginationrequired" mode="IN">
+                  </parameteroperation> 
+                  <parameteroperation indexno="3" seq="4"
+                        property="reportID" mode="IN">
+                  </parameteroperation>
+                  <parameteroperation indexno="4" seq="5"
+                        property="groupby" mode="IN">
+                  </parameteroperation>
+                  <parameteroperation indexno="5" seq="6"
+                        property="state_id_V" mode="IN">
+                  </parameteroperation> 
+                
+                  <parameteroperation indexno="6" seq="7"
+                        property="company_id_V" mode="IN">
+                  </parameteroperation> 
+                  <parameteroperation indexno="7" seq="8"
+                        property="Period_D" mode="IN">
+                  </parameteroperation> 
+                  <parameteroperation indexno="8" seq="9"
+                        property="agency_code_V" mode="IN">
+                  </parameteroperation>
+                   <parameteroperation indexno="9" seq="10"
+                        property="system_id_V" mode="IN">
+                  </parameteroperation>
+                  <parameteroperation indexno="10" seq="11"
+                        property="lob_id_V" mode="IN">
+                  </parameteroperation> 
+                    <parameteroperation indexno="11" seq="12"
+                        property="business_segment_V" mode="IN">
+                  </parameteroperation> 
+				<parameteroperation indexno="12" seq="13"
+                        property="reportoutputtype" mode="IN">
+                  </parameteroperation> 
+                  <resultsetoperation indexno="0" 
+                        mappingclass="java.util.HashMap">
+                  </resultsetoperation>
+                  <resultsetoperation indexno="1" 
+                        mappingclass="java.util.HashMap">
+                  </resultsetoperation>
+                   <!-- For XML Format -->
+                 <!--  <resultsetoperation indexno="0" 
+                        mappingclass="java.util.HashMap">
+                         <result indexno="0" property="xml" column="xml" javaType="java.lang.String"></result>
+                  </resultsetoperation>
+                  <resultsetoperation indexno="1" 
+                        mappingclass="java.util.HashMap">
+                         <result indexno="0" property="xml" column="xml" javaType="java.lang.String"></result>
+                  </resultsetoperation> -->
+			</storedprocedureoperation>	
+		</reportworkflow>
+	</reportdef>
+	
+	<reportdef deltaind="I" name="ACH113-1" description="Paid Commissions by ACH and Check ACH100 (ACH113-1)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="N" isshowoutputcolumns="Y" isshowresetbutton="Y">
+      <columnset name="ACH113-1set">
+      	<column name="actual_written_premium_curr_month" columnlabel="Written Premium" metaproperty="actual_written_premium_curr_month" isreportfilter="N" isreportdisplay="Y" executionsequence="30" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+         <column name="variance_prior_month" columnlabel="Disbursement Variance from Prior Month" metaproperty="variance_prior_month" isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+         <column name="batchreport_id" columnlabel="Batch Report ID" metaproperty="batchreport_id" isreportfilter="N" executionsequence="11" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+         <column name="request_date" columnlabel="Request Date" metaproperty="request_date" isreportfilter="N" executionsequence="12" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+         <column name="archive_date" columnlabel="Archive Date" metaproperty="archive_date" isreportfilter="N" executionsequence="15" isreportdefaultdisplay="Y" />
+         <column name="premium_variance" columnlabel="Premium Variance from Prior Month" metaproperty="premium_variance" isreportfilter="N" isreportdisplay="Y" executionsequence="10" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+         <column name="Period_D" columnlabel="Statement Run Date" metaproperty="report_search_columns.Period_D" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="select" executionsequence="17" ispopupsearch="N" isdefaultdisplay="Y" isrequired="Y" issortdisplay="N" isgroupbydisplay="N" href="managereportajaxpageblocklink('','','INET_REFRESH_MANAGE_REPORT','MANAGE_REPORTING','refreshFilter')" />
+         <column name="search_xml_desc" columnlabel="Search Criteria" metaproperty="search_xml_desc" isreportfilter="N" executionsequence="14" isreportdefaultdisplay="Y" />
+         <column name="last_updated_by" columnlabel="Last Updated By" metaproperty="last_updated_by" isreportfilter="N" executionsequence="13" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
+         <column name="prior_written_premuim" columnlabel="Prior Premium" metaproperty="prior_written_premuim" isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+         <column name="isdownloadlink" metaproperty="isdownloadlink" isreportfilter="N" executionsequence="16" isreportdefaultdisplay="Y" />
+         <column name="prior_comission_amount" columnlabel="Prior Disbursement Amount" metaproperty="prior_comission_amount" isreportfilter="N" isreportdisplay="Y" executionsequence="8" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+         <column name="state_id_V" columnlabel="statefieldlabel" metaproperty="report_search_columns.state_id_V" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="select" executionsequence="18" ispopupsearch="N" isdefaultdisplay="Y" isrequired="N" issortdisplay="Y" isgroupbydisplay="Y" />
+         <column name="STATE" columnlabel="statefieldlabel" metaproperty="state_id_V" isreportfilter="N" isreportdisplay="Y" executionsequence="0" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+         <column name="written_premium" columnlabel="Collected Premium" metaproperty="written_premium" isreportfilter="N" isreportdisplay="Y" executionsequence="2" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+         <column name="DATE" columnlabel="Date" metaproperty="DATE" isreportfilter="N" isreportdisplay="Y" executionsequence="1" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+         <column name="BOA_ACH" columnlabel="BOA_ACH_label" metaproperty="BOA_ACH" isreportfilter="N" isreportdisplay="Y" executionsequence="4" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+         <column name="Total_Commission" columnlabel="Total Disbursement" metaproperty="Total_Commission" isreportfilter="N" isreportdisplay="Y" executionsequence="6" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+         <column name="commission_amount" columnlabel="Disbursement Amount" metaproperty="commission_amount" isreportfilter="N" isreportdisplay="Y" executionsequence="3" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+         <column name="BOA_Check" columnlabel="BOA_Check_label" metaproperty="BOA_Check" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+      </columnset>
+      <reportworkflow name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,state_id,reportoutputtype,reportID,ispaginationrequired,Period_D,state_id_V">
+         <storedprocedureoperation name="GetACH113_1Report_p" id="GetACH113_1Report_p" dbspname="GetACH113_1Report_p" viewid="report_data_list_1" applid="ProducerOne" executionsequence="0" operation="5" metaobject="report_search_columns">
+            <parameteroperation property="reportoutputtype" mode="IN" indexno="7" seq="8" />
+            <parameteroperation property="Period_D" mode="IN" indexno="6" seq="7" />
+            <parameteroperation property="state_id_V" mode="IN" indexno="5" seq="6" />
+            <parameteroperation property="PAGE_SIZE" mode="IN" indexno="0" seq="1" />
+            <parameteroperation property="groupby" mode="IN" indexno="4" seq="5" />
+            <parameteroperation property="reportID" mode="IN" indexno="3" seq="4" />
+            <parameteroperation property="PAGE_NUMBER" mode="IN" indexno="1" seq="2" />
+            <parameteroperation property="ispaginationrequired" mode="IN" indexno="2" seq="3" />
+            <resultsetoperation indexno="0" mappingclass="java.util.HashMap" />
+            <resultsetoperation indexno="1" mappingclass="java.util.HashMap" />
+         </storedprocedureoperation>
+      </reportworkflow>
+   </reportdef>
 </reports>

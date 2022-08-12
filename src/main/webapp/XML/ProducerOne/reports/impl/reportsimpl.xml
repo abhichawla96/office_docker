@@ -13,29 +13,28 @@
 	<reportdef name="AIM100-1" description="Cash Control Details (AIM100-1)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y">
 		<columnset name="AIM100-1set">
 		<!-- OOB issue fixed -->
-		 <column deltaind="M" name="actual_written_premium" columnlabel="Written Premium" metaproperty="actual_written_premium" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		 <column deltaind="I" name="actual_written_premium" columnlabel="Written Premium" metaproperty="actual_written_premium" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+        <column deltaind="M" name="PREMIUM" columnlabel="Collected Premium" metaproperty="PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="8" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
         
-        <!-- Phase 3- Bug for report AIM-100-1-start -->
-         <column deltaind="D" name="PREMIUM" columnlabel="Written Premium" metaproperty="PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-          <!-- Phase 3- Bug for report AIM-100-1-end -->
- 
-			<column deltaind="I" name="Collected_PREMIUM" columnlabel="Collected Premium" metaproperty="PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="8" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-	       </columnset>
-	       <reportworkflow deltaind="M" name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,ispaginationrequired,reportID,reportoutputtype,groupby,company_id_V,state_id_V,lob_id_A,business_segment_V,Period_D,agency_code_V">
+          </columnset>
+	       <!-- <reportworkflow deltaind="M" name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,ispaginationrequired,reportID,reportoutputtype,groupby,company_id_V,state_id_V,lob_id_A,business_segment_V,Period_D,agency_code_V">
           <function deltaind="I" name="displayCollectedPremium" functionid="displayCollectedPremium" parameters="context,report_data_list_1,PREMIUM" executionsequence="1" />
-      </reportworkflow>
+      </reportworkflow> -->
 	</reportdef>
 	<reportdef name="ACH113-1" description="Paid Commissions by ACH and Check ACH100 (ACH113-1)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="N" isshowoutputcolumns="Y" isshowresetbutton="Y">
 		<columnset name="ACH113-1set">
-			<column deltaind="I" name="Collected_PREMIUM" columnlabel="Collected Premium" metaproperty="written_premium" isreportfilter="N" isreportdisplay="Y" executionsequence="16" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-	        <!-- phase 3 bug id 22248 -->
+		<column deltaind="I" name="actual_written_premium_curr_month" columnlabel="Written Premium" metaproperty="actual_written_premium_curr_month" isreportfilter="N" isreportdisplay="Y" executionsequence="30" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		
+		  <column deltaind="M" name="written_premium" columnlabel="Collected Premium" metaproperty="written_premium" isreportfilter="N" isreportdisplay="Y" executionsequence="2" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		
+			 <!-- phase 3 bug id 22248 -->
 	        <column deltaind="M" name="BOA_ACH" columnlabel="ACH" metaproperty="BOA_ACH" isreportfilter="N" isreportdisplay="Y" executionsequence="4" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
             <column deltaind="M" name="BOA_Check" columnlabel="Check" metaproperty="BOA_Check" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 		</columnset>
-		  <reportworkflow deltaind="M" name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,state_id,reportoutputtype,reportID,ispaginationrequired,Period_D,state_id_V">
+		  <!-- <reportworkflow deltaind="M" name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,state_id,reportoutputtype,reportID,ispaginationrequired,Period_D,state_id_V">
            <function deltaind="I" name="displayCollectedPremium" functionid="displayCollectedPremium" parameters="context,report_data_list_1,written_premium" executionsequence="1" />
        </reportworkflow>
-   
+    -->
 	</reportdef>
 	<reportdef name="ACH113-2" description="Monthly Producer Commission Validation ACH200 (ACH113-2)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="N" isshowoutputcolumns="Y" isshowresetbutton="Y">
 		<columnset name="ACH113-2set">
@@ -44,8 +43,11 @@
 	</reportdef>
 	<reportdef name="CommissionBalance" description="Commission Balance and Adjustment (AIM104)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y">
 		<columnset name="CommissionBalanceset">
-			<column deltaind="I" name="Premium" columnlabel="Collected Premium" metaproperty="Premium" isreportfilter="N" isreportdisplay="Y" executionsequence="33" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-	 <!-- Phase 3- Bug for reports-AIM104-start -->
+			<column deltaind="M" name="Premium" columnlabel="Collected Premium" metaproperty="Premium" isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+			<column deltaind="I" name="actual_written_premium" columnlabel="Written Premium" metaproperty="actual_written_premium" isreportfilter="N" isreportdisplay="Y" executionsequence="33" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+	 		
+			
+			 <!-- Phase 3- Bug for reports-AIM104-start -->
 	 <column deltaind="D" name="MVR_CLUE" columnlabel="MVR/CLUE" metaproperty="MVR_CLUE" isreportfilter="N" isreportdisplay="Y" executionsequence="11" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 	 <column deltaind="D" name="Write_Off" columnlabel="Write-Off" metaproperty="Write_Off" isreportfilter="N" isreportdisplay="Y" executionsequence="14" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 	 <column deltaind="D" name="Advertising_costs" columnlabel="Advertising Costs" metaproperty="Advertising_costs" isreportfilter="N" isreportdisplay="Y" executionsequence="12" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
@@ -57,52 +59,65 @@
 	</reportdef>
 	<reportdef name="commissionBalance104-1" description="Commission Balance and Adjustment with Producer Code(AIM104-1)" isshowsortordersearch="N" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowresetbutton="Y" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y">
 		<columnset name="commissionBalance104-1set">
-			<column deltaind="I" name="Premium" columnlabel="Collected Premium" metaproperty="Premium" isreportfilter="N" isreportdisplay="Y" executionsequence="33" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		<column deltaind="I" name="actual_written_premium" columnlabel="Written Premium" metaproperty="actual_written_premium"   isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
+		
+		<column deltaind="M" name="Premium" columnlabel="Collected Premium" metaproperty="Premium" isreportfilter="N" isreportdisplay="Y" executionsequence="33" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		
+
 		</columnset>
 	</reportdef>
 	<reportdef name="AIM105-1" description="Producer Premium and Commission Expenses (AIM105-1)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y">
 		<columnset name="AIM105-1set">
-			<column deltaind="I" name="Collected_PREMIUM" columnlabel="Collected Premium" metaproperty="WRITTEN_PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="23" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-  		  <!-- phase 3 bug 22034- --> 
+		
+		<column deltaind="I" name="actual_written_premium" columnlabel="Written Premium" metaproperty="actual_written_premium" isreportfilter="N" isreportdisplay="Y" executionsequence="33" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+			
+			<column deltaind="M" name="WRITTEN_PREMIUM" columnlabel="Collected Premium" metaproperty="WRITTEN_PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="23" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+  		
+			  <!-- phase 3 bug 22034- --> 
 		 <column deltaind="D" name="ADVT_COST" columnlabel="Advertising Cost" metaproperty="ADVT_COST" isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
          <column deltaind="D" name="MVR_CLUE" columnlabel="MVR/CLUE" metaproperty="MVR_CLUE" isreportfilter="N" isreportdisplay="Y" executionsequence="8" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
          <column deltaind="D" name="Poliserver_fee" columnlabel="poliserveFeeLable" metaproperty="Poliserver_fee" isreportfilter="N" isreportdisplay="Y" executionsequence="6" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
         
 		</columnset>
-		<reportworkflow deltaind="M" name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,business_segment_V,reportoutputtype,state_id_V,business_segment_V,lob_id,company_id,reportID,ispaginationrequired,Period_D">
+		<!-- <reportworkflow deltaind="M" name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,business_segment_V,reportoutputtype,state_id_V,business_segment_V,lob_id,company_id,reportID,ispaginationrequired,Period_D">
            <function deltaind="I" name="displayCollectedPremium" functionid="displayCollectedPremium" parameters="context,report_data_list_1,WRITTEN_PREMIUM" executionsequence="1" />
          
-      </reportworkflow>
+      </reportworkflow> -->
 	</reportdef>
 	<reportdef name="AIM105-2" description="Premium and Additional Commission for Policies (AIM105-2)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y">
 		<columnset name="AIM105-2set">
-			<column deltaind="I" name="WRITTEN_PREMIUM" columnlabel="Collected Premium" metaproperty="WRITTEN_PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="23" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-		</columnset>
+			 <column deltaind="M" name="WRITTEN_PREMIUM" columnlabel="Collected Premium" metaproperty="WRITTEN_PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+			
+			<column deltaind="I" name="actual_written_premium" columnlabel="Written Premium" metaproperty="actual_written_premium" isreportfilter="N" isreportdisplay="Y" executionsequence="23" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+	
+			</columnset>
 	</reportdef>
 	 <reportdef name="CommissionExpense" description="Commission Expense (AIM109)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y" drilldownreport="CommissionExpenseDrilldown">
        <columnset name="CommissionExpenseset">
-       	<column deltaind="I" name="Collected_PREMIUM" columnlabel="Collected Premium" metaproperty="PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="26" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-		</columnset>
-		<reportworkflow deltaind="M" name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,ispaginationrequired,reportID,groupby,company_id_V,state_id_V,lob_id_V,business_segment_V,Period_D,system_id_V,policy_term,asl_code_V,reportoutputtype">
+       <column deltaind="M" name="PREMIUM" columnlabel="Collected Premium" metaproperty="PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+    <column deltaind="I" name="actual_written_premium" columnlabel="Written Premium" metaproperty="actual_written_premium" isreportfilter="N" isreportdisplay="Y" executionsequence="30" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+     
+      </columnset>
+		<!-- <reportworkflow deltaind="M" name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,ispaginationrequired,reportID,groupby,company_id_V,state_id_V,lob_id_V,business_segment_V,Period_D,system_id_V,policy_term,asl_code_V,reportoutputtype">
           <function deltaind="I" name="displayCollectedPremium" functionid="displayCollectedPremium" parameters="context,report_data_list_1,PREMIUM" executionsequence="1" />
-       </reportworkflow>
+       </reportworkflow> -->
 	</reportdef>
 	
 
 	<reportdef name="policyLevel" description="Payment Details At Policy Level (AIM170)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="Y" isshowoutputcolumns="Y" isshowresetbutton="Y">
 		<columnset name="policyLevelset">
 		<!-- Reports new changes-start  -->
-	         <column deltaind="M" name="actual_written_premium" columnlabel="Written Premium" metaproperty="actual_written_premium" isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+	         <column deltaind="I" name="actual_written_premium" columnlabel="Written Premium" metaproperty="actual_written_premium" isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 	         <column deltaind="M" name="WRITTEN_PREMIUM" columnlabel="Collected Premium" metaproperty="WRITTEN_PREMIUM" isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 		 
 		 
 			<!-- Reports new changes-end  -->
 		 
 		</columnset>
-		 <reportworkflow name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,reportoutputtype,reportID,ispaginationrequired,Period_D,agency_code_V">
+		<!--  <reportworkflow name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,reportoutputtype,reportID,ispaginationrequired,Period_D,agency_code_V">
         <function deltaind="I" name="displayCollectedPremium" functionid="displayCollectedPremium" parameters="context,report_data_list_1,WRITTEN_PREMIUM" executionsequence="1" />
        
-      </reportworkflow>
+      </reportworkflow> -->
 		
 	</reportdef>
 
