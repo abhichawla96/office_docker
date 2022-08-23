@@ -3566,6 +3566,25 @@ uniquename="isShowPercentageAmountforProbation" />
  <userdefinedaccesslevel accesstype="1"/>
  </userdefined>
 </protectedresource> 
+
+<protectedresource deltaind="I" defaultaccesstype="0" uniquename="IslossratioChanged">
+ <userdefined executionsequence="0" ruleid="ProducerOneRule.IslossratioChanged">
+ <userdefinedaccesslevel accesstype="1"/>
+ </userdefined>
+</protectedresource> 
+
+<protectedresource deltaind="I" defaultaccesstype="0" uniquename="ispayoutfactorChanged">
+ <userdefined executionsequence="0" ruleid="ProducerOneRule.ispayoutfactorChanged">
+ <userdefinedaccesslevel accesstype="1"/>
+ </userdefined>
+</protectedresource> 
+
+<protectedresource deltaind="I" defaultaccesstype="0" uniquename="iscontcommpayChanged">
+ <userdefined executionsequence="0" ruleid="ProducerOneRule.iscontcommpayChanged">
+ <userdefinedaccesslevel accesstype="1"/>
+ </userdefined>
+</protectedresource> 
+
 <!-- Phase 3 -Recalculation-end -->
  <!-- 39089 disapprove termination start -->
     <protectedresource deltaind="M" defaultaccesstype="0" description="Hide/Show disapprove button on agencyTerminationStep2 page" uniquename="agencyTerminationStep2_disapprove_security">

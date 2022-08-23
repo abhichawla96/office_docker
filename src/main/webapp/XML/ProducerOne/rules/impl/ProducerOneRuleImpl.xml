@@ -41,6 +41,13 @@
    <rule deltaind="I" id="isCYEvalChanged" expression="isEqual(:is_CYEval_changed,Y);" obj="ruleobjs.ProducerOneRule" method="isCYEvalChanged" />
 	<rule deltaind="I" id="isPYEvalChanged" expression="isEqual(:is_PYEval_changed,Y);" obj="ruleobjs.ProducerOneRule" method="isPYEvalChanged" />
 	<rule deltaind="I" id="isLossAmountChanged" expression="isEqual(:is_LossAmount_changed,Y);" obj="ruleobjs.ProducerOneRule" method="isLossAmountChanged" />
+	
+	<rule deltaind="I" id="IslossratioChanged" expression="isEqual(:is_lossratio_changed,Y);" obj="ruleobjs.ProducerOneRule" method="IslossratioChanged" />
+	<rule deltaind="I" id="ispayoutfactorChanged" expression="isEqual(is_payoutfactor_changed:,Y);" obj="ruleobjs.ProducerOneRule" method="ispayoutfactorChanged" />
+	<rule deltaind="I" id="iscontcommpayChanged" expression="isEqual(is_contcommpay_changed:,Y);" obj="ruleobjs.ProducerOneRule" method="iscontcommpayChanged" />
+		
+		
+		
 		<!-- 39089 decline and approve buttons deactivate contact start --> 
 		<rule deltaind="I" id="hideShowApproveSalesSupportDC" expression="andCondition(isEqual(:selectFunctionType_code,functionDC),isEqualsIgnoreCase(:roles,MarketingAssistant));"></rule>
 		<rule deltaind="I" id="hideShowApproveSalesDirector" expression="isEqualsIgnoreCase(:roles,SalesDirector);"></rule>
