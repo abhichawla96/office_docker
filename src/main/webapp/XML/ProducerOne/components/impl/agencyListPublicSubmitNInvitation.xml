@@ -17,7 +17,8 @@
 			</workflow>
 		</action>
 		<!-- Email Event Action -->
-		<action deltaind="M" name="sendEmail">
+		<!-- Phase 3 - Feature - 48692 - Generating Welcome Letters Manually (Code Commented) - Start -->
+	<!--	<action deltaind="M" name="sendEmail">
 
 			<actionparam deltaind="I" executionsequence="0" form="Y" name="person_id" paramid="person_id" viewparam="Y" />
 			<actionparam deltaind="I" executionsequence="1" form="Y" name="agency_id" paramid="agency_id" viewparam="Y" />
@@ -48,7 +49,8 @@
 				<email deltaind="I" eval="agencyListPublicSubmitNInvitationRule.isSendAgencyEmail" eventname="NewAgencyAppointment" executionsequence="2" ischeckfortemplates="Y" name="sendOnboardingEmail1" objectid="aar_requestid" objecttype="onboarding" mailto="email" />
 			</workflow>
 		</action>
-
+-->
+<!-- Phase 3 - Feature - 48692 - Generating Welcome Letters Manually - End -->
 
 		<!-- Customizaiton for BMIC- delete icon -->
 		<action deltaind="I" name="deleteAgencyApplication">
@@ -77,4 +79,3 @@
 
 	</component>
 </projectcomponents>
-

@@ -996,4 +996,9 @@
 	<tabsconfigurationresource deltaind="M" name="bankInformationForSelfServiceApproval_re_enter_bank_account_security" accesslevel="1" description="Hide/Show re_enter_bank_account on bankInformationForSelfServiceApproval" />
 	<tabsconfigurationresource deltaind="M" accesslevel="1" description="bankInformationForSelfServiceApproval_bank_account_name_security" name="bankInformationForSelfServiceApproval_bank_account_name_security"/>
 	<!-- CR0065 - END -->
+	
+	<!-- Phase 3 - Feature - 48692 - Generating Welcome Letters Manually - Start -->
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show  Agency list public submit page agencyListPublicSubmitNInvitation_send_welcome_letter_security" name="agencyListPublicSubmitNInvitation_send_welcome_letter_security"/>
+	<!-- Phase 3 Feature End -->
+	
 </tabsconfiguration>
