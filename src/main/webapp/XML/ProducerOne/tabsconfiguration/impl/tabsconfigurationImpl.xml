@@ -1004,5 +1004,9 @@
 	<!--  Feature- 48722- template priority -->
 	<tabsconfigurationresource deltaind="M" accesslevel="1" description="hide Show Template priority Commission Schedule security" name="commission_schedule_template_priority_security" />
 	
+	<!-- Feature- 48723- Prefix copy -->
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Add new Commission Schedule Description Copy of security" name="commission_schedule_description_copyof_security" />
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Add new Incentive Schedule Description Copy of security" name="incentive_schedule_description_copyof_security" />
+	
 	
 </tabsconfiguration>
