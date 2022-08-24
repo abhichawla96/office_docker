@@ -1001,4 +1001,8 @@
 	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show  Agency list public submit page agencyListPublicSubmitNInvitation_send_welcome_letter_security" name="agencyListPublicSubmitNInvitation_send_welcome_letter_security"/>
 	<!-- Phase 3 Feature End -->
 	
+	<!--  Feature- 48722- template priority -->
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="hide Show Template priority Commission Schedule security" name="commission_schedule_template_priority_security" />
+	
+	
 </tabsconfiguration>

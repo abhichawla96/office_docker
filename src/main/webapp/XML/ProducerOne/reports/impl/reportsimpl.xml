@@ -156,8 +156,9 @@
 	<!-- Phase 3: Report filtration criteria change -->
 	<reportdef deltaind="M" name="AIM110-Master" description="Commission Paid at Master level exceeding $50,000 (AIM168)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="N" isshowoutputcolumns="Y" isshowresetbutton="Y">
 		<columnset name="AIM110-Masterset">
-			<column deltaind="I" name="reports_filter_amount" columnlabel="Filter Amount" metaproperty="report_search_columns.reports_filter_amount" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="select" executionsequence="18" ispopupsearch="N" isdefaultdisplay="Y" isrequired="Y" issortdisplay="N" />
-			<column name="Period_D" columnlabel="Statement Run Date" metaproperty="report_search_columns.Period_D" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="select" executionsequence="16" ispopupsearch="N" isdefaultdisplay="Y" isrequired="Y" issortdisplay="N" isgroupbydisplay="N" href="managereportajaxpageblocklink('','','INET_REFRESH_MANAGE_REPORT','MANAGE_REPORTING','refreshFilter')" />
+	<!-- <column deltaind="I" name="reports_filter_amount" columnlabel="Filter Amount" metaproperty="report_search_columns.reports_filter_amount" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="select" executionsequence="18" ispopupsearch="N" isdefaultdisplay="Y" isrequired="Y" issortdisplay="N" />
+	 -->		
+	 		<column name="Period_D" columnlabel="Statement Run Date" metaproperty="report_search_columns.Period_D" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="select" executionsequence="16" ispopupsearch="N" isdefaultdisplay="Y" isrequired="Y" issortdisplay="N" isgroupbydisplay="N" href="managereportajaxpageblocklink('','','INET_REFRESH_MANAGE_REPORT','MANAGE_REPORTING','refreshFilter')" />
 			<column name="state_id_V" columnlabel="statefieldlabel" metaproperty="report_search_columns.state_id_V" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="select" executionsequence="17" ispopupsearch="N" isdefaultdisplay="Y" isrequired="N" issortdisplay="Y" isgroupbydisplay="N" />
 			<column name="isdownloadlink" metaproperty="isdownloadlink" isreportfilter="N" executionsequence="14" isreportdefaultdisplay="Y" />
 			<column name="archive_date" columnlabel="Archive Date" metaproperty="archive_date" isreportfilter="N" executionsequence="13" isreportdefaultdisplay="Y" />
@@ -180,8 +181,7 @@
 				<parameteroperation property="groupby" mode="IN" indexno="4" seq="5" />
 				<parameteroperation property="ispaginationrequired" mode="IN" indexno="2" seq="3" />
 				<parameteroperation property="state_id_V" mode="IN" indexno="5" seq="6" />
-				<parameteroperation deltaind="I" property="reports_filter_amount" mode="IN" indexno="8" seq="9" />
-				<resultsetoperation indexno="0" mappingclass="java.util.HashMap" />
+	<!-- 	<parameteroperation deltaind="I" property="reports_filter_amount" mode="IN" indexno="8" seq="9" />  -->				<resultsetoperation indexno="0" mappingclass="java.util.HashMap" />
 				<resultsetoperation indexno="1" mappingclass="java.util.HashMap" />
 			</storedprocedureoperation>
 		</reportworkflow>

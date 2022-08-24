@@ -58,12 +58,12 @@ where pn.producer_number =#AgencyTerminationPolicyReviewRPT_agency_code#">
       </property>
       
        <!-- Phase 3: Report filtration criteria change -->
- 		<property deltaind="I" initcap="N" searchfield="N" isEncrypt="N" listdisplay="N" formdisplay="N" deleteind="N" resolvedisplay="N" length="0" contextfield="N" searchrule="N" isrequired="N" searchmodify="N" field="reports_filter_amount" viewlength="10" persistent="N" propertylength="10" autoincrement="IDENTITY" seq="6511">
+ 		<!-- <property deltaind="I" initcap="N" searchfield="N" isEncrypt="N" listdisplay="N" formdisplay="N" deleteind="N" resolvedisplay="N" length="0" contextfield="N" searchrule="N" isrequired="N" searchmodify="N" field="reports_filter_amount" viewlength="10" persistent="N" propertylength="10" autoincrement="IDENTITY" seq="6511">
         <dropdown name="getFilterAmount" metaobject="report_search_columns" dropdowntype="sql" sqlstmt="select master_lookup_data_code,master_lookup_data_desc as reports_filter_amount from master_lookup_data_lku where master_lookup_detail_id in (select master_lookup_detail_id from master_lookup_detail_lku where master_lookup_detail_code='report_filter_amount_lku')">
           <valuefield field="master_lookup_data_code" />
           <displayfield field="master_lookup_data_code" />
         </dropdown>
-      </property>
+      </property> -->
       
         <!-- Phase 3- AIM101-1-report bug --> 
       <property deltaind="M" autoincrement="IDENTITY" contextfield="N" deleteind="N" field="lob_id_R" formdisplay="N" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="N" persistent="N" propertylength="50" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="6542" viewlength="50">
