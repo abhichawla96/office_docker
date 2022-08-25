@@ -613,7 +613,8 @@
 
 
  <!-- Email Event -->
- <tabsconfigurationresource deltaind="M" name="agencyListPublicSubmitNInvitation_send_email_security" accesslevel="1" description="Set this flag's accesslevel 1 to enable the resend invitation email functionality in Send Invitation Bucket" />
+ <!-- Phase 3 - Feature - 48692 - Generating Welcome Letters Manually - Removing Previous Code -->
+ <tabsconfigurationresource deltaind="M" name="agencyListPublicSubmitNInvitation_send_email_security" accesslevel="0" description="Set this flag's accesslevel 1 to enable the resend invitation email functionality in Send Invitation Bucket" />
 
 
  
