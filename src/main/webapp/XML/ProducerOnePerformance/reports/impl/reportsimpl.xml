@@ -3,8 +3,8 @@
 <!-- Phase 3: Report filtration criteria change  --> 
   <reportdef deltaind="M" name="AIM110-Master" description="Commission Paid at Master level exceeding $50000" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="N" isshowoutputcolumns="Y" isshowresetbutton="Y">
     <columnset name="AIM110-Masterset">
-    <column deltaind="I" name="reports_filter_amount" columnlabel="Filter Amount" metaproperty="report_search_columns.reports_filter_amount" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="select" executionsequence="18" ispopupsearch="N" isdefaultdisplay="Y" isrequired="Y" issortdisplay="N" />  
-  	 <column name="archive_date" columnlabel="Archive Date" metaproperty="archive_date" isreportfilter="N" executionsequence="13" isreportdefaultdisplay="Y" />
+<!--     <column deltaind="I" name="reports_filter_amount" columnlabel="Filter Amount" metaproperty="report_search_columns.reports_filter_amount" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="select" executionsequence="18" ispopupsearch="N" isdefaultdisplay="Y" isrequired="Y" issortdisplay="N" />  
+ -->  	 <column name="archive_date" columnlabel="Archive Date" metaproperty="archive_date" isreportfilter="N" executionsequence="13" isreportdefaultdisplay="Y" />
       <column name="isdownloadlink" metaproperty="isdownloadlink" isreportfilter="N" executionsequence="14" isreportdefaultdisplay="Y" />
       <column name="search_xml_desc" columnlabel="Search Criteria" metaproperty="search_xml_desc" isreportfilter="N" executionsequence="12" isreportdefaultdisplay="Y" />
       <column name="Period_D" columnlabel="Statement Run Date" metaproperty="report_search_columns.Period_D" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="select" executionsequence="16" ispopupsearch="N" isdefaultdisplay="Y" isrequired="Y" issortdisplay="N" isgroupbydisplay="N" href="managereportajaxpageblocklink('','','INET_REFRESH_MANAGE_REPORT','MANAGE_REPORTING','refreshFilter')" />      
@@ -17,10 +17,11 @@
       <column name="request_date" columnlabel="Request Date" metaproperty="request_date" isreportfilter="N" executionsequence="10" isgrandtotaldisplay="N" isreportdefaultdisplay="Y" />
       <column name="AGENCY_CODE" columnlabel="Agency Code" metaproperty="report_search_columns.agency_code_V" isreportfilter="N" isreportdisplay="Y" executionsequence="1" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
     </columnset>
-    <reportworkflow deltaind="M" name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,state_id_V,lob_id,business_segment_V,reportoutputtype,company_id,reportID,ispaginationrequired,Period_D,reports_filter_amount">
+    <reportworkflow deltaind="M" name="reportworkflow" eval="ProducerOneRule.checkExpenseReportData" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,state_id_V,lob_id,business_segment_V,reportoutputtype,company_id,reportID,ispaginationrequired,Period_D">
       <storedprocedureoperation deltaind="M" name="GetAIM110AtMasterReport_P" id="GetAIM110AtMasterReport_P" dbspname="GetAIM110AtMasterReport_P" viewid="report_data_list_1" applid="ProducerOnePerformance" executionsequence="0" operation="5" metaobject="report_search_columns">        
-     <parameteroperation deltaind="I" property="reports_filter_amount" mode="IN" indexno="8" seq="9" />
-          </storedprocedureoperation>
+<!--      <parameteroperation deltaind="I" property="reports_filter_amount" mode="IN" indexno="8" seq="9" />
+ -->         
+   </storedprocedureoperation>
     </reportworkflow>
   </reportdef>
 

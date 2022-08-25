@@ -144,12 +144,12 @@
     
     
  <!-- Phase 3: Report filtration criteria change --> 		   
-    <property deltaind="I" initcap="N" searchfield="N" isEncrypt="N" listdisplay="N" formdisplay="N" deleteind="N" resolvedisplay="N" length="0" contextfield="N" searchrule="N" isrequired="N" searchmodify="N" field="reports_filter_amount" viewlength="10" persistent="N" propertylength="10" autoincrement="IDENTITY" seq="6511">
+   <!--  <property deltaind="I" initcap="N" searchfield="N" isEncrypt="N" listdisplay="N" formdisplay="N" deleteind="N" resolvedisplay="N" length="0" contextfield="N" searchrule="N" isrequired="N" searchmodify="N" field="reports_filter_amount" viewlength="10" persistent="N" propertylength="10" autoincrement="IDENTITY" seq="6511">
         <dropdown name="getFilterAmount" metaobject="report_search_columns" dropdowntype="sql" sqlstmt="select master_lookup_data_code,master_lookup_data_desc as reports_filter_amount from master_lookup_data_lku where master_lookup_detail_id in (select master_lookup_detail_id from master_lookup_detail_lku where master_lookup_detail_code='report_filter_amount_lku')">
           <valuefield field="master_lookup_data_code" />
           <displayfield field="master_lookup_data_code" />
         </dropdown>
-      </property>
+      </property> -->
       
       <property initcap="N" searchfield="N" isEncrypt="N" listdisplay="Y" formdisplay="Y" deleteind="N" resolvedisplay="N" length="0" contextfield="N" searchrule="N" isrequired="N" searchmodify="N" field="doc_policy_number" viewlength="30" persistent="N" propertylength="30" seq="119" />
       <property initcap="N" searchfield="N" isEncrypt="N" listdisplay="N" formdisplay="N" deleteind="N" resolvedisplay="N" length="0" contextfield="N" searchrule="N" isrequired="N" searchmodify="N" field="rate_expiration_date_V" viewlength="200" persistent="Y" propertylength="200" autoincrement="NOT NULL" seq="129" />
