@@ -21,6 +21,9 @@
 			<databaseoperation deltaind="I" executionsequence="2" eval="ProducerOneRule.isUserNameEmpty" metaobject="person" name="getApproverNameEmail" operation="3" sqlstmt="select prdcr_first_name +' '+ prdcr_last_name as user_name_app from person where login_id=(select top 1 created_by from workflowrequests where objectid =#request_ss_id#)"/>
 			<!-- <email deltaind="I" eventname="ApproveSelfServiceRequest" executionsequence="2" name="ApproveSelfServiceRequest" workflow="selfServiceWorkFlow" mailto="e_mail"/> -->
 		</workflow>
+		
+		<!-- Feature ADO - 48687 -->
+		<workflowevent deltaind="M" eval="ProducerOneRule.commentAssignment2" ajaxcontainerid="divComplete" event="approveSelfService" isgetuser="Y" name="approveSelfService" userfield="workflow_user" workflow="selfServiceWorkFlow" isshoweffectivedate="Y"/>
 	</action>
 	
 	<!-- Phase 2 - Email to Agency Admin once the request is Declined -->
@@ -39,6 +42,10 @@
 			<databaseoperation deltaind="I" executionsequence="2" eval="ProducerOneRule.isUserNameEmpty" metaobject="person" name="getApproverNameEmail" operation="3" sqlstmt="select prdcr_first_name +' '+ prdcr_last_name as user_name_app from person where login_id=(select top 1 created_by from workflowrequests where objectid =#request_ss_id#)"/>
 			
 		</workflow>
+		
+		<!-- Feature ADO - 48687 -->
+		<workflowevent deltaind="M" eval="ProducerOneRule.commentAssignment2" ajaxcontainerid="divComplete" event="declineSelfService" isgetuser="Y" name="declineSelfService" userfield="workflow_user" workflow="selfServiceWorkFlow" isshoweffectivedate="Y"/>
+		
      </action>
     
   </component>
