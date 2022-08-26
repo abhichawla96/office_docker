@@ -1024,5 +1024,8 @@
 <!-- Feature ADO - 48724 - Increasing file upload size limit -->
 <tabsconfigurationresource deltaind="I" value="50" description="Threshold for DMS Upload Document File Size" name="FILEUPLOADSIZETHRESHOLD" />
 	
+	<!-- Upgrade-Feature 48677-viewing audit details -->
+	<tabsconfigurationresource deltaind="M" accesslevel="1" name="accountAgencyCodeAssociation_history_security"  description="Hide/Show accountAgencyCodeAssociation_history_security"/>
 	
+		
 </tabsconfiguration>
