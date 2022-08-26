@@ -1024,14 +1024,14 @@
 <!-- Feature ADO - 48724 - Increasing file upload size limit -->
 <tabsconfigurationresource deltaind="I" value="50" description="Threshold for DMS Upload Document File Size" name="FILEUPLOADSIZETHRESHOLD" />
 
-<!-- Feature-48689- M n A letter -->
-<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show MNA generate letter button" name="isshowMNAGenerateLetterMovingLocation"/>
-<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show MNA generate letter button" name="isshowMNAGenerateLetter"/>
-	
 	<!-- Upgrade-Feature 48677-viewing audit details -->
 	<tabsconfigurationresource deltaind="M" accesslevel="1" name="accountAgencyCodeAssociation_history_security"  description="Hide/Show accountAgencyCodeAssociation_history_security"/>
 	
 	<!-- Feature 48680 - Delete onboarding agency -->
 	<tabsconfigurationresource deltaind="M" accesslevel="1" description="agencyListPublicSubmitNInvitation_Trash_Onboarded_Application_row_security" name="agencyListPublicSubmitNInvitation_Trash_Onboarded_Application_row_security"/>
-		
+	
+<!-- Feature-48689- M n A letter -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show MNA generate letter button" name="isshowMNAGenerateLetterMovingLocation"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show MNA generate letter button" name="isshowMNAGenerateLetter"/>
+			
 </tabsconfiguration>
