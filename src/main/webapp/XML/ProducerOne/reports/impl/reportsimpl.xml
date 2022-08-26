@@ -591,7 +591,6 @@
       <columnset name="entityIndividualLicenseExpireset">
           <column deltaind="M" name="AgencyStatus" columnlabel="AgencyContactlabel" metaproperty="report_search_columns.AgencyStatus" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="multicheckbox" executionsequence="21" ispopupsearch="N" isdefaultdisplay="Y" isrequired="N" issortdisplay="Y" isgroupbydisplay="N" />
           </columnset>
-  
    </reportdef>
    
 </reports>
