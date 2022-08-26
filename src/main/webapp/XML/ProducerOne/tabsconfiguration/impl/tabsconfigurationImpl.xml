@@ -1023,6 +1023,10 @@
 
 <!-- Feature ADO - 48724 - Increasing file upload size limit -->
 <tabsconfigurationresource deltaind="I" value="50" description="Threshold for DMS Upload Document File Size" name="FILEUPLOADSIZETHRESHOLD" />
+
+<!-- Feature-48689- M n A letter -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show MNA generate letter button" name="isshowMNAGenerateLetterMovingLocation"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show MNA generate letter button" name="isshowMNAGenerateLetter"/>
 	
 	
 </tabsconfiguration>
