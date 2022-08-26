@@ -1020,6 +1020,9 @@
 	
 <!--  Feature- 48722- agency status filter -->
 <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show AgencyStatus" name="entity_individual_AgencyStatus_security"/>
+
+<!-- Feature ADO - 48724 - Increasing file upload size limit -->
+<tabsconfigurationresource deltaind="I" value="50" description="Threshold for DMS Upload Document File Size" name="FILEUPLOADSIZETHRESHOLD" />
 	
 	
 </tabsconfiguration>
