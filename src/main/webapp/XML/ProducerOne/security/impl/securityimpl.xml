@@ -1737,14 +1737,15 @@
 		</businessrole>	
   </protectedresource>
     <!-- display delete icon -->
-  <protectedresource deltaind="I" defaultaccesstype="0" operator="and" uniquename="deleteApplication_security">
+    <!-- Commenting below as part of Feature 48680 - Delete onboarding agency implementation-->
+  <!-- <protectedresource deltaind="I" defaultaccesstype="0" operator="and" uniquename="deleteApplication_security">
    <businessrole roleid="CarrierAdmin">
 			<roleaccesslevel accesstype="1" />
 	</businessrole>
     <userdefined executionsequence="0" ruleid="agencyListPublicSubmitNInvitationRule.isRowLevelResentInvitationLinkShow">
       <userdefinedaccesslevel accesstype="1"/>
     </userdefined>    
-  </protectedresource>
+  </protectedresource> -->
   
  
     <!-- Edit email button hide -->
@@ -3612,4 +3613,16 @@ uniquename="isShowPercentageAmountforProbation" />
       <userdefinedaccesslevel accesstype="0"/>
     </userdefined>
   </protectedresource>
+  
+  <!-- Upgrade-Feature 48680-Deleting an Onboarding Invitation-start -->
+	<protectedresource defaultaccesstype="0" description="enable and disable delete icon if not prospect status is invited" uniquename="agencyListPublicSubmitNInvitation_Trash_Onboarded_Application_row_security" >
+  		<businessrole deltaind="I" roleid="CarrierAdmin">
+			<roleaccesslevel accesstype="1" />
+		</businessrole>
+  		<userdefined deltaind="I" executionsequence="1" ruleid="agencyListPublicSubmitNInvitationRule.isRowLevelResentInvitationLinkShow">
+      		<userdefinedaccesslevel accesstype="1"/>
+    	</userdefined>
+  	</protectedresource>
+	<!-- Upgrade-Feature 48680-Deleting an Onboarding Invitation-end -->
+  
   </security> 
