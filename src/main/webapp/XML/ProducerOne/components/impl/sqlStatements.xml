@@ -14,10 +14,11 @@
 		
 	<!-- Phase 3-Adjustments Recalculation -->
 	<storedprocedureoperation deltaind="M" dbspname="UpdateCCBProfitSharingDetail_Temp" executionsequence="125" id="UpdateCCBProfitSharingDetail_Temp" metaobject="producer_number" name="UpdateCCBProfitSharingDetail_Temp" operation="4">
-	<parameteroperation  deltaind="I" indexno="24" mode="IN" property="Loss_amt_Cont_Comm" seq="24"/>
-     <parameteroperation deltaind="I"  indexno="23" mode="IN" property="PY_Eval" seq="23"/>
-      <parameteroperation deltaind="I" indexno="22" mode="IN" property="CY_Eval" seq="22"/>
-	</storedprocedureoperation>	
+	 <parameteroperation deltaind="I" indexno="22" mode="IN" property="CY_Eval" seq="22"/>
+      <parameteroperation deltaind="I"  indexno="23" mode="IN" property="PY_Eval" seq="23"/>
+      <parameteroperation  deltaind="I" indexno="24" mode="IN" property="Loss_amt_Cont_Comm" seq="24"/>
+      <parameteroperation  deltaind="I" indexno="25" mode="IN" property="payout_factor" seq="25"/>
+  </storedprocedureoperation>	
         
         <!-- UAT2 0035 & 0036 DOB and SSN make mandatory -->
        <databaseoperation deltaind="I" executionsequence="30" metaobject="person" name="getLicensedProducerChecked" operation="3" sqlstmt="select count(*) as licensedProducerChecked from contacttype_lku where contact_typ_id in (select items from split(#contacttype#,',')) and contact_typ_code = 'LS'"/>
