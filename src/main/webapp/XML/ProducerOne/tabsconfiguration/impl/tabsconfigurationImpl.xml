@@ -1038,5 +1038,7 @@
 	<tabsconfigurationresource deltaind="M" name="doc_insurance_checkIsNewRequest_security" accesslevel="1" description="Hide/Show of agency drop down in docInsuranceForSelfServiceApproval.html" />
 	<tabsconfigurationresource deltaind="M" name="cyber_liability_checkIsNewRequest_security" accesslevel="1" description="Hide/Show of agency drop down in cyberLiabilityForSelfServiceApproval.html" />
 	
+	<!-- Feature 48705 - Adding Address Validation Indicator - start -->
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Show Verify Address Indicator" name="show_verified_address_indicator_security" />
 			
 </tabsconfiguration>
