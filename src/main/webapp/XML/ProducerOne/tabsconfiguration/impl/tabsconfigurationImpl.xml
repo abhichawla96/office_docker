@@ -1033,5 +1033,10 @@
 <!-- Feature-48689- M n A letter -->
 <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show MNA generate letter button" name="isshowMNAGenerateLetterMovingLocation"/>
 <tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show MNA generate letter button" name="isshowMNAGenerateLetter"/>
+
+	<!-- Feature ADO - 48673 - SS E&O and CyberL requests Agency Dropdown -->
+	<tabsconfigurationresource deltaind="M" name="doc_insurance_checkIsNewRequest_security" accesslevel="1" description="Hide/Show of agency drop down in docInsuranceForSelfServiceApproval.html" />
+	<tabsconfigurationresource deltaind="M" name="cyber_liability_checkIsNewRequest_security" accesslevel="1" description="Hide/Show of agency drop down in cyberLiabilityForSelfServiceApproval.html" />
+	
 			
 </tabsconfiguration>
