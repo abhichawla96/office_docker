@@ -9,5 +9,12 @@
       	  </workflow>
       	</action>
     	
+    	<action deltaind="M" name="approved">
+	    	<workflowevent deltaind="M" eval="ProducerOneRule.commentAssignment2" ajaxcontainerid="divComplete" event="approved" isgetuser="Y" name="approved" userfield="workflow_user" workflow="agencyTermination" isshoweffectivedate="Y"/>
+	    </action>
+	    
+	    <action deltaind="M" name="declined">
+	    	<workflowevent deltaind="M" eval="ProducerOneRule.commentAssignment2" ajaxcontainerid="divComplete" event="declined" isgetuser="Y" name="declined" userfield="workflow_user" workflow="agencyTermination" isshoweffectivedate="Y"/>
+	    </action>
   	</component>
 </projectcomponents>
