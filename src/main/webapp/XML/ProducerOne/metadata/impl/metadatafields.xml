@@ -14,6 +14,7 @@
  <field deltaind="I" decimallength="0" displayname="PY_Eval" length="0" name="PY_Eval" seq="6808" type="N" viewlength="20"/>
  <field deltaind="I" decimallength="0" displayname="Loss_amt_Cont_Comm" length="0" name="Loss_amt_Cont_Comm" seq="6808" type="N" viewlength="20"/>
  <field deltaind="I" decimallength="0" displayname="payout_factor" length="0" name="payout_factor" seq="6808" type="N" viewlength="20"/>
+ <field deltaind="I" decimallength="0" displayname="cont_comm_pay" length="0" name="cont_comm_pay" seq="6808" type="N" viewlength="20"/>
    
   
   <!-- START - Self Service - Upload W9 Show/Hide -->

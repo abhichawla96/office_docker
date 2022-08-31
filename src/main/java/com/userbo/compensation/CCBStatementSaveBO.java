@@ -221,6 +221,12 @@ public class CCBStatementSaveBO extends Businessobject{
 					incurredLoss = ctx.get("incurred_losses_"+i).toString();
 					ctx.put("incurred_loss", Double.parseDouble(removeSpecialChar(incurredLoss)));
 				}
+				
+				if(ctx.get("loss_ratio_"+i)!=null && !HtmlConstants.EMPTY.equals(ctx.get("loss_ratio_"+i))){
+					LossRatio = ctx.get("loss_ratio_"+i).toString();
+					ctx.put("loss_ratio", Double.parseDouble(removeSpecialChar(LossRatio)));
+				}
+				
 				/*Phase 3- recalculation*/	
 				if(ctx.get("CY_Eval_"+i)!=null && !HtmlConstants.EMPTY.equals(ctx.get("CY_Eval_"+i))){
 					CYEvalAmount = ctx.get("CY_Eval_"+i).toString();
@@ -242,18 +248,11 @@ public class CCBStatementSaveBO extends Businessobject{
 					ctx.put("payout_factor", Double.parseDouble(removeSpecialChar(PayoutFactor)));
 				}
 				
-				if(ctx.get("loss_ratio_"+i)!=null && !HtmlConstants.EMPTY.equals(ctx.get("loss_ratio_"+i))){
-					LossRatio = ctx.get("loss_ratio_"+i).toString();
-					ctx.put("loss_ratio", Double.parseDouble(removeSpecialChar(LossRatio)));
-				}
-				
-				
 				
 				if(ctx.get("cont_comm_pay_"+i)!=null && !HtmlConstants.EMPTY.equals(ctx.get("cont_comm_pay_"+i))){
 					ContCommPay = ctx.get("cont_comm_pay_"+i).toString();
 					ctx.put("cont_comm_pay", Double.parseDouble(removeSpecialChar(ContCommPay)));
 				}
-				
 				
 				
 				/*Phase 3- recalculation*/
@@ -357,11 +356,20 @@ public class CCBStatementSaveBO extends Businessobject{
 							earnedPremiumPremium = ctx.get("earned_premium_"+i).toString();
 							ctx.put("earned_premium", Double.parseDouble(removeSpecialChar(removeSpecialChar(earnedPremiumPremium))));
 						}
+						
+						
 						if(ctx.get("incurred_losses_"+i)!=null && !HtmlConstants.EMPTY.equals(ctx.get("incurred_losses_"+i))){
 							incurredLoss = ctx.get("incurred_losses_"+i).toString();
 							ctx.put("incurred_loss", Double.parseDouble(removeSpecialChar(incurredLoss)));
 						}
 						/*phase 3- recalculation*/	
+						
+						if(ctx.get("loss_ratio_"+i)!=null && !HtmlConstants.EMPTY.equals(ctx.get("loss_ratio_"+i))){
+							LossRatio = ctx.get("loss_ratio_"+i).toString();
+							ctx.put("loss_ratio", Double.parseDouble(removeSpecialChar(LossRatio)));
+						}
+						
+						
 						if(ctx.get("CY_Eval_"+i)!=null && !HtmlConstants.EMPTY.equals(ctx.get("CY_Eval_"+i))){
 							CYEvalAmount = ctx.get("CY_Eval_"+i).toString();
 							ctx.put("CY_Eval", Double.parseDouble(removeSpecialChar(CYEvalAmount)));
@@ -379,11 +387,6 @@ public class CCBStatementSaveBO extends Businessobject{
 						if(ctx.get("payout_factor_"+i)!=null && !HtmlConstants.EMPTY.equals(ctx.get("payout_factor_"+i))){
 							PayoutFactor = ctx.get("payout_factor_"+i).toString();
 							ctx.put("payout_factor", Double.parseDouble(removeSpecialChar(PayoutFactor)));
-						}
-						
-						if(ctx.get("loss_ratio_"+i)!=null && !HtmlConstants.EMPTY.equals(ctx.get("loss_ratio_"+i))){
-							LossRatio = ctx.get("loss_ratio_"+i).toString();
-							ctx.put("loss_ratio", Double.parseDouble(removeSpecialChar(LossRatio)));
 						}
 						
 						
