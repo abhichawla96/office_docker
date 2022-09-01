@@ -28,7 +28,7 @@
 		</action>
 		
 		<!-- Feature- Mergers and Acquistions -->
-		<!-- <action name="generateLetter" deltaind="I">
+		<action name="generateLetter" deltaind="I">
 	    	<actionparam executionsequence="0" form="Y" deltaind="I" name="getDataForSummaryFromDb" paramid="getDataForSummaryFromDb" viewparam="Y"/>
 	  		<actionparam executionsequence="1" form="Y" deltaind="I" name="IS_SHOW_EDIT_PDF_TEMPLATE" paramid="IS_SHOW_EDIT_PDF_TEMPLATE" pre="Y" val="Y"/>
 	  		<actionparam executionsequence="2" form="Y" deltaind="I" name="inDocCategory" paramid="inDocCategory" pre="Y" val="41"/>
@@ -53,7 +53,7 @@
             </workflow>
             <actionparam executionsequence="7" form="Y" name="uploadDocument_list_1" paramid="uploadDocument_list_1" post="Y" session="Y"/>
 	    </action>
- -->	
+	
     
     	<action name="confirmationYes" deltaind="M">
 					<actionparam deltaind="I" executionsequence="7" form="Y" name="uploadDocument_list_1" paramid="uploadDocument_list_1"  popopulatename="uploadPopup_list_1"  pre="Y" session="Y"/>
