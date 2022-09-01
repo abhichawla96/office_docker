@@ -52,5 +52,7 @@
 		<rule deltaind="I" id="hideShowApproveSalesSupportDC" expression="andCondition(isEqual(:selectFunctionType_code,functionDC),isEqualsIgnoreCase(:roles,MarketingAssistant));"></rule>
 		<rule deltaind="I" id="hideShowApproveSalesDirector" expression="isEqualsIgnoreCase(:roles,SalesDirector);"></rule>
 		<!-- 39089 decline and approve buttons deactivate contact end -->
+		
+		<rule deltaind="I" id="isMarketingGroup" expression="orCondition(isEqualsIgnoreCase(:roles,MarketingGroup),isEqualsIgnoreCase(:roles,Marketing Group));" />
 	</ruleset>
 </evalrules>

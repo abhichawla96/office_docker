@@ -1924,21 +1924,27 @@
   
  <!-- Phase 2 - Bug Id- P2-031 -->
    <protectedresource deltaind="I" defaultaccesstype="0" description="Hide/Show attach button on agentcall report page" uniquename="uploadDocument_attach">
-    <userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.isRelationShipCallReportFlagY">
+    <userdefined executionsequence="0" ruleid="ProducerOneRule.isRelationShipCallReportFlagY">
       <userdefinedaccesslevel accesstype="1"/>
     </userdefined>
     <!-- Phase 2 - Task Id- SS-005-11 -->
-     <userdefined deltaind="I" executionsequence="0" ruleid="ProducerOneRule.checkIsNewRequest">
+     <userdefined executionsequence="1" ruleid="ProducerOneRule.checkIsNewRequest">
       <userdefinedaccesslevel accesstype="1"/>
     </userdefined>  
      <!-- Phase 3- Bug Id- 35975 --> 
-    <businessrole deltaind="I" roleid="MarketingGroup">
+    <!-- <businessrole deltaind="I" roleid="MarketingGroup">
       <roleaccesslevel accesstype="0"/>
-    </businessrole> 
+    </businessrole> -->
+    <userdefined executionsequence="3" ruleid="ProducerOneRule.isMarketingGroup">
+      <userdefinedaccesslevel accesstype="0"/>
+    </userdefined> 
     <!-- Phase 3- Bug Id-40690 --> 
-    <businessrole deltaind="I" roleid="AgencyAdmin">
+    <!-- <businessrole deltaind="I" roleid="AgencyAdmin">
       <roleaccesslevel accesstype="1"/>
-    </businessrole>   
+    </businessrole>  -->  
+    <userdefined executionsequence="2" ruleid="ProducerOneRule.isAgencyAdminLoggedIn">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
   </protectedresource>
   
   <!-- Phase 2 - Bug Id- P2-042 --> 
