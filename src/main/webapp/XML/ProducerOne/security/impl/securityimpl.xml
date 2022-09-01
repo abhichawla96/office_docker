@@ -3625,4 +3625,11 @@ uniquename="isShowPercentageAmountforProbation" />
   	</protectedresource>
 	<!-- Upgrade-Feature 48680-Deleting an Onboarding Invitation-end -->
   
+  <!-- M n A feature -->
+   <protectedresource deltaind="M" defaultaccesstype="1" uniquename="isshowMNAGenerateLetter">
+    <userdefined executionsequence="0" ruleid="MNARule.isshowMNAGenerateLetter">
+      <userdefinedaccesslevel accesstype="1"/>
+    </userdefined>
+  </protectedresource>
+  
   </security> 
