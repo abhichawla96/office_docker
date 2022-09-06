@@ -1041,9 +1041,12 @@
 	<!-- Feature 48705 - Adding Address Validation Indicator - start -->
 	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Show Verify Address Indicator" name="show_verified_address_indicator_security" />
 	
-<!-- Feature ADO - 48726 Verifying Address for Self Service Requests -->	
+<!-- Feature ADO - 48726 - Verifying Address for Self Service Requests -->	
 <tabsconfigurationresource deltaind="M" name="adapter_address_verification_enabled" accesslevel="1" description="Enable/Disable integration platform" />
 <tabsconfigurationresource deltaind="M" name="integration_address_verfication_enabled" accesslevel="0" description="Enable/Disable integration service" /> 
 <tabsconfigurationresource deltaind="M" accesslevel="1" description="Show Verify Address for Self service" name="verify_address_self_service_security" />
+
+<!-- Feature ADO - 48691 - Configuring Territory Manager, Underwriter, and Company Representatives -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" description="agency_profile_general_information_underwriter_security" name="agency_profile_general_information_underwriter_security"/>
 			
 </tabsconfiguration>
