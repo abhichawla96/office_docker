@@ -339,4 +339,8 @@
   <!-- Prod Bug 42972 -->
   <label deltaind="M" labeldesc="Agency in business since" labelkey="agencyHireDateLabel"/>
   
+   <!-- Phase 3-Bug Id- 50569- expiration date -->
+  <label deltaind="I" labeldesc="Expiration Date" labelkey="IncentiveSchedle_expirationDate_label"/>
+  
+  
 </labelconf>
