@@ -1048,5 +1048,17 @@
 
 <!-- Feature ADO - 48691 - Configuring Territory Manager, Underwriter, and Company Representatives -->
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="agency_profile_general_information_underwriter_security" name="agency_profile_general_information_underwriter_security"/>
+
+<!-- Feature ADO - 48686 - Viewing Tasks Assigned to the User from the Dashboard - START -->
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="user_assignment_dashboard_security" name="user_assignment_dashboard_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="userassigment_filter_security" name="userassigment_filter_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="userassignment_filter_button_security" name="userassignment_filter_button_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="userassignment_reset_button_security" name="userassignment_reset_button_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="userassignment_listing_security" name="userassignment_listing_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="userAssignmentListing_filter_requestType_security" name="userAssignmentListing_filter_requestType_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="userAssignmentListing_filter_requestStatus_security" name="userAssignmentListing_filter_requestStatus_security"/>
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="userAssignmentListing_filter_userNames_security" name="userAssignmentListing_filter_userNames_security"/>
+<!-- Feature ADO - 48686 - Viewing Tasks Assigned to the User from the Dashboard - END -->
+
 			
 </tabsconfiguration>

@@ -3638,4 +3638,21 @@ uniquename="isShowPercentageAmountforProbation" />
     </userdefined>
   </protectedresource>
   
-  </security> 
+  <!-- Feature ADO - 48686 - Viewing Tasks Assigned to the User from the Dashboard - START -->
+  <protectedresource deltaind="M" defaultaccesstype="0" description="user_assignment_dashboard_security" uniquename="user_assignment_dashboard_security">
+	<businessrole deltaind="I" roleid="MarketingAssistant">
+		<roleaccesslevel accesstype="1" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="SalesDirector">
+		<roleaccesslevel accesstype="1" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="vpmarketing">
+		<roleaccesslevel accesstype="1" />
+	</businessrole>
+	<businessrole deltaind="I" roleid="MarketingRep">
+		<roleaccesslevel accesstype="1" />
+	</businessrole>
+  </protectedresource>
+  <!-- Feature ADO - 48686 - Viewing Tasks Assigned to the User from the Dashboard - END -->
+
+</security>
