@@ -53,7 +53,8 @@
 	 <column deltaind="D" name="Advertising_costs" columnlabel="Advertising Costs" metaproperty="Advertising_costs" isreportfilter="N" isreportdisplay="Y" executionsequence="12" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 	 <column deltaind="D" name="Serv_Fee" columnlabel="poliserveFeeLable" metaproperty="Serv_Fee" isreportfilter="N" isreportdisplay="Y" executionsequence="16" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 	 <!-- Phase 3- Bug for reports-AIM104-end -->
-	
+	  <column deltaind="D" name="Subject_Premium" columnlabel="Written Premium" metaproperty="Subject_Premium" isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+       
 		
 		</columnset>
 	</reportdef>
@@ -62,7 +63,7 @@
 		<column deltaind="I" name="actual_written_premium" columnlabel="Written Premium" metaproperty="actual_written_premium"   isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 		
 		<column deltaind="M" name="Premium" columnlabel="Collected Premium" metaproperty="Premium" isreportfilter="N" isreportdisplay="Y" executionsequence="33" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-		
+		<column deltaind="M" name="Subject_Premium" columnlabel="Written Premium" metaproperty="Subject_Premium" isreportfilter="N" isreportdisplay="Y" executionsequence="10" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 
 		</columnset>
 	</reportdef>
