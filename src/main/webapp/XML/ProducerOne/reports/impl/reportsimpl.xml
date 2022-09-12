@@ -53,8 +53,7 @@
 	 <column deltaind="D" name="Advertising_costs" columnlabel="Advertising Costs" metaproperty="Advertising_costs" isreportfilter="N" isreportdisplay="Y" executionsequence="12" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 	 <column deltaind="D" name="Serv_Fee" columnlabel="poliserveFeeLable" metaproperty="Serv_Fee" isreportfilter="N" isreportdisplay="Y" executionsequence="16" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 	 <!-- Phase 3- Bug for reports-AIM104-end -->
-	  <column deltaind="D" name="Subject_Premium" columnlabel="Written Premium" metaproperty="Subject_Premium" isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-       
+	
 		
 		</columnset>
 	</reportdef>
@@ -63,7 +62,7 @@
 		<column deltaind="I" name="actual_written_premium" columnlabel="Written Premium" metaproperty="actual_written_premium"   isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y"></column>
 		
 		<column deltaind="M" name="Premium" columnlabel="Collected Premium" metaproperty="Premium" isreportfilter="N" isreportdisplay="Y" executionsequence="33" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-		<column deltaind="M" name="Subject_Premium" columnlabel="Written Premium" metaproperty="Subject_Premium" isreportfilter="N" isreportdisplay="Y" executionsequence="10" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+		
 
 		</columnset>
 	</reportdef>
@@ -243,10 +242,10 @@
 			<column name="RPT582_from_date" columnlabel="From Date" metaproperty="report_search_columns.RPT582_from_date" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="text" executionsequence="1" ispopupsearch="N" isdefaultdisplay="Y" isrequired="Y" issortdisplay="Y" isgroupbydisplay="N" />
 			<column name="RPT582_to_date" columnlabel="To Date" metaproperty="report_search_columns.RPT582_to_date" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="text" executionsequence="2" ispopupsearch="N" isdefaultdisplay="Y" isrequired="Y" issortdisplay="Y" isgroupbydisplay="N" />
 			<column name="master_agency_code" columnlabel="Master Agency Code" metaproperty="report_search_columns.master_agency_code" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="multiselect" executionsequence="3" ispopupsearch="Y" isdefaultdisplay="Y" isrequired="N" issortdisplay="Y" isgroupbydisplay="Y" />
-			<column name="agency_code" columnlabel="producerlabel" metaproperty="report_search_columns.agency_code_V" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="multiselect" executionsequence="4" ispopupsearch="y" isdefaultdisplay="Y" isrequired="N" issortdisplay="Y" isgroupbydisplay="Y" />
-			<column name="agency_code_V" columnlabel="Agency Code" metaproperty="agency_code_V" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-			<column name="Agency_Group_Name" columnlabel="Agency Group Name" metaproperty="Agency_Group_Name" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-			 <column name="Policy_Number" columnlabel="Policy Number" metaproperty="Policy_Number" isreportfilter="N" isreportdisplay="Y" executionsequence="6" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+			<column name="agency_code_V" columnlabel="producerlabel" metaproperty="report_search_columns.agency_code_V" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="multiselect" executionsequence="4" ispopupsearch="y" isdefaultdisplay="Y" isrequired="N" issortdisplay="Y" isgroupbydisplay="Y" />
+			<!-- <column name="agency_code_V" columnlabel="Agency Code" metaproperty="agency_code_V" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+			 --><column name="Agency_Group_Name" columnlabel="Agency Group Name" metaproperty="Agency_Group_Name" isreportfilter="N" isreportdisplay="Y" executionsequence="5" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+			<column name="Policy_Number" columnlabel="Policy Number" metaproperty="Policy_Number" isreportfilter="N" isreportdisplay="Y" executionsequence="6" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			<column name="Policyholder" columnlabel="Policyholder" metaproperty="Policyholder" isreportfilter="N" isreportdisplay="Y" executionsequence="7" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			<column name="Collected_Premium" columnlabel="Collected Premium" metaproperty="Collected_Premium" isreportfilter="N" isreportdisplay="Y" executionsequence="8" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
 			<!-- Bug 48401- batch section -->
