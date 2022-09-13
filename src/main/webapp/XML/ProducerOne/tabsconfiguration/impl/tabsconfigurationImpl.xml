@@ -300,7 +300,7 @@
   <tabsconfigurationresource deltaind="M" name="doc_CyberLiability_block_producer_name_security" accesslevel="0" description="hide/show doc_CyberLiability_block_producer_name_security on docCyberLiability.html" />
   <tabsconfigurationresource deltaind="M" name="doc_CyberLiability_producer_number_id_security" accesslevel="0" description="hide/show doc_CyberLiability_producer_number_id_security on docCyberLiability.html" />
   <tabsconfigurationresource deltaind="M" name="doc_cyberLiability_aggregate_limit_security" accesslevel="0" description="hide/show doc_cyberLiability_aggregate_limit_security on docCyberLiability.html" />
-  <tabsconfigurationresource deltaind="M" name="doc_cyberLiability_deductible_security" accesslevel="0" description="hide/show doc_cyberLiability_deductible_security on docCyberLiability.html" />
+  <!-- <tabsconfigurationresource deltaind="M" name="doc_cyberLiability_deductible_security" accesslevel="0" description="hide/show doc_cyberLiability_deductible_security on docCyberLiability.html" /> -->
 
 <!-- CSR Field -->
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="num_csr_securityHeader" name="num_csr_securityHeader"/>
@@ -673,7 +673,7 @@
  <!-- Phase 2 - Task Id- SS-005-05 -->
  <tabsconfigurationresource deltaind="I" accesslevel="0" description="addNewCyberLiabilityForSelfService_producer_number_id_security" name="addNewCyberLiabilityForSelfService_producer_number_id_security"/>
  <tabsconfigurationresource deltaind="I" accesslevel="0" description="addNewCyberLiabilityForSelfService_aggregate_limit_security" name="addNewCyberLiabilityForSelfService_aggregate_limit_security"/>
- <tabsconfigurationresource deltaind="I" accesslevel="0" description="addNewCyberLiabilityForSelfService_deductible_security" name="addNewCyberLiabilityForSelfService_deductible_security"/>
+ <!-- <tabsconfigurationresource deltaind="I" accesslevel="0" description="addNewCyberLiabilityForSelfService_deductible_security" name="addNewCyberLiabilityForSelfService_deductible_security"/> -->
  
  <!-- Phase 2 - Task Id- SS-005-02 -->
  <tabsconfigurationresource deltaind="I" accesslevel="0" description="docCyberLiability_producer_number_id_security" name="docCyberLiability_producer_number_id_security"/>
@@ -704,7 +704,7 @@
   <tabsconfigurationresource deltaind="M" accesslevel="1" description="addInsuranceDetailsForSelfServiceApproval_doc_insurance_expiration_date_from_security" name="addInsuranceDetailsForSelfServiceApproval_doc_insurance_expiration_date_from_security"/>
   
  <!-- Phase 2 - Self Service US :SS-004-05-->
-<tabsconfigurationresource deltaind="M" accesslevel="0" description="addInsuranceDetailsForSelfServiceApproval_doc_insurance_deductible_security" name="addInsuranceDetailsForSelfServiceApproval_doc_insurance_deductible_security"/>
+<!-- <tabsconfigurationresource deltaind="M" accesslevel="0" description="addInsuranceDetailsForSelfServiceApproval_doc_insurance_deductible_security" name="addInsuranceDetailsForSelfServiceApproval_doc_insurance_deductible_security"/> -->
 
 <!-- Phase 2 -US :SS-004-11 -->
  <tabsconfigurationresource deltaind="M" name="add_new_insurance_details_for_self_service_eo_claims_declaration_security" accesslevel="1" description="add_new_insurance_details_for_self_service_eo_claims_declaration_security hide/show" />
@@ -1060,5 +1060,21 @@
 <tabsconfigurationresource deltaind="M" accesslevel="1" description="userAssignmentListing_filter_userNames_security" name="userAssignmentListing_filter_userNames_security"/>
 <!-- Feature ADO - 48686 - Viewing Tasks Assigned to the User from the Dashboard - END -->
 
+<!-- Feature 48679 - Adding the Self Insured Retention (SIR) and Deductible Fields -start -->
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show doc_insurance_self_insured_retention_security" name="doc_insurance_self_insured_retention_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show addInsuranceDetailsForSelfServiceApproval_self_insured_retention_security" name="addInsuranceDetailsForSelfServiceApproval_self_insured_retention_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show addInsuranceDetailsForSelfServiceApproval_doc_insurance_self_insured_retention_security" name="addInsuranceDetailsForSelfServiceApproval_doc_insurance_self_insured_retention_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show addNewCyberLiabilityForSelfService_self_insured_retention_security" name="addNewCyberLiabilityForSelfService_self_insured_retention_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" name="doc_cyberLiability_self_insured_retention_security" description="hide/show doc_cyberLiability_self_insured_retention_security on docCyberLiability.html" />
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show agencyListEdit_cyber_liability_self_insured_retention_security" name="agencyListEdit_cyber_liability_self_insured_retention_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show agencyListEdit_cyber_liability_deductible_security" name="agencyListEdit_cyber_liability_deductible_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show agencyListEdit_EandOForm_self_insured_retention_security" name="agencyListEdit_EandOForm_self_insured_retention_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show agencyListEdit_EandOForm_deductible_security" name="agencyListEdit_EandOForm_deductible_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="doc_insurance_deductible_security" name="doc_insurance_deductible_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="0" description="Hide/Show deductible text box mandatory on Document Insurance" name="doc_insurance_deductible_mandatory_security"/>
+	<tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/Show deductible text box mandatory on Document Insurance doc_cyberLiability_deductible_mandatory_security" name="doc_cyberLiability_deductible_mandatory_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="entityCyberLiabilityExpirationListing_self_insured_retention_security" name="entityCyberLiabilityExpirationListing_self_insured_retention_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show entityInsuranceExpirationListing_self_insured_retention_security" name="entityInsuranceExpirationListing_self_insured_retention_security"/>
+	<!-- Feature 48679 - Adding the Self Insured Retention (SIR) and Deductible Fields-end -->
 			
 </tabsconfiguration>

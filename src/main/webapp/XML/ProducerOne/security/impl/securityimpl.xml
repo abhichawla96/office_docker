@@ -3655,4 +3655,13 @@ uniquename="isShowPercentageAmountforProbation" />
   </protectedresource>
   <!-- Feature ADO - 48686 - Viewing Tasks Assigned to the User from the Dashboard - END -->
 
+<!-- Feature 48679 - Adding the Self Insured Retention (SIR) and Deductible Fields -->
+	<protectedresource defaultaccesstype="0"
+		description="doc_insurance_deductible_security"
+		uniquename="doc_insurance_deductible_security">
+		<businessrole deltaind="I" roleid="MarketingAssistant">
+			<roleaccesslevel accesstype="1" />
+		</businessrole>
+	</protectedresource>
+	
 </security>
