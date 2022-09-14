@@ -1076,5 +1076,8 @@
 	<tabsconfigurationresource deltaind="M" accesslevel="1" description="entityCyberLiabilityExpirationListing_self_insured_retention_security" name="entityCyberLiabilityExpirationListing_self_insured_retention_security"/>
 	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show entityInsuranceExpirationListing_self_insured_retention_security" name="entityInsuranceExpirationListing_self_insured_retention_security"/>
 	<!-- Feature 48679 - Adding the Self Insured Retention (SIR) and Deductible Fields-end -->
-			
+	
+	<!-- Feature 48684 - Mass update -->
+	<tabsconfigurationresource deltaind="M" accesslevel="1" name="massUpdateImport_security" description="Hide/Show of mass Update Import security" />
+	
 </tabsconfiguration>
