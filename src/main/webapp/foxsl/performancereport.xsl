@@ -1828,16 +1828,19 @@
 													</xsl:if>
 													<xsl:if test="AGENCY_CODE != 'HIDDEN'">
 													<fo:table-cell border="0.2pt solid #6bc2f8" padding-start="3pt" padding-top="3pt" padding-bottom="3pt" padding-end="3pt" background-color="#6bc2f8"><fo:block font-size="6px" font-family="Arial"><xsl:value-of select="AGENCY_CODE"/></fo:block></fo:table-cell>
-													</xsl:if>
-													<xsl:if test="PREMIUM != 'HIDDEN'">
-													<fo:table-cell border="0.2pt solid #6bc2f8" text-align="right" padding-start="3pt" padding-top="3pt" padding-bottom="3pt" padding-end="3pt" background-color="#6bc2f8"><fo:block font-size="6px" font-family="Arial"><xsl:value-of select="PREMIUM"/></fo:block></fo:table-cell>
-													</xsl:if>
+													</xsl:if>													
+													<xsl:if test="actual_written_premium != 'HIDDEN'">
+													<fo:table-cell border="0.2pt solid #6bc2f8" text-align="right" padding-start="3pt" padding-top="3pt" padding-bottom="3pt" padding-end="3pt" background-color="#6bc2f8"><fo:block font-size="6px" font-family="Arial"><xsl:value-of select="actual_written_premium"/></fo:block></fo:table-cell>
+												    </xsl:if>
 													<xsl:if test="COMMISSION != 'HIDDEN'">
 													<fo:table-cell border="0.2pt solid #6bc2f8" text-align="right" padding-start="3pt" padding-top="3pt" padding-bottom="3pt" padding-end="3pt" background-color="#6bc2f8"><fo:block font-size="6px" font-family="Arial"><xsl:value-of select="COMMISSION"/></fo:block></fo:table-cell>
 												    </xsl:if>
 													<xsl:if test="Paid != 'HIDDEN'">
 													<fo:table-cell border="0.2pt solid #6bc2f8" text-align="right" padding-start="3pt" padding-top="3pt" padding-bottom="3pt" padding-end="3pt" background-color="#6bc2f8"><fo:block font-size="6px" font-family="Arial"><xsl:value-of select="Paid"/></fo:block></fo:table-cell>
 												    </xsl:if>
+												    <xsl:if test="PREMIUM != 'HIDDEN'">
+													<fo:table-cell border="0.2pt solid #6bc2f8" text-align="right" padding-start="3pt" padding-top="3pt" padding-bottom="3pt" padding-end="3pt" background-color="#6bc2f8"><fo:block font-size="6px" font-family="Arial"><xsl:value-of select="PREMIUM"/></fo:block></fo:table-cell>
+													</xsl:if>
 												</xsl:when>
 												<xsl:otherwise>
 													<xsl:if test="COMPANY != 'HIDDEN'">
