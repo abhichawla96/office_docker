@@ -591,7 +591,7 @@
 <!--  Feature-48696- Agency Status Filter -->
 	<reportdef deltaind="M" name="entityIndividualLicenseExpire" description="Agency/Contact License Expiration (AIM131)" isshowsavedsearch="Y" isshowfiltersearch="Y" isshowdefaultreportdatalist="Y" isshowsortordersearch="N" isreportdatapagination="Y" isshowgroupbysearch="N" isshowoutputcolumns="Y" isshowresetbutton="Y">
       <columnset name="entityIndividualLicenseExpireset">
-          <column deltaind="M" name="AgencyStatus" columnlabel="AgencyContactlabel" metaproperty="report_search_columns.AgencyStatus" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="multicheckbox" executionsequence="21" ispopupsearch="N" isdefaultdisplay="Y" isrequired="N" issortdisplay="Y" isgroupbydisplay="N" />
+          <column deltaind="M" name="AgencyStatus" columnlabel="AgencyContactlabel" metaproperty="report_search_columns.AgencyStatus" isreportfilter="Y" isreportdisplay="N" filterdisplaytype="multicheckbox" executionsequence="21" ispopupsearch="N" isdefaultdisplay="Y" isrequired="Y" issortdisplay="Y" isgroupbydisplay="N" />
           </columnset>
    </reportdef>
    

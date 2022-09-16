@@ -3205,10 +3205,10 @@ where pn.producer_number =#AgencyTerminationPolicyReviewRPT_agency_code#">
       <property autoincrement="NOT NULL" contextfield="N" deleteind="N" field="reportFor" formdisplay="Y" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="Y" persistent="N" propertylength="4" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="13488" viewlength="4">
         <propvalidation expression="ProducerOneRule.checkCostReportFor" message="costAllocationReportForMsgKey" name="checkReportFor"/>
       </property>
-      <property autoincrement="NOT NULL" contextfield="N" deleteind="N" field="expirationDateFrom" formdisplay="Y" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="Y" persistent="N" propertylength="4" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="13490" viewlength="10">
+      <property autoincrement="NOT NULL" contextfield="N" deleteind="N" field="expirationDateFrom" formdisplay="Y" initcap="N" isEncrypt="N" isrequired="Y" length="0" listdisplay="Y" persistent="N" propertylength="4" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="13490" viewlength="10">
         <propvalidation expression="ProducerOneRule.checkEntityInsExpirationDateFrom" message="Please enter Expiration Date From" name="checkExpirationDateFrom"/>
       </property>
-      <property autoincrement="NOT NULL" contextfield="N" deleteind="N" field="expirationDateTo" formdisplay="Y" initcap="N" isEncrypt="N" isrequired="N" length="0" listdisplay="Y" persistent="N" propertylength="4" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="13492" viewlength="10">
+      <property autoincrement="NOT NULL" contextfield="N" deleteind="N" field="expirationDateTo" formdisplay="Y" initcap="N" isEncrypt="N" isrequired="Y" length="0" listdisplay="Y" persistent="N" propertylength="4" resolvedisplay="N" searchfield="N" searchmodify="N" searchrule="N" seq="13492" viewlength="10">
         <propvalidation expression="ProducerOneRule.checkEntityInsExpirationDateTo" message="Please enter Expiration Date To" name="checkExpirationDateTo"/>
       </property>
     </propertyversion>
