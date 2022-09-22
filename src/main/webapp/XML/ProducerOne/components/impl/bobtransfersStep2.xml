@@ -27,6 +27,7 @@
     			<parameteroperation indexno="2" mode="IN" property="filterXml" seq="3"/>
     			<parameteroperation indexno="3" mode="IN" property="validationsId" seq="4"/>
     			<parameteroperation deltaind="I" indexno="4" mode="IN" property="wholesale_from_producer" seq="5"/>
+ 				<parameteroperation deltaind="D" indexno="5" mode="OUT" property="inactive_license_status" seq="6"/>	
     			<!-- <parameteroperation deltaind="I" indexno="5" mode="IN" property="wholesale_to_producer" seq="6"/>   -->  				
  	  			<resultsetoperation indexno="0" mappingclass="java.util.HashMap"/>								
     		</storedprocedureoperation>
