@@ -343,4 +343,8 @@
   <label deltaind="I" labeldesc="Expiration Date" labelkey="IncentiveSchedle_expirationDate_label"/>
   
   
+  <!-- Phase 3- Feature bug- 52316- section name -->
+   <label deltaind="I" labeldesc="Section Name" labelkey="addManageTemplate3_section_name"/>
+  
+  
 </labelconf>

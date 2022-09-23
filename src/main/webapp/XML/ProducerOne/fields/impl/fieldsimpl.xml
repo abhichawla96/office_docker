@@ -683,4 +683,11 @@ displayfield="person_name" valuefield="person_id" lookupobjecttype="sql" display
   </field>
   <!--  Feature 48679 - Adding the Self Insured Retention (SIR) and Deductible Fields - end-->
   
+  <!-- Phase 3- Feature bug- 52316 -->
+   <field deltaind="I" id="table_name" screen="admin/lookupTables/ajaxDiv/addManageTemplate3.html" name="table_name" 
+  isrequired="Y" labelkey="addManageTemplate3_section_name" tabsconfigurationresourcename="addManageTemplate3_section_name_security" protectedresourceuniquename="addManageTemplate3_section_name_security" 
+  isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" section="addManageTemplate3_freeform_contextdata_1" />
+  
+  
+  
  </fields>
