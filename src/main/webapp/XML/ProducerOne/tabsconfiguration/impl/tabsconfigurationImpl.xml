@@ -1080,4 +1080,7 @@
 	<!-- Feature 48684 - Mass update -->
 	<tabsconfigurationresource deltaind="M" accesslevel="1" name="massUpdateImport_security" description="Hide/Show of mass Update Import security" />
 	
+	<!-- ADO 52160 -->
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="checkEntityCyberLiabilityListExist_exportResult_security" name="checkEntityCyberLiabilityListExist_exportResult_security"/>
+	
 </tabsconfiguration>
