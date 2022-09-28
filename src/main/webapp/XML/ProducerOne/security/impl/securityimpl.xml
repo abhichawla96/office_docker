@@ -3664,4 +3664,12 @@ uniquename="isShowPercentageAmountforProbation" />
 		</businessrole>
 	</protectedresource>
 	
+	<!-- Feature 48685 - Mass update -->
+	<protectedresource defaultaccesstype="0" uniquename="massUpdateImport_security" description="Hide/show massUpdateImport_security tab">
+  		<businessrole deltaind="I" roleid="MarketingAssistant">
+	      <roleaccesslevel accesstype="1"/>
+	    </businessrole>
+ 	</protectedresource>
+	
+	
 </security>
