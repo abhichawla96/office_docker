@@ -1083,4 +1083,9 @@
 	<!-- ADO 52160 -->
 	<tabsconfigurationresource deltaind="M" accesslevel="1" description="checkEntityCyberLiabilityListExist_exportResult_security" name="checkEntityCyberLiabilityListExist_exportResult_security"/>
 	
+<!-- Feature- 48730- Cyber liability and E & O filters -->
+<tabsconfigurationresource deltaind="M" name="isShowCyberLiabilityFilterSectionTrue" accesslevel="1" description="hide/show isShowCyberLiabilityFilterSectionTrue on docCyberLiability.html" />
+<tabsconfigurationresource deltaind="M" accesslevel="1" description="isShowDocumentFilterSectionTrue" name="isShowDocumentFilterSectionTrue"/>
+	
+	
 </tabsconfiguration>
