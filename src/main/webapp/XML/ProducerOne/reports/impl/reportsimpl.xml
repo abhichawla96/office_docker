@@ -342,23 +342,23 @@
 			<column name="TM_Name" columnlabel="TM Name" metaproperty="TM_Name" isreportfilter="N" isreportdisplay="Y" executionsequence="9" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			<column name="Prior_Year2" columnlabel="Prior Year2" metaproperty="Prior_Year2" isreportfilter="N" isreportdisplay="Y" executionsequence="10" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			<column name="Prior_Year1" columnlabel="Prior Year1" metaproperty="Prior_Year1" isreportfilter="N" isreportdisplay="Y" executionsequence="11" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-			<column name="Prior_Year2_Collected_Premium" columnlabel="Prior Year2 Collected Premium" metaproperty="Prior_Year2_Collected_Premium" isreportfilter="N" isreportdisplay="Y" executionsequence="12" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-			<column name="Prior_Year1_Collected_Premium" columnlabel="Prior Year1 Collected Premium" metaproperty="Prior_Year1_Collected_Premium" isreportfilter="N" isreportdisplay="Y" executionsequence="13" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-			<column name="Eval_Year_Collected_Premium" columnlabel="Eval Year Collected Premium" metaproperty="Eval_Year_Collected_Premium" isreportfilter="N" isreportdisplay="Y" executionsequence="14" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-			<column name="Prior_Year2_Losses" columnlabel="Prior Year2 Losses" metaproperty="Prior_Year2_Losses" isreportfilter="N" isreportdisplay="Y" executionsequence="15" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-			<column name="Prior_Year1_Losses" columnlabel="Prior Year1 Losses" metaproperty="Prior_Year1_Losses" isreportfilter="N" isreportdisplay="Y" executionsequence="16" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-			<column name="Eval_Year_Losses" columnlabel="Eval Year Losses" metaproperty="Eval_Year_Losses" isreportfilter="N" isreportdisplay="Y" executionsequence="17" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+			<column name="Prior_Year2_Collected_Premium" columnlabel="Prior Year2 Collected Premium" metaproperty="Prior_Year2_Collected_Premium" isreportfilter="N" isreportdisplay="Y" executionsequence="12" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
+			<column name="Prior_Year1_Collected_Premium" columnlabel="Prior Year1 Collected Premium" metaproperty="Prior_Year1_Collected_Premium" isreportfilter="N" isreportdisplay="Y" executionsequence="13" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
+			<column name="Eval_Year_Collected_Premium" columnlabel="Eval Year Collected Premium" metaproperty="Eval_Year_Collected_Premium" isreportfilter="N" isreportdisplay="Y" executionsequence="14" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
+			<column name="Prior_Year2_Losses" columnlabel="Prior Year2 Losses" metaproperty="Prior_Year2_Losses" isreportfilter="N" isreportdisplay="Y" executionsequence="15" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
+			<column name="Prior_Year1_Losses" columnlabel="Prior Year1 Losses" metaproperty="Prior_Year1_Losses" isreportfilter="N" isreportdisplay="Y" executionsequence="16" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
+			<column name="Eval_Year_Losses" columnlabel="Eval Year Losses" metaproperty="Eval_Year_Losses" isreportfilter="N" isreportdisplay="Y" executionsequence="17" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
 			<column name="Prior_Year2_Loss_Ratio" columnlabel="Prior Year2 Loss Ratio" metaproperty="Prior_Year2_Loss_Ratio" isreportfilter="N" isreportdisplay="Y" executionsequence="18" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			<column name="Prior_Year1_Loss_Ratio" columnlabel="Prior Year1 Loss Ratio" metaproperty="Prior_Year1_Loss_Ratio" isreportfilter="N" isreportdisplay="Y" executionsequence="19" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			<column name="Eval_Year_Loss_Ratio" columnlabel="Eval Year Loss Ratio" metaproperty="Eval_Year_Loss_Ratio" isreportfilter="N" isreportdisplay="Y" executionsequence="20" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-			<column name="Prior_Year2_Loss_Dev_Amount" columnlabel="Prior Year2 Loss Dev Amount" metaproperty="Prior_Year2_Loss_Dev_Amount" isreportfilter="N" isreportdisplay="Y" executionsequence="21" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-			<column name="Prior_Year1_Loss_Dev_Amount" columnlabel="Prior Year1 Loss Dev Amount" metaproperty="Prior_Year1_Loss_Dev_Amount" isreportfilter="N" isreportdisplay="Y" executionsequence="22" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-			<column name="Eval_Year_Evaluation_Of_Total_Losses" columnlabel="Eval Year Evaluation Of Total Losses" metaproperty="Eval_Year_Evaluation_Of_Total_Losses" isreportfilter="N" isreportdisplay="Y" executionsequence="23" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-			<column name="Prior_Year_Evaluation_Of_Total_Losses" columnlabel="Prior Year Evaluation Of Total Losses" metaproperty="Prior_Year_Evaluation_Of_Total_Losses" isreportfilter="N" isreportdisplay="Y" executionsequence="24" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-			<column name="Loss_Amount_For_Bonus" columnlabel="Loss Amount For Bonus" metaproperty="Loss_Amount_For_Bonus" isreportfilter="N" isreportdisplay="Y" executionsequence="25" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+			<column name="Prior_Year2_Loss_Dev_Amount" columnlabel="Prior Year2 Loss Dev Amount" metaproperty="Prior_Year2_Loss_Dev_Amount" isreportfilter="N" isreportdisplay="Y" executionsequence="21" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
+			<column name="Prior_Year1_Loss_Dev_Amount" columnlabel="Prior Year1 Loss Dev Amount" metaproperty="Prior_Year1_Loss_Dev_Amount" isreportfilter="N" isreportdisplay="Y" executionsequence="22" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
+			<column name="Eval_Year_Evaluation_Of_Total_Losses" columnlabel="Eval Year Evaluation Of Total Losses" metaproperty="Eval_Year_Evaluation_Of_Total_Losses" isreportfilter="N" isreportdisplay="Y" executionsequence="23" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
+			<column name="Prior_Year_Evaluation_Of_Total_Losses" columnlabel="Prior Year Evaluation Of Total Losses" metaproperty="Prior_Year_Evaluation_Of_Total_Losses" isreportfilter="N" isreportdisplay="Y" executionsequence="24" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
+			<column name="Loss_Amount_For_Bonus" columnlabel="Loss Amount For Bonus" metaproperty="Loss_Amount_For_Bonus" isreportfilter="N" isreportdisplay="Y" executionsequence="25" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
 			<column name="Loss_Ratio_For_Bonus" columnlabel="Loss Ratio For Bonus" metaproperty="Loss_Ratio_For_Bonus" isreportfilter="N" isreportdisplay="Y" executionsequence="26" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			<column name="Bonus_Percentage" columnlabel="Bonus Percentage" metaproperty="Bonus_Percentage" isreportfilter="N" isreportdisplay="Y" executionsequence="27" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
-			<column name="Bonus_Amount" columnlabel="Bonus Amount" metaproperty="Bonus_Amount" isreportfilter="N" isreportdisplay="Y" executionsequence="28" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
+			<column name="Bonus_Amount" columnlabel="Bonus Amount" metaproperty="Bonus_Amount" isreportfilter="N" isreportdisplay="Y" executionsequence="28" isgrandtotaldisplay="Y" isdefaultoutputcolumn="Y" />
 			<column name="Eligible_For_Bonus_Flag" columnlabel="Eligible For Bonus Flag" metaproperty="Eligible_For_Bonus_Flag" isreportfilter="N" isreportdisplay="Y" executionsequence="29" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			<column name="Ineligibility_Reason" columnlabel="Ineligibility Reason" metaproperty="Ineligibility_Reason" isreportfilter="N" isreportdisplay="Y" executionsequence="30" isgrandtotaldisplay="N" isdefaultoutputcolumn="Y" />
 			 <!-- batch section -->
@@ -380,8 +380,8 @@
 
 		<reportworkflow name="reportworkflow" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,ispaginationrequired">
 			<storedprocedureoperation name="SalesEstimateContCom611NonGrouped_RPT_P" id="SalesEstimateContCom611NonGrouped_RPT_P" dbspname="SalesEstimateContCom611NonGrouped_RPT_P" viewid="report_data_list_1" applid="ProducerOne" executionsequence="1" operation="5" metaobject="report_search_columns">
-				<parameteroperation property="statement_period_filter" mode="IN" indexno="0" seq="1" />
-				<parameteroperation property="ccb_bonus_year" mode="IN" indexno="1" seq="2" />
+				<parameteroperation property="ccb_bonus_year" mode="IN" indexno="0" seq="1" />
+				<parameteroperation property="statement_period_filter" mode="IN" indexno="1" seq="2" />
 				<parameteroperation property="PAGE_SIZE" mode="IN" indexno="2" seq="3" />
 				<parameteroperation property="PAGE_NUMBER" mode="IN" indexno="3" seq="4" />
 				<parameteroperation property="ispaginationrequired" mode="IN" indexno="4" seq="5" />
@@ -391,8 +391,8 @@
 				<resultsetoperation indexno="2" mappingclass="java.util.HashMap" />
 			</storedprocedureoperation>
 			<storedprocedureoperation name="SalesEstimateContCom611Grouped_RPT_P" id="SalesEstimateContCom611Grouped_RPT_P" dbspname="SalesEstimateContCom611Grouped_RPT_P" viewid="report_data_list_2" applid="ProducerOne" executionsequence="2" operation="5" metaobject="report_search_columns">
-				<parameteroperation property="statement_period_filter" mode="IN" indexno="0" seq="1" />
-				<parameteroperation property="ccb_bonus_year" mode="IN" indexno="1" seq="2" />
+				<parameteroperation property="ccb_bonus_year" mode="IN" indexno="0" seq="1" />
+				<parameteroperation property="statement_period_filter" mode="IN" indexno="1" seq="2" />
 				<parameteroperation property="PAGE_SIZE" mode="IN" indexno="2" seq="3" />
 				<parameteroperation property="PAGE_NUMBER" mode="IN" indexno="3" seq="4" />
 				<parameteroperation property="ispaginationrequired" mode="IN" indexno="4" seq="5" />
@@ -402,8 +402,8 @@
 				<resultsetoperation indexno="2" mappingclass="java.util.HashMap" />
 			</storedprocedureoperation>
 			<storedprocedureoperation name="SalesEstimateContCom611WhatIfNoGrouped_RPT_P" id="SalesEstimateContCom611WhatIfNoGrouped_RPT_P" dbspname="SalesEstimateContCom611WhatIfNoGrouped_RPT_P" viewid="report_data_list_3" applid="ProducerOne" executionsequence="3" operation="5" metaobject="report_search_columns">
-				<parameteroperation property="statement_period_filter" mode="IN" indexno="0" seq="1" />
-				<parameteroperation property="ccb_bonus_year" mode="IN" indexno="1" seq="2" />
+				<parameteroperation property="ccb_bonus_year" mode="IN" indexno="0" seq="1" />
+				<parameteroperation property="statement_period_filter" mode="IN" indexno="1" seq="2" />
 				<parameteroperation property="PAGE_SIZE" mode="IN" indexno="2" seq="3" />
 				<parameteroperation property="PAGE_NUMBER" mode="IN" indexno="3" seq="4" />
 				<parameteroperation property="ispaginationrequired" mode="IN" indexno="4" seq="5" />
@@ -467,8 +467,8 @@
 
 		<reportworkflow name="reportworkflow" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,ispaginationrequired">
 			<storedprocedureoperation name="SalesEstimateContCom611NonGrouped_RPT_P" id="SalesEstimateContCom611NonGrouped_RPT_P" dbspname="SalesEstimateContCom611NonGrouped_RPT_P" viewid="report_data_list_1" applid="ProducerOne" executionsequence="1" operation="5" metaobject="report_search_columns">
-				<parameteroperation property="statement_period_filter" mode="IN" indexno="0" seq="1" />
-				<parameteroperation property="ccb_bonus_year" mode="IN" indexno="1" seq="2" />
+				<parameteroperation property="ccb_bonus_year" mode="IN" indexno="0" seq="1" />
+				<parameteroperation property="statement_period_filter" mode="IN" indexno="1" seq="2" />
 				<parameteroperation property="PAGE_SIZE" mode="IN" indexno="2" seq="3" />
 				<parameteroperation property="PAGE_NUMBER" mode="IN" indexno="3" seq="4" />
 				<parameteroperation property="ispaginationrequired" mode="IN" indexno="4" seq="5" />
@@ -478,8 +478,8 @@
 				<resultsetoperation indexno="2" mappingclass="java.util.HashMap" />
 			</storedprocedureoperation>
 			<storedprocedureoperation name="SalesEstimateContCom611Grouped_RPT_P" id="SalesEstimateContCom611Grouped_RPT_P" dbspname="SalesEstimateContCom611Grouped_RPT_P" viewid="report_data_list_2" applid="ProducerOne" executionsequence="2" operation="5" metaobject="report_search_columns">
-				<parameteroperation property="statement_period_filter" mode="IN" indexno="0" seq="1" />
-				<parameteroperation property="ccb_bonus_year" mode="IN" indexno="1" seq="2" />
+				<parameteroperation property="ccb_bonus_year" mode="IN" indexno="0" seq="1" />
+				<parameteroperation property="statement_period_filter" mode="IN" indexno="1" seq="2" />
 				<parameteroperation property="PAGE_SIZE" mode="IN" indexno="2" seq="3" />
 				<parameteroperation property="PAGE_NUMBER" mode="IN" indexno="3" seq="4" />
 				<parameteroperation property="ispaginationrequired" mode="IN" indexno="4" seq="5" />
@@ -489,8 +489,8 @@
 				<resultsetoperation indexno="2" mappingclass="java.util.HashMap" />
 			</storedprocedureoperation>
 			<storedprocedureoperation name="SalesEstimateContCom611WhatIfNoGrouped_RPT_P" id="SalesEstimateContCom611WhatIfNoGrouped_RPT_P" dbspname="SalesEstimateContCom611WhatIfNoGrouped_RPT_P" viewid="report_data_list_3" applid="ProducerOne" executionsequence="3" operation="5" metaobject="report_search_columns">
-				<parameteroperation property="statement_period_filter" mode="IN" indexno="0" seq="1" />
-				<parameteroperation property="ccb_bonus_year" mode="IN" indexno="1" seq="2" />
+				<parameteroperation property="ccb_bonus_year" mode="IN" indexno="0" seq="1" />
+				<parameteroperation property="statement_period_filter" mode="IN" indexno="1" seq="2" />
 				<parameteroperation property="PAGE_SIZE" mode="IN" indexno="2" seq="3" />
 				<parameteroperation property="PAGE_NUMBER" mode="IN" indexno="3" seq="4" />
 				<parameteroperation property="ispaginationrequired" mode="IN" indexno="4" seq="5" />
@@ -553,8 +553,8 @@
 
 		<reportworkflow name="reportworkflow" executionsequence="0" outputtype="1xml" checkfornullparams="PAGE_SIZE,PAGE_NUMBER,ispaginationrequired">
 			<storedprocedureoperation name="SalesEstimateContCom611NonGrouped_RPT_P" id="SalesEstimateContCom611NonGrouped_RPT_P" dbspname="SalesEstimateContCom611NonGrouped_RPT_P" viewid="report_data_list_1" applid="ProducerOne" executionsequence="1" operation="5" metaobject="report_search_columns">
-				<parameteroperation property="statement_period_filter" mode="IN" indexno="0" seq="1" />
-				<parameteroperation property="ccb_bonus_year" mode="IN" indexno="1" seq="2" />
+				<parameteroperation property="ccb_bonus_year" mode="IN" indexno="0" seq="1" />
+				<parameteroperation property="statement_period_filter" mode="IN" indexno="1" seq="2" />
 				<parameteroperation property="PAGE_SIZE" mode="IN" indexno="2" seq="3" />
 				<parameteroperation property="PAGE_NUMBER" mode="IN" indexno="3" seq="4" />
 				<parameteroperation property="ispaginationrequired" mode="IN" indexno="4" seq="5" />
@@ -564,8 +564,8 @@
 				<resultsetoperation indexno="2" mappingclass="java.util.HashMap" />
 			</storedprocedureoperation>
 			<storedprocedureoperation name="SalesEstimateContCom611Grouped_RPT_P" id="SalesEstimateContCom611Grouped_RPT_P" dbspname="SalesEstimateContCom611Grouped_RPT_P" viewid="report_data_list_2" applid="ProducerOne" executionsequence="2" operation="5" metaobject="report_search_columns">
-				<parameteroperation property="statement_period_filter" mode="IN" indexno="0" seq="1" />
-				<parameteroperation property="ccb_bonus_year" mode="IN" indexno="1" seq="2" />
+				<parameteroperation property="ccb_bonus_year" mode="IN" indexno="0" seq="1" />
+				<parameteroperation property="statement_period_filter" mode="IN" indexno="1" seq="2" />
 				<parameteroperation property="PAGE_SIZE" mode="IN" indexno="2" seq="3" />
 				<parameteroperation property="PAGE_NUMBER" mode="IN" indexno="3" seq="4" />
 				<parameteroperation property="ispaginationrequired" mode="IN" indexno="4" seq="5" />
@@ -575,8 +575,8 @@
 				<resultsetoperation indexno="2" mappingclass="java.util.HashMap" />
 			</storedprocedureoperation>
 			<storedprocedureoperation name="SalesEstimateContCom611WhatIfNoGrouped_RPT_P" id="SalesEstimateContCom611WhatIfNoGrouped_RPT_P" dbspname="SalesEstimateContCom611WhatIfNoGrouped_RPT_P" viewid="report_data_list_3" applid="ProducerOne" executionsequence="3" operation="5" metaobject="report_search_columns">
-				<parameteroperation property="statement_period_filter" mode="IN" indexno="0" seq="1" />
-				<parameteroperation property="ccb_bonus_year" mode="IN" indexno="1" seq="2" />
+				<parameteroperation property="ccb_bonus_year" mode="IN" indexno="0" seq="1" />
+				<parameteroperation property="statement_period_filter" mode="IN" indexno="1" seq="2" />
 				<parameteroperation property="PAGE_SIZE" mode="IN" indexno="2" seq="3" />
 				<parameteroperation property="PAGE_NUMBER" mode="IN" indexno="3" seq="4" />
 				<parameteroperation property="ispaginationrequired" mode="IN" indexno="4" seq="5" />
