@@ -33,6 +33,6 @@
   <field deltaind="I" decimallength="0" displayname="from_accident_date" length="10" name="from_accident_date" seq="14460" type="D" viewlength="10"/>
   <field deltaind="I" decimallength="0" displayname="to_accident_date" length="10" name="to_accident_date" seq="14461" type="D" viewlength="10"/>
   
-   <field deltaind="I" decimallength="0" displayname="ccb_bonus_year" length="0" name="ccb_bonus_year" seq="8235" type="V" viewlength="10"/>
+   <field deltaind="I" decimallength="0" displayname="ccb_bonus_year" length="0" name="ccb_bonus_year" seq="8235" type="I" viewlength="10"/>
    
   </structure>
