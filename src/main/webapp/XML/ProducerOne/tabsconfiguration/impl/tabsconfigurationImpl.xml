@@ -1087,5 +1087,7 @@
 <tabsconfigurationresource deltaind="M" name="isShowCyberLiabilityFilterSectionTrue" accesslevel="1" description="hide/show isShowCyberLiabilityFilterSectionTrue on docCyberLiability.html" />
 <tabsconfigurationresource deltaind="M" accesslevel="1" description="isShowDocumentFilterSectionTrue" name="isShowDocumentFilterSectionTrue"/>
 	
+	<!-- ADO 48752 -->
+	<tabsconfigurationresource deltaind="M" name="ISSHOWLISTADDITIONALCOLUMNSLINK" value="Y" description="Define value to show additional columns link per list"></tabsconfigurationresource>
 	
 </tabsconfiguration>
