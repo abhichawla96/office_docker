@@ -1090,4 +1090,17 @@
 	<!-- ADO 48752 -->
 	<tabsconfigurationresource deltaind="M" name="ISSHOWLISTADDITIONALCOLUMNSLINK" value="Y" description="Define value to show additional columns link per list"></tabsconfigurationresource>
 	
+<!-- Bug ID-53057 -approval reports -->
+<tabsconfigurationresource deltaind="I" accesslevel="0" name="incentiveApprovalReports_licensing_report_security" description="Hide/Show reports" />
+<tabsconfigurationresource deltaind="I" accesslevel="0" name="incentiveApprovalReports_BonusProgressReport_rising_star_report_security" description="Hide/Show reports" />
+<tabsconfigurationresource deltaind="I" accesslevel="0" name="incentiveApprovalReports_BonusProgressReport_life_sales_bonus_security" description="Hide/Show reports" />
+<tabsconfigurationresource deltaind="I" accesslevel="0" name="incentiveApprovalReports_BonusProgressReport_profit_plus_bonus_security" description="Hide/Show reports" />
+<tabsconfigurationresource deltaind="I" accesslevel="0" name="incentiveApprovalReports_BonusProgressReport_policy_growth_bonus_security" description="Hide/Show reports" />
+<tabsconfigurationresource deltaind="I" accesslevel="0" name="incentiveApprovalReports_BonusProgressReport_profit_security" description="Hide/Show reports" />
+<tabsconfigurationresource deltaind="I" accesslevel="0" name="incentiveApprovalReports_ContingentCommissionReportByDetails_security" description="Hide/Show reports" />
+<tabsconfigurationresource deltaind="I" accesslevel="0" name="incentiveApprovalReports_ContingentCommissionReportByState_security" description="Hide/Show reports" />
+
+
+	
+	
 </tabsconfiguration>
