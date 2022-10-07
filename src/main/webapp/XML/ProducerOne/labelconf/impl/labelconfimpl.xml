@@ -346,5 +346,8 @@
   <!-- Phase 3- Feature bug- 52316- section name -->
    <label deltaind="I" labeldesc="Section Name" labelkey="addManageTemplate3_section_name"/>
   
+  <!-- Phase 3-Bug Id- 53542- release statement screen -->
+   <label deltaind="I" labeldesc="Contingency Commission" labelkey="sorting(,A,ajax_sorting):block_field_growth_bonus"/>
+  
   
 </labelconf>
