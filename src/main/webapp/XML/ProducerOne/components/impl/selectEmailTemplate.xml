@@ -2,6 +2,7 @@
 	<component metaobject="email_notifications_templates_mapping" name="selectEmailTemplate" stackdisplayname="Select Email Template">
     	
     	<!-- Phase 3 - Feature - Generating Welcome Letter - Changing seq numbers of workflow - Start -->
+    	<!--  
     	<action deltaind="M" name="send">
         	<workflow name="send" deltaind="I" seq="2" eval="ProducerOneRule.isSendInvitationEmail">
         	<email deltaind="I" attachmentcontent="attachmentcontent" cc="mailcc" eventname="event_name" executionsequence="0" mailto="mailto" msgstring="bodyContent" name="send" objectid="objectid" objecttype="objecttype" templatename="template_name"/>
@@ -56,6 +57,7 @@
     		<actionparam executionsequence="2" form="Y" isexecuteonsuccess="Y" name="removeparams" paramid="removeparams" post="Y" remove="Y" removeparams="attachmentcontent,INET_SHOW_SELECT_EMAIL_TEMPLATE" session="Y"/>
     		<actionparam executionsequence="1" form="Y" name="aar_requestid" paramid="aar_requestid" viewparam="Y"/>
     	</action>
+    	-->
     	<!-- Phase 3 - Feature - Generating Welcome Letter - Changing seq numbers of workflow - End -->
 	</component>
 </projectcomponents>
