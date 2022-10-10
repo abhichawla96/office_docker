@@ -1100,7 +1100,26 @@
 <tabsconfigurationresource deltaind="I" accesslevel="0" name="incentiveApprovalReports_ContingentCommissionReportByDetails_security" description="Hide/Show reports" />
 <tabsconfigurationresource deltaind="I" accesslevel="0" name="incentiveApprovalReports_ContingentCommissionReportByState_security" description="Hide/Show reports" />
 
-
 	
+	<!-- Feature 48695 - Adding Additional Fields to the Application-start -->
+	<!-- Upgrade-SS-Showing base fields -HBA, Div distr,Agent copies,Policyholder copies -->
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show entityGeneralDetails_ss_hba_association_id_security" name="entityGeneralDetails_ss_hba_association_id_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show entityGeneralDetails_ss_member_of_hba_security" name="entityGeneralDetails_ss_member_of_hba_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show entityGeneralDetails_ss_dividend_distribution_id_security" name="entityGeneralDetails_ss_dividend_distribution_id_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show entityGeneralDetails_ss_policyholder_copies_id_security" name="entityGeneralDetails_ss_policyholder_copies_id_security"/>
+	
+	<!-- Upgrade-AgencyListEdit-Showing base fields-HBA, Div distr,Policyholder copies -->
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show agencyListEdit_dividend_distribution_id_security" name="agencyListEdit_dividend_distribution_id_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show agencyListEdit_policyholder_copies_id_security" name="agencyListEdit_policyholder_copies_id_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show agencyListEdit_member_of_hba_security" name="agencyListEdit_member_of_hba_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show agencyListEdit_hba_association_id_security" name="agencyListEdit_hba_association_id_security"/>
+	
+	<!-- Upgrade-Agency Demographics-Showing base fields-HBA, Div distr,Agent copies, Policyholder copies -->
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show entityGeneralDetails_member_of_hba_security" name="entityGeneralDetails_member_of_hba_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show entityGeneralDetails_hba_association_id_security" name="entityGeneralDetails_hba_association_id_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show entityGeneralDetails_dividend_distribution_id_security" name="entityGeneralDetails_dividend_distribution_id_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show entityGeneralDetails_agent_copies_id_security" name="entityGeneralDetails_agent_copies_id_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show entityGeneralDetails_policyholder_copies_id_security" name="entityGeneralDetails_policyholder_copies_id_security"/>
+	<!-- Feature 48695 - Adding Additional Fields to the Application-end -->
 	
 </tabsconfiguration>

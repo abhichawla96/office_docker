@@ -1293,8 +1293,7 @@
 										
 										
 										<xsl:if test="response/registration_type_code='PRAG' or response/registration_type_code='SCAG'">
-										<xsl:if test="response/extendedField_list_1/data !='' ">
-										<xsl:for-each select="response/extendedField_list_1/data">
+										
 										<fo:table-row border="0.0pt solid black" height="5mm">
 
 
@@ -1319,12 +1318,12 @@
 														<fo:table-row border="0.0pt solid black"
 															height="5mm">
 															<fo:table-cell border="0.0pt solid black">
-																<xsl:if test="member_of_hba='N'">
+																<xsl:if test="response/member_of_hba=0">
 																<fo:block font-size="8px" font-family="Arial">
 																	No
 																</fo:block>
 																</xsl:if>
-																<xsl:if test="member_of_hba='Y'">
+																<xsl:if test="response/member_of_hba=1">
 																<fo:block font-size="8px" font-family="Arial">
 																	Yes
 																</fo:block>
@@ -1335,8 +1334,7 @@
 												</fo:table>
 											</fo:table-cell>
 										</fo:table-row>
-										</xsl:for-each>
-										</xsl:if>
+										
 										</xsl:if>
 										
 										
@@ -1344,8 +1342,7 @@
 										
 										
 										<xsl:if test="response/registration_type_code='PRAG' or response/registration_type_code='SCAG'">
-										<xsl:if test="response/extendedFieldHba_list_1/data!='' " >
-										<xsl:for-each select="response/extendedFieldHba_list_1/data">
+										
 										<fo:table-row border="0.0pt solid black" height="5mm">
 
 
@@ -1373,7 +1370,7 @@
 																
 																
 																<fo:block font-size="8px" font-family="Arial">
-																	<xsl:value-of select="data_desc"></xsl:value-of>
+																	<xsl:value-of select="response/hba_association_desc"></xsl:value-of>
 																</fo:block>
 															
 															</fo:table-cell>
@@ -1382,8 +1379,7 @@
 												</fo:table>
 											</fo:table-cell>
 										</fo:table-row>
-										</xsl:for-each>
-										</xsl:if>
+										
 										</xsl:if>
 										
 										
@@ -3572,8 +3568,7 @@
 					<fo:table-column  />
 					<fo:table-column />
 					<fo:table-body>
-					<xsl:if test="response/extendedField_list_1/data !='' ">
-					<xsl:for-each select="response/extendedField_list_1/data">
+					
 						<fo:table-row >
 							<fo:table-cell width="150pt" padding-top="-15mm" >
 								<fo:block font-size="8px" font-family="Arial"
@@ -3587,14 +3582,14 @@
 								<fo:block margin-left="15px" font-size="8px" font-family="Arial" wrap-option="no-wrap" margin-top="1mm"
 									>
 									<fo:inline>Builders Mutual can mail your policyholders dividend checks to your agency for distribution:&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</fo:inline>
-										<xsl:if test="dividend_distribution=1">
+										<xsl:if test="response/dividend_distribution_id=1">
 										<fo:inline >Y</fo:inline>
 										</xsl:if>
 								</fo:block>
 								<fo:block margin-left="15px" font-size="8px" font-family="Arial" wrap-option="no-wrap" margin-top="1mm"
 									>
 									<fo:inline>Builders Mutual can mail your policyholders dividend checks directly to them:&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</fo:inline>
-										<xsl:if test="dividend_distribution=2">
+										<xsl:if test="response/dividend_distribution_id=2">
 										<fo:inline >Y</fo:inline>
 										</xsl:if>
 								</fo:block>
@@ -3605,8 +3600,7 @@
 								</fo:block>
 							</fo:table-cell>
 						</fo:table-row>
-						</xsl:for-each>
-						</xsl:if>
+						
 					</fo:table-body>
 				</fo:table>
 			</fo:block>
@@ -3619,7 +3613,7 @@
 					<fo:table-column  />
 					<fo:table-column />
 					<fo:table-body>
-					<xsl:for-each select="response/extendedField_list_1/data">
+					
 						<fo:table-row >
 							<fo:table-cell width="150pt" padding-top="5mm" >
 								<fo:block font-size="8px" font-family="Arial"
@@ -3635,7 +3629,7 @@
 									>
 									<fo:inline>We would like to receive our policyholders' new and renewal policies. (Note- Not available for Maryland agents):&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</fo:inline>
 									
-										<xsl:if test="policyholder_copies=1">
+										<xsl:if test="response/policyholder_copies_id=1">
 										<fo:inline >
 											Y
 										</fo:inline>
@@ -3646,7 +3640,7 @@
 								<fo:block margin-left="15px" font-size="8px" font-family="Arial" wrap-option="no-wrap" margin-top="1mm"
 									>
 									<fo:inline>We would like to receive our policyholders' new policies only. Builders Mutual will mail renewals directly to our policyholders:&#160;&#160;&#160;&#160;&#160;</fo:inline>
-										<xsl:if test="policyholder_copies=2">
+										<xsl:if test="response/policyholder_copies_id=2">
 										<fo:inline >
 											Y
 										</fo:inline>
@@ -3656,7 +3650,7 @@
 								<fo:block margin-left="15px" font-size="8px" font-family="Arial" wrap-option="no-wrap" margin-top="1mm"
 									>
 									<fo:inline>Please mail all new and renewal policies directly to our policyholders:&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</fo:inline>
-										<xsl:if test="policyholder_copies=3">
+										<xsl:if test="response/policyholder_copies_id=3">
 										<fo:inline >
 											Y
 										</fo:inline>
@@ -3670,7 +3664,7 @@
 								</fo:block>
 							</fo:table-cell>
 						</fo:table-row>
-						</xsl:for-each>
+						
 					</fo:table-body>
 				</fo:table>
 			</fo:block>

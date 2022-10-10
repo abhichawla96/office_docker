@@ -150,8 +150,8 @@
  <label deltaind="I" labelkey="review_dividend_distribution_label" labeldesc=""/>
  <label deltaind="I" labelkey="review_policyholder_copies_label" labeldesc=""/>
  <label deltaind="I" labelkey="agent_copies_label" labeldesc=""/>
- <label deltaind="I" labelkey="policyholder_copies_label" labeldesc=""/>
- <label deltaind="I" labelkey="dividend_distribution_label" labeldesc=""/>
+ <!-- <label deltaind="I" labelkey="policyholder_copies_label" labeldesc=""/>
+ <label deltaind="I" labelkey="dividend_distribution_label" labeldesc=""/> -->
  
  <!-- for Market Information -->
  <label deltaind="M" labelkey="entityOtherInformation_narrative_question_3_label" labeldesc="Comment on neighboring Builders Mutual Insurance Agencies and with this appointment"/>
@@ -349,5 +349,16 @@
   <!-- Phase 3-Bug Id- 53542- release statement screen -->
    <label deltaind="I" labeldesc="Contingency Commission" labelkey="sorting(,A,ajax_sorting):block_field_growth_bonus"/>
   
+  <!-- Feature 48695 - Adding Additional Fields to the Application-start -->
+  <!-- Upgrade-SS -->
+  <label deltaind="M" labelkey="entityGeneralDetails_ss_member_of_hba_label" labeldesc="Are you a member of an HBA?"/>
+  <label deltaind="M" labelkey="entityGeneralDetails_ss_hba_association_id_label" labeldesc="If Yes, please select the HBA Chapter you are a member of"/>
+  <!-- Upgrade-AgencyListEdit -->
+  <label deltaind="I" labelkey="policyholder_copies_label" labeldesc="Policyholder Copies"/>
+  <label deltaind="I" labelkey="dividend_distribution_label" labeldesc="Dividend Distribution"/>  
+  <!-- Upgrade-Demographics -->
+  <label deltaind="M" labelkey="entityGeneralDetails_hba_association_id_label" labeldesc="If Yes, please select the HBA Chapter you are a member of"/>
+	<label deltaind="M" labelkey="entityGeneralDetails_member_of_hba_label" labeldesc="Are you a member of an HBA?"/>
+  <!-- Feature 48695 - Adding Additional Fields to the Application-end -->
   
 </labelconf>

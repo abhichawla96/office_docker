@@ -622,7 +622,8 @@
     </userdefined>
   </protectedresource>
      
-     <protectedresource deltaind="I" accesstype="1"
+<!-- Feature 48695 - Adding Additional Fields to the Application -->
+    <!--  <protectedresource deltaind="I" accesstype="1"
 		description="Hide/Show id dividend distribution on producer review screen"
 		uniquename="secDividendDist">
 		<userdefined deltaind="I" executionsequence="0"
@@ -637,7 +638,8 @@
 			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
 			<userdefinedaccesslevel accesstype="0" />
 		</userdefined>
-	</protectedresource>
+	</protectedresource> -->
+	
 	<protectedresource deltaind="I" accesstype="1"
 		description="Hide/Show id Year in business on producer review page"
 		uniquename="agencyListEdit_agencyestablisheddate_security">
@@ -976,14 +978,16 @@
 			<userdefinedaccesslevel accesstype="0" />
 		</userdefined>
 	</protectedresource> -->
-	<protectedresource deltaind="I" accesstype="1"
+	
+<!-- Feature 48695 - Adding Additional Fields to the Application -->
+	<!-- <protectedresource deltaind="I" accesstype="1"
 		description="Hide/Show id dba registered on agency list public edit page"
 		uniquename="agencyListPublicSubmitNInvitationEdit_hba_que_security">
 		<userdefined deltaind="I" executionsequence="0"
 			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
 			<userdefinedaccesslevel accesstype="0" />
 		</userdefined>
-	</protectedresource>
+	</protectedresource> -->
 	
 	
 	<protectedresource deltaind="I" defaultaccesstype="0" description="entityGeneralDeetails_hba_dropdown_security" uniquename="showOnAddAgencySetUp">
