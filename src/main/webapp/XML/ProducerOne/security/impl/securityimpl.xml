@@ -3674,6 +3674,47 @@ uniquename="isShowPercentageAmountforProbation" />
 	      <roleaccesslevel accesstype="1"/>
 	    </businessrole>
  	</protectedresource>
+ 	
+ 	 <!-- Feature 48695-Additional fields-start -->
+   <protectedresource deltaind="I" defaultaccesstype="0" uniquename="agencyListEdit_hba_association_id_security">
+    	<userdefined executionsequence="0" ruleid="agencyListPublicSubmitNInvitationRule.isshowHbaAssociationIdValueListEdit">
+    	  <userdefinedaccesslevel accesstype="1"/>
+    	</userdefined>
+  	</protectedresource>
+  	<protectedresource deltaind="I" accesstype="1"
+		description="Hide/Show id dba registered on agency list public edit page"
+		uniquename="agencyListEdit_member_of_hba_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+	
+	<protectedresource deltaind="I" accesstype="1"
+		description="Hide/Show id dba registered on agency list public edit page"
+		uniquename="hba_association_label_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+  	<protectedresource deltaind="I" accesstype="1"
+		description="Hide/Show id dividend distribution on producer review screen"
+		uniquename="agencyListEdit_dividend_distribution_id_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+	<protectedresource deltaind="I" accesstype="1"
+		description="Hide/Show id policy holder copies on producer review page"
+		uniquename="agencyListEdit_policyholder_copies_id_security">
+		<userdefined deltaind="I" executionsequence="0"
+			ruleid="ProducerOneRule.isRegistrationTypeProducerRegistration">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+	<!-- Feature 48695-Additional Fields- end -->
 	
 	
 </security>
