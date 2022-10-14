@@ -744,7 +744,7 @@ public static String attachAndSendEmail (Context ctx)
 
 			contactTypeList=(ArrayList<Map<String,String>>) ctx.get("contacttype_lku_mom_list_1");
 				for (Map<String, String> map : contactTypeList) {
-				if(!map.get("contact_typ_desc").equals("Agent"))																																											{
+				if(!map.get("contact_typ_desc").equals("Restrict SS Commissions View"))																																											{
 					newList.add(map);
 				}
 			}
