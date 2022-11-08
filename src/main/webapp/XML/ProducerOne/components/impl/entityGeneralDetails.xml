@@ -2120,7 +2120,10 @@
 				<databaseoperation executionsequence="0" metaobject="tbl_agencyappointmentrequest" name="getAgencyEstablished_date" operation="3"
 					sqlstmt="Select convert(varchar, agencyestablished_date, 101) agencyestablished_date from tbl_agencyappointmentrequest where aar_requestid=#aar_requestid#"/>
 			</workflow>
-			 
+		<!-- CR160 - Agent Copies setting Default value -->
+		<actionparam deltaind="I" executionsequence="124" form="Y" name="agent_copies_id"
+				paramid="agent_copies_id" post="Y" session="Y" val="1" />
+		
 		</action>
 		<action name="addCorporationPartnershipDetails">
 			<actionparam eval="ProducerOneRule.isInetErrorListEmpty"
