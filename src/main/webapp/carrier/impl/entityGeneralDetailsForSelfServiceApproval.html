@@ -6,9 +6,6 @@
     <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
     <title>ProducerOne - Producer Management Center</title>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <!-- phase 2 style added for extended fields -->
-    <link href="css/impl/bmic_specific_style.css" rel="stylesheet" type="text/css" />
-    
     <script type="text/javascript" src="script/manage.js" />
     <!-- Scripts -->
     <script type="text/javascript" src="js/all_files.js" />
@@ -1099,7 +1096,7 @@ agency location exists in the system.</div>
                                     <span id="entityGeneralDetailsForSelfServiceApproval_feinField_label">FEIN/TaxID#</span>
                                     :
                                   </div>
-                                  <div class="freeFormListTd mendatoryInput">
+                                  <div class="freeFormListTd">
                                     <div id="EncryptFein" class="" >
                                       <span id="isShowDummyFEINOrSSN">
                                         <input name="tax_str" 
@@ -1674,8 +1671,12 @@ Intermediary</label>
 														</div>
 													</div>
 												</div>
-												<p style="padding-left: 7px">(It is required for all North Carolina Agencies
-to be a member of a Home Builders Association)</p>
+												<!-- <p style="padding-left: 7px">(It is required for all North Carolina Agencies
+to be a member of a Sample Insurance Association)</p> -->
+													
+												<span id="entityGeneralDetails_ss_member_of_hba_desc_label">(It is required for all North Carolina Agencies
+to be a member of a Sample Insurance Association)</span>
+
 											</li>
 											<li id="#member_of_hba_after#"></li>
 											
@@ -2945,13 +2946,6 @@ Plans,GeneralAgencies,Brokers</span>
                               </div>
                             </li>
                             <li id="#is_employee_after#"></li>
-                            
-                            <!-- Upgrade-Commenting below as its added by Product -->
-                            <!-- Phase 2 - BMIC Specific - HBA Description - Extended Field - Start -->
-                            <!-- <li id="entityGeneralDetailsForSelfServiceApproval_hba_label_security">
-								<label id="entityGeneralDetailsForSelfServiceApproval_hba_desc_label">(It is required for all North Carolina Agencies to be a member of a Home Builders Association)</label>
-							</li> -->
-                            <!--Phase 2 - BMIC Specific - HBA Description - Extended Field - End  -->
                             
                              <li id="#segment_id_before#"></li>
                                <li id="entityGeneralDetailsForSelfServiceApproval_segment_id_security">
@@ -5656,61 +5650,7 @@ Plans,GeneralAgencies,Brokers</span>
 										
 									</div>
 									</section>
-						
-	<!-- Feature 48695 - Adding Additional Fields to the Application-Commenting below fields as added by product -->								
-	<!-- phase 2 Extended fields  -->	
-		<!-- <section id="secDividendDist"> -->
-							 <!-- <div id="divDividendDist" >
-								<fieldset >
-								<legend id="dividendDistLabel">
-								<label id="dividendDistLegendLabel">Dividend Distribution</label> 
-								</legend>
-									<div class="freeFormListTd tdInput">
-									<div id="optFields">
-									<ul id="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_3234">
-								 	<li><p id="freeText1Label">Please select from the available options below: </p></li>
-									<li id="#distDistiShow_after#"></li>
-									<li><p>Please note, by electing to have the dividend checks mailed to your agency you must agree to deliver the checks to your eligible clients within 30 days of receipt. </p></li>
-									</ul>
-								</div>
-								</div>
-								</fieldset>
-							</div>
-							
-							 <div id="divAgentCopies" >
-								<fieldset >
-								<legend id="agentCopiesLabel">
-								 <label id="agentCopiesLegendLabel">Agent Copies</label>
-								</legend>
-									<div class="freeFormListTd tdInput">
-									<div id="optagentCopiesFields1"> 
-									<ul id="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_3236">
-								 	<li id="#agentCopies_after#"></li>
-									</ul>
-									</div>
-								</div>
-								</fieldset>
-							</div>	
-										
-							 <div id="divPolicyHolder" >
-								<fieldset >
-								<legend id="policyHolderLabel">
-								 <label id="policyHolderLegendLabel">Policyholder Copies</label>
-								</legend>
-									<div class="freeFormListTd tdInput">
-									<div id="optPolicyholderFields1"> 
-									<ul id="entityGeneralDetailsForSelfServiceApproval_freeform_contextdata_3235">
-								 	<li><p id="freeText1Label1">Your agency can select how you would like Builders Mutual to distribute copies of policyholders' new and renewal policies. If you choose to receive your policyholders'</p></li>
-								 	<li><p id="freeText1Label2"> documents, we will send your agency the documents so you can personalize the delivery.  (Note- If your policyholder selects to Go Paperless, policyholder copies will not print. </p></li>
-								 	<li><p id="freeText1Label3"> Instead, they will receive an email to review their policies online).  Please select one option below:</p></li>
-									<li id="#policyholdercopies_after#"></li>
-									</ul>
-									</div>
-								</div>
-								</fieldset>
-							</div> -->
-							<!-- phase 2 Extended fields  -->							
-		
+									
 									
 									<section id="entityGeneralDetailsForSelfServiceApproval_agency_DEC_address_security">
 												<div id="dec_addressDiv">
@@ -6718,11 +6658,20 @@ Plans,GeneralAgencies,Brokers</span>
 								</div>
 								<fieldset>
 								<legend class="mendatoryInput">
-									<span id="entityGeneralDetails_ss_policyholder_copies_id_label">Policyholder Copies</span></legend> 											<p style="padding-left: 7px">Your agency can select how you would like Builders Mutual to distribute copies of policyholders' new and renewal policies. If you choose to receive your policyholders'
+									<span id="entityGeneralDetails_ss_policyholder_copies_id_label">Policyholder Copies</span></legend> 											
+									
+									<!-- <p style="padding-left: 7px">Your agency can select how you would like Sample Insurance to distribute copies of policyholders' new and renewal policies. If you choose to receive your policyholders'
 
 documents, we will send your agency the documents so you can personalize the delivery. (Note- If your policyholder selects to Go Paperless, policyholder copies will not print.
 
-Instead, they will receive an email to review their policies online). Please select one option below:</p>
+Instead, they will receive an email to review their policies online). Please select one option below:</p> -->
+
+									<span id="entityGeneralDetails_ss_policyholder_copies_desc_label">Your agency can select how you would like Sample Insurance to distribute copies of policyholders' new and renewal policies. If you choose to receive your policyholders'
+
+documents, we will send your agency the documents so you can personalize the delivery. (Note- If your policyholder selects to Go Paperless, policyholder copies will not print.
+
+Instead, they will receive an email to review their policies online). Please select one option below</span> :
+									
 									<ul class="div_checkbox div_checkbox1" id="policyholder_copies_mom_list_1" style="padding-left: 1px;">
 										<li id="policyholder_copies_mom_list_header_1" style="display: none">
 											<span class="tableinfoheader"

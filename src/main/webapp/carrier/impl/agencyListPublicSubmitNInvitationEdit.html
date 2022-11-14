@@ -9,8 +9,6 @@
 <title>ProducerOne - Producer Management Center</title>
 <!-- css -->
 <link href="css/style.css" rel="stylesheet" type="text/css" />
-<!-- BMIC Specific-->
-<link href="css/impl/bmic_specific_style.css" rel="stylesheet" type="text/css" />
 <!-- Scripts -->
 <script type="text/javascript" src="js/all_files.js" />
 </head>
@@ -646,8 +644,8 @@
 														<span id="agencyDateOfOriginLabel">Date of
 															Origination</span> :
 													</div>
-													<div class="freeFormListTd tdInput">
-														<span> <input name="agencyDateOf_origination"
+													<div class="freeFormListTd">
+														<input name="agencyDateOf_origination"
 															fullid="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_1(agencyListEdit_general_info_security.agencyListEdit_general_info_label).agencyListEdit_DateOfOrigin_security.agencyDateOfOriginLabel.agencyDateOf_origination"
 															type="text" id="agencyDateOf_origination"
 															onkeyup="applyDateFormat(this);"
@@ -659,7 +657,6 @@
 													src="images/icon_calender.gif" alt="calendar" width="12"
 													height="12" border="0" />
 											</a> -->
-														</span>
 													</div>
 												</div>
 											</div>
@@ -683,8 +680,8 @@
 														<span id="agencyListEdit_agency_in_business_since_label">Agency
 															in business since</span> :
 													</div>
-													<div class="freeFormListTd tdInput">
-														<span> <input name="agencyestablished_date"
+													<div class="freeFormListTd">
+														<input name="agencyestablished_date"
 															fullid="agencyListPublicSubmitNInvitationEdit_freeform_contextdata_1(agencyListEdit_general_info_security.agencyListEdit_general_info_label).agencyListEdit_agencyestablisheddate_security.agencyListEdit_agency_in_business_since_label.agencyestablished_date"
 															type="text" id="agencyestablished_date"
 															onkeyup="applyDateFormat(this);"
@@ -696,7 +693,6 @@
 													src="images/icon_calender.gif" alt="calendar" width="12"
 													height="12" border="0" /> 
 											</a>-->
-														</span>
 													</div>
 												</div>
 											</div>
@@ -6628,11 +6624,13 @@ to be a member of a Home Builders Association)
 								</div>
 								<fieldset>
 									<legend class="mendatoryInput" id="policyholder_copies_label">Policyholder Copies </legend>
-									<p style="padding-left: 7px">Your agency can select how you would like Builders Mutual to distribute copies of policyholders' new and renewal policies. If you choose to receive your policyholders'
 
+
+									<span id="policyholder_copies_desc_label">Your agency can select how you would like Sample Insurance to distribute copies of policyholders' new and renewal policies. If you choose to receive your policyholders'
 documents, we will send your agency the documents so you can personalize the delivery. (Note- If your policyholder selects to Go Paperless, policyholder copies will not print.
 
-Instead, they will receive an email to review their policies online). Please select one option below:</p>
+Instead, they will receive an email to review their policies online). Please select one option below</span> :
+
 									<ul class="div_checkbox div_checkbox1" id="policyholder_copies_mom_list_1" style="padding-left: 1px;">
 										<li id="policyholder_copies_mom_list_header_1" style="display: none">
 											<span class="tableinfoheader"

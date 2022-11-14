@@ -291,7 +291,7 @@
                            <div class="freeFormListTd mendatoryInput">
                             <input name="policy_limit" 
 							fullid="addEntityRequests_freeform_contextdata_20(ajax_insurance_detail_security.ajax_insurance_detail_label).addInsuranceDetailsForSelfServiceApproval_doc_insurance_policy_limit_security.addInsuranceDetailsForSelfServiceApproval_doc_insurance_policy_limit_label.policy_limit"
-							type="text" id="ajax_field_policy_limit" maxlength="16" class="form-control form-control-100" onkeyup="checkNumericValue(this,event);loadDocInsuranceDetail();" onkeypress="checkNumericValue(this,event);loadDocInsuranceDetail();" />
+							type="text" id="ajax_field_policy_limit" maxlength="16" class="form-control form-control-100"  />
                             <div id="isMarketingAssistantLoggedIn">
                               <label class="oldValue" name="policy_limit_old" id="policy_limit_old" />
                             </div>
@@ -316,7 +316,7 @@
                                 <div class="freeFormListTd ">
                                   <input name="coverage_amount" type="text" id="ajax_field_coverage_amount" maxlength="16" 
 									fullid="addEntityRequests_freeform_contextdata_20(ajax_insurance_detail_security.ajax_insurance_detail_label).addInsuranceDetailsForSelfServiceApproval_coverage_amount_security.addInsuranceDetailsForSelfServiceApproval_coverage_amount_label.coverage_amount"
-									class="form-control char16" onkeyup="checkNumericValue(this,event);loadDocInsuranceDetail();" onkeypress="checkNumericValue(this,event);loadDocInsuranceDetail();" />
+									class="form-control char16"  />
                                 	<div id="isMarketingAssistantLoggedIn">
                                       <label class="oldValue" name="coverage_amount_old" id="coverage_amount_old" />
                                     </div>
@@ -373,7 +373,7 @@
                                   <span class="">
                                     <input name="aggregate_limit" 
 									fullid="addEntityRequests_freeform_contextdata_20(ajax_insurance_detail_security.ajax_insurance_detail_label).doc_insurance_aggregate_limit_security.addInsuranceDetailsForSelfServiceApproval_doc_insurance_aggregate_limit_label.aggregate_limit"
-									type="text" id="ajax_field_aggregate_limit" maxlength="20" class="form-control form-control-100" onkeyup="checkNumericValue(this,event);loadDocInsuranceDetail();" onkeypress="checkNumericValue(this,event);loadDocInsuranceDetail();" />
+									type="text" id="ajax_field_aggregate_limit" maxlength="20" class="form-control form-control-100"  />
                                     <div id="isMarketingAssistantLoggedIn">
                                       <label class="oldValue" name="aggregate_limit_old" id="aggregate_limit_old" />
                                     </div>
@@ -548,6 +548,32 @@
                                                                         </li>
 							 <!-- Phase 2 Customization  -->
 							 <li id="#addInsuranceDetailsForSelfServiceApproval_assigned_to_security_after#"></li>
+	<li class="inlineBlock_1 extendedFieldHide"
+								id="#eo_claims_before#"></li>
+							<li class="inlineBlock_1 paddingTopEO"
+								style="width: 100% !important;"
+								id="docInsuranceDetail_ss_eo_claims_security">
+								<div id="error_eo_claims" class="error"></div>
+								<div id="ajax_error_eo_claims" class="error"></div>
+								<div>
+									<span id="docInsuranceDetail_ss_eo_claims_label">Have any E & O claims been made during the past five
+															years against the agency, agency partners, officers, or
+															any members of the staff?</span>
+									<div style="padding-left: 10px; display: inline;" >
+										<input type="radio" name="eo_claims"
+											id="ajax_field_eo_claims" value="1"
+											onchange="javascript:ajaxpageblocklink('carrier/addNewInsuranceDetailForSelfService.html','addNewInsuranceDetailForSelfService.refreshEoClaimsGrid','','','addInsuranceDetailsForSelfServiceApproval_doc_insurance_comment_security');" />
+										Yes&nbsp;&nbsp;<input type="radio" name="eo_claims"
+											id="ajax_field_eo_claims" value="0"
+											onchange="javascript:ajaxpageblocklink('carrier/addNewInsuranceDetailForSelfService.html','addNewInsuranceDetailForSelfService.refreshEoClaimsGrid','','','addInsuranceDetailsForSelfServiceApproval_doc_insurance_comment_security');" />
+										No
+									</div>
+								</div>
+								<label class="oldValue" name="eo_claims_old" id="eo_claims_old" />
+							</li>
+							<li class="inlineBlock_1 extendedFieldHide"
+								id="#eo_claims_after#"></li>
+						
 							 
                             <li id="addInsuranceDetailsForSelfServiceApproval_doc_insurance_comment_security" class="inlineBlock_1_fix">
                               <div class="freeFormList form-group">
@@ -688,9 +714,7 @@
                     </table>
                   </div>
                 </section>
-                <!-- BMIC Specific  -->
-                
-                 <!--<div class="freeFormList form-group width100" id="add_new_insurance_details_for_self_service_eo_claims_declaration_security">
+                <div class="freeFormList form-group width100" id="add_new_insurance_details_for_self_service_eo_claims_declaration_security">
                    <div class="freeFormListTr">
                      <div class="freeFormListTdError">
                        <h6>#space#</h6>
@@ -701,15 +725,15 @@
                      </div>
                    </div>
                    <div class="freeFormListTr" id="addNewInsuranceDetailsForSelfServiceStep1eo_claims_declaration_freeform_contextdata_1000">
-                     <div class="freeFormListTd labelAlign "><div style="margin-left: 98px!important;">
+                     <div class="freeFormListTd labelAlign ">
                      <input name="eo_claims_declaration" 
                      fullid="addEntityRequests_freeform_contextdata_20(ajax_insurance_detail_security.ajax_insurance_detail_label).add_new_insurance_details_for_self_service_eo_claims_declaration_security.add_new_insurance_detail_for_self_service_eo_claims_declaration_label.eo_claims_declaration"
-					value="Y" id="ajax_field_eo_claims_declaration" type="checkbox" /></div></div>
+					value="Y" id="ajax_field_eo_claims_declaration" type="checkbox" /></div>
                      <div class="freeFormListTd tdInput width100">
                        <span id="add_new_insurance_detail_for_self_service_eo_claims_declaration_label">I understand that I am required to carry at least $1,000,000 of coverage. If I have less than $1,000,000 of coverage,  I agree to increase it to $1,000,000.  Please attach a copy of your current  declaration pagein the Additional Documents section at the end of the application.Click the box to agree these terms.</span>
                      </div>
                    </div>
-                 </div> -->
+                 </div>
                 <section class="divButton paddingTop10" id="doc_insurance_group_buttons_security">
 	                 <div class="buttonwrapper">
 	                   <!-- <span id="CheckIsNewOrDisapprovedRequest"> -->

@@ -361,4 +361,16 @@
 	<label deltaind="M" labelkey="entityGeneralDetails_member_of_hba_label" labeldesc="Are you a member of an HBA?"/>
   <!-- Feature 48695 - Adding Additional Fields to the Application-end -->
   
+  
+  <!-- 2.10.7.4 change -->
+<label deltaind="I" labelkey="policyholder_copies_desc_label" labeldesc="Your agency can select how you would like Builders Mutual to distribute copies of policyholders' new and renewal policies. If you choose to receive your policyholders"/>
+<label deltaind="M" labelkey="entityGeneralDetails_policyholder_copies_desc_label" labeldesc="Your agency can select how you would like Builders Mutual to distribute copies of policyholders' new and renewal policies. If you choose to receive your policyholders'
+documents, we will send your agency the documents so you can personalize the delivery. (Note- If your policyholder selects to Go Paperless, policyholder copies will not print.
+Instead, they will receive an email to review their policies online). Please select one option below"/>
+<label deltaind="M" labelkey="entityGeneralDetails_member_of_hba_desc_label" labeldesc="(It is required for all North Carolina Agencies to be a member of a Home Builders Association)"/>
+<label deltaind="M" labelkey="entityGeneralDetails_ss_member_of_hba_desc_label" labeldesc="(It is required for all North Carolina Agencies to be a member of a Home Builders Association)"/>
+<label deltaind="M" labelkey="entityGeneralDetails_ss_policyholder_copies_desc_label" labeldesc="Your agency can select how you would like Builders Mutual to distribute copies of policyholders' new and renewal policies. If you choose to receive your policyholders'
+documents, we will send your agency the documents so you can personalize the delivery. (Note- If your policyholder selects to Go Paperless, policyholder copies will not print.
+Instead, they will receive an email to review their policies online). Please select one option below"/>
+
 </labelconf>

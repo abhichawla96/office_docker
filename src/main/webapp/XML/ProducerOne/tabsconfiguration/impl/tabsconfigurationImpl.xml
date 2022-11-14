@@ -707,7 +707,7 @@
 <!-- <tabsconfigurationresource deltaind="M" accesslevel="0" description="addInsuranceDetailsForSelfServiceApproval_doc_insurance_deductible_security" name="addInsuranceDetailsForSelfServiceApproval_doc_insurance_deductible_security"/> -->
 
 <!-- Phase 2 -US :SS-004-11 -->
- <tabsconfigurationresource deltaind="M" name="add_new_insurance_details_for_self_service_eo_claims_declaration_security" accesslevel="1" description="add_new_insurance_details_for_self_service_eo_claims_declaration_security hide/show" />
+ <tabsconfigurationresource deltaind="M" name="add_new_insurance_details_for_self_service_eo_claims_declaration_security" accesslevel="0" description="add_new_insurance_details_for_self_service_eo_claims_declaration_security hide/show" />
 
 <!-- Phase 2- Bug Id- P2-063- Comparative Rater field on Update Location Page - Test -->
 <tabsconfigurationresource deltaind="M" accesslevel="0" description="entityGeneralDetailsForSelfServiceApproval_agency_comparativerate_securityHeader" name="entityGeneralDetailsForSelfServiceApproval_agency_comparativerate_securityHeader"/>
