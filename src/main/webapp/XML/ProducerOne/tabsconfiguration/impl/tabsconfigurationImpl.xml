@@ -1122,4 +1122,8 @@
 	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show entityGeneralDetails_policyholder_copies_id_security" name="entityGeneralDetails_policyholder_copies_id_security"/>
 	<!-- Feature 48695 - Adding Additional Fields to the Application-end -->
 	
+	<!-- ADO-54153 -->
+	<tabsconfigurationresource deltaind="M" accesslevel="0" description="advance_agencyCode_producersearch_probation_effective_date_range_security" name="advance_agencyCode_producersearch_probation_effective_date_range_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="0" description="advance_agencyCode_producersearch_probation_termination_date_range_security" name="advance_agencyCode_producersearch_probation_termination_date_range_security"/>
+	
 </tabsconfiguration>
