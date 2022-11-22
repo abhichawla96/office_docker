@@ -1126,4 +1126,10 @@
 	<tabsconfigurationresource deltaind="M" accesslevel="0" description="advance_agencyCode_producersearch_probation_effective_date_range_security" name="advance_agencyCode_producersearch_probation_effective_date_range_security"/>
 	<tabsconfigurationresource deltaind="M" accesslevel="0" description="advance_agencyCode_producersearch_probation_termination_date_range_security" name="advance_agencyCode_producersearch_probation_termination_date_range_security"/>
 	
+	
+<!-- Phase 3-Bug 36109- Housekeeping and Rate reports -->
+<tabsconfigurationresource deltaind="M" accesslevel="0" name="Commission_Rate_Reports_Security" description="Hide/Show of Rate report Commission Grid" />
+<tabsconfigurationresource deltaind="M" accesslevel="0" name="Commission_Housekeeping_Reports_security" description="Hide/Show of Housekeeping Commission Grid" />
+	
+	
 </tabsconfiguration>
