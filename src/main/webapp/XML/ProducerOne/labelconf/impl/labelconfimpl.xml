@@ -373,4 +373,8 @@ Instead, they will receive an email to review their policies online). Please sel
 documents, we will send your agency the documents so you can personalize the delivery. (Note- If your policyholder selects to Go Paperless, policyholder copies will not print.
 Instead, they will receive an email to review their policies online). Please select one option below"/>
 
+
+<!-- Phase 3- Bonus Year- Release Statement -->
+ <label deltaind="M" labelkey="compensationReleaseStatement_filter_bonus_year_label" labeldesc="Contingency Commission Year" />
+  
 </labelconf>
