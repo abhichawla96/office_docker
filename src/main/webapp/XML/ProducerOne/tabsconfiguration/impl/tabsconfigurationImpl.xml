@@ -1075,6 +1075,9 @@
 	<tabsconfigurationresource deltaind="I" accesslevel="0" description="Hide/Show deductible text box mandatory on Document Insurance doc_cyberLiability_deductible_mandatory_security" name="doc_cyberLiability_deductible_mandatory_security"/>
 	<tabsconfigurationresource deltaind="M" accesslevel="1" description="entityCyberLiabilityExpirationListing_self_insured_retention_security" name="entityCyberLiabilityExpirationListing_self_insured_retention_security"/>
 	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/Show entityInsuranceExpirationListing_self_insured_retention_security" name="entityInsuranceExpirationListing_self_insured_retention_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show docCyberLiability_self_insured_retention_security" name="docCyberLiability_self_insured_retention_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show doc_CyberLiability_block_self_insured_retention_security" name="doc_CyberLiability_block_self_insured_retention_security"/>
+	<tabsconfigurationresource deltaind="M" accesslevel="1" description="Hide/show insurance_self_insured_retention_security" name="insurance_self_insured_retention_security"/>
 	<!-- Feature 48679 - Adding the Self Insured Retention (SIR) and Deductible Fields-end -->
 	
 	<!-- Feature 48684 - Mass update -->

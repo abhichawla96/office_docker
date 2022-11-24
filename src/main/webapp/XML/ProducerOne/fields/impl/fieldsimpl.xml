@@ -705,5 +705,10 @@ displayfield="person_name" valuefield="person_id" lookupobjecttype="sql" display
     <validation deltaind="D" name="checkExpireReNewDateisEmpty" expression="if(andCondition(isEmpty(:expire_renew_date),andCondition(isEqual(:producer_status_cde,2),isEqual(:isComingFromMassUploadDocument,Y)))=&gt;isEqual(1,2)-&gt;isEqual(1,1));" message="ExpireRenewDateEmptyErrorKey" executionsequence="0" />   
   </field>
   <!-- Feature 48685 - Mass Update validation errors fix - end-->
-  
+ 
+ <!-- ADO-52160 - For Deductible customization -->
+  <field deltaind="I" id="entityInsuranceExpireListing_deductible" screen="reports/entityInsuranceExpireListing.html" name="deductible" labelkey="entityInsuranceExpirationListing_deductible_label" tabsconfigurationresourcename="entityInsuranceExpirationListing_deductible_security" protectedresourceuniquename="entityInsuranceExpirationListing_deductible_security" isrequired="N" isextendedfield="N" executionsequence="0" isencrypt="N" format="amount" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0"/>
+  <field deltaind="I" id="entityCyberLiabilityExpireListing_deductible" screen="reports/entityCyberLiabilityExpireListing.html" isrequired="N" name="deductible" labelkey="entityCyberLiabilityExpirationListing_deductible" tabsconfigurationresourcename="entityCyberLiabilityExpirationListing_deductible_security" protectedresourceuniquename="entityCyberLiabilityExpirationListing_deductible_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" format="amount"/>
+  <field deltaind="I" id="docCyberLiability_List_Deductible" screen="carrier/docCyberLiability.html" name="deductible" isrequired="N" labelkey="CyberLiability_freeform_deductible_label" tabsconfigurationresourcename="doc_CyberLiability_block_deductible_security" protectedresourceuniquename="doc_CyberLiability_block_deductible_security" isextendedfield="N" executionsequence="0" isencrypt="N" isprintbeforelabel="N" iscacheenabled="N" requiredlength="0" format="amount"/>
+ 
  </fields>
