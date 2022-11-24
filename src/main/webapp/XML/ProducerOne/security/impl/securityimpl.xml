@@ -2824,7 +2824,7 @@
  <roleaccesslevel accesstype="0"/>
  </businessrole>
  <businessrole deltaind="I" roleid="CarrierAdmin">
- <roleaccesslevel accesstype="0"/>
+ <roleaccesslevel accesstype="1"/>
  </businessrole>
  <businessrole deltaind="I" roleid="vpmarketing">
  <roleaccesslevel accesstype="0"/>
