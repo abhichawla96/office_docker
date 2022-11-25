@@ -19,6 +19,11 @@
 	<!-- Phase 3- Contingency Commission Statement -->	
   <resource name="templates/contingencyCommissionBonusStatement.xls" type="xls" path="templates/contingencyCommissionBonusStatement.xls" executionsequence="35"/>
 	
+	<!-- ADO-52160 - For Deductible customization -->
+ <resource name="templates/EntityCyberLiabilityExpirationExport.xls" type="xls" path="templates/EntityCyberLiabilityExpirationExport.xls" executionsequence="36"/>
+ <resource name="templates/EntityCyberLiabilityExpirationNoticeSentExport.xls" type="xls" path="templates/EntityCyberLiabilityExpirationNoticeSentExport.xls" executionsequence="37"/>
+ <resource name="templates/EntityInsuranceExpirationExport.xls" type="xls" path="templates/EntityInsuranceExpirationExport.xls" executionsequence="38"/>
+ <resource name="templates/EntityInsuranceExpirationNoticeSentExport.xls" type="xls" path="templates/EntityInsuranceExpirationNoticeSentExport.xls" executionsequence="39"/>
 	
 	<resource name="js/jquery-1.10.2.js" type="javascript" path="js/jquery-1.10.2.js" executionsequence="9"/>
 	<resource name="js/jquery.tabelizer.js" type="javascript" path="js/jquery.tabelizer.js" executionsequence="10"/>
