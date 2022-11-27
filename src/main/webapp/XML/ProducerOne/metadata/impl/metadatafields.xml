@@ -35,4 +35,38 @@
   
    <field deltaind="I" decimallength="0" displayname="ccb_bonus_year" length="0" name="ccb_bonus_year" seq="8235" type="I" viewlength="10"/>
    
+<!-- Fields for CCB reports -->  
+  <field deltaind="I" decimallength="0" displayname="Agency Status" length="0" name="Agency_Status" seq="8500" type="V" viewlength="50"/>
+  <field deltaind="I" decimallength="0" displayname="Eval Year" length="0" name="Eval_Year" seq="8501" type="V" viewlength="50"/>
+  <field deltaind="I" decimallength="0" displayname="Eval Date" length="0" name="Eval_Date" seq="8502" type="V" viewlength="50"/>
+  <field deltaind="I" decimallength="0" displayname="Group Type" length="0" name="Group_Type" seq="8503" type="V" viewlength="50"/>
+  <field deltaind="I" decimallength="0" displayname="Agency Number" length="0" name="Agency_Number_or_Group_Number" seq="8504" type="V" viewlength="50"/>
+  <field deltaind="I" decimallength="0" displayname="TM Name" length="0" name="TM_Name" seq="8505" type="V" viewlength="50"/>
+  <field deltaind="I" decimallength="0" displayname="Group Member Flag" length="0" name="Group_Member_Flag" seq="8506" type="V" viewlength="50"/>
+  <field deltaind="I" decimallength="0" displayname="Group Parent Flag" length="0" name="Group_Parent_Flag" seq="8507" type="V" viewlength="50"/>
+  <field deltaind="I" decimallength="0" displayname="Agency Group Number" length="0" name="Agency_Group_Number" seq="8508" type="V" viewlength="50"/>
+  <field deltaind="I" decimallength="0" displayname="Prior Year2" length="0" name="Prior_Year2" seq="8509" type="V" viewlength="50"/>
+  <field deltaind="I" decimallength="0" displayname="Prior Year1" length="0" name="Prior_Year1" seq="8510" type="V" viewlength="50"/>
+  <field deltaind="I" decimallength="0" displayname="Prior Year2 Collected Premium" length="0" name="Prior_Year2_Collected_Premium" seq="8511" type="V" viewlength="50"/>
+  <field deltaind="I" decimallength="0" displayname="Prior Year1 Collected Premium" length="0" name="Prior_Year1_Collected_Premium" seq="8512" type="V" viewlength="50"/>
+  <field deltaind="I" decimallength="0" displayname="Eval Year Collected Premium" length="0" name="Eval_Year_Collected_Premium" seq="8513" type="V" viewlength="50"/>
+  <field deltaind="I" decimallength="0" displayname="Prior Year2 Losses" length="0" name="Prior_Year2_Losses" seq="8514" type="V" viewlength="50"/>
+  <field deltaind="I" decimallength="0" displayname="Prior Year1 Losses" length="0" name="Prior_Year1_Losses" seq="8515" type="V" viewlength="50"/>
+  <field deltaind="I" decimallength="0" displayname="Eval Year Losses" length="0" name="Eval_Year_Losses" seq="8516" type="V" viewlength="50"/>
+  <field deltaind="I" decimallength="0" displayname="Prior Year2 Loss Ratio" length="0" name="Prior_Year2_Loss_Ratio" seq="8517" type="V" viewlength="50"/>
+  <field deltaind="I" decimallength="0" displayname="Prior Year1 Loss Ratio" length="0" name="Prior_Year1_Loss_Ratio" seq="8518" type="V" viewlength="50"/>
+  <field deltaind="I" decimallength="0" displayname="Eval Year Loss Ratio" length="0" name="Eval_Year_Loss_Ratio" seq="8519" type="V" viewlength="50"/>
+  <field deltaind="I" decimallength="0" displayname="Prior Year2 Loss Dev Amount" length="0" name="Prior_Year2_Loss_Dev_Amount" seq="8520" type="V" viewlength="50"/>
+  <field deltaind="I" decimallength="0" displayname="Prior Year1 Loss Dev Amount" length="0" name="Prior_Year1_Loss_Dev_Amount" seq="8521" type="V" viewlength="50"/>
+<field deltaind="I" decimallength="0" displayname="Eval Year Evaluation Of Total Losses" length="0" name="Eval_Year_Evaluation_Of_Total_Losses" seq="8522" type="V" viewlength="50"/>
+<field deltaind="I" decimallength="0" displayname="Prior Year Evaluation Of Total Losses" length="0" name="Prior_Year_Evaluation_Of_Total_Losses" seq="8523" type="V" viewlength="50"/>
+<field deltaind="I" decimallength="0" displayname="Loss Amount For Bonus" length="0" name="Loss_Amount_For_Bonus" seq="8524" type="V" viewlength="50"/>
+<field deltaind="I" decimallength="0" displayname="Loss Ratio For Bonus" length="0" name="Loss_Ratio_For_Bonus" seq="8525" type="V" viewlength="50"/>
+<field deltaind="I" decimallength="0" displayname="Bonus Percentage" length="0" name="Bonus_Percentage" seq="8526" type="V" viewlength="50"/>
+<field deltaind="I" decimallength="0" displayname="Bonus Amount" length="0" name="Bonus_Amount" seq="8527" type="V" viewlength="50"/>
+<field deltaind="I" decimallength="0" displayname="Eligible For Bonus Flag" length="0" name="Eligible_For_Bonus_Flag" seq="8528" type="V" viewlength="50"/>
+<field deltaind="I" decimallength="0" displayname="Ineligibility Reason" length="0" name="Ineligibility_Reason" seq="8529" type="V" viewlength="50"/>
+<field deltaind="I" decimallength="0" displayname="Group Row Flag" length="0" name="Group_Row_Flag" seq="8530" type="V" viewlength="50"/>
+  
+   
   </structure>
