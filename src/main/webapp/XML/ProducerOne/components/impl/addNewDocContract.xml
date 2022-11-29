@@ -12,8 +12,9 @@
     </action>
     
     <action name="view" deltaind="M">
-		<actionparam val="1" paramid="contract_type_id" deltaind="I" post="N" remove="N" form="Y" evalute="N" viewparam="Y" ismenuparam="N" isexecuteonsuccess="N" session="N" pre="Y" name="contract_type_id" seq="0" executionsequence="0"/>
+		<actionparam val="1" paramid="contract_type_id" deltaind="I" post="N" remove="N" form="Y" evalute="N" viewparam="Y" ismenuparam="N" isexecuteonsuccess="N" session="Y" pre="Y" name="contract_type_id" seq="0" executionsequence="0"/>
 		<actionparam deltaind="I" executionsequence="1" name="contract_id" paramid="contract_id" val="null" viewparam="Y"/>
+		<actionparam deltaind="M" eval="ProducerOneRule.isBGContractApptOnboardingStatusNotFound" executionsequence="0" form="Y" name="removeparams" paramid="removeparams123" pre="Y" remove="Y" removeparams="workflow_function,aar_statusid_desc,workflow_user,email_address, producer_number_id" session="Y"/>
 	</action>
 	
   </component>
