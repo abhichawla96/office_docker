@@ -4144,12 +4144,18 @@
 													<xsl:if test="WRITTEN_PREMIUM != 'HIDDEN'">
 													<fo:table-cell border="0.2pt solid #6bc2f8" text-align="right" padding-start="3pt" padding-top="3pt" padding-bottom="3pt" padding-end="3pt" background-color="#6bc2f8"><fo:block font-size="6px" font-family="Arial"><xsl:value-of select="WRITTEN_PREMIUM"/></fo:block></fo:table-cell>
 													</xsl:if>
+													<!--  BMIC-specific -->
+													<xsl:if test="actual_written_premium != 'HIDDEN'">
+													<fo:table-cell border="0.2pt solid #6bc2f8" text-align="right" padding-start="3pt" padding-top="3pt" padding-bottom="3pt" padding-end="3pt" background-color="#6bc2f8"><fo:block font-size="6px" font-family="Arial"><xsl:value-of select="actual_written_premium"/></fo:block></fo:table-cell>
+													</xsl:if>
+													
 													 <xsl:if test="Commissionable_Fee != 'HIDDEN'">
 													<fo:table-cell border="0.2pt solid #6bc2f8" text-align="right" padding-start="3pt" padding-top="3pt" padding-bottom="3pt" padding-end="3pt" background-color="#6bc2f8"><fo:block font-size="6px" font-family="Arial"><xsl:value-of select="Commissionable_Fee"/></fo:block></fo:table-cell>
 													</xsl:if> 
 													<xsl:if test="COMMISSION != 'HIDDEN'">
 													<fo:table-cell border="0.2pt solid #6bc2f8" text-align="right"  padding-start="3pt" padding-top="3pt" padding-bottom="3pt" padding-end="3pt" background-color="#6bc2f8"><fo:block font-size="6px" font-family="Arial"><xsl:value-of select="COMMISSION"/></fo:block></fo:table-cell>
 													</xsl:if>
+													
 													
 												</xsl:when>
 												<xsl:otherwise>
@@ -4176,6 +4182,10 @@
 													</xsl:if>
 													<xsl:if test="WRITTEN_PREMIUM != 'HIDDEN'">
 													<fo:table-cell border="0.2pt solid #6bc2f8" text-align="right" padding-start="3pt" padding-top="3pt" padding-bottom="3pt" padding-end="3pt"><fo:block font-size="6px" font-family="Arial"><xsl:value-of select="WRITTEN_PREMIUM"/></fo:block></fo:table-cell>
+													</xsl:if>
+													<!--  BMIC-specific -->
+													<xsl:if test="actual_written_premium != 'HIDDEN'">
+													<fo:table-cell border="0.2pt solid #6bc2f8" text-align="right" padding-start="3pt" padding-top="3pt" padding-bottom="3pt" padding-end="3pt" background-color="#6bc2f8"><fo:block font-size="6px" font-family="Arial"><xsl:value-of select="actual_written_premium"/></fo:block></fo:table-cell>
 													</xsl:if>
 													 <xsl:if test="Commissionable_Fee != 'HIDDEN'">
 													<fo:table-cell border="0.2pt solid #6bc2f8" text-align="right" padding-start="3pt" padding-top="3pt" padding-bottom="3pt" padding-end="3pt"><fo:block font-size="6px" font-family="Arial"><xsl:value-of select="Commissionable_Fee"/></fo:block></fo:table-cell>
@@ -4790,6 +4800,10 @@
 													<xsl:if test="premium_variance != 'HIDDEN'">	
 													<fo:table-cell border="0.2pt solid #6bc2f8" text-align="right" padding-start="3pt" padding-top="3pt" padding-bottom="3pt" padding-end="3pt" background-color="#6bc2f8"><fo:block font-size="6px" font-family="Arial"><xsl:value-of select="premium_variance"/></fo:block></fo:table-cell>
 													</xsl:if>
+													<!-- BMIC-specific -->
+													<xsl:if test="actual_written_premium_curr_month != 'HIDDEN'">	
+													<fo:table-cell border="0.2pt solid #6bc2f8" text-align="right" padding-start="3pt" padding-top="3pt" padding-bottom="3pt" padding-end="3pt" background-color="#6bc2f8"><fo:block font-size="6px" font-family="Arial"><xsl:value-of select="actual_written_premium_curr_month"/></fo:block></fo:table-cell>
+													</xsl:if>
 													
 												</xsl:when>
 												<xsl:otherwise>
@@ -4827,6 +4841,11 @@
 													<xsl:if test="premium_variance != 'HIDDEN'">	
 													<fo:table-cell border="0.2pt solid #6bc2f8" text-align="right" padding-start="3pt" padding-top="3pt" padding-bottom="3pt" padding-end="3pt"><fo:block font-size="6px" font-family="Arial"><xsl:value-of select="premium_variance"/></fo:block></fo:table-cell>
 													</xsl:if>
+													<!-- BMIC-specific -->
+													<xsl:if test="actual_written_premium_curr_month != 'HIDDEN'">	
+													<fo:table-cell border="0.2pt solid #6bc2f8" text-align="right" padding-start="3pt" padding-top="3pt" padding-bottom="3pt" padding-end="3pt"><fo:block font-size="6px" font-family="Arial"><xsl:value-of select="actual_written_premium_curr_month"/></fo:block></fo:table-cell>
+													</xsl:if>
+													
 													
 												</xsl:otherwise>
 											</xsl:choose>		
