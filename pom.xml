@@ -4,8 +4,8 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.duckcreek.implementation</groupId>
-	<artifactId>BuilderClient</artifactId>
-	<version>1.0.0.0-build883</version>
+	<artifactId>BMICClient</artifactId>
+	<version>1.0.0.0-build${PIPELINE_BUILD_NUMBER}</version>
 	<packaging>war</packaging>
 
 	<properties>
@@ -14,8 +14,8 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<maven.compiler.source>1.6</maven.compiler.source>
 		<maven.compiler.target>1.6</maven.compiler.target>
 		<main.basedir>${basedir}</main.basedir>
-		<client.id>DMClient</client.id>
-		<dm.product.version>2.10.7.0</dm.product.version>
+		<client.id>BMICClient</client.id>
+		<dm.product.version>${ProductBuildVersion}</dm.product.version>
 		<spring.version>3.1.2.RELEASE</spring.version>
 	</properties>
 
@@ -23,13 +23,13 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<dependency>
 			<groupId>com.duckcreek</groupId>
 			<artifactId>Product</artifactId>
-			<version>2.10.7.0-build2631</version>
+			<version>${dm.product.version}</version>
 			<type>war</type>
 		</dependency>
 		<dependency>
 		  <groupId>com.duckcreek</groupId>
 		  <artifactId>Product</artifactId>
-		  <version>2.10.7.0-build2631</version>
+		  <version>${dm.product.version}</version>
 		  <scope>compile</scope>
 		</dependency>
 
@@ -47,7 +47,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.6</version>
 				<configuration>
-					<warName>DMClient</warName>
+					<warName>BMICClient-${version}</warName>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 					<workDirectory>target/overlay-war-folder</workDirectory>
 					<attachClasses>true</attachClasses>
@@ -92,12 +92,12 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 									<outputDirectory>${basedir}/src/main/webapp</outputDirectory>
 									<destFileName>Product.war</destFileName>
 									<includes>**</includes>
-									<excludes>templates/contingencyCommissionBonusStatement.xls,templates/commissionStatementTemplate.xlsx,templates/EntityCyberLiabilityExpirationExport.xls,templates/EntityCyberLiabilityExpirationNoticeSentExport.xls,templates/EntityInsuranceExpirationExport.xls,templates/EntityInsuranceExpirationNoticeSentExport.xls,temp.xml,css/**,images/**,js/impl/**,create.txt,WEB-INF/*,htmltoxmllog/keepme,**/ibatis/**,**/processflow.xml,XML/ProducerOne/*/impl,XML/ProducerOne/ibatis/maps/*,ProducerOneClient/*,XML/ProducerOneClient/ibatis/maps/*,XML/ProducerOne/applicationworkflow/*,foxsl/*,emailTemplate.html,**/userbo/*/*,WEB-INF/classes/com/processor/TabsConfiguration.class,WEB-INF/classes/com/esign/docusgindirect/util/DocuSignUtil.class,WEB-INF/classes/com/userbo/ValidateTransfersStep1BO.class,XML/ProducerOne/includes/*</excludes>
+									<excludes>temp.xml,css/**,images/**,js/impl/**,create.txt,WEB-INF/*,htmltoxmllog/keepme,**/ibatis/**,**/processflow.xml,XML/ProducerOne/*/impl,XML/ProducerOne/ibatis/maps/*,ProducerOneClient/*,XML/ProducerOneClient/ibatis/maps/*,XML/ProducerOne/applicationworkflow/*,foxsl/*,**/userbo/*/*,WEB-INF/classes/com/processor/TabsConfiguration.class</excludes>
 								</artifactItem>
 							</artifactItems>
 						</configuration>
 					</execution>
-				</executions> 
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
@@ -139,8 +139,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<repositories>
 		<repository>
 			<id>osi-releases</id>
-			<!-- <url>http://10.10.10.222:8081/repository/releases/</url>   -->
-			<url>http://10.10.10.222:8091/repository/releases/</url>
+			<url>http://172.30.30.43:8081/nexus/content/repositories/releases/</url>
 			<name>OSI Repository</name>
 			<snapshots>
 				<enabled>false</enabled>
@@ -158,7 +157,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 				<enabled>false</enabled>
 			</snapshots>
 			<releases>
-				<enabled>false</enabled>
+				<enabled>true</enabled>
 				<updatePolicy>never</updatePolicy>
 			</releases>
 		</repository>
@@ -166,8 +165,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<distributionManagement>
 		<repository>
 			<id>releases</id>
-			<!-- <url>http://172.10.40.180:8081/repository/releases/</url> mail from release team to change the port-->
-			<url>http://172.10.40.180:8091/repository/releases/</url>
+			<url>http://172.10.40.180:8081/repository/releases/</url>
 		</repository>
 	</distributionManagement>
 </project>
