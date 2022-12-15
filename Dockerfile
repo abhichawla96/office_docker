@@ -6,7 +6,7 @@ COPY . ./
 
 RUN apt-get update && apt -y upgrade
 
-RUN mvn -e clean package -D skipTests -DPIPELINE_BUILD_NUMBER=${PIPELINE_BUILD_NUMBER} -DProductBuildVersion=${ProductBuildVersion} -DSkipOverlay=false
+RUN mvn -e clean package
 
 #FROM openjdk:11-jre-slim/tomcat
 FROM tomcat:8.5-jdk8
