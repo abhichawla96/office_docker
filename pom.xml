@@ -4,7 +4,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.duckcreek.implementation</groupId>
-	<artifactId>BMICClient</artifactId>
+	<artifactId>BuilderClient</artifactId>
 	<version>1.0.0.0-build${PIPELINE_BUILD_NUMBER}</version>
 	<packaging>war</packaging>
 
@@ -14,7 +14,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<maven.compiler.source>1.6</maven.compiler.source>
 		<maven.compiler.target>1.6</maven.compiler.target>
 		<main.basedir>${basedir}</main.basedir>
-		<client.id>BMICClient</client.id>
+		<client.id>DMClient</client.id>
 		<dm.product.version>${ProductBuildVersion}</dm.product.version>
 		<spring.version>3.1.2.RELEASE</spring.version>
 	</properties>
@@ -47,7 +47,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.6</version>
 				<configuration>
-					<warName>BMICClient-${version}</warName>
+					<warName>DMClient</warName>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 					<workDirectory>target/overlay-war-folder</workDirectory>
 					<attachClasses>true</attachClasses>
@@ -157,7 +157,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 				<enabled>false</enabled>
 			</snapshots>
 			<releases>
-				<enabled>true</enabled>
+				<enabled>false</enabled>
 				<updatePolicy>never</updatePolicy>
 			</releases>
 		</repository>
